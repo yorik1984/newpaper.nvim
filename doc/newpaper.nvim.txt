@@ -1,0 +1,210 @@
+================================================================================
+                                                                 *newpaper.nvim*
+                                                                                
+newpaper.nvim is a colorscheme for NeoVim written in Lua with built in support
+for native LSP, TreeSitter and many more plugins.
+
+================================================================================
+CONTENTS
+
+    1. Features ................. |newpaper.nvim-features|
+    2. Usage .................... |newpaper.nvim-usage|
+    3. Styles ................... |newpaper.nvim-styles|
+    4. Configuration ............ |newpaper.nvim-configuration|
+    5. Functions ................ |newpaper.nvim-functions|
+    6. Mappings ................. |newpaper.nvim-mappings|
+
+================================================================================
+1. Features                                             *newpaper.nvim-features*
+
+    + There are 2 styles to choose from: -light
+                                         -darker
+
+    + A wide array of supprted plugiuns like: -TreeSitter
+                                              -LSP Diagnostics
+                                              -LSP Saga
+                                              -LSP Trouble
+                                              -Nvim-Compe
+                                              -Git Gutter
+                                              -Git Messenger
+                                              -Git Signs
+                                              -Telescope.nvim
+                                              -Nvim-Tree.lua
+                                              -NERDTree
+                                              -Indent-Blankline.nvim
+                                              -Vim-Which-Key
+                                              -WhichKey.nvim
+                                              -Dashboard
+                                              -BufferLine
+                                              -Lualine
+                                              -Neogit
+                                              -Vim-Sneak
+                                              -Nvim-Dap
+                                              -Vim-Illuminate
+
+    + Ability to have a different background on sidebar windows like Nvim-Tree,
+      Terminal, Packer, Whichkey, QuickFix etc.
+
+    + Asynchronous highlight loading which makes the theme extremely fast
+
+    + Added functions for live style switching, without the need to reload
+      NeoVim
+
+================================================================================
+2. Usage                                                   *newpaper.nvim-usage*
+
+    To use the default settings, just apply the theme
+
+    If you are using Vim-Script:
+        colorscheme newpaper
+
+    If you are using Lua:
+        require('newpaper').set
+
+
+    newpaper.nvim also includes a Lualine theme. Set it in your Lualine config
+        require('lualine').setup {
+          options = {
+            -- ... your lualine config
+            theme = 'newpaper'
+            -- ... your lualine config
+          }
+        }
+    Just make sure to set the theme to "newpaper.nvim", as "newpaper" already
+    exist built in to lualine
+
+================================================================================
+3. Styles                                                 *newpaper.nvim-styles*
+
+    The theme comes in 2 styles to choose from
+
+    + Dark:
+        This style is loosely based on the PaperColor dark color theme.
+
+    + Light:
+        This is the only light style in this colorscheme. It comes with a
+        PaperColor white background.
+
+    The styles are set by setting the global variable 'newpaper_style' to the
+    desired style name
+
+    For example:
+
+        Vim-Script:
+            let g:newpaper_style = "light"
+        Lua:
+            vim.g.newpaper_style = "dark"
+
+    Just make sure to set the style before applying the colorscheme
+
+================================================================================
+4. Configuration                                   *newpaper.nvim-configuration*
+
+What sets newpaper.nvim appart from most Vim/NeoVim themes is the wide array
+of options for customising the theme.
+
+All options are set using global variables.
+
+In order for these settings to take effect, they should be placed in your
+init.vim/init.lua before applying the colorscheme
+
+Options:
+
+    + newpaper_style {string} (default = "light")
+        This sets the style of the the theme, and can be initialized with one
+        of these five values: -light
+                              -dark
+
+    + newpaper_contrast_float {bool}  (default = false)
+          Make floating windows like which-key have a different background
+
+    + newpaper_contrast_sidebar {bool}  (default = false)
+          Make floating windows like nvim-tree have a different background
+
+    + newpaper_italic_comments  {bool}  (default = false)
+          Make comments italic
+
+    + newpaper_italic_strings  {bool}  (default = false)
+          Make strings italic
+
+    + newpaper_italic_keywords  {bool}  (default = false)
+          Make keywords like if,for,while etc. italic
+
+    + newpaper_bold_keywords  {bool}  (default = false)
+          Make keywords like if,for,while etc. bold
+
+    + newpaper_italic_functions  {bool}  (default = false)
+          Make functions calls and names italic
+
+    + newpaper_italic_variables  {bool}  (default = false)
+          Make variable names and identifiers italic
+
+    + newpaper_borders  {bool}  (default = false)
+          Enable the border between verticaly split windows
+
+    + newpaper_disable_background  {bool}  (default = false)
+          Set this to true if you want to prevent newpaper.nvim from setting a
+          background color, so that NeoVim can use you terminal background
+          color
+
+    + newpaper_disable_terminal  {bool}  (default = false)
+          Disable the setting of terminal colors
+
+    + newpaper_hide_eob  {bool}  (default = false)
+          Hide the end of buffer lines ()
+
+    + newpaper_variable_color  {string}  (default = "#2B2B2B")
+          Set a custom color for variables and fields
+
+    + newpaper_custom_colors  {table}  (default = {})
+          Use this to override any color that the theme has set. Just pass in
+          colors like this:
+          vim.g.newpaper_custom_colors = {fg = "#000000", bg = "#FFFFFF"}
+
+
+Example config in Lua:
+
+    -- Colorscheme settings
+    vim.g.newpaper_style = 'light'
+    vim.g.newpaper_italic_comments = true
+    vim.g.newpaper_italic_keywords = true
+    vim.g.newpaper_italic_functions = true
+
+    -- Apply the colorscheme
+    require('newpaper').set()
+
+================================================================================
+5. Functions                                           *newpaper.nvim-functions*
+
+newpaper.nvim has built in fuctions that you can call or bind to a key
+
+    + Toggle trough styles without the need to restart NeoVim
+          Just call the funciton and it will switch to the next style:
+          :lua require('newpaper.functions').toggle_style()
+
+    + Switch to a specific style
+          Call the function for switching and pass in the name of the style
+          that you want to switch to:
+          :lua require('newpaper.functions').change_style('light')
+
+    + Toggle the end of buffer lines
+          Call this function if you want to toggle the visibility of the lines
+          at the end of the buffer:
+          :lua require('newpaper.functions').toggle_eob()
+
+================================================================================
+6. Mappings                                             *newpaper.nvim-mappings*
+
+You can mapp the built-in functions to keys
+This will allow you to change the style and toggle the end-of-buffer lines
+at keypress
+
+Example:
+
+nnoremap <leader>mm :lua require('newpaper.functions').toggle_style()<CR>
+nnoremap <leader>me :lua require('newpaper.functions').toggle_eob()<CR>
+nnoremap <leader>md :luarequire('newpaper.functions').change_style('dark')<CR>
+nnoremap <leader>ml :luarequire('newpaper.functions').change_style('light')<CR>
+
+================================================================================
+vim:tw=78:ts=4:ft=help:norl:
