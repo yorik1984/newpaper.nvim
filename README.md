@@ -4,12 +4,12 @@
 
 **TODO**:
 - [ ] Add dark style
+- [ ] Add screenshots
 - [ ] Add wide syntax highlight:
     - [ ] Markdown
     - [ ] LaTeX
     - [ ] Ruby
     - [ ] COBOL
-⚠️
 
 ### 🔱 Info
 A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for NeoVim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX syntax highlight get from  [sublime-writing-color-scheme]( https://github.com/kmisiunas/sublime-writing-color-scheme).
@@ -19,8 +19,8 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 ### ✨ Features
 
 + 2 styles to choose from
-    + Light ![screen](/media/light.png)
-    + Dark ![screen](/media/dark.png)
+    + Light
+    + Dark
 
 + Supported plugins:
     + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
@@ -81,7 +81,7 @@ colorscheme newpaper
 -- Lua:
 require('newpaper').set()
 ```
-### Lualine theme
+### [Lualine](https://github.com/hoob3rt/lualine.nvim) theme
 
 To enable the `newpaper` theme for `Lualine`, simply specify it in your lualine settings:
 
