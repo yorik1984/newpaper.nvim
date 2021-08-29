@@ -123,7 +123,7 @@ Available options:
 | Option             | Default    | Description                                                  |
 | -------------------| ---------- | ------------------------------------------------------------ |
 | style              | `'light'`  | The theme comes in two styles:`'dark'`, `'light'` |
-| editor_better_view | `true`     | Make some interface like menu, title of editor, statusline and plugins menu bold and italic |
+| editor_better_view | `true`     | Make some interface like menu, title of editor and plugins menu bold and italic |
 | contrast_sidebar   | `false`    | Make sidebars menus like nvim–tree different foreground and background |
 | sidebars           | `{}`       | Set a contrast background on sidebar-like windows. For example: `{"qf", "vista_kind", "terminal", "packer"}` |
 | contrast_float     | `true`     | Make popup menus like nvim-compe, lsp-saga have a different foreground and background |
