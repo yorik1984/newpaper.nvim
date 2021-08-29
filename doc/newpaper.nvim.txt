@@ -11,36 +11,39 @@ CONTENTS
     2. Usage .................... |newpaper.nvim-usage|
     3. Styles ................... |newpaper.nvim-styles|
     4. Configuration ............ |newpaper.nvim-configuration|
-    5. Functions ................ |newpaper.nvim-functions|
-    6. Mappings ................. |newpaper.nvim-mappings|
-
+    5. Lualine setings .......... |newpaper.nvim-lualine|
 ================================================================================
 1. Features                                             *newpaper.nvim-features*
 
-    + There are 2 styles to choose from: -light
-                                         -darker
+    + There are 2 styles to choose from:
+        - light
+        - dark
 
-    + A wide array of supprted plugiuns like: -TreeSitter
-                                              -LSP Diagnostics
-                                              -LSP Saga
-                                              -LSP Trouble
-                                              -Nvim-Compe
-                                              -Git Gutter
-                                              -Git Messenger
-                                              -Git Signs
-                                              -Telescope.nvim
-                                              -Nvim-Tree.lua
-                                              -NERDTree
-                                              -Indent-Blankline.nvim
-                                              -Vim-Which-Key
-                                              -WhichKey.nvim
-                                              -Dashboard
-                                              -BufferLine
-                                              -Lualine
-                                              -Neogit
-                                              -Vim-Sneak
-                                              -Nvim-Dap
-                                              -Vim-Illuminate
+    + A wide array of supprted plugiuns like:
+        - TreeSitter
+        - LSP Diagnostics
+        - LSP Saga
+        - LSP Trouble
+        - Nvim-Compe
+        - Git Gutter
+        - Git Messenger
+        - Git Signs
+        - Telescope.nvim
+        - Nvim-Tree.lua
+        - NERDTree
+        - Indent-Blankline.nvim
+        - Vim-Which-Key
+        - WhichKey.nvim
+        - Dashboard
+        - BufferLine
+        - Lualine
+        - Neogit
+        - Vim-Sneak
+        - Nvim-Dap
+        - Vim-Illuminate
+        - packer.nvim
+        - vimtex
+        - glyph-palette.vim
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.
@@ -56,23 +59,23 @@ CONTENTS
     To use the default settings, just apply the theme
 
     If you are using Vim-Script:
+>
         colorscheme newpaper
-
+<
     If you are using Lua:
-        require('newpaper').set
-
-
+>
+        require('newpaper').setup()
+<
     newpaper.nvim also includes a Lualine theme. Set it in your Lualine config
-        require('lualine').setup {
-          options = {
-            -- ... your lualine config
-            theme = 'newpaper'
-            -- ... your lualine config
-          }
-        }
-    Just make sure to set the theme to "newpaper.nvim", as "newpaper" already
-    exist built in to lualine
-
+>
+        require('lualine').setup ({
+            options = {
+                -- ... your lualine config
+                theme = 'newpaper'
+                -- ... your lualine config
+            }
+        })
+<
 ================================================================================
 3. Styles                                                 *newpaper.nvim-styles*
 
@@ -91,10 +94,13 @@ CONTENTS
     For example:
 
         Vim-Script:
-            let g:newpaper_style = "light"
+>
+            let g:newpaper_style = 'dark'
+<
         Lua:
-            vim.g.newpaper_style = "dark"
-
+>
+            vim.g.newpaper_style = 'dark'
+<
     Just make sure to set the style before applying the colorscheme
 
 ================================================================================
@@ -110,101 +116,189 @@ init.vim/init.lua before applying the colorscheme
 
 Options:
 
-    + newpaper_style {string} (default = "light")
-        This sets the style of the the theme, and can be initialized with one
-        of these five values: -light
-                              -dark
+    + style              {string} (default = `'light'`)
+        The theme comes in two styles:`'dark'`, `'light'`
 
-    + newpaper_contrast_float {bool}  (default = false)
-          Make floating windows like which-key have a different background
+    + editor_better_view {booleans} (default = true)
+        Make some interface like menu, title of editor, statusline and plugins
+        menu bold and italic
 
-    + newpaper_contrast_sidebar {bool}  (default = false)
-          Make floating windows like nvim-tree have a different background
+    + contrast_sidebar   {booleans} (default = false)
+        Make sidebars menus like nvim–tree different foreground and background 
 
-    + newpaper_italic_comments  {bool}  (default = false)
-          Make comments italic
+    + sidebars           {table} (default = {})
+        Set a contrast background on sidebar-like windows.
+        For example: `{"qf", "vista_kind", "terminal", "packer"}`
 
-    + newpaper_italic_strings  {bool}  (default = false)
-          Make strings italic
+    + contrast_float     {booleans} (default = true)
+        Make popup menus like nvim-compe, lsp-saga have a different
+        foreground and background
 
-    + newpaper_italic_keywords  {bool}  (default = false)
-          Make keywords like if,for,while etc. italic
+    + contrast_telescope {booleans} (default = true)
+        Make Telescope have a different foreground and background 
 
-    + newpaper_bold_keywords  {bool}  (default = false)
-          Make keywords like if,for,while etc. bold
+    + operators_bold     {booleans} (default = true)
+        Make booleans, escape characters, operators, delimiter like =,<>/* bold 
 
-    + newpaper_italic_functions  {bool}  (default = false)
-          Make functions calls and names italic
+    + keywords           {string} (default = `'bold'`)
+        Make keywords like if, for, while etc. bold, italic or NONE.
+        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
 
-    + newpaper_italic_variables  {bool}  (default = false)
-          Make variable names and identifiers italic
+    + tags               {string} (default = `'bold'`)
+        Make HTML tagg bold, italic or NONE.
+        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
 
-    + newpaper_borders  {bool}  (default = false)
-          Enable the border between verticaly split windows
+    + tex_major          {string} (default = `'bold'`)
+        Make only major tex word like\documentclass, \section, ... bold,
+        italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` 'NONE'
 
-    + newpaper_disable_background  {bool}  (default = false)
-          Set this to true if you want to prevent newpaper.nvim from setting a
-          background color, so that NeoVim can use you terminal background
-          color
+    + tex_operators_bold {booleans} (default = true)
+        Make tex operators bold 
 
-    + newpaper_disable_terminal  {bool}  (default = false)
-          Disable the setting of terminal colors
+    + tex_keywords       {string} (default = 'NONE')
+        Make  other tex keywords bold, italic or NONE.
+        Value: `'bold'`,`'italic'`, 'bold,italic' 'NONE'
 
-    + newpaper_hide_eob  {bool}  (default = false)
-          Hide the end of buffer lines ()
+    + tex_zone           {string} (default = `'italic'`)
+        Make some tex ...Zone...  bold, italic or NONE.
+        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
 
-    + newpaper_variable_color  {string}  (default = "#2B2B2B")
-          Set a custom color for variables and fields
+    + tex_arg            {string} (default = `'italic'`)
+        Make some tex  ...Arg... bold, italic or NONE.
+        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
 
-    + newpaper_custom_colors  {table}  (default = {})
-          Use this to override any color that the theme has set. Just pass in
-          colors like this:
-          vim.g.newpaper_custom_colors = {fg = "#000000", bg = "#FFFFFF"}
+    + italic_strings     {booleans} (default = true)
+        Make strings italic 
+
+    + italic_comments    {booleans} (default = true)
+        Make comments italic 
+
+    + italic_functions   {booleans} (default = false)
+        Make function calls and names italic
+
+    + italic_variables   {booleans} (default = false)
+        Make variable names and identifiers italic
+
+    + borders            {booleans} (default = true)
+        Enable the border between vertically split windows visible 
+
+    + disable_background {booleans} (default = false)
+        Disable the setting of background color so that NeoVim can use
+        yours terminal background
+
+    + lsp_virtual_text_bg{booleans} (default = true)
+        Enable background color for LSP virtual text
+
+    + hide_eob           {booleans} (default = false)
+        Hide the end of buffer lines (~)
+
+    + colors             {table} (default = {})
+        Override the default colors and use your own.
+        Also owerride lualine colors if have same name for more good view.
+        vim.g.newpaper_colors   = { black = "#000000", bg = "#0F111A" }
+
+    + lualine_bold       {booleans} (default = true)
+        When true, section headers in the lualine theme will be bold 
+
+    + lualine_style      {string} (default = `'light'`)
+        Set different style from main theme:`'dark'`, `'light'`
 
 
-Example config in Lua:
-
-    -- Colorscheme settings
-    vim.g.newpaper_style = 'light'
-    vim.g.newpaper_italic_comments = true
-    vim.g.newpaper_italic_keywords = true
-    vim.g.newpaper_italic_functions = true
-
-    -- Apply the colorscheme
-    require('newpaper').set()
-
+Default settings:
+>
+    require('newpaper').setup({
+        style               = 'light'`,
+        editor_better_view  = true,
+        contrast_sidebar    = false,
+        sidebars            = {},
+        contrast_float      = true,
+        contrast_telescope  = true,
+        operators_bold      = true,
+        keywords            = 'bold',
+        tags                = 'bold',
+        tex_major           = 'bold',
+        tex_operators_bold  = true,
+        tex_keywords        = 'NONE',
+        tex_zone            = 'italic',
+        tex_arg             = 'italic',
+        italic_strings      = true,
+        italic_comments     = true,
+        italic_functions    = false,
+        italic_variables    = false,
+        borders             = true,
+        disable_background  = false,
+        lsp_virtual_text_bg = true,
+        hide_eob            = false,
+        colors              = {},
+        lualine_bold        = true,
+        lualine_style       = 'light'
+    })
+<
+Example config in init.lua:
+>
+    vim.g.newpaper_style    = 'dark'
+    vim.g.newpaper_keywords = 'italic'
+    vim.g.newpaper_borders  = false
+    vim.g.newpaper_colors   = { black = "#000000", bg = "#0F111A" }
+    require('newpaper').setup()
+<
+Or better init.lua:
+>
+    require('newpaper').setup({
+        style    = 'dark',
+        keywords = 'italic',
+        borders  = false,
+        colors   = { black = "#000000", bg = "#0F111A" }
+    })
+<
+Example config in init.vim:
+>
+    lua << EOF 
+        require('newpaper').setup({
+            style    = 'dark',
+            keywords = 'italic',
+            borders  = false,
+            colors   = { black = "#000000", bg = "#0F111A" }
+        })
+    EOF
+<
 ================================================================================
-5. Functions                                           *newpaper.nvim-functions*
+5. Lualine settings                                      *newpaper.nvim-lualine*
 
-newpaper.nvim has built in fuctions that you can call or bind to a key
 
-    + Toggle trough styles without the need to restart NeoVim
-          Just call the funciton and it will switch to the next style:
-          :lua require('newpaper.functions').toggle_style()
+To enable the newpaper theme for Lualine, simply specify it in your lualine settings:
 
-    + Switch to a specific style
-          Call the function for switching and pass in the name of the style
-          that you want to switch to:
-          :lua require('newpaper.functions').change_style('light')
+in init.lua:
+>
+    require('lualine').setup {
+        options = {
+            -- ... your lualine config
+            theme = 'newpaper'
+            -- ... your lualine config
+        }
+    }
+<
+    Lualine style automatically using style from main theme
 
-    + Toggle the end of buffer lines
-          Call this function if you want to toggle the visibility of the lines
-          at the end of the buffer:
-          :lua require('newpaper.functions').toggle_eob()
 
-================================================================================
-6. Mappings                                             *newpaper.nvim-mappings*
+NOTE You can temporally use just only lualine theme with any others colorscheme.
+It also depend from vim.o.background
 
-You can mapp the built-in functions to keys
-This will allow you to change the style and toggle the end-of-buffer lines
-at keypress
+init.lua:
+>
+    -- Set bold style
+    vim.g.newpaper_lualine_bold = true
+    -- If want to enable style like in main colorscheme no need to set style
+    -- of lualine
+    vim.g.newpaper_lualine_style = `'light'`
+    -- Also you can predefine colors
+    vim.g.newpaper_colors        = {teal = '#008080'}
 
-Example:
+    -- disable main theme
+    -- require('newpaper').setup()
 
-nnoremap <leader>mm :lua require('newpaper.functions').toggle_style()<CR>
-nnoremap <leader>me :lua require('newpaper.functions').toggle_eob()<CR>
-nnoremap <leader>md :luarequire('newpaper.functions').change_style('dark')<CR>
-nnoremap <leader>ml :luarequire('newpaper.functions').change_style('light')<CR>
-
+    -- enable other colorscheme
+    -- ...
+<
 ================================================================================
 vim:tw=78:ts=4:ft=help:norl:

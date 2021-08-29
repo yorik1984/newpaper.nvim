@@ -1,154 +1,280 @@
-local newpaper = {}
-if vim.g.newpaper_style == 'light' then
+local util         = require("newpaper.util")
+local configModule = require("newpaper.config")
 
-    -- base 16 color palette
-    newpaper.black          = '#2B2B2B' -- color00
-    newpaper.maroon         = '#AF0001' -- color01
-    newpaper.darkgreen      = '#008700' -- color02
-    newpaper.olive          = '#5F8700' -- color03
-    newpaper.navy           = '#0030AB' -- color04
-    newpaper.purple         = '#8700AF' -- color05
-    newpaper.teal           = '#005F87' -- color06
-    newpaper.silver         = '#E4E4E4' -- color07
-    newpaper.gray           = '#585858' -- color08
-    newpaper.red            = '#DF0000' -- color09
-    newpaper.green          = '#50A14F' -- color10
-    newpaper.yellow         = '#E9B96E' -- color11
-    newpaper.blue           = '#0087AF' -- color12
-    newpaper.magenta        = '#D7005F' -- color13
-    newpaper.aqua           = '#AFD7FF' -- color14
-    newpaper.white          = '#F1F3F2' -- color15
-    newpaper.none           = 'NONE'
+local M = {}
 
-    -- Other colors
-    newpaper.orange         = '#D75F00'
-    newpaper.darkorange     = '#AF5F00'
-    newpaper.darkyellow     = '#b99751'
-    newpaper.pink           = '#FFEEFF'
-    newpaper.lightgray      = '#878787'
-    newpaper.lightlightgray = '#D0D0D0'
-    newpaper.lightsilver    = '#EEEEEE'
-    newpaper.darkgray       = '#444444'
-    newpaper.blueviolet     = '#AF87D7'
+function M.setup(config)
+    config = config or configModule.config
 
-    -- Git and diff
-    newpaper.git_bg         = '#EBEAE2'
-    newpaper.git_fg         = '#413932'
-    newpaper.git_added      = '#28A745'
-    newpaper.git_modified   = '#DBAB09'
-    newpaper.git_removed    = '#D73A49'
-    newpaper.diffadd_bg     = '#AFFFAF'
-    newpaper.diffdelete_bg  = '#FFD7FF'
-    newpaper.difftext_bg    = '#FFFFD7'
-    newpaper.diffchange_bg  = '#FFD787'
+    -- LuaFormatter off
 
-    -- Spell
-    newpaper.spellbad       = '#FFAFD7'
-    newpaper.spellcap       = '#FFFFAF'
-    newpaper.spellrare      = '#AFFF87'
-    newpaper.spelllocal     = '#D7D7FF'
+    local newpaper = {
+        black           = '#2B2B2B', -- color00
+        maroon          = '#AF0000', -- color01
+        darkgreen       = '#008700', -- color02
+        olive           = '#5F8700', -- color03
+        navy            = '#003399', -- color04
+        purple          = '#8700AF', -- color05
+        teal            = '#005F87', -- color06
+        silver          = '#E4E4E4', -- color07
+        gray            = '#585858', -- color08
+        red             = '#DF0000', -- color09
+        green           = '#50A14F', -- color10
+        yellow          = '#FFFF00', -- color11
+        blue            = '#0087AF', -- color12
+        magenta         = '#D7005F', -- color13
+        aqua            = '#AFD7FF', -- color14
+        white           = '#F1F3F2', -- color15
+        none            = 'NONE',
+
+            -- Other colors
+        lightorange     = '#E9B96E',
+        orange          = '#D75F00',
+        darkorange      = '#AF5F00',
+        darkyellow      = '#A68748',
+        pink            = '#FFEEFF',
+        darkgray        = '#444444',
+        lightgray       = '#878787',
+        lightlightgray  = '#C0C0C0',
+        lightsilver     = '#EEEEEE',
+        blueviolet      = '#AF87D7',
+        lightblue       = '#0072C1',
+
+        -- Git and diff
+        git_bg          = '#EBEAE2',
+        git_fg          = '#413932',
+        git_added       = '#28A745',
+        git_modified    = '#DBAB09',
+        git_removed     = '#D73A49',
+        diffadd_bg      = '#AFFFAF',
+        diffdelete_bg   = '#FFD7FF',
+        difftext_bg     = '#FFFFD7',
+        diffchange_bg   = '#FFD787',
+
+        -- Spell
+        spellbad        = '#FFAFD7',
+        spellcap        = '#FFFFAF',
+        spellrare       = '#AFFF87',
+        spelllocal      = '#D7D7FF',
+
+        -- Error message
+        error_fg        = '#D75F66',
+        warn_fg         = '#D37300',
+        info_fg         = '#3466d5',
+        hint_fg         = '#0EA674',
+        lsp_error_bg    = '#FDF0F0',
+        warn_bg         = '#FDF5EC',
+        info_bg         = '#EBF0FD',
+        hint_bg         = '#E7F8F2',
+
+        -- TeX
+        tex_maroon      = '#B42A1D',
+        tex_green       = '#638919',
+        tex_olive       = '#998F2F',
+        tex_navy        = '#2248D8',
+        tex_red         = '#EC3533',
+        tex_blue        = '#0089B3',
+        tex_magenta     = '#F9005A',
+        tex_aqua        = '#2DB7E5',
+        tex_orange      = '#EB8000',
+        tex_darkorange  = '#CF7000',
+
+        tex_lightpurple = '#684D99',
+        tex_lightviolet = '#BC93BC',
+        tex_pink        = '#EF6A72',
+        tex_lightgreen  = '#00AF5F',
+
+        tex_math        = '#008000',
+        tex_keywords    = '#7F2DC2',
+        tex_verb        = '#3A3A3A',
+
+        tex_group_error      = '#EBF2FF',
+        tex_minipage_error   = '#FBE5CC',
+        tex_math_error       = '#CCE5CC',
+        tex_math_delim_error = '#E0DBEA',
+        tex_parbox_opt_error = '#F0D4D1',
+        tex_only_math_error  = '#EAE8D5',
+
+    }
+
+    if config.style == 'light' then
+
+        -- Default fg and bg
+        newpaper.fg     = newpaper.black
+        newpaper.bg     = newpaper.white
+
+    elseif config.style == 'dark' then
+
+        newpaper.black           = '#2B2B2B' -- color00
+        newpaper.maroon          = '#CC5555' -- color01
+        newpaper.darkgreen       = '#5FAF5F' -- color02
+        newpaper.olive           = '#A4A400' -- color03
+        newpaper.navy            = '#8195E7' -- color04
+        newpaper.purple          = '#AF87D7' -- color05
+        newpaper.teal            = '#7E9F9F' -- color06
+        newpaper.silver          = '#3A3A3A' -- color07
+        newpaper.gray            = '#808080' -- color08
+        newpaper.red             = '#FF3333' -- color09
+        newpaper.green           = '#00875F' -- color10
+        newpaper.yellow          = '#AFD700' -- color11
+        newpaper.blue            = '#5FAFD7' -- color12
+        newpaper.magenta         = '#D75FAF' -- color13
+        newpaper.aqua            = '#5C6370' -- color14
+        newpaper.white           = '#F1F3F2' -- color15
+        newpaper.none            = 'NONE'
+
+        -- Other colors
+        newpaper.lightorange     = '#413932'
+        newpaper.orange          = '#FF8700'
+        newpaper.darkorange      = '#AF5F00'
+        newpaper.darkyellow      = '#D7AF5F'
+        newpaper.pink            = '#5F0000'
+        newpaper.darkgray        = '#BCBCBC'
+        newpaper.lightgray       = '#787878'
+        newpaper.lightlightgray  = '#4E4E4E'
+        newpaper.lightsilver     = '#303030'
+        newpaper.blueviolet      = '#5F005F'
+        newpaper.lightblue       = '#8BC5ED'
+
+        -- Git and diff
+        newpaper.git_fg          = '#EBEAE2'
+        newpaper.git_bg          = '#303030'
+        newpaper.git_added       = '#28A745'
+        newpaper.git_modified    = '#DBAB09'
+        newpaper.git_removed     = '#D73A49'
+        newpaper.diffadd_bg      = '#005F00'
+        newpaper.diffdelete_bg   = '#5F0000'
+        newpaper.difftext_bg     = '#008787'
+        newpaper.diffchange_bg   = '#005F5F'
+
+        -- Spell
+        newpaper.spellbad        = '#5F0000'
+        newpaper.spellcap        = '#5F005F'
+        newpaper.spellrare       = '#005F00'
+        newpaper.spelllocal      = '#00005F'
+
+        -- Error message
+        newpaper.error_fg        = '#DB4B4B'
+        newpaper.warn_fg         = '#E0AF68'
+        newpaper.info_fg         = '#0DB9D7'
+        newpaper.hint_fg         = '#10B981'
+        newpaper.lsp_error_bg    = '#362C3D'
+        newpaper.warn_bg         = '#373640'
+        newpaper.info_bg         = '#22374B'
+        newpaper.hint_bg         = '#233745'
+
+        -- TeX
+        newpaper.tex_maroon      = '#C9655C'
+        newpaper.tex_green       = '#5FAF00'
+        newpaper.tex_olive       = '#BCB677'
+        newpaper.tex_navy        = '#738AE5'
+        newpaper.tex_red         = '#EF5D5B'
+        newpaper.tex_blue        = '#5FC9EE'
+        newpaper.tex_magenta     = '#FF5FAF'
+        newpaper.tex_aqua        = '#00FFFF'
+        newpaper.tex_orange      = '#FF8700'
+        newpaper.tex_darkorange  = '#E5871A'
+
+        newpaper.tex_lightpurple = '#A494C1'
+        newpaper.tex_lightviolet = '#D0B2D0'
+        newpaper.tex_pink        = '#EF6A72'
+        newpaper.tex_lightgreen  = '#00E1A4'
+
+        newpaper.tex_math        = '#5FAF5F'
+        newpaper.tex_keyword     = '#AF87D7'
+        newpaper.tex_verb        = '#BCBCBC'
+
+        newpaper.tex_group_error      = '#39404C'
+        newpaper.tex_minipage_error   = '#310012'
+        newpaper.tex_math_error       = '#003300'
+        newpaper.tex_math_delim_error = '#34264C'
+        newpaper.tex_parbox_opt_error = '#462600'
+        newpaper.tex_only_math_error  = '#3D3912'
+
+        -- Default fg and bg
+        newpaper.fg              = newpaper.white
+        newpaper.bg              = newpaper.black
+
+    end
+
+    -- Optional colors
+    newpaper.keyword             = newpaper.purple
+    newpaper.cursor              = newpaper.black
+    newpaper.selection           = newpaper.blue
+    newpaper.string              = newpaper.lightblue
+    newpaper.accent              = newpaper.blue
+    newpaper.comment             = newpaper.lightgray
+    newpaper.link                = newpaper.navy
+    newpaper.tag                 = newpaper.navy
+    newpaper.highlight           = newpaper.silver
+    newpaper.disabled            = newpaper.lightlightgray
+    newpaper.contrast            = newpaper.lightlightgray
+    newpaper.active              = newpaper.silver
+    newpaper.border              = newpaper.purple
+    newpaper.text                = newpaper.darkgray
+    newpaper.title               = newpaper.fg
+
+    -- Editor
+    newpaper.folded_fg           = newpaper.blue
+    newpaper.folded_bg           = newpaper.aqua
+    newpaper.wildmenu_bg         = newpaper.yellow
+    newpaper.wildmenu_fg         = newpaper.darkgray
+    newpaper.cursor_nr_fg        = newpaper.darkorange
+    newpaper.cursor_nr_bg        = newpaper.lightsilver
+    newpaper.linenumber_fg       = newpaper.comments
+    newpaper.linenumber_bg       = newpaper.lightsilver
+    newpaper.msgarea_fg          = newpaper.fg
+    newpaper.msgarea_bg          = newpaper.bg
+
+    -- Search
+    newpaper.search_fg           = newpaper.black
+    newpaper.search_bg           = newpaper.yellow
 
     -- Error message
-    newpaper.error_fg       = "#db4b4b"
-    newpaper.warn_fg        = "#e0af68"
-    newpaper.info_fg        = "#0db9d7"
-    newpaper.hint_fg        = "#10B981"
+    newpaper.error_bg            = newpaper.pink
 
-elseif vim.g.newpaper_style == 'dark' then
-    --TODO: add dark theme
-end
+    -- Tabline
+    newpaper.tabline_bg          = newpaper.teal
+    newpaper.tabline_active_fg   = newpaper.darkgray
+    newpaper.tabline_active_bg   = newpaper.white
+    newpaper.tabline_inactive_fg = newpaper.white
+    newpaper.tabline_inactive_bg = newpaper.blue
 
--- Optional colors
+    -- Sidebar and float windows
+    newpaper.sidebar_fg          = newpaper.fg
+    newpaper.sidebar_bg          = newpaper.bg
+    newpaper.float_fg            = newpaper.fg
+    newpaper.float_bg            = newpaper.bg
+    newpaper.telescope_fg        = newpaper.fg
+    newpaper.telescope_bg        = newpaper.bg
+    newpaper.sidebar_fg_alt      = newpaper.fg
+    newpaper.sidebar_bg_alt      = newpaper.silver
+    newpaper.float_fg_alt        = newpaper.fg
+    newpaper.float_bg_alt        = newpaper.silver
+    newpaper.telescope_fg_alt    = newpaper.fg
+    newpaper.telescope_bg_alt    = newpaper.silver
 
-newpaper.fg                     = newpaper.black
-newpaper.bg                     = newpaper.white
-newpaper.keywords               = newpaper.purple
-newpaper.cursor                 = newpaper.black
-newpaper.selection              = newpaper.blue
-newpaper.string                 = newpaper.blue
-newpaper.accent                 = newpaper.blue
-newpaper.comments               = newpaper.lightgray
-newpaper.link                   = newpaper.navy
-newpaper.tags                   = newpaper.navy
-newpaper.highlight              = newpaper.silver
-newpaper.disabled               = newpaper.lightlightgray
-newpaper.contrast               = newpaper.lightlightgray
-newpaper.active                 = newpaper.silver
-newpaper.border                 = newpaper.purple
-newpaper.text                   = newpaper.darkgray
-newpaper.title                  = newpaper.fg
+    -- LuaFormatter on
 
-newpaper.folded_fg              = newpaper.blue
-newpaper.folded_bg              = newpaper.aqua
-newpaper.wildmenu_fg            = newpaper.darkgray
-
--- Editor
-newpaper.wildmenu_bg            = newpaper.yellow
-newpaper.cursor_nr_fg           = newpaper.darkorange
-newpaper.cursor_nr_bg           = newpaper.lightsilver
-newpaper.linenumber_fg          = newpaper.comments
-newpaper.linenumber_bg          = newpaper.lightsilver
-
--- Error message
-newpaper.error_bg               = newpaper.pink
-
--- Tabline
-newpaper.tabline_bg             = newpaper.teal
-newpaper.tabline_active_fg      = newpaper.darkgray
-newpaper.tabline_active_bg      = newpaper.white
-newpaper.tabline_inactive_fg    = newpaper.white
-newpaper.tabline_inactive_bg    = newpaper.blue
-
--- Sidebar and float windows
-newpaper.sidebar_fg             = newpaper.fg
-newpaper.sidebar_bg             = newpaper.bg
-newpaper.float_fg               = newpaper.fg
-newpaper.float_bg               = newpaper.bg
-newpaper.sidebar_fg_alt         = newpaper.fg
-newpaper.sidebar_bg_alt         = newpaper.silver
-newpaper.float_fg_alt           = newpaper.fg
-newpaper.float_bg_alt           = newpaper.silver
-
-if vim.g.newpaper_contrast_float then
-    newpaper.float_fg   = newpaper.float_fg_alt
-    newpaper.float_bg   = newpaper.float_bg_alt
-end
-
-if vim.g.newpaper_contrast_sidebar then
-    newpaper.sidebar_fg = newpaper.sidebar_fg_alt
-    newpaper.sidebar_bg = newpaper.sidebar_bg_alt
-end
-
--- Enable custom variable colors
-if vim.g.newpaper_variable_color == nil then
-    newpaper.variable = newpaper.fg
-else
-    newpaper.variable = vim.g.newpaper_variable_color
-end
-
--- Apply user defined colors
-
--- Check if vim.g.newpaper_custom_colors = is a table
-if type(vim.g.newpaper_custom_colors) == "table" then
-	-- Iterate trough the table
-	for key, value in pairs(vim.g.newpaper_custom_colors) do
-		-- If the key doesn't exist
-		if not newpaper[key] then
-			error("Color " .. key .. " does not exist")
-		end
-		-- If it exists and the sting starts with a "#"
-		if string.sub(value, 1, 1) == "#" then
-			-- Hex override
-			newpaper[key] = value
-		-- IF it doesn't, dont accept it
-		else
-			-- Another group
-			if not newpaper[value] then
-                  error("Color " .. value .. " does not exist")
-			end
-			newpaper[key] = newpaper[value]
-		end
+    if config.contrast_float then
+        newpaper.float_fg = newpaper.float_fg_alt
+        newpaper.float_bg = newpaper.float_bg_alt
     end
-end
 
-return newpaper
+    if config.contrast_telescope then
+        newpaper.telescope_fg = newpaper.telescope_fg_alt
+        newpaper.telescope_bg = newpaper.telescope_bg_alt
+    end
+
+    if config.contrast_sidebar then
+        newpaper.sidebar_fg = newpaper.sidebar_fg_alt
+        newpaper.sidebar_bg = newpaper.sidebar_bg_alt
+    end
+
+    util.color_overrides(newpaper, config)
+
+    return newpaper
+
+    end
+
+return M

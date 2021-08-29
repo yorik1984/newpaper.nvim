@@ -1,7 +1,6 @@
 newpaper.nvim	newpaper.nvim.txt	/*newpaper.nvim*
 newpaper.nvim-configuration	newpaper.nvim.txt	/*newpaper.nvim-configuration*
 newpaper.nvim-features	newpaper.nvim.txt	/*newpaper.nvim-features*
-newpaper.nvim-functions	newpaper.nvim.txt	/*newpaper.nvim-functions*
-newpaper.nvim-mappings	newpaper.nvim.txt	/*newpaper.nvim-mappings*
 newpaper.nvim-styles	newpaper.nvim.txt	/*newpaper.nvim-styles*
 newpaper.nvim-usage	newpaper.nvim.txt	/*newpaper.nvim-usage*
+newpaper.nvim-lualine	newpaper.nvim.txt	/*newpaper.nvim-lualine*
