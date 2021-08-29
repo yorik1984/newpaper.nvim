@@ -85,7 +85,7 @@ function M.setup(config)
         tex_lightgreen  = '#00AF5F',
 
         tex_math        = '#008000',
-        tex_keywords    = '#7F2DC2',
+        tex_keyword     = '#7F2DC2',
         tex_verb        = '#3A3A3A',
 
         tex_group_error      = '#EBF2FF',
