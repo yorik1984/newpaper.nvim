@@ -252,6 +252,8 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 -- ...
 ```
 
+⚠️More recommended configuration can be find here:
+[yorik1984/lualine-theme.nvim](https://github.com/yorik1984/lualine-theme.nvim#%EF%B8%8F-configuration)
 
 ####  📺 Screenshot
 
