@@ -1,0 +1,55 @@
+local M = {}
+
+function M.setup(config)
+    config = config or require("newpaper.config").config
+
+    local jinjaSyn  = {}
+    jinjaSyn.colors = require("newpaper.colors").setup(config)
+    jinjaSyn.style  = require("newpaper.style").setup_style(config)
+    local newpaper  = jinjaSyn.colors
+    local style     = jinjaSyn.style
+
+    -- LuaFormatter off
+
+    jinjaSyn.loadPlugins = function()
+
+        -- Language special plugins highlight groups
+
+        local plugins = {
+
+            -- Vim-Jinja2-Syntax
+
+            jinjaPunctuation  = { fg = newpaper.blueviolet },
+            jinjaAttribute    = { fg = newpaper.darkgreen },
+            jinjaFunction     = { fg = newpaper.navy, style = style.f_style },
+
+            -- jinjaTagDelim     jinjaTagBlock
+            -- jinjaVarDelim     jinjaVarBlock
+            -- jinjaCommentDelim jinjaComment
+            jinjaRawDelim     = { fg = newpaper.darkgray, style = style.o_style },
+
+            jinjaSpecial      = { fg = newpaper.darkgreen, style = style.o_style },
+            jinjaOperator     = { fg = newpaper.navy, style = style.o_style },
+            jinjaRaw          = { fg = newpaper.darkgray },
+            jinjaTagBlock     = { fg = newpaper.jinja_red },
+            jinjaVarBlock     = { fg = newpaper.jinja_red },
+            -- jinjaStatement    Statement
+            jinjaFilter       = { fg = newpaper.blue, style = style.f_style },
+            jinjaBlockName    = { fg = newpaper.teal },
+            -- jinjaVariable     Identifier
+            jinjaString       = { fg = newpaper.string, style = style.s_style },
+            jinjaNumber       = { fg = newpaper.red },
+            -- jinjaComment      Comment
+
+        }
+
+        return plugins
+        -- LuaFormatter on
+
+    end
+
+    return jinjaSyn
+
+end
+
+return M

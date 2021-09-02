@@ -3,14 +3,18 @@
 ### 🛠️ W.I.P.🚧
 
 **TODO**:
+
 - [x] Add dark style
 - [ ] Add screenshots
 - [ ] Add wide syntax highlight:
+    - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
     - [ ] Markdown
-    - [x] LaTeX with [vimtex](https://github.com/lervag/vimtex)
     - [ ] Ruby
     - [ ] COBOL
     - [ ] Python
+    - [x] jinja 
+    - [ ] HTML
+    - [ ] Lua
 
 ### ℹ️ Info
 A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for NeoVim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and markdown syntax highlight get from  [sublime-writing-color-scheme]( https://github.com/kmisiunas/sublime-writing-color-scheme).
@@ -128,7 +132,7 @@ Available options:
 | sidebars           | `{}`       | Set a contrast background on sidebar-like windows. For example: `{"qf", "vista_kind", "terminal", "packer"}` |
 | contrast_float     | `true`     | Make popup menus like nvim-compe, lsp-saga have a different foreground and background |
 | contrast_telescope | `true`     | Make Telescope have a different foreground and background |
-| operators_bold     | `true`     | Make booleans, escape characters, operators, delimiter like `=,<>/*`  bold |
+| operators_bold     | `true`     | Make booleans, escape characters, operators, `=`,  `*`, delimiter like `<>/`  bold |
 | keywords           | `'bold'`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
 | tags               | `'bold'`   | Make HTML tagg bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
 | tex_major          | `'bold'`   | Make only major tex word like`\documentclass`, `\section`, ... bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |

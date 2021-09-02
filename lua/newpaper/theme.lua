@@ -206,7 +206,7 @@ function M.setup(config)
             TSBoolean              = { fg = newpaper.darkgreen, style = style.o_style }, -- For booleans.
             TSCharacter            = { fg = newpaper.orange }, -- For characters.
             TSComment              = { fg = newpaper.comment , style = style.c_style }, -- For comment blocks.
-            TSConstructor          = { fg = newpaper.purple }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+            TSConstructor          = { fg = newpaper.blueviolet }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
             TSConstant             = { fg = newpaper.darkgreen }, -- For constants
             TSConstBuiltin         = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
             TSConstMacro           = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
@@ -491,6 +491,10 @@ function M.setup(config)
             GlyphPalette7                 = {fg = newpaper.aqua},
             GlyphPalette9                 = {fg = newpaper.magenta},
             GlyphPaletteDirectory         = {fg = newpaper.navy},
+
+            -- Devicon
+            DevIconRb                     = {fg = newpaper.ruby_red},
+            DevIconErb                    = {fg = newpaper.ruby_red},
         }
 
         -- Options:

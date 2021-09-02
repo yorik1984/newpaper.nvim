@@ -6,6 +6,9 @@ local texSyn       = require("newpaper.syntax.tex")
 local vimSyn       = require("newpaper.syntax.vim")
 local markdownSyn  = require("newpaper.syntax.markdown")
 local htmlSyn      = require("newpaper.syntax.html")
+local rubySyn      = require("newpaper.syntax.ruby")
+
+local jinjaSyn      = require("newpaper.syntax.jinja")
 
 local function setup(userConfig)
 
@@ -45,6 +48,9 @@ local function setup(userConfig)
     util.loadSyntax(vimSyn.setup(configModule.config))
     util.loadSyntax(markdownSyn.setup(configModule.config))
     util.loadSyntax(htmlSyn.setup(configModule.config))
+    util.loadSyntax(rubySyn.setup(configModule.config))
+
+    util.loadPluginSyntax(jinjaSyn.setup(configModule.config))
 
 end
 

@@ -95,6 +95,9 @@ function M.setup(config)
         tex_parbox_opt_error = '#F0D4D1',
         tex_only_math_error  = '#EAE8D5',
 
+        ruby_red        = '#CC342D',
+
+        jinja_red       = '#b80000',
     }
 
     if config.style == 'light' then
@@ -221,7 +224,7 @@ function M.setup(config)
     newpaper.wildmenu_fg         = newpaper.darkgray
     newpaper.cursor_nr_fg        = newpaper.darkorange
     newpaper.cursor_nr_bg        = newpaper.lightsilver
-    newpaper.linenumber_fg       = newpaper.comments
+    newpaper.linenumber_fg       = newpaper.comment
     newpaper.linenumber_bg       = newpaper.lightsilver
     newpaper.msgarea_fg          = newpaper.fg
     newpaper.msgarea_bg          = newpaper.bg

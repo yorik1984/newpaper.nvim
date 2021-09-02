@@ -93,6 +93,22 @@ function util.loadSyntax(synTheme)
 
 end
 
+function util.loadPluginSyntax(synTheme)
+    -- Load plugins and lsp async
+    local async
+    async = vim.loop.new_async(vim.schedule_wrap(function ()
+
+        -- imort tables for plugins
+        util.syntax(synTheme.loadPlugins())
+
+        async:close()
+
+    end))
+
+    async:send()
+
+end
+
 function util.color_overrides(colors, config)
     if type(config.colors) == "table" then
         for key, value in pairs(config.colors) do
