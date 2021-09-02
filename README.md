@@ -1,20 +1,6 @@
 # 🎨 newpaper.nvim
 
-### 🛠️ W.I.P.🚧
-
-**TODO**:
-
-- [x] Add dark style
-- [ ] Add screenshots
-- [ ] Add wide syntax highlight:
-    - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    - [ ] Markdown
-    - [ ] Ruby
-    - [ ] COBOL
-    - [ ] Python
-    - [x] jinja 
-    - [ ] HTML
-    - [ ] Lua
+###  W.I.P.🚧
 
 ### ℹ️ Info
 A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for NeoVim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and markdown syntax highlight get from  [sublime-writing-color-scheme]( https://github.com/kmisiunas/sublime-writing-color-scheme).
@@ -27,6 +13,12 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
     + Light
     + Dark
 + Lualine theme
++ Ability to change background on sidebar-like windows like Nvim-Tree, Packer, terminal etc.
++ Asynchronous highlight loading which makes the theme extremely fast
++ Added functions for live theme switching without the need to restart NeoVim
++ Special syntax highlight:
+    - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
+    -  jinja 
 
  ###  🔌 Supported plugins:
 
@@ -55,13 +47,6 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vimtex](https://github.com/lervag/vimtex)
 + [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 
-+ Ability to change background on sidebar-like windows like Nvim-Tree, Packer, terminal etc.
-
-+ Asynchronous highlight loading which makes the theme extremely fast
-
-+ Added functions for live theme switching without the need to restart NeoVim
-
-+ Special syntax highlight
 
 ### ⚡️ Requirements
 
@@ -290,3 +275,17 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [vimtex](https://github.com/lervag/vimtex)
 + [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 + [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
+
+### 🛠️ TODO:
+
+- [x] Add dark style
+- [ ] Add screenshots
+- [ ] Add wide syntax highlight:
+    - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
+    - [ ] Markdown
+    - [ ] Ruby
+    - [ ] COBOL
+    - [ ] Python
+    - [x] jinja 
+    - [ ] HTML
+    - [ ] Lua
