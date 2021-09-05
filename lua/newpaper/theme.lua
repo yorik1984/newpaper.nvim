@@ -26,7 +26,7 @@ function M.setup(config)
             Character      = { fg = newpaper.darkgreen, style = style.o_style }, -- any character constant: 'c', '\n'
             Number         = { fg = newpaper.red }, -- a number constant: 5
             Boolean        = { fg = newpaper.darkgreen, style = style.o_style }, -- a boolean constant: TRUE, false
-            Float          = { fg = newpaper.orange }, -- a floating point constant: 2.3e10
+            Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
             Function       = { fg = newpaper.navy, style = style.f_style }, -- funtion names
             Label          = { fg = newpaper.keyword }, -- case, default, etc.

@@ -18,7 +18,8 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Added functions for live theme switching without the need to restart NeoVim
 + Special syntax highlight:
     - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    -  jinja 
+    - Jinja 
+    - TOML with [vim-toml](https://github.com/cespare/vim-toml)
 
  ###  🔌 Supported plugins:
 
@@ -46,6 +47,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [packer.nvim](https://github.com/wbthomason/packer.nvim)
 + [vimtex](https://github.com/lervag/vimtex)
 + [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
++ [vim-toml](https://github.com/cespare/vim-toml)
 
 
 ### ⚡️ Requirements
@@ -286,6 +288,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] Ruby
     - [ ] COBOL
     - [ ] Python
-    - [x] jinja 
+    - [x] Jinja 
     - [ ] HTML
     - [ ] Lua
+    - [x] TOML with [vim-toml](https://github.com/cespare/vim-toml)

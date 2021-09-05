@@ -17,19 +17,19 @@ function M.setup(config)
 
         local syntax = {
 
-            markdownH1Delimiter = { fg = newpaper.darkgreen },
-            markdownH2Delimiter = { fg = newpaper.blue },
-            markdownH3Delimiter = { fg = newpaper.purple },
+            markdownH1Delimiter = { fg = newpaper.purple },
+            markdownH2Delimiter = { fg = newpaper.teal },
+            markdownH3Delimiter = { fg = newpaper.darkgreen },
             markdownH4Delimiter = { fg = newpaper.orange },
             markdownH5Delimiter = { fg = newpaper.darkyellow },
-            markdownH6Delimiter = { fg = newpaper.olive },
+            markdownH6Delimiter = { fg = newpaper.blue },
 
-            markdownH1 = { fg = newpaper.darkgreen,  style = style.k_style },
-            markdownH2 = { fg = newpaper.blue,       style = style.k_style },
-            markdownH3 = { fg = newpaper.purple,     style = style.k_style },
-            markdownH4 = { fg = newpaper.orange,     style = style.k_style },
+            markdownH1 = { fg = newpaper.purple, style = style.k_style },
+            markdownH2 = { fg = newpaper.teal, style = style.k_style },
+            markdownH3 = { fg = newpaper.darkgreen, style = style.k_style },
+            markdownH4 = { fg = newpaper.orange, style = style.k_style },
             markdownH5 = { fg = newpaper.darkyellow, style = style.k_style },
-            markdownH6 = { fg = newpaper.olive,      style = style.k_style },
+            markdownH6 = { fg = newpaper.blue, style = style.k_style },
             -- markdownHeadingRule           markdownRule
             -- markdownHeadingDelimiter      Delimiter
             -- markdownOrderedListMarker     markdownListMarker

@@ -17,13 +17,13 @@ function M.setup(config)
 
         local syntax = {
 
-            htmlLink = { fg = newpaper.link,       style = 'underline' },
-            htmlH1   = { fg = newpaper.darkgreen,  style = style.tag_style },
-            htmlH2   = { fg = newpaper.blue,       style = style.tag_style },
-            htmlH3   = { fg = newpaper.purple,     style = style.tag_style },
-            htmlH4   = { fg = newpaper.orange,     style = style.tag_style },
+            htmlLink = { fg = newpaper.link, style = 'underline' },
+            htmlH1   = { fg = newpaper.purple, style = style.tag_style },
+            htmlH2   = { fg = newpaper.teal, style = style.tag_style },
+            htmlH3   = { fg = newpaper.darkgreen, style = style.tag_style },
+            htmlH4   = { fg = newpaper.orange, style = style.tag_style },
             htmlH5   = { fg = newpaper.darkyellow, style = style.tag_style },
-            htmlH6   = { fg = newpaper.olive,      style = style.tag_style },
+            htmlH6   = { fg = newpaper.blue, style = style.tag_style },
 
 -- hi def link htmlTag                     Function
 -- hi def link htmlEndTag                  Identifier
