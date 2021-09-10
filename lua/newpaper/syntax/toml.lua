@@ -31,7 +31,7 @@ function M.setup(config)
 
             tomlTSConstBuiltin = { fg = newpaper.darkgreen, style = style.o_style },
             tomlTSTypeBuiltin  = { fg = newpaper.keyword, style = style.k_style },
-            tomlTSProperty     = { fg = newpaper.teal },
+            tomlTSProperty     = { fg = newpaper.navy },
 
         }
 
@@ -54,9 +54,9 @@ function M.setup(config)
             -- tomlFloat      Float
             -- tomlBoolean    Boolean
             -- tomlDate       Constant
-            tomlKey           = { fg = newpaper.darkgreen },
-            tomlKeyDq         = { fg = newpaper.darkgreen },
-            tomlKeySq         = { fg = newpaper.darkgreen },
+            tomlKey           = { fg = newpaper.navy },
+            tomlKeyDq         = { fg = newpaper.navy },
+            tomlKeySq         = { fg = newpaper.navy },
             tomlTable         = { fg = newpaper.keyword, style = style.k_style },
             tomlTableArray    = { fg = newpaper.blueviolet, style = style.k_style },
 

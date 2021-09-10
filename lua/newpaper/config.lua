@@ -41,19 +41,19 @@ config = {
     hide_eob            = opt("hide_eob", false),
     colors              = opt("colors", {}),
     lualine_bold        = opt("lualine_bold", true),
-    lualine_style       = opt("lualine_style", 'light'),
+    lualine_style       = opt("lualine_style", 'light')
 }
 
 local function applyConfiguration(userConfig)
-  for key, value in pairs(userConfig) do
-    if value ~= nil then
-      if config[key] ~= nil then
-        config[key] = value
-      else
-        error("yorik1984/newpaper: Option " .. key .. " does not exist") -- luacheck: ignore
-      end
+    for key, value in pairs(userConfig) do
+        if value ~= nil then
+            if config[key] ~= nil then
+                config[key] = value
+            else
+                error("yorik1984/newpaper: Option " .. key .. " does not exist") -- luacheck: ignore
+            end
+        end
     end
-  end
 end
 
-return {config = config, vimConfig = vimConfig, applyConfiguration = applyConfiguration}
+return {config = config, applyConfiguration = applyConfiguration}

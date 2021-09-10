@@ -88,7 +88,7 @@ function M.setup(config)
             Substitute       = { fg = newpaper.search_fg, bg = newpaper.yellow }, -- |:substitute| replacement text highlighting
             LineNr           = { fg = newpaper.linenumber_fg, bg = newpaper.linenumber_bg },-- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
             CursorLineNr     = { fg = newpaper.cursor_nr_fg, bg = newpaper.cursor_nr_bg }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-            MatchParen        = { bg = newpaper.aqua, style = style.b_bold }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+            MatchParen       = { bg = newpaper.aqua, style = style.b_bold }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
             ModeMsg          = { fg = newpaper.accent, style = style.b_bold }, -- 'showmode' message (e.g., "-- INSERT -- ")
             MsgArea          = { fg = newpaper.msgarea_fg, bg = newpaper.msgarea_bg }, -- Area for messages and cmdline
             MoreMsg          = { fg = newpaper.accent }, -- |more-prompt|
@@ -206,7 +206,7 @@ function M.setup(config)
             TSBoolean              = { fg = newpaper.darkgreen, style = style.o_style }, -- For booleans.
             TSCharacter            = { fg = newpaper.orange }, -- For characters.
             TSComment              = { fg = newpaper.comment , style = style.c_style }, -- For comment blocks.
-            TSConstructor          = { fg = newpaper.blueviolet }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+            TSConstructor          = { fg = newpaper.blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
             TSConstant             = { fg = newpaper.darkgreen }, -- For constants
             TSConstBuiltin         = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
             TSConstMacro           = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
