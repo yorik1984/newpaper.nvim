@@ -7,6 +7,10 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
+![vim-ruby_light_code rb-preview](https://user-images.githubusercontent.com/1559192/133488005-a8cb2e16-96b0-4354-91a2-72912b695a69.png)
+
+[More screenshots](#screenshots)
+
 ### 🌟 Features
 
 + 2 styles to choose from:
@@ -18,6 +22,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Added functions for live theme switching without the need to restart NeoVim
 + Special syntax highlight:
     - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
+    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby)
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - TOML with [vim-toml](https://github.com/cespare/vim-toml)
 
@@ -26,7 +31,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
 + [Lsp Saga](https://github.com/glepnir/lspsaga.nvim)
-+ [Nvim-Compe](https://github.com/hrsh7th/nvim-compe)
++ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) and [nvim-compe](https://github.com/hrsh7th/nvim-compe)
 + [Trouble](https://github.com/folke/trouble.nvim)
 + [Git Gutter](https://github.com/airblade/vim-gitgutter)
 + [git-messenger](https://github.com/rhysd/git-messenger.vim)
@@ -49,6 +54,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 + [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
 + [vim-toml](https://github.com/cespare/vim-toml)
++ [vim-ruby](https://github.com/vim-ruby/vim-ruby)
 
 
 ### ⚡️ Requirements
@@ -118,7 +124,7 @@ Available options:
 | editor_better_view | `true`     | Make some interface like menu, title of editor and plugins menu bold and italic |
 | contrast_sidebar   | `false`    | Make sidebars menus like nvim–tree different foreground and background |
 | sidebars           | `{}`       | Set a contrast background on sidebar-like windows. For example: `{"qf", "vista_kind", "terminal", "packer"}` |
-| contrast_float     | `true`     | Make popup menus like nvim-compe, lsp-saga have a different foreground and background |
+| contrast_float     | `true`     | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope | `true`     | Make Telescope have a different foreground and background |
 | operators_bold     | `true`     | Make booleans, escape characters, operators, `=`,  `*`, delimiter like `<>/`  bold |
 | keywords           | `'bold'`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
@@ -203,11 +209,31 @@ lua << EOF
     })
 EOF
 ```
-#### 📺 Screenshot theme
+### 📺 Screenshots
 
 #### 🖼️ light
 
+##### RUBY
+
+**vim-ruby**. [HTML](preview/ruby/vim-ruby_light_code.rb.html) verison of hightlighting
+
+![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/133484130-336d5d1c-8d92-4048-aea7-f77a36ec765c.png)
+
+**Treesitter**. [HTML](preview/rubytreesitter_light_code.rb.html) verison of hightlighting
+
+![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133484822-ef11206d-1139-4a4e-bbc1-5584cbd9c0de.png)
+
 #### 🖼️ dark
+
+##### RUBY
+
+**vim-ruby**. [HTML](preview/ruby/vim-ruby_dark_code.rb.html) verison of hightlighting
+
+![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/133485494-a979d5bf-79d3-4a80-8e6d-b2395033e049.png)
+
+**Treesitter**. [HTML](preview/rubytreesitter_dark_code.rb.html) verison of hightlighting
+
+![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133485609-23928187-338f-49cb-80d6-eca1cac5210d.png)
 
 ### 🎨 [Lualine](https://github.com/hoob3rt/lualine.nvim) theme
 
@@ -247,7 +273,7 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 ⚠️More recommended configuration can be find here:
 [yorik1984/lualine-theme.nvim](https://github.com/yorik1984/lualine-theme.nvim#%EF%B8%8F-configuration)
 
-####  📺 Screenshot
+####  📺 Screenshots lualine
 
 #### 🖼️ light
 
@@ -282,11 +308,12 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 ### 🛠️ TODO:
 
 - [x] Add dark style
-- [ ] Add screenshots
+- [x] Add screenshots:
+    - [x] Ruby 
 - [ ] Add wide syntax highlight:
     - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
     - [ ] Markdown
-    - [ ] Ruby
+    - [x] Ruby
     - [ ] COBOL
     - [ ] Python
     - [x] Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)

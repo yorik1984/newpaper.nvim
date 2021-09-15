@@ -15,7 +15,7 @@ function M.setup_style(config)
         s_style       = "NONE", -- strings style
         v_style       = "NONE", -- variables style
         f_style       = "NONE", -- functions style
-        comment_title = "NONE", -- tittle comments in VimL
+        comment_title = "NONE", -- magic and tittle comments in VimL, Ruby and others
 
         -- Make HTML tags bold or italic
         tag_style     = config.tags,

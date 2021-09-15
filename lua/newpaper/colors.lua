@@ -39,6 +39,8 @@ function M.setup(config)
         lightsilver     = '#EEEEEE',
         blueviolet      = '#AF87D7',
         lightblue       = '#0072C1',
+        ocean           = '#25817D',
+        nephritis       = '#00A86B',
 
         -- Git and diff
         git_bg          = '#EBEAE2',
@@ -60,7 +62,7 @@ function M.setup(config)
         -- Error message
         error_fg        = '#D75F66',
         warn_fg         = '#D37300',
-        info_fg         = '#3466d5',
+        info_fg         = '#005FAF',
         hint_fg         = '#0EA674',
         lsp_error_bg    = '#FDF0F0',
         warn_bg         = '#FDF5EC',
@@ -68,21 +70,21 @@ function M.setup(config)
         hint_bg         = '#E7F8F2',
 
         -- TeX
-        tex_maroon      = '#B42A1D',
-        tex_green       = '#638919',
-        tex_olive       = '#998F2F',
-        tex_navy        = '#2248D8',
-        tex_red         = '#EC3533',
-        tex_blue        = '#0089B3',
-        tex_magenta     = '#F9005A',
-        tex_aqua        = '#2DB7E5',
-        tex_orange      = '#EB8000',
-        tex_darkorange  = '#CF7000',
+        tex_maroon      = '#A2251A',
+        tex_green       = '#597B16',
+        tex_olive       = '#89802A',
+        tex_navy        = '#1E40C2',
+        tex_red         = '#D42F2D',
+        tex_blue        = '#007BA1',
+        tex_magenta     = '#E00051',
+        tex_aqua        = '#28A4CE',
+        tex_orange      = '#DB6F19',
+        tex_darkorange  = '#A75A00',
 
         tex_lightpurple = '#684D99',
         tex_lightviolet = '#BC93BC',
-        tex_pink        = '#EF6A72',
-        tex_lightgreen  = '#00AF5F',
+        tex_pink        = '#D75F66',
+        tex_lightgreen  = '#009D55',
 
         tex_math        = '#008000',
         tex_keyword     = '#7F2DC2',
@@ -95,8 +97,17 @@ function M.setup(config)
         tex_parbox_opt_error = '#F0D4D1',
         tex_only_math_error  = '#EAE8D5',
 
+        -- Ruby
+        ruby_maroon     = '#880000',
+        ruby_navy       = '#3251C5',
+        ruby_purple     = '#8959A8',
         ruby_red        = '#CC342D',
+        ruby_darkorange = '#d23c08',
+        ruby_green      = '#00AF2F',
+        ruby_blue       = '#3A72ED',
+        ruby_magenta    = '#AF0080',
 
+        -- Jinja
         jinja_red       = '#b80000',
     }
 
@@ -114,7 +125,7 @@ function M.setup(config)
         newpaper.olive           = '#A4A400' -- color03
         newpaper.navy            = '#8195E7' -- color04
         newpaper.purple          = '#AF87D7' -- color05
-        newpaper.teal            = '#7E9F9F' -- color06
+        newpaper.teal            = '#5F8787' -- color06
         newpaper.silver          = '#3A3A3A' -- color07
         newpaper.gray            = '#808080' -- color08
         newpaper.red             = '#FF3333' -- color09
@@ -138,6 +149,8 @@ function M.setup(config)
         newpaper.lightsilver     = '#303030'
         newpaper.blueviolet      = '#5F005F'
         newpaper.lightblue       = '#8BC5ED'
+        newpaper.ocean           = '#92C0BE'
+        newpaper.nephritis       = '#66CAA6'
 
         -- Git and diff
         newpaper.git_fg          = '#EBEAE2'
@@ -194,9 +207,22 @@ function M.setup(config)
         newpaper.tex_parbox_opt_error = '#462600'
         newpaper.tex_only_math_error  = '#3D3912'
 
+        -- Ruby
+        newpaper.ruby_maroon     = '#BE7575'
+        newpaper.ruby_navy       = '#6A82D9'
+        newpaper.ruby_purple     = '#8959A8'
+        newpaper.ruby_red        = '#C2534D'
+        newpaper.ruby_green      = '#94D780'
+        newpaper.ruby_blue       = '#00AFAF'
+        newpaper.ruby_magenta    = '#B34495'
+
+        -- Jinja
+        newpaper.jinja_red       = '#D05858'
+
         -- Default fg and bg
         newpaper.fg              = newpaper.white
         newpaper.bg              = newpaper.black
+
 
     end
 
@@ -209,6 +235,7 @@ function M.setup(config)
     newpaper.comment             = newpaper.lightgray
     newpaper.link                = newpaper.navy
     newpaper.tag                 = newpaper.navy
+    newpaper.boolean             = newpaper.nephritis
     newpaper.highlight           = newpaper.silver
     newpaper.disabled            = newpaper.lightlightgray
     newpaper.contrast            = newpaper.lightlightgray
@@ -216,6 +243,7 @@ function M.setup(config)
     newpaper.border              = newpaper.purple
     newpaper.text                = newpaper.darkgray
     newpaper.title               = newpaper.fg
+    newpaper.variable            = newpaper.fg
 
     -- Editor
     newpaper.folded_fg           = newpaper.blue

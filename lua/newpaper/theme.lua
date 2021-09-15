@@ -16,7 +16,7 @@ function M.setup(config)
         -- Syntax highlight groups
 
         local syntax = {
-            StorageClass   = { fg = newpaper.teal, style = style.k_style }, -- static, register, volatile, etc.
+            StorageClass   = { fg = newpaper.ocean, style = style.k_style }, -- static, register, volatile, etc.
             Structure      = { fg = newpaper.puple }, -- struct, union, enum, etc.
             Conditional    = { fg = newpaper.keyword, style = style.k_style }, -- if, then, else, endif, switch, etc.
             Keyword        = { fg = newpaper.keyword, style = style.k_style }, -- for, do, while, etc.
@@ -25,7 +25,7 @@ function M.setup(config)
             Constant       = { fg = newpaper.darkgreen }, -- any constant
             Character      = { fg = newpaper.darkgreen, style = style.o_style }, -- any character constant: 'c', '\n'
             Number         = { fg = newpaper.red }, -- a number constant: 5
-            Boolean        = { fg = newpaper.darkgreen, style = style.o_style }, -- a boolean constant: TRUE, false
+            Boolean        = { fg = newpaper.boolean, style = style.k_style }, -- a boolean constant: TRUE, false
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
             Function       = { fg = newpaper.navy, style = style.f_style }, -- funtion names
@@ -33,9 +33,9 @@ function M.setup(config)
             Operator       = { fg = newpaper.navy, style = style.o_style }, -- sizeof", "+", "*", etc.
             Exception      = { fg = newpaper.maroon }, -- try, catch, throw
             PreProc        = { fg = newpaper.navy}, -- generic Preprocessor
-            Include        = { fg = newpaper.magenta }, -- preprocessor #include
+            Include        = { fg = newpaper.maroon }, -- preprocessor #include
             Identifier     = { fg = newpaper.variable, style = style.v_style }, -- any variable name
-            Define         = { fg = newpaper.maroon }, -- preprocessor #define
+            Define         = { fg = newpaper.magenta }, -- preprocessor #define
             Macro          = { fg = newpaper.magenta }, -- same as Define
             Typedef        = { fg = newpaper.maroon }, -- A typedef
             PreCondit      = { fg = newpaper.magenta }, -- preprocessor #if, #else, #endif, etc.
@@ -56,7 +56,7 @@ function M.setup(config)
             helpCommand        = { fg = newpaper.teal },
             helpExample        = { fg = newpaper.string, style = style.s_style },
             helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
-            helpURL            = { fg = newpaper.string, style = style.s_style ..',underline' },
+            helpURL            = { fg = newpaper.string, style = style.s_style ..',underline' }
 
         }
 
@@ -203,9 +203,9 @@ function M.setup(config)
             TSFuncBuiltin          = { fg = newpaper.navy, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
             TSKeywordOperator      = { fg = newpaper.navy, style = style.o_style }, -- define a operators like and, or.
             TSTag                  = { fg = newpaper.tag, style = style.tag_style }, -- HTML tag names.
-            TSBoolean              = { fg = newpaper.darkgreen, style = style.o_style }, -- For booleans.
+            TSBoolean              = { fg = newpaper.boolean, style = style.k_style }, -- For booleans.
             TSCharacter            = { fg = newpaper.orange }, -- For characters.
-            TSComment              = { fg = newpaper.comment , style = style.c_style }, -- For comment blocks.
+            TSComment              = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
             TSConstructor          = { fg = newpaper.blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
             TSConstant             = { fg = newpaper.darkgreen }, -- For constants
             TSConstBuiltin         = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
@@ -215,7 +215,7 @@ function M.setup(config)
             TSDanger               = { fg = newpaper.bg, bg = newpaper.warn_fg },
             TSError                = { fg = newpaper.error_fg, bg = newpaper.error_bg }, -- For syntax/parser errors.
             TSException            = { fg = newpaper.maroon }, -- For exception related keywords.
-            TSField                = { fg = newpaper.teal }, -- For fields.
+            TSField                = { fg = newpaper.ocean }, -- For fields.
             TSFloat                = { fg = newpaper.red }, -- For floats.
             TSFuncMacro            = { fg = newpaper.magenta }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
             TSInclude              = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
@@ -228,24 +228,24 @@ function M.setup(config)
             TSProperty             = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
             TSPunctDelimiter       = { fg = newpaper.orange }, -- For delimiters ie: `.`
             TSPunctBracket         = { fg = newpaper.navy }, -- For brackets and parens.
-            TSPunctSpecial         = { fg = newpaper.blue }, -- For special punctutation that does not fall in the catagories before.
+            TSPunctSpecial         = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
             TSStringRegex          = { fg = newpaper.olive }, -- For regexes.
-            TSStringEscape         = { fg = newpaper.darkgreen, style = style.o_style }, -- For escape characters within a string.
+            TSStringEscape         = { fg = newpaper.maroon }, -- For escape characters within a string.
             TSSymbol               = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
             TSType                 = { fg = newpaper.darkgreen }, -- For types.
             TSTypeBuiltin          = { fg = newpaper.magenta }, -- For builtin types.
             TSVariable             = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
-            TSVariableBuiltin      = { fg = newpaper.olive,     style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
+            TSVariableBuiltin      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
             TSTagDelimiter         = { fg = newpaper.navy, style = style.o_style }, -- Tag delimiter like `<` `>` `/`
             TSText                 = { fg = newpaper.fg }, -- For strings considered text in a markup language.
             TSTextReference        = { fg = newpaper.orange }, -- FIXME
             TSEmphasis             = { fg = newpaper.fg, style = 'italic' }, -- For text to be represented with emphasis.
             TSUnderline            = { fg = newpaper.fg, style = 'underline' }, -- For text to be represented with an underline.
-            TSStrike               = { fg = newpaper.fg, style = 'italic'}, -- For strikethrough text.
+            TSStrike               = { fg = newpaper.fg, style = style.b_italic}, -- For strikethrough text.
             TSString               = { fg = newpaper.string, style = style.s_style }, -- For strings.
-            TSTitle                = { fg = newpaper.title, style = 'bold' }, -- Text that is part of a title.
+            TSTitle                = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
             TSLiteral              = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
-            TSURI                  = { fg = newpaper.link, style = 'underline' }, -- Any URI like a link or email.
+            TSURI                  = { fg = newpaper.link, style = 'underline' } -- Any URI like a link or email.
 
         }
 
@@ -261,23 +261,23 @@ function M.setup(config)
             LspDiagnosticsDefaultError           = { fg = newpaper.error_fg }, -- "Error" diagnostic virtual text
             LspDiagnosticsSignError              = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg }, -- "Error" diagnostic signs in sign column
             LspDiagnosticsFloatingError          = { fg = newpaper.error_fg }, -- "Error" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineError         = {  style = 'undercurl', sp = newpaper.error_fg }, -- used to underline "Error" diagnostics.
+            LspDiagnosticsUnderlineError         = { style = 'undercurl', sp = newpaper.error_fg }, -- used to underline "Error" diagnostics.
             LspDiagnosticsDefaultWarning         = { fg = newpaper.warn_fg }, -- "Warning" diagnostic signs in sign column
             LspDiagnosticsSignWarning            = { fg = newpaper.warn_fg, bg = newpaper.linenumber_bg }, -- "Warning" diagnostic signs in sign column
             LspDiagnosticsFloatingWarning        = { fg = newpaper.warn_fg }, -- "Warning" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineWarning       = {  style = 'undercurl', sp = newpaper.warn_fg }, -- used to underline "Warning" diagnostics.
+            LspDiagnosticsUnderlineWarning       = { style = 'undercurl', sp = newpaper.warn_fg }, -- used to underline "Warning" diagnostics.
             LspDiagnosticsDefaultInformation     = { fg = newpaper.info_fg }, -- "Information" diagnostic virtual text
             LspDiagnosticsSignInformation        = { fg = newpaper.info_fg, bg = newpaper.linenumber_bg }, -- "Information" diagnostic signs in sign column
             LspDiagnosticsFloatingInformation    = { fg = newpaper.info_fg }, -- "Information" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineInformation   = {  style = 'undercurl', sp = newpaper.info_fg }, -- used to underline "Information" diagnostics.
+            LspDiagnosticsUnderlineInformation   = { style = 'undercurl', sp = newpaper.info_fg }, -- used to underline "Information" diagnostics.
             LspDiagnosticsDefaultHint            = { fg = newpaper.hint_fg  }, -- "Hint" diagnostic virtual text
             LspDiagnosticsSignHint               = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg  }, -- "Hint" diagnostic signs in sign column
             LspDiagnosticsFloatingHint           = { fg = newpaper.hint_fg  }, -- "Hint" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineHint          = {  style = 'undercurl', sp = newpaper.hint_fg }, -- used to underline  s "    Hint" diagnostics.
+            LspDiagnosticsUnderlineHint          = { style = 'undercurl', sp = newpaper.hint_fg }, -- used to underline  s "    Hint" diagnostics.
             LspCodeLens                          = { fg = newpaper.comment, bg = newpaper.lightsilver },
-            LspReferenceText                     = { fg = newpaper.accent, bg = newpaper.highlight }, -- used for highlighting "text" references
-            LspReferenceRead                     = { fg = newpaper.accent, bg = newpaper.highlight }, -- used for highlighting "read" references
-            LspReferenceWrite                    = { fg = newpaper.accent, bg = newpaper.highlight }, -- used for highlighting "write" references
+            LspReferenceText                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "text" references
+            LspReferenceRead                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "read" references
+            LspReferenceWrite                    = { fg = newpaper.accent,  bg = newpaper.highlight } -- used for highlighting "write" references
         }
 
         if config.lsp_virtual_text_bg then
@@ -318,6 +318,10 @@ function M.setup(config)
             CompeDocumentation            = { fg = newpaper.text,   bg = newpaper.float_bg },
             CompeDocumentationBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
 
+            -- Nvim-Cmp
+            CmpDocumentation              = { fg = newpaper.text,   bg = newpaper.float_bg },
+            CmpDocumentationBorder        = { fg = newpaper.border, bg = newpaper.float_bg },
+
             -- Diff
             diffAdded                     = { fg = newpaper.git_added },
             diffRemoved                   = { fg = newpaper.git_removed },
@@ -331,8 +335,8 @@ function M.setup(config)
             -- Neogit
             NeogitBranch                  = { fg = newpaper.blue },
             NeogitRemote                  = { fg = newpaper.purple },
-            NeogitHunkHeader              = { fg = newpaper.fg, bg = newpaper.highlight },
-            NeogitHunkHeaderHighlight     = { fg = newpaper.fg, bg = newpaper.contrast },
+            NeogitHunkHeader              = { fg = newpaper.fg,   bg = newpaper.highlight },
+            NeogitHunkHeaderHighlight     = { fg = newpaper.fg,   bg = newpaper.contrast },
             NeogitDiffContextHighlight    = { fg = newpaper.text, bg = newpaper.contrast },
             NeogitDiffDeleteHighlight     = { fg = newpaper.git_removed },
             NeogitDiffAddHighlight        = { fg = newpaper.git_added },
@@ -366,7 +370,7 @@ function M.setup(config)
             TelescopeMatching             = { fg = newpaper.magenta, style = style.b_bold },
 
             -- NvimTree
-            NvimTreeSymlink               = { fg = newpaper.accent , style = 'italic,underline' },
+            NvimTreeSymlink               = { fg = newpaper.accent, style = 'italic,underline' },
             NvimTreeFolderName            = { fg = newpaper.blue },
             NvimTreeFolderIcon            = { fg = newpaper.blue },
             NvimTreeEmptyFolderName       = { fg = newpaper.disabled },
@@ -385,7 +389,7 @@ function M.setup(config)
             NvimTreeExecFile              = { fg = newpaper.darkgreen },
             NvimTreeOpenedFolderName      = { fg = newpaper.accent, style = style.b_italic },
             NvimTreeRootFolder            = { fg = newpaper.title, style = style.b_italic },
-            NvimTreeSpecialFile           = { fg = newpaper.purple , style = 'underline' },
+            NvimTreeSpecialFile           = { fg = newpaper.purple, style = 'underline' },
             LspDiagnosticsError           = { fg = newpaper.error_fg },
             LspDiagnosticsWarning         = { fg = newpaper.warn_fg },
             LspDiagnosticsInformation     = { fg = newpaper.info_fg },
@@ -494,7 +498,7 @@ function M.setup(config)
 
             -- Devicon
             DevIconRb                     = {fg = newpaper.ruby_red},
-            DevIconErb                    = {fg = newpaper.ruby_red},
+            DevIconErb                    = {fg = newpaper.ruby_red}
         }
 
         -- Options:

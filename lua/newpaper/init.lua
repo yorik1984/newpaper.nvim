@@ -9,7 +9,7 @@ local htmlSyn      = require("newpaper.syntax.html")
 local rubySyn      = require("newpaper.syntax.ruby")
 local tomlSyn      = require("newpaper.syntax.toml")
 
-local jinjaSyn      = require("newpaper.syntax.jinja")
+local jinjaSyn     = require("newpaper.syntax.jinja")
 
 local function setup(userConfig)
 
