@@ -308,8 +308,25 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 ### 🛠️ TODO:
 
 - [x] Add dark style
-- [x] Add screenshots:
+
+- [ ] Add screenshots for languages:
     - [x] Ruby 
+    - [ ] Lua
+    - [ ] LaTeX
+    - [ ] HTML
+    - [ ] Markdown
+    - [ ] Python
+    - [ ] COBOL
+- [ ] Add plugins screenshots:
+    - [ ] LSP Diagnostics
+    - [ ] Lsp Saga
+    - [ ] nvim-cmp
+    - [ ] Trouble
+    - [ ] Telescope.nvim
+    - [ ] Nvim-Tree.lua
+    - [ ] WhichKey.nvim
+    - [ ] packer.nvim
+
 - [ ] Add wide syntax highlight:
     - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
     - [ ] Markdown
@@ -320,3 +337,8 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] HTML
     - [x] Lua with [vim-lua](https://github.com/tbastos/vim-lua)
     - [x] TOML with [vim-toml](https://github.com/cespare/vim-toml)
+    
+- [ ] Add plugins support:
+    - [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
+    - [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)
+    - [ ] [i3config.vim](https://github.com/mboughaba/i3config.vim)
