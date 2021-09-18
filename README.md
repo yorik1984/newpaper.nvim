@@ -212,13 +212,13 @@ EOF
 ```
 ### 📺 Screenshots
 
-##### RUBY
+####  RUBY
 
 Source code [HERE](preview/ruby/code.rb)
 
-#### 🖼️ light
+##### 🖼️ light
 
-**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) verison of hightlighting
+**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
 
 ![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/133896814-8da30619-4752-4925-8898-0247bc8f84b6.png)
 
@@ -226,7 +226,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 ![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133896791-28348464-38b6-4c36-ab91-33f513d6bdf8.png)
 
-#### 🖼️ dark
+##### 🖼️ dark
 
 **vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
 
