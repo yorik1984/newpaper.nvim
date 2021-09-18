@@ -17,7 +17,7 @@ function M.setup(config)
 
         local syntax = {
             StorageClass   = { fg = newpaper.ocean, style = style.k_style }, -- static, register, volatile, etc.
-            Structure      = { fg = newpaper.puple }, -- struct, union, enum, etc.
+            Structure      = { fg = newpaper.darkpurple, style = style.k_style }, -- struct, union, enum, etc.
             Conditional    = { fg = newpaper.keyword, style = style.k_style }, -- if, then, else, endif, switch, etc.
             Keyword        = { fg = newpaper.keyword, style = style.k_style }, -- for, do, while, etc.
             Statement      = { fg = newpaper.keyword, style = style.k_style }, -- any statement
@@ -29,7 +29,7 @@ function M.setup(config)
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
             Function       = { fg = newpaper.navy, style = style.f_style }, -- funtion names
-            Label          = { fg = newpaper.keyword }, -- case, default, etc.
+            Label          = { fg = newpaper.magenta  }, -- case, default, etc.
             Operator       = { fg = newpaper.navy, style = style.o_style }, -- sizeof", "+", "*", etc.
             Exception      = { fg = newpaper.maroon }, -- try, catch, throw
             PreProc        = { fg = newpaper.navy}, -- generic Preprocessor
@@ -196,7 +196,7 @@ function M.setup(config)
             TSConditional          = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
             TSKeyword              = { fg = newpaper.keyword, style = style.k_style }, -- For keywords that don't fall in previous categories.
             TSRepeat               = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
-            TSKeywordFunction      = { fg = newpaper.keyword, style = style.k_style }, -- keywords used to define a fuction.
+            TSKeywordFunction      = { fg = newpaper.darkpurple, style = style.k_style }, -- keywords used to define a fuction.
             TSKeywordReturn        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
             TSFunction             = { fg = newpaper.navy, style = style.f_style }, -- For fuction (calls and definitions).
             TSMethod               = { fg = newpaper.navy, style = style.f_style }, -- For method calls and definitions.
@@ -216,7 +216,7 @@ function M.setup(config)
             TSError                = { fg = newpaper.error_fg, bg = newpaper.error_bg }, -- For syntax/parser errors.
             TSException            = { fg = newpaper.maroon }, -- For exception related keywords.
             TSField                = { fg = newpaper.ocean }, -- For fields.
-            TSFloat                = { fg = newpaper.red }, -- For floats.
+            TSFloat                = { fg = newpaper.magenta }, -- For floats.
             TSFuncMacro            = { fg = newpaper.magenta }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
             TSInclude              = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
             TSLabel                = { fg = newpaper.darkgreen }, -- For labels: `label:` in C and `:label:` in Lua.

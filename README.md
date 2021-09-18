@@ -7,7 +7,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
-![vim-ruby_light_code rb-preview](https://user-images.githubusercontent.com/1559192/133488005-a8cb2e16-96b0-4354-91a2-72912b695a69.png)
+![vim-ruby_light_code rb-preview](https://user-images.githubusercontent.com/1559192/133896826-48428d04-d0c0-4bae-b65e-6b1c6e4ad75e.png)
 
 [More screenshots](#-screenshots)
 
@@ -138,6 +138,7 @@ Available options:
 | italic_comments    | `true`     | Make comments italic |
 | italic_functions   | `false`    | Make function calls and names italic |
 | italic_variables   | `false`    | Make variable names and identifiers italic |
+
 | borders            | `true`     | Enable the border between vertically split windows visible |
 | disable_background | `false`    | Disable the setting of background color so that NeoVim can use your terminal background |
 | lsp_virtual_text_bg | `true`     | Enable background color for LSP virtual text |
@@ -219,21 +220,21 @@ Source code [HERE](preview/ruby/code.rb)
 
 **vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) verison of hightlighting
 
-![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/133484130-336d5d1c-8d92-4048-aea7-f77a36ec765c.png)
+![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/133896814-8da30619-4752-4925-8898-0247bc8f84b6.png)
 
-**Treesitter**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/treesitter_light_code.rb.html) verison of hightlighting
+**Treesitter**
 
-![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133484822-ef11206d-1139-4a4e-bbc1-5584cbd9c0de.png)
+![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133896791-28348464-38b6-4c36-ab91-33f513d6bdf8.png)
 
 #### 🖼️ dark
 
 **vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
 
-![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/133485494-a979d5bf-79d3-4a80-8e6d-b2395033e049.png)
+![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/133896804-87c031a3-74d7-4fcf-ac34-d8e4af7c56c9.png)
 
-**Treesitter**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/treesitter_dark_code.rb.html) verison of hightlighting
+**Treesitter**
 
-![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133485609-23928187-338f-49cb-80d6-eca1cac5210d.png)
+![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
 
 ### 🎨 [Lualine](https://github.com/hoob3rt/lualine.nvim) theme
 

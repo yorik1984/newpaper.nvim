@@ -13,11 +13,7 @@ function M.setup(config)
 
     tex.loadSyntax = function ()
 
-        -- Syntax highlight groups
-
         local syntax = {
-
-            -- TeX
 
             -- Basic tex groups
             -- NOTE:some basic groups init in Vimtex part. See below
@@ -76,8 +72,6 @@ function M.setup(config)
 
     tex.loadTreeSitter = function ()
 
-        -- Tex treeSitter highlight syntax groups
-
         local treesitter = {
 
             -- Latex
@@ -106,8 +100,6 @@ function M.setup(config)
     end
 
     tex.loadPlugins = function()
-
-        -- Tex special plugins highlight groups
 
         local plugins = {
 

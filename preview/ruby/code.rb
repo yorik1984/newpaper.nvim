@@ -28,7 +28,7 @@ module HTMLProcessor
 
     attr_accessor :line, :offset, :text
 
-    def self.test_hightlight
+    def self.test_hightlight(option1, option2)
       # -- init.lua
       # vim.g.ruby_no_identifiers = 1 -- disable highlighting
       @rubyInstanceVariable

@@ -13,52 +13,52 @@
 pre { white-space: pre-wrap; font-family: monospace; color: #2b2b2b; background-color: #f1f3f2; }
 body { font-family: monospace; color: #2b2b2b; background-color: #f1f3f2; }
 * { font-size: 1em; }
-.rubyControl { color: #8700af; font-weight: bold; }
-.rubyDefine { color: #8700af; font-weight: bold; }
 .Number { color: #df0000; }
-.rubyModule { color: #8959a8; font-weight: bold; }
-.rubyConstant { color: #005f87; font-weight: bold; }
-.rubyGlobalVariable { color: #50a14f; font-weight: bold; }
-.rubySymbol { color: #a68748; }
-.rubyPredefinedVariable { color: #00af2f; font-weight: bold; }
-.rubyPredefinedConstant { color: #00af2f; }
-.rubyException { color: #cc342d; font-weight: bold; }
-.rubyInclude { color: #cc342d; }
-.rubyEncoding { color: #af0000; }
-.rubyMagicComment { color: #878787; font-weight: bold; font-style: italic; }
-.rubyEnglishBooleanOperator { color: #00a86b; font-weight: bold; }
-.rubyTernaryOperator { color: #8700af; font-weight: bold; }
-.rubyComparisonOperator { color: #005f87; font-weight: bold; }
-.rubyBitwiseOperator { color: #d23c08; font-weight: bold; }
 .rubyPseudoVariable { color: #af0000; }
-.rubyClass { color: #af0080; font-weight: bold; }
-.String { color: #0072c1; font-style: italic; }
-.rubyRegexpDelimiter { color: #3a72ed; font-weight: bold; }
-.rubyRegexp { color: #3a72ed; font-style: italic; }
-.Comment { color: #878787; font-style: italic; }
-.rubyPercentStringDelimiter { color: #003399; font-weight: bold; }
-.LineNr { color: #878787; background-color: #eeeeee; padding-bottom: 1px; }
-.rubyPseudoOperator { color: #d75f00; }
-.rubyBooleanOperator { color: #00a86b; font-weight: bold; }
-.rubyAssignmentOperator { color: #003399; font-weight: bold; }
-.rubyEqualityOperator { color: #d7005f; font-weight: bold; }
-.rubyOperator { color: #003399; font-weight: bold; }
-.Boolean { color: #00a86b; font-weight: bold; }
-.Float { color: #d7005f; }
-.Function { color: #003399; }
-.Conditional { color: #8700af; font-weight: bold; }
 .rubyRegexpSpecial { color: #5f8700; }
 .rubyExceptionHandler { color: #cc342d; font-weight: bold; }
 .rubyAccess { color: #880000; font-weight: bold; }
 .rubyAttribute { color: #d7005f; }
 .rubyModuleName { color: #25817d; font-weight: bold; }
 .rubyClassName { color: #3251c5; font-weight: bold; }
-.rubySymbolDelimiter { color: #a68748; font-weight: bold; }
 .rubyInterpolationDelimiter { color: #af5f00; }
 .rubyInstanceVariable { color: #008700; }
 .rubyClassVariable { color: #008700; font-weight: bold; }
+.rubyBooleanOperator { color: #00a86b; font-weight: bold; }
+.rubyControl { color: #8700af; font-weight: bold; }
+.rubyDefine { color: #8700af; font-weight: bold; }
+.rubyClass { color: #af0080; font-weight: bold; }
+.rubyModule { color: #6838cc; font-weight: bold; }
+.rubyConstant { color: #005f87; font-weight: bold; }
+.rubyGlobalVariable { color: #50a14f; font-weight: bold; }
+.rubySymbol { color: #a68748; }
+.rubyPredefinedVariable { color: #00af2f; font-weight: bold; }
+.LineNr { color: #878787; background-color: #eeeeee; padding-bottom: 1px; }
+.rubyException { color: #cc342d; font-weight: bold; }
+.rubyInclude { color: #cc342d; }
+.rubyEncoding { color: #af0000; }
+.rubyMagicComment { color: #878787; font-weight: bold; font-style: italic; }
+.rubySymbolDelimiter { color: #a68748; font-weight: bold; }
+.rubyEnglishBooleanOperator { color: #00a86b; font-weight: bold; }
+.rubyTernaryOperator { color: #8700af; font-weight: bold; }
+.rubyComparisonOperator { color: #005f87; font-weight: bold; }
+.Boolean { color: #00a86b; font-weight: bold; }
+.Float { color: #d7005f; }
+.Function { color: #003399; }
+.Conditional { color: #8700af; font-weight: bold; }
 .rubyStringEscape { color: #cc342d; }
+.String { color: #0072c1; font-style: italic; }
+.rubyPredefinedConstant { color: #00af2f; }
+.rubyRegexpDelimiter { color: #3a72ed; font-weight: bold; }
+.rubyRegexp { color: #3a72ed; font-style: italic; }
+.Comment { color: #878787; font-style: italic; }
 .rubyStringDelimiter { color: #0072c1; font-style: italic; }
+.rubyBitwiseOperator { color: #d1301a; font-weight: bold; }
+.rubyPercentStringDelimiter { color: #003399; font-weight: bold; }
+.rubyAssignmentOperator { color: #003399; font-weight: bold; }
+.rubyEqualityOperator { color: #d7005f; font-weight: bold; }
+.rubyOperator { color: #003399; font-weight: bold; }
+.rubyPseudoOperator { color: #db6f19; }
 -->
 </style>
 
@@ -123,7 +123,7 @@ if ('onhashchange' in window) {
 <span id="L28" class="LineNr">28 </span>
 <span id="L29" class="LineNr">29 </span>    <span class="rubyAttribute">attr_accessor</span> <span class="rubySymbolDelimiter">:</span><span class="rubySymbol">line</span>, <span class="rubySymbolDelimiter">:</span><span class="rubySymbol">offset</span>, <span class="rubySymbolDelimiter">:</span><span class="rubySymbol">text</span>
 <span id="L30" class="LineNr">30 </span>
-<span id="L31" class="LineNr">31 </span>    <span class="rubyDefine">def</span> <span class="rubyPseudoVariable">self</span>.<span class="Function">test_hightlight</span>
+<span id="L31" class="LineNr">31 </span>    <span class="rubyDefine">def</span> <span class="rubyPseudoVariable">self</span>.<span class="Function">test_hightlight</span>(option1, option2)
 <span id="L32" class="LineNr">32 </span>      <span class="Comment"># -- init.lua</span>
 <span id="L33" class="LineNr">33 </span>      <span class="Comment"># vim.g.ruby_no_identifiers = 1 -- disable highlighting</span>
 <span id="L34" class="LineNr">34 </span>      <span class="rubyInstanceVariable">@rubyInstanceVariable</span>

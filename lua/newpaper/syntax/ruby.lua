@@ -13,11 +13,10 @@ function M.setup(config)
 
     rubySyn.loadSyntax = function ()
 
-        -- Language syntax highlight groups
-
         local syntax = {
 
-
+            -- Basic ruby groups
+            -- NOTE: basic groups init in plugins part. See below
 
         }
 
@@ -27,11 +26,15 @@ function M.setup(config)
 
     rubySyn.loadTreeSitter = function ()
 
-        -- Language treeSitter highlight syntax groups
-
         local treesitter = {
 
-
+            rubyTSConstBuiltin    = { fg = newpaper.maroon },
+            rubyTSException       = { fg = newpaper.ruby_red, style = style.k_style },
+            rubyTSInclude         = { fg = newpaper.ruby_red },
+            rubyTSKeywordOperator = { fg = newpaper.boolean, style = style.o_style },
+            rubyTSLabel           = { fg = newpaper.darkgreen },
+            rubyTSType            = { fg = newpaper.teal, style = style.k_style },
+            rubyTSVariableBuiltin = { fg = newpaper.maroon },
 
         }
 
@@ -41,11 +44,10 @@ function M.setup(config)
 
     rubySyn.loadPlugins = function()
 
-        -- Language special plugins highlight groups
-
         local plugins = {
 
             -- vim-ruby
+            -- NOTE: groups from basic syntax include this
 
             rubyClass                      = { fg = newpaper.ruby_magenta, style = style.k_style },
             rubyModule                     = { fg = newpaper.ruby_purple, style = style.k_style },
@@ -154,7 +156,7 @@ function M.setup(config)
             plugins.rubyTernaryOperator        = { fg = newpaper.keyword, style = style.o_style }
             -- rubyArithmeticOperator            rubyOperator
             plugins.rubyComparisonOperator     = { fg = newpaper.teal, style = style.o_style }
-            plugins.rubyBitwiseOperator        = { fg = newpaper.ruby_darkorange, style = style.o_style }
+            plugins.rubyBitwiseOperator        = { fg = newpaper.redorange, style = style.o_style }
             plugins.rubyBooleanOperator        = { fg = newpaper.boolean, style = style.o_style }
             -- rubyRangeOperator                 rubyOperator
             plugins.rubyAssignmentOperator     = { fg = newpaper.navy, style = style.o_style }

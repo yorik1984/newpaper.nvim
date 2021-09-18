@@ -29,7 +29,7 @@ function M.setup(config)
 
             -- Other colors
         lightorange     = '#E9B96E',
-        orange          = '#D75F00',
+        orange          = '#DB6F19',
         darkorange      = '#AF5F00',
         darkyellow      = '#A68748',
         pink            = '#FFEEFF',
@@ -41,6 +41,8 @@ function M.setup(config)
         lightblue       = '#0072C1',
         ocean           = '#25817D',
         nephritis       = '#00A86B',
+        darkpurple      = '#5823C7',
+        redorange       = '#D1301A',
 
         -- Git and diff
         git_bg          = '#EBEAE2',
@@ -100,12 +102,14 @@ function M.setup(config)
         -- Ruby
         ruby_maroon     = '#880000',
         ruby_navy       = '#3251C5',
-        ruby_purple     = '#8959A8',
+        ruby_purple     = '#6838CC',
         ruby_red        = '#CC342D',
-        ruby_darkorange = '#d23c08',
         ruby_green      = '#00AF2F',
         ruby_blue       = '#3A72ED',
         ruby_magenta    = '#AF0080',
+
+        -- Lua
+        lua_navy        = '#030380',
 
         -- Jinja
         jinja_red       = '#b80000',
@@ -151,6 +155,8 @@ function M.setup(config)
         newpaper.lightblue       = '#8BC5ED'
         newpaper.ocean           = '#92C0BE'
         newpaper.nephritis       = '#66CAA6'
+        newpaper.darkpurple      = '#945EEF'
+        newpaper.redorange       = '#FE7967'
 
         -- Git and diff
         newpaper.git_fg          = '#EBEAE2'
@@ -197,7 +203,7 @@ function M.setup(config)
         newpaper.tex_lightgreen  = '#00E1A4'
 
         newpaper.tex_math        = '#5FAF5F'
-        newpaper.tex_keyword     = '#AF87D7'
+        newpaper.tex_keyword     = '#9D79C1'
         newpaper.tex_verb        = '#BCBCBC'
 
         newpaper.tex_group_error      = '#39404C'
@@ -216,7 +222,10 @@ function M.setup(config)
         newpaper.ruby_blue       = '#00AFAF'
         newpaper.ruby_magenta    = '#B34495'
 
-        -- Jinja
+        -- Lua
+        newpaper.lua_navy        = '#9191C7'
+
+            -- Jinja
         newpaper.jinja_red       = '#D05858'
 
         -- Default fg and bg
