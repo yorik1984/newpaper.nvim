@@ -25,6 +25,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
     - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby)
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - TOML with [vim-toml](https://github.com/cespare/vim-toml)
+    - Lua with [vim-lua](https://github.com/tbastos/vim-lua)
 
  ###  🔌 Supported plugins:
 
@@ -55,7 +56,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
 + [vim-toml](https://github.com/cespare/vim-toml)
 + [vim-ruby](https://github.com/vim-ruby/vim-ruby)
-
++ [vim-lua](https://github.com/tbastos/vim-lua)
 
 ### ⚡️ Requirements
 
@@ -138,7 +139,6 @@ Available options:
 | italic_comments    | `true`     | Make comments italic |
 | italic_functions   | `false`    | Make function calls and names italic |
 | italic_variables   | `false`    | Make variable names and identifiers italic |
-
 | borders            | `true`     | Enable the border between vertically split windows visible |
 | disable_background | `false`    | Disable the setting of background color so that NeoVim can use your terminal background |
 | lsp_virtual_text_bg | `true`     | Enable background color for LSP virtual text |
@@ -196,8 +196,6 @@ require('newpaper').setup({
     colors   = { black = "#000000", bg = "#0F111A" }
 })
 ```
-
-
 
 ```vim
 " init.vim
@@ -320,5 +318,5 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] Python
     - [x] Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - [ ] HTML
-    - [ ] Lua
+    - [x] Lua with [vim-lua](https://github.com/tbastos/vim-lua)
     - [x] TOML with [vim-toml](https://github.com/cespare/vim-toml)
