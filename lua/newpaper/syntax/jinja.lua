@@ -13,8 +13,6 @@ function M.setup(config)
 
     jinjaSyn.loadPlugins = function()
 
-        -- Language special plugins highlight groups
-
         local plugins = {
 
             -- Vim-Jinja2-Syntax

@@ -47,8 +47,8 @@ function M.setup(config)
 
             -- Plugin vim-toml
 
-            tomlEscape        = { fg = newpaper.darkgreen, style = style.o_style },
-            tomlLineEscape    = { fg = newpaper.darkgreen, style = style.o_style },
+            tomlEscape        = { fg = newpaper.maroon },
+            tomlLineEscape    = { fg = newpaper.maroon, style = style.o_style },
             -- tomlString     String
             -- tomlInteger    Number
             -- tomlFloat      Float
@@ -59,7 +59,7 @@ function M.setup(config)
             tomlKeySq         = { fg = newpaper.navy },
             tomlTable         = { fg = newpaper.keyword, style = style.k_style },
             tomlTableArray    = { fg = newpaper.blueviolet, style = style.k_style },
-
+            tomlDotInKey      = { fg = newpaper.orange },
             -- tomlTodo       Todo
             -- tomlComment    Comment
 

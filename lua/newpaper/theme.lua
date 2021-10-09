@@ -321,6 +321,12 @@ function M.setup(config)
             -- Nvim-Cmp
             CmpDocumentation              = { fg = newpaper.text,   bg = newpaper.float_bg },
             CmpDocumentationBorder        = { fg = newpaper.border, bg = newpaper.float_bg },
+            CmpItemAbbr                   = { fg = newpaper.darkgray }, -- abbr field
+            CmpItemAbbrDeprecated         = { fg = newpaper.lightgray }, -- deprecated item's abbr field
+            CmpItemAbbrMatch              = { fg = newpaper.navy, style = style.b_bold }, -- matched characters highlight
+            CmpItemAbbrMatchFuzzy         = { fg = newpaper.magenta, style = style.b_bold }, -- fuzzy matched characters highlight
+            CmpItemKind                   = { fg = newpaper.lightblue  }, -- kind field
+            CmpItemMenu                   = { fg = newpaper.darkgray }, -- menu field
 
             -- Diff
             diffAdded                     = { fg = newpaper.git_added },
@@ -343,7 +349,7 @@ function M.setup(config)
 
             -- GitGutter
             GitGutterAdd                  = { fg = newpaper.git_added,    bg = newpaper.git_bg }, -- diff mode: Added line |diff.txt|
-            GitGutterChange               = { fg = newpaper.git_modified, bg = newpaper.git_bg  }, -- diff mode: Changed line |diff.txt|
+            GitGutterChange               = { fg = newpaper.git_modified, bg = newpaper.git_bg }, -- diff mode: Changed line |diff.txt|
             GitGutterDelete               = { fg = newpaper.git_removed,  bg = newpaper.git_bg }, -- diff mode: Deleted line |diff.txt|
 
             -- GitSigns
@@ -453,9 +459,6 @@ function M.setup(config)
             -- Sneak
             Sneak                         = { fg = newpaper.bg, bg = newpaper.accent },
             SneakScope                    = { bg = newpaper.selection },
-
-            -- Indent Blankline
-            IndentBlanklineChar           = { fg = newpaper.highlight },
 
             -- Nvim dap
             DapBreakpoint                 = { fg = newpaper.red },
