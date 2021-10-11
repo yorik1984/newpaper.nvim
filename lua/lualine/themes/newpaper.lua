@@ -49,9 +49,9 @@ newpaper.command = {
     z = { fg = colors.bg,         bg = colors.darkorange }
 }
 newpaper.inactive = {
-    a = { fg = colors.gray,       bg = colors.silver },
-    b = { fg = colors.gray,       bg = colors.silver },
-    c = { fg = colors.gray,       bg = colors.silver }
+    a = { fg = colors.lightgray,  bg = colors.silver },
+    b = { fg = colors.lightgray,  bg = colors.silver },
+    c = { fg = colors.lightgray,  bg = colors.silver }
 }
 -- LuaFormatter on
 

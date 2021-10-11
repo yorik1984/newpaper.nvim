@@ -44,7 +44,6 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-which-key](https://github.com/liuchengxu/vim-which-key)
 + [WhichKey.nvim](https://github.com/folke/which-key.nvim)
 + [Dashboard](https://github.com/glepnir/dashboard-nvim)
-+ [BufferLine](https://github.com/akinsho/nvim-bufferline.lua)
 + [Lualine](https://github.com/hoob3rt/lualine.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [vim-sneak](https://github.com/justinmk/vim-sneak)

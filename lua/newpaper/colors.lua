@@ -274,11 +274,11 @@ function M.setup(config)
     newpaper.error_bg            = newpaper.pink
 
     -- Tabline
-    newpaper.tabline_bg          = newpaper.teal
-    newpaper.tabline_active_fg   = newpaper.darkgray
-    newpaper.tabline_active_bg   = newpaper.white
-    newpaper.tabline_inactive_fg = newpaper.white
-    newpaper.tabline_inactive_bg = newpaper.blue
+    newpaper.tabline_bg          = newpaper.lightlightgray
+    newpaper.tabline_active_fg   = newpaper.fg
+    newpaper.tabline_active_bg   = newpaper.bg
+    newpaper.tabline_inactive_fg = newpaper.lightgray
+    newpaper.tabline_inactive_bg = newpaper.silver
 
     -- Sidebar and float windows
     newpaper.sidebar_fg          = newpaper.fg

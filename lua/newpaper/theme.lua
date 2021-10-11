@@ -108,13 +108,13 @@ function M.setup(config)
             SpellCap         = { bg = newpaper.spellcap, style = 'undercurl' }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
             SpellLocal       = { bg = newpaper.spelllocal, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
             SpellRare        = { bg = newpaper.spellrare, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-            StatusLine       = { fg = newpaper.accent, bg = newpaper.active }, -- status line of current window
-            StatusLineNC     = { fg = newpaper.fg, bg = newpaper.bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-            StatusLineTerm   = { fg = newpaper.fg, bg = newpaper.active }, -- status line of current terminal window
-            StatusLineTermNC = { fg = newpaper.text, bg = newpaper.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+            StatusLine       = { fg = newpaper.teal, bg = newpaper.silver }, -- status line of current window
+            StatusLineNC     = { fg = newpaper.lightgray, bg = newpaper.silver }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+            StatusLineTerm   = { fg = newpaper.fg, bg = newpaper.silver }, -- status line of current terminal window
+            StatusLineTermNC = { fg = newpaper.lightgray, bg = newpaper.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg  },
-            TabLineFill      = { fg = newpaper.tabline_bg }, -- tab pages line, where there are no labels
-            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg }, -- tab pages line, active tab page label
+            TabLineFill      = { bg = newpaper.tabline_bg }, -- tab pages line, where there are no labels
+            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold ..',italic' }, -- tab pages line, active tab page label
             Title            = { fg = newpaper.keyword, style = style.b_bold }, -- titles for output from ":set all", ":autocmd" etc.
             ToolbarButton    = { fg = newpaper.fg, style = style.b_bold },
             Visual           = { fg = newpaper.bg, bg = newpaper.selection }, -- Visual mode selection
@@ -451,10 +451,6 @@ function M.setup(config)
             LspSagaLspFinderBorder        = { fg = newpaper.blue, bg = newpaper.float_bg },
             LspSagaAutoPreview            = { bg = newpaper.orange },
             DefinitionPreviewTitle        = { fg = newpaper.darkgreen },
-
-            -- BufferLine
-            BufferLineIndicatorSelected   = { fg = newpaper.olive },
-            BufferLineFill                = { bg = newpaper.bg },
 
             -- Sneak
             Sneak                         = { fg = newpaper.bg, bg = newpaper.accent },
