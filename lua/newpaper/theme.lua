@@ -277,7 +277,20 @@ function M.setup(config)
             LspCodeLens                          = { fg = newpaper.comment, bg = newpaper.lightsilver },
             LspReferenceText                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "text" references
             LspReferenceRead                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "read" references
-            LspReferenceWrite                    = { fg = newpaper.accent,  bg = newpaper.highlight } -- used for highlighting "write" references
+            LspReferenceWrite                    = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "write" references
+
+            DiagnosticUnderlineError             = { link = "LspDiagnosticsUnderlineError" },
+            DiagnosticFloatingError              = { link = "LspDiagnosticsFloatingError" },
+            DiagnosticSignError                  = { link = "LspDiagnosticsSignError" },
+            DiagnosticUnderlineWarn              = { link = "LspDiagnosticsUnderlineWarning" },
+            DiagnosticFloatingWarn               = { link = "LspDiagnosticsFloatingWarning" },
+            DiagnosticSignWarn                   = { link = "LspDiagnosticsSignWarning" },
+            DiagnosticUnderlineInfo              = { link = "LspDiagnosticsUnderlineInformation" },
+            DiagnosticFloatingInfo               = { link = "LspDiagnosticsFloatingInformation" },
+            DiagnosticSignInfo                   = { link = "LspDiagnosticsSignInformation" },
+            DiagnosticUnderlineHint              = { link = "LspDiagnosticsUnderlineHint" },
+            DiagnosticFloatingHint               = { link = "LspDiagnosticsFloatingHint" },
+            DiagnosticSignHint                   = { link = "LspDiagnosticsSignHint" }
         }
 
         if config.lsp_virtual_text_bg then
@@ -291,6 +304,10 @@ function M.setup(config)
             lsp.LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg }  -- Virtual text "Information"
             lsp.LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg }  -- Virtual text "Hint"
         end
+            lsp.DiagnosticVirtualTextError           = { link = "LspDiagnosticsVirtualTextError" }
+            lsp.DiagnosticVirtualTextWarn            = { link = "LspDiagnosticsVirtualTextWarning" }
+            lsp.DiagnosticVirtualTextInfo            = { link = "LspDiagnosticsVirtualTextInformation" }
+            lsp.DiagnosticVirtualTextHint            = { link = "LspDiagnosticsVirtualTextHint" }
 
         return lsp
 
@@ -477,7 +494,7 @@ function M.setup(config)
             DashboardShortCut             = { fg = newpaper.red },
             DashboardHeader               = { fg = newpaper.comment },
             DashboardCenter               = { fg = newpaper.accent },
-            DashboardFooter               = { fg = newpaper.green,    style = style.b_italic },
+            DashboardFooter               = { fg = newpaper.green, style = style.b_italic },
 
             -- Packer
             packerHash                    = { fg = newpaper.tag },
@@ -486,18 +503,27 @@ function M.setup(config)
             packerStatusCommit            = { fg = newpaper.git_modified },
 
             -- Glyph palette
-            GlyphPalette1                 = {fg = newpaper.red},
-            GlyphPalette2                 = {fg = newpaper.green},
-            GlyphPalette3                 = {fg = newpaper.darkorange},
-            GlyphPalette4                 = {fg = newpaper.blue},
-            GlyphPalette6                 = {fg = newpaper.teal},
-            GlyphPalette7                 = {fg = newpaper.aqua},
-            GlyphPalette9                 = {fg = newpaper.magenta},
-            GlyphPaletteDirectory         = {fg = newpaper.navy},
+            GlyphPalette1                 = { fg = newpaper.red },
+            GlyphPalette2                 = { fg = newpaper.green },
+            GlyphPalette3                 = { fg = newpaper.darkorange },
+            GlyphPalette4                 = { fg = newpaper.blue },
+            GlyphPalette6                 = { fg = newpaper.teal },
+            GlyphPalette7                 = { fg = newpaper.aqua },
+            GlyphPalette9                 = { fg = newpaper.magenta },
+            GlyphPaletteDirectory         = { fg = newpaper.navy },
+
+            -- LanguageTool
+            LanguageToolCmd               = { fg = newpaper.comment },
+            LanguageToolErrorCount        = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
+            LanguageToolLabel             = { fg = newpaper.darkgreen },
+            LanguageToolUrl               = { fg = newpaper.link, style = 'underline' },
+            LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = 'undercurl' },
+            LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = 'undercurl' },
 
             -- Devicon
-            DevIconRb                     = {fg = newpaper.ruby_red},
-            DevIconErb                    = {fg = newpaper.ruby_red}
+            DevIconRb                     = { fg = newpaper.ruby_red },
+            DevIconErb                    = { fg = newpaper.ruby_red },
+
         }
 
         -- Options:
