@@ -35,6 +35,7 @@ function M.setup(config)
             rubyTSLabel           = { fg = newpaper.darkgreen },
             rubyTSType            = { fg = newpaper.teal, style = style.k_style },
             rubyTSVariableBuiltin = { fg = newpaper.maroon },
+            rubyTSError           = { style = 'undercurl' },
 
         }
 
