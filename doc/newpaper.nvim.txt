@@ -44,6 +44,11 @@ CONTENTS
         - packer.nvim
         - vimtex
         - glyph-palette.vim
+        - Vim-Jinja2-Syntax
+        - vim-toml
+        - vim-ruby
+        - vim-lua
+        - vim-LanguageTool
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.
@@ -70,8 +75,6 @@ CONTENTS
 >
         require('lualine').setup ({
             options = {
-                -- ... your lualine config
-                theme = 'newpaper'
                 -- ... your lualine config
             }
         })
@@ -142,7 +145,7 @@ Options:
 
     + keywords           {string} (default = `'bold'`)
         Make keywords like if, for, while etc. bold, italic or NONE.
-        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
+        Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
 
     + tags               {string} (default = `'bold'`)
         Make HTML tagg bold, italic or NONE.
@@ -150,22 +153,22 @@ Options:
 
     + tex_major          {string} (default = `'bold'`)
         Make only major tex word like\documentclass, \section, ... bold,
-        italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` 'NONE'
+        italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
 
     + tex_operators_bold {booleans} (default = true)
         Make tex operators bold 
 
-    + tex_keywords       {string} (default = 'NONE')
+    + tex_keywords       {string} (default = `'NONE'`)
         Make  other tex keywords bold, italic or NONE.
-        Value: `'bold'`,`'italic'`, 'bold,italic' 'NONE'
+        Value: `'bold'`,`'italic'`, `'bold,italic'`, `'NONE'`
 
     + tex_zone           {string} (default = `'italic'`)
         Make some tex ...Zone...  bold, italic or NONE.
-        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
+        Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
 
     + tex_arg            {string} (default = `'italic'`)
         Make some tex  ...Arg... bold, italic or NONE.
-        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
+        Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
 
     + italic_strings     {booleans} (default = true)
         Make strings italic 
@@ -195,7 +198,10 @@ Options:
     + colors             {table} (default = {})
         Override the default colors and use your own.
         Also owerride lualine colors if have same name for more good view.
+>
         vim.g.newpaper_colors   = { black = "#000000", bg = "#0F111A" }
+<
+
 
     + lualine_bold       {booleans} (default = true)
         When true, section headers in the lualine theme will be bold 
@@ -207,7 +213,7 @@ Options:
 Default settings:
 >
     require('newpaper').setup({
-        style               = 'light'`,
+        style               = 'light',
         editor_better_view  = true,
         contrast_sidebar    = false,
         sidebars            = {},
@@ -273,12 +279,10 @@ in init.lua:
     require('lualine').setup {
         options = {
             -- ... your lualine config
-            theme = 'newpaper'
-            -- ... your lualine config
         }
     }
 <
-    Lualine style automatically using style from main theme
+    Lualine theme name and style automatically using from main theme
 
 
 NOTE You can temporally use just only lualine theme with any others colorscheme.
