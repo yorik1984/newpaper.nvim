@@ -3,7 +3,7 @@
 ###  W.I.P.🚧
 
 ### ℹ️ Info
-A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for NeoVim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and markdown syntax highlight get from  [sublime-writing-color-scheme]( https://github.com/kmisiunas/sublime-writing-color-scheme).
+A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for NeoVim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and Markdown syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
@@ -44,7 +44,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-which-key](https://github.com/liuchengxu/vim-which-key)
 + [WhichKey.nvim](https://github.com/folke/which-key.nvim)
 + [Dashboard](https://github.com/glepnir/dashboard-nvim)
-+ [Lualine](https://github.com/hoob3rt/lualine.nvim)
++ [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [vim-sneak](https://github.com/justinmk/vim-sneak)
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
@@ -56,6 +56,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-toml](https://github.com/cespare/vim-toml)
 + [vim-ruby](https://github.com/vim-ruby/vim-ruby)
 + [vim-lua](https://github.com/tbastos/vim-lua)
++ [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
 
 ### ⚡️ Requirements
 
@@ -126,14 +127,14 @@ Available options:
 | sidebars           | `{}`       | Set a contrast background on sidebar-like windows. For example: `{"qf", "vista_kind", "terminal", "packer"}` |
 | contrast_float     | `true`     | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope | `true`     | Make Telescope have a different foreground and background |
-| operators_bold     | `true`     | Make booleans, escape characters, operators, `=`,  `*`, delimiter like `<>/`  bold |
+| operators_bold     | `true`     | Make booleans, escape characters, operators, `=`, `*`, delimiter like `<>/` bold |
 | keywords           | `'bold'`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
 | tags               | `'bold'`   | Make HTML tagg bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
 | tex_major          | `'bold'`   | Make only major tex word like`\documentclass`, `\section`, ... bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
 | tex_operators_bold | `'true'`   | Make tex operators bold |
-| tex_keywords       | `'NONE'`   | Make  other tex keywords bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
-| tex_zone           | `'italic'` | Make some tex `...Zone...`  bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
-| tex_arg            | `'italic'` | Make some tex  `...Arg...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
+| tex_keywords       | `'NONE'`   | Make other tex keywords bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
+| tex_zone           | `'italic'` | Make some tex `...Zone...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
+| tex_arg            | `'italic'` | Make some tex `...Arg...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
 | italic_strings     | `true`     | Make strings italic |
 | italic_comments    | `true`     | Make comments italic |
 | italic_functions   | `false`    | Make function calls and names italic |
@@ -142,7 +143,7 @@ Available options:
 | disable_background | `false`    | Disable the setting of background color so that NeoVim can use your terminal background |
 | lsp_virtual_text_bg | `true`     | Enable background color for LSP virtual text |
 | hide_eob           | `false`    | Hide the end of buffer lines (`~`) |
-| colors             | `{}`       | Override the default colors and use your own. Also owerride lualine colors if have same name for more good view |
+| colors             | `{}`       | Override the default colors and use your own. Also owerride lualine colors if you have same name for more good view |
 | lualine_bold       | `true`     | When true, section headers in the lualine theme will be bold |
 | lualine_style      | `'light'`  | Set different style from main theme:`'dark'`, `'light'` |
 
@@ -233,7 +234,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 ![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
 
-### 🎨 [Lualine](https://github.com/hoob3rt/lualine.nvim) theme
+### 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
 
 To enable the `newpaper` theme for `Lualine`, simply specify it in your lualine settings:
 
@@ -241,22 +242,20 @@ To enable the `newpaper` theme for `Lualine`, simply specify it in your lualine 
 require('lualine').setup {
     options = {
         -- ... your lualine config
-        theme = 'newpaper'
-        -- ... your lualine config
     }
 }
 ```
 
-Lualine style automatically using style from main theme
+Lualine theme name and style automatically using from main theme
 
 #### ⚙️ Hint
 
-You can temporally use just only lualine theme with any others colorschemes. It also depend from `vim.o.background` 
+You can temporally use just only lualine theme with any others colorschemes. It also depends on `vim.o.background` 
 
 ```lua
 -- Set bold style
 vim.g.newpaper_lualine_bold = true
--- If want to enable style like in main colorscheme no need to set style of lualine
+-- If you want to enable style like in main colorscheme no need to set style of lualine
 vim.g.newpaper_lualine_style = 'light'
 -- Also you can predefine colors
 vim.g.newpaper_colors        = {teal = '#008080'}
@@ -268,7 +267,7 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 -- ...
 ```
 
-⚠️More recommended configuration can be find here:
+⚠️More recommended configuration can be found here:
 [yorik1984/lualine-theme.nvim](https://github.com/yorik1984/lualine-theme.nvim#%EF%B8%8F-configuration)
 
 ####  📺 Screenshots lualine
@@ -297,7 +296,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 ###  Credits
 
 + [onedark.nvim](https://github.com/ful1e5/onedark.nvim) ⚡
-+ [sublime-writing-color-scheme]( https://github.com/kmisiunas/sublime-writing-color-scheme)
++ [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme)
 + [material.nvim](https://github.com/marko-cerovac/material.nvim)
 + [vimtex](https://github.com/lervag/vimtex)
 + [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
