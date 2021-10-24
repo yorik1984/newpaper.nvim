@@ -237,7 +237,7 @@ function M.setup(config)
 
     -- Optional colors
     newpaper.keyword             = newpaper.purple
-    newpaper.cursor              = newpaper.black
+    newpaper.cursor              = newpaper.fg
     newpaper.selection           = newpaper.blue
     newpaper.string              = newpaper.lightblue
     newpaper.accent              = newpaper.blue
@@ -267,7 +267,7 @@ function M.setup(config)
     newpaper.msgarea_bg          = newpaper.bg
 
     -- Search
-    newpaper.search_fg           = newpaper.black
+    newpaper.search_fg           = newpaper.fg
     newpaper.search_bg           = newpaper.yellow
 
     -- Error message
