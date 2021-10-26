@@ -209,43 +209,8 @@ lua << EOF
     })
 EOF
 ```
-## 📺  Screenshots
 
-### Language
-
-+ ####  RUBY
-
-Source code [HERE](preview/ruby/code.rb)
-
-##### 🖼️ light
-
-**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
-
-![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/133896814-8da30619-4752-4925-8898-0247bc8f84b6.png)
-
-**Treesitter**
-
-![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133896791-28348464-38b6-4c36-ab91-33f513d6bdf8.png)
-
-##### 🖼️ dark
-
-**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
-
-![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/133896804-87c031a3-74d7-4fcf-ac34-d8e4af7c56c9.png)
-
-**Treesitter**
-
-![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
-
-### Plugins
-
-+ #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
-![todo-comments_light](https://user-images.githubusercontent.com/1559192/138787871-e43dd890-ccd2-4f45-a1ec-e5fba1a88307.png)
-
-![todo-comments_dark](https://user-images.githubusercontent.com/1559192/138788355-0b665e30-23b6-4aa8-bf76-4e73de08da5f.png)
-
-
-### 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
+## 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
 
 To enable the `newpaper` theme for `Lualine`, simply specify it in your lualine settings:
 
@@ -302,9 +267,46 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 ![newpaper-dark-replace](https://user-images.githubusercontent.com/1559192/129481091-a196dcfc-4c4d-4ccb-8069-f9f3443ab36e.png)
 ![newpaper-dark-command](https://user-images.githubusercontent.com/1559192/129481093-40a09545-327c-4101-9727-fd3234509c78.png)
 
+## 📺  Screenshots
+
+### Languages:
+
++ ####  RUBY
+
+Source code [HERE](preview/ruby/code.rb)
+
+##### 🖼️ light
+
+**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
+
+![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/133896814-8da30619-4752-4925-8898-0247bc8f84b6.png)
+
+**Treesitter**
+
+![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133896791-28348464-38b6-4c36-ab91-33f513d6bdf8.png)
+
+##### 🖼️ dark
+
+**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
+
+![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/133896804-87c031a3-74d7-4fcf-ac34-d8e4af7c56c9.png)
+
+**Treesitter**
+
+![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
+
+### Plugins:
+
++ #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+![todo-comments_light](https://user-images.githubusercontent.com/1559192/138787871-e43dd890-ccd2-4f45-a1ec-e5fba1a88307.png)
+
+![todo-comments_dark](https://user-images.githubusercontent.com/1559192/138788355-0b665e30-23b6-4aa8-bf76-4e73de08da5f.png)
+
+## FAQ
+
 For a complete guide on usage and Configuration of the theme, see `:help newpaper.nvim`.
 
-###  Credits
+##  Credits
 
 + [onedark.nvim](https://github.com/ful1e5/onedark.nvim) ⚡
 + [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme)
@@ -314,7 +316,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
 + HTML version of hightlighting generatated by [JMcKiern/vim-shoot](https://github.com/JMcKiern/vim-shoot)
 
-### 🛠️ TODO:
+## 🛠️ TODO:
 
 - [x] Add dark style
 
@@ -335,7 +337,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] Nvim-Tree.lua
     - [ ] WhichKey.nvim
     - [ ] packer.nvim
-    - [x] todo-comments
+    - [x] todo-comments.nvim
     
 - [ ] Add wide syntax highlight:
     - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
