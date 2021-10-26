@@ -9,7 +9,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ![vim-ruby_light_code rb-preview](https://user-images.githubusercontent.com/1559192/133896826-48428d04-d0c0-4bae-b65e-6b1c6e4ad75e.png)
 
-[More screenshots](#-screenshots)
+[More screenshots](#--screenshots)
 
 ### 🌟 Features
 
@@ -22,7 +22,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Added functions for live theme switching without the need to restart NeoVim
 + Special syntax highlight:
     - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [screenshots](#-RUBY)
+    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [screenshots](#RUBY)
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - TOML with [vim-toml](https://github.com/cespare/vim-toml)
     - Lua with [vim-lua](https://github.com/tbastos/vim-lua)
@@ -44,7 +44,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-which-key](https://github.com/liuchengxu/vim-which-key)
 + [WhichKey.nvim](https://github.com/folke/which-key.nvim)
 + [Dashboard](https://github.com/glepnir/dashboard-nvim)
-+ [Lualine](https://github.com/nvim-lualine/lualine.nvim) - [screenshots](#Screenshots lualine)
++ [Lualine](https://github.com/nvim-lualine/lualine.nvim) - [screenshots](#screenshots-lualine)
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [vim-sneak](https://github.com/justinmk/vim-sneak)
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
@@ -57,7 +57,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-ruby](https://github.com/vim-ruby/vim-ruby)
 + [vim-lua](https://github.com/tbastos/vim-lua)
 + [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
-+ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - [screenshots](#-todo-comments)
++ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - [screenshots](#todo-comments)
 
 ### ⚡️ Requirements
 
