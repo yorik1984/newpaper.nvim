@@ -22,7 +22,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Added functions for live theme switching without the need to restart NeoVim
 + Special syntax highlight:
     - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby)
+    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [screenshots](#-RUBY)
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - TOML with [vim-toml](https://github.com/cespare/vim-toml)
     - Lua with [vim-lua](https://github.com/tbastos/vim-lua)
@@ -44,7 +44,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-which-key](https://github.com/liuchengxu/vim-which-key)
 + [WhichKey.nvim](https://github.com/folke/which-key.nvim)
 + [Dashboard](https://github.com/glepnir/dashboard-nvim)
-+ [Lualine](https://github.com/nvim-lualine/lualine.nvim)
++ [Lualine](https://github.com/nvim-lualine/lualine.nvim) - [screenshots](#Screenshots lualine)
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [vim-sneak](https://github.com/justinmk/vim-sneak)
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
@@ -57,6 +57,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-ruby](https://github.com/vim-ruby/vim-ruby)
 + [vim-lua](https://github.com/tbastos/vim-lua)
 + [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
++ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - [screenshots](#-todo-comments)
 
 ### ⚡️ Requirements
 
@@ -208,9 +209,11 @@ lua << EOF
     })
 EOF
 ```
-### 📺 Screenshots
+## 📺  Screenshots
 
-####  RUBY
+### Language
+
++ ####  RUBY
 
 Source code [HERE](preview/ruby/code.rb)
 
@@ -233,6 +236,14 @@ Source code [HERE](preview/ruby/code.rb)
 **Treesitter**
 
 ![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
+
+### Plugins
+
++ #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+![todo-comments_light](https://user-images.githubusercontent.com/1559192/138787871-e43dd890-ccd2-4f45-a1ec-e5fba1a88307.png)
+
+![todo-comments_dark](https://user-images.githubusercontent.com/1559192/138788355-0b665e30-23b6-4aa8-bf76-4e73de08da5f.png)
+
 
 ### 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
 
@@ -324,7 +335,8 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] Nvim-Tree.lua
     - [ ] WhichKey.nvim
     - [ ] packer.nvim
-
+    - [x] todo-comments
+    
 - [ ] Add wide syntax highlight:
     - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
     - [ ] Markdown
