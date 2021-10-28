@@ -418,14 +418,13 @@ function M.setup(config)
             LspDiagnosticsInformation     = { fg = newpaper.info_fg },
             LspDiagnosticsHint            = { fg = newpaper.hint_fg },
 
-
             -- WhichKey
-            WhichKey                      = { fg = newpaper.purple },
-            WhichKeyDesc                  = { fg = newpaper.teal, style = style.b_italic },
+            WhichKey                      = { fg = newpaper.keyword },
             WhichKeyGroup                 = { fg = newpaper.text },
             WhichKeySeperator             = { fg = newpaper.fg },
-            WhichKeyFloating              = { fg = newpaper.float_fg, bg = newpaper.float_bg },
+            WhichKeyDesc                  = { fg = newpaper.teal, style = style.b_italic },
             WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
+            -- WhichKeyValue                 Comment
 
             -- LspSaga
             LspFloatWinNormal             = { fg = newpaper.text,   bg = newpaper.float_bg },
