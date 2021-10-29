@@ -394,8 +394,10 @@ function M.setup(config)
 
             -- NvimTree
             NvimTreeSymlink               = { fg = newpaper.accent, style = 'italic,underline' },
-            NvimTreeFolderName            = { fg = newpaper.blue },
-            NvimTreeFolderIcon            = { fg = newpaper.blue },
+            NvimTreeFolderName            = { fg = newpaper.teal },
+            NvimTreeFolderIcon            = { fg = newpaper.teal },
+            NvimTreeOpenedFolderName      = { fg = newpaper.accent, style = style.b_bold },
+            NvimTreeRootFolder            = { fg = newpaper.title, style = style.b_bold },
             NvimTreeEmptyFolderName       = { fg = newpaper.disabled },
             NvimTreeIndentMarker          = { fg = newpaper.disabled },
             NvimTreeGitDirty              = { fg = newpaper.git_modified },
@@ -409,9 +411,7 @@ function M.setup(config)
             NvimTreeOpenedFile            = { fg = newpaper.accent },
             NvimTreeImageFile             = { fg = newpaper.orange },
             NvimTreeMarkdownFile          = { fg = newpaper.magenta },
-            NvimTreeExecFile              = { fg = newpaper.darkgreen },
-            NvimTreeOpenedFolderName      = { fg = newpaper.accent, style = style.b_italic },
-            NvimTreeRootFolder            = { fg = newpaper.title, style = style.b_italic },
+            NvimTreeExecFile              = { fg = newpaper.text },
             NvimTreeSpecialFile           = { fg = newpaper.purple, style = 'underline' },
             LspDiagnosticsError           = { fg = newpaper.error_fg },
             LspDiagnosticsWarning         = { fg = newpaper.warn_fg },
