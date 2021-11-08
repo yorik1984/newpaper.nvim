@@ -298,9 +298,10 @@ Source code [HERE](preview/ruby/code.rb)
 ### Plugins:
 
 + #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
-![todo-comments_light](https://user-images.githubusercontent.com/1559192/138787871-e43dd890-ccd2-4f45-a1ec-e5fba1a88307.png)
 
-![todo-comments_dark](https://user-images.githubusercontent.com/1559192/138788355-0b665e30-23b6-4aa8-bf76-4e73de08da5f.png)
+![todo-comments_light](https://user-images.githubusercontent.com/1559192/140816021-fd16ab48-e3f0-4ab4-a984-34bb14205b0c.png)
+
+![todo-comments_dark](https://user-images.githubusercontent.com/1559192/140816034-12ef3a17-f674-4a67-a490-693947de508d.png)
 
 ## FAQ
 

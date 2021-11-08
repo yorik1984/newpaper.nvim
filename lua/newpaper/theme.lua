@@ -49,7 +49,7 @@ function M.setup(config)
             Underlined     = { fg = newpaper.link, style = 'underline' }, -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
             Error          = { fg = newpaper.error_fg, bg = newpaper.error_bg, style = style.b_bold_u }, -- any erroneous construct
-            Todo           = { fg = newpaper.bg, bg = newpaper.orange },
+            Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn },
 
             -- Help
 
@@ -92,6 +92,7 @@ function M.setup(config)
             ModeMsg          = { fg = newpaper.accent, style = style.b_bold }, -- 'showmode' message (e.g., "-- INSERT -- ")
             MsgArea          = { fg = newpaper.msgarea_fg, bg = newpaper.msgarea_bg }, -- Area for messages and cmdline
             MoreMsg          = { fg = newpaper.accent }, -- |more-prompt|
+            Normal           = { fg = newpaper.fg, bg = newpaper.bg }, -- normal text and background color
             NormalSB         = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg},
             NormalFloat      = { fg = newpaper.float_fg, bg = newpaper.float_bg }, -- normal text and background color for floating windows
             NonText          = { fg = newpaper.disabled }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -103,6 +104,8 @@ function M.setup(config)
             QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.title, style = 'reverse' }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
             qfLineNr         = { fg = newpaper.highlight, bg = newpaper.title, style = 'reverse' }, -- Line numbers for quickfix lists
             Search           = { fg = newpaper.search_fg, bg = newpaper.search_bg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+            SignColumn       = { fg = newpaper.fg, bg = newpaper.linenumber_bg },
+            SignColumnSB     = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg },
             SpecialKey       = { fg = newpaper.disabled }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
             SpellBad         = { bg = newpaper.spellbad, style = 'undercurl' }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
             SpellCap         = { bg = newpaper.spellcap, style = 'undercurl' }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -136,17 +139,6 @@ function M.setup(config)
         }
 
         -- Options:
-
-        --Set transparent background
-        if config.disable_background then
-            editor.Normal       = { fg = newpaper.fg, bg = newpaper.none } -- normal text and background color
-            editor.SignColumn   = { fg = newpaper.fg, bg = newpaper.none }
-            editor.SignColumnSB = { fg = newpaper.sidebar_fg, bg = newpaper.none }
-        else
-            editor.Normal       = { fg = newpaper.fg, bg = newpaper.bg } -- normal text and background color
-            editor.SignColumn   = { fg = newpaper.fg, bg = newpaper.linenumber_bg }
-            editor.SignColumnSB = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg }
-        end
 
         -- Remove window split borders
         if config.borders then
@@ -518,6 +510,27 @@ function M.setup(config)
             LanguageToolUrl               = { fg = newpaper.link, style = 'underline' },
             LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = 'undercurl' },
             LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = 'undercurl' },
+
+            -- Todo-comments
+            TodoSignWARN                  = { fg = newpaper.todo_warn,    bg = newpaper.linenumber_bg },
+            TodoSignTODO                  = { fg = newpaper.todo_info,    bg = newpaper.linenumber_bg },
+            TodoSignPERF                  = { fg = newpaper.todo_default, bg = newpaper.linenumber_bg },
+            TodoSignNOTE                  = { fg = newpaper.todo_hint,    bg = newpaper.linenumber_bg },
+            TodoSignHACK                  = { fg = newpaper.todo_warn,    bg = newpaper.linenumber_bg },
+            TodoSignFIX                   = { fg = newpaper.todo_error,   bg = newpaper.linenumber_bg },
+            TodoFgWARN                    = { fg = newpaper.todo_warn },
+            TodoFgTODO                    = { fg = newpaper.todo_info },
+            TodoFgPERF                    = { fg = newpaper.todo_default },
+            TodoFgNOTE                    = { fg = newpaper.todo_hint },
+            TodoFgHACK                    = { fg = newpaper.todo_warn },
+            TodoFgFIX                     = { fg = newpaper.todo_error },
+            TodoBgWARN                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
+            TodoBgTODO                    = { fg = newpaper.bg, bg = newpaper.todo_info,    style = style.b_bold },
+            TodoBgPERF                    = { fg = newpaper.bg, bg = newpaper.todo_default, style = style.b_bold },
+            TodoBgNOTE                    = { fg = newpaper.bg, bg = newpaper.todo_hint,    style = style.b_bold },
+            TodoBgHACK                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
+            TodoBgFIX                     = { fg = newpaper.bg, bg = newpaper.todo_error,   style = style.b_bold },
+
 
             -- Devicon
             DevIconRb                     = { fg = newpaper.ruby_red },

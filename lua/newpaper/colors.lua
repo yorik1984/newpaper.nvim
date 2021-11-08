@@ -71,6 +71,13 @@ function M.setup(config)
         info_bg         = '#EBF0FD',
         hint_bg         = '#E7F8F2',
 
+        -- Todo
+        todo_error      = '#DF0000',
+        todo_warn       = '#D75F00',
+        todo_info       = '#3A72ED',
+        todo_hint       = '#008700',
+        todo_default    = '#894DEE',
+
         -- TeX
         tex_maroon      = '#A2251A',
         tex_olive       = '#89802A',
@@ -185,6 +192,13 @@ function M.setup(config)
         newpaper.warn_bg         = '#373640'
         newpaper.info_bg         = '#22374B'
         newpaper.hint_bg         = '#233745'
+
+        -- Todo
+        newpaper.todo_error      = '#D75F66'
+        newpaper.todo_warn       = '#DF7E32'
+        newpaper.todo_info       = '#5082EF'
+        newpaper.todo_hint       = '#4CAB4C'
+        newpaper.todo_default    = '#A070F1'
 
         -- TeX
         newpaper.tex_maroon      = '#C9655C'
@@ -304,6 +318,13 @@ function M.setup(config)
     if config.contrast_telescope then
         newpaper.telescope_fg = newpaper.telescope_fg_alt
         newpaper.telescope_bg = newpaper.telescope_bg_alt
+    end
+
+    -- Set transparent background
+    if config.disable_background then
+        newpaper.bg            = newpaper.none
+        newpaper.linenumber_bg = newpaper.none
+        newpaper.sidebar_bg    = newpaper.none
     end
 
     if config.contrast_sidebar then
