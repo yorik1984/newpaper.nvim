@@ -234,7 +234,7 @@ function M.setup(config)
             -- texMathCmdStyle       texMathCmd
             texMathCmdStyleBold   = { fg = newpaper.tex_math, style = style.tex_k_style },
             texMathCmdStyleItal   = { fg = newpaper.tex_math, style = 'italic' },
-            texMathCmdText        = { fg = newpaper.tex_green },
+            texMathCmdText        = { fg = newpaper.tex_navy },
             texMathDelimZone      = { fg = newpaper.tex_olive },
             texMathTextConcArg    = { fg = newpaper.tex_pink },
             -- texMathGroup          texMathZone

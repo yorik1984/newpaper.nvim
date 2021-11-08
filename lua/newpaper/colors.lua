@@ -18,7 +18,7 @@ function M.setup(config)
         teal            = '#005F87', -- color06
         silver          = '#E4E4E4', -- color07
         gray            = '#585858', -- color08
-        red             = '#DF0000', -- color09
+        red             = '#E45649', -- color09
         green           = '#50A14F', -- color10
         yellow          = '#FFFF00', -- color11
         blue            = '#0087AF', -- color12
@@ -28,10 +28,10 @@ function M.setup(config)
         none            = 'NONE',
 
             -- Other colors
-        lightorange     = '#E9B96E',
+        lightorange     = '#E4C07A',
         orange          = '#DB6F19',
         darkorange      = '#AF5F00',
-        darkyellow      = '#A68748',
+        darkyellow      = '#C18301',
         pink            = '#FFEEFF',
         darkgray        = '#444444',
         lightgray       = '#878787',
@@ -73,12 +73,11 @@ function M.setup(config)
 
         -- TeX
         tex_maroon      = '#A2251A',
-        tex_green       = '#597B16',
         tex_olive       = '#89802A',
         tex_navy        = '#1E40C2',
         tex_red         = '#D42F2D',
         tex_blue        = '#007BA1',
-        tex_magenta     = '#E00051',
+        tex_magenta     = '#E00050',
         tex_aqua        = '#28A4CE',
         tex_orange      = '#DB6F19',
         tex_darkorange  = '#A75A00',
@@ -106,7 +105,7 @@ function M.setup(config)
         ruby_red        = '#CC342D',
         ruby_green      = '#00AF2F',
         ruby_blue       = '#3A72ED',
-        ruby_magenta    = '#AF0080',
+        ruby_magenta    = '#A626A4',
 
         -- Lua
         lua_navy        = '#030380',
@@ -132,7 +131,7 @@ function M.setup(config)
         newpaper.teal            = '#5F8787' -- color06
         newpaper.silver          = '#3A3A3A' -- color07
         newpaper.gray            = '#808080' -- color08
-        newpaper.red             = '#FF3333' -- color09
+        newpaper.red             = '#E06C75' -- color09
         newpaper.green           = '#00875F' -- color10
         newpaper.yellow          = '#AFD700' -- color11
         newpaper.blue            = '#5FAFD7' -- color12
@@ -145,7 +144,7 @@ function M.setup(config)
         newpaper.lightorange     = '#413932'
         newpaper.orange          = '#FF8700'
         newpaper.darkorange      = '#AF5F00'
-        newpaper.darkyellow      = '#D7AF5F'
+        newpaper.darkyellow      = '#E5C07B'
         newpaper.pink            = '#5F0000'
         newpaper.darkgray        = '#BCBCBC'
         newpaper.lightgray       = '#787878'
@@ -153,7 +152,8 @@ function M.setup(config)
         newpaper.lightsilver     = '#303030'
         newpaper.blueviolet      = '#5F005F'
         newpaper.lightblue       = '#8BC5ED'
-        newpaper.ocean           = '#92C0BE'
+        -- newpaper.ocean           = '#92C0BE'
+        newpaper.ocean           = '#56B6C2'
         newpaper.nephritis       = '#66CAA6'
         newpaper.darkpurple      = '#945EEF'
         newpaper.redorange       = '#FE7967'
@@ -187,7 +187,6 @@ function M.setup(config)
 
         -- TeX
         newpaper.tex_maroon      = '#C9655C'
-        newpaper.tex_green       = '#5FAF00'
         newpaper.tex_olive       = '#BCB677'
         newpaper.tex_navy        = '#738AE5'
         newpaper.tex_red         = '#EF5D5B'
@@ -217,6 +216,7 @@ function M.setup(config)
         newpaper.ruby_maroon     = '#BE7575'
         newpaper.ruby_navy       = '#6A82D9'
         newpaper.ruby_purple     = '#8959A8'
+        newpaper.ruby_magenta    = '#C678DD'
         newpaper.ruby_red        = '#C2534D'
         newpaper.ruby_green      = '#94D780'
         newpaper.ruby_blue       = '#00AFAF'
