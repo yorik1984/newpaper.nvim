@@ -127,7 +127,7 @@ function M.setup(config)
         newpaper.darkgreen       = '#5FAF5F' -- color02
         newpaper.olive           = '#A4A400' -- color03
         newpaper.navy            = '#8195E7' -- color04
-        newpaper.purple          = '#AF87D7' -- color05
+        newpaper.purple          = '#A274D1' -- color05
         newpaper.teal            = '#5F8787' -- color06
         newpaper.silver          = '#3A3A3A' -- color07
         newpaper.gray            = '#808080' -- color08
@@ -138,6 +138,7 @@ function M.setup(config)
         newpaper.magenta         = '#D75FAF' -- color13
         newpaper.aqua            = '#5C6370' -- color14
         newpaper.white           = '#F1F3F2' -- color15
+        newpaper.white           = '#DCDFE4' -- color15
         newpaper.none            = 'NONE'
 
         -- Other colors
@@ -152,10 +153,10 @@ function M.setup(config)
         newpaper.lightsilver     = '#303030'
         newpaper.blueviolet      = '#5F005F'
         newpaper.lightblue       = '#8BC5ED'
-        -- newpaper.ocean           = '#92C0BE'
         newpaper.ocean           = '#56B6C2'
+        newpaper.ruby_blue       = '#00AFAF'
         newpaper.nephritis       = '#66CAA6'
-        newpaper.darkpurple      = '#945EEF'
+        newpaper.darkpurple      = '#C966D5'
         newpaper.redorange       = '#FE7967'
 
         -- Git and diff
@@ -190,7 +191,7 @@ function M.setup(config)
         newpaper.tex_olive       = '#BCB677'
         newpaper.tex_navy        = '#738AE5'
         newpaper.tex_red         = '#EF5D5B'
-        newpaper.tex_blue        = '#5FC9EE'
+        newpaper.tex_blue        = '#61AFEF'
         newpaper.tex_magenta     = '#FF5FAF'
         newpaper.tex_aqua        = '#00FFFF'
         newpaper.tex_orange      = '#FF8700'
@@ -215,12 +216,11 @@ function M.setup(config)
         -- Ruby
         newpaper.ruby_maroon     = '#BE7575'
         newpaper.ruby_navy       = '#6A82D9'
-        newpaper.ruby_purple     = '#8959A8'
-        newpaper.ruby_magenta    = '#C678DD'
+        newpaper.ruby_purple     = '#C596CA'
         newpaper.ruby_red        = '#C2534D'
-        newpaper.ruby_green      = '#94D780'
+        newpaper.ruby_green      = '#98C379'
         newpaper.ruby_blue       = '#00AFAF'
-        newpaper.ruby_magenta    = '#B34495'
+        newpaper.ruby_magenta    = '#B751B6'
 
         -- Lua
         newpaper.lua_navy        = '#9191C7'
