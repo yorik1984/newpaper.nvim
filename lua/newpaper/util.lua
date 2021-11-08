@@ -44,11 +44,14 @@ function util.syntax(syntax)
 end
 
 function util.load(theme)
-  vim.cmd("hi clear")
-  if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
+    -- Patch https://github.com/folke/tokyonight.nvim/commit/0ead86afe390603f9bd688103d7a5fc6724a828e
+    -- only needed to clear when not the default colorscheme
+    if vim.g.colors_name then
+        vim.cmd("hi clear")
+    end
 
-  vim.o.termguicolors = true
-  vim.g.colors_name = "newpaper"
+    vim.o.termguicolors = true
+    vim.g.colors_name = "newpaper"
 
 -- Load plugins and lsp async
     local async
