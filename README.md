@@ -7,7 +7,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
-![vim-ruby_light_code rb-preview](https://user-images.githubusercontent.com/1559192/133896826-48428d04-d0c0-4bae-b65e-6b1c6e4ad75e.png)
+![vim-ruby_light_code rb-preview](https://user-images.githubusercontent.com/1559192/140774084-d3978598-f1cb-45f3-9fb4-32ddbfe9287e.png)
 
 [More screenshots](#--screenshots)
 
@@ -279,7 +279,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 **vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
 
-![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/133896814-8da30619-4752-4925-8898-0247bc8f84b6.png)
+![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/140774093-ed849404-6679-497e-bad8-822f35b925f6.png)
 
 **Treesitter**
 
@@ -289,7 +289,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 **vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
 
-![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/133896804-87c031a3-74d7-4fcf-ac34-d8e4af7c56c9.png)
+![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/140774108-9dbd4625-47e7-48bd-ae00-7e55156af74b.png)
 
 **Treesitter**
 
