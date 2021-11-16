@@ -111,11 +111,15 @@ function M.setup(config)
             -- texComment          Comment
             -- texCommentTodo      Todo
 
-            -- texStyleBold        gui=bold        cterm=bold
-            -- texStyleBoth        gui=bold,italic cterm=bold,italic
-            -- texStyleItal        gui=italic      cterm=italic
-            -- texMathStyleBold    gui=bold        cterm=bold
-            -- texMathStyleItal    gui=italic      cterm=italic
+            -- texStyleBold          gui=bold                  cterm=bold
+            -- texStyleItal          gui=italic                cterm=italic
+            -- texStyleUnder         gui=underline             cterm=underline
+            -- texStyleBoth          gui=bold,italic           cterm=bold,italic
+            -- texStyleBoldUnder     gui=bold,underline        cterm=bold,underline
+            -- texStyleItalUnder     gui=italic,underline      cterm=italic,underline
+            -- texStyleBoldItalUnder gui=bold,italic,underline cterm=bold,italic,underline
+            -- texMathStyleBold      gui=bold        cterm=bold
+            -- texMathStyleItal      gui=italic      cterm=italic
             -----------------------------------------------------------------------
             texCmdType            = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             texParm               = { fg = newpaper.tex_maroon },
@@ -167,6 +171,11 @@ function M.setup(config)
             texMathDelimMod       = { fg = newpaper.tex_lightpurple }, -- \LEFT\lvert \RIGHT\rvert
             texMathOper           = { fg = newpaper.tex_math, style = style.tex_o_style }, -- Basic operators: +-=/
             texMathSuperSub       = { fg = newpaper.tex_pink }, -- Sub and super operators (^, _)
+            -- texCmdCH               texCmd
+            -- texMathCmdCH           texMathCmd
+            -- texCHOpt               texOpt
+            -- texCHArg               texArg
+            -- texCHSymb              texSymbol
             -----------------------------------------------------------------------
             texLength             = { fg = newpaper.tex_red }, -- Length units, e.g. "4 cm". Only when contained e.g. in option groups.
             texLigature           = { fg = newpaper.tex_maroon, style = style.tex_o_style }, -- --; ---; ``; ''; ,,
@@ -192,6 +201,8 @@ function M.setup(config)
             texParboxOptHeight    = { bg = newpaper.tex_parbox_opt_error },
             texParboxOptIPos      = { bg = newpaper.tex_parbox_opt_error },
             texParboxOptPos       = { bg = newpaper.tex_parbox_opt_error },
+            -- texPartConcealed      texCmdPart
+            -- texPartConcArgTitle   texPartArgTitle
             texArgNew             = { fg = newpaper.tex_navy },
             -- texBibitemArg         texArg
             -- texBibitemOpt         texOpt
@@ -248,6 +259,7 @@ function M.setup(config)
             -- texNewenvArgName      texEnvArgName
             -- texNewenvParm         texParm
             -- texNewthmArgName      texArg
+            -- texNewenvOpt          texOpt
             -- texNewthmOptCounter   texOpt
             -- texNewthmOptNumberby  texOpt
             -- texNoSpellOpt         texOpt
@@ -262,6 +274,177 @@ function M.setup(config)
             texTabularCol         = { fg = newpaper.tex_lightpurple },
             -- texTabularOpt         texEnvOpt
             -- texTheoremEnvOpt      texEnvOpt
+
+            -- amsmath.vim ----------------------------------------------------
+            -- texCmdDeclmathoper     texCmdNew
+            -- texCmdNumberWithin     texCmd
+            -- texCmdOpName           texCmd
+            -- texCmdSubjClass        texCmd
+            -- texDeclmathoperArgName texArgNew
+            -- texDeclmathoperArgBody texMathZone
+            -- texMathConcealedArg    texMathTextArg
+            -- texNumberWithinArg1    texArg
+            -- texNumberWithinArg2    texArg
+            -- texOpnameArg           texMathZone
+            -- texSubjClassArg        texArg
+            -- texSubjClassOpt        texOpt
+
+            -- amsthm.vim -----------------------------------------------------
+            -- texCmdThmStyle texCmd
+            -- texProofEnvOpt texEnvOpt
+            -- texThmStyleArg texArg
+
+            -- array.vim ------------------------------------------------------
+            -- texTabularCmd        texCmd
+            -- texTabularCmdOpt     texOpt
+            -- texTabularVertline   texMathDelim
+            -- texTabularPostPre    texMathDelim
+            -- texTabularMathdelim  texMathDelimZone
+
+            -- texCmdNewcolumn      texCmd
+            -- texCmdNewcolumnName  texCmd
+            -- texNewcolumnArgName  texArg
+            -- texNewcolumnOpt      texOpt
+            -- texNewcolumnParm     texParm
+
+            -- asymptote.vim --------------------------------------------------
+            -- texAsymptoteZone texZone
+
+            -- beamer.vim -----------------------------------------------------
+            -- texCmdBeamer texCmd
+            -- texBeamerOpt texOpt
+            -- texBeamerDelim texDelim
+
+            -- biblatex.vim ---------------------------------------------------
+            -- texRefArgs texRefArg
+            -- texRefOpts texRefOpt
+
+            -- booktabs.vim ---------------------------------------------------
+            -- texCmdBooktabs texMathDelim
+
+            -- chemformula.vim ------------------------------------------------
+            -- texCmdCH       texCmd
+            -- texMathCmdCH   texMathCmd
+            -- texCHOpt       texOpt
+            -- texCHArg       texArg
+            -- texCHSymb      texSymbol
+
+            -- cleveref.vim ---------------------------------------------------
+            --  texCRefArg           texRefArg
+            --  texCRefOpt           texRefOpt
+            --  texCRefRangeArg      texRefArg
+            --  texCmdCRef           texCmdRef
+            --  texCmdCRName         texCmd
+            --  texCRNameArgType     texArgNew
+            --  texCRNameArgSingular texArg
+            --  texCRNameArgPlural   texCRNameArgSingular
+
+            -- csquotes.vim ---------------------------------------------------
+            --  texCmdQuote texCmd
+
+            -- geometry.vim ---------------------------------------------------
+            --  texCmdGeometry texCmd
+            --  texGeometryArg texOpt
+
+            -- glossaries.vim -------------------------------------------------
+            -- texCmdAcr         texCmd
+            -- texCmdNewAcr      texCmdNew
+            -- texNewAcrOpt      texOpt
+            -- texNewAcrArgLabel texArg
+            -- texAcrArgLabel    texNewAcrArgLabel
+
+            -- hyperref.vim ---------------------------------------------------
+            -- texCmdHyperref   texCmd
+            -- texHrefArgLink   texOpt
+            -- texHrefArgTextC  texArg
+            -- texHrefLinkGroup texHrefArgLink
+            -- texUrlArg        texOpt
+
+            -- ieeetrantools.vim ----------------------------------------------
+            -- texMathEnvIEEEArg texArg
+            -- texMathEnvIEEEOpt texOpt
+
+            -- listings.vim ---------------------------------------------------
+            -- texCmdLstset     texCmd
+            -- texLstDelim      texDelim
+            -- texLstInlineOpt  texOpt
+            -- texLstOpt        texOpt
+            -- texLstZone       texZone
+            -- texLstZoneInline texVerbZoneInline
+            -- texLstsetArg     texOpt
+
+            -- luacode.vim ----------------------------------------------------
+            -- texCmdLua texCmd
+
+            -- mathtools.vim --------------------------------------------------
+            -- texMathToolsOptPos1  texOpt
+            -- texMathToolsOptPos2  texOpt
+            -- texMathToolsOptWidth texOpt
+
+            -- minted.vim -----------------------------------------------------
+            -- texCmdMinted        texCmd
+            -- texCmdNewmint       texCmd
+            -- texMintedArg        texSymbol
+            -- texMintedEnvArg     texSymbol
+            -- texMintedEnvArgOpt  texOpt
+            -- texMintedEnvOpt     texOpt
+            -- texMintedOpt        texOpt
+            -- texMintedZone       texZone
+            -- texMintedZoneInline texZone
+            -- texNewmintArgOpts   texOpt
+            -- texNewmintArgX      texSymbol
+            -- texNewmintArgY      texComment
+            -- texNewmintOpt       texSymbol
+
+            -- nameref.vim ----------------------------------------------------
+            -- texCmdNameref texCmd
+
+            -- pgfplots.vim ---------------------------------------------------
+            -- texCmdAxis        texCmd
+            -- texPgfNode        texCmd
+            -- texPgfType        texMathDelim
+            -- texPgfFunc        texArg
+            -- texPgfTableArg    texFileArg
+            -- texPgfCoordinates texOpt
+            -- texPgfAddplotOpt  texOpt
+            -- texPgfTableOpt    texOpt
+
+            -- pythontex.vim --------------------------------------------------
+            -- texCmdPythontex texCmd
+
+            -- siunitx.vim ----------------------------------------------------
+            -- texCmdSI       texCmd
+            -- texMathCmdSI   texMathCmd
+            -- texSICmd       texMathCmd
+            -- texSIDelim     texSymbol
+            -- texSIOpt       texOpt
+            -- texSIOptU      texSIOpt
+            -- texSIOptN      texSIOpt
+            -- texSIOptNU     texSIOpt
+            -- texSIOptNNU    texSIOpt
+            -- texSIArgUnit   texArg
+            -- texSIArgNum    texLength
+            -- texSIArgNumN   texSIArgNum
+            -- texSIArgNumU   texSIArgNum
+            -- texSIArgNumNU  texSIArgNum
+            -- texSIArgNumNNU texSIArgNum
+
+            -- tcolorbox.vim --------------------------------------------------
+            -- texTCBZone texZone
+            -- texTCBEnvArg texArg
+
+            -- tikz.vim -------------------------------------------------------
+            -- texCmdTikz       texCmd
+            -- texCmdTikzset    texCmd
+            -- texTikzNodeOpt   texOpt
+            -- texTikzSemicolon texDelim
+            -- texTikzDraw      texDelim
+            -- texTikzCycle     texMathDelim
+            -- texTikzsetArg    texOpt
+            -- texTikzOpt       texOpt
+
+            -- todonotes.vim --------------------------------------------------
+            -- texTodoOpt texOpt
         }
 
         return plugins
