@@ -95,6 +95,7 @@ function M.setup(config)
         tex_lightgreen  = '#009D55',
 
         tex_math        = '#008000',
+        tex_math_green  = '#568C5B',
         tex_keyword     = '#7F2DC2',
         tex_verb        = '#3A3A3A',
 
@@ -143,7 +144,7 @@ function M.setup(config)
         newpaper.yellow          = '#AFD700' -- color11
         newpaper.blue            = '#5FAFD7' -- color12
         newpaper.magenta         = '#D75FAF' -- color13
-        newpaper.aqua            = '#5C6370' -- color14
+        newpaper.aqua            = '#657b83' -- color14
         newpaper.white           = '#F1F3F2' -- color15
         newpaper.white           = '#DCDFE4' -- color15
         newpaper.none            = 'NONE'
@@ -217,6 +218,7 @@ function M.setup(config)
         newpaper.tex_lightgreen  = '#00E1A4'
 
         newpaper.tex_math        = '#5FAF5F'
+        newpaper.tex_math_green  = '#98C379'
         newpaper.tex_keyword     = '#9D79C1'
         newpaper.tex_verb        = '#BCBCBC'
 
