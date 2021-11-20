@@ -117,7 +117,7 @@ function M.setup(config)
             StatusLineTermNC = { fg = newpaper.lightgray, bg = newpaper.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg  },
             TabLineFill      = { bg = newpaper.tabline_bg }, -- tab pages line, where there are no labels
-            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold ..',italic' }, -- tab pages line, active tab page label
+            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold_i }, -- tab pages line, active tab page label
             Title            = { fg = newpaper.keyword, style = style.b_bold }, -- titles for output from ":set all", ":autocmd" etc.
             ToolbarButton    = { fg = newpaper.fg, style = style.b_bold },
             Visual           = { fg = newpaper.bg, bg = newpaper.selection }, -- Visual mode selection
@@ -530,6 +530,11 @@ function M.setup(config)
             TodoBgHACK                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
             TodoBgFIX                     = { fg = newpaper.bg, bg = newpaper.todo_error,   style = style.b_bold },
 
+            -- BufferLine
+            BufferLineInfoDiagnosticSelected    = { fg = newpaper.info_fg,  style = style.b_bold_i },
+            BufferLineHintgDiagnosticSelected   = { fg = newpaper.hint_fg,  style = style.b_bold_i },
+            BufferLineWarningDiagnosticSelected = { fg = newpaper.warn_fg,  style = style.b_bold_i },
+            BufferLineErrorDiagnosticSelected   = { fg = newpaper.error_fg, style = style.b_bold_i },
 
             -- Devicon
             DevIconRb                     = { fg = newpaper.ruby_red },

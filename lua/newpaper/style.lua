@@ -9,6 +9,7 @@ function M.setup_style(config)
 
         b_bold        = "NONE", -- editor style bold
         b_italic      = "NONE", -- editor style italic
+        b_bold_i      = "NONE", -- editor style bold italic
         b_bold_u      = "NONE", -- editor style bold underline
         c_style       = "NONE", -- coments style
         o_style       = "NONE", -- operators style
@@ -36,6 +37,7 @@ function M.setup_style(config)
     if config.editor_better_view then
         style.b_bold   = 'bold'
         style.b_italic = 'italic'
+        style.b_bold_i = 'bold,italic'
         style.b_bold_u = 'bold,underline'
     end
 
