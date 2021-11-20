@@ -167,8 +167,8 @@ function M.setup(config)
             texCmdMathEnv         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END (for math environments)
             texMathEnvArgName     = { fg = newpaper.tex_darkorange, style = 'italic' }, -- \begin{EQUATION}
             texCmdMath            = { fg = newpaper.tex_blue }, -- \ENSUREMATH
-            texMathDelim          = { fg = newpaper.tex_lightpurple }, -- \LVERT
-            texMathDelimMod       = { fg = newpaper.tex_lightpurple }, -- \LEFT\lvert \RIGHT\rvert
+            texMathDelim          = { fg = newpaper.tex_math_green }, -- \LVERT
+            texMathDelimMod       = { fg = newpaper.tex_math_green }, -- \LEFT\lvert \RIGHT\rvert
             texMathOper           = { fg = newpaper.tex_math, style = style.tex_o_style }, -- Basic operators: +-=/
             texMathSuperSub       = { fg = newpaper.tex_pink }, -- Sub and super operators (^, _)
             -- texCmdCH               texCmd
