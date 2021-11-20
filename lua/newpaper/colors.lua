@@ -52,14 +52,14 @@ function M.setup(config)
         git_removed     = '#D73A49',
         diffadd_bg      = '#AFFFAF',
         diffdelete_bg   = '#FFD7FF',
-        difftext_bg     = '#FFFFD7',
+        difftext_bg     = '#FFFFD7'
         diffchange_bg   = '#FFD787',
 
         -- Spell
-        spellbad        = '#FFAFD7',
-        spellcap        = '#FFFFAF',
-        spellrare       = '#AFFF87',
-        spelllocal      = '#D7D7FF',
+        spellbad        = '#FFDDEE',
+        spellcap        = '#FFFFDF',
+        spellrare       = '#E3FFD5',
+        spelllocal      = '#E7E7FF',
 
         -- Error message
         error_fg        = '#D75F66',
@@ -145,7 +145,6 @@ function M.setup(config)
         newpaper.blue            = '#5FAFD7' -- color12
         newpaper.magenta         = '#D75FAF' -- color13
         newpaper.aqua            = '#657b83' -- color14
-        newpaper.white           = '#F1F3F2' -- color15
         newpaper.white           = '#DCDFE4' -- color15
         newpaper.none            = 'NONE'
 
