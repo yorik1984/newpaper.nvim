@@ -31,7 +31,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
-+ [Lsp Saga](https://github.com/glepnir/lspsaga.nvim)
++ [Lsp Saga](https://github.com/glepnir/lspsaga.nvim) or [tami5/lspsaga.nvim](https://github.com/tami5/lspsaga.nvim)
 + [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) and [nvim-compe](https://github.com/hrsh7th/nvim-compe)
 + [Trouble](https://github.com/folke/trouble.nvim)
 + [Git Gutter](https://github.com/airblade/vim-gitgutter)
