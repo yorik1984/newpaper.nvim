@@ -539,14 +539,6 @@ function M.setup(config)
             BufferLineHintSelected              = { fg = newpaper.hint_fg,  style = style.b_bold_i },
             BufferLineWarningSelected           = { fg = newpaper.warn_fg,  style = style.b_bold_i },
             BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
-            BufferLineInfoDiagnosticVisible     = { fg = newpaper.info_fg },
-            BufferLineHintDiagnosticVisible     = { fg = newpaper.hint_fg },
-            BufferLineWarningDiagnosticVisible  = { fg = newpaper.warn_fg },
-            BufferLineErrorDiagnosticVisible    = { fg = newpaper.error_fg },
-            BufferLineInfoVisible               = { fg = newpaper.info_fg },
-            BufferLineHintVisible               = { fg = newpaper.hint_fg },
-            BufferLineWarningVisible            = { fg = newpaper.warn_fg },
-            BufferLineErrorVisible              = { fg = newpaper.error_fg },
 
             -- Devicon
             DevIconRb                     = { fg = newpaper.ruby_red },
