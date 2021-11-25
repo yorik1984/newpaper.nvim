@@ -282,7 +282,12 @@ function M.setup(config)
             DiagnosticSignInfo                   = { link = "LspDiagnosticsSignInformation" },
             DiagnosticUnderlineHint              = { link = "LspDiagnosticsUnderlineHint" },
             DiagnosticFloatingHint               = { link = "LspDiagnosticsFloatingHint" },
-            DiagnosticSignHint                   = { link = "LspDiagnosticsSignHint" }
+            DiagnosticSignHint                   = { link = "LspDiagnosticsSignHint" },
+
+            DiagnosticError                      = { link = "LspDiagnosticsDefaultError" },
+            DiagnosticWarning                    = { link = "LspDiagnosticsDefaultWarning" },
+            DiagnosticInfo                       = { link = "LspDiagnosticsDefaultInformation" },
+            DiagnosticHint                       = { link = "LspDiagnosticsDefaultHint" }
         }
 
         if config.lsp_virtual_text_bg then
