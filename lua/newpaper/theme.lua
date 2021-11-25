@@ -283,11 +283,14 @@ function M.setup(config)
             DiagnosticUnderlineHint              = { link = "LspDiagnosticsUnderlineHint" },
             DiagnosticFloatingHint               = { link = "LspDiagnosticsFloatingHint" },
             DiagnosticSignHint                   = { link = "LspDiagnosticsSignHint" },
+            DiagnosticSignOther                  = { fg = newpaper.magenta  },
 
             DiagnosticError                      = { link = "LspDiagnosticsDefaultError" },
-            DiagnosticWarning                    = { link = "LspDiagnosticsDefaultWarning" },
+            DiagnosticWarn                       = { link = "LspDiagnosticsDefaultWarning" },
             DiagnosticInfo                       = { link = "LspDiagnosticsDefaultInformation" },
-            DiagnosticHint                       = { link = "LspDiagnosticsDefaultHint" }
+            DiagnosticHint                       = { link = "LspDiagnosticsDefaultHint" },
+            DiagnosticOther                      = { fg = newpaper.magenta  }
+
         }
 
         if config.lsp_virtual_text_bg then
@@ -427,7 +430,7 @@ function M.setup(config)
             LspFloatWinBorder             = { fg = newpaper.border, bg = newpaper.float_bg },
             LspSagaBorderTitle            = { fg = newpaper.orange, bg = newpaper.float_bg },
             DiagnosticInformation         = { fg = newpaper.info_fg },
-            DiagnosticHint                = { fg = newpaper.hint_fg },
+            -- DiagnosticHint
             ProviderTruncateLine          = { fg = newpaper.navy },
             SagaShadow                    = { fg = newpaper.gray },
             LspSagaFinderSelection        = { fg = newpaper.darkgreen, style = style.b_bold },
@@ -458,7 +461,7 @@ function M.setup(config)
             TargetFileName                = { fg = newpaper.comment, style = 'underline' },
             DefinitionIcon                = { fg = newpaper.teal },
             ReferencesIcon                = { fg = newpaper.navy },
-            -- DiagnosticError            same as Error
+            -- DiagnosticError
             DiagnosticWarning             = { fg = newpaper.warn_fg },
             DefinitionPreviewTitle        = { fg = newpaper.darkgreen },
             LspSagaLightBulb              = { fg = newpaper.hint_fg },
