@@ -548,10 +548,27 @@ function M.setup(config)
             BufferLineWarningSelected           = { fg = newpaper.warn_fg,  style = style.b_bold_i },
             BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
 
+            -- NVIM-LSP-INSTALLER
+            LspInstallerServerExpanded    = { fg = newpaper.fg, style = style.b_italic },
+            LspInstallerHighlighted       = { fg = newpaper.blue },
+            LspInstallerVaderSaber        = { fg = newpaper.redorange, style = style.b_bold },
+            LspInstallerHeading           = { fg = newpaper.keyword, style = style.b_bold },
+            LspInstallerOrange            = { fg = newpaper.orange },
+            LspInstallerHeader            = { fg = newpaper.orange, style = style.b_bold },
+            LspInstallerMuted             = { fg = newpaper.comment },
+            LspInstallerLabel             = { fg = newpaper.fg, style = style.b_bold },
+            LspInstallerGreen             = { fg = newpaper.darkgreen },
+            LspInstallerError             = { fg = newpaper.error_fg },
+            LspInstallerLink              = { fg = newpaper.link, style = 'underline' },
+
             -- Devicon
             DevIconRb                     = { fg = newpaper.ruby_red },
             DevIconErb                    = { fg = newpaper.ruby_red },
-
+            DevIconRs                     = { fg = newpaper.rust_green },
+            DevIconPy                     = { fg = newpaper.python_blue },
+            DevIconPyc                    = { fg = newpaper.python_blue },
+            DevIconPyd                    = { fg = newpaper.python_blue },
+            DevIconPyo                    = { fg = newpaper.python_blue },
         }
 
         -- Options:

@@ -59,6 +59,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - [🖼️](#todo-commentsnvim)
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
++ [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 
 ### ⚡️ Requirements
 
@@ -347,6 +348,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [x] Ruby
     - [ ] COBOL
     - [ ] Python
+    - [ ] Rust
     - [x] Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - [ ] HTML
     - [x] Lua with [vim-lua](https://github.com/tbastos/vim-lua)
