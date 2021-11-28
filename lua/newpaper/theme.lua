@@ -319,6 +319,16 @@ function M.setup(config)
 
        local plugins = {
 
+            -- BufferLine
+            BufferLineInfoDiagnosticSelected    = { fg = newpaper.info_fg,  style = style.b_bold_i },
+            BufferLineHintDiagnosticSelected    = { fg = newpaper.hint_fg,  style = style.b_bold_i },
+            BufferLineWarningDiagnosticSelected = { fg = newpaper.warn_fg,  style = style.b_bold_i },
+            BufferLineErrorDiagnosticSelected   = { fg = newpaper.error_fg, style = style.b_bold_i },
+            BufferLineInfoSelected              = { fg = newpaper.info_fg,  style = style.b_bold_i },
+            BufferLineHintSelected              = { fg = newpaper.hint_fg,  style = style.b_bold_i },
+            BufferLineWarningSelected           = { fg = newpaper.warn_fg,  style = style.b_bold_i },
+            BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
+
             -- Trouble
             TroubleCount                  = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
             TroubleNormal                 = { fg = newpaper.fg, bg = newpaper.bg },
@@ -534,17 +544,7 @@ function M.setup(config)
             TodoBgHACK                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
             TodoBgFIX                     = { fg = newpaper.bg, bg = newpaper.todo_error,   style = style.b_bold },
 
-            -- BufferLine
-            BufferLineInfoDiagnosticSelected    = { fg = newpaper.info_fg,  style = style.b_bold_i },
-            BufferLineHintDiagnosticSelected    = { fg = newpaper.hint_fg,  style = style.b_bold_i },
-            BufferLineWarningDiagnosticSelected = { fg = newpaper.warn_fg,  style = style.b_bold_i },
-            BufferLineErrorDiagnosticSelected   = { fg = newpaper.error_fg, style = style.b_bold_i },
-            BufferLineInfoSelected              = { fg = newpaper.info_fg,  style = style.b_bold_i },
-            BufferLineHintSelected              = { fg = newpaper.hint_fg,  style = style.b_bold_i },
-            BufferLineWarningSelected           = { fg = newpaper.warn_fg,  style = style.b_bold_i },
-            BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
-
-            -- NVIM-LSP-INSTALLER
+            -- Nvim-lsp-installer
             LspInstallerServerExpanded    = { fg = newpaper.fg, style = style.b_italic },
             LspInstallerHighlighted       = { fg = newpaper.blue },
             LspInstallerVaderSaber        = { fg = newpaper.redorange, style = style.b_bold },
@@ -564,7 +564,7 @@ function M.setup(config)
             DapLogPoint                   = { fg = newpaper.string, bg = newpaper.linenumber_bg },
             DapStopped                    = { fg = newpaper.red, bg = newpaper.linenumber_bg },
 
-            -- NVIM-DAP-UI
+            -- Nvim-dap-ui
             DapUIVariable                 = { fg = newpaper.darkgreen },
             DapUIScope                    = { fg = newpaper.teal, style = style.b_bold },
             DapUIType                     = { fg = newpaper.keyword },
@@ -585,7 +585,13 @@ function M.setup(config)
             DapUIBreakpointsCurrentLine   = { fg = newpaper.orange, style = style.b_bold },
             DapUIBreakpointsLine          = { fg = newpaper.orange },
 
-            -- LUA-DEV
+            -- Nvim-dap-virtual-text
+            NvimDapVirtualText            = { fg = newpaper.gray, style = style.c_style },
+            NvimDapVirtualTextChanged     = { fg = newpaper.warn_fg, style = style.c_style },
+            NvimDapVirtualTextError       = { fg = newpaper.error_fg, style = style.c_style },
+            NvimDapVirtualTextInfo        = { fg = newpaper.info_fg, style = style.c_style },
+
+            -- Lua-dev
             RedrawDebugNormal             = { fg = newpaper.bg, bg = newpaper.fg },
             RedrawDebugClear              = { fg = newpaper.fg, bg = newpaper.lightorange },
             RedrawDebugComposed           = { fg = newpaper.fg, bg = newpaper.green },

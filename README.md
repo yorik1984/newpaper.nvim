@@ -49,6 +49,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-sneak](https://github.com/justinmk/vim-sneak)
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 + [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
++ [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 + [packer.nvim](https://github.com/wbthomason/packer.nvim)
 + [vimtex](https://github.com/lervag/vimtex)
