@@ -342,7 +342,7 @@ function M.setup(config)
             CmpItemAbbrDeprecated         = { fg = newpaper.lightgray }, -- deprecated item's abbr field
             CmpItemAbbrMatch              = { fg = newpaper.navy, style = style.b_bold }, -- matched characters highlight
             CmpItemAbbrMatchFuzzy         = { fg = newpaper.magenta, style = style.b_bold }, -- fuzzy matched characters highlight
-            CmpItemKind                   = { fg = newpaper.lightblue  }, -- kind field
+            CmpItemKindDefault            = { fg = newpaper.lightblue }, -- kind field
             CmpItemMenu                   = { fg = newpaper.darkgray }, -- menu field
 
             -- Diff
@@ -443,16 +443,16 @@ function M.setup(config)
             LspSagaShTruncateLine         = { fg = newpaper.teal },
             LspSagaDocTruncateLine        = { fg = newpaper.olive },
             LspSagaCodeActionTitle        = { fg = newpaper.orange, style = style.b_bold },
-            LspSagaCodeActionTruncateLine = { fg = newpaper.aqua },
+            LspSagaCodeActionTruncateLine = { fg = newpaper.lightblue },
             LspSagaCodeActionContent      = { fg = newpaper.olive, style = style.b_bold },
             LspSagaRenamePromptPrefix     = { fg = newpaper.olive },
             LspSagaRenameBorder           = { fg = newpaper.green, bg = newpaper.float_bg },
             LspSagaHoverBorder            = { fg = newpaper.teal, bg = newpaper.float_bg },
             LspSagaSignatureHelpBorder    = { fg = newpaper.olive, bg = newpaper.float_bg },
             LspSagaLspFinderBorder        = { fg = newpaper.blue, bg = newpaper.float_bg },
-            LspSagaCodeActionBorder       = { fg = newpaper.aqua, bg = newpaper.float_bg },
+            LspSagaCodeActionBorder       = { fg = newpaper.lightblue, bg = newpaper.float_bg },
             LspSagaAutoPreview            = { bg = newpaper.orange },
-            LspSagaDefPreviewBorder       = { fg = newpaper.aqua, bg = newpaper.float_bg },
+            LspSagaDefPreviewBorder       = { fg = newpaper.lightblue, bg = newpaper.float_bg },
 
             LspFloatWinNormal             = { fg = newpaper.text,   bg = newpaper.float_bg },
             -- TargetWord                 same as Error
@@ -470,10 +470,6 @@ function M.setup(config)
             -- Sneak
             Sneak                         = { fg = newpaper.bg, bg = newpaper.accent },
             SneakScope                    = { bg = newpaper.selection },
-
-            -- Nvim dap
-            DapBreakpoint                 = { fg = newpaper.red },
-            DapStopped                    = { fg = newpaper.darkgreen },
 
             -- Illuminate
             illuminatedWord               = { bg = newpaper.highlight },
@@ -560,6 +556,40 @@ function M.setup(config)
             LspInstallerGreen             = { fg = newpaper.darkgreen },
             LspInstallerError             = { fg = newpaper.error_fg },
             LspInstallerLink              = { fg = newpaper.link, style = 'underline' },
+
+            -- Nvim dap
+            DapBreakpoint                 = { fg = newpaper.darkgreen, bg = newpaper.linenumber_bg },
+            DapBreakpointCondition        = { fg = newpaper.darkyellow, bg = newpaper.linenumber_bg },
+            DapBreakpointRejected         = { fg = newpaper.ocean, bg = newpaper.linenumber_bg },
+            DapLogPoint                   = { fg = newpaper.string, bg = newpaper.linenumber_bg },
+            DapStopped                    = { fg = newpaper.red, bg = newpaper.linenumber_bg },
+
+            -- NVIM-DAP-UI
+            DapUIVariable                 = { fg = newpaper.darkgreen },
+            DapUIScope                    = { fg = newpaper.teal, style = style.b_bold },
+            DapUIType                     = { fg = newpaper.keyword },
+            DapUIValue                    = { fg = newpaper.teal },
+            DapUIModifiedValue            = { fg = newpaper.red },
+            DapUIDecoration               = { fg = newpaper.blue },
+            DapUIThread                   = { fg = newpaper.ocean },
+            DapUIStoppedThread            = { fg = newpaper.ocean, style = style.b_bold },
+            DapUIFrameName                = { fg = newpaper.navy },
+            DapUISource                   = { fg = newpaper.lightblue },
+            DapUILineNumber               = { fg = newpaper.darkorange },
+            DapUIFloatBorder              = { fg = newpaper.border },
+            DapUIWatchesEmpty             = { fg = newpaper.magenta },
+            DapUIWatchesValue             = { fg = newpaper.nephritis },
+            DapUIWatchesError             = { fg = newpaper.error_fg },
+            DapUIBreakpointsPath          = { fg = newpaper.lightblue, style = style.b_bold },
+            DapUIBreakpointsInfo          = { fg = newpaper.darkyellow },
+            DapUIBreakpointsCurrentLine   = { fg = newpaper.orange, style = style.b_bold },
+            DapUIBreakpointsLine          = { fg = newpaper.orange },
+
+            -- LUA-DEV
+            RedrawDebugNormal             = { fg = newpaper.bg, bg = newpaper.fg },
+            RedrawDebugClear              = { fg = newpaper.fg, bg = newpaper.lightorange },
+            RedrawDebugComposed           = { fg = newpaper.fg, bg = newpaper.green },
+            RedrawDebugRecompose          = { fg = newpaper.fg, bg = newpaper.red },
 
             -- Devicon
             DevIconRb                     = { fg = newpaper.ruby_red },

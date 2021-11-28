@@ -1,6 +1,6 @@
 # 🎨 newpaper.nvim
 
-###  W.I.P.🚧
+### W.I.P.🚧
 
 ### ℹ️ Info
 A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for NeoVim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and Markdown syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
@@ -48,6 +48,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [vim-sneak](https://github.com/justinmk/vim-sneak)
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
++ [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 + [packer.nvim](https://github.com/wbthomason/packer.nvim)
 + [vimtex](https://github.com/lervag/vimtex)
@@ -248,7 +249,7 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 ⚠️More recommended configuration can be found here:
 [yorik1984/lualine-theme.nvim](https://github.com/yorik1984/lualine-theme.nvim#%EF%B8%8F-configuration)
 
-####  📺 Screenshots lualine
+#### 📺 Screenshots lualine
 
 #### 🖼️ light
 
@@ -309,7 +310,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 For a complete guide on usage and Configuration of the theme, see `:help newpaper.nvim`.
 
-##  Credits
+## Credits
 
 + [onedark.nvim](https://github.com/ful1e5/onedark.nvim) ⚡
 + [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme)
