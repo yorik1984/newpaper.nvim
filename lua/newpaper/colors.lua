@@ -52,7 +52,7 @@ function M.setup(config)
         git_removed     = '#D73A49',
         diffadd_bg      = '#AFFFAF',
         diffdelete_bg   = '#FFD7FF',
-        difftext_bg     = '#FFFFD7'
+        difftext_bg     = '#FFFFD7',
         diffchange_bg   = '#FFD787',
 
         -- Spell
