@@ -49,7 +49,7 @@ function M.setup(config)
             Underlined     = { fg = newpaper.link, style = 'underline' }, -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
             Error          = { fg = newpaper.error_fg, bg = newpaper.error_bg, style = style.b_bold_u }, -- any erroneous construct
-            Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn },
+            Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold},
 
             -- Help
 
@@ -330,12 +330,12 @@ function M.setup(config)
             BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
 
             -- Trouble
-            TroubleCount                  = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
-            TroubleNormal                 = { fg = newpaper.fg, bg = newpaper.bg },
+            TroubleCount                  = { fg = newpaper.orange, bg = newpaper.sidebar_bg, style = style.b_bold },
+            TroubleNormal                 = { fg = newpaper.sidebar_fg, bg = newpaper.bg },
             TroubleText                   = { fg = newpaper.sidebar_fg },
-            TroubleSource                 = { bg = newpaper.bg },
-            TroubleCode                   = { bg = newpaper.bg },
-            TroubleLocation               = { fg = newpaper.teal, bg = newpaper.bg},
+            TroubleSource                 = { bg = newpaper.sidebar_bg },
+            TroubleCode                   = { bg = newpaper.sidebar_bg },
+            TroubleLocation               = { fg = newpaper.teal, bg = newpaper.sidebar_bg},
             TroubleTextInformation        = { fg = newpaper.info_fg },
             TroubleTextError              = { fg = newpaper.error_fg },
             TroubleTextWarning            = { fg = newpaper.warn_fg },
@@ -393,10 +393,13 @@ function M.setup(config)
             -- Telescope
             TelescopeNormal               = { fg = newpaper.telescope_fg, bg = newpaper.telescope_bg },
             TelescopePromptBorder         = { fg = newpaper.blue, bg = newpaper.telescope_bg },
+            TelescopePromptTitle          = { fg = newpaper.blue, bg = newpaper.telescope_bg, style = style.b_bold },
             TelescopePromptPrefix         = { fg = newpaper.blue },
-            TelescopePreviewHyphen        = { fg = newpaper.blue },
+            TelescopePreviewHyphen        = { fg = newpaper.blue, style = style.b_bold },
             TelescopeResultsBorder        = { fg = newpaper.purple, bg = newpaper.telescope_bg },
+            TelescopeResultsTitle         = { fg = newpaper.purple, bg = newpaper.telescope_bg, style = style.b_bold },
             TelescopePreviewBorder        = { fg = newpaper.green, bg = newpaper.telescope_bg },
+            TelescopePreviewTitle         = { fg = newpaper.green, bg = newpaper.telescope_bg, style = style.b_bold },
             TelescopeSelection            = { fg = newpaper.telescope_fg, bg = newpaper.aqua },
             TelescopePreviewNormal        = { fg = newpaper.telescope_fg, bg = newpaper.telescope_bg },
             TelescopeSelectionCaret       = { fg = newpaper.purple, style = style.b_bold },

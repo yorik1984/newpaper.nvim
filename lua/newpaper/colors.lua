@@ -52,7 +52,7 @@ function M.setup(config)
         git_removed     = '#D73A49',
         diffadd_bg      = '#AFFFAF',
         diffdelete_bg   = '#FFD7FF',
-        difftext_bg     = '#FFFFD7'
+        difftext_bg     = '#FFFFD7',
         diffchange_bg   = '#FFD787',
 
         -- Spell
@@ -82,22 +82,43 @@ function M.setup(config)
         tex_maroon      = '#A2251A',
         tex_olive       = '#89802A',
         tex_navy        = '#1E40C2',
-        tex_red         = '#D42F2D',
-        tex_blue        = '#007BA1',
+        tex_red         = '#D84342',
+        tex_blue        = '#0089B3',
+        tex_teal        = '#005579',
         tex_magenta     = '#E00050',
-        tex_aqua        = '#28A4CE',
-        tex_orange      = '#DB6F19',
-        tex_darkorange  = '#A75A00',
+        tex_aqua        = '#4AB7E9',
+        tex_orange      = '#D37300',
+        tex_redorange   = '#F26515',
+        tex_darkorange  = '#BA6400',
 
         tex_lightpurple = '#684D99',
-        tex_lightviolet = '#BC93BC',
+        tex_lightviolet = '#BA89BB',
         tex_pink        = '#D75F66',
-        tex_lightgreen  = '#009D55',
+        tex_lightgreen  = '#0FAE34',
 
         tex_math        = '#008000',
-        tex_math_green  = '#568C5B',
+        tex_math_delim  = '#349279',
+        tex_ch_brown    = '#8C1919',
+        tex_ch_orange   = '#E5740B',
+        tex_ch_green    = '#19A665',
+        tex_ch_red      = '#E04A4A',
+        tex_ch_blue     = '#394892',
         tex_keyword     = '#7F2DC2',
-        tex_verb        = '#3A3A3A',
+        tex_verb        = '#4D4D4D',
+        tex_string      = '#007FD7',
+        tex_tikz_purple = '#635F8C',
+        tex_tikz_green  = '#568355',
+        tex_tikz_orange = '#AB915E',
+        tex_tikz_navy   = '#4654C0',
+        tex_tikz_verb   = '#535362',
+        tex_quotes      = '#003399',
+        tex_SI_purple   = '#523891',
+        tex_SI_orange   = '#D55C1F',
+        tex_SI_red      = '#D83851',
+        tex_SI_navy     = '#125DAA',
+        tex_SI_green    = '#589927',
+        tex_SI_magenta  = '#BC5AA2',
+        tex_SI_yellow   = '#C88900',
 
         tex_group_error      = '#EBF2FF',
         tex_minipage_error   = '#FBE5CC',
@@ -120,13 +141,22 @@ function M.setup(config)
 
         -- Jinja
         jinja_red       = '#b80000',
+
+        -- Python
+        python_blue     = '#336D9E',
+
+        --Rust
+        rust_green      = '#0B7261',
     }
 
     if config.style == 'light' then
 
         -- Default fg and bg
-        newpaper.fg     = newpaper.black
-        newpaper.bg     = newpaper.white
+        newpaper.fg        = newpaper.black
+        newpaper.bg        = newpaper.white
+
+        -- Search
+        newpaper.search_fg = newpaper.fg
 
     elseif config.style == 'dark' then
 
@@ -144,8 +174,8 @@ function M.setup(config)
         newpaper.yellow          = '#AFD700' -- color11
         newpaper.blue            = '#5FAFD7' -- color12
         newpaper.magenta         = '#D75FAF' -- color13
-        newpaper.aqua            = '#657b83' -- color14
-        newpaper.white           = '#DCDFE4' -- color15
+        newpaper.aqua            = '#536074' -- color14
+        newpaper.white           = '#C6C8CD' -- color15
         newpaper.none            = 'NONE'
 
         -- Other colors
@@ -205,21 +235,42 @@ function M.setup(config)
         newpaper.tex_olive       = '#BCB677'
         newpaper.tex_navy        = '#738AE5'
         newpaper.tex_red         = '#EF5D5B'
-        newpaper.tex_blue        = '#61AFEF'
-        newpaper.tex_magenta     = '#FF5FAF'
-        newpaper.tex_aqua        = '#00FFFF'
-        newpaper.tex_orange      = '#FF8700'
-        newpaper.tex_darkorange  = '#E5871A'
+        newpaper.tex_blue        = '#6DA6CF'
+        newpaper.tex_teal        = '#82A0B1'
+        newpaper.tex_magenta     = '#E5559D'
+        newpaper.tex_aqua        = '#14BCCF'
+        newpaper.tex_orange      = '#CC6C00'
+        newpaper.tex_redorange   = '#FE9879'
+        newpaper.tex_darkorange  = '#D28F3F'
 
         newpaper.tex_lightpurple = '#A494C1'
         newpaper.tex_lightviolet = '#D0B2D0'
         newpaper.tex_pink        = '#EF6A72'
-        newpaper.tex_lightgreen  = '#00E1A4'
+        newpaper.tex_lightgreen  = '#00CA93'
 
         newpaper.tex_math        = '#5FAF5F'
-        newpaper.tex_math_green  = '#98C379'
+        newpaper.tex_math_delim  = '#ABCE8C'
+        newpaper.tex_ch_brown    = '#FA9D98'
+        newpaper.tex_ch_orange   = '#FBD199'
+        newpaper.tex_ch_green    = '#8CC63E'
+        newpaper.tex_ch_red      = '#F76B68'
+        newpaper.tex_ch_blue     = '#91B2CF'
         newpaper.tex_keyword     = '#9D79C1'
         newpaper.tex_verb        = '#BCBCBC'
+        newpaper.tex_string      = '#8CC5F3'
+        newpaper.tex_tikz_purple = '#AAA3CD'
+        newpaper.tex_tikz_green  = '#8BC18B'
+        newpaper.tex_tikz_orange = '#B6B76B'
+        newpaper.tex_tikz_navy   = '#9AAAEC'
+        newpaper.tex_tikz_verb   = '#ACACAC'
+        newpaper.tex_quotes      = '#6684C1'
+        newpaper.tex_SI_purple   = '#9787BD'
+        newpaper.tex_SI_orange   = '#E0895D'
+        newpaper.tex_SI_red      = '#DF5F73'
+        newpaper.tex_SI_navy     = '#709DCC'
+        newpaper.tex_SI_green    = '#98C379'
+        newpaper.tex_SI_magenta  = '#D69CC7'
+        newpaper.tex_SI_yellow   = '#DBB158'
 
         newpaper.tex_group_error      = '#39404C'
         newpaper.tex_minipage_error   = '#310012'
@@ -240,14 +291,21 @@ function M.setup(config)
         -- Lua
         newpaper.lua_navy        = '#9191C7'
 
-            -- Jinja
+        -- Jinja
         newpaper.jinja_red       = '#D05858'
+
+        -- Python
+        newpaper.python_blue     = '#3E76A3'
+
+        --Rust
+        newpaper.rust_green      = '#6CAAA0'
 
         -- Default fg and bg
         newpaper.fg              = newpaper.white
         newpaper.bg              = newpaper.black
 
-
+        -- Search
+        newpaper.search_fg       = newpaper.bg
     end
 
     -- Optional colors
@@ -282,7 +340,6 @@ function M.setup(config)
     newpaper.msgarea_bg          = newpaper.bg
 
     -- Search
-    newpaper.search_fg           = newpaper.fg
     newpaper.search_bg           = newpaper.yellow
 
     -- Error message
