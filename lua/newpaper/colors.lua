@@ -80,7 +80,7 @@ function M.setup(config)
 
         -- TeX
         tex_maroon      = '#A2251A',
-        tex_olive       = '#89802A',
+        tex_olive       = '#89802B',
         tex_navy        = '#1E40C2',
         tex_red         = '#D84342',
         tex_blue        = '#0089B3',
@@ -98,6 +98,7 @@ function M.setup(config)
 
         tex_math        = '#008000',
         tex_math_delim  = '#349279',
+        tex_part_title  = '#5F8A00',
         tex_ch_brown    = '#8C1919',
         tex_ch_orange   = '#E5740B',
         tex_ch_green    = '#19A665',
@@ -250,6 +251,7 @@ function M.setup(config)
 
         newpaper.tex_math        = '#5FAF5F'
         newpaper.tex_math_delim  = '#ABCE8C'
+        newpaper.tex_part_title  = '#9FB866'
         newpaper.tex_ch_brown    = '#FA9D98'
         newpaper.tex_ch_orange   = '#FBD199'
         newpaper.tex_ch_green    = '#8CC63E'

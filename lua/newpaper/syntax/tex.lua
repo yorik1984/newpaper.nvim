@@ -77,7 +77,7 @@ function M.setup(config)
             -- Latex
 
             latexTSType            = { fg = newpaper.tex_blue, style = style.tex_k_style },
-            latexTSTitle           = { fg = newpaper.tex_olive, style = style.tex_m_style },
+            latexTSTitle           = { fg = newpaper.tex_part_title, style = style.tex_m_style },
             latexTSMath            = { fg = newpaper.tex_math },
             latexTSPunctDelimiter  = { fg = newpaper.tex_lightpurple },
             latexTSOperator        = { fg = newpaper.tex_math, style = style.tex_o_style },
@@ -147,7 +147,7 @@ function M.setup(config)
             -- texAuthorOpt         texOpt       \author[OPT]
             texAuthorArg          = { fg = newpaper.tex_navy }, -- \author[...]{AUTHOR LIST}
             texCmdPart            = { fg = newpaper.tex_blue, style = style.tex_m_style }, -- \(SUB*)SECTION
-            texPartArgTitle       = { fg = newpaper.tex_olive, style = style.tex_m_style }, -- \(sub*)section{TITLE}
+            texPartArgTitle       = { fg = newpaper.tex_part_title, style = style.tex_m_style }, -- \(sub*)section{TITLE}
             texCmdEnv             = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
             texEnvArgName         = { fg = newpaper.tex_darkorange, style = 'italic' }, -- \begin{ENVNAME}
             texCmdRef             = { fg = newpaper.tex_lightgreen }, -- \CITE; \LABEL
@@ -241,7 +241,7 @@ function M.setup(config)
             texMathCmdStyleBold   = { fg = newpaper.tex_math, style = 'bold' },
             texMathCmdStyleItal   = { fg = newpaper.tex_math, style = 'italic' },
             texMathCmdText        = { fg = newpaper.tex_navy },
-            texMathDelimZone      = { fg = newpaper.tex_olive, style = style.tex_o_style },
+            texMathDelimZone      = { fg = newpaper.tex_olive },
             texMathTextConcArg    = { fg = newpaper.tex_pink },
             -- texMathGroup          texMathZone
             -- texMathStyleConcArg   texMathZone
@@ -277,7 +277,7 @@ function M.setup(config)
             -- texNewenvArgEnd
             texMinipageArgWidth   = { fg = newpaper.tex_navy },
             texParboxArgWidth     = { fg = newpaper.tex_red },
-            texNewthmArgPrinted   = { fg = newpaper.tex_olive },
+            texNewthmArgPrinted   = { fg = newpaper.tex_part_title },
             texMathTagArg         = { fg = newpaper.tex_aqua },
             -- texMathCmdEnv
 
