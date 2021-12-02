@@ -27,7 +27,7 @@ function M.setup(config)
         white           = '#F1F3F2', -- color15
         none            = 'NONE',
 
-            -- Other colors
+        -- Other colors
         lightorange     = '#E4C07A',
         orange          = '#DB6F19',
         darkorange      = '#AF5F00',
@@ -299,7 +299,7 @@ function M.setup(config)
         -- Python
         newpaper.python_blue     = '#3E76A3'
 
-        --Rust
+        -- Rust
         newpaper.rust_green      = '#6CAAA0'
 
         -- Default fg and bg

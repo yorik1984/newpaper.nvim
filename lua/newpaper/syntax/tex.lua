@@ -64,6 +64,23 @@ function M.setup(config)
             texStatement      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             texType           = { fg = newpaper.tex_keyword, style = style.tex_k_style },
 
+            -- bibUnescapedSpecial Error
+            -- bibComment          Comment
+            -- bibComment2         Comment
+            -- bibComment3         Comment
+            bibNSEntryKw      = { fg = newpaper.tex_keyword },
+            bibEntryData      = { fg = newpaper.tex_pink },
+            bibVariable       = { fg = newpaper.tex_orange },
+            bibEntryKw        = { fg = newpaper.tex_blue, style = style.tex_k_style},
+            bibQuote          = { fg = newpaper.tex_string },
+            bibParen          = { fg = newpaper.tex_math_delim },
+            bibField          = { fg = newpaper.tex_math, style = style.tex_o_style },
+            bibEntry          = { fg = newpaper.tex_keyword, style = style.tex_m_style },
+            bibBrace          = { fg = newpaper.tex_teal },
+            bibType           = { fg = newpaper.tex_keyword, style = style.tex_m_style },
+            bibMath           = { fg = newpaper.tex_math },
+            bibKey            = { fg = newpaper.tex_darkorange }
+
         }
 
         return syntax
@@ -91,8 +108,21 @@ function M.setup(config)
             latexTSTextReference   = { fg = newpaper.tex_lightgreen },
             latexTSEmphasis        = { fg = newpaper.fg, style = 'italic' },
             latexTSStrong          = { fg = newpaper.fg, style = 'bold' },
-            latexTSURI             = { fg = newpaper.tex_navy, style= 'underline' },
-            latexTSComment         = { fg = newpaper.comment, style = style.c_style }
+            latexTSURI             = { fg = newpaper.tex_navy, style = 'underline' },
+            latexTSComment         = { fg = newpaper.comment, style = style.c_style },
+
+            bibtexTSPunctDelimiter = { fg = newpaper.tex_orange },
+            bibtexTSPunctBracket   = { fg = newpaper.tex_lightpurple },
+            bibtexTSFuncBuiltin    = { fg = newpaper.tex_maroon },
+            bibtexTSParameter      = { fg = newpaper.tex_orange },
+            bibtexTSOperator       = { fg = newpaper.tex_math, style = style.tex_o_style },
+            bibtexTSConstant       = { fg = newpaper.tex_math },
+            bibtexTSKeyword        = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            bibtexTSSymbol         = { fg = newpaper.tex_darkorange },
+            bibtexTSString         = { fg = newpaper.tex_teal },
+            bibtexTSField          = { fg = newpaper.tex_blue },
+            bibtexTSNumber         = { fg = newpaper.tex_pink }
+
         }
 
         return treesitter
