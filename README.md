@@ -62,10 +62,13 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - [🖼️](#todo-commentsnvim)
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
++ [calltree.nvim](https://github.com/ldelossa/calltree.nvim)
++ [vista.vim](https://github.com/liuchengxu/vista.vim)
++ [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 
 ### ⚡️ Requirements
 
-+ Neovim >= 0.5.0
++ Neovim >= 0.5.1
 
 ### 📦 Installation
 
@@ -271,9 +274,9 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 ![newpaper-dark-replace](https://user-images.githubusercontent.com/1559192/129481091-a196dcfc-4c4d-4ccb-8069-f9f3443ab36e.png)
 ![newpaper-dark-command](https://user-images.githubusercontent.com/1559192/129481093-40a09545-327c-4101-9727-fd3234509c78.png)
 
-## 📺  Screenshots
+## 📺 Screenshots
 
-### Languages:
+### 🎼 Languages:
 
 + ####  RUBY
 
@@ -299,7 +302,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 ![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
 
-### Plugins:
+### 🎛️ Plugins:
 
 + #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
@@ -307,11 +310,11 @@ Source code [HERE](preview/ruby/code.rb)
 
 ![todo-comments_dark](https://user-images.githubusercontent.com/1559192/140816034-12ef3a17-f674-4a67-a490-693947de508d.png)
 
-## FAQ
+## ❔ FAQ
 
 For a complete guide on usage and Configuration of the theme, see `:help newpaper.nvim`.
 
-## Credits
+## ©️ Credits
 
 + [onedark.nvim](https://github.com/ful1e5/onedark.nvim) ⚡
 + [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme)
