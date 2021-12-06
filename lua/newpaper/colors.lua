@@ -44,6 +44,12 @@ function M.setup(config)
         darkpurple      = '#5823C7',
         redorange       = '#D1301A',
 
+        regexp_blue     = '#3A72ED',
+        regexp_green    = '#00AA00',
+        regexp_orange   = '#DD7700',
+        regexp_magenta  = '#CC00CC',
+        regexp_brown    = '#884400',
+
         -- Git and diff
         git_bg          = '#EBEAE2',
         git_fg          = '#413932',
@@ -134,7 +140,6 @@ function M.setup(config)
         ruby_purple     = '#6838CC',
         ruby_red        = '#CC342D',
         ruby_green      = '#00AF2F',
-        ruby_blue       = '#3A72ED',
         ruby_magenta    = '#A626A4',
 
         -- Lua
@@ -181,7 +186,7 @@ function M.setup(config)
 
         -- Other colors
         newpaper.lightorange     = '#413932'
-        newpaper.orange          = '#FF8700'
+        newpaper.orange          = '#F19321'
         newpaper.darkorange      = '#AF5F00'
         newpaper.darkyellow      = '#E5C07B'
         newpaper.pink            = '#5F0000'
@@ -192,10 +197,15 @@ function M.setup(config)
         newpaper.blueviolet      = '#5F005F'
         newpaper.lightblue       = '#8BC5ED'
         newpaper.ocean           = '#56B6C2'
-        newpaper.ruby_blue       = '#00AFAF'
         newpaper.nephritis       = '#66CAA6'
         newpaper.darkpurple      = '#C966D5'
         newpaper.redorange       = '#FE7967'
+
+        newpaper.regexp_blue     = '#618EF0'
+        newpaper.regexp_green    = '#46C146'
+        newpaper.regexp_orange   = '#E39232'
+        newpaper.regexp_magenta  = '#DA46DA'
+        newpaper.regexp_brown    = '#943F3C'
 
         -- Git and diff
         newpaper.git_fg          = '#EBEAE2'
@@ -282,12 +292,11 @@ function M.setup(config)
         newpaper.tex_only_math_error  = '#3D3912'
 
         -- Ruby
-        newpaper.ruby_maroon     = '#BE7575'
+        newpaper.ruby_maroon     = '#985759'
         newpaper.ruby_navy       = '#6A82D9'
         newpaper.ruby_purple     = '#C596CA'
         newpaper.ruby_red        = '#C2534D'
         newpaper.ruby_green      = '#98C379'
-        newpaper.ruby_blue       = '#00AFAF'
         newpaper.ruby_magenta    = '#B751B6'
 
         -- Lua

@@ -65,7 +65,9 @@ module HTMLProcessor
       === == != !~ =~                    # rubyEqualityOperator
 
       string        = "text with escape \n and #{interpolation} text"
-      regex_special = /[#{special.gsub(/./) { |char| "\\#{char}" }}]/
+      regex_1       = /(?<month>\d{1,2})\/(?<day>\d{1,2})\/(?<year>\d{4})/
+      regex_2       = /\w+@(?!gmail|hotmail|yahoo)\w+(?:-\w+)?\.[A-Za-z]{2,4}/
+      regex_3       = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
       regex_latin   = /\p{Latin}/
       integer       = 1234567890
       float         = 3.1415926

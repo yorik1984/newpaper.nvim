@@ -14,23 +14,31 @@ pre { white-space: pre-wrap; font-family: monospace; color: #2b2b2b; background-
 body { font-family: monospace; color: #2b2b2b; background-color: #f1f3f2; }
 * { font-size: 1em; }
 .rubyPercentStringDelimiter { color: #003399; font-weight: bold; }
-.rubyEqualityOperator { color: #d7005f; font-weight: bold; }
-.rubyOperator { color: #003399; font-weight: bold; }
+.rubyInterpolationDelimiter { color: #af5f00; }
+.rubyPseudoOperator { color: #db6f19; }
+.rubyControl { color: #8700af; font-weight: bold; }
+.rubyDefine { color: #8700af; font-weight: bold; }
 .rubyClass { color: #a626a4; font-weight: bold; }
 .rubyModule { color: #6838cc; font-weight: bold; }
-.Comment { color: #878787; font-style: italic; }
-.rubyAccess { color: #880000; font-weight: bold; }
 .Number { color: #e45649; }
-.rubyEncoding { color: #af0000; }
-.rubyMagicComment { color: #878787; font-weight: bold; font-style: italic; }
+.rubyRegexpEscape { color: #cc00cc; }
+.rubyRegexpQuantifier { color: #3a72ed; font-weight: bold; }
+.rubyRegexpAnchor { color: #884400; font-weight: bold; }
+.rubyRegexpDot { color: #dd7700; }
+.rubyConstant { color: #005f87; font-weight: bold; }
 .rubyModuleName { color: #25817d; font-weight: bold; }
 .rubyClassName { color: #3251c5; font-weight: bold; }
 .rubySymbolDelimiter { color: #c18301; font-weight: bold; }
-.rubyInterpolationDelimiter { color: #af5f00; }
+.rubyEnglishBooleanOperator { color: #00a86b; font-weight: bold; }
+.rubyAccess { color: #880000; font-weight: bold; }
+.rubyAttribute { color: #d7005f; }
+.rubyException { color: #cc342d; font-weight: bold; }
+.rubyInclude { color: #cc342d; }
+.rubyEncoding { color: #af0000; }
 .rubyInstanceVariable { color: #008700; }
 .rubyClassVariable { color: #008700; font-weight: bold; }
 .rubyStringEscape { color: #cc342d; }
-.rubyExceptionHandler { color: #cc342d; font-weight: bold; }
+.Comment { color: #878787; font-style: italic; }
 .String { color: #0072c1; font-style: italic; }
 .LineNr { color: #878787; background-color: #eeeeee; padding-bottom: 1px; }
 .rubyGlobalVariable { color: #50a14f; font-weight: bold; }
@@ -38,27 +46,24 @@ body { font-family: monospace; color: #2b2b2b; background-color: #f1f3f2; }
 .rubyPredefinedVariable { color: #00af2f; font-weight: bold; }
 .rubyPredefinedConstant { color: #00af2f; }
 .rubyRegexpDelimiter { color: #3a72ed; font-weight: bold; }
-.rubyEnglishBooleanOperator { color: #00a86b; font-weight: bold; }
+.rubyRegexp { color: #3a72ed; font-style: italic; }
 .rubyTernaryOperator { color: #8700af; font-weight: bold; }
+.rubyStringDelimiter { color: #0072c1; font-style: italic; }
 .rubyComparisonOperator { color: #005f87; font-weight: bold; }
 .rubyBitwiseOperator { color: #d1301a; font-weight: bold; }
 .rubyBooleanOperator { color: #00a86b; font-weight: bold; }
+.rubyAssignmentOperator { color: #003399; font-weight: bold; }
+.rubyEqualityOperator { color: #d7005f; font-weight: bold; }
+.rubyOperator { color: #003399; font-weight: bold; }
 .rubyPseudoVariable { color: #af0000; }
-.rubyControl { color: #8700af; font-weight: bold; }
-.rubyDefine { color: #8700af; font-weight: bold; }
-.rubyRegexp { color: #3a72ed; font-style: italic; }
-.rubyConstant { color: #005f87; font-weight: bold; }
-.rubyRegexpSpecial { color: #5f8700; }
-.rubyPseudoOperator { color: #db6f19; }
-.rubyAttribute { color: #d7005f; }
-.rubyException { color: #cc342d; font-weight: bold; }
-.rubyInclude { color: #cc342d; }
+.rubyRegexpSpecial { color: #00aa00; }
+.rubyRegexpCharClass { color: #dd7700; }
 .Boolean { color: #00a86b; font-weight: bold; }
 .Float { color: #d7005f; }
 .Function { color: #003399; }
 .Conditional { color: #8700af; font-weight: bold; }
-.rubyAssignmentOperator { color: #003399; font-weight: bold; }
-.rubyStringDelimiter { color: #0072c1; font-style: italic; }
+.rubyExceptionHandler { color: #cc342d; font-weight: bold; }
+.rubyMagicComment { color: #878787; font-weight: bold; font-style: italic; }
 -->
 </style>
 
@@ -160,34 +165,36 @@ if ('onhashchange' in window) {
 <span id="L65" class="LineNr">65 </span>      <span class="rubyEqualityOperator">===</span> <span class="rubyEqualityOperator">==</span> <span class="rubyEqualityOperator">!=</span> <span class="rubyEqualityOperator">!~</span> <span class="rubyEqualityOperator">=~</span>                    <span class="Comment"># rubyEqualityOperator</span>
 <span id="L66" class="LineNr">66 </span>
 <span id="L67" class="LineNr">67 </span>      string        <span class="rubyAssignmentOperator">=</span> <span class="rubyStringDelimiter">&quot;</span><span class="String">text with escape </span><span class="rubyStringEscape">\n</span><span class="String"> and </span><span class="rubyInterpolationDelimiter">#{</span>interpolation<span class="rubyInterpolationDelimiter">}</span><span class="String"> text</span><span class="rubyStringDelimiter">&quot;</span>
-<span id="L68" class="LineNr">68 </span>      regex_special <span class="rubyAssignmentOperator">=</span> <span class="rubyRegexpDelimiter">/</span><span class="rubyRegexpSpecial">[</span><span class="rubyRegexp">#{special.gsub(/./) { |char| &quot;</span><span class="rubyRegexpSpecial">\\</span><span class="rubyRegexp">#{char}&quot; }}</span><span class="rubyRegexpSpecial">]</span><span class="rubyRegexpDelimiter">/</span>
-<span id="L69" class="LineNr">69 </span>      regex_latin   <span class="rubyAssignmentOperator">=</span> <span class="rubyRegexpDelimiter">/</span><span class="rubyRegexpSpecial">\p{Latin}</span><span class="rubyRegexpDelimiter">/</span>
-<span id="L70" class="LineNr">70 </span>      integer       <span class="rubyAssignmentOperator">=</span> <span class="Number">1234567890</span>
-<span id="L71" class="LineNr">71 </span>      float         <span class="rubyAssignmentOperator">=</span> <span class="Float">3.1415926</span>
-<span id="L72" class="LineNr">72 </span>      boolean_true  <span class="rubyAssignmentOperator">=</span> <span class="Boolean">true</span>
-<span id="L73" class="LineNr">73 </span>      boolean_false <span class="rubyAssignmentOperator">=</span> <span class="Boolean">false</span>
-<span id="L74" class="LineNr">74 </span>
-<span id="L75" class="LineNr">75 </span>      <span class="rubyControl">begin</span>
-<span id="L76" class="LineNr">76 </span>        <span class="rubyException">raise</span> <span class="rubyStringDelimiter">'</span><span class="String">This exception will be rescued!</span><span class="rubyStringDelimiter">'</span>
-<span id="L77" class="LineNr">77 </span>      <span class="rubyExceptionHandler">rescue</span> <span class="rubyConstant">StandardError</span> =&gt; e
-<span id="L78" class="LineNr">78 </span>        puts <span class="rubyStringDelimiter">&quot;</span><span class="String">Rescued: </span><span class="rubyInterpolationDelimiter">#{</span>e<span class="rubyPseudoOperator">.</span>inspect<span class="rubyInterpolationDelimiter">}</span><span class="rubyStringDelimiter">&quot;</span>
-<span id="L79" class="LineNr">79 </span>      <span class="rubyControl">end</span>
-<span id="L80" class="LineNr">80 </span>
-<span id="L81" class="LineNr">81 </span>    <span class="rubyDefine">end</span>
+<span id="L68" class="LineNr">68 </span>      regex_1       <span class="rubyAssignmentOperator">=</span> <span class="rubyRegexpDelimiter">/</span><span class="rubyRegexpSpecial">(?&lt;month&gt;</span><span class="rubyRegexpCharClass">\d</span><span class="rubyRegexpQuantifier">{1,2}</span><span class="rubyRegexpSpecial">)</span><span class="rubyRegexpEscape">\/</span><span class="rubyRegexpSpecial">(?&lt;day&gt;</span><span class="rubyRegexpCharClass">\d</span><span class="rubyRegexpQuantifier">{1,2}</span><span class="rubyRegexpSpecial">)</span><span class="rubyRegexpEscape">\/</span><span class="rubyRegexpSpecial">(?&lt;year&gt;</span><span class="rubyRegexpCharClass">\d</span><span class="rubyRegexpQuantifier">{4}</span><span class="rubyRegexpSpecial">)</span><span class="rubyRegexpDelimiter">/</span>
+<span id="L69" class="LineNr">69 </span>      regex_2       <span class="rubyAssignmentOperator">=</span> <span class="rubyRegexpDelimiter">/</span><span class="rubyRegexpCharClass">\w</span><span class="rubyRegexpQuantifier">+</span><span class="rubyRegexp">@</span><span class="rubyRegexpSpecial">(?!</span><span class="rubyRegexp">gmail</span><span class="rubyRegexpSpecial">|</span><span class="rubyRegexp">hotmail</span><span class="rubyRegexpSpecial">|</span><span class="rubyRegexp">yahoo</span><span class="rubyRegexpSpecial">)</span><span class="rubyRegexpCharClass">\w</span><span class="rubyRegexpQuantifier">+</span><span class="rubyRegexpSpecial">(?:</span><span class="rubyRegexp">-</span><span class="rubyRegexpCharClass">\w</span><span class="rubyRegexpQuantifier">+</span><span class="rubyRegexpSpecial">)</span><span class="rubyRegexpQuantifier">?</span><span class="rubyRegexpEscape">\.</span><span class="rubyRegexpCharClass">[</span><span class="rubyRegexp">A-Za-z</span><span class="rubyRegexpCharClass">]</span><span class="rubyRegexpQuantifier">{2,4}</span><span class="rubyRegexpDelimiter">/</span>
+<span id="L70" class="LineNr">70 </span>      regex_3       <span class="rubyAssignmentOperator">=</span> <span class="rubyRegexpDelimiter">/</span><span class="rubyRegexpAnchor">^</span><span class="rubyRegexpSpecial">(?=</span><span class="rubyRegexpDot">.</span><span class="rubyRegexpQuantifier">*</span><span class="rubyRegexpCharClass">\d</span><span class="rubyRegexpSpecial">)(?=</span><span class="rubyRegexpDot">.</span><span class="rubyRegexpQuantifier">*</span><span class="rubyRegexpCharClass">[</span><span class="rubyRegexp">a-z</span><span class="rubyRegexpCharClass">]</span><span class="rubyRegexpSpecial">)(?=</span><span class="rubyRegexpDot">.</span><span class="rubyRegexpQuantifier">*</span><span class="rubyRegexpCharClass">[</span><span class="rubyRegexp">A-Z</span><span class="rubyRegexpCharClass">]</span><span class="rubyRegexpSpecial">)(?=</span><span class="rubyRegexpDot">.</span><span class="rubyRegexpQuantifier">*</span><span class="rubyRegexpCharClass">[</span><span class="rubyRegexp">a-zA-Z</span><span class="rubyRegexpCharClass">]</span><span class="rubyRegexpSpecial">)</span><span class="rubyRegexpDot">.</span><span class="rubyRegexpQuantifier">{8,}</span><span class="rubyRegexpAnchor">$</span><span class="rubyRegexpDelimiter">/</span>
+<span id="L71" class="LineNr">71 </span>      regex_latin   <span class="rubyAssignmentOperator">=</span> <span class="rubyRegexpDelimiter">/</span><span class="rubyRegexpCharClass">\p{Latin}</span><span class="rubyRegexpDelimiter">/</span>
+<span id="L72" class="LineNr">72 </span>      integer       <span class="rubyAssignmentOperator">=</span> <span class="Number">1234567890</span>
+<span id="L73" class="LineNr">73 </span>      float         <span class="rubyAssignmentOperator">=</span> <span class="Float">3.1415926</span>
+<span id="L74" class="LineNr">74 </span>      boolean_true  <span class="rubyAssignmentOperator">=</span> <span class="Boolean">true</span>
+<span id="L75" class="LineNr">75 </span>      boolean_false <span class="rubyAssignmentOperator">=</span> <span class="Boolean">false</span>
+<span id="L76" class="LineNr">76 </span>
+<span id="L77" class="LineNr">77 </span>      <span class="rubyControl">begin</span>
+<span id="L78" class="LineNr">78 </span>        <span class="rubyException">raise</span> <span class="rubyStringDelimiter">'</span><span class="String">This exception will be rescued!</span><span class="rubyStringDelimiter">'</span>
+<span id="L79" class="LineNr">79 </span>      <span class="rubyExceptionHandler">rescue</span> <span class="rubyConstant">StandardError</span> =&gt; e
+<span id="L80" class="LineNr">80 </span>        puts <span class="rubyStringDelimiter">&quot;</span><span class="String">Rescued: </span><span class="rubyInterpolationDelimiter">#{</span>e<span class="rubyPseudoOperator">.</span>inspect<span class="rubyInterpolationDelimiter">}</span><span class="rubyStringDelimiter">&quot;</span>
+<span id="L81" class="LineNr">81 </span>      <span class="rubyControl">end</span>
 <span id="L82" class="LineNr">82 </span>
-<span id="L83" class="LineNr">83 </span>    <span class="rubyAccess">protected</span>
+<span id="L83" class="LineNr">83 </span>    <span class="rubyDefine">end</span>
 <span id="L84" class="LineNr">84 </span>
-<span id="L85" class="LineNr">85 </span>    <span class="rubyDefine">def</span> <span class="Function">end_parsing</span>(scope_name)
-<span id="L86" class="LineNr">86 </span>      <span class="rubyInstanceVariable">@text</span><span class="rubyPseudoOperator">.</span>each_with_index <span class="rubyControl">do</span> |line, index|
-<span id="L87" class="LineNr">87 </span>        <span class="rubyInstanceVariable">@text</span><span class="rubyOperator">[</span>index<span class="rubyOperator">]</span> <span class="rubyAssignmentOperator">=</span> <span class="rubyStringDelimiter">&quot;</span><span class="String">&lt;span class='l l-</span><span class="rubyInterpolationDelimiter">#{</span>index <span class="rubyOperator">+</span> <span class="Number">1</span><span class="rubyInterpolationDelimiter">}</span>
-<span id="L88" class="LineNr">88 </span><span class="String">          </span><span class="rubyInterpolationDelimiter">#{</span>scope_name<span class="rubyPseudoOperator">.</span>gsub(<span class="rubyStringDelimiter">'</span><span class="String">.</span><span class="rubyStringDelimiter">'</span>, <span class="rubyStringDelimiter">'</span><span class="String"> </span><span class="rubyStringDelimiter">'</span>)<span class="rubyInterpolationDelimiter">}</span><span class="String">'&gt;</span><span class="rubyInterpolationDelimiter">#{</span>line<span class="rubyInterpolationDelimiter">}</span><span class="String">&lt;/span&gt;</span><span class="rubyStringDelimiter">&quot;</span>
-<span id="L89" class="LineNr">89 </span>      <span class="rubyControl">end</span>
-<span id="L90" class="LineNr">90 </span>      puts <span class="rubyInstanceVariable">@text</span><span class="rubyPseudoOperator">.</span>join(<span class="rubyStringDelimiter">''</span>)
-<span id="L91" class="LineNr">91 </span>    <span class="rubyDefine">end</span>
-<span id="L92" class="LineNr">92 </span>
-<span id="L93" class="LineNr">93 </span>  <span class="rubyClass">end</span>
+<span id="L85" class="LineNr">85 </span>    <span class="rubyAccess">protected</span>
+<span id="L86" class="LineNr">86 </span>
+<span id="L87" class="LineNr">87 </span>    <span class="rubyDefine">def</span> <span class="Function">end_parsing</span>(scope_name)
+<span id="L88" class="LineNr">88 </span>      <span class="rubyInstanceVariable">@text</span><span class="rubyPseudoOperator">.</span>each_with_index <span class="rubyControl">do</span> |line, index|
+<span id="L89" class="LineNr">89 </span>        <span class="rubyInstanceVariable">@text</span><span class="rubyOperator">[</span>index<span class="rubyOperator">]</span> <span class="rubyAssignmentOperator">=</span> <span class="rubyStringDelimiter">&quot;</span><span class="String">&lt;span class='l l-</span><span class="rubyInterpolationDelimiter">#{</span>index <span class="rubyOperator">+</span> <span class="Number">1</span><span class="rubyInterpolationDelimiter">}</span>
+<span id="L90" class="LineNr">90 </span><span class="String">          </span><span class="rubyInterpolationDelimiter">#{</span>scope_name<span class="rubyPseudoOperator">.</span>gsub(<span class="rubyStringDelimiter">'</span><span class="String">.</span><span class="rubyStringDelimiter">'</span>, <span class="rubyStringDelimiter">'</span><span class="String"> </span><span class="rubyStringDelimiter">'</span>)<span class="rubyInterpolationDelimiter">}</span><span class="String">'&gt;</span><span class="rubyInterpolationDelimiter">#{</span>line<span class="rubyInterpolationDelimiter">}</span><span class="String">&lt;/span&gt;</span><span class="rubyStringDelimiter">&quot;</span>
+<span id="L91" class="LineNr">91 </span>      <span class="rubyControl">end</span>
+<span id="L92" class="LineNr">92 </span>      puts <span class="rubyInstanceVariable">@text</span><span class="rubyPseudoOperator">.</span>join(<span class="rubyStringDelimiter">''</span>)
+<span id="L93" class="LineNr">93 </span>    <span class="rubyDefine">end</span>
 <span id="L94" class="LineNr">94 </span>
-<span id="L95" class="LineNr">95 </span><span class="rubyModule">end</span>
+<span id="L95" class="LineNr">95 </span>  <span class="rubyClass">end</span>
+<span id="L96" class="LineNr">96 </span>
+<span id="L97" class="LineNr">97 </span><span class="rubyModule">end</span>
 </pre>
 </body>
 </html>

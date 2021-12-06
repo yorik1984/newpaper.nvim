@@ -65,6 +65,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [calltree.nvim](https://github.com/ldelossa/calltree.nvim)
 + [vista.vim](https://github.com/liuchengxu/vista.vim)
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
++ [nvim-notify](https://github.com/rcarriga/nvim-notify)
 
 ### ⚡️ Requirements
 
@@ -286,7 +287,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 **vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
 
-![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/140774093-ed849404-6679-497e-bad8-822f35b925f6.png)
+![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/144923443-2d9002fa-9462-45cc-91ed-71ca852cd9d9.png)
 
 **Treesitter**
 
@@ -296,7 +297,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 **vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
 
-![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/140774108-9dbd4625-47e7-48bd-ae00-7e55156af74b.png)
+![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/144923449-e60091d0-ba50-400e-8a31-38f56c5e6a2f.png)
 
 **Treesitter**
 

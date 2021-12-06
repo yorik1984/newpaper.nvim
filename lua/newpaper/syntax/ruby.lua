@@ -105,23 +105,23 @@ function M.setup(config)
 
             rubyInterpolationDelimiter     = { fg = newpaper.darkorange },
             -- rubySharpBang                  PreProc
-            rubyStringDelimiter            = { fg = newpaper.string, style = style.s_style },
+            rubyStringDelimiter            = { fg = newpaper.string,        style = style.s_style },
             -- rubyHeredocDelimiter           rubyStringDelimiter
-            -- rubyPercentRegexpDelimiter     rubyRegexpDelimiter
-            rubyPercentStringDelimiter     = { fg = newpaper.navy, style = style.o_style },
             -- rubyPercentSymbolDelimiter     rubySymbolDelimiter
-            rubyRegexpDelimiter            = { fg = newpaper.ruby_blue, style = style.o_style },
-            rubySymbolDelimiter            = { fg = newpaper.darkyellow, style = style.o_style },
+            rubySymbolDelimiter            = { fg = newpaper.darkyellow,    style = style.o_style },
+            rubyPercentStringDelimiter     = { fg = newpaper.navy,          style = style.o_style },
             -- rubyString                     String
-            -- rubyRegexpEscape               rubyRegexpSpecial
-            -- rubyRegexpQuantifier           rubyRegexpSpecial
-            -- rubyRegexpAnchor               rubyRegexpSpecial
-            -- rubyRegexpDot                  rubyRegexpCharClass
-            -- rubyRegexpCharClass            rubyRegexpSpecial
-            -- rubyRegexpIntersection         rubyRegexpSpecial
-            rubyRegexpSpecial              = { fg = newpaper.olive },
+            rubyPercentRegexpDelimiter     = { fg = newpaper.text, style = style.o_style },
+            rubyRegexpDelimiter            = { fg = newpaper.regexp_blue, style = style.o_style },
+            rubyRegexpEscape               = { fg = newpaper.regexp_magenta },
+            rubyRegexpQuantifier           = { fg = newpaper.regexp_blue, style = style.o_style },
+            rubyRegexpAnchor               = { fg = newpaper.regexp_brown, style = style.o_style },
+            rubyRegexpDot                  = { fg = newpaper.regexp_orange },
+            rubyRegexpCharClass            = { fg = newpaper.regexp_orange },
+            rubyRegexpIntersection         = { fg = newpaper.regexp_brown, style = style.o_style },
+            rubyRegexpSpecial              = { fg = newpaper.regexp_green },
+            rubyRegexp                     = { fg = newpaper.regexp_blue, style = style.s_style },
             rubyRegexpComment              = { fg = newpaper.comment, style = style.comment_title },
-            rubyRegexp                     = { fg = newpaper.ruby_blue, style = style.s_style },
 
             -- rubyError                      Error
             -- rubyUselessLineContinuation    rubyError
