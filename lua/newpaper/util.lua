@@ -15,7 +15,7 @@ function util.highlight(group, color)
     end
 end
 
---- Delete the autocmds when the theme changes to something else
+-- Delete the autocmds when the theme changes to something else
 function util.onColorScheme()
     if vim.g.colors_name ~= "newpaper" then
         vim.cmd([[autocmd! newpaper]])

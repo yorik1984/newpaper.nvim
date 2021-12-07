@@ -29,11 +29,7 @@ function M.setup(config)
 
         -- Vim treeSitter highlight syntax groups
 
-        local treesitter = {
-
-
-
-        }
+        local treesitter = {}
 
         return treesitter
 
@@ -43,11 +39,7 @@ function M.setup(config)
 
         -- Vim special plugins highlight groups
 
-        local plugins = {
-
-            -- Plugin
-
-        }
+        local plugins = {}
 
         return plugins
         -- LuaFormatter on

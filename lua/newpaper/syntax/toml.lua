@@ -13,10 +13,27 @@ function M.setup(config)
 
     tomlSyn.loadSyntax = function ()
 
-        -- Language syntax highlight groups
+        -- Toml highlight groups
+        -- Neovim >=0.6.0 include basic toml syntax
 
         local syntax = {
 
+            tomlEscape        = { fg = newpaper.magenta },
+            tomlLineEscape    = { fg = newpaper.maroon, style = style.o_style },
+            -- tomlString     String
+            -- tomlInteger    Number
+            -- tomlFloat      Float
+            -- tomlBoolean    Boolean
+            -- tomlDate       Constant
+            tomlKey           = { fg = newpaper.navy },
+            tomlKeyDq         = { fg = newpaper.navy },
+            tomlKeySq         = { fg = newpaper.navy },
+            tomlTable         = { fg = newpaper.keyword, style = style.k_style },
+            tomlTableArray    = { fg = newpaper.darkpurple, style = style.k_style },
+            tomlDotInKey      = { fg = newpaper.orange },
+            -- tomlTodo       Todo
+            -- tomlComment    Comment
+--
         }
 
         return syntax
@@ -25,7 +42,7 @@ function M.setup(config)
 
     tomlSyn.loadTreeSitter = function ()
 
-        -- Language treeSitter highlight syntax groups
+        -- Toml treeSitter highlight syntax groups
 
         local treesitter = {
 
@@ -41,29 +58,9 @@ function M.setup(config)
 
     tomlSyn.loadPlugins = function()
 
-        -- Language special plugins highlight groups
+        -- Toml special plugins highlight groups
 
-        local plugins = {
-
-            -- Plugin vim-toml
-
-            tomlEscape        = { fg = newpaper.maroon },
-            tomlLineEscape    = { fg = newpaper.maroon, style = style.o_style },
-            -- tomlString     String
-            -- tomlInteger    Number
-            -- tomlFloat      Float
-            -- tomlBoolean    Boolean
-            -- tomlDate       Constant
-            tomlKey           = { fg = newpaper.navy },
-            tomlKeyDq         = { fg = newpaper.navy },
-            tomlKeySq         = { fg = newpaper.navy },
-            tomlTable         = { fg = newpaper.keyword, style = style.k_style },
-            tomlTableArray    = { fg = newpaper.blueviolet, style = style.k_style },
-            tomlDotInKey      = { fg = newpaper.orange },
-            -- tomlTodo       Todo
-            -- tomlComment    Comment
-
-        }
+        local plugins = {}
 
         return plugins
         -- LuaFormatter on
