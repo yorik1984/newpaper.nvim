@@ -28,8 +28,9 @@ function M.setup(config)
             Boolean        = { fg = newpaper.boolean, style = style.k_style }, -- a boolean constant: TRUE, false
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
-            Function       = { fg = newpaper.navy, style = style.f_style }, -- funtion names
-            Label          = { fg = newpaper.magenta  }, -- case, default, etc.
+            Function       = { fg = newpaper.navy, style = style.f_style }, -- function names
+            Method         = { fg = newpaper.navy, style = style.f_style },
+            Label          = { fg = newpaper.magenta }, -- case, default, etc.
             Operator       = { fg = newpaper.navy, style = style.o_style }, -- sizeof", "+", "*", etc.
             Exception      = { fg = newpaper.maroon }, -- try, catch, throw
             PreProc        = { fg = newpaper.navy}, -- generic Preprocessor
@@ -52,7 +53,6 @@ function M.setup(config)
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold},
 
             -- Help
-
             helpCommand        = { fg = newpaper.teal },
             helpExample        = { fg = newpaper.string, style = style.s_style },
             helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
@@ -66,7 +66,8 @@ function M.setup(config)
 
     theme.loadEditor = function ()
 
-        -- Editor highlight gnavys
+        -- Editor highlights
+
         local editor = {
             Comment          = { fg = newpaper.comment, style = style.c_style },
             ColorColumn      = { bg = newpaper.highlight }, --  used for the columns set with 'colorcolumn'
@@ -115,7 +116,7 @@ function M.setup(config)
             StatusLineNC     = { fg = newpaper.lightgray, bg = newpaper.silver }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             StatusLineTerm   = { fg = newpaper.fg, bg = newpaper.silver }, -- status line of current terminal window
             StatusLineTermNC = { fg = newpaper.lightgray, bg = newpaper.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-            Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg  },
+            Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg },
             TabLineFill      = { bg = newpaper.tabline_bg }, -- tab pages line, where there are no labels
             TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold_i }, -- tab pages line, active tab page label
             Title            = { fg = newpaper.keyword, style = style.b_bold }, -- titles for output from ":set all", ":autocmd" etc.
@@ -147,11 +148,11 @@ function M.setup(config)
             editor.VertSplit = { fg = newpaper.bg } -- the column separating vertically split windows
         end
 
-        --Set End of Buffer lines (~)
+        -- Set End of Buffer lines (~)
         if config.hide_eob then
-            editor.EndOfBuffer = { fg = newpaper.bg } -- ~ lines at the end of a buffer
+            editor.EndOfBuffer = { fg = newpaper.bg }
         else
-            editor.EndOfBuffer = { fg = newpaper.disabled } -- ~ lines at the end of a buffer
+            editor.EndOfBuffer = { fg = newpaper.disabled }
         end
 
         return editor
@@ -191,14 +192,14 @@ function M.setup(config)
             TSKeywordFunction      = { fg = newpaper.darkpurple, style = style.k_style }, -- keywords used to define a fuction.
             TSKeywordReturn        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
             TSFunction             = { fg = newpaper.navy, style = style.f_style }, -- For fuction (calls and definitions).
-            TSMethod               = { fg = newpaper.navy, style = style.f_style }, -- For method calls and definitions.
+            TSMethod               = { fg = newpaper.bluegreen, style = style.f_style }, -- For method calls and definitions.
             TSFuncBuiltin          = { fg = newpaper.navy, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
             TSKeywordOperator      = { fg = newpaper.navy, style = style.o_style }, -- define a operators like and, or.
             TSTag                  = { fg = newpaper.tag, style = style.tag_style }, -- HTML tag names.
             TSBoolean              = { fg = newpaper.boolean, style = style.k_style }, -- For booleans.
             TSCharacter            = { fg = newpaper.orange }, -- For characters.
             TSComment              = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
-            TSConstructor          = { fg = newpaper.blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+            TSConstructor          = { fg = newpaper.bluegreen }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
             TSConstant             = { fg = newpaper.darkgreen }, -- For constants
             TSConstBuiltin         = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
             TSConstMacro           = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
@@ -221,7 +222,7 @@ function M.setup(config)
             TSPunctDelimiter       = { fg = newpaper.orange }, -- For delimiters ie: `.`
             TSPunctBracket         = { fg = newpaper.navy }, -- For brackets and parens.
             TSPunctSpecial         = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
-            TSStringRegex          = { fg = newpaper.olive }, -- For regexes.
+            TSStringRegex          = { fg = newpaper.regexp_blue }, -- For regexes.
             TSStringEscape         = { fg = newpaper.maroon }, -- For escape characters within a string.
             TSSymbol               = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
             TSType                 = { fg = newpaper.darkgreen }, -- For types.
@@ -262,9 +263,9 @@ function M.setup(config)
             LspDiagnosticsSignInformation        = { fg = newpaper.info_fg, bg = newpaper.linenumber_bg }, -- "Information" diagnostic signs in sign column
             LspDiagnosticsFloatingInformation    = { fg = newpaper.info_fg }, -- "Information" diagnostic messages in the diagnostics float
             LspDiagnosticsUnderlineInformation   = { style = 'undercurl', sp = newpaper.info_fg }, -- used to underline "Information" diagnostics.
-            LspDiagnosticsDefaultHint            = { fg = newpaper.hint_fg  }, -- "Hint" diagnostic virtual text
-            LspDiagnosticsSignHint               = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg  }, -- "Hint" diagnostic signs in sign column
-            LspDiagnosticsFloatingHint           = { fg = newpaper.hint_fg  }, -- "Hint" diagnostic messages in the diagnostics float
+            LspDiagnosticsDefaultHint            = { fg = newpaper.hint_fg }, -- "Hint" diagnostic virtual text
+            LspDiagnosticsSignHint               = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg }, -- "Hint" diagnostic signs in sign column
+            LspDiagnosticsFloatingHint           = { fg = newpaper.hint_fg }, -- "Hint" diagnostic messages in the diagnostics float
             LspDiagnosticsUnderlineHint          = { style = 'undercurl', sp = newpaper.hint_fg }, -- used to underline  s "    Hint" diagnostics.
             LspCodeLens                          = { fg = newpaper.comment, bg = newpaper.lightsilver },
             LspReferenceText                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "text" references
@@ -283,26 +284,26 @@ function M.setup(config)
             DiagnosticUnderlineHint              = { link = "LspDiagnosticsUnderlineHint" },
             DiagnosticFloatingHint               = { link = "LspDiagnosticsFloatingHint" },
             DiagnosticSignHint                   = { link = "LspDiagnosticsSignHint" },
-            DiagnosticSignOther                  = { fg = newpaper.magenta  },
+            DiagnosticSignOther                  = { fg = newpaper.magenta },
 
             DiagnosticError                      = { link = "LspDiagnosticsDefaultError" },
             DiagnosticWarn                       = { link = "LspDiagnosticsDefaultWarning" },
             DiagnosticInfo                       = { link = "LspDiagnosticsDefaultInformation" },
             DiagnosticHint                       = { link = "LspDiagnosticsDefaultHint" },
-            DiagnosticOther                      = { fg = newpaper.magenta  }
+            DiagnosticOther                      = { fg = newpaper.magenta }
 
         }
 
         if config.lsp_virtual_text_bg then
-            lsp.LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg, bg = newpaper.lsp_error_bg } -- Virtual text "Error"
-            lsp.LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg, bg = newpaper.warn_bg } -- Virtual text "Warning"
-            lsp.LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg, bg = newpaper.info_bg } -- Virtual text "Information"
-            lsp.LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg, bg = newpaper.hint_bg } -- Virtual text "Hint"
+            lsp.LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg, bg = newpaper.lsp_error_bg }
+            lsp.LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg, bg = newpaper.warn_bg }
+            lsp.LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg, bg = newpaper.info_bg }
+            lsp.LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg, bg = newpaper.hint_bg }
         else
-            lsp.LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg } -- Virtual text "Error"
-            lsp.LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg }  -- Virtual text "Warning"
-            lsp.LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg }  -- Virtual text "Information"
-            lsp.LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg }  -- Virtual text "Hint"
+            lsp.LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg }
+            lsp.LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg }
+            lsp.LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg }
+            lsp.LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg }
         end
             lsp.DiagnosticVirtualTextError           = { link = "LspDiagnosticsVirtualTextError" }
             lsp.DiagnosticVirtualTextWarn            = { link = "LspDiagnosticsVirtualTextWarning" }
@@ -319,7 +320,7 @@ function M.setup(config)
 
        local plugins = {
 
-            -- BufferLine
+            -- BufferLine -----------------------------------------------------
             BufferLineInfoDiagnosticSelected    = { fg = newpaper.info_fg,  style = style.b_bold_i },
             BufferLineHintDiagnosticSelected    = { fg = newpaper.hint_fg,  style = style.b_bold_i },
             BufferLineWarningDiagnosticSelected = { fg = newpaper.warn_fg,  style = style.b_bold_i },
@@ -329,33 +330,33 @@ function M.setup(config)
             BufferLineWarningSelected           = { fg = newpaper.warn_fg,  style = style.b_bold_i },
             BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
 
-            -- Trouble
-            TroubleCount                  = { fg = newpaper.orange, bg = newpaper.sidebar_bg, style = style.b_bold },
-            TroubleNormal                 = { fg = newpaper.sidebar_fg, bg = newpaper.bg },
-            TroubleText                   = { fg = newpaper.sidebar_fg },
-            TroubleSource                 = { bg = newpaper.sidebar_bg },
-            TroubleCode                   = { bg = newpaper.sidebar_bg },
-            TroubleLocation               = { fg = newpaper.teal, bg = newpaper.sidebar_bg},
-            TroubleTextInformation        = { fg = newpaper.info_fg },
-            TroubleTextError              = { fg = newpaper.error_fg },
-            TroubleTextWarning            = { fg = newpaper.warn_fg },
-            TroubleTextHint               = { fg = newpaper.hint_fg },
+            -- Calltree -------------------------------------------------------
+            CTBoolean                     = { fg = newpaper.boolean, style = style.k_style },
+            CTConstant                    = { fg = newpaper.darkgreen },
+            CTConstructor                 = { fg = newpaper.bluegreen },
+            CTField                       = { fg = newpaper.ocean },
+            CTFunction                    = { fg = newpaper.navy },
+            CTMethod                      = { fg = newpaper.bluegreen },
+            CTNamespace                   = { fg = newpaper.darkyellow },
+            CTNumber                      = { fg = newpaper.red },
+            CTOperator                    = { fg = newpaper.teal },
+            CTParameter                   = { fg = newpaper.orange },
+            CTParameterReference          = { fg = newpaper.olive },
+            CTString                      = { fg = newpaper.string, style = style.s_style },
+            CTSymbol                      = { fg = newpaper.teal, style = 'underline' },
+            CTSymbolDetail                = { fg = newpaper.darkgreen, style = style.b_italic },
+            CTSymbolJump                  = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
+            CTSymbolJumpRefs              = { fg = newpaper.fg, bg = newpaper.lightorange, style = style.b_bold },
+            CTType                        = { fg = newpaper.keyword },
+            CTURI                         = { fg = newpaper.link, style = 'underline' },
 
-            -- Nvim-Compe
-            CompeDocumentation            = { fg = newpaper.text,   bg = newpaper.float_bg },
-            CompeDocumentationBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
+            -- Dashboard ------------------------------------------------------
+            DashboardShortCut             = { fg = newpaper.red },
+            DashboardHeader               = { fg = newpaper.comment },
+            DashboardCenter               = { fg = newpaper.accent },
+            DashboardFooter               = { fg = newpaper.green, style = style.b_italic },
 
-            -- Nvim-Cmp
-            CmpDocumentation              = { fg = newpaper.text,   bg = newpaper.float_bg },
-            CmpDocumentationBorder        = { fg = newpaper.border, bg = newpaper.float_bg },
-            CmpItemAbbr                   = { fg = newpaper.darkgray }, -- abbr field
-            CmpItemAbbrDeprecated         = { fg = newpaper.lightgray }, -- deprecated item's abbr field
-            CmpItemAbbrMatch              = { fg = newpaper.navy, style = style.b_bold }, -- matched characters highlight
-            CmpItemAbbrMatchFuzzy         = { fg = newpaper.magenta, style = style.b_bold }, -- fuzzy matched characters highlight
-            CmpItemKindDefault            = { fg = newpaper.lightblue }, -- kind field
-            CmpItemMenu                   = { fg = newpaper.darkgray }, -- menu field
-
-            -- Diff
+            -- Diff -----------------------------------------------------------
             diffAdded                     = { fg = newpaper.git_added },
             diffRemoved                   = { fg = newpaper.git_removed },
             diffChanged                   = { fg = newpaper.git_modified },
@@ -365,81 +366,54 @@ function M.setup(config)
             diffLine                      = { fg = newpaper.blue },
             diffIndexLine                 = { fg = newpaper.purple },
 
-            -- Neogit
-            NeogitBranch                  = { fg = newpaper.blue },
-            NeogitRemote                  = { fg = newpaper.purple },
-            NeogitHunkHeader              = { fg = newpaper.fg,   bg = newpaper.highlight },
-            NeogitHunkHeaderHighlight     = { fg = newpaper.fg,   bg = newpaper.contrast },
-            NeogitDiffContextHighlight    = { fg = newpaper.text, bg = newpaper.contrast },
-            NeogitDiffDeleteHighlight     = { fg = newpaper.git_removed },
-            NeogitDiffAddHighlight        = { fg = newpaper.git_added },
+            -- Fern -----------------------------------------------------------
+            FernBranchText                = { fg = newpaper.blue },
 
-            -- GitGutter
-            GitGutterAdd                  = { fg = newpaper.git_added,    bg = newpaper.git_bg }, -- diff mode: Added line |diff.txt|
-            GitGutterChange               = { fg = newpaper.git_modified, bg = newpaper.git_bg }, -- diff mode: Changed line |diff.txt|
-            GitGutterDelete               = { fg = newpaper.git_removed,  bg = newpaper.git_bg }, -- diff mode: Deleted line |diff.txt|
+            -- GitGutter ------------------------------------------------------
+            GitGutterAdd                  = { fg = newpaper.git_added,    bg = newpaper.git_bg },
+            GitGutterChange               = { fg = newpaper.git_modified, bg = newpaper.git_bg },
+            GitGutterDelete               = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
 
-            -- GitSigns
-            GitSignsAdd                   = { fg = newpaper.git_added,    bg = newpaper.git_bg }, -- diff mode: Added line |diff.txt|
-            GitSignsAddNr                 = { fg = newpaper.git_added,    bg = newpaper.git_bg }, -- diff mode: Added line |diff.txt|
-            GitSignsAddLn                 = { fg = newpaper.git_added,    bg = newpaper.git_bg }, -- diff mode: Added line |diff.txt|
-            GitSignsChange                = { fg = newpaper.git_modified, bg = newpaper.git_bg }, -- diff mode: Changed line |diff.txt|
-            GitSignsChangeNr              = { fg = newpaper.git_modified, bg = newpaper.git_bg }, -- diff mode: Changed line |diff.txt|
-            GitSignsChangeLn              = { fg = newpaper.git_modified, bg = newpaper.git_bg }, -- diff mode: Changed line |diff.txt|
-            GitSignsDelete                = { fg = newpaper.git_removed,  bg = newpaper.git_bg }, -- diff mode: Deleted line |diff.txt|
-            GitSignsDeleteNr              = { fg = newpaper.git_removed,  bg = newpaper.git_bg }, -- diff mode: Deleted line |diff.txt|
-            GitSignsDeleteLn              = { fg = newpaper.git_removed,  bg = newpaper.git_bg }, -- diff mode: Deleted line |diff.txt|
+            -- GitSigns -------------------------------------------------------
+            GitSignsAdd                   = { fg = newpaper.git_added,    bg = newpaper.git_bg },
+            GitSignsAddNr                 = { fg = newpaper.git_added,    bg = newpaper.git_bg },
+            GitSignsAddLn                 = { fg = newpaper.git_added,    bg = newpaper.git_bg },
+            GitSignsChange                = { fg = newpaper.git_modified, bg = newpaper.git_bg },
+            GitSignsChangeNr              = { fg = newpaper.git_modified, bg = newpaper.git_bg },
+            GitSignsChangeLn              = { fg = newpaper.git_modified, bg = newpaper.git_bg },
+            GitSignsDelete                = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
+            GitSignsDeleteNr              = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
+            GitSignsDeleteLn              = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
 
-            -- Telescope
-            TelescopeNormal               = { fg = newpaper.telescope_fg, bg = newpaper.telescope_bg },
-            TelescopePromptBorder         = { fg = newpaper.blue, bg = newpaper.telescope_bg },
-            TelescopePromptTitle          = { fg = newpaper.blue, bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopePromptPrefix         = { fg = newpaper.blue },
-            TelescopePreviewHyphen        = { fg = newpaper.blue, style = style.b_bold },
-            TelescopeResultsBorder        = { fg = newpaper.purple, bg = newpaper.telescope_bg },
-            TelescopeResultsTitle         = { fg = newpaper.purple, bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopePreviewBorder        = { fg = newpaper.green, bg = newpaper.telescope_bg },
-            TelescopePreviewTitle         = { fg = newpaper.green, bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopeSelection            = { fg = newpaper.telescope_fg, bg = newpaper.aqua },
-            TelescopePreviewNormal        = { fg = newpaper.telescope_fg, bg = newpaper.telescope_bg },
-            TelescopeSelectionCaret       = { fg = newpaper.purple, style = style.b_bold },
-            TelescopeMatching             = { fg = newpaper.magenta, style = style.b_bold },
+            -- Glyph palette --------------------------------------------------
+            GlyphPalette1                 = { fg = newpaper.red },
+            GlyphPalette2                 = { fg = newpaper.green },
+            GlyphPalette3                 = { fg = newpaper.darkorange },
+            GlyphPalette4                 = { fg = newpaper.blue },
+            GlyphPalette6                 = { fg = newpaper.teal },
+            GlyphPalette7                 = { fg = newpaper.aqua },
+            GlyphPalette9                 = { fg = newpaper.magenta },
+            GlyphPaletteDirectory         = { fg = newpaper.navy },
 
-            -- NvimTree
-            NvimTreeSymlink               = { fg = newpaper.accent, style = 'italic,underline' },
-            NvimTreeFolderName            = { fg = newpaper.teal },
-            NvimTreeFolderIcon            = { fg = newpaper.teal },
-            NvimTreeOpenedFolderName      = { fg = newpaper.accent, style = style.b_bold },
-            NvimTreeRootFolder            = { fg = newpaper.title, style = style.b_bold },
-            NvimTreeEmptyFolderName       = { fg = newpaper.disabled },
-            NvimTreeIndentMarker          = { fg = newpaper.disabled },
-            NvimTreeGitDirty              = { fg = newpaper.git_modified },
-            NvimTreeGitNew                = { fg = newpaper.git_added },
-            NvimTreeGitStaged             = { fg = newpaper.comment },
-            NvimTreeGitDeleted            = { fg = newpaper.git_removed },
-            NvimTreeGitMerge              = { fg = newpaper.git_removed },
-            NvimTreeGitRenamed            = { fg = newpaper.git_modified },
-            NvimTreeLicenseIcon           = { fg = newpaper.navy },
-            NvimTreeGitignoreIcon         = { fg = newpaper.gray },
-            NvimTreeOpenedFile            = { fg = newpaper.accent },
-            NvimTreeImageFile             = { fg = newpaper.orange },
-            NvimTreeMarkdownFile          = { fg = newpaper.magenta },
-            NvimTreeExecFile              = { fg = newpaper.text },
-            NvimTreeSpecialFile           = { fg = newpaper.purple, style = 'underline' },
-            LspDiagnosticsError           = { fg = newpaper.error_fg },
-            LspDiagnosticsWarning         = { fg = newpaper.warn_fg },
-            LspDiagnosticsInformation     = { fg = newpaper.info_fg },
-            LspDiagnosticsHint            = { fg = newpaper.hint_fg },
+            -- Hop ------------------------------------------------------------
+            HopNextKey                    = { fg = newpaper.accent, style = style.b_bold },
+            HopNextKey1                   = { fg = newpaper.purple, style = style.b_bold },
+            HopNextKey2                   = { fg = newpaper.blue },
+            HopUnmatched                  = { fg = newpaper.comment },
 
-            -- WhichKey
-            WhichKey                      = { fg = newpaper.keyword },
-            WhichKeyGroup                 = { fg = newpaper.text },
-            WhichKeySeperator             = { fg = newpaper.fg },
-            WhichKeyDesc                  = { fg = newpaper.teal, style = style.b_italic },
-            WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
-            -- WhichKeyValue                 Comment
+            -- Illuminate -----------------------------------------------------
+            illuminatedWord               = { bg = newpaper.highlight },
+            illuminatedCurWord            = { bg = newpaper.contrast },
 
-            -- LspSaga
+            -- LanguageTool ---------------------------------------------------
+            LanguageToolCmd               = { fg = newpaper.comment },
+            LanguageToolErrorCount        = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
+            LanguageToolLabel             = { fg = newpaper.darkgreen },
+            LanguageToolUrl               = { fg = newpaper.link, style = 'underline' },
+            LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = 'undercurl' },
+            LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = 'undercurl' },
+
+            -- LspSaga --------------------------------------------------------
             LspFloatWinBorder             = { fg = newpaper.border, bg = newpaper.float_bg },
             LspSagaBorderTitle            = { fg = newpaper.orange, bg = newpaper.float_bg },
             DiagnosticInformation         = { fg = newpaper.info_fg },
@@ -447,7 +421,7 @@ function M.setup(config)
             ProviderTruncateLine          = { fg = newpaper.navy },
             SagaShadow                    = { fg = newpaper.gray },
             LspSagaFinderSelection        = { fg = newpaper.darkgreen, style = style.b_bold },
-            DiagnosticTruncateLine        = { fg = newpaper.info_fg, style = style.b_bold },
+            DiagnosticTruncateLine        = { fg = newpaper.info_fg,   style = style.b_bold },
             LspSagaDiagnosticBorder       = { fg = newpaper.border, bg = newpaper.float_bg },
             LspSagaDiagnosticHeader       = { fg = newpaper.warn_fg, style = style.b_bold },
             LspSagaDiagnosticTruncateLine = { fg = newpaper.border, bg = newpaper.float_bg },
@@ -459,115 +433,88 @@ function M.setup(config)
             LspSagaCodeActionTruncateLine = { fg = newpaper.lightblue },
             LspSagaCodeActionContent      = { fg = newpaper.olive, style = style.b_bold },
             LspSagaRenamePromptPrefix     = { fg = newpaper.olive },
-            LspSagaRenameBorder           = { fg = newpaper.green, bg = newpaper.float_bg },
-            LspSagaHoverBorder            = { fg = newpaper.teal, bg = newpaper.float_bg },
-            LspSagaSignatureHelpBorder    = { fg = newpaper.olive, bg = newpaper.float_bg },
-            LspSagaLspFinderBorder        = { fg = newpaper.blue, bg = newpaper.float_bg },
+            LspSagaRenameBorder           = { fg = newpaper.green,     bg = newpaper.float_bg },
+            LspSagaHoverBorder            = { fg = newpaper.teal,      bg = newpaper.float_bg },
+            LspSagaSignatureHelpBorder    = { fg = newpaper.olive,     bg = newpaper.float_bg },
+            LspSagaLspFinderBorder        = { fg = newpaper.blue,      bg = newpaper.float_bg },
             LspSagaCodeActionBorder       = { fg = newpaper.lightblue, bg = newpaper.float_bg },
             LspSagaAutoPreview            = { bg = newpaper.orange },
             LspSagaDefPreviewBorder       = { fg = newpaper.lightblue, bg = newpaper.float_bg },
-
-            LspFloatWinNormal             = { fg = newpaper.text,   bg = newpaper.float_bg },
-            -- TargetWord                 same as Error
+            LspFloatWinNormal             = { fg = newpaper.text,      bg = newpaper.float_bg },
+            -- TargetWord                 Error
             ReferencesCount               = { fg = newpaper.navy },
             DefinitionCount               = { fg = newpaper.teal },
             TargetFileName                = { fg = newpaper.comment, style = 'underline' },
             DefinitionIcon                = { fg = newpaper.teal },
             ReferencesIcon                = { fg = newpaper.navy },
-            -- DiagnosticError
+            -- DiagnosticError            Error
             DiagnosticWarning             = { fg = newpaper.warn_fg },
             DefinitionPreviewTitle        = { fg = newpaper.darkgreen },
             LspSagaLightBulb              = { fg = newpaper.hint_fg },
             LspLinesDiagBorder            = { fg = newpaper.border, bg = newpaper.float_bg },
 
-            -- Sneak
-            Sneak                         = { fg = newpaper.bg, bg = newpaper.accent },
-            SneakScope                    = { bg = newpaper.selection },
+            -- Lua-dev --------------------------------------------------------
+            RedrawDebugNormal             = { fg = newpaper.bg, bg = newpaper.fg },
+            RedrawDebugClear              = { fg = newpaper.fg, bg = newpaper.lightorange },
+            RedrawDebugComposed           = { fg = newpaper.fg, bg = newpaper.green },
+            RedrawDebugRecompose          = { fg = newpaper.fg, bg = newpaper.red },
 
-            -- Illuminate
-            illuminatedWord               = { bg = newpaper.highlight },
-            illuminatedCurWord            = { bg = newpaper.contrast },
+            -- Nvim-Cmp -------------------------------------------------------
+            CmpDocumentation              = { fg = newpaper.text,   bg = newpaper.float_bg },
+            CmpDocumentationBorder        = { fg = newpaper.border, bg = newpaper.float_bg },
+            CmpItemAbbr                   = { fg = newpaper.darkgray },
+            CmpItemAbbrDeprecated         = { fg = newpaper.lightgray },
+            CmpItemAbbrMatch              = { fg = newpaper.navy, style = style.b_bold },
+            CmpItemAbbrMatchFuzzy         = { fg = newpaper.magenta, style = style.b_bold },
+            CmpItemMenu                   = { fg = newpaper.darkgray },
+            CmpItemKindDefault            = { fg = newpaper.lightblue },
+            -- CmpItemKindText               = 1                            -- Text          = "",
+            CmpItemKindMethod             = { fg = newpaper.bluegreen },    -- Method        = "",
+            CmpItemKindFunction           = { fg = newpaper.navy },         -- Function      = "",
+            CmpItemKindConstructor        = { fg = newpaper.bluegreen },    -- Constructor   = "",
+            CmpItemKindField              = { fg = newpaper.ocean },        -- Field         = "ﰠ",
+            CmpItemKindVariable           = { fg = newpaper.darkgreen },    -- Variable      = "",
+            CmpItemKindClass              = { fg = newpaper.ruby_magenta }, -- Class         = "ﴯ",
+            CmpItemKindInterface          = { fg = newpaper.olive },        -- Interface     = "",
+            CmpItemKindModule             = { fg = newpaper.darkyellow },   -- Module        = "",
+            CmpItemKindProperty           = { fg = newpaper.bluegreen },    -- Property      = "ﰠ",
+            CmpItemKindUnit               = { fg = newpaper.darkpurple },   -- Unit          = "塞",
+            CmpItemKindValue              = { fg = newpaper.red },          -- Value         = "",
+            CmpItemKindEnum               = { fg = newpaper.green },        -- Enum          = "",
+            CmpItemKindKeyword            = { fg = newpaper.keyword },      -- Keyword       = "",
+            CmpItemKindSnippet            = { fg = newpaper.darkpurple },   -- Snippet       = "",
+            CmpItemKindColor              = { fg = newpaper.magenta },      -- Color         = "",
+            CmpItemKindFile               = { fg = newpaper.teal },         -- File          = "",
+            CmpItemKindReference          = { fg = newpaper.darkyellow },   -- Reference     = "",
+            CmpItemKindFolder             = { fg = newpaper.teal },         -- Folder        = "",
+            CmpItemKindEnumMember         = { fg = newpaper.green },        -- EnumMember    = "",
+            CmpItemKindConstant           = { fg = newpaper.darkgreen },    -- Constant      = "",
+            CmpItemKindStruct             = { fg = newpaper.olive },        -- Struct        = "פּ",
+            CmpItemKindEvent              = { fg = newpaper.orange },       -- Event         = "",
+            CmpItemKindOperator           = { fg = newpaper.navy },         -- Operator      = "",
+            CmpItemKindTypeParameter      = { fg = newpaper.orange },       -- TypeParameter = " "
 
-            -- Hop
-            HopNextKey                    = { fg = newpaper.accent, style = style.b_bold },
-            HopNextKey1                   = { fg = newpaper.purple, style = style.b_bold },
-            HopNextKey2                   = { fg = newpaper.blue },
-            HopUnmatched                  = { fg = newpaper.comment },
+            -- Nvim-Compe -----------------------------------------------------
+            CompeDocumentation            = { fg = newpaper.text,   bg = newpaper.float_bg },
+            CompeDocumentationBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
 
-            -- Fern
-            FernBranchText                = { fg = newpaper.blue },
+            -- Neogit ---------------------------------------------------------
+            NeogitBranch                  = { fg = newpaper.blue },
+            NeogitRemote                  = { fg = newpaper.purple },
+            NeogitHunkHeader              = { fg = newpaper.fg,   bg = newpaper.highlight },
+            NeogitHunkHeaderHighlight     = { fg = newpaper.fg,   bg = newpaper.contrast },
+            NeogitDiffContextHighlight    = { fg = newpaper.text, bg = newpaper.contrast },
+            NeogitDiffDeleteHighlight     = { fg = newpaper.git_removed },
+            NeogitDiffAddHighlight        = { fg = newpaper.git_added },
 
-            -- Dashboard
-            DashboardShortCut             = { fg = newpaper.red },
-            DashboardHeader               = { fg = newpaper.comment },
-            DashboardCenter               = { fg = newpaper.accent },
-            DashboardFooter               = { fg = newpaper.green, style = style.b_italic },
-
-            -- Packer
-            packerHash                    = { fg = newpaper.tag },
-            packerOutput                  = { fg = newpaper.keyword },
-            packerStatus                  = { fg = newpaper.teal },
-            packerStatusCommit            = { fg = newpaper.git_modified },
-
-            -- Glyph palette
-            GlyphPalette1                 = { fg = newpaper.red },
-            GlyphPalette2                 = { fg = newpaper.green },
-            GlyphPalette3                 = { fg = newpaper.darkorange },
-            GlyphPalette4                 = { fg = newpaper.blue },
-            GlyphPalette6                 = { fg = newpaper.teal },
-            GlyphPalette7                 = { fg = newpaper.aqua },
-            GlyphPalette9                 = { fg = newpaper.magenta },
-            GlyphPaletteDirectory         = { fg = newpaper.navy },
-
-            -- LanguageTool
-            LanguageToolCmd               = { fg = newpaper.comment },
-            LanguageToolErrorCount        = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
-            LanguageToolLabel             = { fg = newpaper.darkgreen },
-            LanguageToolUrl               = { fg = newpaper.link, style = 'underline' },
-            LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = 'undercurl' },
-            LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = 'undercurl' },
-
-            -- Todo-comments
-            TodoSignWARN                  = { fg = newpaper.todo_warn,    bg = newpaper.linenumber_bg },
-            TodoSignTODO                  = { fg = newpaper.todo_info,    bg = newpaper.linenumber_bg },
-            TodoSignPERF                  = { fg = newpaper.todo_default, bg = newpaper.linenumber_bg },
-            TodoSignNOTE                  = { fg = newpaper.todo_hint,    bg = newpaper.linenumber_bg },
-            TodoSignHACK                  = { fg = newpaper.todo_warn,    bg = newpaper.linenumber_bg },
-            TodoSignFIX                   = { fg = newpaper.todo_error,   bg = newpaper.linenumber_bg },
-            TodoFgWARN                    = { fg = newpaper.todo_warn },
-            TodoFgTODO                    = { fg = newpaper.todo_info },
-            TodoFgPERF                    = { fg = newpaper.todo_default },
-            TodoFgNOTE                    = { fg = newpaper.todo_hint },
-            TodoFgHACK                    = { fg = newpaper.todo_warn },
-            TodoFgFIX                     = { fg = newpaper.todo_error },
-            TodoBgWARN                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
-            TodoBgTODO                    = { fg = newpaper.bg, bg = newpaper.todo_info,    style = style.b_bold },
-            TodoBgPERF                    = { fg = newpaper.bg, bg = newpaper.todo_default, style = style.b_bold },
-            TodoBgNOTE                    = { fg = newpaper.bg, bg = newpaper.todo_hint,    style = style.b_bold },
-            TodoBgHACK                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
-            TodoBgFIX                     = { fg = newpaper.bg, bg = newpaper.todo_error,   style = style.b_bold },
-
-            -- Nvim-lsp-installer
-            LspInstallerServerExpanded    = { fg = newpaper.fg, style = style.b_italic },
-            LspInstallerHighlighted       = { fg = newpaper.blue },
-            LspInstallerVaderSaber        = { fg = newpaper.redorange, style = style.b_bold },
-            LspInstallerHeading           = { fg = newpaper.keyword, style = style.b_bold },
-            LspInstallerOrange            = { fg = newpaper.orange },
-            LspInstallerHeader            = { fg = newpaper.orange, style = style.b_bold },
-            LspInstallerMuted             = { fg = newpaper.comment },
-            LspInstallerLabel             = { fg = newpaper.fg, style = style.b_bold },
-            LspInstallerGreen             = { fg = newpaper.darkgreen },
-            LspInstallerError             = { fg = newpaper.error_fg },
-            LspInstallerLink              = { fg = newpaper.link, style = 'underline' },
-
-            -- Nvim dap
-            DapBreakpoint                 = { fg = newpaper.darkgreen, bg = newpaper.linenumber_bg },
+            -- Nvim dap -------------------------------------------------------
+            DapBreakpoint                 = { fg = newpaper.darkgreen,  bg = newpaper.linenumber_bg },
             DapBreakpointCondition        = { fg = newpaper.darkyellow, bg = newpaper.linenumber_bg },
-            DapBreakpointRejected         = { fg = newpaper.ocean, bg = newpaper.linenumber_bg },
-            DapLogPoint                   = { fg = newpaper.string, bg = newpaper.linenumber_bg },
-            DapStopped                    = { fg = newpaper.red, bg = newpaper.linenumber_bg },
+            DapBreakpointRejected         = { fg = newpaper.ocean,      bg = newpaper.linenumber_bg },
+            DapLogPoint                   = { fg = newpaper.string,     bg = newpaper.linenumber_bg },
+            DapStopped                    = { fg = newpaper.red,        bg = newpaper.linenumber_bg },
 
-            -- Nvim-dap-ui
+            -- Nvim-dap-ui ----------------------------------------------------
             DapUIVariable                 = { fg = newpaper.darkgreen },
             DapUIScope                    = { fg = newpaper.teal, style = style.b_bold },
             DapUIType                     = { fg = newpaper.keyword },
@@ -588,19 +535,251 @@ function M.setup(config)
             DapUIBreakpointsCurrentLine   = { fg = newpaper.orange, style = style.b_bold },
             DapUIBreakpointsLine          = { fg = newpaper.orange },
 
-            -- Nvim-dap-virtual-text
-            NvimDapVirtualText            = { fg = newpaper.gray, style = style.c_style },
-            NvimDapVirtualTextChanged     = { fg = newpaper.warn_fg, style = style.c_style },
+            -- Nvim-dap-virtual-text ------------------------------------------
+            NvimDapVirtualText            = { fg = newpaper.gray,     style = style.c_style },
+            NvimDapVirtualTextChanged     = { fg = newpaper.warn_fg,  style = style.c_style },
             NvimDapVirtualTextError       = { fg = newpaper.error_fg, style = style.c_style },
-            NvimDapVirtualTextInfo        = { fg = newpaper.info_fg, style = style.c_style },
+            NvimDapVirtualTextInfo        = { fg = newpaper.info_fg,  style = style.c_style },
 
-            -- Lua-dev
-            RedrawDebugNormal             = { fg = newpaper.bg, bg = newpaper.fg },
-            RedrawDebugClear              = { fg = newpaper.fg, bg = newpaper.lightorange },
-            RedrawDebugComposed           = { fg = newpaper.fg, bg = newpaper.green },
-            RedrawDebugRecompose          = { fg = newpaper.fg, bg = newpaper.red },
+            -- Nvim-lsp-installer ---------------------------------------------
+            LspInstallerServerExpanded    = { fg = newpaper.fg,        style = style.b_italic },
+            LspInstallerHighlighted       = { fg = newpaper.blue },
+            LspInstallerVaderSaber        = { fg = newpaper.redorange, style = style.b_bold },
+            LspInstallerHeading           = { fg = newpaper.keyword,   style = style.b_bold },
+            LspInstallerOrange            = { fg = newpaper.orange },
+            LspInstallerHeader            = { fg = newpaper.orange,    style = style.b_bold },
+            LspInstallerMuted             = { fg = newpaper.comment },
+            LspInstallerLabel             = { fg = newpaper.fg,        style = style.b_bold },
+            LspInstallerGreen             = { fg = newpaper.darkgreen },
+            LspInstallerError             = { fg = newpaper.error_fg },
+            LspInstallerLink              = { fg = newpaper.link,      style = 'underline' },
 
-            -- Devicon
+            -- Nvim-notify
+            NotifyERRORBorder             = { fg = newpaper.error_fg },
+            NotifyWARNBorder              = { fg = newpaper.warn_fg },
+            NotifyINFOBorder              = { fg = newpaper.info_fg },
+            NotifyDEBUGBorder             = { fg = newpaper.text },
+            NotifyTRACEBorder             = { fg = newpaper.purple },
+            NotifyERRORIcon               = { fg = newpaper.error_fg },
+            NotifyWARNIcon                = { fg = newpaper.warn_fg },
+            NotifyINFOIcon                = { fg = newpaper.info_fg },
+            NotifyDEBUGIcon               = { fg = newpaper.text },
+            NotifyTRACEIcon               = { fg = newpaper.purple },
+            NotifyERRORTitle              = { fg = newpaper.error_fg },
+            NotifyWARNTitle               = { fg = newpaper.warn_fg },
+            NotifyINFOTitle               = { fg = newpaper.info_fg },
+            NotifyDEBUGTitle              = { fg = newpaper.text },
+            NotifyTRACETitle              = { fg = newpaper.purple },
+            NotifyERRORBody               = { fg = newpaper.float_fg },
+            NotifyWARNBody                = { fg = newpaper.float_fg },
+            NotifyINFOBody                = { fg = newpaper.float_fg },
+            NotifyDEBUGBody               = { fg = newpaper.float_fg },
+            NotifyTRACEBody               = { fg = newpaper.float_fg },
+
+            -- NvimTree -------------------------------------------------------
+            NvimTreeSymlink               = { fg = newpaper.accent, style = 'italic,underline' },
+            NvimTreeFolderName            = { fg = newpaper.teal },
+            NvimTreeFolderIcon            = { fg = newpaper.teal },
+            NvimTreeOpenedFolderName      = { fg = newpaper.accent, style = style.b_bold },
+            NvimTreeRootFolder            = { fg = newpaper.title,  style = style.b_bold },
+            NvimTreeEmptyFolderName       = { fg = newpaper.disabled },
+            NvimTreeIndentMarker          = { fg = newpaper.disabled },
+            NvimTreeGitDirty              = { fg = newpaper.git_modified },
+            NvimTreeGitNew                = { fg = newpaper.git_added },
+            NvimTreeGitStaged             = { fg = newpaper.comment },
+            NvimTreeGitDeleted            = { fg = newpaper.git_removed },
+            NvimTreeGitMerge              = { fg = newpaper.git_removed },
+            NvimTreeGitRenamed            = { fg = newpaper.git_modified },
+            NvimTreeLicenseIcon           = { fg = newpaper.navy },
+            NvimTreeGitignoreIcon         = { fg = newpaper.gray },
+            NvimTreeOpenedFile            = { fg = newpaper.accent },
+            NvimTreeImageFile             = { fg = newpaper.orange },
+            NvimTreeMarkdownFile          = { fg = newpaper.magenta },
+            NvimTreeExecFile              = { fg = newpaper.text },
+            NvimTreeSpecialFile           = { fg = newpaper.purple, style = 'underline' },
+            LspDiagnosticsError           = { fg = newpaper.error_fg },
+            LspDiagnosticsWarning         = { fg = newpaper.warn_fg },
+            LspDiagnosticsInformation     = { fg = newpaper.info_fg },
+            LspDiagnosticsHint            = { fg = newpaper.hint_fg },
+
+            -- Packer ---------------------------------------------------------
+            packerHash                    = { fg = newpaper.tag },
+            packerOutput                  = { fg = newpaper.keyword },
+            packerStatus                  = { fg = newpaper.teal },
+            packerStatusCommit            = { fg = newpaper.git_modified },
+            packerPackageName             = { fg = newpaper.teal },
+            packerWorking                 = { fg = newpaper.comment },
+            packerProgress                = { fg = newpaper.green, style = style.b_bold },
+
+            -- Sneak ----------------------------------------------------------
+            Sneak                         = { fg = newpaper.bg, bg = newpaper.accent },
+            SneakScope                    = { bg = newpaper.selection },
+
+            -- Symbols-outline ------------------------------------------------
+            FocusedSymbol                 = { fg = newpaper.search_fg, bg = newpaper.search_bg, style = style.b_bold },
+            SymbolsOutlineConnector       = { fg = newpaper.teal },
+            -- symbols = {
+            --     File          = { icon = "",    hl = "TSURI" },
+            --     Module        = { icon = "",    hl = "TSNamespace" },
+            --     Namespace     = { icon = "",    hl = "TSNamespace" },
+            --     Package       = { icon = "",    hl = "TSNamespace" },
+            --     Class         = { icon = "𝓒",    hl = "TSType" },
+            --     Method        = { icon = "ƒ",    hl = "TSMethod" },
+            --     Property      = { icon = "",    hl = "TSMethod" },
+            --     Field         = { icon = "",    hl = "TSField" },
+            --     Constructor   = { icon = "",    hl = "TSConstructor" },
+            --     Enum          = { icon = "ℰ",    hl = "TSType" },
+            --     Interface     = { icon = "ﰮ",    hl = "TSType" },
+            --     Function      = { icon = "",    hl = "TSFunction" },
+            --     Variable      = { icon = "",    hl = "TSConstant" },
+            --     Constant      = { icon = "",    hl = "TSConstant" },
+            --     String        = { icon = "𝓐",    hl = "TSString" },
+            --     Number        = { icon = "#",    hl = "TSNumber" },
+            --     Boolean       = { icon = "⊨",    hl = "TSBoolean" },
+            --     Array         = { icon = "",    hl = "TSConstant" },
+            --     Object        = { icon = "⦿",    hl = "TSType" },
+            --     Key           = { icon = "🔐",   hl = "TSType" },
+            --     Null          = { icon = "NULL", hl = "TSType" },
+            --     EnumMember    = { icon = "",    hl = "TSField" },
+            --     Struct        = { icon = "𝓢",    hl = "TSType" },
+            --     Event         = { icon = "🗲",    hl = "TSType" },
+            --     Operator      = { icon = "+",    hl = "TSOperator" },
+            --     TypeParameter = { icon = "𝙏",    hl = "TSParameter"}
+            -- },
+
+            -- Telescope ------------------------------------------------------
+            -- Sets the highlight for selected items within the picker
+            TelescopeSelection              = { fg = newpaper.telescope_fg, bg = newpaper.aqua },
+            TelescopeSelectionCaret         = { fg = newpaper.purple, style = style.b_bold },
+            TelescopeMultiSelection         = { fg = newpaper.orange },
+
+            -- Normal in the floating windows created by telescope
+            TelescopeNormal                 = { fg = newpaper.telescope_fg, bg = newpaper.telescope_bg },
+            -- TelescopePreviewNormal          TelescopeNormal
+            -- TelescopePromptNormal           TelescopeNormal
+            -- TelescopeResultsNormal          TelescopeNormal
+
+            -- Border highlight groups. Use TelescopeBorder to override the default. Otherwise set them specifically
+            -- TelescopeBorder               TelescopeNormal
+            TelescopePromptBorder           = { fg = newpaper.blue,       bg = newpaper.telescope_bg },
+            TelescopeResultsBorder          = { fg = newpaper.purple, bg = newpaper.telescope_bg },
+            TelescopePreviewBorder          = { fg = newpaper.green,      bg = newpaper.telescope_bg },
+
+            -- Title highlight groups. Use TelescopeTitle to override the default. Otherwise set them specifically
+            -- TelescopeTitle        TelescopeBorder
+            TelescopePromptTitle            = { fg = newpaper.teal,      bg = newpaper.telescope_bg, style = style.b_bold },
+            TelescopeResultsTitle           = { fg = newpaper.purple,    bg = newpaper.telescope_bg, style = style.b_bold },
+            TelescopePreviewTitle           = { fg = newpaper.darkgreen, bg = newpaper.telescope_bg, style = style.b_bold },
+            TelescopePromptCounter          = { fg = newpaper.teal },
+
+            -- Used for highlighting characters that you match.
+            TelescopeMatching               = { fg = newpaper.magenta, style = style.b_bold },
+
+            -- Used for the prompt prefix
+            TelescopePromptPrefix           = { fg = newpaper.teal },
+
+            -- Used for highlighting the matched line inside Previewer
+            -- TelescopePreviewLine            Visual
+            -- TelescopePreviewMatch           Search
+            TelescopePreviewPipe            = { fg = newpaper.nephritis },
+            TelescopePreviewCharDev         = { fg = newpaper.magenta },
+            -- TelescopePreviewDirectory       Directory
+            TelescopePreviewBlock           = { fg = newpaper.red },
+            TelescopePreviewLink            = { fg = newpaper.link, style = 'underline' },
+            TelescopePreviewSocket          = { fg = newpaper.darkyellow },
+            -- TelescopePreviewNormal          Normal
+            TelescopePreviewRead            = { fg = newpaper.darkgreen },
+            TelescopePreviewWrite           = { fg = newpaper.maroon },
+            TelescopePreviewExecute         = { fg = newpaper.keyword },
+            TelescopePreviewHyphen          = { fg = newpaper.blue },
+            TelescopePreviewSticky          = { fg = newpaper.orange },
+            TelescopePreviewSize            = { fg = newpaper.teal },
+            TelescopePreviewUser            = { fg = newpaper.ocean },
+            TelescopePreviewGroup           = { fg = newpaper.green },
+            TelescopePreviewDate            = { fg = newpaper.string },
+            TelescopePreviewMessage         = { fg = newpaper.string },
+            TelescopePreviewMessageFillchar = { fg = newpaper.string, style = style.b_bold },
+
+            -- Used for Picker specific Results highlighting
+            TelescopeResultsClass           = { fg = newpaper.keyword },
+            TelescopeResultsConstant        = { fg = newpaper.darkgreen },
+            TelescopeResultsField           = { fg = newpaper.ocean },
+            TelescopeResultsFunction        = { fg = newpaper.navy },
+            TelescopeResultsMethod          = { fg = newpaper.navy },
+            TelescopeResultsOperator        = { fg = newpaper.darkyellow },
+            TelescopeResultsStruct          = { fg = newpaper.keyword },
+            TelescopeResultsVariable        = { fg = newpaper.darkgreen },
+            TelescopeResultsLineNr          = { fg = newpaper.linenumber_fg },
+            TelescopeResultsIdentifier      = { fg = newpaper.teal },
+            TelescopeResultsNumber          = { fg = newpaper.red },
+            TelescopeResultsComment         = { fg = newpaper.comment, style = style.c_style },
+            TelescopeResultsSpecialComment  = { fg = newpaper.comment },
+
+            -- Used for git status Results highlighting
+            TelescopeResultsDiffChange      = { fg = newpaper.git_modified },
+            TelescopeResultsDiffAdd         = { fg = newpaper.git_added },
+            TelescopeResultsDiffDelete      = { fg = newpaper.git_removed },
+            -- TelescopeResultsDiffUntracked   NonText
+
+            -- Todo-comments --------------------------------------------------
+            TodoSignWARN                  = { fg = newpaper.todo_warn,    bg = newpaper.linenumber_bg },
+            TodoSignTODO                  = { fg = newpaper.todo_info,    bg = newpaper.linenumber_bg },
+            TodoSignPERF                  = { fg = newpaper.todo_default, bg = newpaper.linenumber_bg },
+            TodoSignNOTE                  = { fg = newpaper.todo_hint,    bg = newpaper.linenumber_bg },
+            TodoSignHACK                  = { fg = newpaper.todo_warn,    bg = newpaper.linenumber_bg },
+            TodoSignFIX                   = { fg = newpaper.todo_error,   bg = newpaper.linenumber_bg },
+            TodoFgWARN                    = { fg = newpaper.todo_warn },
+            TodoFgTODO                    = { fg = newpaper.todo_info },
+            TodoFgPERF                    = { fg = newpaper.todo_default },
+            TodoFgNOTE                    = { fg = newpaper.todo_hint },
+            TodoFgHACK                    = { fg = newpaper.todo_warn },
+            TodoFgFIX                     = { fg = newpaper.todo_error },
+            TodoBgWARN                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
+            TodoBgTODO                    = { fg = newpaper.bg, bg = newpaper.todo_info,    style = style.b_bold },
+            TodoBgPERF                    = { fg = newpaper.bg, bg = newpaper.todo_default, style = style.b_bold },
+            TodoBgNOTE                    = { fg = newpaper.bg, bg = newpaper.todo_hint,    style = style.b_bold },
+            TodoBgHACK                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
+            TodoBgFIX                     = { fg = newpaper.bg, bg = newpaper.todo_error,   style = style.b_bold },
+
+            -- Trouble --------------------------------------------------------
+            TroubleCount                  = { fg = newpaper.orange, bg = newpaper.sidebar_bg, style = style.b_bold },
+            TroubleNormal                 = { fg = newpaper.sidebar_fg, bg = newpaper.bg },
+            TroubleText                   = { fg = newpaper.sidebar_fg },
+            TroubleSource                 = { bg = newpaper.sidebar_bg },
+            TroubleCode                   = { bg = newpaper.sidebar_bg },
+            TroubleLocation               = { fg = newpaper.teal, bg = newpaper.sidebar_bg},
+            TroubleTextInformation        = { fg = newpaper.info_fg },
+            TroubleTextError              = { fg = newpaper.error_fg },
+            TroubleTextWarning            = { fg = newpaper.warn_fg },
+            TroubleTextHint               = { fg = newpaper.hint_fg },
+
+            -- Vista ----------------------------------------------------------
+            VistaParenthesis = { fg = newpaper.navy, style = style.b_bold },
+            VistaScope       = { fg = newpaper.keyword, style = style.k_style },
+            VistaTag         = { fg = newpaper.navy },
+            VistaKind        = { fg = newpaper.ocean, style = style.k_style },
+            VistaScopeKind   = { fg = newpaper.teal, style = 'underline' },
+            VistaLineNr      = { fg = newpaper.cursor_nr_fg },
+            VistaColon       = { fg = newpaper.orange },
+            VistaIcon        = { fg = newpaper.teal },
+            VistaArgs        = { fg = newpaper.darkgreen, style = style.b_italic },
+            VistaPublic      = { fg = newpaper.green, style = style.k_style },
+            VistaProtected   = { fg = newpaper.maroon, style = style.k_style },
+            VistaPrivate     = { fg = newpaper.darkyellow, style = style.k_style },
+            VistaFloat       = { fg = newpaper.float_fg, bg = newpaper.float_bg },
+            VistaBracket     = { fg = newpaper.navy, style = style.b_bold },
+            VistaPrefix      = { fg = newpaper.ocean },
+            VistaHeadNr      = { fg = newpaper.darkgray },
+
+            -- WhichKey -------------------------------------------------------
+            WhichKey                      = { fg = newpaper.keyword },
+            WhichKeyGroup                 = { fg = newpaper.teal, style = style.b_bold },
+            WhichKeySeparator             = { fg = newpaper.darkgreen },
+            WhichKeyDesc                  = { fg = newpaper.teal },
+            WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
+            WhichKeyValue                 = { fg = newpaper.darkgray },
+
+            -- Devicon --------------------------------------------------------
             DevIconRb                     = { fg = newpaper.ruby_red },
             DevIconErb                    = { fg = newpaper.ruby_red },
             DevIconRs                     = { fg = newpaper.rust_green },
@@ -624,12 +803,18 @@ function M.setup(config)
             plugins.NvimTreeNormal = { fg = newpaper.fg, bg = newpaper.bg }
         end
 
-        -- Use TreeSitter IndentBlanklineContextChar
-        if not vim.g.indent_blankline_use_treesitter then
-            plugins.IndentBlanklineContextChar = { fg = newpaper.comment }
+        -- IndentBlankline
+        if vim.g.indent_blankline_use_treesitter then
+        -- Use TreeSitter IndentBlankline
+            plugins.IndentBlanklineContextChar  = { fg = newpaper.keyword }
+            plugins.IndentBlanklineContextStart = { style = 'underline' }
+        else
+            plugins.IndentBlanklineContextChar  = { fg = newpaper.gray }
+            plugins.IndentBlanklineContextStart = { style = 'underline' }
         end
 
         return plugins
+
         -- LuaFormatter on
 
     end

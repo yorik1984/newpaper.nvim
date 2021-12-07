@@ -43,6 +43,7 @@ function M.setup(config)
         nephritis       = '#00A86B',
         darkpurple      = '#5823C7',
         redorange       = '#D1301A',
+        bluegreen       = '#257D90',
 
         regexp_blue     = '#3A72ED',
         regexp_green    = '#00AA00',
@@ -200,6 +201,7 @@ function M.setup(config)
         newpaper.nephritis       = '#66CAA6'
         newpaper.darkpurple      = '#C966D5'
         newpaper.redorange       = '#FE7967'
+        newpaper.bluegreen       = '#66A4B1'
 
         newpaper.regexp_blue     = '#618EF0'
         newpaper.regexp_green    = '#46C146'
