@@ -219,7 +219,7 @@ Options:
         `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`
 
 >
-        vim.g.newpaper_custom_highlight = {
+        vim.g.newpaper_custom_highlights = {
             Number    = { fg = "#00FF00" },
             rubyClass = { fg = "#00FFF0" },
             Comment   = { fg = "#FF0000", style = 'italic,underline' }
