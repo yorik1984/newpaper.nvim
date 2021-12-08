@@ -56,6 +56,8 @@ local function setup(userConfig)
 
     util.loadPluginSyntax(jinjaSyn.setup(configModule.config))
 
+    util.loadCustomSyntax(configModule.config)
+
 end
 
 return {setup = setup}

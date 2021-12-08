@@ -25,22 +25,25 @@ CONTENTS
         - LSP Saga
         - LSP Trouble
         - Nvim-Compe
+        - Nvim-Cmp
+        - Trouble
         - Git Gutter
-        - Git Messenger
+        - git-messenger
         - Git Signs
         - Telescope.nvim
         - Nvim-Tree.lua
         - NERDTree
         - Indent-Blankline.nvim
-        - Vim-Which-Key
+        - vim-which-key
         - WhichKey.nvim
         - Dashboard
-        - BufferLine
         - Lualine
         - Neogit
-        - Vim-Sneak
-        - Nvim-Dap
-        - Vim-Illuminate
+        - vim-sneak
+        - nvim-dap
+        - nvim-dap-ui
+        - nvim-dap-virtual-text
+        - vim-illuminate
         - packer.nvim
         - vimtex
         - glyph-palette.vim
@@ -49,6 +52,14 @@ CONTENTS
         - vim-ruby
         - vim-lua
         - vim-LanguageTool
+        - todo-comments.nvim
+        - bufferline.nvim
+        - nvim-lsp-installer
+        - calltree.nvim
+        - vista.vim
+        - symbols-outline.nvim
+        - nvim-notify
+
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.
@@ -199,9 +210,21 @@ Options:
         Override the default colors and use your own.
         Also owerride lualine colors if have same name for more good view.
 >
-        vim.g.newpaper_colors   = { black = "#000000", bg = "#0F111A" }
+        vim.g.newpaper_colors = { black = "#000000", bg = "#0F111A" }
 <
 
+    + custom_highlights  {table} (default = {})
+        Override the default and plugins highlights groups. Table  predefine
+        any syntax colors. Use `fg`,`bg`, `sp`, `style` style options.
+        `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`
+
+>
+        vim.g.newpaper_custom_highlight = {
+            Number    = { fg = "#00FF00" },
+            rubyClass = { fg = "#00FFF0" },
+            Comment   = { fg = "#FF0000", style = 'italic,underline' }
+        }
+<
 
     + lualine_bold       {booleans} (default = true)
         When true, section headers in the lualine theme will be bold 
@@ -240,21 +263,35 @@ Default settings:
         lualine_style       = 'light'
     })
 <
-Example config in init.lua:
+Example config in lua with global variables
 >
     vim.g.newpaper_style    = 'dark'
     vim.g.newpaper_keywords = 'italic'
     vim.g.newpaper_borders  = false
-    vim.g.newpaper_colors   = { black = "#000000", bg = "#0F111A" }
-    require('newpaper').setup()
+    vim.g.newpaper_colors   = { teal = "#0000FF" }
+    vim.g.newpaper_colors   = {
+        Float     = { fg = colors.teal },
+        Number    = { fg = "#00FF00" },
+        rubyClass = { fg = "#00FFF0" },
+        Comment   = { fg = "#FF0000", style = 'italic,underline' }
+    }
 <
-Or better init.lua:
+OR better with user configuration
 >
+    local colors = { teal = "#0000FF" } -- use one color for many groups
+    local custom_highlights = {
+              Float     = { fg = colors.teal }, -- prefer override by name
+              Number    = { fg = "#00FF00" },   -- but hex colos also good
+              rubyClass = { fg = "#00FFF0" },
+              Comment   = { fg = "#FF0000", style = 'italic,underline' },
+          }
     require('newpaper').setup({
         style    = 'dark',
         keywords = 'italic',
-        borders  = false,
-        colors   = { black = "#000000", bg = "#0F111A" }
+        -- ...
+        colors              = colors,
+        custom_highlights   = custom_highlights,
+        -- ...
     })
 <
 Example config in init.vim:

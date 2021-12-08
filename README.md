@@ -153,6 +153,7 @@ Available options:
 | lsp_virtual_text_bg | `true`     | Enable background color for LSP virtual text |
 | hide_eob           | `false`    | Hide the end of buffer lines (`~`) |
 | colors             | `{}`       | Override the default colors and use your own. Also owerride lualine colors if you have same name for more good view |
+| custom_highlights  | `{}`       | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold       | `true`     | When true, section headers in the lualine theme will be bold |
 | lualine_style      | `'light'`  | Set different style from main theme:`'dark'`, `'light'` |
 
@@ -184,25 +185,41 @@ require('newpaper').setup({
     lsp_virtual_text_bg = true,
     hide_eob            = false,
     colors              = {},
+    custom_highlights   = {},
     lualine_bold        = true,
     lualine_style       = 'light'
 })
 ```
 
 ```lua
--- Example config in lua
+-- Example config in lua with global variables
 vim.g.newpaper_style    = 'dark'
 vim.g.newpaper_keywords = 'italic'
 vim.g.newpaper_borders  = false
-vim.g.newpaper_colors   = { black = "#000000", bg = "#0F111A" }
+vim.g.newpaper_colors   = { teal = "#0000FF" }
+vim.g.newpaper_colors   = {
+    Float     = { fg = colors.teal },
+    Number    = { fg = "#00FF00" },
+    rubyClass = { fg = "#00FFF0" },
+    Comment   = { fg = "#FF0000", style = 'italic,underline' }
+}   
 require('newpaper').setup()
 
--- OR better
+-- OR better with user configuration
+local colors = { teal = "#0000FF" } -- use one color for many groups
+local custom_highlights = {
+          Float     = { fg = colors.teal }, -- prefer override by name
+          Number    = { fg = "#00FF00" },   -- but hex colos also good
+          rubyClass = { fg = "#00FFF0" },
+          Comment   = { fg = "#FF0000", style = 'italic,underline' },
+      }
 require('newpaper').setup({
     style    = 'dark',
     keywords = 'italic',
-    borders  = false,
-    colors   = { black = "#000000", bg = "#0F111A" }
+    -- ...
+    colors              = colors,
+    custom_highlights   = custom_highlights,
+    -- ...
 })
 ```
 

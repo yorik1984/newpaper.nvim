@@ -53,7 +53,7 @@ function util.load(theme)
     vim.o.termguicolors = true
     vim.g.colors_name = "newpaper"
 
--- Load plugins and lsp async
+    -- Load plugins and lsp async
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function ()
 
@@ -77,11 +77,10 @@ function util.load(theme)
 end
 
 function util.loadSyntax(synTheme)
-    -- Load plugins and lsp async
+
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function ()
 
-        -- imort tables for plugins
         util.syntax(synTheme.loadPlugins())
 
         async:close()
@@ -97,12 +96,28 @@ function util.loadSyntax(synTheme)
 end
 
 function util.loadPluginSyntax(synTheme)
-    -- Load plugins and lsp async
+
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function ()
 
-        -- imort tables for plugins
         util.syntax(synTheme.loadPlugins())
+
+        async:close()
+
+    end))
+
+    async:send()
+
+end
+
+function util.loadCustomSyntax(config)
+
+    local async
+    async = vim.loop.new_async(vim.schedule_wrap(function ()
+
+        if type(config.custom_highlights) == 'table' then
+            util.syntax(config.custom_highlights)
+        end
 
         async:close()
 
