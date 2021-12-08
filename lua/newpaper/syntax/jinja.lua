@@ -24,11 +24,11 @@ function M.setup(config)
             -- jinjaTagDelim     jinjaTagBlock
             -- jinjaVarDelim     jinjaVarBlock
             -- jinjaCommentDelim jinjaComment
-            jinjaRawDelim     = { fg = newpaper.darkgray, style = style.o_style },
+            jinjaRawDelim     = { fg = newpaper.darkgrey, style = style.o_style },
 
             jinjaSpecial      = { fg = newpaper.darkgreen, style = style.o_style },
             jinjaOperator     = { fg = newpaper.navy, style = style.o_style },
-            jinjaRaw          = { fg = newpaper.darkgray },
+            jinjaRaw          = { fg = newpaper.darkgrey },
             jinjaTagBlock     = { fg = newpaper.jinja_red },
             jinjaVarBlock     = { fg = newpaper.jinja_red },
             -- jinjaStatement    Statement

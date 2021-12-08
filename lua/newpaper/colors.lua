@@ -17,7 +17,7 @@ function M.setup(config)
         purple          = '#8700AF', -- color05
         teal            = '#005F87', -- color06
         silver          = '#E4E4E4', -- color07
-        gray            = '#585858', -- color08
+        grey            = '#585858', -- color08
         red             = '#E45649', -- color09
         green           = '#50A14F', -- color10
         yellow          = '#FFFF00', -- color11
@@ -33,9 +33,9 @@ function M.setup(config)
         darkorange      = '#AF5F00',
         darkyellow      = '#C18301',
         pink            = '#FFEEFF',
-        darkgray        = '#444444',
-        lightgray       = '#878787',
-        lightlightgray  = '#C0C0C0',
+        darkgrey        = '#444444',
+        lightgrey       = '#878787',
+        lightlightgrey  = '#C0C0C0',
         lightsilver     = '#EEEEEE',
         blueviolet      = '#AF87D7',
         lightblue       = '#0072C1',
@@ -175,7 +175,7 @@ function M.setup(config)
         newpaper.purple          = '#A274D1' -- color05
         newpaper.teal            = '#5F8787' -- color06
         newpaper.silver          = '#3A3A3A' -- color07
-        newpaper.gray            = '#808080' -- color08
+        newpaper.grey            = '#808080' -- color08
         newpaper.red             = '#E06C75' -- color09
         newpaper.green           = '#00875F' -- color10
         newpaper.yellow          = '#AFD700' -- color11
@@ -191,9 +191,9 @@ function M.setup(config)
         newpaper.darkorange      = '#AF5F00'
         newpaper.darkyellow      = '#E5C07B'
         newpaper.pink            = '#5F0000'
-        newpaper.darkgray        = '#BCBCBC'
-        newpaper.lightgray       = '#787878'
-        newpaper.lightlightgray  = '#4E4E4E'
+        newpaper.darkgrey        = '#BCBCBC'
+        newpaper.lightgrey       = '#787878'
+        newpaper.lightlightgrey  = '#4E4E4E'
         newpaper.lightsilver     = '#303030'
         newpaper.blueviolet      = '#5F005F'
         newpaper.lightblue       = '#8BC5ED'
@@ -327,16 +327,16 @@ function M.setup(config)
     newpaper.selection           = newpaper.blue
     newpaper.string              = newpaper.lightblue
     newpaper.accent              = newpaper.blue
-    newpaper.comment             = newpaper.lightgray
+    newpaper.comment             = newpaper.lightgrey
     newpaper.link                = newpaper.navy
     newpaper.tag                 = newpaper.navy
     newpaper.boolean             = newpaper.nephritis
     newpaper.highlight           = newpaper.silver
-    newpaper.disabled            = newpaper.lightlightgray
-    newpaper.contrast            = newpaper.lightlightgray
+    newpaper.disabled            = newpaper.lightlightgrey
+    newpaper.contrast            = newpaper.lightlightgrey
     newpaper.active              = newpaper.silver
     newpaper.border              = newpaper.purple
-    newpaper.text                = newpaper.darkgray
+    newpaper.text                = newpaper.darkgrey
     newpaper.title               = newpaper.fg
     newpaper.variable            = newpaper.fg
 
@@ -344,7 +344,7 @@ function M.setup(config)
     newpaper.folded_fg           = newpaper.blue
     newpaper.folded_bg           = newpaper.aqua
     newpaper.wildmenu_bg         = newpaper.yellow
-    newpaper.wildmenu_fg         = newpaper.darkgray
+    newpaper.wildmenu_fg         = newpaper.darkgrey
     newpaper.cursor_nr_fg        = newpaper.darkorange
     newpaper.cursor_nr_bg        = newpaper.lightsilver
     newpaper.linenumber_fg       = newpaper.comment
@@ -359,10 +359,10 @@ function M.setup(config)
     newpaper.error_bg            = newpaper.pink
 
     -- Tabline
-    newpaper.tabline_bg          = newpaper.lightlightgray
+    newpaper.tabline_bg          = newpaper.lightlightgrey
     newpaper.tabline_active_fg   = newpaper.fg
     newpaper.tabline_active_bg   = newpaper.bg
-    newpaper.tabline_inactive_fg = newpaper.lightgray
+    newpaper.tabline_inactive_fg = newpaper.lightgrey
     newpaper.tabline_inactive_bg = newpaper.silver
 
     -- Sidebar and float windows
