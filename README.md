@@ -25,7 +25,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
     - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [🖼️](#RUBY)
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - TOML with [vim-toml](https://github.com/cespare/vim-toml)
-    - Lua with [vim-lua](https://github.com/tbastos/vim-lua) [🖼️](#LUA)
+    - Lua with [vim-lua](https://github.com/tbastos/vim-lua) - [🖼️](#LUA)
 
  ###  🔌 Supported plugins:
 
@@ -247,7 +247,7 @@ EOF
     vCursor      = { fg = newpaper.bg, bg = newpaper.purple },     -- Visual mode
     veCursor     = { fg = newpaper.bg, bg = newpaper.darkpurple }, -- Visual mode with 'selection' "exclusive" (same as 'v', if not specified)
     oCursor      = { fg = newpaper.bg, bg = newpaper.navy },       -- Operator-pending mode
-    iCursor      = { fg = newpaper.bg, bg = newpaper.darkgreen },  -- Insert mode
+    iCursor      = { fg = newpaper.bg, bg = newpaper.green },      -- Insert mode
     rCursor      = { fg = newpaper.bg, bg = newpaper.magenta },    -- Replace mode
     cCursor      = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Normal (append) mode
     ciCursor     = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Insert mode

@@ -18,6 +18,7 @@ function M.setup(config)
             -- Basic tex groups
             -- NOTE:some basic groups init in Vimtex part. See below
 
+            texCursor         = { fg = newpaper.bg, bg = newpaper.tex_aqua },
             texBadMath        = { bg = newpaper.tex_math_error },
             texMathDelimBad   = { bg = newpaper.tex_math_delim_error },
             texOnlyMath       = { bg = newpaper.tex_only_math_error },
