@@ -63,7 +63,6 @@ function M.setup(config)
         return syntax
 
     end
-
     theme.loadEditor = function ()
 
         -- Editor highlights
@@ -73,9 +72,20 @@ function M.setup(config)
             ColorColumn      = { bg = newpaper.highlight }, --  used for the columns set with 'colorcolumn'
             Conceal          = { fg = newpaper.tex_math }, -- placeholder characters substituted for concealed text (see 'conceallevel')
             Cursor           = { fg = newpaper.bg, bg = newpaper.cursor }, -- the character under the cursor
+            nCursor          = { fg = newpaper.bg, bg = newpaper.teal }, -- Normal mode
+            vCursor          = { fg = newpaper.bg, bg = newpaper.purple }, -- Visual mode
+            veCursor         = { fg = newpaper.bg, bg = newpaper.darkpurple }, -- Visual mode with 'selection' "exclusive" (same as 'v', if not specified)
+            oCursor          = { fg = newpaper.bg, bg = newpaper.navy }, -- Operator-pending mode
+            iCursor          = { fg = newpaper.bg, bg = newpaper.darkgreen }, -- Insert mode
+            rCursor          = { fg = newpaper.bg, bg = newpaper.magenta }, -- Replace mode
+            cCursor          = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Normal (append) mode
+            ciCursor         = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Insert mode
+            crCursor         = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Replace mode
+            smCursor         = { fg = newpaper.bg, bg = newpaper.yellow }, -- showmatch in Insert mode
+            TermCursor       = { fg = newpaper.bg, bg = newpaper.cursor }, -- active cursor in terminal
+            TermCursorNC     = { fg = newpaper.bg, bg = newpaper.lightgrey }, -- inactive cursor in terminal
             CursorColumn     = { bg = newpaper.active }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
             CursorLine       = { bg = newpaper.active }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-            FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
             CursorIM         = { fg = newpaper.bg, bg = newpaper.cursor }, -- like Cursor, but used when in IME mode
             Directory        = { fg = newpaper.navy }, -- directory names (and other special names in listings)
             DiffAdd          = { fg = newpaper.git_added, bg = newpaper.diffadd_bg }, -- diff mode: Added line
@@ -83,6 +93,7 @@ function M.setup(config)
             DiffDelete       = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg }, -- diff mode: Deleted line
             DiffText         = { fg = newpaper.text, bg = newpaper.difftext_bg }, -- diff mode: Changed text within a changed line
             ErrorMsg         = { fg = newpaper.error_fg, bg = newpaper.error_bg }, -- error messages
+            FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
             Folded           = { fg = newpaper.folded_fg, bg = newpaper.folded_bg }, -- line used for closed folds
             FoldColumn       = { fg = newpaper.folded_fg, bg = newpaper.linenumber_bg }, -- 'foldcolumn'
             IncSearch        = { fg = newpaper.search_fg, bg = newpaper.search_bg }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -113,9 +124,9 @@ function M.setup(config)
             SpellLocal       = { bg = newpaper.spelllocal, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
             SpellRare        = { bg = newpaper.spellrare, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
             StatusLine       = { fg = newpaper.teal, bg = newpaper.silver }, -- status line of current window
-            StatusLineNC     = { fg = newpaper.lightgray, bg = newpaper.silver }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+            StatusLineNC     = { fg = newpaper.lightgrey, bg = newpaper.silver }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             StatusLineTerm   = { fg = newpaper.fg, bg = newpaper.silver }, -- status line of current terminal window
-            StatusLineTermNC = { fg = newpaper.lightgray, bg = newpaper.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+            StatusLineTermNC = { fg = newpaper.lightgrey, bg = newpaper.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg },
             TabLineFill      = { bg = newpaper.tabline_bg }, -- tab pages line, where there are no labels
             TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold_i }, -- tab pages line, active tab page label
@@ -169,7 +180,7 @@ function M.setup(config)
         vim.g.terminal_color_5  = newpaper.purple
         vim.g.terminal_color_6  = newpaper.teal
         vim.g.terminal_color_7  = newpaper.silver
-        vim.g.terminal_color_8  = newpaper.gray
+        vim.g.terminal_color_8  = newpaper.grey
         vim.g.terminal_color_9  = newpaper.red
         vim.g.terminal_color_10 = newpaper.green
         vim.g.terminal_color_11 = newpaper.yellow
@@ -362,7 +373,7 @@ function M.setup(config)
             diffChanged                   = { fg = newpaper.git_modified },
             diffOldFile                   = { fg = newpaper.text },
             diffNewFile                   = { fg = newpaper.title },
-            diffFile                      = { fg = newpaper.gray },
+            diffFile                      = { fg = newpaper.grey },
             diffLine                      = { fg = newpaper.blue },
             diffIndexLine                 = { fg = newpaper.purple },
 
@@ -419,7 +430,7 @@ function M.setup(config)
             DiagnosticInformation         = { fg = newpaper.info_fg },
             -- DiagnosticHint
             ProviderTruncateLine          = { fg = newpaper.navy },
-            SagaShadow                    = { fg = newpaper.gray },
+            SagaShadow                    = { fg = newpaper.grey },
             LspSagaFinderSelection        = { fg = newpaper.darkgreen, style = style.b_bold },
             DiagnosticTruncateLine        = { fg = newpaper.info_fg,   style = style.b_bold },
             LspSagaDiagnosticBorder       = { fg = newpaper.border, bg = newpaper.float_bg },
@@ -462,11 +473,11 @@ function M.setup(config)
             -- Nvim-Cmp -------------------------------------------------------
             CmpDocumentation              = { fg = newpaper.text,   bg = newpaper.float_bg },
             CmpDocumentationBorder        = { fg = newpaper.border, bg = newpaper.float_bg },
-            CmpItemAbbr                   = { fg = newpaper.darkgray },
-            CmpItemAbbrDeprecated         = { fg = newpaper.lightgray },
+            CmpItemAbbr                   = { fg = newpaper.darkgrey },
+            CmpItemAbbrDeprecated         = { fg = newpaper.lightgrey },
             CmpItemAbbrMatch              = { fg = newpaper.navy, style = style.b_bold },
             CmpItemAbbrMatchFuzzy         = { fg = newpaper.magenta, style = style.b_bold },
-            CmpItemMenu                   = { fg = newpaper.darkgray },
+            CmpItemMenu                   = { fg = newpaper.darkgrey },
             CmpItemKindDefault            = { fg = newpaper.lightblue },
             -- CmpItemKindText               = 1                            -- Text          = "",
             CmpItemKindMethod             = { fg = newpaper.bluegreen },    -- Method        = "",
@@ -536,7 +547,7 @@ function M.setup(config)
             DapUIBreakpointsLine          = { fg = newpaper.orange },
 
             -- Nvim-dap-virtual-text ------------------------------------------
-            NvimDapVirtualText            = { fg = newpaper.gray,     style = style.c_style },
+            NvimDapVirtualText            = { fg = newpaper.grey,     style = style.c_style },
             NvimDapVirtualTextChanged     = { fg = newpaper.warn_fg,  style = style.c_style },
             NvimDapVirtualTextError       = { fg = newpaper.error_fg, style = style.c_style },
             NvimDapVirtualTextInfo        = { fg = newpaper.info_fg,  style = style.c_style },
@@ -591,7 +602,7 @@ function M.setup(config)
             NvimTreeGitMerge              = { fg = newpaper.git_removed },
             NvimTreeGitRenamed            = { fg = newpaper.git_modified },
             NvimTreeLicenseIcon           = { fg = newpaper.navy },
-            NvimTreeGitignoreIcon         = { fg = newpaper.gray },
+            NvimTreeGitignoreIcon         = { fg = newpaper.grey },
             NvimTreeOpenedFile            = { fg = newpaper.accent },
             NvimTreeImageFile             = { fg = newpaper.orange },
             NvimTreeMarkdownFile          = { fg = newpaper.magenta },
@@ -769,7 +780,7 @@ function M.setup(config)
             VistaFloat       = { fg = newpaper.float_fg, bg = newpaper.float_bg },
             VistaBracket     = { fg = newpaper.navy, style = style.b_bold },
             VistaPrefix      = { fg = newpaper.ocean },
-            VistaHeadNr      = { fg = newpaper.darkgray },
+            VistaHeadNr      = { fg = newpaper.darkgrey },
 
             -- WhichKey -------------------------------------------------------
             WhichKey                      = { fg = newpaper.keyword },
@@ -777,7 +788,7 @@ function M.setup(config)
             WhichKeySeparator             = { fg = newpaper.darkgreen },
             WhichKeyDesc                  = { fg = newpaper.teal },
             WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
-            WhichKeyValue                 = { fg = newpaper.darkgray },
+            WhichKeyValue                 = { fg = newpaper.darkgrey },
 
             -- Devicon --------------------------------------------------------
             DevIconRb                     = { fg = newpaper.ruby_red },
@@ -809,7 +820,7 @@ function M.setup(config)
             plugins.IndentBlanklineContextChar  = { fg = newpaper.keyword }
             plugins.IndentBlanklineContextStart = { style = 'underline' }
         else
-            plugins.IndentBlanklineContextChar  = { fg = newpaper.gray }
+            plugins.IndentBlanklineContextChar  = { fg = newpaper.grey }
             plugins.IndentBlanklineContextStart = { style = 'underline' }
         end
 

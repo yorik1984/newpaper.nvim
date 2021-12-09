@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>vim_lua_code_dark_lua.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim8.1_v2">
+<meta name="syntax" content="lua">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=,use_input_for_pc=fallback">
+<meta name="colorscheme" content="newpaper">
+<style>
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #c6c8cd; background-color: #2b2b2b; }
+body { font-family: monospace; color: #c6c8cd; background-color: #2b2b2b; }
+* { font-size: 1em; }
+.String { color: #8bc5ed; font-style: italic; }
+.LineNr { color: #787878; background-color: #303030; padding-bottom: 1px; }
+.Structure { color: #c966d5; font-weight: bold; }
+.luaFuncName { color: #5faf5f; }
+.luaFuncTable { color: #5f8787; }
+.luaFuncParens { color: #5fafd7; }
+.Comment { color: #787878; font-style: italic; }
+.luaLocal { color: #a274d1; }
+.luaOperator { color: #9191c7; font-weight: bold; }
+.luaSpecialValue { color: #fe7967; }
+.luaBrackets { color: #9191c7; font-weight: bold; }
+.Function { color: #8195e7; }
+.Conditional { color: #a274d1; font-weight: bold; }
+.Statement { color: #a274d1; font-weight: bold; }
+.Repeat { color: #a274d1; font-weight: bold; }
+.Number { color: #e06c75; }
+.luaParens { color: #9191c7; }
+.luaBraces { color: #5fafd7; }
+.luaConstant { color: #66caa6; font-weight: bold; }
+.luaFuncArgName { color: #f19321; }
+.luaFuncCall { color: #9191c7; }
+.SpecialChar { color: #cc5555; }
+-->
+</style>
+
+<script>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  var lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="Comment">-- Lorem ipsum lua code</span>
+<span id="L2" class="LineNr"> 2 </span>
+<span id="L3" class="LineNr"> 3 </span><span class="luaLocal">local</span> util         <span class="luaOperator">=</span> <span class="luaSpecialValue">require</span><span class="luaParens">(</span><span class="String">&quot;newpaper.util&quot;</span><span class="luaParens">)</span>
+<span id="L4" class="LineNr"> 4 </span><span class="luaLocal">local</span> configModule <span class="luaOperator">=</span> <span class="luaSpecialValue">require</span><span class="luaParens">(</span><span class="String">&quot;newpaper.config&quot;</span><span class="luaParens">)</span>
+<span id="L5" class="LineNr"> 5 </span>
+<span id="L6" class="LineNr"> 6 </span><span class="luaLocal">local</span> M <span class="luaOperator">=</span> <span class="luaBraces">{}</span>
+<span id="L7" class="LineNr"> 7 </span>
+<span id="L8" class="LineNr"> 8 </span><span class="Structure">function</span><span class="Function"> </span><span class="luaFuncTable">util</span><span class="Function">.</span><span class="luaFuncName">syntax</span><span class="luaFuncParens">(</span><span class="luaFuncArgName">syntax</span><span class="luaFuncParens">)</span>
+<span id="L9" class="LineNr"> 9 </span>    <span class="Repeat">for</span> group, colors <span class="Repeat">in</span> <span class="luaSpecialValue">pairs</span><span class="luaParens">(</span>syntax<span class="luaParens">)</span> <span class="Repeat">do</span>
+<span id="L10" class="LineNr">10 </span>        util.<span class="luaFuncCall">highlight</span><span class="luaParens">(</span>group, colors<span class="luaParens">)</span>
+<span id="L11" class="LineNr">11 </span>    <span class="Repeat">end</span>
+<span id="L12" class="LineNr">12 </span><span class="Structure">end</span>
+<span id="L13" class="LineNr">13 </span>
+<span id="L14" class="LineNr">14 </span><span class="Structure">function</span><span class="Function"> </span><span class="luaFuncTable">util</span><span class="Function">.</span><span class="luaFuncName">loadCustomSyntax</span><span class="luaFuncParens">(</span><span class="luaFuncArgName">config</span><span class="luaFuncParens">)</span>
+<span id="L15" class="LineNr">15 </span>    <span class="luaLocal">local</span> async
+<span id="L16" class="LineNr">16 </span>    async <span class="luaOperator">=</span> vim.loop.<span class="luaFuncCall">new_async</span><span class="luaParens">(</span>vim.<span class="luaFuncCall">schedule_wrap</span><span class="luaParens">(</span><span class="Structure">function</span><span class="luaFuncName"> </span><span class="luaFuncParens">()</span>
+<span id="L17" class="LineNr">17 </span>        <span class="Conditional">if</span> <span class="luaSpecialValue">type</span><span class="luaParens">(</span>config.custom_highlights<span class="luaParens">)</span> <span class="luaOperator">==</span> <span class="String">'table'</span> <span class="Conditional">then</span>
+<span id="L18" class="LineNr">18 </span>            util.<span class="luaFuncCall">syntax</span><span class="luaParens">(</span>config.custom_highlights<span class="luaParens">)</span>
+<span id="L19" class="LineNr">19 </span>        <span class="Conditional">end</span>
+<span id="L20" class="LineNr">20 </span>        async:<span class="luaFuncCall">close</span><span class="luaParens">()</span>
+<span id="L21" class="LineNr">21 </span>    <span class="Structure">end</span><span class="luaParens">))</span>
+<span id="L22" class="LineNr">22 </span>    async:<span class="luaFuncCall">send</span><span class="luaParens">()</span>
+<span id="L23" class="LineNr">23 </span><span class="Structure">end</span>
+<span id="L24" class="LineNr">24 </span>
+<span id="L25" class="LineNr">25 </span><span class="Structure">function</span><span class="Function"> </span><span class="luaFuncTable">util</span><span class="Function">.</span><span class="luaFuncName">onColorScheme</span><span class="luaFuncParens">()</span>
+<span id="L26" class="LineNr">26 </span>    <span class="Conditional">if</span> vim.g.colors_name <span class="luaOperator">~=</span> <span class="String">&quot;newpaper&quot;</span> <span class="Conditional">then</span>
+<span id="L27" class="LineNr">27 </span>        vim.<span class="luaFuncCall">cmd</span><span class="luaParens">(</span>[[<span class="String">autocmd! newpaper</span>]]<span class="luaParens">)</span>
+<span id="L28" class="LineNr">28 </span>        vim.<span class="luaFuncCall">cmd</span><span class="luaParens">(</span>[[<span class="String">augroup! newpaper</span>]]<span class="luaParens">)</span>
+<span id="L29" class="LineNr">29 </span>    <span class="Conditional">end</span>
+<span id="L30" class="LineNr">30 </span><span class="Structure">end</span>
+<span id="L31" class="LineNr">31 </span>
+<span id="L32" class="LineNr">32 </span><span class="luaLocal">local</span> <span class="Structure">function</span><span class="luaFuncName"> opt</span><span class="luaFuncParens">(</span><span class="luaFuncArgName">key</span>, <span class="luaFuncArgName">default</span><span class="luaFuncParens">)</span>
+<span id="L33" class="LineNr">33 </span>    key <span class="luaOperator">=</span> <span class="String">&quot;newpaper_&quot;</span> <span class="luaOperator">..</span> key
+<span id="L34" class="LineNr">34 </span>    <span class="Conditional">if</span> vim.g<span class="luaBrackets">[</span>key<span class="luaBrackets">]</span> <span class="luaOperator">==</span> <span class="luaConstant">nil</span> <span class="Conditional">then</span>
+<span id="L35" class="LineNr">35 </span>        <span class="Statement">return</span> default
+<span id="L36" class="LineNr">36 </span>    <span class="Conditional">end</span>
+<span id="L37" class="LineNr">37 </span><span class="Structure">end</span>
+<span id="L38" class="LineNr">38 </span>
+<span id="L39" class="LineNr">39 </span><span class="luaLocal">local</span> config <span class="luaOperator">=</span> <span class="luaBraces">{</span>
+<span id="L40" class="LineNr">40 </span>    string_option       <span class="luaOperator">=</span> <span class="luaFuncCall">opt</span><span class="luaParens">(</span><span class="String">&quot;style&quot;</span>, <span class="String">'light'</span><span class="luaParens">)</span>,
+<span id="L41" class="LineNr">41 </span>    boolean_option      <span class="luaOperator">=</span> <span class="luaFuncCall">opt</span><span class="luaParens">(</span><span class="String">&quot;editor_better_view&quot;</span>, <span class="luaConstant">true</span><span class="luaParens">)</span>,
+<span id="L42" class="LineNr">42 </span>    table_option        <span class="luaOperator">=</span> <span class="luaFuncCall">opt</span><span class="luaParens">(</span><span class="String">&quot;sidebars&quot;</span>, <span class="luaBraces">{}</span><span class="luaParens">)</span>,
+<span id="L43" class="LineNr">43 </span>    number              <span class="luaOperator">=</span> <span class="Number">1234567890</span>,
+<span id="L44" class="LineNr">44 </span>    string_escape       <span class="luaOperator">=</span> <span class="String">&quot;</span><span class="SpecialChar">\n</span><span class="String"> String&quot;</span>
+<span id="L45" class="LineNr">45 </span><span class="luaBraces">}</span>
+<span id="L46" class="LineNr">46 </span>
+<span id="L47" class="LineNr">47 </span><span class="Structure">function</span><span class="Function"> </span><span class="luaFuncTable">M</span><span class="Function">.</span><span class="luaFuncName">setup</span><span class="luaFuncParens">(</span><span class="luaFuncArgName">config</span><span class="luaFuncParens">)</span>
+<span id="L48" class="LineNr">48 </span>    config <span class="luaOperator">=</span> config <span class="luaOperator">or</span> configModule.config
+<span id="L49" class="LineNr">49 </span>    <span class="luaLocal">local</span> newpaper <span class="luaOperator">=</span> <span class="luaBraces">{</span>
+<span id="L50" class="LineNr">50 </span>        black           <span class="luaOperator">=</span> <span class="String">'#2B2B2B'</span>, <span class="Comment">-- color00</span>
+<span id="L51" class="LineNr">51 </span>        maroon          <span class="luaOperator">=</span> <span class="String">'#AF0000'</span>, <span class="Comment">-- color01</span>
+<span id="L52" class="LineNr">52 </span>        darkgreen       <span class="luaOperator">=</span> <span class="String">'#008700'</span>  <span class="Comment">-- color02</span>
+<span id="L53" class="LineNr">53 </span>    <span class="luaBraces">}</span>
+<span id="L54" class="LineNr">54 </span>    <span class="luaLocal">local</span> syntax <span class="luaOperator">=</span> <span class="luaBraces">{</span>
+<span id="L55" class="LineNr">55 </span>        StorageClass   <span class="luaOperator">=</span> <span class="luaBraces">{</span> fg <span class="luaOperator">=</span> newpaper.ocean <span class="luaBraces">}</span>,
+<span id="L56" class="LineNr">56 </span>        Structure      <span class="luaOperator">=</span> <span class="luaBraces">{</span> fg <span class="luaOperator">=</span> newpaper.darkpurple <span class="luaBraces">}</span>,
+<span id="L57" class="LineNr">57 </span>        Conditional    <span class="luaOperator">=</span> <span class="luaBraces">{</span> fg <span class="luaOperator">=</span> newpaper.keyword <span class="luaBraces">}</span>
+<span id="L58" class="LineNr">58 </span>    <span class="luaBraces">}</span>
+<span id="L59" class="LineNr">59 </span>    <span class="Conditional">if</span> vim.g.newpaper_colors <span class="luaOperator">==</span> <span class="luaConstant">nil</span> <span class="Conditional">then</span>
+<span id="L60" class="LineNr">60 </span>        vim.g.newpaper_colors <span class="luaOperator">=</span> configModule.config.colors
+<span id="L61" class="LineNr">61 </span>    <span class="Conditional">end</span>
+<span id="L62" class="LineNr">62 </span>    util.<span class="luaFuncCall">color_overrides</span><span class="luaParens">(</span>newpaper, config<span class="luaParens">)</span>
+<span id="L63" class="LineNr">63 </span>    <span class="Statement">return</span> newpaper
+<span id="L64" class="LineNr">64 </span>
+<span id="L65" class="LineNr">65 </span><span class="Structure">end</span>
+<span id="L66" class="LineNr">66 </span>
+<span id="L67" class="LineNr">67 </span><span class="Statement">return</span> M
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

@@ -25,7 +25,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
     - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [🖼️](#RUBY)
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - TOML with [vim-toml](https://github.com/cespare/vim-toml)
-    - Lua with [vim-lua](https://github.com/tbastos/vim-lua)
+    - Lua with [vim-lua](https://github.com/tbastos/vim-lua) [🖼️](#LUA)
 
  ###  🔌 Supported plugins:
 
@@ -191,6 +191,8 @@ require('newpaper').setup({
 })
 ```
 
+##### Colorscheme customizing:
+
 ```lua
 -- Example config in lua with global variables
 vim.g.newpaper_style    = 'dark'
@@ -234,6 +236,34 @@ lua << EOF
     })
 EOF
 ```
+##### ⚠️`guicursor` customizing:
+
+```lua
+-- guicursor advansed settigs:
+-- colorsheme predefine colors for various cursors type:
+{
+    Cursor       = { fg = newpaper.bg, bg = newpaper.cursor },     -- Character under the cursor
+    nCursor      = { fg = newpaper.bg, bg = newpaper.teal },       -- Normal mode
+    vCursor      = { fg = newpaper.bg, bg = newpaper.purple },     -- Visual mode
+    veCursor     = { fg = newpaper.bg, bg = newpaper.darkpurple }, -- Visual mode with 'selection' "exclusive" (same as 'v', if not specified)
+    oCursor      = { fg = newpaper.bg, bg = newpaper.navy },       -- Operator-pending mode
+    iCursor      = { fg = newpaper.bg, bg = newpaper.darkgreen },  -- Insert mode
+    rCursor      = { fg = newpaper.bg, bg = newpaper.magenta },    -- Replace mode
+    cCursor      = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Normal (append) mode
+    ciCursor     = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Insert mode
+    crCursor     = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Replace mode
+    smCursor     = { fg = newpaper.bg, bg = newpaper.yellow },     -- showmatch in Insert mode
+    TermCursor   = { fg = newpaper.bg, bg = newpaper.cursor },     -- active cursor in terminal
+    TermCursorNC = { fg = newpaper.bg, bg = newpaper.lightgrey },  -- inactive cursor in terminal
+}
+-- This colors cam be using or overiding by own colors. See above.
+
+-- init.lua example
+vim.o.guicursor = "n:block-nCursor,v:block-vCursor,i:ver25-iCursor,r:hor25-rCursor,c:ver25-cCursor"
+```
+
+For more information see in `:h guicursor`
+
 
 ## 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
 
@@ -296,29 +326,35 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 
 ### 🎼 Languages:
 
-+ ####  RUBY
++ ###  RUBY
 
 Source code [HERE](preview/ruby/code.rb)
 
-##### 🖼️ light
+**vim-ruby light** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview **vim-ruby dark** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
 
-**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
+![vim-ruby_code rb](https://user-images.githubusercontent.com/1559192/145306835-64ca7551-0b07-4ce1-b430-695c63de2f49.png)
 
-![vim-ruby_light_code rb](https://user-images.githubusercontent.com/1559192/144923443-2d9002fa-9462-45cc-91ed-71ca852cd9d9.png)
-
-**Treesitter**
+ 🖼️ **Treesitter** light
 
 ![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133896791-28348464-38b6-4c36-ab91-33f513d6bdf8.png)
 
-##### 🖼️ dark
-
-**vim-ruby**. [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
-
-![vim-ruby_dark_code rb](https://user-images.githubusercontent.com/1559192/144923449-e60091d0-ba50-400e-8a31-38f56c5e6a2f.png)
-
-**Treesitter**
+🖼️ **Treesitter** dark
 
 ![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
+
++ ###  LUA
+
+Source code [HERE](preview/lua/code.lua)
+
+🖼️ **vim-lua light** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/lua/vim_lua_code_light_lua.html) preview and **vim-lua dark** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/lua/vim_lua_code_dark_lua.html) preview
+
+![vim_lua_code_lua](https://user-images.githubusercontent.com/1559192/145305955-76106720-b9c7-4fa6-ad99-407454758c2d.png)
+
+
+🖼️ **Treesitter**  light and dark
+
+![treesitter_lua](https://user-images.githubusercontent.com/1559192/145304230-13153261-d9c0-45b5-b625-93df493ade5b.png)
+
 
 ### 🎛️ Plugins:
 
@@ -348,7 +384,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 
 - [ ] Add screenshots for languages:
     - [x] Ruby 
-    - [ ] Lua
+    - [x] Lua
     - [ ] LaTeX
     - [ ] HTML
     - [ ] Markdown
