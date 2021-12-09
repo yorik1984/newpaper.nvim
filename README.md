@@ -199,8 +199,8 @@ vim.g.newpaper_style    = 'dark'
 vim.g.newpaper_keywords = 'italic'
 vim.g.newpaper_borders  = false
 vim.g.newpaper_colors   = { teal = "#0000FF" }
-vim.g.newpaper_colors   = {
-    Float     = { fg = colors.teal },
+vim.g.newpaper_custom_highlights = {
+    Float     = { fg = vim.g.newpaper_colors.teal },
     Number    = { fg = "#00FF00" },
     rubyClass = { fg = "#00FFF0" },
     Comment   = { fg = "#FF0000", style = 'italic,underline' }
