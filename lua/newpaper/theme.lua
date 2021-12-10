@@ -360,6 +360,9 @@ function M.setup(config)
             CTSymbolJumpRefs              = { fg = newpaper.fg, bg = newpaper.lightorange, style = style.b_bold },
             CTType                        = { fg = newpaper.keyword },
             CTURI                         = { fg = newpaper.link, style = 'underline' },
+            CTIndentGuide                 = { fg = newpaper.comment },
+            CTExpandedGuide               = { fg = newpaper.comment, style = style.b_bold },
+            CTCollapsedGuide              = { fg = newpaper.comment },
 
             -- Dashboard ------------------------------------------------------
             DashboardShortCut             = { fg = newpaper.red },
