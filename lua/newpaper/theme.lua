@@ -63,6 +63,7 @@ function M.setup(config)
         return syntax
 
     end
+
     theme.loadEditor = function ()
 
         -- Editor highlights
@@ -597,7 +598,7 @@ function M.setup(config)
             NvimTreeOpenedFolderName      = { fg = newpaper.accent, style = style.b_bold },
             NvimTreeRootFolder            = { fg = newpaper.title,  style = style.b_bold },
             NvimTreeEmptyFolderName       = { fg = newpaper.disabled },
-            NvimTreeIndentMarker          = { fg = newpaper.disabled },
+            NvimTreeIndentMarker          = { fg = newpaper.teal },
             NvimTreeGitDirty              = { fg = newpaper.git_modified },
             NvimTreeGitNew                = { fg = newpaper.git_added },
             NvimTreeGitStaged             = { fg = newpaper.comment },
@@ -605,10 +606,10 @@ function M.setup(config)
             NvimTreeGitMerge              = { fg = newpaper.git_removed },
             NvimTreeGitRenamed            = { fg = newpaper.git_modified },
             NvimTreeLicenseIcon           = { fg = newpaper.navy },
-            NvimTreeGitignoreIcon         = { fg = newpaper.grey },
+            NvimTreeGitignoreIcon         = { fg = newpaper.git_fg },
             NvimTreeOpenedFile            = { fg = newpaper.accent },
             NvimTreeImageFile             = { fg = newpaper.orange },
-            NvimTreeMarkdownFile          = { fg = newpaper.magenta },
+            NvimTreeMarkdownFile          = { fg = newpaper.string },
             NvimTreeExecFile              = { fg = newpaper.text },
             NvimTreeSpecialFile           = { fg = newpaper.purple, style = 'underline' },
             LspDiagnosticsError           = { fg = newpaper.error_fg },
