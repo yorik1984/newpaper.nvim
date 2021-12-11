@@ -29,8 +29,8 @@ function M.setup(config)
             texDocTypeArgs    = { fg = newpaper.tex_navy },
             texInputFileOpt   = { fg = newpaper.tex_orange },
             -- texInputCurlies   texDelimiter
-            texMathDelimSet1  = { fg = newpaper.tex_lightpurple },
-            texMathDelimSet2  = { fg = newpaper.tex_lightpurple },
+            texMathDelimSet1  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
+            texMathDelimSet2  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             texMathDelimKey   = { fg = newpaper.tex_pink },
             -- texMathMatcher    texMath
             texAccent         = { fg = newpaper.tex_math },
@@ -52,7 +52,7 @@ function M.setup(config)
             texCmdArgs        = { fg = newpaper.tex_navy },
             texCmdName        = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             texDef            = { fg = newpaper.tex_blue },
-            texDelimiter      = { fg = newpaper.tex_lightpurple },
+            texDelimiter      = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             texInput          = { fg = newpaper.tex_blue },
             texInputFile      = { fg = newpaper.tex_navy },
             texMath           = { fg = newpaper.tex_math },
@@ -60,7 +60,7 @@ function M.setup(config)
             texNewEnv         = { fg = newpaper.tex_magenta },
             texOption         = { fg = newpaper.tex_orange },
             texRefZone        = { fg = newpaper.tex_lightgreen },
-            texSection        = { fg = newpaper.tex_blue, style = style.tex_m_style },
+            texSection        = { fg = newpaper.tex_blue,    style = style.tex_m_style },
             texSpaceCodeChar  = { fg = newpaper.tex_maroon },
             texStatement      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             texType           = { fg = newpaper.tex_keyword, style = style.tex_k_style },
@@ -296,7 +296,7 @@ function M.setup(config)
             texRefConcealedDelim  = { fg = newpaper.tex_lightviolet },
             -- texTabularArg         texOpt
             -- texTabularAtSep       texMathDelim
-            texTabularChar        = { fg = newpaper.tex_lightpurple },
+            texTabularChar        = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             texTabularCol         = { fg = newpaper.tex_blue },
             -- texTabularOpt         texEnvOpt
             texTheoremEnvOpt      = { fg = newpaper.tex_string, style = style.s_style },
