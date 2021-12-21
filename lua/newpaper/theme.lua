@@ -49,8 +49,7 @@ function M.setup(config)
             Debug          = { fg = newpaper.red }, -- debugging statements
             Underlined     = { fg = newpaper.link, style = 'underline' }, -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
-            ErrorMsg       = { fg = newpaper.error_fg, bg = newpaper.error_bg, style = style.b_bold_u }, -- any erroneous construct
-            Error          = { link = "ErrorMsg" },
+            Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg, style = style.b_bold_u }, -- any erroneous construct
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold},
 
             -- Help
@@ -94,7 +93,7 @@ function M.setup(config)
             DiffChange       = { fg = newpaper.text, bg = newpaper.diffchange_bg }, --  diff mode: Changed line
             DiffDelete       = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg }, -- diff mode: Deleted line
             DiffText         = { fg = newpaper.text, bg = newpaper.difftext_bg }, -- diff mode: Changed text within a changed line
-            ErrorMsg         = { fg = newpaper.error_fg, bg = newpaper.error_bg }, -- error messages
+            ErrorMsg         = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- error messages
             FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
             Folded           = { fg = newpaper.folded_fg, bg = newpaper.folded_bg }, -- line used for closed folds
             FoldColumn       = { fg = newpaper.folded_fg, bg = newpaper.linenumber_bg }, -- 'foldcolumn'
@@ -146,7 +145,7 @@ function M.setup(config)
             CommandMode      = { fg = newpaper.orange, style = 'reverse' }, -- Command mode message in the cmdline
             Warnings         = { fg = newpaper.magenta },
             WildMenu         = { fg = newpaper.wildmenu_fg, bg = newpaper.wildmenu_bg, style = style.b_bold }, -- current match in 'wildmenu' completion
-            healthError      = { fg = newpaper.error_fg, bg = newpaper.error_bg },
+            healthError      = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg },
             healthSuccess    = { fg = newpaper.darkgreen },
             healthWarning    = { fg = newpaper.magenta }
 
@@ -219,7 +218,7 @@ function M.setup(config)
             TSNote                 = { fg = newpaper.bg, bg = newpaper.hint_fg },
             TSWarning              = { fg = newpaper.bg, bg = newpaper.info_fg },
             TSDanger               = { fg = newpaper.bg, bg = newpaper.warn_fg },
-            TSError                = { fg = newpaper.error_fg, bg = newpaper.error_bg }, -- For syntax/parser errors.
+            TSError                = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- For syntax/parser errors.
             TSException            = { fg = newpaper.maroon }, -- For exception related keywords.
             TSField                = { fg = newpaper.ocean }, -- For fields.
             TSFloat                = { fg = newpaper.magenta }, -- For floats.

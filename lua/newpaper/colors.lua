@@ -356,7 +356,8 @@ function M.setup(config)
     newpaper.search_bg           = newpaper.yellow
 
     -- Error message
-    newpaper.error_bg            = newpaper.pink
+    newpaper.errormsg_fg         = newpaper.red
+    newpaper.errormsg_bg         = newpaper.pink
 
     -- Tabline
     newpaper.tabline_bg          = newpaper.lightlightgrey
