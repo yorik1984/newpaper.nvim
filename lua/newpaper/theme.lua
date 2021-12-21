@@ -427,6 +427,7 @@ function M.setup(config)
             LTIndentGuide                 = { fg = newpaper.comment },
             LTExpandedGuide               = { fg = newpaper.comment, style = style.b_bold },
             LTCollapsedGuide              = { fg = newpaper.comment },
+            LTSelectFiletree              = { fg = newpaper.string },
 
             -- LspSaga --------------------------------------------------------
             LspFloatWinBorder             = { fg = newpaper.border, bg = newpaper.float_bg },
