@@ -62,7 +62,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - [🖼️](#todo-commentsnvim)
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
-+ [calltree.nvim](https://github.com/ldelossa/calltree.nvim)
++ [litee.nvim](https://github.com/ldelossa/litee.nvim)
 + [vista.vim](https://github.com/liuchengxu/vista.vim)
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [nvim-notify](https://github.com/rcarriga/nvim-notify)
