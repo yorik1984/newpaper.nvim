@@ -49,7 +49,8 @@ function M.setup(config)
             Debug          = { fg = newpaper.red }, -- debugging statements
             Underlined     = { fg = newpaper.link, style = 'underline' }, -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
-            Error          = { fg = newpaper.error_fg, bg = newpaper.error_bg, style = style.b_bold_u }, -- any erroneous construct
+            ErrorMsg       = { fg = newpaper.error_fg, bg = newpaper.error_bg, style = style.b_bold_u }, -- any erroneous construct
+            Error          = { link = "ErrorMsg" },
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold},
 
             -- Help
