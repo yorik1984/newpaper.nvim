@@ -261,6 +261,7 @@ function M.setup(config)
             -- texE3Delim            texDelim
             -- texE3Opt              texOpt
             -- texE3Parm             texParm
+            -- texE3Type             texParm
             texEnvOpt             = { fg = newpaper.tex_redorange },
             texEnvMArgName        = { fg = newpaper.tex_math, style = 'italic' },
             -- texLetArgEqual        texSymbol
