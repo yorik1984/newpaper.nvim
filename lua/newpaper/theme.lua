@@ -22,8 +22,8 @@ function M.setup(config)
             Keyword        = { fg = newpaper.keyword, style = style.k_style }, -- for, do, while, etc.
             Statement      = { fg = newpaper.keyword, style = style.k_style }, -- any statement
             Repeat         = { fg = newpaper.keyword, style = style.k_style }, -- any other keyword
-            Constant       = { fg = newpaper.darkgreen }, -- any constant
-            Character      = { fg = newpaper.darkgreen, style = style.o_style }, -- any character constant: 'c', '\n'
+            Constant       = { fg = newpaper.darkengreen }, -- any constant
+            Character      = { fg = newpaper.darkengreen, style = style.o_style }, -- any character constant: 'c', '\n'
             Number         = { fg = newpaper.red }, -- a number constant: 5
             Boolean        = { fg = newpaper.boolean, style = style.k_style }, -- a boolean constant: TRUE, false
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
@@ -40,7 +40,7 @@ function M.setup(config)
             Macro          = { fg = newpaper.magenta }, -- same as Define
             Typedef        = { fg = newpaper.maroon }, -- A typedef
             PreCondit      = { fg = newpaper.magenta }, -- preprocessor #if, #else, #endif, etc.
-            Type           = { fg = newpaper.darkgreen }, -- int, long, char, etc.
+            Type           = { fg = newpaper.darkengreen }, -- int, long, char, etc.
             Special        = { fg = newpaper.magenta }, -- any special symbol
             SpecialChar    = { fg = newpaper.maroon }, -- special character in a constant
             String         = { fg = newpaper.string, style = style.s_style }, -- any string
@@ -146,8 +146,8 @@ function M.setup(config)
             Warnings         = { fg = newpaper.magenta },
             WildMenu         = { fg = newpaper.wildmenu_fg, bg = newpaper.wildmenu_bg, style = style.b_bold }, -- current match in 'wildmenu' completion
             healthError      = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg },
-            healthSuccess    = { fg = newpaper.darkgreen },
-            healthWarning    = { fg = newpaper.magenta }
+            healthSuccess    = { fg = newpaper.hint_fg },
+            healthWarning    = { fg = newpaper.warn_fg }
 
         }
 
@@ -230,14 +230,14 @@ function M.setup(config)
             TSOperator             = { fg = newpaper.navy, style = style.o_style }, -- For any operator: `+`, but also `->` and `*` in C.
             TSParameter            = { fg = newpaper.orange }, -- For parameters of a function.
             TSParameterReference   = { fg = newpaper.orange }, -- For references to parameters of a function.
-            TSProperty             = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
+            TSProperty             = { fg = newpaper.darkengreen }, -- Same as `TSField`,accesing for struct members in C.
             TSPunctDelimiter       = { fg = newpaper.orange }, -- For delimiters ie: `.`
             TSPunctBracket         = { fg = newpaper.navy }, -- For brackets and parens.
             TSPunctSpecial         = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
             TSStringRegex          = { fg = newpaper.regexp_blue }, -- For regexes.
             TSStringEscape         = { fg = newpaper.maroon }, -- For escape characters within a string.
             TSSymbol               = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
-            TSType                 = { fg = newpaper.darkgreen }, -- For types.
+            TSType                 = { fg = newpaper.darkengreen }, -- For types.
             TSTypeBuiltin          = { fg = newpaper.magenta }, -- For builtin types.
             TSVariable             = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
             TSVariableBuiltin      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
@@ -407,7 +407,7 @@ function M.setup(config)
 
             -- Litee -------------------------------------------------------
             LTBoolean                     = { fg = newpaper.boolean, style = style.k_style },
-            LTConstant                    = { fg = newpaper.darkgreen },
+            LTConstant                    = { fg = newpaper.darkengreen },
             LTConstructor                 = { fg = newpaper.bluegreen },
             LTField                       = { fg = newpaper.ocean },
             LTFunction                    = { fg = newpaper.navy },
@@ -489,7 +489,7 @@ function M.setup(config)
             CmpItemKindFunction           = { fg = newpaper.navy },         -- Function      = "",
             CmpItemKindConstructor        = { fg = newpaper.bluegreen },    -- Constructor   = "",
             CmpItemKindField              = { fg = newpaper.ocean },        -- Field         = "ﰠ",
-            CmpItemKindVariable           = { fg = newpaper.darkgreen },    -- Variable      = "",
+            CmpItemKindVariable           = { fg = newpaper.darkengreen },    -- Variable      = "",
             CmpItemKindClass              = { fg = newpaper.ruby_magenta }, -- Class         = "ﴯ",
             CmpItemKindInterface          = { fg = newpaper.olive },        -- Interface     = "",
             CmpItemKindModule             = { fg = newpaper.darkyellow },   -- Module        = "",
@@ -504,7 +504,7 @@ function M.setup(config)
             CmpItemKindReference          = { fg = newpaper.darkyellow },   -- Reference     = "",
             CmpItemKindFolder             = { fg = newpaper.teal },         -- Folder        = "",
             CmpItemKindEnumMember         = { fg = newpaper.green },        -- EnumMember    = "",
-            CmpItemKindConstant           = { fg = newpaper.darkgreen },    -- Constant      = "",
+            CmpItemKindConstant           = { fg = newpaper.darkengreen },    -- Constant      = "",
             CmpItemKindStruct             = { fg = newpaper.olive },        -- Struct        = "פּ",
             CmpItemKindEvent              = { fg = newpaper.orange },       -- Event         = "",
             CmpItemKindOperator           = { fg = newpaper.navy },         -- Operator      = "",
@@ -531,7 +531,7 @@ function M.setup(config)
             DapStopped                    = { fg = newpaper.red,        bg = newpaper.linenumber_bg },
 
             -- Nvim-dap-ui ----------------------------------------------------
-            DapUIVariable                 = { fg = newpaper.darkgreen },
+            DapUIVariable                 = { fg = newpaper.darkengreen },
             DapUIScope                    = { fg = newpaper.teal, style = style.b_bold },
             DapUIType                     = { fg = newpaper.keyword },
             DapUIValue                    = { fg = newpaper.teal },
@@ -718,13 +718,13 @@ function M.setup(config)
 
             -- Used for Picker specific Results highlighting
             TelescopeResultsClass           = { fg = newpaper.keyword },
-            TelescopeResultsConstant        = { fg = newpaper.darkgreen },
+            TelescopeResultsConstant        = { fg = newpaper.darkengreen },
             TelescopeResultsField           = { fg = newpaper.ocean },
             TelescopeResultsFunction        = { fg = newpaper.navy },
             TelescopeResultsMethod          = { fg = newpaper.navy },
             TelescopeResultsOperator        = { fg = newpaper.darkyellow },
             TelescopeResultsStruct          = { fg = newpaper.keyword },
-            TelescopeResultsVariable        = { fg = newpaper.darkgreen },
+            TelescopeResultsVariable        = { fg = newpaper.darkengreen },
             TelescopeResultsLineNr          = { fg = newpaper.linenumber_fg },
             TelescopeResultsIdentifier      = { fg = newpaper.teal },
             TelescopeResultsNumber          = { fg = newpaper.red },
@@ -778,7 +778,7 @@ function M.setup(config)
             VistaLineNr      = { fg = newpaper.cursor_nr_fg },
             VistaColon       = { fg = newpaper.orange },
             VistaIcon        = { fg = newpaper.teal },
-            VistaArgs        = { fg = newpaper.darkgreen, style = style.b_italic },
+            VistaArgs        = { fg = newpaper.darkengreen, style = style.b_italic },
             VistaPublic      = { fg = newpaper.green, style = style.k_style },
             VistaProtected   = { fg = newpaper.maroon, style = style.k_style },
             VistaPrivate     = { fg = newpaper.darkyellow, style = style.k_style },

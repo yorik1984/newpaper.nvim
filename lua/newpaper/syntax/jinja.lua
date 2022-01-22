@@ -18,7 +18,7 @@ function M.setup(config)
             -- Vim-Jinja2-Syntax
 
             jinjaPunctuation  = { fg = newpaper.blueviolet },
-            jinjaAttribute    = { fg = newpaper.darkgreen },
+            jinjaAttribute    = { fg = newpaper.darkengreen },
             jinjaFunction     = { fg = newpaper.navy, style = style.f_style },
 
             -- jinjaTagDelim     jinjaTagBlock

@@ -38,6 +38,7 @@ function M.setup(config)
         local treesitter = {
 
             luaTSField           = { fg = newpaper.fg },
+            luaTSVariable        = { fg = newpaper.darkengreen },
             luaTSFuncBuiltin     = { fg = newpaper.redorange },
             luaTSLabel           = { fg = newpaper.magenta },
             luaTSPunctBracket    = { fg = newpaper.lua_navy },
@@ -73,7 +74,7 @@ function M.setup(config)
             luaFuncArgName      = { fg = newpaper.orange },
             luaFuncCall         = { fg = newpaper.lua_navy },
             -- luaFuncId           Function
-            luaFuncName         = { fg = newpaper.darkgreen },
+            luaFuncName         = { fg = newpaper.darkengreen },
             luaFuncTable        = { fg = newpaper.teal },
             -- luaFuncKeyword      luaFunction
             -- luaFunction         Structure

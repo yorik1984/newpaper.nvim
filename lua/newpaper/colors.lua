@@ -44,6 +44,7 @@ function M.setup(config)
         darkpurple      = '#5823C7',
         redorange       = '#D1301A',
         bluegreen       = '#257D90',
+        darkengreen     = '#007F00',
 
         regexp_blue     = '#3A72ED',
         regexp_green    = '#00AA00',
@@ -82,7 +83,7 @@ function M.setup(config)
         todo_error      = '#DF0000',
         todo_warn       = '#D75F00',
         todo_info       = '#3A72ED',
-        todo_hint       = '#008700',
+        todo_hint       = '#199319',
         todo_default    = '#894DEE',
 
         -- TeX
@@ -202,6 +203,7 @@ function M.setup(config)
         newpaper.darkpurple      = '#C966D5'
         newpaper.redorange       = '#FE7967'
         newpaper.bluegreen       = '#66A4B1'
+        newpaper.darkengreen     = '#5FAF5F'
 
         newpaper.regexp_blue     = '#618EF0'
         newpaper.regexp_green    = '#46C146'

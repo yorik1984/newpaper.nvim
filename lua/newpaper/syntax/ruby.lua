@@ -32,7 +32,7 @@ function M.setup(config)
             rubyTSException       = { fg = newpaper.ruby_red, style = style.k_style },
             rubyTSInclude         = { fg = newpaper.ruby_red },
             rubyTSKeywordOperator = { fg = newpaper.boolean, style = style.o_style },
-            rubyTSLabel           = { fg = newpaper.darkgreen },
+            rubyTSLabel           = { fg = newpaper.darkengreen },
             rubyTSType            = { fg = newpaper.teal, style = style.k_style },
             rubyTSVariableBuiltin = { fg = newpaper.maroon },
             rubyTSError           = { style = 'undercurl' },
@@ -143,9 +143,9 @@ function M.setup(config)
             plugins.rubyPredefinedConstant     = { fg = newpaper.fg }
             plugins.rubyPredefinedVariable     = { fg = newpaper.fg }
         else
-            plugins.rubyClassVariable          = { fg = newpaper.darkgreen, style = style.k_style  }
+            plugins.rubyClassVariable          = { fg = newpaper.darkengreen, style = style.k_style  }
             plugins.rubyGlobalVariable         = { fg = newpaper.green, style = style.k_style }
-            plugins.rubyInstanceVariable       = { fg = newpaper.darkgreen }
+            plugins.rubyInstanceVariable       = { fg = newpaper.darkengreen }
             plugins.rubyPredefinedConstant     = { fg = newpaper.ruby_green }
             plugins.rubyPredefinedVariable     = { fg = newpaper.ruby_green, style = style.k_style }
         end

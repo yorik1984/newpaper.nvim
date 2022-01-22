@@ -46,7 +46,7 @@ function M.setup(config)
 
         local treesitter = {
 
-            tomlTSConstBuiltin = { fg = newpaper.darkgreen, style = style.o_style },
+            tomlTSConstBuiltin = { fg = newpaper.darkengreen, style = style.o_style },
             tomlTSTypeBuiltin  = { fg = newpaper.keyword, style = style.k_style },
             tomlTSProperty     = { fg = newpaper.navy },
 
