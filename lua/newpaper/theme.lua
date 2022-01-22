@@ -608,7 +608,7 @@ function M.setup(config)
             NvimTreeGitRenamed            = { fg = newpaper.git_modified },
             NvimTreeLicenseIcon           = { fg = newpaper.navy },
             NvimTreeGitignoreIcon         = { fg = newpaper.git_fg },
-            NvimTreeOpenedFile            = { fg = newpaper.magenta, style.b_bold_u },
+            NvimTreeOpenedFile            = { fg = newpaper.magenta, style = style.b_bold_u },
             NvimTreeImageFile             = { fg = newpaper.orange },
             NvimTreeMarkdownFile          = { fg = newpaper.string },
             NvimTreeExecFile              = { fg = newpaper.text },
