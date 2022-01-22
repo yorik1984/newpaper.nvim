@@ -183,10 +183,12 @@ function M.setup(config)
             texEnvArgName         = { fg = newpaper.tex_darkorange, style = 'italic' }, -- \begin{ENVNAME}
             texCmdRef             = { fg = newpaper.tex_lightgreen }, -- \CITE; \LABEL
             texRefArg             = { fg = newpaper.tex_aqua }, -- \cite{REFERENCE}; \label{REF}
-            -- texE3Func            texCmdType   \STR_NEW:N
-            -- texE3Var             texCmd       \G_MYFILE_NAME_STR
-            -- texCmdParbox         texCmd       \PARBOX[p][h][i]{w}{c}
-            -- texBoxOptPosVal      texSymbol    \parbox[P][h][i]{w}{c} \begin{minipage}[P][h][i]{w}
+            -- texE3Variable        texCmd          \G_MYFILE_NAME_STR
+            -- texE3Constant        texE3Variable   \C_MYFILE_NAME_STR
+            -- texE3Function        texCmdType      \STR_NEW:n
+            -- texE3Type            texParm         \str_new:N
+            -- texCmdParbox         texCmd          \PARBOX[p][h][i]{w}{c}
+            -- texBoxOptPosVal      texSymbol       \parbox[P][h][i]{w}{c} \begin{minipage}[P][h][i]{w}
             -- texBoxOptIPosVal     texBoxOptPosVal \parbox[p][h][I]{w}{c} \begin{minipage}[p][h][I]{w}
             -------------------------------------------------------------------
             texMathZone           = { fg = newpaper.tex_math }, -- \( HERE \); \[ HERE \]
@@ -261,7 +263,6 @@ function M.setup(config)
             -- texE3Delim            texDelim
             -- texE3Opt              texOpt
             -- texE3Parm             texParm
-            -- texE3Type             texParm
             texEnvOpt             = { fg = newpaper.tex_redorange },
             texEnvMArgName        = { fg = newpaper.tex_math, style = 'italic' },
             -- texLetArgEqual        texSymbol
