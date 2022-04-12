@@ -376,7 +376,8 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [vimtex](https://github.com/lervag/vimtex)
 + [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 + [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
-+ HTML version of hightlighting generatated by [JMcKiern/vim-shoot](https://github.com/JMcKiern/vim-shoot)
++ [vim-shoot](https://github.com/JMcKiern/vim-shoot) - generatated HTML version of hightlighting 
++ [toml](https://github.com/toml-lang/toml) - markdown code preview example
 
 ## 🛠️ TODO:
 
