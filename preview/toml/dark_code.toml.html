@@ -13,21 +13,21 @@
 pre { white-space: pre-wrap; font-family: monospace; color: #c6c8cd; background-color: #2b2b2b; }
 body { font-family: monospace; color: #c6c8cd; background-color: #2b2b2b; }
 * { font-size: 1em; }
-.LineNr { color: #787878; background-color: #303030; padding-bottom: 1px; }
-.tomlDotInKey { color: #f19321; }
-.tomlTableArray { color: #c966d5; font-weight: bold; }
-.Constant { color: #5faf5f; }
+.String { color: #8bc5ed; font-style: italic; }
+.tomlKey { color: #56b6c2; }
 .Number { color: #e06c75; }
 .Boolean { color: #66caa6; font-weight: bold; }
 .Float { color: #d75faf; }
-.String { color: #8bc5ed; font-style: italic; }
+.LineNr { color: #787878; background-color: #303030; padding-bottom: 1px; }
 .Comment { color: #787878; font-style: italic; }
-.tomlEscape { color: #d75faf; }
-.tomlLineEscape { color: #cc5555; font-weight: bold; }
-.tomlKey { color: #8195e7; }
 .tomlKeyDq { color: #8195e7; }
 .tomlKeySq { color: #8195e7; }
 .tomlTable { color: #a274d1; font-weight: bold; }
+.tomlTableArray { color: #c966d5; font-weight: bold; }
+.tomlDotInKey { color: #f19321; }
+.tomlEscape { color: #d75faf; }
+.tomlLineEscape { color: #cc5555; font-weight: bold; }
+.tomlDate { color: #cc5555; }
 -->
 </style>
 
@@ -212,21 +212,21 @@ if ('onhashchange' in window) {
 <span id="L148" class="LineNr">148 </span><span class="tomlKey">bool2</span> = <span class="Boolean">false</span>
 <span id="L149" class="LineNr">149 </span>
 <span id="L150" class="LineNr">150 </span><span class="Comment"># Offset Date-Time</span>
-<span id="L151" class="LineNr">151 </span><span class="tomlKey">odt1</span> = <span class="Constant">1979-05-27T07:32:00Z</span>
-<span id="L152" class="LineNr">152 </span><span class="tomlKey">odt2</span> = <span class="Constant">1979-05-27T00:32:00-07:00</span>
-<span id="L153" class="LineNr">153 </span><span class="tomlKey">odt3</span> = <span class="Constant">1979-05-27T00:32:00.999999-07:00</span>
-<span id="L154" class="LineNr">154 </span><span class="tomlKey">odt4</span> = <span class="Constant">1979-05-27 07:32:00Z</span>
+<span id="L151" class="LineNr">151 </span><span class="tomlKey">odt1</span> = <span class="tomlDate">1979-05-27T07:32:00Z</span>
+<span id="L152" class="LineNr">152 </span><span class="tomlKey">odt2</span> = <span class="tomlDate">1979-05-27T00:32:00-07:00</span>
+<span id="L153" class="LineNr">153 </span><span class="tomlKey">odt3</span> = <span class="tomlDate">1979-05-27T00:32:00.999999-07:00</span>
+<span id="L154" class="LineNr">154 </span><span class="tomlKey">odt4</span> = <span class="tomlDate">1979-05-27 07:32:00Z</span>
 <span id="L155" class="LineNr">155 </span>
 <span id="L156" class="LineNr">156 </span><span class="Comment"># Local Date-Time</span>
-<span id="L157" class="LineNr">157 </span><span class="tomlKey">ldt1</span> = <span class="Constant">1979-05-27T07:32:00</span>
-<span id="L158" class="LineNr">158 </span><span class="tomlKey">ldt2</span> = <span class="Constant">1979-05-27T00:32:00.999999</span>
+<span id="L157" class="LineNr">157 </span><span class="tomlKey">ldt1</span> = <span class="tomlDate">1979-05-27T07:32:00</span>
+<span id="L158" class="LineNr">158 </span><span class="tomlKey">ldt2</span> = <span class="tomlDate">1979-05-27T00:32:00.999999</span>
 <span id="L159" class="LineNr">159 </span>
 <span id="L160" class="LineNr">160 </span><span class="Comment"># Local Date</span>
-<span id="L161" class="LineNr">161 </span><span class="tomlKey">ld1</span> = <span class="Constant">1979-05-27</span>
+<span id="L161" class="LineNr">161 </span><span class="tomlKey">ld1</span> = <span class="tomlDate">1979-05-27</span>
 <span id="L162" class="LineNr">162 </span>
 <span id="L163" class="LineNr">163 </span><span class="Comment"># Local Time</span>
-<span id="L164" class="LineNr">164 </span><span class="tomlKey">lt1</span> = <span class="Constant">07:32:00</span>
-<span id="L165" class="LineNr">165 </span><span class="tomlKey">lt2</span> = <span class="Constant">00:32:00.999999</span>
+<span id="L164" class="LineNr">164 </span><span class="tomlKey">lt1</span> = <span class="tomlDate">07:32:00</span>
+<span id="L165" class="LineNr">165 </span><span class="tomlKey">lt2</span> = <span class="tomlDate">00:32:00.999999</span>
 <span id="L166" class="LineNr">166 </span>
 <span id="L167" class="LineNr">167 </span><span class="Comment"># Array</span>
 <span id="L168" class="LineNr">168 </span><span class="tomlKey">integers</span> = [ <span class="Number">1</span>, <span class="Number">2</span>, <span class="Number">3</span> ]
@@ -296,7 +296,7 @@ if ('onhashchange' in window) {
 <span id="L232" class="LineNr">232 </span><span class="Comment"># Top-level table ends.</span>
 <span id="L233" class="LineNr">233 </span><span class="tomlTable">[owner]</span>
 <span id="L234" class="LineNr">234 </span><span class="tomlKey">name</span> = <span class="String">&quot;Regina Dogman&quot;</span>
-<span id="L235" class="LineNr">235 </span><span class="tomlKey">member_since</span> = <span class="Constant">1999-08-04</span>
+<span id="L235" class="LineNr">235 </span><span class="tomlKey">member_since</span> = <span class="tomlDate">1999-08-04</span>
 <span id="L236" class="LineNr">236 </span>
 <span id="L237" class="LineNr">237 </span><span class="tomlKey">fruit</span><span class="tomlDotInKey">.</span><span class="tomlKey">apple</span><span class="tomlDotInKey">.</span><span class="tomlKey">color</span> = <span class="String">&quot;red&quot;</span>
 <span id="L238" class="LineNr">238 </span><span class="Comment"># Defines a table named fruit</span>

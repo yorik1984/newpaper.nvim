@@ -24,7 +24,8 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
     - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
     - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Preview[[🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html)]
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-    - TOML with [vim-toml](https://github.com/cespare/vim-toml) - Preview[[light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html)]
+    - TOML with [vim-toml](https://github.com/cespare/vim-toml) - Preview[[light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/dark_code.toml.html)]
+    - YAML - Preview[[light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/dark_code.yaml.html)]
 
     - Lua with [vim-lua](https://github.com/tbastos/vim-lua) - [🖼️](#LUA)
 
@@ -378,7 +379,8 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 + [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
 + [vim-shoot](https://github.com/JMcKiern/vim-shoot) - generatated HTML version of hightlighting 
-+ [toml](https://github.com/toml-lang/toml) - markdown code preview example
++ [toml](https://github.com/toml-lang/toml) - spec and code preview example
++ [yaml](https://github.com/yaml/yaml-spec) - spec and code preview example
 
 ## 🛠️ TODO:
 
@@ -388,6 +390,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [x] Ruby 
     - [x] Lua
     - [x] TOML
+    - [x] YAML
     - [ ] LaTeX
     - [ ] HTML
     - [ ] Markdown
@@ -415,6 +418,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] HTML
     - [x] Lua with [vim-lua](https://github.com/tbastos/vim-lua)
     - [x] TOML with [vim-toml](https://github.com/cespare/vim-toml)
+    - [x] YAML
     
 - [ ] Add plugins support:
     - [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)

@@ -24,11 +24,12 @@ function M.setup(config)
             -- tomlInteger    Number
             -- tomlFloat      Float
             -- tomlBoolean    Boolean
-            -- tomlDate       Constant
-            tomlKey           = { fg = newpaper.navy },
+            tomlDate          = { fg = newpaper.maroon },
+            tomlKey           = { fg = newpaper.ocean, style = style.f_style },
             tomlKeyDq         = { fg = newpaper.navy },
             tomlKeySq         = { fg = newpaper.navy },
-            tomlTable         = { fg = newpaper.keyword, style = style.k_style },
+            tomlKeyValueArray = { fg = newpaper.operator },
+            tomlTable         = { fg = newpaper.keyword,    style = style.k_style },
             tomlTableArray    = { fg = newpaper.darkpurple, style = style.k_style },
             tomlDotInKey      = { fg = newpaper.orange },
             -- tomlTodo       Todo
@@ -46,9 +47,17 @@ function M.setup(config)
 
         local treesitter = {
 
-            tomlTSConstBuiltin = { fg = newpaper.darkengreen, style = style.o_style },
-            tomlTSTypeBuiltin  = { fg = newpaper.keyword, style = style.k_style },
-            tomlTSProperty     = { fg = newpaper.navy },
+            -- tomlTSString
+            -- tomlTSBoolean
+            -- tomlTSComment
+            -- tomlTSNumber
+            -- tomlTSFloat
+            -- tomlTSOperator
+            -- tomlTSError
+            -- tomlTSStringSpecial
+            -- tomlTSPunctDelimiter
+            tomlTSPunctBracket   = { fg = newpaper.keyword, style = style.o_style },
+            tomlTSProperty       = { fg = newpaper.ocean,   style = style.f_style },
 
         }
 
