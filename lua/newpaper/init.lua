@@ -8,6 +8,7 @@ local markdownSyn  = require("newpaper.syntax.markdown")
 local htmlSyn      = require("newpaper.syntax.html")
 local rubySyn      = require("newpaper.syntax.ruby")
 local tomlSyn      = require("newpaper.syntax.toml")
+local yamlSyn      = require("newpaper.syntax.yaml")
 local luaSyn       = require("newpaper.syntax.lua")
 
 local jinjaSyn     = require("newpaper.syntax.jinja")
@@ -53,6 +54,7 @@ local function setup(userConfig)
     util.loadSyntax(htmlSyn.setup(configModule.config))
     util.loadSyntax(rubySyn.setup(configModule.config))
     util.loadSyntax(tomlSyn.setup(configModule.config))
+    util.loadSyntax(yamlSyn.setup(configModule.config))
 
     util.loadPluginSyntax(jinjaSyn.setup(configModule.config))
 
