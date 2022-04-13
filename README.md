@@ -22,9 +22,10 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Added functions for live theme switching without the need to restart NeoVim
 + Special syntax highlight:
     - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [🖼️](#RUBY)
+    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Preview[[🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html)]
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-    - TOML with [vim-toml](https://github.com/cespare/vim-toml)
+    - TOML with [vim-toml](https://github.com/cespare/vim-toml) - Preview[[light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html)]
+
     - Lua with [vim-lua](https://github.com/tbastos/vim-lua) - [🖼️](#LUA)
 
  ###  🔌 Supported plugins:
@@ -330,7 +331,7 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 
 Source code [HERE](preview/ruby/code.rb)
 
-**vim-ruby light** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview **vim-ruby dark** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
+**vim-ruby light** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) and preview **vim-ruby dark** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
 
 ![vim-ruby_code rb](https://user-images.githubusercontent.com/1559192/145306835-64ca7551-0b07-4ce1-b430-695c63de2f49.png)
 
@@ -383,9 +384,10 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 
 - [x] Add dark style
 
-- [ ] Add screenshots for languages:
+- [ ] Add syntax screenshots, HTML-preview:
     - [x] Ruby 
     - [x] Lua
+    - [x] TOML
     - [ ] LaTeX
     - [ ] HTML
     - [ ] Markdown
