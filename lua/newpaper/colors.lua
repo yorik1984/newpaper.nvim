@@ -345,8 +345,10 @@ function M.setup(config)
     -- Editor
     newpaper.folded_fg           = newpaper.blue
     newpaper.folded_bg           = newpaper.aqua
-    newpaper.wildmenu_bg         = newpaper.yellow
     newpaper.wildmenu_fg         = newpaper.darkgrey
+    newpaper.wildmenu_bg         = newpaper.yellow
+    newpaper.pmenu_fg            = newpaper.darkgrey
+    newpaper.pmenu_bg            = newpaper.lightlightgrey
     newpaper.cursor_nr_fg        = newpaper.darkorange
     newpaper.cursor_nr_bg        = newpaper.lightsilver
     newpaper.linenumber_fg       = newpaper.comment

@@ -109,10 +109,10 @@ function M.setup(config)
             NormalSB         = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg},
             NormalFloat      = { fg = newpaper.float_fg, bg = newpaper.float_bg }, -- normal text and background color for floating windows
             NonText          = { fg = newpaper.disabled }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-            Pmenu            = { fg = newpaper.text, bg = newpaper.contrast }, -- Popup menu: normal item.
-            PmenuSel         = { fg = newpaper.bg, bg = newpaper.text }, -- Popup menu: selected item.
-            PmenuSbar        = { fg = newpaper.text, bg = newpaper.contrast }, -- Popup menu: scrollbar.
-            PmenuThumb       = { fg = newpaper.fg, bg = newpaper.text }, -- Popup menu: Thumb of the scrollbar.
+            Pmenu            = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg }, -- Popup menu: normal item.
+            PmenuSel         = { fg = newpaper.bg, bg = newpaper.pmenu_fg }, -- Popup menu: selected item.
+            PmenuSbar        = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg }, -- Popup menu: scrollbar.
+            PmenuThumb       = { fg = newpaper.fg, bg = newpaper.pmenu_fg }, -- Popup menu: Thumb of the scrollbar.
             Question         = { fg = newpaper.darkgreen }, -- |hit-enter| prompt and yes/no questions
             QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.title, style = 'reverse' }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
             qfLineNr         = { fg = newpaper.highlight, bg = newpaper.title, style = 'reverse' }, -- Line numbers for quickfix lists
@@ -476,38 +476,38 @@ function M.setup(config)
             RedrawDebugRecompose          = { fg = newpaper.fg, bg = newpaper.red },
 
             -- Nvim-Cmp -------------------------------------------------------
-            CmpDocumentation              = { fg = newpaper.text,   bg = newpaper.float_bg },
-            CmpDocumentationBorder        = { fg = newpaper.border, bg = newpaper.float_bg },
-            CmpItemAbbr                   = { fg = newpaper.darkgrey },
+            CmpDocumentation              = { fg = newpaper.float_fg, bg = newpaper.float_bg },
+            CmpDocumentationBorder        = { fg = newpaper.border,   bg = newpaper.float_bg },
+            CmpItemMenu                   = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },
+            CmpItemKind                   = { fg = newpaper.lightblue },
+            CmpItemAbbr                   = { fg = newpaper.pmenu_fg },
             CmpItemAbbrDeprecated         = { fg = newpaper.lightgrey },
-            CmpItemAbbrMatch              = { fg = newpaper.navy, style = style.b_bold },
+            CmpItemAbbrMatch              = { fg = newpaper.navy,    style = style.b_bold },
             CmpItemAbbrMatchFuzzy         = { fg = newpaper.magenta, style = style.b_bold },
-            CmpItemMenu                   = { fg = newpaper.darkgrey },
-            CmpItemKindDefault            = { fg = newpaper.lightblue },
-            -- CmpItemKindText               = 1                            -- Text          = "",
-            CmpItemKindMethod             = { fg = newpaper.bluegreen },    -- Method        = "",
-            CmpItemKindFunction           = { fg = newpaper.navy },         -- Function      = "",
-            CmpItemKindConstructor        = { fg = newpaper.bluegreen },    -- Constructor   = "",
-            CmpItemKindField              = { fg = newpaper.ocean },        -- Field         = "ﰠ",
-            CmpItemKindVariable           = { fg = newpaper.darkengreen },    -- Variable      = "",
-            CmpItemKindClass              = { fg = newpaper.ruby_magenta }, -- Class         = "ﴯ",
-            CmpItemKindInterface          = { fg = newpaper.olive },        -- Interface     = "",
-            CmpItemKindModule             = { fg = newpaper.darkyellow },   -- Module        = "",
-            CmpItemKindProperty           = { fg = newpaper.bluegreen },    -- Property      = "ﰠ",
-            CmpItemKindUnit               = { fg = newpaper.darkpurple },   -- Unit          = "塞",
-            CmpItemKindValue              = { fg = newpaper.red },          -- Value         = "",
-            CmpItemKindEnum               = { fg = newpaper.green },        -- Enum          = "",
-            CmpItemKindKeyword            = { fg = newpaper.keyword },      -- Keyword       = "",
-            CmpItemKindSnippet            = { fg = newpaper.darkpurple },   -- Snippet       = "",
-            CmpItemKindColor              = { fg = newpaper.magenta },      -- Color         = "",
-            CmpItemKindFile               = { fg = newpaper.teal },         -- File          = "",
-            CmpItemKindReference          = { fg = newpaper.darkyellow },   -- Reference     = "",
-            CmpItemKindFolder             = { fg = newpaper.teal },         -- Folder        = "",
-            CmpItemKindEnumMember         = { fg = newpaper.green },        -- EnumMember    = "",
-            CmpItemKindConstant           = { fg = newpaper.darkengreen },    -- Constant      = "",
-            CmpItemKindStruct             = { fg = newpaper.olive },        -- Struct        = "פּ",
-            CmpItemKindEvent              = { fg = newpaper.orange },       -- Event         = "",
-            CmpItemKindOperator           = { fg = newpaper.navy },         -- Operator      = "",
+            CmpItemKindText               = { fg = newpaper.string },       -- Text          = ""
+            CmpItemKindMethod             = { fg = newpaper.bluegreen },    -- Method        = ""
+            CmpItemKindFunction           = { fg = newpaper.navy },         -- Function      = ""
+            CmpItemKindConstructor        = { fg = newpaper.bluegreen },    -- Constructor   = ""
+            CmpItemKindField              = { fg = newpaper.ocean },        -- Field         = "ﰠ"
+            CmpItemKindVariable           = { fg = newpaper.darkengreen },  -- Variable      = ""
+            CmpItemKindClass              = { fg = newpaper.ruby_magenta }, -- Class         = "ﴯ"
+            CmpItemKindInterface          = { fg = newpaper.olive },        -- Interface     = ""
+            CmpItemKindModule             = { fg = newpaper.darkyellow },   -- Module        = ""
+            CmpItemKindProperty           = { fg = newpaper.bluegreen },    -- Property      = "ﰠ"
+            CmpItemKindUnit               = { fg = newpaper.darkpurple },   -- Unit          = "塞"
+            CmpItemKindValue              = { fg = newpaper.red },          -- Value         = ""
+            CmpItemKindEnum               = { fg = newpaper.green },        -- Enum          = ""
+            CmpItemKindKeyword            = { fg = newpaper.keyword },      -- Keyword       = ""
+            CmpItemKindSnippet            = { fg = newpaper.darkpurple },   -- Snippet       = ""
+            CmpItemKindColor              = { fg = newpaper.magenta },      -- Color         = ""
+            CmpItemKindFile               = { fg = newpaper.teal },         -- File          = ""
+            CmpItemKindReference          = { fg = newpaper.darkyellow },   -- Reference     = ""
+            CmpItemKindFolder             = { fg = newpaper.teal },         -- Folder        = ""
+            CmpItemKindEnumMember         = { fg = newpaper.green },        -- EnumMember    = ""
+            CmpItemKindConstant           = { fg = newpaper.darkengreen },  -- Constant      = ""
+            CmpItemKindStruct             = { fg = newpaper.olive },        -- Struct        = "פּ"
+            CmpItemKindEvent              = { fg = newpaper.orange },       -- Event         = ""
+            CmpItemKindOperator           = { fg = newpaper.navy },         -- Operator      = ""
             CmpItemKindTypeParameter      = { fg = newpaper.orange },       -- TypeParameter = " "
 
             -- Nvim-Compe -----------------------------------------------------

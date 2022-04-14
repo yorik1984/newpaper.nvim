@@ -328,7 +328,7 @@ vim.g.newpaper_colors        = {teal = '#008080'}
 
 ### 🎼 Languages:
 
-+ ###  RUBY
++ ### RUBY
 
 Source code [HERE](preview/ruby/code.rb)
 
@@ -344,7 +344,7 @@ Source code [HERE](preview/ruby/code.rb)
 
 ![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
 
-+ ###  LUA
++ ### LUA
 
 Source code [HERE](preview/lua/code.lua)
 
@@ -406,7 +406,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] WhichKey.nvim
     - [ ] packer.nvim
     - [x] todo-comments.nvim
-    
+
 - [ ] Add wide syntax highlight:
     - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
     - [ ] Markdown
@@ -419,7 +419,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [x] Lua with [vim-lua](https://github.com/tbastos/vim-lua)
     - [x] TOML with [vim-toml](https://github.com/cespare/vim-toml)
     - [x] YAML
-    
+
 - [ ] Add plugins support:
     - [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
     - [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)
