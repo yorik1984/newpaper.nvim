@@ -181,6 +181,11 @@ Options:
         Make some tex  ...Arg... bold, italic or NONE.
         Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
 
+    + error_highlight    {string} (default = `'undercurl'`)
+        Make spell or `tex`-files errors hightlighting with
+        background, undercurl, both or NONE
+        Value: `'bg'`, `'undercurl'`, `'both'`, `'NONE'`.
+
     + italic_strings     {booleans} (default = true)
         Make strings italic 
 
@@ -250,6 +255,7 @@ Default settings:
         tex_keywords        = 'NONE',
         tex_zone            = 'italic',
         tex_arg             = 'italic',
+        error_highlight     = 'undercurl',
         italic_strings      = true,
         italic_comments     = true,
         italic_functions    = false,

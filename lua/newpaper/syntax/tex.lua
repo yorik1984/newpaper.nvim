@@ -19,9 +19,9 @@ function M.setup(config)
             -- NOTE:some basic groups init in Vimtex part. See below
 
             texCursor         = { fg = newpaper.bg, bg = newpaper.tex_aqua },
-            texBadMath        = { bg = newpaper.tex_math_error },
-            texMathDelimBad   = { bg = newpaper.tex_math_delim_error },
-            texOnlyMath       = { bg = newpaper.tex_only_math_error },
+            texBadMath        = { bg = newpaper.tex_math_error, style = style.error },
+            texMathDelimBad   = { bg = newpaper.tex_math_delim_error, style = style.error },
+            texOnlyMath       = { bg = newpaper.tex_only_math_error, style = style.error },
             texCite           = { fg = newpaper.tex_lightviolet },
             texDefCmd         = { fg = newpaper.tex_magenta },
             texDefName        = { fg = newpaper.tex_blue },
@@ -105,7 +105,7 @@ function M.setup(config)
             latexTSEnvironmentName = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
             latexTSInclude         = { fg = newpaper.tex_blue, style = style.tex_k_style },
             latexTSParameter       = { fg = newpaper.tex_orange, style = style.tex_a_style },
-            latexTSError           = { fg = newpaper.tex_red, bg = newpaper.pink },
+            latexTSError           = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },
             latexTSTextReference   = { fg = newpaper.tex_lightgreen },
             latexTSEmphasis        = { fg = newpaper.fg, style = 'italic' },
             latexTSStrong          = { fg = newpaper.fg, style = 'bold' },
@@ -220,12 +220,12 @@ function M.setup(config)
             texCmdItem            = { fg = newpaper.tex_blue }, -- \item
 
             -- Inherited groups -----------------------------------------------
-            texGroupError         = { bg = newpaper.tex_group_error },
+            texGroupError         = { bg = newpaper.tex_group_error, style = style.error },
             texMinipageOptHeight  = { fg = newpaper.tex_red },
             texMinipageOptIPos    = { fg = newpaper.tex_redorange },
             texMinipageOptPos     = { fg = newpaper.tex_redorange },
-            texMathError          = { bg = newpaper.tex_math_error },
-            texMathErrorDelim     = { bg = newpaper.tex_math_delim_error },
+            texMathError          = { bg = newpaper.tex_math_error, style = style.error },
+            texMathErrorDelim     = { bg = newpaper.tex_math_delim_error, style = style.error },
             texParboxOptHeight    = { fg = newpaper.tex_red },
             texParboxOptIPos      = { fg = newpaper.tex_orange },
             texParboxOptPos       = { fg = newpaper.tex_orange },
@@ -256,6 +256,7 @@ function M.setup(config)
             texCmdStyleItal       = { fg = newpaper.tex_navy, style = 'italic' },
             texCmdStyleItalBold   = { fg = newpaper.tex_navy, style = 'bold,italic' },
             texCommentAcronym     = { fg = newpaper.comment, style = style.comment_title },
+            -- texCommentFalse       texComment
             texCommentURL         = { fg = newpaper.comment, style = style.c_style .. ',underline' },
             -- texConditionalArg     texArg
             -- texConditionalINCChar texSymbol
@@ -319,6 +320,9 @@ function M.setup(config)
             -- texCmdNumberWithin     texCmd
             -- texCmdOpName           texCmd
             -- texCmdSubjClass        texCmd
+            -- texCmdRefEq            texCmdRef
+            -- texRefEqConcealedArg   texRefArg
+            -- texRefEqConcealedDelim texDelim
             -- texDeclmathoperArgName texArgNew
             -- texDeclmathoperArgBody texMathZone
             texMathConcealedArg    = { fg = newpaper.tex_math },

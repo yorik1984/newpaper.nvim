@@ -120,10 +120,10 @@ function M.setup(config)
             SignColumn       = { fg = newpaper.fg, bg = newpaper.linenumber_bg },
             SignColumnSB     = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg },
             SpecialKey       = { fg = newpaper.disabled }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-            SpellBad         = { bg = newpaper.spellbad, style = 'undercurl' }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-            SpellCap         = { bg = newpaper.spellcap, style = 'undercurl' }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-            SpellLocal       = { bg = newpaper.spelllocal, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-            SpellRare        = { bg = newpaper.spellrare, style = 'undercurl' }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+            SpellBad         = { bg = newpaper.spellbad, style = style.error }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+            SpellCap         = { bg = newpaper.spellcap, style = style.error }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+            SpellLocal       = { bg = newpaper.spelllocal, style = style.error }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+            SpellRare        = { bg = newpaper.spellrare, style = style.error }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
             StatusLine       = { fg = newpaper.teal, bg = newpaper.silver }, -- status line of current window
             StatusLineNC     = { fg = newpaper.lightgrey, bg = newpaper.silver }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             StatusLineTerm   = { fg = newpaper.fg, bg = newpaper.silver }, -- status line of current terminal window
@@ -266,19 +266,19 @@ function M.setup(config)
             LspDiagnosticsDefaultError           = { fg = newpaper.error_fg }, -- "Error" diagnostic virtual text
             LspDiagnosticsSignError              = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg }, -- "Error" diagnostic signs in sign column
             LspDiagnosticsFloatingError          = { fg = newpaper.error_fg }, -- "Error" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineError         = { style = 'undercurl', sp = newpaper.error_fg }, -- used to underline "Error" diagnostics.
+            LspDiagnosticsUnderlineError         = { style = style.error, sp = newpaper.error_fg }, -- used to underline "Error" diagnostics.
             LspDiagnosticsDefaultWarning         = { fg = newpaper.warn_fg }, -- "Warning" diagnostic signs in sign column
             LspDiagnosticsSignWarning            = { fg = newpaper.warn_fg, bg = newpaper.linenumber_bg }, -- "Warning" diagnostic signs in sign column
             LspDiagnosticsFloatingWarning        = { fg = newpaper.warn_fg }, -- "Warning" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineWarning       = { style = 'undercurl', sp = newpaper.warn_fg }, -- used to underline "Warning" diagnostics.
+            LspDiagnosticsUnderlineWarning       = { style = style.error, sp = newpaper.warn_fg }, -- used to underline "Warning" diagnostics.
             LspDiagnosticsDefaultInformation     = { fg = newpaper.info_fg }, -- "Information" diagnostic virtual text
             LspDiagnosticsSignInformation        = { fg = newpaper.info_fg, bg = newpaper.linenumber_bg }, -- "Information" diagnostic signs in sign column
             LspDiagnosticsFloatingInformation    = { fg = newpaper.info_fg }, -- "Information" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineInformation   = { style = 'undercurl', sp = newpaper.info_fg }, -- used to underline "Information" diagnostics.
+            LspDiagnosticsUnderlineInformation   = { style = style.error, sp = newpaper.info_fg }, -- used to underline "Information" diagnostics.
             LspDiagnosticsDefaultHint            = { fg = newpaper.hint_fg }, -- "Hint" diagnostic virtual text
             LspDiagnosticsSignHint               = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg }, -- "Hint" diagnostic signs in sign column
             LspDiagnosticsFloatingHint           = { fg = newpaper.hint_fg }, -- "Hint" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineHint          = { style = 'undercurl', sp = newpaper.hint_fg }, -- used to underline  s "    Hint" diagnostics.
+            LspDiagnosticsUnderlineHint          = { style = style.error, sp = newpaper.hint_fg }, -- used to underline  s "    Hint" diagnostics.
             LspCodeLens                          = { fg = newpaper.comment, bg = newpaper.lightsilver },
             LspReferenceText                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "text" references
             LspReferenceRead                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "read" references
@@ -402,8 +402,8 @@ function M.setup(config)
             LanguageToolErrorCount        = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
             LanguageToolLabel             = { fg = newpaper.darkgreen },
             LanguageToolUrl               = { fg = newpaper.link, style = 'underline' },
-            LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = 'undercurl' },
-            LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = 'undercurl' },
+            LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = style.error },
+            LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = style.error },
 
             -- Litee -------------------------------------------------------
             LTBoolean                     = { fg = newpaper.boolean, style = style.k_style },

@@ -64,7 +64,7 @@ function M.setup(config)
         diffchange_bg   = '#FFD787',
 
         -- Spell
-        spellbad        = '#FFDDEE',
+        spellbad        = '#FFF4FF',
         spellcap        = '#FFFFDF',
         spellrare       = '#E3FFD5',
         spelllocal      = '#E7E7FF',
@@ -406,6 +406,19 @@ function M.setup(config)
     if config.contrast_sidebar then
         newpaper.sidebar_fg = newpaper.sidebar_fg_alt
         newpaper.sidebar_bg = newpaper.sidebar_bg_alt
+    end
+
+    if config.error_highlight ~= "both" and config.error_highlight ~= "bg" then
+        newpaper.spellbad             = newpaper.none
+        newpaper.spellcap             = newpaper.none
+        newpaper.spelllocal           = newpaper.none
+        newpaper.spellrare            = newpaper.none
+        newpaper.tex_group_error      = newpaper.none
+        newpaper.tex_minipage_error   = newpaper.none
+        newpaper.tex_math_error       = newpaper.none
+        newpaper.tex_math_delim_error = newpaper.none
+        newpaper.tex_parbox_opt_error = newpaper.none
+        newpaper.tex_only_math_error  = newpaper.none
     end
 
     util.color_overrides(newpaper, config)

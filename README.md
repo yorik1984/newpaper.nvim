@@ -139,13 +139,14 @@ Available options:
 | contrast_float     | `true`     | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope | `true`     | Make Telescope have a different foreground and background |
 | operators_bold     | `true`     | Make booleans, escape characters, operators, `=`, `*`, delimiter like `<>/` bold |
-| keywords           | `'bold'`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
-| tags               | `'bold'`   | Make HTML tagg bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
-| tex_major          | `'bold'`   | Make only major tex word like`\documentclass`, `\section`, ... bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
+| keywords           | `'bold'`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
+| tags               | `'bold'`   | Make HTML tagg bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
+| tex_major          | `'bold'`   | Make only major tex word like`\documentclass`, `\section`, ... bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
 | tex_operators_bold | `'true'`   | Make tex operators bold |
-| tex_keywords       | `'NONE'`   | Make other tex keywords bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
-| tex_zone           | `'italic'` | Make some tex `...Zone...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
-| tex_arg            | `'italic'` | Make some tex `...Arg...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'` `'NONE'`. |
+| tex_keywords       | `'NONE'`   | Make other tex keywords bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
+| tex_zone           | `'italic'` | Make some tex `...Zone...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
+| tex_arg            | `'italic'` | Make some tex `...Arg...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
+| error_highlight    | `'undercurl'` | Make spell or `tex`-files errors hightlighting with background, undercurl, both or NONE. Value: `'bg'`, `'undercurl'`, `'both'`, `'NONE'`.  |
 | italic_strings     | `true`     | Make strings italic |
 | italic_comments    | `true`     | Make comments italic |
 | italic_functions   | `false`    | Make function calls and names italic |
