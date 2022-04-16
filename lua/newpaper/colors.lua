@@ -46,6 +46,8 @@ function M.setup(config)
         bluegreen       = '#257D90',
         darkengreen     = '#007F00',
 
+        codeblock       = '#DEDEDE',
+
         regexp_blue     = '#3A72ED',
         regexp_green    = '#00AA00',
         regexp_orange   = '#DD7700',
@@ -205,6 +207,8 @@ function M.setup(config)
         newpaper.bluegreen       = '#66A4B1'
         newpaper.darkengreen     = '#5FAF5F'
 
+        newpaper.codeblock       = '#5F5F5F'
+
         newpaper.regexp_blue     = '#618EF0'
         newpaper.regexp_green    = '#46C146'
         newpaper.regexp_orange   = '#E39232'
@@ -355,6 +359,7 @@ function M.setup(config)
     newpaper.linenumber_bg       = newpaper.lightsilver
     newpaper.msgarea_fg          = newpaper.fg
     newpaper.msgarea_bg          = newpaper.bg
+    newpaper.colorcolumn         = newpaper.silver
 
     -- Search
     newpaper.search_bg           = newpaper.yellow

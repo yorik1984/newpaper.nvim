@@ -70,7 +70,7 @@ function M.setup(config)
 
         local editor = {
             Comment          = { fg = newpaper.comment, style = style.c_style },
-            ColorColumn      = { bg = newpaper.highlight }, --  used for the columns set with 'colorcolumn'
+            ColorColumn      = { bg = newpaper.colorcolumn }, --  used for the columns set with 'colorcolumn'
             Conceal          = { fg = newpaper.tex_math }, -- placeholder characters substituted for concealed text (see 'conceallevel')
             Cursor           = { fg = newpaper.bg, bg = newpaper.cursor }, -- the character under the cursor
             nCursor          = { fg = newpaper.bg, bg = newpaper.teal }, -- Normal mode
@@ -386,6 +386,11 @@ function M.setup(config)
             GlyphPalette7                 = { fg = newpaper.aqua },
             GlyphPalette9                 = { fg = newpaper.magenta },
             GlyphPaletteDirectory         = { fg = newpaper.navy },
+
+            -- Headlines -----------------------------------------------------
+            Headline                      = { bg = newpaper.none, style = style.k_bold },
+            CodeBlock                     = { bg = newpaper.codeblock },
+            Dash                          = { fg = newpaper.orange, bg = newpaper.none },
 
             -- Hop ------------------------------------------------------------
             HopNextKey                    = { fg = newpaper.accent, style = style.b_bold },
