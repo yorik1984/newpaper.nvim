@@ -99,16 +99,20 @@ function M.setup(config)
             latexTSMath            = { fg = newpaper.tex_math },
             latexTSPunctDelimiter  = { fg = newpaper.tex_lightpurple },
             latexTSOperator        = { fg = newpaper.tex_math, style = style.tex_o_style },
-            latexTSFuncMacro       = { fg = newpaper.tex_math },
+            latexTSFuncMacro       = { fg = newpaper.tex_magenta },
+            latexTSFunction        = { fg = newpaper.tex_navy },
             latexTSPunctBracket    = { fg = newpaper.tex_lightpurple },
+            latexTSPunctSpecial    = { fg = newpaper.tex_string },
             latexTSEnvironment     = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             latexTSEnvironmentName = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
+            latexTSNamespace       = { fg = newpaper.tex_blue, style = style.tex_m_style },
             latexTSInclude         = { fg = newpaper.tex_blue, style = style.tex_k_style },
             latexTSParameter       = { fg = newpaper.tex_orange, style = style.tex_a_style },
             latexTSError           = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },
             latexTSTextReference   = { fg = newpaper.tex_lightgreen },
             latexTSEmphasis        = { fg = newpaper.fg, style = 'italic' },
             latexTSStrong          = { fg = newpaper.fg, style = 'bold' },
+            latexTSString          = { fg = newpaper.tex_string, style = style.tex_string },
             latexTSURI             = { fg = newpaper.tex_navy, style = 'underline' },
             latexTSComment         = { fg = newpaper.comment, style = style.c_style },
 
@@ -217,7 +221,7 @@ function M.setup(config)
             -- texCmdDef           texCmdNew       \DEF
             texDefArgName         = { fg = newpaper.tex_navy }, -- \def\NAME
             texDefParm            = { fg = newpaper.tex_orange }, -- \def\name #1
-            texCmdItem            = { fg = newpaper.tex_blue }, -- \item
+            texCmdItem            = { fg = newpaper.tex_string }, -- \item
 
             -- Inherited groups -----------------------------------------------
             texGroupError         = { bg = newpaper.tex_group_error, style = style.error },
