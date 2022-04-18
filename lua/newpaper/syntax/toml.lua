@@ -26,7 +26,7 @@ function M.setup(config)
             -- tomlBoolean    Boolean
             tomlDate          = { fg = newpaper.maroon },
             tomlKey           = { fg = newpaper.ocean, style = style.f_style },
-            tomlKeyDq         = { fg = newpaper.navy },
+            tomlKeyDq         = { fg = newpaper.tag_navy },
             tomlKeySq         = { fg = newpaper.navy },
             tomlKeyValueArray = { fg = newpaper.operator },
             tomlTable         = { fg = newpaper.keyword,    style = style.k_style },
@@ -56,8 +56,8 @@ function M.setup(config)
             -- tomlTSError
             -- tomlTSStringSpecial
             -- tomlTSPunctDelimiter
-            tomlTSPunctBracket   = { fg = newpaper.keyword, style = style.o_style },
-            tomlTSProperty       = { fg = newpaper.ocean,   style = style.f_style },
+            tomlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
+            tomlTSProperty       = { fg = newpaper.ocean,      style = style.f_style },
 
         }
 
