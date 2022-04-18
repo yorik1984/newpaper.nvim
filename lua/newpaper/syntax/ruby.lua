@@ -109,7 +109,7 @@ function M.setup(config)
             -- rubyHeredocDelimiter           rubyStringDelimiter
             -- rubyPercentSymbolDelimiter     rubySymbolDelimiter
             rubySymbolDelimiter            = { fg = newpaper.darkyellow,    style = style.o_style },
-            rubyPercentStringDelimiter     = { fg = newpaper.navy,          style = style.o_style },
+            rubyPercentStringDelimiter     = { fg = newpaper.tag_navy,          style = style.o_style },
             -- rubyString                     String
             rubyPercentRegexpDelimiter     = { fg = newpaper.text, style = style.o_style },
             rubyRegexpDelimiter            = { fg = newpaper.regexp_blue, style = style.o_style },
@@ -160,7 +160,7 @@ function M.setup(config)
             plugins.rubyBitwiseOperator        = { fg = newpaper.redorange, style = style.o_style }
             plugins.rubyBooleanOperator        = { fg = newpaper.boolean, style = style.o_style }
             -- rubyRangeOperator                 rubyOperator
-            plugins.rubyAssignmentOperator     = { fg = newpaper.navy, style = style.o_style }
+            plugins.rubyAssignmentOperator     = { fg = newpaper.tag_navy, style = style.o_style }
             plugins.rubyEqualityOperator       = { fg = newpaper.magenta, style = style.o_style }
         else
             plugins.rubyOperator               = { fg = newpaper.fg }
