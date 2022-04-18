@@ -43,6 +43,7 @@ function M.setup(config)
             luaTSLabel           = { fg = newpaper.magenta },
             luaTSPunctBracket    = { fg = newpaper.lua_navy },
             luaTSOperator        = { fg = newpaper.lua_navy, style = style.o_style },
+            luaTSKeywordOperator = { fg = newpaper.tag_navy, style = style.o_style },
         }
 
         return treesitter
