@@ -14,7 +14,6 @@ function M.setup(config)
     yamlSyn.loadSyntax = function ()
 
         -- yaml highlight groups
-        -- Neovim >=0.6.0 include basic yaml syntax
 
         local syntax = {
 
@@ -32,7 +31,7 @@ function M.setup(config)
 
             -- yamlYAMLDirective            yamlDirectiveName
             -- yamlReservedDirective        Error
-            yamlYAMLVersion              = { fg = newpaper.number, style = style.o_style },
+            yamlYAMLVersion              = { fg = newpaper.red, style = style.o_style },
 
             yamlString                   = { fg = newpaper.string, style = style.s_style },
             -- yamlFlowString               yamlString
@@ -48,7 +47,7 @@ function M.setup(config)
             -- yamlFlowMappingMerge         Special
 
             yamlMappingKeyStart          = { fg = newpaper.orange },
-            yamlFlowIndicator            = { fg = newpaper.keyword, style = style.o_style },
+            yamlFlowIndicator            = { fg = newpaper.tag_navy, style = style.o_style },
             yamlKeyValueDelimiter        = { fg = newpaper.orange },
 
             yamlConstant                 = { fg = newpaper.darkengreen, style = style.k_style  },
@@ -85,10 +84,10 @@ function M.setup(config)
             -- yamlTSConstBuiltin
             yamlTSStringEscape   = { fg = newpaper.magenta },
             -- yamlTSType
-            yamlTSString         = { fg = newpaper.string,  style = style.s_style },
             yamlTSPunctSpecial   = { fg = newpaper.magenta },
-            yamlTSField          = { fg = newpaper.ocean,   style = style.f_style },
-            yamlTSPunctBracket   = { fg = newpaper.keyword, style = style.o_style },
+            yamlTSString         = { fg = newpaper.string,     style = style.s_style },
+            yamlTSField          = { fg = newpaper.ocean,      style = style.f_style },
+            yamlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
 
         }
 
