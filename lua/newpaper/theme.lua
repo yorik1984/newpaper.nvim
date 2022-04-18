@@ -206,7 +206,7 @@ function M.setup(config)
             TSFunction             = { fg = newpaper.navy, style = style.f_style }, -- For fuction (calls and definitions).
             TSMethod               = { fg = newpaper.bluegreen, style = style.f_style }, -- For method calls and definitions.
             TSFuncBuiltin          = { fg = newpaper.navy, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
-            TSKeywordOperator      = { fg = newpaper.navy, style = style.o_style }, -- define a operators like and, or.
+            TSKeywordOperator      = { fg = newpaper.tag_navy, style = style.o_style }, -- define a operators like and, or.
             TSTag                  = { fg = newpaper.tag, style = style.tag_style }, -- HTML tag names.
             TSBoolean              = { fg = newpaper.boolean, style = style.k_style }, -- For booleans.
             TSCharacter            = { fg = newpaper.orange }, -- For characters.
@@ -512,7 +512,7 @@ function M.setup(config)
             CmpItemKindConstant           = { fg = newpaper.darkengreen },  -- Constant      = ""
             CmpItemKindStruct             = { fg = newpaper.olive },        -- Struct        = "פּ"
             CmpItemKindEvent              = { fg = newpaper.orange },       -- Event         = ""
-            CmpItemKindOperator           = { fg = newpaper.navy },         -- Operator      = ""
+            CmpItemKindOperator           = { fg = newpaper.tag_navy },     -- Operator      = ""
             CmpItemKindTypeParameter      = { fg = newpaper.orange },       -- TypeParameter = " "
 
             -- Nvim-Compe -----------------------------------------------------
