@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>light_code.md.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim8.1_v2">
+<meta name="syntax" content="jinja">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=,use_input_for_pc=fallback">
+<meta name="colorscheme" content="newpaper">
+<style>
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #2b2b2b; background-color: #f1f3f2; }
+body { font-family: monospace; color: #2b2b2b; background-color: #f1f3f2; }
+* { font-size: 1em; }
+.markdownBold { color: #2b2b2b; font-weight: bold; }
+.LineNr { color: #878787; background-color: #eeeeee; padding-bottom: 1px; }
+.markdownH1Delimiter { color: #8700af; }
+.markdownH2Delimiter { color: #005f87; }
+.markdownH3Delimiter { color: #007f00; }
+.markdownH4Delimiter { color: #db6f19; }
+.markdownBlockquote { color: #003399; }
+.markdownFootnote { color: #0044aa; font-weight: bold; }
+.markdownFootnoteDefinition { color: #0044aa; text-decoration: underline; }
+.markdownLinkText { color: #0044aa; text-decoration: underline; }
+.markdownIdDeclaration { color: #af0000; font-weight: bold; }
+.markdownId { color: #af0000; }
+.markdownAutomaticLink { color: #0044aa; font-style: italic; text-decoration: underline; }
+.markdownUrl { color: #0072c1; }
+.markdownUrlTitle { color: #3a72ed; }
+.markdownBoldDelimiter { color: #003399; font-weight: bold; }
+.markdownBoldItalic { color: #2b2b2b; font-weight: bold; font-style: italic; }
+.markdownBoldItalicDelimiter { color: #003399; font-weight: bold; }
+.markdownCodeDelimiter { color: #3a72ed; }
+.markdownCode { color: #0072c1; }
+.markdownH5Delimiter { color: #c18301; }
+.markdownH6Delimiter { color: #0087af; }
+.markdownH1 { color: #8700af; font-weight: bold; }
+.markdownH2 { color: #005f87; font-weight: bold; }
+.markdownH3 { color: #007f00; font-weight: bold; }
+.markdownH4 { color: #db6f19; font-weight: bold; }
+.markdownH5 { color: #c18301; font-weight: bold; }
+.markdownH6 { color: #0087af; font-weight: bold; }
+.markdownHeadingRule { color: #8700af; }
+.markdownIdDelimiter { color: #e45649; }
+.markdownLinkDelimiter { color: #db6f19; }
+.markdownLinkTextDelimiter { color: #db6f19; }
+.markdownListMarker { color: #8700af; }
+.markdownOrderedListMarker { color: #e45649; }
+.markdownUrlDelimiter { color: #0044aa; }
+.markdownUrlTitleDelimiter { color: #3a72ed; }
+.markdownItalic { color: #2b2b2b; font-style: italic; }
+.markdownItalicDelimiter { color: #003399; }
+-->
+</style>
+
+<script>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  var lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Headers</span>
+<span id="L2" class="LineNr"> 2 </span>
+<span id="L3" class="LineNr"> 3 </span><span class="markdownH1Delimiter">#</span><span class="markdownH1"> h1</span>
+<span id="L4" class="LineNr"> 4 </span><span class="markdownH2Delimiter">##</span><span class="markdownH2"> h2</span>
+<span id="L5" class="LineNr"> 5 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> h3</span>
+<span id="L6" class="LineNr"> 6 </span><span class="markdownH4Delimiter">####</span><span class="markdownH4"> h4</span>
+<span id="L7" class="LineNr"> 7 </span><span class="markdownH5Delimiter">#####</span><span class="markdownH5"> h5</span>
+<span id="L8" class="LineNr"> 8 </span><span class="markdownH6Delimiter">######</span><span class="markdownH6"> h6</span>
+<span id="L9" class="LineNr"> 9 </span>
+<span id="L10" class="LineNr">10 </span><span class="markdownH1">Header 1</span>
+<span id="L11" class="LineNr">11 </span><span class="markdownHeadingRule">========</span>
+<span id="L12" class="LineNr">12 </span>
+<span id="L13" class="LineNr">13 </span><span class="markdownH2">Header 2</span>
+<span id="L14" class="LineNr">14 </span><span class="markdownHeadingRule">--------</span>
+<span id="L15" class="LineNr">15 </span>
+<span id="L16" class="LineNr">16 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Emphasis</span>
+<span id="L17" class="LineNr">17 </span>
+<span id="L18" class="LineNr">18 </span><span class="markdownItalicDelimiter">*</span><span class="markdownItalic">italic</span><span class="markdownItalicDelimiter">*</span>
+<span id="L19" class="LineNr">19 </span><span class="markdownItalicDelimiter">_</span><span class="markdownItalic">italic</span><span class="markdownItalicDelimiter">_</span>
+<span id="L20" class="LineNr">20 </span>
+<span id="L21" class="LineNr">21 </span><span class="markdownBoldDelimiter">**</span><span class="markdownBold">bold</span><span class="markdownBoldDelimiter">**</span>
+<span id="L22" class="LineNr">22 </span><span class="markdownBoldDelimiter">__</span><span class="markdownBold">bold</span><span class="markdownBoldDelimiter">__</span>
+<span id="L23" class="LineNr">23 </span>
+<span id="L24" class="LineNr">24 </span><span class="markdownBoldItalicDelimiter">***</span><span class="markdownBoldItalic">bold italic</span><span class="markdownBoldItalicDelimiter">***</span>
+<span id="L25" class="LineNr">25 </span><span class="markdownBoldItalicDelimiter">___</span><span class="markdownBoldItalic">bold italic</span><span class="markdownBoldItalicDelimiter">___</span>
+<span id="L26" class="LineNr">26 </span>
+<span id="L27" class="LineNr">27 </span>~~strikethrough~~
+<span id="L28" class="LineNr">28 </span>
+<span id="L29" class="LineNr">29 </span>Inline <span class="markdownCodeDelimiter">`</span><span class="markdownCode">code</span><span class="markdownCodeDelimiter">`</span> and
+<span id="L30" class="LineNr">30 </span>
+<span id="L31" class="LineNr">31 </span><span class="markdownCodeDelimiter">```lua</span>
+<span id="L32" class="LineNr">32 </span><span class="markdownCode">-- comment</span>
+<span id="L33" class="LineNr">33 </span><span class="markdownCode">if type(config.custom_highlights) == 'table' then</span>
+<span id="L34" class="LineNr">34 </span><span class="markdownCode">    util.syntax(config.custom_highlights)</span>
+<span id="L35" class="LineNr">35 </span><span class="markdownCode"> end</span>
+<span id="L36" class="LineNr">36 </span><span class="markdownCodeDelimiter">```</span>
+<span id="L37" class="LineNr">37 </span>
+<span id="L38" class="LineNr">38 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Lists</span>
+<span id="L39" class="LineNr">39 </span>
+<span id="L40" class="LineNr">40 </span><span class="markdownListMarker">*</span> Item 1
+<span id="L41" class="LineNr">41 </span><span class="markdownListMarker">*</span> Item 2
+<span id="L42" class="LineNr">42 </span>
+<span id="L43" class="LineNr">43 </span><span class="markdownListMarker">-</span> Item 1
+<span id="L44" class="LineNr">44 </span><span class="markdownListMarker">-</span> Item 2
+<span id="L45" class="LineNr">45 </span>
+<span id="L46" class="LineNr">46 </span><span class="markdownListMarker">+</span> Item 1
+<span id="L47" class="LineNr">47 </span><span class="markdownListMarker">+</span> Item 2
+<span id="L48" class="LineNr">48 </span>
+<span id="L49" class="LineNr">49 </span><span class="markdownListMarker">-</span> [ ] Checkbox off
+<span id="L50" class="LineNr">50 </span><span class="markdownListMarker">-</span> [x] Checkbox on
+<span id="L51" class="LineNr">51 </span>
+<span id="L52" class="LineNr">52 </span><span class="markdownOrderedListMarker">1.</span> Item 1
+<span id="L53" class="LineNr">53 </span><span class="markdownOrderedListMarker">2.</span> Item 2
+<span id="L54" class="LineNr">54 </span>
+<span id="L55" class="LineNr">55 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Links</span>
+<span id="L56" class="LineNr">56 </span>
+<span id="L57" class="LineNr">57 </span><span class="markdownLinkTextDelimiter">[</span><span class="markdownLinkText">link</span><span class="markdownLinkTextDelimiter">]</span><span class="markdownLinkDelimiter">(</span><span class="markdownUrl"><a href="http://google.com">http://google.com</a></span><span class="markdownLinkDelimiter">)</span>
+<span id="L58" class="LineNr">58 </span>
+<span id="L59" class="LineNr">59 </span><span class="markdownLinkTextDelimiter">[</span><span class="markdownLinkText">link</span><span class="markdownLinkTextDelimiter">]</span><span class="markdownIdDelimiter">[</span><span class="markdownId">google</span><span class="markdownIdDelimiter">]</span>
+<span id="L60" class="LineNr">60 </span><span class="markdownLinkDelimiter">[</span><span class="markdownIdDeclaration">google</span><span class="markdownLinkDelimiter">]:</span> <span class="markdownUrl"><a href="http://google.com">http://google.com</a></span>
+<span id="L61" class="LineNr">61 </span>
+<span id="L62" class="LineNr">62 </span><span class="markdownUrlDelimiter">&lt;</span><span class="markdownAutomaticLink"><a href="http://google.com">http://google.com</a></span><span class="markdownUrlDelimiter">&gt;</span>
+<span id="L63" class="LineNr">63 </span>
+<span id="L64" class="LineNr">64 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Images</span>
+<span id="L65" class="LineNr">65 </span>
+<span id="L66" class="LineNr">66 </span><span class="markdownLinkTextDelimiter">![</span><span class="markdownLinkText">Image alt text</span><span class="markdownLinkTextDelimiter">]</span><span class="markdownLinkDelimiter">(</span><span class="markdownUrl">/path/to/img.jpg</span><span class="markdownLinkDelimiter">)</span>
+<span id="L67" class="LineNr">67 </span><span class="markdownLinkTextDelimiter">![</span><span class="markdownLinkText">Image alt text</span><span class="markdownLinkTextDelimiter">]</span><span class="markdownLinkDelimiter">(</span><span class="markdownUrl">/path/to/img.jpg</span> <span class="markdownUrlTitleDelimiter">&quot;</span><span class="markdownUrlTitle">title</span><span class="markdownUrlTitleDelimiter">&quot;</span><span class="markdownLinkDelimiter">)</span>
+<span id="L68" class="LineNr">68 </span><span class="markdownLinkTextDelimiter">![</span><span class="markdownLinkText">Image alt text</span><span class="markdownLinkTextDelimiter">]</span><span class="markdownIdDelimiter">[</span><span class="markdownId">img</span><span class="markdownIdDelimiter">]</span>
+<span id="L69" class="LineNr">69 </span>
+<span id="L70" class="LineNr">70 </span><span class="markdownLinkDelimiter">[</span><span class="markdownIdDeclaration">img</span><span class="markdownLinkDelimiter">]:</span> <span class="markdownUrl"><a href="http://foo.com/img.jpg">http://foo.com/img.jpg</a></span>
+<span id="L71" class="LineNr">71 </span>
+<span id="L72" class="LineNr">72 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Footnote</span>
+<span id="L73" class="LineNr">73 </span>
+<span id="L74" class="LineNr">74 </span>Numeric <span class="markdownFootnote">[^1]</span>
+<span id="L75" class="LineNr">75 </span>Alphanumeric <span class="markdownFootnote">[^fn]</span>
+<span id="L76" class="LineNr">76 </span>Inline ^[Inline content]
+<span id="L77" class="LineNr">77 </span>
+<span id="L78" class="LineNr">78 </span><span class="markdownFootnoteDefinition">[^1]:</span> Numeric content
+<span id="L79" class="LineNr">79 </span><span class="markdownFootnoteDefinition">[^fn]:</span> Alphanumeric content
+<span id="L80" class="LineNr">80 </span>
+<span id="L81" class="LineNr">81 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Blockquotes</span>
+<span id="L82" class="LineNr">82 </span>
+<span id="L83" class="LineNr">83 </span><span class="markdownBlockquote">&gt; </span>a blockquote
+<span id="L84" class="LineNr">84 </span><span class="markdownBlockquote">&gt;</span>
+<span id="L85" class="LineNr">85 </span><span class="markdownBlockquote">&gt; &gt; </span>Nested
+<span id="L86" class="LineNr">86 </span><span class="markdownBlockquote">&gt; &gt; </span>Blockquote
+<span id="L87" class="LineNr">87 </span>
+<span id="L88" class="LineNr">88 </span><span class="markdownH3Delimiter">###</span><span class="markdownH3"> Tables</span>
+<span id="L89" class="LineNr">89 </span>
+<span id="L90" class="LineNr">90 </span>| Column 1 Heading | Column 2 Heading |
+<span id="L91" class="LineNr">91 </span>| ---------------- | ---------------- |
+<span id="L92" class="LineNr">92 </span>| Some content     | Other content    |
+<span id="L93" class="LineNr">93 </span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
