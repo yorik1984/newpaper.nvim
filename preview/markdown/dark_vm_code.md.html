@@ -13,33 +13,27 @@
 pre { white-space: pre-wrap; font-family: monospace; color: #c6c8cd; background-color: #2b2b2b; }
 body { font-family: monospace; color: #c6c8cd; background-color: #2b2b2b; }
 * { font-size: 1em; }
+.mkdLink { color: #668ecc; text-decoration: underline; }
+.mkdCode { color: #8bc5ed; }
 .mkdCodeDelimiter { color: #618ef0; }
-.mkdCodeStart { color: #618ef0; }
-.mkdCodeEnd { color: #618ef0; }
-.mkdBlockquote { color: #8195e7; }
 .LineNr { color: #787878; background-color: #303030; padding-bottom: 1px; }
+.mkdDelimiter { color: #f19321; }
 .htmlH1 { color: #a274d1; font-weight: bold; }
+.htmlH2 { color: #5f8787; font-weight: bold; }
 .htmlH3 { color: #5faf5f; font-weight: bold; }
-.mkdURL { color: #8bc5ed; }
 .htmlH4 { color: #f19321; font-weight: bold; }
 .htmlH5 { color: #e5c07b; font-weight: bold; }
 .htmlH6 { color: #5fafd7; font-weight: bold; }
-.luaOperator { color: #9191c7; font-weight: bold; }
-.luaSpecialValue { color: #fe7967; }
-.luaParens { color: #9191c7; }
-.mkdID { color: #cc5555; }
-.mkdLinkDef { color: #cc5555; font-weight: bold; }
-.mkdLinkDefTarget { color: #5f8787; text-decoration: underline; }
-.mkdLink { color: #668ecc; text-decoration: underline; }
-.mkdDelimiter { color: #f19321; }
-.Conditional { color: #a274d1; font-weight: bold; }
-.String { color: #8bc5ed; font-style: italic; }
-.Comment { color: #787878; font-style: italic; }
-.luaFuncCall { color: #9191c7; }
-.htmlH2 { color: #5f8787; font-weight: bold; }
-.mkdListItem { color: #bcbcbc; }
-.mkdFootnotes { color: #668ecc; text-decoration: underline; }
 .htmlTag { color: #668ecc; }
+.mkdBlockquote { color: #6684c1; font-style: italic; }
+.mkdCodeStart { color: #618ef0; }
+.mkdCodeEnd { color: #618ef0; }
+.mkdListItem { color: #a274d1; }
+.mkdFootnotes { color: #668ecc; font-weight: bold; }
+.mkdID { color: #cc5555; }
+.mkdLinkDefTarget { color: #5f8787; text-decoration: underline; }
+.mkdLinkDef { color: #c9655c; font-weight: bold; }
+.mkdURL { color: #8cc5f3; }
 -->
 </style>
 
@@ -100,15 +94,15 @@ if ('onhashchange' in window) {
 <span id="L24" class="LineNr">24 </span>***bold italic***
 <span id="L25" class="LineNr">25 </span>___bold italic___
 <span id="L26" class="LineNr">26 </span>
-<span id="L27" class="LineNr">27 </span><span class="mkdCodeDelimiter">~~</span><span class="String">strikethrough</span><span class="mkdCodeDelimiter">~~</span>
+<span id="L27" class="LineNr">27 </span><span class="mkdCodeDelimiter">~~</span><span class="mkdCode">strikethrough</span><span class="mkdCodeDelimiter">~~</span>
 <span id="L28" class="LineNr">28 </span>
-<span id="L29" class="LineNr">29 </span>Inline <span class="mkdCodeDelimiter">`</span><span class="String">code</span><span class="mkdCodeDelimiter">`</span> and
+<span id="L29" class="LineNr">29 </span>Inline <span class="mkdCodeDelimiter">`</span><span class="mkdCode">code</span><span class="mkdCodeDelimiter">`</span> and
 <span id="L30" class="LineNr">30 </span>
 <span id="L31" class="LineNr">31 </span><span class="mkdCodeStart">```lua</span>
-<span id="L32" class="LineNr">32 </span><span class="Comment">-- comment</span>
-<span id="L33" class="LineNr">33 </span><span class="Conditional">if</span> <span class="luaSpecialValue">type</span><span class="luaParens">(</span>config.custom_highlights<span class="luaParens">)</span> <span class="luaOperator">==</span> <span class="String">'table'</span> <span class="Conditional">then</span>
-<span id="L34" class="LineNr">34 </span>    util.<span class="luaFuncCall">syntax</span><span class="luaParens">(</span>config.custom_highlights<span class="luaParens">)</span>
-<span id="L35" class="LineNr">35 </span> <span class="Conditional">end</span>
+<span id="L32" class="LineNr">32 </span>-- comment
+<span id="L33" class="LineNr">33 </span>if type(config.custom_highlights) == 'table' then
+<span id="L34" class="LineNr">34 </span>    util.syntax(config.custom_highlights)
+<span id="L35" class="LineNr">35 </span> end
 <span id="L36" class="LineNr">36 </span><span class="mkdCodeEnd">```</span>
 <span id="L37" class="LineNr">37 </span>
 <span id="L38" class="LineNr">38 </span>###<span class="htmlH3"> Lists</span>
