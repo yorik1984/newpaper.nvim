@@ -85,8 +85,8 @@ function M.setup(config)
             yamlTSStringEscape   = { fg = newpaper.magenta },
             -- yamlTSType
             yamlTSPunctSpecial   = { fg = newpaper.magenta },
-            yamlTSString         = { fg = newpaper.string,     style = style.s_style },
-            yamlTSField          = { fg = newpaper.ocean,      style = style.f_style },
+            yamlTSString         = { fg = newpaper.string,   style = style.s_style },
+            yamlTSField          = { fg = newpaper.ocean,    style = style.f_style },
             yamlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
 
         }

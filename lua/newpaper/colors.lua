@@ -96,15 +96,15 @@ function M.setup(config)
         tex_blue        = '#0089B3',
         tex_teal        = '#005579',
         tex_magenta     = '#E00050',
-        tex_aqua        = '#16BDEC',
+        tex_aqua        = '#14A9E2',
         tex_orange      = '#D37300',
         tex_redorange   = '#F26515',
         tex_darkorange  = '#BA6400',
 
         tex_lightpurple = '#684D99',
-        tex_lightviolet = '#BA89BB',
+        tex_lightviolet = '#B777B7',
         tex_pink        = '#D75F66',
-        tex_lightgreen  = '#0FAE34',
+        tex_lightgreen  = '#20A93E',
 
         tex_math        = '#008000',
         tex_math_delim  = '#349279',
@@ -157,6 +157,9 @@ function M.setup(config)
 
         --Rust
         rust_green      = '#0B7261',
+
+        -- HTML
+        tag_navy        = '#0044AA',
     }
 
     if config.style == 'light' then
@@ -207,7 +210,7 @@ function M.setup(config)
         newpaper.bluegreen       = '#66A4B1'
         newpaper.darkengreen     = '#5FAF5F'
 
-        newpaper.codeblock       = '#5F5F5F'
+        newpaper.codeblock       = '#343434'
 
         newpaper.regexp_blue     = '#618EF0'
         newpaper.regexp_green    = '#46C146'
@@ -319,6 +322,9 @@ function M.setup(config)
         -- Rust
         newpaper.rust_green      = '#6CAAA0'
 
+        -- HTML
+        newpaper.tag_navy        = '#668ECC'
+
         -- Default fg and bg
         newpaper.fg              = newpaper.white
         newpaper.bg              = newpaper.black
@@ -334,8 +340,8 @@ function M.setup(config)
     newpaper.string              = newpaper.lightblue
     newpaper.accent              = newpaper.blue
     newpaper.comment             = newpaper.lightgrey
-    newpaper.link                = newpaper.navy
-    newpaper.tag                 = newpaper.navy
+    newpaper.link                = newpaper.tag_navy
+    newpaper.tag                 = newpaper.tag_navy
     newpaper.boolean             = newpaper.nephritis
     newpaper.highlight           = newpaper.silver
     newpaper.disabled            = newpaper.lightlightgrey

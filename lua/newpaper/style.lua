@@ -7,6 +7,7 @@ function M.setup_style(config)
 
 	local style = {
 
+		none          = "NONE", -- editor style NONE
 		b_bold        = "NONE", -- editor style bold
 		b_italic      = "NONE", -- editor style italic
 		b_bold_i      = "NONE", -- editor style bold italic
@@ -18,8 +19,10 @@ function M.setup_style(config)
 		f_style       = "NONE", -- functions style
 		comment_title = "NONE", -- magic and tittle comments in VimL, Ruby and others
 
-		-- Make HTML tags bold or italic
+		-- HTML tag styles
 		tag_style = config.tags,
+		link      = "italic,underline",
+		b_link    = "bold,underline",
 
 		-- Make keywords bold or italic
 		k_style = config.keywords,
