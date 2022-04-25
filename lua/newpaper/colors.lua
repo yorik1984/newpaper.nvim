@@ -38,6 +38,7 @@ function M.setup(config)
 		lightlightgrey       = "#C0C0C0",
 		lightsilver          = "#EEEEEE",
 		blueviolet           = "#AF87D7",
+		lightviolet          = "#E5D9F2",
 		lightblue            = "#0072C1",
 		ocean                = "#25817D",
 		nephritis            = "#00A86B",
@@ -199,6 +200,7 @@ function M.setup(config)
 		newpaper.lightlightgrey       = "#4E4E4E"
 		newpaper.lightsilver          = "#303030"
 		newpaper.blueviolet           = "#5F005F"
+		newpaper.lightviolet          = "#332442"
 		newpaper.lightblue            = "#8BC5ED"
 		newpaper.ocean                = "#56B6C2"
 		newpaper.nephritis            = "#66CAA6"

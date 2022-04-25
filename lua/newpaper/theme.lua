@@ -33,7 +33,7 @@ function M.setup(config)
             Label          = { fg = newpaper.magenta }, -- case, default, etc.
             Operator       = { fg = newpaper.navy, style = style.o_style }, -- sizeof", "+", "*", etc.
             Exception      = { fg = newpaper.maroon }, -- try, catch, throw
-            PreProc        = { fg = newpaper.navy}, -- generic Preprocessor
+            PreProc        = { fg = newpaper.navy }, -- generic Preprocessor
             Include        = { fg = newpaper.maroon }, -- preprocessor #include
             Identifier     = { fg = newpaper.variable, style = style.v_style }, -- any variable name
             Define         = { fg = newpaper.magenta }, -- preprocessor #define
@@ -50,7 +50,7 @@ function M.setup(config)
             Underlined     = { fg = newpaper.link, style = 'underline' }, -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
             Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg, style = style.b_bold_u }, -- any erroneous construct
-            Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold},
+            Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
 
             -- Help
             helpCommand        = { fg = newpaper.teal },
@@ -106,7 +106,7 @@ function M.setup(config)
             MsgArea          = { fg = newpaper.msgarea_fg, bg = newpaper.msgarea_bg }, -- Area for messages and cmdline
             MoreMsg          = { fg = newpaper.accent }, -- |more-prompt|
             Normal           = { fg = newpaper.fg, bg = newpaper.bg }, -- normal text and background color
-            NormalSB         = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg},
+            NormalSB         = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg },
             NormalFloat      = { fg = newpaper.float_fg, bg = newpaper.float_bg }, -- normal text and background color for floating windows
             NonText          = { fg = newpaper.disabled }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
             Pmenu            = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg }, -- Popup menu: normal item.
@@ -246,7 +246,7 @@ function M.setup(config)
             TSTextReference        = { fg = newpaper.orange }, -- FIXME
             TSEmphasis             = { fg = newpaper.fg, style = 'italic' }, -- For text to be represented with emphasis.
             TSUnderline            = { fg = newpaper.fg, style = 'underline' }, -- For text to be represented with an underline.
-            TSStrike               = { fg = newpaper.fg, style = style.b_italic}, -- For strikethrough text.
+            TSStrike               = { fg = newpaper.fg, style = style.b_italic }, -- For strikethrough text.
             TSString               = { fg = newpaper.string, style = style.s_style }, -- For strings.
             TSTitle                = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
             TSLiteral              = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
@@ -769,7 +769,7 @@ function M.setup(config)
             TroubleText                   = { fg = newpaper.sidebar_fg },
             TroubleSource                 = { bg = newpaper.sidebar_bg },
             TroubleCode                   = { bg = newpaper.sidebar_bg },
-            TroubleLocation               = { fg = newpaper.teal, bg = newpaper.sidebar_bg},
+            TroubleLocation               = { fg = newpaper.teal, bg = newpaper.sidebar_bg },
             TroubleTextInformation        = { fg = newpaper.info_fg },
             TroubleTextError              = { fg = newpaper.error_fg },
             TroubleTextWarning            = { fg = newpaper.warn_fg },
@@ -792,6 +792,9 @@ function M.setup(config)
             VistaBracket                  = { fg = newpaper.navy, style = style.b_bold },
             VistaPrefix                   = { fg = newpaper.ocean },
             VistaHeadNr                   = { fg = newpaper.darkgrey },
+
+            -- Vim-matchup ----------------------------------------------------
+            MatchWord                    = { bg = newpaper.lightviolet, style = style.b_bold },
 
             -- WhichKey -------------------------------------------------------
             WhichKey                      = { fg = newpaper.keyword },
