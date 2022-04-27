@@ -1,15 +1,15 @@
 local M = {}
 
 function M.setup(config)
-    config = config or require("newpaper.config").config
+	config = config or require("newpaper.config").config
+
+    -- stylua: ignore start
 
     local rubySyn  = {}
     rubySyn.colors = require("newpaper.colors").setup(config)
     rubySyn.style  = require("newpaper.style").setup_style(config)
     local newpaper = rubySyn.colors
     local style    = rubySyn.style
-
-    -- LuaFormatter off
 
     rubySyn.loadSyntax = function ()
 
@@ -21,7 +21,6 @@ function M.setup(config)
         }
 
         return syntax
-
     end
 
     rubySyn.loadTreeSitter = function ()
@@ -40,7 +39,6 @@ function M.setup(config)
         }
 
         return treesitter
-
     end
 
     rubySyn.loadPlugins = function()
@@ -186,14 +184,13 @@ function M.setup(config)
         else
             plugins.rubyPseudoOperator = { fg = newpaper.fg }
         end
-
         return plugins
-        -- LuaFormatter on
 
     end
 
-    return rubySyn
+	-- stylua: ignore end
 
+	return rubySyn
 end
 
 return M

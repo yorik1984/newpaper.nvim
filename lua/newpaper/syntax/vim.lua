@@ -1,15 +1,15 @@
 local M = {}
 
 function M.setup(config)
-    config = config or require("newpaper.config").config
+	config = config or require("newpaper.config").config
 
-    local vimSyn = {}
-    vimSyn.colors   = require("newpaper.colors").setup(config)
-    vimSyn.style    = require("newpaper.style").setup_style(config)
-    local newpaper  = vimSyn.colors
-    local style     = vimSyn.style
+    -- stylua: ignore start
 
-    -- LuaFormatter off
+    local vimSyn   = {}
+    vimSyn.colors  = require("newpaper.colors").setup(config)
+    vimSyn.style   = require("newpaper.style").setup_style(config)
+    local newpaper = vimSyn.colors
+    local style    = vimSyn.style
 
     vimSyn.loadSyntax = function ()
 
@@ -22,7 +22,6 @@ function M.setup(config)
         }
 
         return syntax
-
     end
 
     vimSyn.loadTreeSitter = function ()
@@ -32,7 +31,6 @@ function M.setup(config)
         local treesitter = {}
 
         return treesitter
-
     end
 
     vimSyn.loadPlugins = function()
@@ -42,12 +40,11 @@ function M.setup(config)
         local plugins = {}
 
         return plugins
-        -- LuaFormatter on
-
     end
 
-    return vimSyn
+	-- stylua: ignore end
 
+	return vimSyn
 end
 
 return M

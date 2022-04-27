@@ -1,15 +1,15 @@
 local M = {}
 
 function M.setup(config)
-    config = config or require("newpaper.config").config
+	config = config or require("newpaper.config").config
+
+    -- stylua: ignore start
 
     local jinjaSyn  = {}
     jinjaSyn.colors = require("newpaper.colors").setup(config)
     jinjaSyn.style  = require("newpaper.style").setup_style(config)
     local newpaper  = jinjaSyn.colors
     local style     = jinjaSyn.style
-
-    -- LuaFormatter off
 
     jinjaSyn.loadPlugins = function()
 
@@ -42,12 +42,11 @@ function M.setup(config)
         }
 
         return plugins
-        -- LuaFormatter on
-
     end
 
-    return jinjaSyn
+	-- stylua: ignore end
 
+	return jinjaSyn
 end
 
 return M

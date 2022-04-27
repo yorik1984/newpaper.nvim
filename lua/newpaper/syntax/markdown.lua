@@ -3,13 +3,13 @@ local M = {}
 function M.setup(config)
     config = config or require("newpaper.config").config
 
-    local markdownSyn = {}
+    -- stylua: ignore start
+
+    local markdownSyn  = {}
     markdownSyn.colors = require("newpaper.colors").setup(config)
     markdownSyn.style  = require("newpaper.style").setup_style(config)
     local newpaper     = markdownSyn.colors
     local style        = markdownSyn.style
-
-    -- LuaFormatter off
 
     markdownSyn.loadSyntax = function ()
 
@@ -73,7 +73,6 @@ function M.setup(config)
         }
 
         return syntax
-
     end
 
             markdownSyn.loadTreeSitter = function ()
@@ -95,7 +94,6 @@ function M.setup(config)
         }
 
         return treesitter
-
     end
 
     markdownSyn.loadPlugins = function()
@@ -230,12 +228,11 @@ function M.setup(config)
         }
 
         return plugins
-        -- LuaFormatter on
-
     end
 
-    return markdownSyn
+    -- stylua: ignore end
 
+    return markdownSyn
 end
 
 return M

@@ -3,13 +3,14 @@ local M = {}
 function M.setup(config)
     config = config or require("newpaper.config").config
 
+    -- stylua: ignore start
+
     local tomlSyn  = {}
     tomlSyn.colors = require("newpaper.colors").setup(config)
     tomlSyn.style  = require("newpaper.style").setup_style(config)
     local newpaper = tomlSyn.colors
     local style    = tomlSyn.style
 
-    -- LuaFormatter off
 
     tomlSyn.loadSyntax = function ()
 
@@ -34,11 +35,10 @@ function M.setup(config)
             tomlDotInKey      = { fg = newpaper.orange },
             -- tomlTodo       Todo
             -- tomlComment    Comment
---
+
         }
 
         return syntax
-
     end
 
     tomlSyn.loadTreeSitter = function ()
@@ -62,7 +62,6 @@ function M.setup(config)
         }
 
         return treesitter
-
     end
 
     tomlSyn.loadPlugins = function()
@@ -72,12 +71,12 @@ function M.setup(config)
         local plugins = {}
 
         return plugins
-        -- LuaFormatter on
 
     end
 
-    return tomlSyn
+    -- stylua: ignore end
 
+    return tomlSyn
 end
 
 return M

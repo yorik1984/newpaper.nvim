@@ -1,15 +1,15 @@
 local M = {}
 
 function M.setup(config)
-    config = config or require("newpaper.config").config
+	config = config or require("newpaper.config").config
+
+    -- stylua: ignore start
 
     local yamlSyn  = {}
     yamlSyn.colors = require("newpaper.colors").setup(config)
     yamlSyn.style  = require("newpaper.style").setup_style(config)
     local newpaper = yamlSyn.colors
     local style    = yamlSyn.style
-
-    -- LuaFormatter off
 
     yamlSyn.loadSyntax = function ()
 
@@ -66,7 +66,6 @@ function M.setup(config)
         }
 
         return syntax
-
     end
 
     yamlSyn.loadTreeSitter = function ()
@@ -92,7 +91,6 @@ function M.setup(config)
         }
 
         return treesitter
-
     end
 
     yamlSyn.loadPlugins = function()
@@ -102,12 +100,11 @@ function M.setup(config)
         local plugins = {}
 
         return plugins
-        -- LuaFormatter on
-
     end
 
-    return yamlSyn
+	-- stylua: ignore end
 
+	return yamlSyn
 end
 
 return M

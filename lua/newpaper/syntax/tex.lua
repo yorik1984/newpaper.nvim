@@ -1,15 +1,15 @@
 local M = {}
 
 function M.setup(config)
-    config = config or require("newpaper.config").config
+	config = config or require("newpaper.config").config
+
+    -- stylua: ignore start
 
     local tex      = {}
     tex.colors     = require("newpaper.colors").setup(config)
     tex.style      = require("newpaper.style").setup_style(config)
     local newpaper = tex.colors
     local style    = tex.style
-
--- LuaFormatter off
 
     tex.loadSyntax = function ()
 
@@ -85,7 +85,6 @@ function M.setup(config)
         }
 
         return syntax
-
     end
 
     tex.loadTreeSitter = function ()
@@ -131,7 +130,6 @@ function M.setup(config)
         }
 
         return treesitter
-
     end
 
     tex.loadPlugins = function()
@@ -520,11 +518,11 @@ function M.setup(config)
         }
 
         return plugins
-
     end
 
-    return tex
+	-- stylua: ignore end
 
+	return tex
 end
 
 return M

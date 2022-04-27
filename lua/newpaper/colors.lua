@@ -6,7 +6,7 @@ local M = {}
 function M.setup(config)
 	config = config or configModule.config
 
-	-- LuaFormatter off
+	-- stylua: ignore start
 
 	local newpaper = {
 		black                = "#2B2B2B", -- color00
@@ -394,7 +394,8 @@ function M.setup(config)
 	newpaper.telescope_fg_alt    = newpaper.fg
 	newpaper.telescope_bg_alt    = newpaper.silver
 
-	-- LuaFormatter on
+    -- IndentBlankline
+    newpaper.contextchar         = newpaper.gray
 
 	if config.contrast_float then
 		newpaper.float_fg = newpaper.float_fg_alt
@@ -430,6 +431,14 @@ function M.setup(config)
 		newpaper.tex_parbox_opt_error = newpaper.none
 		newpaper.tex_only_math_error  = newpaper.none
 	end
+
+	-- stylua: ignore end
+
+    -- IndentBlankline
+    -- When use TreeSitter IndentBlankline
+    if vim.g.indent_blankline_use_treesitter then
+        newpaper.contextchar = newpaper.blueviolet
+    end
 
 	util.color_overrides(newpaper, config)
 
