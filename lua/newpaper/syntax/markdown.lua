@@ -17,28 +17,28 @@ function M.setup(config)
 
         local syntax = {
 
-            markdownH1Delimiter         = { fg = newpaper.purple },
-            markdownH2Delimiter         = { fg = newpaper.teal },
-            markdownH3Delimiter         = { fg = newpaper.darkengreen },
-            markdownH4Delimiter         = { fg = newpaper.orange },
+            markdownH1Delimiter         = { fg = newpaper.tex_part_title },
+            markdownH2Delimiter         = { fg = newpaper.tex_navy },
+            markdownH3Delimiter         = { fg = newpaper.keyword },
+            markdownH4Delimiter         = { fg = newpaper.blue },
             markdownH5Delimiter         = { fg = newpaper.darkyellow },
-            markdownH6Delimiter         = { fg = newpaper.blue },
+            markdownH6Delimiter         = { fg = newpaper.orange },
 
-            markdownH1                  = { fg = newpaper.purple,      style = style.k_style },
-            markdownH2                  = { fg = newpaper.teal,        style = style.k_style },
-            markdownH3                  = { fg = newpaper.darkengreen, style = style.k_style },
-            markdownH4                  = { fg = newpaper.orange,      style = style.k_style },
-            markdownH5                  = { fg = newpaper.darkyellow,  style = style.k_style },
-            markdownH6                  = { fg = newpaper.blue,        style = style.k_style },
-            markdownHeadingRule         = { fg = newpaper.purple },
+            markdownH1                  = { fg = newpaper.tex_part_title, style = style.k_style },
+            markdownH2                  = { fg = newpaper.tex_navy,       style = style.k_style },
+            markdownH3                  = { fg = newpaper.keyword,    style = style.k_style },
+            markdownH4                  = { fg = newpaper.blue,           style = style.k_style },
+            markdownH5                  = { fg = newpaper.darkyellow,     style = style.k_style },
+            markdownH6                  = { fg = newpaper.orange,         style = style.k_style },
+            markdownHeadingRule         = { fg = newpaper.tex_part_title },
             markdownHeadingDelimiter    = { fg = newpaper.orange },
             markdownBlockquote          = { fg = newpaper.tag_navy },
-            markdownRule                = { fg = newpaper.teal },
+            markdownRule                = { fg = newpaper.tex_navy },
 
             markdownFootnote            = { fg = newpaper.link, style = style.b_link },
             markdownFootnoteDefinition  = { fg = newpaper.link, style = style.k_style },
 
-            markdownLinkText            = { fg = newpaper.link, style = 'underline' },
+            markdownLinkText            = { fg = newpaper.link, style = "underline" },
             markdownIdDeclaration       = { fg = newpaper.tex_maroon, style = style.k_style },
             markdownId                  = { fg = newpaper.maroon },
             markdownAutomaticLink       = { fg = newpaper.link, style = style.link },
@@ -52,12 +52,12 @@ function M.setup(config)
             markdownUrlDelimiter        = { fg = newpaper.tag_navy },
             markdownUrlTitleDelimiter   = { fg = newpaper.regexp_blue },
 
-            markdownItalic              = { fg = newpaper.fg,       style = 'italic' },
+            markdownItalic              = { fg = newpaper.fg,       style = "italic" },
             markdownItalicDelimiter     = { fg = newpaper.tag_navy },
-            markdownBold                = { fg = newpaper.fg,       style = 'bold' },
-            markdownBoldDelimiter       = { fg = newpaper.tag_navy, style = 'bold' },
-            markdownBoldItalic          = { fg = newpaper.fg,       style = 'bold,italic' },
-            markdownBoldItalicDelimiter = { fg = newpaper.tag_navy, style = 'bold,' },
+            markdownBold                = { fg = newpaper.fg,       style = "bold" },
+            markdownBoldDelimiter       = { fg = newpaper.tag_navy, style = "bold" },
+            markdownBoldItalic          = { fg = newpaper.fg,       style = "bold,italic" },
+            markdownBoldItalicDelimiter = { fg = newpaper.tag_navy, style = "bold," },
             markdownCodeDelimiter       = { fg = newpaper.regexp_blue },
             markdownCode                = { fg = newpaper.string },
 
@@ -82,9 +82,9 @@ function M.setup(config)
         local treesitter = {
 
             markdownTSTitle          = { fg = newpaper.keyword, style = style.k_style },
-            markdownTSEmphasis       = { fg = newpaper.fg,      style = 'italic' },
-            markdownTSStrong         = { fg = newpaper.fg,      style = 'bold' },
-            markdownTSTextReference  = { fg = newpaper.link,    style = 'underline' },
+            markdownTSEmphasis       = { fg = newpaper.fg,          style = "italic" },
+            markdownTSStrong         = { fg = newpaper.fg,          style = "bold" },
+            markdownTSTextReference  = { fg = newpaper.link,        style = "underline" },
             markdownTSPunctSpecial   = { fg = newpaper.teal },
             markdownTSURI            = { fg = newpaper.tex_string },
             markdownTSLiteral        = { fg = newpaper.regexp_blue },
@@ -116,26 +116,26 @@ function M.setup(config)
             mkdLineBreak     = { bg = newpaper.aqua },
             mkdFootnotes     = { fg = newpaper.link, style = style.k_style },
             mkdURL           = { fg = newpaper.tex_string },
-            mkdLink          = { fg = newpaper.link,style = 'underline' },
-            mkdInlineURL     = { fg = newpaper.link, style = 'underline' },
+            mkdLink          = { fg = newpaper.link, style = "underline" },
+            mkdInlineURL     = { fg = newpaper.link, style = "underline" },
             mkdID            = { fg = newpaper.maroon},
             mkdLinkDef       = { fg = newpaper.tex_maroon, style = style.k_style },
-            mkdLinkDefTarget = { fg = newpaper.teal, style = 'underline' },
+            mkdLinkDefTarget = { fg = newpaper.teal, style = "underline" },
             mkdLinkTitle     = { fg = newpaper.regexp_blue },
             mkdDelimiter     = { fg = newpaper.orange },
 
             -- vim-pandoc
 
             -- pandocOperator                       Operator
-            pandocTitleBlock                     = { fg = newpaper.comment, style = style.c_style },
-            pandocTitleBlockTitle                = { fg = newpaper.comment, style = style.comment_title },
-            -- pandocAtxHeader                      Title
-            pandocAtxStart                       = { fg = newpaper.keyword,  style = style.k_style },
-            -- pandocSetexHeader                    Title
-            pandocHeaderAttr                     = { fg = newpaper.comment,  style = style.comment_title },
-            pandocHeaderID                       = { fg = newpaper.tex_aqua, style = style.c_style },
+            pandocTitleBlock                     = { fg = newpaper.comment,     style = style.c_style },
+            pandocTitleBlockTitle                = { fg = newpaper.comment,     style = style.comment_title },
+            pandocAtxHeader                      = { fg = newpaper.keyword, style = style.o_style },
+            pandocAtxStart                       = { fg = newpaper.keyword, style = style.k_style },
+            pandocSetexHeader                    = { fg = newpaper.keyword, style = style.o_style },
+            pandocHeaderAttr                     = { fg = newpaper.comment,     style = style.comment_title },
+            pandocHeaderID                       = { fg = newpaper.tex_aqua,    style = style.c_style },
 
-            pandocLaTexSectionCmd                = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            pandocLaTexSectionCmd                = { fg = newpaper.keyword, style = style.tex_k_style },
             -- pandocLaTeXDelimiter                 texDelimiter
 
             -- pandocHTMLComment                    Comment
@@ -168,7 +168,7 @@ function M.setup(config)
 
             pandocReferenceDefinition            = { fg = newpaper.link, style = style.b_link },
             pandocReferenceDefinitionLabel       = { fg = newpaper.tex_magenta },
-            pandocReferenceDefinitionAddress     = { fg = newpaper.link, style = 'underline' },
+            pandocReferenceDefinitionAddress     = { fg = newpaper.link, style = "underline" },
             pandocReferenceDefinitionTip         = { fg = newpaper.tex_verb },
 
             pandocAutomaticLink                  = { fg = newpaper.link, style = style.link },
@@ -207,22 +207,22 @@ function M.setup(config)
             pandocCiteAnchor                     = { fg = newpaper.tex_magenta },
             pandocCiteLocator                    = { fg = newpaper.tex_lightgreen, style = style.o_style },
 
-            pandocEmphasis                       = { fg = newpaper.fg, style = 'italic' },
-            pandocStrong                         = { fg = newpaper.fg, style = 'bold' },
-            pandocStrongEmphasis                 = { fg = newpaper.fg, style = 'bold,italic' },
-            pandocStrongInEmphasis               = { fg = newpaper.fg, style = 'bold,italic' },
-            pandocEmphasisInStrong               = { fg = newpaper.fg, style = 'bold,italic' },
-            pandocNoFormattedInEmphasis          = { style = 'italic' },
-            pandocNoFormattedInStrong            = { style = 'bold' },
+            pandocEmphasis                       = { fg = newpaper.fg, style = "italic" },
+            pandocStrong                         = { fg = newpaper.fg, style = "bold" },
+            pandocStrongEmphasis                 = { fg = newpaper.fg, style = "bold,italic" },
+            pandocStrongInEmphasis               = { fg = newpaper.fg, style = "bold,italic" },
+            pandocEmphasisInStrong               = { fg = newpaper.fg, style = "bold,italic" },
+            pandocNoFormattedInEmphasis          = { style = "italic" },
+            pandocNoFormattedInStrong            = { style = "bold" },
 
             pandocNoFormatted                    = { fg = newpaper.string },
             pandocNoFormattedAttrs               = { fg = newpaper.comment },
             pandocSubscriptMark                  = { fg = newpaper.tex_pink },
             pandocSuperscriptMark                = { fg = newpaper.tex_pink },
             pandocStrikeoutMark                  = { fg = newpaper.tex_maroon },
-            pandocSubscript                      = { style = 'underline' },
-            pandocSuperscript                    = { style = 'underline' },
-            pandocStrikeout                      = { style = 'underline' },
+            pandocSubscript                      = { style = "underline" },
+            pandocSuperscript                    = { style = "underline" },
+            pandocStrikeout                      = { style = "underline" },
             -- pandocNewLine                        Error
             -- pandocHRule                          Delimiter
         }
