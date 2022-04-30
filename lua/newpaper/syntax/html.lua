@@ -1,7 +1,9 @@
 local M = {}
 
 function M.setup(config)
-    config = config or require("newpaper.config").config
+	config = config or require("newpaper.config").config
+
+    -- stylua: ignore start
 
     local htmlSyn  = {}
     htmlSyn.colors = require("newpaper.colors").setup(config)
@@ -9,88 +11,79 @@ function M.setup(config)
     local newpaper = htmlSyn.colors
     local style    = htmlSyn.style
 
-    -- LuaFormatter off
-
     htmlSyn.loadSyntax = function ()
         -- TODO: Add syntax
         -- HTML syntax highlight groups
 
         local syntax = {
 
-            htmlLink = { fg = newpaper.link, style = 'underline' },
-            htmlH1   = { fg = newpaper.purple, style = style.tag_style },
-            htmlH2   = { fg = newpaper.teal, style = style.tag_style },
-            htmlH3   = { fg = newpaper.darkengreen, style = style.tag_style },
-            htmlH4   = { fg = newpaper.orange, style = style.tag_style },
-            htmlH5   = { fg = newpaper.darkyellow, style = style.tag_style },
-            htmlH6   = { fg = newpaper.blue, style = style.tag_style },
+            htmlH1                      = { fg = newpaper.tex_part_title, style = style.tag_style },
+            htmlH2                      = { fg = newpaper.tex_navy,       style = style.tag_style },
+            htmlH3                      = { fg = newpaper.keyword,        style = style.tag_style },
+            htmlH4                      = { fg = newpaper.blue,           style = style.tag_style },
+            htmlH5                      = { fg = newpaper.darkyellow,     style = style.tag_style },
+            htmlH6                      = { fg = newpaper.orange,         style = style.tag_style },
 
--- hi def link htmlTag                     Function
--- hi def link htmlEndTag                  Identifier
--- hi def link htmlArg                     Type
--- hi def link htmlTagName                 htmlStatement
--- hi def link htmlSpecialTagName          Exception
--- hi def link htmlValue                   String
--- hi def link htmlSpecialChar             Special
+            htmlTag                     = { fg = newpaper.tag_navy },
+            htmlEndTag                  = { fg = newpaper.tag_navy },
+            htmlArg                     = { fg = newpaper.darkengreen },
+            -- htmlTagName                 htmlStatement
+            htmlSpecialTagName          = { fg = newpaper.maroon },
+            htmlValue                   = { fg = newpaper.tex_string },
+            htmlSpecialChar             = { fg = newpaper.tex_magenta },
 
--- if !exists("html_no_rendering")
---   hi def link htmlH1                      Title
---   hi def link htmlH2                      htmlH1
---   hi def link htmlH3                      htmlH2
---   hi def link htmlH4                      htmlH3
---   hi def link htmlH5                      htmlH4
---   hi def link htmlH6                      htmlH5
---   hi def link htmlHead                    PreProc
---   hi def link htmlTitle                   Title
---   hi def link htmlBoldItalicUnderline     htmlBoldUnderlineItalic
---   hi def link htmlUnderlineBold           htmlBoldUnderline
---   hi def link htmlUnderlineItalicBold     htmlBoldUnderlineItalic
---   hi def link htmlUnderlineBoldItalic     htmlBoldUnderlineItalic
---   hi def link htmlItalicUnderline         htmlUnderlineItalic
---   hi def link htmlItalicBold              htmlBoldItalic
---   hi def link htmlItalicBoldUnderline     htmlBoldUnderlineItalic
---   hi def link htmlItalicUnderlineBold     htmlBoldUnderlineItalic
---   hi def link htmlLink                    Underlined
---   hi def link htmlLeadingSpace            None
---   if !exists("html_my_rendering")
---     hi def htmlBold                term=bold cterm=bold gui=bold
---     hi def htmlBoldUnderline       term=bold,underline cterm=bold,underline gui=bold,underline
---     hi def htmlBoldItalic          term=bold,italic cterm=bold,italic gui=bold,italic
---     hi def htmlBoldUnderlineItalic term=bold,italic,underline cterm=bold,italic,underline gui=bold,italic,underline
---     hi def htmlUnderline           term=underline cterm=underline gui=underline
---     hi def htmlUnderlineItalic     term=italic,underline cterm=italic,underline gui=italic,underline
---     hi def htmlItalic              term=italic cterm=italic gui=italic
---     if v:version > 800 || v:version == 800 && has("patch1038")
---         hi def htmlStrike              term=strikethrough cterm=strikethrough gui=strikethrough
---     else
---         hi def htmlStrike              term=underline cterm=underline gui=underline
---     endif
---   endif
--- endif
+            -- html_no_rendering
+            -- htmlH1                      Title
+            -- htmlH2                      htmlH1
+            -- htmlH3                      htmlH2
+            -- htmlH4                      htmlH3
+            -- htmlH5                      htmlH4
+            -- htmlH6                      htmlH5
+            htmlHead                    = { fg = newpaper.darkpurple },
+            -- htmlTitle                   Title
+            -- htmlBoldItalicUnderline     htmlBoldUnderlineItalic
+            -- htmlUnderlineBold           htmlBoldUnderline
+            -- htmlUnderlineItalicBold     htmlBoldUnderlineItalic
+            -- htmlUnderlineBoldItalic     htmlBoldUnderlineItalic
+            -- htmlItalicUnderline         htmlUnderlineItalic
+            -- htmlItalicBold              htmlBoldItalic
+            -- htmlItalicBoldUnderline     htmlBoldUnderlineItalic
+            -- htmlItalicUnderlineBold     htmlBoldUnderlineItalic
+            htmlLink                    = { fg = newpaper.link, style = "underline" },
+            -- htmlLeadingSpace            None
 
--- hi def link htmlPreStmt            PreProc
--- hi def link htmlPreError           Error
--- hi def link htmlPreProc            PreProc
--- hi def link htmlPreAttr            String
--- hi def link htmlPreProcAttrName    PreProc
--- hi def link htmlPreProcAttrError   Error
--- hi def link htmlString             String
--- hi def link htmlStatement          Statement
--- hi def link htmlComment            Comment
--- hi def link htmlCommentNested      htmlError
--- hi def link htmlCommentError       htmlError
--- hi def link htmlTagError           htmlError
--- hi def link htmlEvent              javaScript
--- hi def link htmlError              Error
+            -- html_my_rendering
+            -- htmlBold                    term=bold cterm=bold gui=bold
+            -- htmlBoldUnderline           term=bold,underline cterm=bold,underline gui=bold,underline
+            -- htmlBoldItalic              term=bold,italic cterm=bold,italic gui=bold,italic
+            -- htmlBoldUnderlineItalic     term=bold,italic,underline cterm=bold,italic,underline gui=bold,italic,underline
+            -- htmlUnderline               term=underline cterm=underline gui=underline
+            -- htmlUnderlineItalic         term=italic,underline cterm=italic,underline gui=italic,underline
+            -- htmlItalic                  term=italic cterm=italic gui=italic
+            -- htmlStrike                  term=strikethrough cterm=strikethrough gui=strikethrough
 
--- hi def link javaScript             Special
--- hi def link javaScriptExpression   javaScript
--- hi def link htmlCssStyleComment    Comment
--- hi def link htmlCssDefinition      Special
+            htmlPreStmt                 = { fg = newpaper.darkpurple },
+            -- htmlPreError                Error
+            htmlPreProc                 = { fg = newpaper.darkpurple },
+            htmlPreAttr                 = { fg = newpaper.regexp_blue },
+            htmlPreProcAttrName         = { fg = newpaper.darkpurple },
+            -- htmlPreProcAttrError        Error
+            -- htmlString                  String
+            htmlStatement               = { fg = newpaper.tag_navy, style = style.tag_style },
+            -- htmlComment                 Comment
+            -- htmlCommentNested           htmlError
+            -- htmlCommentError            htmlError
+            -- htmlTagError                htmlError
+            htmlEvent                  = { fg = newpaper.tex_verb, style = style.s_style },
+            -- htmlError                  Error
+
+            javaScript                 = { fg = newpaper.tex_verb },
+            -- javaScriptExpression       javaScript
+            -- htmlCssStyleComment        Comment
+            -- htmlCssDefinition          Special
         }
 
         return syntax
-
     end
 
     htmlSyn.loadTreeSitter = function ()
@@ -99,12 +92,18 @@ function M.setup(config)
 
         local treesitter = {
 
-
+            htmlTSTag                   = { fg = newpaper.tag_navy, style = style.k_style },
+            htmlTSTagDelimiter          = { fg = newpaper.tag_navy },
+            htmlTSOperator              = { fg = newpaper.tag_navy, style = style.o_style },
+            htmlTSTagAttribute          = { fg = newpaper.darkengreen },
+            htmlTSConstant              = { fg = newpaper.comment,  style = style.c_style },
+            htmlTSString                = { fg = newpaper.string,   style = style.s_style },
+            htmlTSTitle                 = { fg = newpaper.title,    style = style.k_style },
+            htmlTSText                  = { fg = newpaper.fg },
 
         }
 
         return treesitter
-
     end
 
     htmlSyn.loadPlugins = function()
@@ -118,12 +117,11 @@ function M.setup(config)
         }
 
         return plugins
-        -- LuaFormatter on
-
     end
 
-    return htmlSyn
+	-- stylua: ignore end
 
+	return htmlSyn
 end
 
 return M
