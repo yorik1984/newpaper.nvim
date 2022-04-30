@@ -15,7 +15,6 @@ function M.setup(config)
     tomlSyn.loadSyntax = function ()
 
         -- Toml highlight groups
-        -- Neovim >=0.6.0 include basic toml syntax
 
         local syntax = {
 
@@ -26,7 +25,7 @@ function M.setup(config)
             -- tomlFloat      Float
             -- tomlBoolean    Boolean
             tomlDate          = { fg = newpaper.maroon },
-            tomlKey           = { fg = newpaper.ocean, style = style.f_style },
+            tomlKey           = { fg = newpaper.darkengreen, style = style.f_style },
             tomlKeyDq         = { fg = newpaper.tag_navy },
             tomlKeySq         = { fg = newpaper.navy },
             tomlKeyValueArray = { fg = newpaper.operator },
@@ -57,7 +56,7 @@ function M.setup(config)
             -- tomlTSStringSpecial
             -- tomlTSPunctDelimiter
             tomlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
-            tomlTSProperty       = { fg = newpaper.ocean,      style = style.f_style },
+            tomlTSProperty       = { fg = newpaper.darkengreen, style = style.f_style },
 
         }
 
