@@ -1,7 +1,9 @@
 local M = {}
 
 function M.setup(config)
-    config = config or require("newpaper.config").config
+	config = config or require("newpaper.config").config
+
+    -- stylua: ignore start
 
     local theme    = {}
     theme.config   = config
@@ -10,7 +12,6 @@ function M.setup(config)
     local newpaper = theme.colors
     local style    = theme.style
 
-    -- LuaFormatter off
     theme.loadSyntax = function ()
 
         -- Syntax highlight groups
@@ -47,7 +48,7 @@ function M.setup(config)
             Delimiter      = { fg = newpaper.orange }, -- character that needs attention like , or .
             SpecialComment = { fg = newpaper.comment, style = style.k_style }, -- special things inside a comment
             Debug          = { fg = newpaper.red }, -- debugging statements
-            Underlined     = { fg = newpaper.link, style = 'underline' }, -- text that stands out, HTML links
+            Underlined     = { fg = newpaper.link, style = "underline" }, -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
             Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg, style = style.b_bold_u }, -- any erroneous construct
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
@@ -56,12 +57,11 @@ function M.setup(config)
             helpCommand        = { fg = newpaper.teal },
             helpExample        = { fg = newpaper.string, style = style.s_style },
             helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
-            helpURL            = { fg = newpaper.string, style = style.s_style ..',underline' }
+            helpURL            = { fg = newpaper.string, style = style.s_style ..",underline" }
 
         }
 
         return syntax
-
     end
 
     theme.loadEditor = function ()
@@ -131,7 +131,7 @@ function M.setup(config)
             Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg },
             TabLineFill      = { bg = newpaper.tabline_bg }, -- tab pages line, where there are no labels
             TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold_i }, -- tab pages line, active tab page label
-            Title            = { fg = newpaper.keyword, style = style.b_bold }, -- titles for output from ":set all", ":autocmd" etc.
+            Title            = { fg = newpaper.title, style = style.b_bold }, -- titles for output from ":set all", ":autocmd" etc.
             ToolbarButton    = { fg = newpaper.fg, style = style.b_bold },
             Visual           = { fg = newpaper.bg, bg = newpaper.selection }, -- Visual mode selection
             VisualNOS        = { fg = newpaper.bg, bg = newpaper.selection }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -147,7 +147,11 @@ function M.setup(config)
             WildMenu         = { fg = newpaper.wildmenu_fg, bg = newpaper.wildmenu_bg, style = style.b_bold }, -- current match in 'wildmenu' completion
             healthError      = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg },
             healthSuccess    = { fg = newpaper.hint_fg },
-            healthWarning    = { fg = newpaper.warn_fg }
+            healthWarning    = { fg = newpaper.warn_fg },
+
+            -- Custom group
+            NormalInverse    = { fg = newpaper.bg, bg = newpaper.fg },
+            LineNrSB         = { fg = newpaper.linenumber_fg, bg = newpaper.sidebar_bg },
 
         }
 
@@ -168,7 +172,6 @@ function M.setup(config)
         end
 
         return editor
-
     end
 
     theme.loadTerminal = function ()
@@ -245,17 +248,16 @@ function M.setup(config)
             TSText                 = { fg = newpaper.fg }, -- For strings considered text in a markup language.
             TSTextReference        = { fg = newpaper.orange }, -- FIXME
             TSEmphasis             = { fg = newpaper.fg, style = 'italic' }, -- For text to be represented with emphasis.
-            TSUnderline            = { fg = newpaper.fg, style = 'underline' }, -- For text to be represented with an underline.
+            TSUnderline            = { fg = newpaper.fg, style = "underline" }, -- For text to be represented with an underline.
             TSStrike               = { fg = newpaper.fg, style = style.b_italic }, -- For strikethrough text.
             TSString               = { fg = newpaper.string, style = style.s_style }, -- For strings.
             TSTitle                = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
             TSLiteral              = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
-            TSURI                  = { fg = newpaper.link, style = 'underline' } -- Any URI like a link or email.
+            TSURI                  = { fg = newpaper.link, style = "underline" } -- Any URI like a link or email.
 
         }
 
         return treesitter
-
     end
 
     theme.loadLSP = function ()
@@ -323,7 +325,6 @@ function M.setup(config)
             lsp.DiagnosticVirtualTextHint            = { link = "LspDiagnosticsVirtualTextHint" }
 
         return lsp
-
     end
 
     theme.loadPlugins = function()
@@ -362,20 +363,20 @@ function M.setup(config)
             FernBranchText                = { fg = newpaper.blue },
 
             -- GitGutter ------------------------------------------------------
-            GitGutterAdd                  = { fg = newpaper.git_added,    bg = newpaper.git_bg },
-            GitGutterChange               = { fg = newpaper.git_modified, bg = newpaper.git_bg },
-            GitGutterDelete               = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
+            GitGutterAdd                  = { fg = newpaper.git_added,    bg = newpaper.git_sign_bg },
+            GitGutterChange               = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitGutterDelete               = { fg = newpaper.git_removed,  bg = newpaper.git_sign_bg },
 
             -- GitSigns -------------------------------------------------------
-            GitSignsAdd                   = { fg = newpaper.git_added,    bg = newpaper.git_bg },
-            GitSignsAddNr                 = { fg = newpaper.git_added,    bg = newpaper.git_bg },
-            GitSignsAddLn                 = { fg = newpaper.git_added,    bg = newpaper.git_bg },
-            GitSignsChange                = { fg = newpaper.git_modified, bg = newpaper.git_bg },
-            GitSignsChangeNr              = { fg = newpaper.git_modified, bg = newpaper.git_bg },
-            GitSignsChangeLn              = { fg = newpaper.git_modified, bg = newpaper.git_bg },
-            GitSignsDelete                = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
-            GitSignsDeleteNr              = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
-            GitSignsDeleteLn              = { fg = newpaper.git_removed,  bg = newpaper.git_bg },
+            GitSignsAdd                   = { fg = newpaper.git_added,    bg = newpaper.git_sign_bg },
+            GitSignsAddNr                 = { fg = newpaper.git_added,    bg = newpaper.git_sign_bg },
+            GitSignsAddLn                 = { fg = newpaper.git_added,    bg = newpaper.git_sign_bg },
+            GitSignsChange                = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitSignsChangeNr              = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitSignsChangeLn              = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitSignsDelete                = { fg = newpaper.git_removed,  bg = newpaper.git_sign_bg },
+            GitSignsDeleteNr              = { fg = newpaper.git_removed,  bg = newpaper.git_sign_bg },
+            GitSignsDeleteLn              = { fg = newpaper.git_removed,  bg = newpaper.git_sign_bg },
 
             -- Glyph palette --------------------------------------------------
             GlyphPalette1                 = { fg = newpaper.red },
@@ -402,11 +403,15 @@ function M.setup(config)
             illuminatedWord               = { bg = newpaper.highlight },
             illuminatedCurWord            = { bg = newpaper.contrast },
 
+            -- IndentBlankline ------------------------------------------------
+            IndentBlanklineContextChar    = { fg = newpaper.contextchar },
+            IndentBlanklineContextStart   = { style = "underline" },
+
             -- LanguageTool ---------------------------------------------------
             LanguageToolCmd               = { fg = newpaper.comment },
             LanguageToolErrorCount        = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
             LanguageToolLabel             = { fg = newpaper.darkgreen },
-            LanguageToolUrl               = { fg = newpaper.link, style = 'underline' },
+            LanguageToolUrl               = { fg = newpaper.link, style = "underline" },
             LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = style.error },
             LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = style.error },
 
@@ -423,12 +428,12 @@ function M.setup(config)
             LTParameter                   = { fg = newpaper.orange },
             LTParameterReference          = { fg = newpaper.olive },
             LTString                      = { fg = newpaper.string, style = style.s_style },
-            LTSymbol                      = { fg = newpaper.teal, style = 'underline' },
+            LTSymbol                      = { fg = newpaper.teal, style = "underline" },
             LTSymbolDetail                = { fg = newpaper.darkgreen, style = style.b_italic },
             LTSymbolJump                  = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
             LTSymbolJumpRefs              = { fg = newpaper.fg, bg = newpaper.lightorange, style = style.b_bold },
             LTType                        = { fg = newpaper.keyword },
-            LTURI                         = { fg = newpaper.link, style = 'underline' },
+            LTURI                         = { fg = newpaper.link, style = "underline" },
             LTIndentGuide                 = { fg = newpaper.comment },
             LTExpandedGuide               = { fg = newpaper.comment, style = style.b_bold },
             LTCollapsedGuide              = { fg = newpaper.comment },
@@ -466,7 +471,7 @@ function M.setup(config)
             -- TargetWord                 Error
             ReferencesCount               = { fg = newpaper.navy },
             DefinitionCount               = { fg = newpaper.teal },
-            TargetFileName                = { fg = newpaper.comment, style = 'underline' },
+            TargetFileName                = { fg = newpaper.comment, style = "underline" },
             DefinitionIcon                = { fg = newpaper.teal },
             ReferencesIcon                = { fg = newpaper.navy },
             -- DiagnosticError            Error
@@ -574,7 +579,7 @@ function M.setup(config)
             LspInstallerLabel             = { fg = newpaper.fg,        style = style.b_bold },
             LspInstallerGreen             = { fg = newpaper.darkgreen },
             LspInstallerError             = { fg = newpaper.error_fg },
-            LspInstallerLink              = { fg = newpaper.link,      style = 'underline' },
+            LspInstallerLink              = { fg = newpaper.link,      style = "underline" },
 
             -- Nvim-notify
             NotifyERRORBorder             = { fg = newpaper.error_fg },
@@ -599,6 +604,7 @@ function M.setup(config)
             NotifyTRACEBody               = { fg = newpaper.float_fg },
 
             -- NvimTree -------------------------------------------------------
+            NvimTreeNormal                = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg },
             NvimTreeSymlink               = { fg = newpaper.accent, style = style.link },
             NvimTreeFolderName            = { fg = newpaper.teal },
             NvimTreeFolderIcon            = { fg = newpaper.teal },
@@ -618,7 +624,7 @@ function M.setup(config)
             NvimTreeImageFile             = { fg = newpaper.orange },
             NvimTreeMarkdownFile          = { fg = newpaper.string },
             NvimTreeExecFile              = { fg = newpaper.text },
-            NvimTreeSpecialFile           = { fg = newpaper.purple, style = 'underline' },
+            NvimTreeSpecialFile           = { fg = newpaper.purple, style = "underline" },
             LspDiagnosticsError           = { fg = newpaper.error_fg },
             LspDiagnosticsWarning         = { fg = newpaper.warn_fg },
             LspDiagnosticsInformation     = { fg = newpaper.info_fg },
@@ -707,7 +713,7 @@ function M.setup(config)
             TelescopePreviewCharDev         = { fg = newpaper.magenta },
             -- TelescopePreviewDirectory       Directory
             TelescopePreviewBlock           = { fg = newpaper.red },
-            TelescopePreviewLink            = { fg = newpaper.link, style = 'underline' },
+            TelescopePreviewLink            = { fg = newpaper.link, style = "underline" },
             TelescopePreviewSocket          = { fg = newpaper.darkyellow },
             -- TelescopePreviewNormal          Normal
             TelescopePreviewRead            = { fg = newpaper.darkgreen },
@@ -780,7 +786,7 @@ function M.setup(config)
             VistaScope                    = { fg = newpaper.keyword, style = style.k_style },
             VistaTag                      = { fg = newpaper.navy },
             VistaKind                     = { fg = newpaper.ocean, style = style.k_style },
-            VistaScopeKind                = { fg = newpaper.teal, style = 'underline' },
+            VistaScopeKind                = { fg = newpaper.teal, style = "underline" },
             VistaLineNr                   = { fg = newpaper.cursor_nr_fg },
             VistaColon                    = { fg = newpaper.orange },
             VistaIcon                     = { fg = newpaper.teal },
@@ -813,39 +819,13 @@ function M.setup(config)
             DevIconPyd                    = { fg = newpaper.python_blue },
             DevIconPyo                    = { fg = newpaper.python_blue },
         }
-
-        -- Options:
-
-        if config.disable_background then
-            plugins.NvimTreeNormal = { fg = newpaper.comment, bg = newpaper.none }
-        else
-            plugins.NvimTreeNormal = { fg = newpaper.sidebar_fg, bg = newpaper.bg }
-        end
-
-        if config.contrast_sidebar then
-            plugins.NvimTreeNormal = { fg = newpaper.sidebar_fg, bg = newpaper.sidebar_bg }
-        else
-            plugins.NvimTreeNormal = { fg = newpaper.fg, bg = newpaper.bg }
-        end
-
-        -- IndentBlankline
-        if vim.g.indent_blankline_use_treesitter then
-        -- Use TreeSitter IndentBlankline
-            plugins.IndentBlanklineContextChar  = { fg = newpaper.keyword }
-            plugins.IndentBlanklineContextStart = { style = 'underline' }
-        else
-            plugins.IndentBlanklineContextChar  = { fg = newpaper.grey }
-            plugins.IndentBlanklineContextStart = { style = 'underline' }
-        end
-
         return plugins
 
-        -- LuaFormatter on
+        -- stylua: ignore end
 
     end
 
     return theme
-
 end
 
 return M
