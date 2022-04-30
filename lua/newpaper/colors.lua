@@ -56,8 +56,8 @@ function M.setup(config)
 		regexp_brown         = "#884400",
 
 		-- Git and diff
-		git_bg               = "#EBEAE2",
 		git_fg               = "#413932",
+		git_bg               = "#EBEAE2",
 		git_added            = "#28A745",
 		git_modified         = "#DBAB09",
 		git_removed          = "#D73A49",
@@ -385,37 +385,33 @@ function M.setup(config)
 	newpaper.sidebar_bg          = newpaper.bg
 	newpaper.float_fg            = newpaper.fg
 	newpaper.float_bg            = newpaper.bg
+	newpaper.git_sign_bg         = newpaper.git_bg
 	newpaper.telescope_fg        = newpaper.fg
 	newpaper.telescope_bg        = newpaper.bg
-	newpaper.sidebar_fg_alt      = newpaper.fg
 	newpaper.sidebar_bg_alt      = newpaper.silver
-	newpaper.float_fg_alt        = newpaper.fg
 	newpaper.float_bg_alt        = newpaper.silver
-	newpaper.telescope_fg_alt    = newpaper.fg
 	newpaper.telescope_bg_alt    = newpaper.silver
 
     -- IndentBlankline
-    newpaper.contextchar         = newpaper.gray
+    newpaper.contextchar         = newpaper.blueviolet
 
 	if config.contrast_float then
-		newpaper.float_fg = newpaper.float_fg_alt
 		newpaper.float_bg = newpaper.float_bg_alt
 	end
 
 	if config.contrast_telescope then
-		newpaper.telescope_fg = newpaper.telescope_fg_alt
 		newpaper.telescope_bg = newpaper.telescope_bg_alt
 	end
 
 	-- Set transparent background
 	if config.disable_background then
 		newpaper.bg            = newpaper.none
-		newpaper.linenumber_bg = newpaper.none
 		newpaper.sidebar_bg    = newpaper.none
+		newpaper.linenumber_bg = newpaper.none
+		newpaper.git_sign_bg   = newpaper.none
 	end
 
 	if config.contrast_sidebar then
-		newpaper.sidebar_fg = newpaper.sidebar_fg_alt
 		newpaper.sidebar_bg = newpaper.sidebar_bg_alt
 	end
 
@@ -433,12 +429,6 @@ function M.setup(config)
 	end
 
 	-- stylua: ignore end
-
-    -- IndentBlankline
-    -- When use TreeSitter IndentBlankline
-    if vim.g.indent_blankline_use_treesitter then
-        newpaper.contextchar = newpaper.blueviolet
-    end
 
 	util.color_overrides(newpaper, config)
 
