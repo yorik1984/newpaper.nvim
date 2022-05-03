@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(config)
-	config = config or require("newpaper.config").config
+    config = config or require("newpaper.config").config
 
     -- stylua: ignore start
 
@@ -102,9 +102,9 @@ function M.setup(config)
         return plugins
     end
 
-	-- stylua: ignore end
+    -- stylua: ignore end
 
-	return yamlSyn
+    return yamlSyn
 end
 
 return M

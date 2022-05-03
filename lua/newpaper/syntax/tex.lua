@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(config)
-	config = config or require("newpaper.config").config
+    config = config or require("newpaper.config").config
 
     -- stylua: ignore start
 
@@ -39,7 +39,7 @@ function M.setup(config)
             texSubscript      = { fg = newpaper.tex_math },
             texSuperscripts   = { fg = newpaper.tex_math },
             texSubscripts     = { fg = newpaper.tex_math },
-            texMathZoneV      = { fg = newpaper.tex_math, style = 'italic' },
+            texMathZoneV      = { fg = newpaper.tex_math, style = style.italic },
             texMathZoneW      = { fg = newpaper.tex_math },
             texMathZoneY      = { fg = newpaper.tex_math },
             texMathZoneZ      = { fg = newpaper.tex_math },
@@ -109,10 +109,10 @@ function M.setup(config)
             latexTSParameter       = { fg = newpaper.tex_orange, style = style.tex_a_style },
             latexTSError           = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },
             latexTSTextReference   = { fg = newpaper.tex_lightgreen },
-            latexTSEmphasis        = { fg = newpaper.fg, style = 'italic' },
-            latexTSStrong          = { fg = newpaper.fg, style = 'bold' },
+            latexTSEmphasis        = { fg = newpaper.fg, style = style.italic },
+            latexTSStrong          = { fg = newpaper.fg, style = style.bold },
             latexTSString          = { fg = newpaper.tex_string, style = style.tex_string },
-            latexTSURI             = { fg = newpaper.tex_navy, style = 'underline' },
+            latexTSURI             = { fg = newpaper.tex_navy, style = style.underline },
             latexTSComment         = { fg = newpaper.comment, style = style.c_style },
 
             bibtexTSPunctDelimiter = { fg = newpaper.tex_orange },
@@ -182,7 +182,7 @@ function M.setup(config)
             texCmdPart            = { fg = newpaper.tex_blue, style = style.tex_m_style }, -- \(SUB*)SECTION
             texPartArgTitle       = { fg = newpaper.tex_part_title, style = style.tex_m_style }, -- \(sub*)section{TITLE}
             texCmdEnv             = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
-            texEnvArgName         = { fg = newpaper.tex_darkorange, style = 'italic' }, -- \begin{ENVNAME}
+            texEnvArgName         = { fg = newpaper.tex_darkorange, style = style.italic }, -- \begin{ENVNAME}
             texCmdRef             = { fg = newpaper.tex_lightgreen }, -- \CITE; \LABEL
             texRefArg             = { fg = newpaper.tex_aqua }, -- \cite{REFERENCE}; \label{REF}
             -- texE3Variable        texCmd          \G_MYFILE_NAME_STR
@@ -196,11 +196,11 @@ function M.setup(config)
             texMathZone           = { fg = newpaper.tex_math }, -- \( HERE \); \[ HERE \]
             texMathZoneEnv        = { fg = newpaper.tex_math }, -- \begin{menv}  HERE \end{menv}
             texMathZoneEnvStarred = { fg = newpaper.tex_math }, -- \begin{menv*} HERE \end{menv*}
-            texMathZoneX          = { fg = newpaper.tex_math, style = 'italic' }, -- $ HERE $
+            texMathZoneX          = { fg = newpaper.tex_math, style = style.italic }, -- $ HERE $
             texMathZoneXX         = { fg = newpaper.tex_math }, -- $$ HERE $$
-            texMathZoneEnsured    = { fg = newpaper.tex_math, style = 'italic' }, -- \ensuremath{HERE}
+            texMathZoneEnsured    = { fg = newpaper.tex_math, style = style.italic }, -- \ensuremath{HERE}
             texCmdMathEnv         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END (for math environments)
-            texMathEnvArgName     = { fg = newpaper.tex_math, style = 'italic' }, -- \begin{EQUATION}
+            texMathEnvArgName     = { fg = newpaper.tex_math, style = style.italic }, -- \begin{EQUATION}
             texCmdMath            = { fg = newpaper.tex_math, style = style.tex_m_style }, -- \ENSUREMATH
             texMathDelim          = { fg = newpaper.tex_math_delim }, -- \LVERT
             texMathDelimMod       = { fg = newpaper.tex_math_delim, style = style.tex_k_style }, -- \LEFT\lvert \RIGHT\rvert
@@ -242,7 +242,7 @@ function M.setup(config)
             -- texCmdEnvM            texCmdEnv
             -- texCmdE3              texCmd
             -- texCmdFootnote        texCmd
-            texCmdGreek           = { fg = newpaper.tex_math, style = 'italic' },
+            texCmdGreek           = { fg = newpaper.tex_math, style = style.italic },
             -- texCmdLet             texCmdNew
             texCmdNew             = { fg = newpaper.tex_magenta, style = style.tex_k_style },
             -- texCmdNewcmd          texCmdNew
@@ -253,13 +253,13 @@ function M.setup(config)
             texCmdSize            = { fg = newpaper.tex_navy },
             texCmdSpaceCode       = { fg = newpaper.tex_blue },
             texCmdStyle           = { fg = newpaper.tex_navy },
-            texCmdStyleBold       = { fg = newpaper.tex_navy, style = 'bold' },
-            texCmdStyleBoldItal   = { fg = newpaper.tex_navy, style = 'bold,italic' },
-            texCmdStyleItal       = { fg = newpaper.tex_navy, style = 'italic' },
-            texCmdStyleItalBold   = { fg = newpaper.tex_navy, style = 'bold,italic' },
+            texCmdStyleBold       = { fg = newpaper.tex_navy, style = style.bold },
+            texCmdStyleBoldItal   = { fg = newpaper.tex_navy, style = style.bold_i },
+            texCmdStyleItal       = { fg = newpaper.tex_navy, style = style.italic },
+            texCmdStyleItalBold   = { fg = newpaper.tex_navy, style = style.bold_i },
             texCommentAcronym     = { fg = newpaper.comment, style = style.comment_title },
             -- texCommentFalse       texComment
-            texCommentURL         = { fg = newpaper.comment, style = style.c_style .. ',underline' },
+            texCommentURL         = { fg = newpaper.comment, style = style.c_underline },
             -- texConditionalArg     texArg
             -- texConditionalINCChar texSymbol
             -- texE3Cmd              texCmd
@@ -267,15 +267,15 @@ function M.setup(config)
             -- texE3Opt              texOpt
             -- texE3Parm             texParm
             texEnvOpt             = { fg = newpaper.tex_redorange },
-            texEnvMArgName        = { fg = newpaper.tex_math, style = 'italic' },
+            texEnvMArgName        = { fg = newpaper.tex_math, style = style.italic },
             -- texLetArgEqual        texSymbol
             -- texLetArgName         texArgNew
             -- texMathArg            texMathZone
             -- texMathArrayArg       texOpt
             texMathCmd            = { fg = newpaper.tex_math },
             -- texMathCmdStyle       texMathCmd
-            texMathCmdStyleBold   = { fg = newpaper.tex_math, style = 'bold' },
-            texMathCmdStyleItal   = { fg = newpaper.tex_math, style = 'italic' },
+            texMathCmdStyleBold   = { fg = newpaper.tex_math, style = style.bold },
+            texMathCmdStyleItal   = { fg = newpaper.tex_math, style = style.italic },
             texMathCmdText        = { fg = newpaper.tex_navy },
             texMathDelimZone      = { fg = newpaper.tex_olive },
             texMathTextConcArg    = { fg = newpaper.tex_pink },
@@ -357,8 +357,8 @@ function M.setup(config)
             texAsymptoteZone = { fg = newpaper.tex_verb },
 
             -- beamer.vim -----------------------------------------------------
-            texCmdBeamer   = { fg = newpaper.tex_navy, style = style.tex_m_style },
-            texBeamerOpt   = { fg = newpaper.tex_orange, style = style.tex_m_style },
+            texCmdBeamer   = { fg = newpaper.tex_navy,        style = style.tex_m_style },
+            texBeamerOpt   = { fg = newpaper.tex_orange,      style = style.tex_m_style },
             texBeamerDelim = { fg = newpaper.tex_lightpurple, style = style.tex_m_style },
 
             -- biblatex.vim ---------------------------------------------------
@@ -369,12 +369,12 @@ function M.setup(config)
             texCmdBooktabs = { fg = newpaper.tex_math_delim, style = style.tex_k_style },
 
             -- chemformula.vim ------------------------------------------------
-            texCmdCH       = { fg = newpaper.tex_ch_brown, style = style.tex_k_style },
-            texMathCmdCH   = { fg = newpaper.tex_ch_green, style = style.tex_k_style },
+            texCmdCH       = { fg = newpaper.tex_ch_brown,  style = style.tex_k_style },
+            texMathCmdCH   = { fg = newpaper.tex_ch_green,  style = style.tex_k_style },
             texCHOpt       = { fg = newpaper.tex_ch_orange, style = style.tex_k_style },
-            texCHArg       = { fg = newpaper.tex_ch_blue, style = style.tex_k_style },
-            texCHSymb      = { fg = newpaper.tex_ch_red, style = style.tex_k_style },
-            texCHText      = { fg = newpaper.tex_verb, style = style.tex_string },
+            texCHArg       = { fg = newpaper.tex_ch_blue,   style = style.tex_k_style },
+            texCHSymb      = { fg = newpaper.tex_ch_red,    style = style.tex_k_style },
+            texCHText      = { fg = newpaper.tex_verb,      style = style.tex_string },
 
             -- cleveref.vim ---------------------------------------------------
             --  texCRefArg           texRefArg
@@ -413,10 +413,10 @@ function M.setup(config)
 
             -- hyperref.vim ---------------------------------------------------
             -- texCmdHyperref   texCmd
-            texHrefArgLink   = { fg = newpaper.tex_navy, style = 'underline' },
+            texHrefArgLink   = { fg = newpaper.tex_navy, style = style.underline },
             -- texHrefArgTextC  texArg
             -- texHrefLinkGroup texHrefArgLink
-            texUrlArg        = { fg = newpaper.tex_navy, style = 'underline' },
+            texUrlArg        = { fg = newpaper.tex_navy, style = style.underline },
 
             -- ieeetrantools.vim ----------------------------------------------
             -- texMathEnvIEEEArg texArg
@@ -520,9 +520,9 @@ function M.setup(config)
         return plugins
     end
 
-	-- stylua: ignore end
+    -- stylua: ignore end
 
-	return tex
+    return tex
 end
 
 return M

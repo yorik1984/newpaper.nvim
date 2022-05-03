@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(config)
-	config = config or require("newpaper.config").config
+    config = config or require("newpaper.config").config
 
     -- stylua: ignore start
 
@@ -34,7 +34,7 @@ function M.setup(config)
             rubyTSLabel           = { fg = newpaper.darkengreen },
             rubyTSType            = { fg = newpaper.teal, style = style.k_style },
             rubyTSVariableBuiltin = { fg = newpaper.maroon },
-            rubyTSError           = { style = 'undercurl' },
+            rubyTSError           = { style = style.undercurl },
 
         }
 
@@ -49,10 +49,10 @@ function M.setup(config)
             -- NOTE: groups from basic syntax include this
 
             rubyClass                      = { fg = newpaper.ruby_magenta, style = style.k_style },
-            rubyModule                     = { fg = newpaper.ruby_purple, style = style.k_style },
-            rubyExceptionHandler2          = { fg = newpaper.ruby_red, style = style.k_style },
-            rubyDefine                     = { fg = newpaper.keyword, style = style.k_style },
-            rubyAccess                     = { fg = newpaper.ruby_maroon, style = style.k_style },
+            rubyModule                     = { fg = newpaper.ruby_purple,  style = style.k_style },
+            rubyExceptionHandler2          = { fg = newpaper.ruby_red,     style = style.k_style },
+            rubyDefine                     = { fg = newpaper.keyword,      style = style.k_style },
+            rubyAccess                     = { fg = newpaper.ruby_maroon,  style = style.k_style },
             rubyAttribute                  = { fg = newpaper.magenta },
             rubyMacro                      = { fg = newpaper.magenta, style = style.k_style },
             -- rubyMethodName                 rubyFunction
@@ -70,11 +70,11 @@ function M.setup(config)
             -- rubyCharacter                  Character
             -- rubyFloat                      Float
             -- rubyBoolean                    Boolean
-            rubyException                  = { fg = newpaper.ruby_red, style = style.k_style },
+            rubyException                  = { fg = newpaper.ruby_red,  style = style.k_style },
 
-            rubyConstant                   = { fg = newpaper.teal, style = style.k_style },
+            rubyConstant                   = { fg = newpaper.teal,      style = style.k_style },
             rubyClassName                  = { fg = newpaper.ruby_navy, style = style.k_style },
-            rubyModuleName                 = { fg = newpaper.ocean, style = style.k_style },
+            rubyModuleName                 = { fg = newpaper.ocean,     style = style.k_style },
             rubySymbol                     = { fg = newpaper.darkyellow },
             -- rubyKeyword                    Keyword
 
@@ -103,23 +103,23 @@ function M.setup(config)
 
             rubyInterpolationDelimiter     = { fg = newpaper.darkorange },
             -- rubySharpBang                  PreProc
-            rubyStringDelimiter            = { fg = newpaper.string,        style = style.s_style },
+            rubyStringDelimiter            = { fg = newpaper.string, style = style.s_style },
             -- rubyHeredocDelimiter           rubyStringDelimiter
             -- rubyPercentSymbolDelimiter     rubySymbolDelimiter
-            rubySymbolDelimiter            = { fg = newpaper.darkyellow,    style = style.o_style },
-            rubyPercentStringDelimiter     = { fg = newpaper.tag_navy,          style = style.o_style },
+            rubySymbolDelimiter            = { fg = newpaper.darkyellow, style = style.o_style },
+            rubyPercentStringDelimiter     = { fg = newpaper.tag_navy,   style = style.o_style },
             -- rubyString                     String
-            rubyPercentRegexpDelimiter     = { fg = newpaper.text, style = style.o_style },
+            rubyPercentRegexpDelimiter     = { fg = newpaper.text,        style = style.o_style },
             rubyRegexpDelimiter            = { fg = newpaper.regexp_blue, style = style.o_style },
             rubyRegexpEscape               = { fg = newpaper.regexp_magenta },
-            rubyRegexpQuantifier           = { fg = newpaper.regexp_blue, style = style.o_style },
+            rubyRegexpQuantifier           = { fg = newpaper.regexp_blue,  style = style.o_style },
             rubyRegexpAnchor               = { fg = newpaper.regexp_brown, style = style.o_style },
             rubyRegexpDot                  = { fg = newpaper.regexp_orange },
             rubyRegexpCharClass            = { fg = newpaper.regexp_orange },
             rubyRegexpIntersection         = { fg = newpaper.regexp_brown, style = style.o_style },
             rubyRegexpSpecial              = { fg = newpaper.regexp_green },
             rubyRegexp                     = { fg = newpaper.regexp_blue, style = style.s_style },
-            rubyRegexpComment              = { fg = newpaper.comment, style = style.comment_title },
+            rubyRegexpComment              = { fg = newpaper.comment,     style = style.comment_title },
 
             -- rubyError                      Error
             -- rubyUselessLineContinuation    rubyError
@@ -156,10 +156,10 @@ function M.setup(config)
             -- rubyArithmeticOperator            rubyOperator
             plugins.rubyComparisonOperator     = { fg = newpaper.teal, style = style.o_style }
             plugins.rubyBitwiseOperator        = { fg = newpaper.redorange, style = style.o_style }
-            plugins.rubyBooleanOperator        = { fg = newpaper.boolean, style = style.o_style }
+            plugins.rubyBooleanOperator        = { fg = newpaper.boolean,   style = style.o_style }
             -- rubyRangeOperator                 rubyOperator
             plugins.rubyAssignmentOperator     = { fg = newpaper.tag_navy, style = style.o_style }
-            plugins.rubyEqualityOperator       = { fg = newpaper.magenta, style = style.o_style }
+            plugins.rubyEqualityOperator       = { fg = newpaper.magenta,  style = style.o_style }
         else
             plugins.rubyOperator               = { fg = newpaper.fg }
             plugins.rubyEnglishBooleanOperator = { fg = newpaper.fg }
@@ -188,9 +188,9 @@ function M.setup(config)
 
     end
 
-	-- stylua: ignore end
+    -- stylua: ignore end
 
-	return rubySyn
+    return rubySyn
 end
 
 return M

@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(config)
-	config = config or require("newpaper.config").config
+    config = config or require("newpaper.config").config
 
     -- stylua: ignore start
 
@@ -49,7 +49,7 @@ function M.setup(config)
             -- htmlItalicBold              htmlBoldItalic
             -- htmlItalicBoldUnderline     htmlBoldUnderlineItalic
             -- htmlItalicUnderlineBold     htmlBoldUnderlineItalic
-            htmlLink                    = { fg = newpaper.link, style = "underline" },
+            htmlLink                    = { fg = newpaper.link, style = style.underline },
             -- htmlLeadingSpace            None
 
             -- html_my_rendering
@@ -119,9 +119,9 @@ function M.setup(config)
         return plugins
     end
 
-	-- stylua: ignore end
+    -- stylua: ignore end
 
-	return htmlSyn
+    return htmlSyn
 end
 
 return M

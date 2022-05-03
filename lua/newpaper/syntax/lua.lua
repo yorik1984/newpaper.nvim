@@ -64,7 +64,7 @@ function M.setup(config)
             -- luaCommentLong      luaComment
             -- luaCommentTodo      Todo
             -- luaCond             Conditional
-            luaConstant         = { fg = newpaper.boolean, style = style.k_style },
+            luaConstant         = { fg = newpaper.boolean,   style = style.k_style },
             luaDocTag           = { fg = newpaper.darkgreen, style = style.c_style },
             luaEllipsis         = { fg = newpaper.orange },
             -- luaElse             Conditional
@@ -85,7 +85,7 @@ function M.setup(config)
             luaLocal            = { fg = newpaper.keyword },
             -- luaNumber           Number
             -- luaSymbolOperator   luaOperator
-            luaNotEqOperator    = { fg = newpaper.magenta, style = style.o_style },
+            luaNotEqOperator    = { fg = newpaper.magenta,  style = style.o_style },
             luaOperator         = { fg = newpaper.lua_navy, style = style.o_style },
             -- luaRepeat           Repeat
             -- luaSemiCol          Delimiter
