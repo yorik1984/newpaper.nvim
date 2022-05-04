@@ -59,6 +59,7 @@ CONTENTS
         - vista.vim
         - symbols-outline.nvim
         - nvim-notify
+        - headlines.nvim
 
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
@@ -80,11 +81,11 @@ CONTENTS
 <
     If you are using Lua:
 >
-        require('newpaper').setup()
+        require("newpaper").setup()
 <
     newpaper.nvim also includes a Lualine theme. Set it in your Lualine config
 >
-        require('lualine').setup ({
+        require("lualine").setup ({
             options = {
                 -- ... your lualine config
             }
@@ -102,18 +103,18 @@ CONTENTS
         This is the only light style in this colorscheme. It comes with a
         PaperColor white background.
 
-    The styles are set by setting the global variable 'newpaper_style' to the
+    The styles are set by setting the global variable "newpaper_style" to the
     desired style name
 
     For example:
 
         Vim-Script:
 >
-            let g:newpaper_style = 'dark'
+            let g:newpaper_style = "dark"
 <
         Lua:
 >
-            vim.g.newpaper_style = 'dark'
+            vim.g.newpaper_style = "dark"
 <
     Just make sure to set the style before applying the colorscheme
 
@@ -130,19 +131,20 @@ init.vim/init.lua before applying the colorscheme
 
 Options:
 
-    + style              {string} (default = `'light'`)
-        The theme comes in two styles:`'dark'`, `'light'`
+    + style              {string} (default = `"light"`)
+        The theme comes in two styles:`"dark"`, `"light"`
 
     + editor_better_view {booleans} (default = true)
         Make some interface like menu, title of editor and plugins
         menu bold and italic
 
-    + contrast_sidebar   {booleans} (default = false)
-        Make sidebars menus like nvim–tree different foreground and background 
-
-    + sidebars           {table} (default = {})
+    + terminal           {string} (default = `"contrast"`)
+        Make `:terminal` window in different styles.
+        Value: `"contrast"`, `"inverse"`, `"inverse_transparent"
+        `
+    + sidebars_contrast  {table} (default = {})
         Set a contrast background on sidebar-like windows.
-        For example: `{"qf", "vista_kind", "terminal", "packer"}`
+        For example: `{ "NvimTree", "qf", "vista_kind", "terminal", "packer" }`
 
     + contrast_float     {booleans} (default = true)
         Make popup menus like nvim-compe, lsp-saga have a different
@@ -154,37 +156,37 @@ Options:
     + operators_bold     {booleans} (default = true)
         Make booleans, escape characters, operators, delimiter like =,<>/* bold 
 
-    + keywords           {string} (default = `'bold'`)
+    + keywords           {string} (default = `"bold"`)
         Make keywords like if, for, while etc. bold, italic or NONE.
-        Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
-    + tags               {string} (default = `'bold'`)
+    + tags               {string} (default = `"bold"`)
         Make HTML tagg bold, italic or NONE.
-        Value: `'bold'`, `'italic'`, 'bold,italic' 'NONE'
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
-    + tex_major          {string} (default = `'bold'`)
+    + tex_major          {string} (default = `"bold"`)
         Make only major tex word like\documentclass, \section, ... bold,
-        italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
+        italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + tex_operators_bold {booleans} (default = true)
         Make tex operators bold 
 
-    + tex_keywords       {string} (default = `'NONE'`)
+    + tex_keywords       {string} (default = `"NONE"`)
         Make  other tex keywords bold, italic or NONE.
-        Value: `'bold'`,`'italic'`, `'bold,italic'`, `'NONE'`
+        Value: `"bold"`,`"italic"`, `"bold,italic"`, `"NONE"`
 
-    + tex_zone           {string} (default = `'italic'`)
+    + tex_zone           {string} (default = `"italic"`)
         Make some tex ...Zone...  bold, italic or NONE.
-        Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
-    + tex_arg            {string} (default = `'italic'`)
+    + tex_arg            {string} (default = `"italic"`)
         Make some tex  ...Arg... bold, italic or NONE.
-        Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
-    + error_highlight    {string} (default = `'undercurl'`)
+    + error_highlight    {string} (default = `"undercurl"`)
         Make spell or `tex`-files errors hightlighting with
         background, undercurl, both or NONE
-        Value: `'bg'`, `'undercurl'`, `'both'`, `'NONE'`.
+        Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`.
 
     + italic_strings     {booleans} (default = true)
         Make strings italic 
@@ -227,35 +229,35 @@ Options:
         vim.g.newpaper_custom_highlights = {
             Number    = { fg = "#00FF00" },
             rubyClass = { fg = "#00FFF0" },
-            Comment   = { fg = "#FF0000", style = 'italic,underline' }
+            Comment   = { fg = "#FF0000", style = "italic,underline" }
         }
 <
 
     + lualine_bold       {booleans} (default = true)
         When true, section headers in the lualine theme will be bold 
 
-    + lualine_style      {string} (default = `'light'`)
-        Set different style from main theme:`'dark'`, `'light'`
+    + lualine_style      {string} (default = `"light"`)
+        Set different style from main theme: `"dark"`, `"light"`
 
 
 Default settings:
 >
-    require('newpaper').setup({
-        style               = 'light',
+    require("newpaper").setup({
+        style               = "light",
         editor_better_view  = true,
         contrast_sidebar    = false,
         sidebars            = {},
         contrast_float      = true,
         contrast_telescope  = true,
         operators_bold      = true,
-        keywords            = 'bold',
-        tags                = 'bold',
-        tex_major           = 'bold',
+        keywords            = "bold",
+        tags                = "bold",
+        tex_major           = "bold",
         tex_operators_bold  = true,
-        tex_keywords        = 'NONE',
-        tex_zone            = 'italic',
-        tex_arg             = 'italic',
-        error_highlight     = 'undercurl',
+        tex_keywords        = "NONE",
+        tex_zone            = "italic",
+        tex_arg             = "italic",
+        error_highlight     = "undercurl",
         italic_strings      = true,
         italic_comments     = true,
         italic_functions    = false,
@@ -266,20 +268,20 @@ Default settings:
         hide_eob            = false,
         colors              = {},
         lualine_bold        = true,
-        lualine_style       = 'light'
+        lualine_style       = "light"
     })
 <
 Example config in lua with global variables
 >
-    vim.g.newpaper_style    = 'dark'
-    vim.g.newpaper_keywords = 'italic'
+    vim.g.newpaper_style    = "dark"
+    vim.g.newpaper_keywords = "italic"
     vim.g.newpaper_borders  = false
     vim.g.newpaper_colors   = { teal = "#0000FF" }
     vim.g.newpaper_custom_highlights = {
         Float     = { fg = vim.g.newpaper_colors.teal },
         Number    = { fg = "#00FF00" },
         rubyClass = { fg = "#00FFF0" },
-        Comment   = { fg = "#FF0000", style = 'italic,underline' }
+        Comment   = { fg = "#FF0000", style = "italic,underline" }
     }
 <
 OR better with user configuration
@@ -289,11 +291,11 @@ OR better with user configuration
               Float     = { fg = colors.teal }, -- prefer override by name
               Number    = { fg = "#00FF00" },   -- but hex colos also good
               rubyClass = { fg = "#00FFF0" },
-              Comment   = { fg = "#FF0000", style = 'italic,underline' },
+              Comment   = { fg = "#FF0000", style = "italic,underline" },
           }
-    require('newpaper').setup({
-        style    = 'dark',
-        keywords = 'italic',
+    require("newpaper").setup({
+        style    = "dark",
+        keywords = "italic",
         -- ...
         colors              = colors,
         custom_highlights   = custom_highlights,
@@ -303,9 +305,9 @@ OR better with user configuration
 Example config in init.vim:
 >
     lua << EOF 
-        require('newpaper').setup({
-            style    = 'dark',
-            keywords = 'italic',
+        require("newpaper").setup({
+            style    = "dark",
+            keywords = "italic",
             borders  = false,
             colors   = { black = "#000000", bg = "#0F111A" }
         })
@@ -319,7 +321,7 @@ To enable the newpaper theme for Lualine, simply specify it in your lualine sett
 
 in init.lua:
 >
-    require('lualine').setup {
+    require("lualine").setup {
         options = {
             -- ... your lualine config
         }
@@ -337,12 +339,12 @@ init.lua:
     vim.g.newpaper_lualine_bold = true
     -- If want to enable style like in main colorscheme no need to set style
     -- of lualine
-    vim.g.newpaper_lualine_style = `'light'`
+    vim.g.newpaper_lualine_style = `"light"`
     -- Also you can predefine colors
-    vim.g.newpaper_colors        = {teal = '#008080'}
+    vim.g.newpaper_colors        = {teal = "#008080"}
 
     -- disable main theme
-    -- require('newpaper').setup()
+    -- require("newpaper").setup()
 
     -- enable other colorscheme
     -- ...
