@@ -22,7 +22,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 <div align="center">
 
-### [More screenshots](#--screenshots)🖼️
+### [More screenshots](#-screenshots)🖼️
 
 </div>
 
