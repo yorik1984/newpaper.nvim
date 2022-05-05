@@ -5,15 +5,16 @@ newpaper.nvim is a colorscheme for NeoVim written in Lua with built in support
 for native LSP, TreeSitter and many more plugins.
 
 ================================================================================
-CONTENTS
+CONTENTS                                                *newpaper.nvim-contents*
 
-    1. Features ................. |newpaper.nvim-features|
-    2. Usage .................... |newpaper.nvim-usage|
-    3. Styles ................... |newpaper.nvim-styles|
-    4. Configuration ............ |newpaper.nvim-configuration|
-    5. Lualine setings .......... |newpaper.nvim-lualine|
+Features ................................: |newpaper.nvim-features|
+Usage ...................................: |newpaper.nvim-usage|
+Styles ..................................: |newpaper.nvim-styles|
+Configuration ...........................: |newpaper.nvim-configuration|
+Commands ................................: |newpaper.nvim-commands|
+Lualine setings .........................: |newpaper.nvim-lualine|
 ================================================================================
-1. Features                                             *newpaper.nvim-features*
+FEATURES                                                *newpaper.nvim-features*
 
     + There are 2 styles to choose from:
         - light
@@ -71,7 +72,7 @@ CONTENTS
       NeoVim
 
 ================================================================================
-2. Usage                                                   *newpaper.nvim-usage*
+USAGE                                                      *newpaper.nvim-usage*
 
     To use the default settings, just apply the theme
 
@@ -92,7 +93,7 @@ CONTENTS
         })
 <
 ================================================================================
-3. Styles                                                 *newpaper.nvim-styles*
+STYLES                                                    *newpaper.nvim-styles*
 
     The theme comes in 2 styles to choose from
 
@@ -119,7 +120,7 @@ CONTENTS
     Just make sure to set the style before applying the colorscheme
 
 ================================================================================
-4. Configuration                                   *newpaper.nvim-configuration*
+CONFIGURATION                                      *newpaper.nvim-configuration*
 
 What sets newpaper.nvim appart from most Vim/NeoVim themes is the wide array
 of options for customising the theme.
@@ -314,10 +315,16 @@ Example config in init.vim:
     EOF
 <
 ================================================================================
-5. Lualine settings                                      *newpaper.nvim-lualine*
+COMMANDS                                                *newpaper.nvim-commands*
+
+`:NewpaperLight`    Change style to light mode(by default)
+`:NewpaperDark`     Change style to dark mode
+
+================================================================================
+LUALINE SETTINGS                                         *newpaper.nvim-lualine*
 
 
-To enable the newpaper theme for Lualine, simply specify it in your lualine settings:
+To enable the newpaper theme for Lualine, specify it in your lualine settings:
 
 in init.lua:
 >
@@ -330,7 +337,7 @@ in init.lua:
     Lualine theme name and style automatically using from main theme
 
 
-NOTE You can temporally use just only lualine theme with any others colorscheme.
+NOTE You can temporally use just only lualine theme with any colorscheme.
 It also depend from vim.o.background
 
 init.lua:
