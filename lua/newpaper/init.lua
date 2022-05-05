@@ -48,9 +48,9 @@ local function setup(userConfig)
         end
     end
 
-    local configApply = configModule.config
+    local configApply  = configModule.config
     local configColors = require("newpaper.colors").setup(configApply)
-    local configStyle = require("newpaper.style").setup_style(configApply)
+    local configStyle  = require("newpaper.style").setup_style(configApply)
 
     util.load(theme.setup(configApply, configColors, configStyle))
 

@@ -35,15 +35,18 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Ability to change background on sidebar-like windows like Nvim-Tree, Packer, terminal etc.
 + Asynchronous highlight loading which makes the theme extremely fast
 + Added functions for live theme switching without the need to restart NeoVim
-+ Special syntax highlight:
-    - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html)
-    - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-    - TOML with [vim-toml](https://github.com/cespare/vim-toml) - [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/dark_code.toml.html)
-    - YAML - [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/dark_code.yaml.html)
-    - Lua with [vim-lua](https://github.com/tbastos/vim-lua) - [🖼️](#LUA)
-    - Markdown with [vim-markdown](https://github.com/preservim/vim-markdown)
-        - Pandoc with [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax)
+
+#### Special syntax highlight:
+
++ L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
++ [Ruby](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb) with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html)
++ Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
++ [TOML](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/code.toml) with [vim-toml](https://github.com/cespare/vim-toml) - [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/dark_code.toml.html)
++ [YAML](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/code.yaml) - [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/dark_code.yaml.html)
+- [Lua](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua) with [vim-lua](https://github.com/tbastos/vim-lua) - [🖼️](#LUA), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html)
+- [Markdown](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) native [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.md.html)
+    - [Markdown](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) with [vim-markdown](https://github.com/preservim/vim-markdown), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_vm_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_vm_code.md.html)
+    - [Pandoc](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.rmd) with [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.rmd.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.rmd.html)
 
 ### 🔌 Supported plugins
 
@@ -357,9 +360,9 @@ vim.g.newpaper_colors        = {teal = "#008080"}
 
 + ### RUBY
 
-Source code [HERE](preview/ruby/code.rb)
+Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb)
 
-**vim-ruby light** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) and preview **vim-ruby dark** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html) preview
+**vim-ruby light** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html) and preview **vim-ruby dark** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
 
 ![vim-ruby_code rb](https://user-images.githubusercontent.com/1559192/145306835-64ca7551-0b07-4ce1-b430-695c63de2f49.png)
 
@@ -373,9 +376,9 @@ Source code [HERE](preview/ruby/code.rb)
 
 + ### LUA
 
-Source code [HERE](preview/lua/code.lua)
+Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua)
 
-🖼️ **vim-lua light** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/lua/vim_lua_code_light_lua.html) preview and **vim-lua dark** [HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/lua/vim_lua_code_dark_lua.html) preview
+🖼️ **vim-lua light** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html) preview and **vim-lua dark** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html) preview
 
 ![vim_lua_code_lua](https://user-images.githubusercontent.com/1559192/145305955-76106720-b9c7-4fa6-ad99-407454758c2d.png)
 
@@ -405,7 +408,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [vimtex](https://github.com/lervag/vimtex)
 + [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 + [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
-+ [vim-shoot](https://github.com/JMcKiern/vim-shoot) - generatated HTML version of hightlighting 
++ [vim-shoot](https://github.com/JMcKiern/vim-shoot) - generated HTML version of highlighting 
 + [toml](https://github.com/toml-lang/toml) - spec and code preview example
 + [yaml](https://github.com/yaml/yaml-spec) - spec and code preview example
 
@@ -445,10 +448,10 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [x] Jinja
     - [x] Markdown
         - [x] Pandoc
+    - [x] HTML
     - [ ] COBOL
     - [ ] Python
     - [ ] Rust
-    - [ ] HTML
 
 - [ ] Add plugins support:
     - [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
