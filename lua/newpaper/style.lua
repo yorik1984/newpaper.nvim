@@ -1,9 +1,6 @@
-local configModule = require("newpaper.config")
-
 local M = {}
 
 function M.setup_style(config)
-    config = config or configModule.config
 
     -- stylua: ignore start
 

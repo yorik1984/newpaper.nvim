@@ -1,65 +1,68 @@
-local util         = require("newpaper.util")
-local theme        = require("newpaper.theme")
+local util = require("newpaper.util")
+local theme = require("newpaper.theme")
 local configModule = require("newpaper.config")
+local config = configModule.config
 
-local texSyn       = require("newpaper.syntax.tex")
-local vimSyn       = require("newpaper.syntax.vim")
-local markdownSyn  = require("newpaper.syntax.markdown")
-local htmlSyn      = require("newpaper.syntax.html")
-local rubySyn      = require("newpaper.syntax.ruby")
-local tomlSyn      = require("newpaper.syntax.toml")
-local yamlSyn      = require("newpaper.syntax.yaml")
-local luaSyn       = require("newpaper.syntax.lua")
+local langSyn = {
+    texSyn  = require("newpaper.theme.languages.tex"),
+    vimSyn  = require("newpaper.theme.languages.vim"),
+    mkdSyn  = require("newpaper.theme.languages.markdown"),
+    htmlSyn = require("newpaper.theme.languages.html"),
+    rubySyn = require("newpaper.theme.languages.ruby"),
+    tomlSyn = require("newpaper.theme.languages.toml"),
+    yamlSyn = require("newpaper.theme.languages.yaml"),
+    luaSyn  = require("newpaper.theme.languages.lua"),
+}
 
-local jinjaSyn     = require("newpaper.syntax.jinja")
+local plugSyn = {
+    jinja = require("newpaper.theme.plugins.jinja"),
+}
 
 local function setup(userConfig)
-
     if userConfig then
         configModule.applyConfiguration(userConfig)
-        if configModule.config.style == 'light' then
-            vim.o.background = 'light'
-        elseif configModule.config.style == 'dark' then
-            vim.o.background = 'dark'
+        if config.style == "light" then
+            vim.o.background = "light"
+        elseif config.style == "dark" then
+            vim.o.background = "dark"
         end
 
-        vim.g.newpaper_colors        = configModule.config.colors
-        vim.g.newpaper_lualine_bold  = configModule.config.lualine_bold
+        vim.g.newpaper_colors = config.colors
+        vim.g.newpaper_lualine_bold = config.lualine_bold
         if userConfig.lualine_style then
-            vim.g.newpaper_lualine_style = configModule.config.lualine_style
+            vim.g.newpaper_lualine_style = config.lualine_style
         else
-            vim.g.newpaper_lualine_style = configModule.config.style
+            vim.g.newpaper_lualine_style = config.style
         end
-
     else
         if vim.g.newpaper_colors == nil then
-            vim.g.newpaper_colors = configModule.config.colors
+            vim.g.newpaper_colors = config.colors
         end
 
         if vim.g.newpaper_lualine_bold == nil then
-            vim.g.newpaper_lualine_bold = configModule.config.lualine_bold
+            vim.g.newpaper_lualine_bold = config.lualine_bold
         end
 
         if vim.g.newpaper_lualine_style == nil then
-            vim.g.newpaper_lualine_style = configModule.config.lualine_style
+            vim.g.newpaper_lualine_style = config.lualine_style
         end
     end
 
-    util.load(theme.setup(configModule.config))
+    local configApply = configModule.config
+    local configColors = require("newpaper.colors").setup(configApply)
+    local configStyle = require("newpaper.style").setup_style(configApply)
 
-    util.loadSyntax(luaSyn.setup(configModule.config))
-    util.loadSyntax(texSyn.setup(configModule.config))
-    util.loadSyntax(vimSyn.setup(configModule.config))
-    util.loadSyntax(markdownSyn.setup(configModule.config))
-    util.loadSyntax(htmlSyn.setup(configModule.config))
-    util.loadSyntax(rubySyn.setup(configModule.config))
-    util.loadSyntax(tomlSyn.setup(configModule.config))
-    util.loadSyntax(yamlSyn.setup(configModule.config))
+    util.load(theme.setup(configApply, configColors, configStyle))
 
-    util.loadPluginSyntax(jinjaSyn.setup(configModule.config))
+    for key, _ in pairs(langSyn) do
+        util.loadSyntax(langSyn[key].setup(configColors, configStyle))
+    end
 
-    util.loadCustomSyntax(configModule.config)
+    for key, _ in pairs(plugSyn) do
+        util.loadPluginSyntax(plugSyn[key].setup(configColors, configStyle))
+    end
 
+    util.loadCustomSyntax(configApply)
 end
 
-return {setup = setup}
+return { setup = setup }

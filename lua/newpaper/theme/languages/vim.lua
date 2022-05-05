@@ -1,13 +1,12 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local vimSyn   = {}
-    vimSyn.colors  = require("newpaper.colors").setup(config)
-    vimSyn.style   = require("newpaper.style").setup_style(config)
+    vimSyn.colors  = configColors
+    vimSyn.style   = configStyle
     local newpaper = vimSyn.colors
     local style    = vimSyn.style
 

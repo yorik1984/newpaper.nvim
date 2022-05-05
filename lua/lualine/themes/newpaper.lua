@@ -3,9 +3,9 @@ local lualine_style
 local theme = {}
 
 if vim.g.newpaper_lualine_style == nil then
-	lualine_style = vim.o.background
+    lualine_style = vim.o.background
 else
-	lualine_style = vim.g.newpaper_lualine_style
+    lualine_style = vim.g.newpaper_lualine_style
 end
 
 configModule.config.colors = vim.g.newpaper_colors
@@ -39,7 +39,7 @@ newpaper.visual = {
     y = { fg = colors.grey,       bg = colors.blueviolet },
     z = { fg = colors.bg,         bg = colors.purple },
 }
-  newpaper.replace = {
+newpaper.replace = {
     a = { fg = colors.bg,         bg = colors.magenta },
     c = { fg = colors.grey,       bg = colors.pink },
     x = { fg = colors.grey,       bg = colors.pink },
@@ -62,9 +62,9 @@ newpaper.inactive = {
 -- stylua: ignore end
 
 if vim.g.newpaper_lualine_bold then
-	for _, mode in pairs(newpaper) do
-		mode.a.gui = "bold"
-	end
+    for _, mode in pairs(newpaper) do
+        mode.a.gui = "bold"
+    end
 end
 
 return newpaper

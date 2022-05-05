@@ -1,13 +1,12 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local tex      = {}
-    tex.colors     = require("newpaper.colors").setup(config)
-    tex.style      = require("newpaper.style").setup_style(config)
+    tex.colors     = configColors
+    tex.style      = configStyle
     local newpaper = tex.colors
     local style    = tex.style
 
@@ -71,7 +70,7 @@ function M.setup(config)
             -- bibComment3         Comment
             bibNSEntryKw      = { fg = newpaper.tex_keyword },
             bibEntryData      = { fg = newpaper.tex_pink },
-            bibVariable       = { fg = newpaper.tex_orange },
+            bibVariable       = { fg = newpaper.tex_orange, style = style.v_style },
             bibEntryKw        = { fg = newpaper.tex_blue, style = style.tex_k_style},
             bibQuote          = { fg = newpaper.tex_string },
             bibParen          = { fg = newpaper.tex_math_delim },

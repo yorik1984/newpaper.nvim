@@ -1,4 +1,17 @@
+<div align="center">
+<p align="center">
+    <img width="302" height="302" src="https://user-images.githubusercontent.com/1559192/163754338-7f265280-9a6c-4c39-932a-858b75746d0a.png">
+</p>
+
+
 # 🎨 newpaper.nvim
+
+![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
+![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
+
+---
+
+</div>
 
 ### W.I.P.🚧
 
@@ -7,9 +20,11 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
-![vim-ruby_light_code rb-preview](https://user-images.githubusercontent.com/1559192/140774084-d3978598-f1cb-45f3-9fb4-32ddbfe9287e.png)
+<div align="center">
 
-[More screenshots](#--screenshots)
+### [More screenshots](#--screenshots)🖼️
+
+</div>
 
 ### 🌟 Features
 
@@ -22,14 +37,15 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Added functions for live theme switching without the need to restart NeoVim
 + Special syntax highlight:
     - L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - Preview[[🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html)]
+    - Ruby with [vim-ruby](https://github.com/vim-ruby/vim-ruby) - [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_dark_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/ruby/vim-ruby_light_code.rb.html)
     - Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-    - TOML with [vim-toml](https://github.com/cespare/vim-toml) - Preview[[light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/dark_code.toml.html)]
-    - YAML - Preview[[light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/dark_code.yaml.html)]
-
+    - TOML with [vim-toml](https://github.com/cespare/vim-toml) - [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/toml/dark_code.toml.html)
+    - YAML - [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper.nvim/blob/main/preview/yaml/dark_code.yaml.html)
     - Lua with [vim-lua](https://github.com/tbastos/vim-lua) - [🖼️](#LUA)
+    - Markdown with [vim-markdown](https://github.com/preservim/vim-markdown)
+        - Pandoc with [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax)
 
- ###  🔌 Supported plugins:
+### 🔌 Supported plugins
 
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
@@ -72,7 +88,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ### ⚡️ Requirements
 
-+ Neovim >= 0.5.1
++ Neovim >= 0.7
 
 ### 📦 Installation
 
@@ -81,7 +97,7 @@ Install via your favorite package manager:
 #### [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'yorik1984/newpaper.nvim'
+use "yorik1984/newpaper.nvim"
 ```
 
 ### 🚀 Usage
@@ -91,15 +107,14 @@ Enable the colorscheme:
 ```vim
 " init.vim
 lua << EOF 
-    require('newpaper').setup()
+    require("newpaper").setup()
 EOF
 ```
 
 ```lua
 -- Lua:
-require('newpaper').setup()
+require("newpaper").setup()
 ```
-
 
 ### ⚙️ Configuration
 
@@ -112,42 +127,49 @@ Set the desired style using:
 ```vim
 " init.vim
 lua << EOF 
-    require('newpaper').setup({
-        style = 'dark'
+    require("newpaper").setup({
+        style = "dark"
     })
 EOF
 ```
 
 ```lua
 -- Lua:
-vim.g.newpaper_style = 'dark'
-require('newpaper').setup()
+vim.g.newpaper_style = "dark"
+require("newpaper").setup()
 
 -- OR better
-require('newpaper').setup({
-    style = 'dark'
+require("newpaper").setup({
+    style = "dark"
 })
 ```
 
-Available options:
+ #### 💻 Commands
+
+| Command          | Description                            |
+|------------------|----------------------------------------|
+| `:NewpaperLight` | Change style to light mode(by default) |
+| `:NewpaperDark`  | Change style to dark mode              |
+
+##### Available options:
 
 | Option             | Default    | Description                                                  |
-| -------------------| ---------- | ------------------------------------------------------------ |
-| style              | `'light'`  | The theme comes in two styles:`'dark'`, `'light'` |
+|--------------------|------------|--------------------------------------------------------------|
+| style              | `"light"`  | The theme comes in two styles:`"dark"`, `"light"` |
 | editor_better_view | `true`     | Make some interface like menu, title of editor and plugins menu bold and italic |
-| contrast_sidebar   | `false`    | Make sidebars menus like nvim–tree different foreground and background |
-| sidebars           | `{}`       | Set a contrast background on sidebar-like windows. For example: `{"qf", "vista_kind", "terminal", "packer"}` |
+| terminal           | `"contrast"` | Make `:terminal` window in different styles. Value:`"contrast"`, `"inverse"`, `"inverse_transparent"` |
+| sidebars_contrast  | `{}`       | Set a contrast background on sidebar-like windows. For example: `{ "NvimTree", "qf", "vista_kind", "terminal", "packer" }` |
 | contrast_float     | `true`     | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope | `true`     | Make Telescope have a different foreground and background |
 | operators_bold     | `true`     | Make booleans, escape characters, operators, `=`, `*`, delimiter like `<>/` bold |
-| keywords           | `'bold'`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
-| tags               | `'bold'`   | Make HTML tagg bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
-| tex_major          | `'bold'`   | Make only major tex word like`\documentclass`, `\section`, ... bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
-| tex_operators_bold | `'true'`   | Make tex operators bold |
-| tex_keywords       | `'NONE'`   | Make other tex keywords bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
-| tex_zone           | `'italic'` | Make some tex `...Zone...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
-| tex_arg            | `'italic'` | Make some tex `...Arg...` bold, italic or NONE. Value: `'bold'`, `'italic'`, `'bold,italic'`, `'NONE'`. |
-| error_highlight    | `'undercurl'` | Make spell or `tex`-files errors hightlighting with background, undercurl, both or NONE. Value: `'bg'`, `'undercurl'`, `'both'`, `'NONE'`.  |
+| keywords           | `"bold"`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tags               | `"bold"`   | Make HTML tagg bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tex_major          | `"bold"`   | Make only major tex word like`\documentclass`, `\section`, ... bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tex_operators_bold | `"true"`   | Make tex operators bold |
+| tex_keywords       | `"NONE"`   | Make other tex keywords bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tex_zone           | `"italic"` | Make some tex `...Zone...` bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tex_arg            | `"italic"` | Make some tex `...Arg...` bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| error_highlight    | `"undercurl"` | Make spell or `tex`-files errors hightlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`.  |
 | italic_strings     | `true`     | Make strings italic |
 | italic_comments    | `true`     | Make comments italic |
 | italic_functions   | `false`    | Make function calls and names italic |
@@ -159,27 +181,29 @@ Available options:
 | colors             | `{}`       | Override the default colors and use your own. Also owerride lualine colors if you have same name for more good view |
 | custom_highlights  | `{}`       | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold       | `true`     | When true, section headers in the lualine theme will be bold |
-| lualine_style      | `'light'`  | Set different style from main theme:`'dark'`, `'light'` |
+| lualine_style      | `"light"`  | Set different style from main theme:`"dark"`, `"light"` |
 
 ##### Colorscheme default setings:
 
 ```lua
 -- Default settings
-require('newpaper').setup({
-    style               = 'light',
+require("newpaper").setup({
+    style               = "light",
     editor_better_view  = true,
     contrast_sidebar    = false,
-    sidebars            = {},
+    terminal            = "contrast",
+    sidebars_contrast   = {},
     contrast_float      = true,
     contrast_telescope  = true,
     operators_bold      = true,
-    keywords            = 'bold',
-    tags                = 'bold',
-    tex_major           = 'bold',
+    keywords            = "bold",
+    tags                = "bold",
+    tex_major           = "bold",
     tex_operators_bold  = true,
-    tex_keywords        = 'NONE',
-    tex_zone            = 'italic',
-    tex_arg             = 'italic',
+    tex_keywords        = "NONE",
+    tex_zone            = "italic",
+    tex_arg             = "italic",
+    error_highlight     = "undercurl",
     italic_strings      = true,
     italic_comments     = true,
     italic_functions    = false,
@@ -191,7 +215,7 @@ require('newpaper').setup({
     colors              = {},
     custom_highlights   = {},
     lualine_bold        = true,
-    lualine_style       = 'light'
+    lualine_style       = "light"
 })
 ```
 
@@ -199,17 +223,17 @@ require('newpaper').setup({
 
 ```lua
 -- Example config in lua with global variables
-vim.g.newpaper_style    = 'dark'
-vim.g.newpaper_keywords = 'italic'
+vim.g.newpaper_style    = "dark"
+vim.g.newpaper_keywords = "italic"
 vim.g.newpaper_borders  = false
 vim.g.newpaper_colors   = { teal = "#0000FF" }
 vim.g.newpaper_custom_highlights = {
     Float     = { fg = vim.g.newpaper_colors.teal },
     Number    = { fg = "#00FF00" },
     rubyClass = { fg = "#00FFF0" },
-    Comment   = { fg = "#FF0000", style = 'italic,underline' }
+    Comment   = { fg = "#FF0000", style = "italic,underline" }
 }   
-require('newpaper').setup()
+require("newpaper").setup()
 
 -- OR better with user configuration
 local colors = { teal = "#0000FF" } -- use one color for many groups
@@ -217,11 +241,11 @@ local custom_highlights = {
           Float     = { fg = colors.teal }, -- prefer override by name
           Number    = { fg = "#00FF00" },   -- but hex colos also good
           rubyClass = { fg = "#00FFF0" },
-          Comment   = { fg = "#FF0000", style = 'italic,underline' },
+          Comment   = { fg = "#FF0000", style = "italic,underline" },
       }
-require('newpaper').setup({
-    style    = 'dark',
-    keywords = 'italic',
+require("newpaper").setup({
+    style    = "dark",
+    keywords = "italic",
     -- ...
     colors              = colors,
     custom_highlights   = custom_highlights,
@@ -232,14 +256,15 @@ require('newpaper').setup({
 ```vim
 " init.vim
 lua << EOF 
-    require('newpaper').setup({
-        style    = 'dark',
-        keywords = 'italic',
+    require("newpaper").setup({
+        style    = "dark",
+        keywords = "italic",
         borders  = false,
         colors   = { black = "#000000", bg = "#0F111A" }
     })
 EOF
 ```
+
 ##### ⚠️`guicursor` customizing:
 
 ```lua
@@ -249,7 +274,7 @@ EOF
     Cursor       = { fg = newpaper.bg, bg = newpaper.cursor },     -- Character under the cursor
     nCursor      = { fg = newpaper.bg, bg = newpaper.teal },       -- Normal mode
     vCursor      = { fg = newpaper.bg, bg = newpaper.purple },     -- Visual mode
-    veCursor     = { fg = newpaper.bg, bg = newpaper.darkpurple }, -- Visual mode with 'selection' "exclusive" (same as 'v', if not specified)
+    veCursor     = { fg = newpaper.bg, bg = newpaper.darkpurple }, -- Visual mode with "selection" "exclusive" (same as "v", if not specified)
     oCursor      = { fg = newpaper.bg, bg = newpaper.navy },       -- Operator-pending mode
     iCursor      = { fg = newpaper.bg, bg = newpaper.green },      -- Insert mode
     rCursor      = { fg = newpaper.bg, bg = newpaper.magenta },    -- Replace mode
@@ -274,7 +299,7 @@ For more information see in `:h guicursor`
 To enable the `newpaper` theme for `Lualine`, simply specify it in your lualine settings:
 
 ```lua
-require('lualine').setup {
+require("lualine").setup {
     options = {
         -- ... your lualine config
     }
@@ -291,12 +316,12 @@ You can temporally use just only lualine theme with any others colorschemes. It 
 -- Set bold style
 vim.g.newpaper_lualine_bold = true
 -- If you want to enable style like in main colorscheme no need to set style of lualine
-vim.g.newpaper_lualine_style = 'light'
+vim.g.newpaper_lualine_style = "light"
 -- Also you can predefine colors
-vim.g.newpaper_colors        = {teal = '#008080'}
+vim.g.newpaper_colors        = {teal = "#008080"}
 
 -- disable main theme
--- require('newpaper').setup()
+-- require("newpaper").setup()
 
 -- enable other colorscheme
 -- ...
@@ -393,12 +418,15 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [x] Lua
     - [x] TOML
     - [x] YAML
+    - [x] Markdown
+        - [x] Pandoc
     - [ ] LaTeX
     - [ ] HTML
-    - [ ] Markdown
     - [ ] Python
     - [ ] COBOL
+
 - [ ] Add plugins screenshots:
+    - [x] todo-comments.nvim
     - [ ] LSP Diagnostics
     - [ ] Lsp Saga
     - [ ] nvim-cmp
@@ -407,20 +435,20 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     - [ ] Nvim-Tree.lua
     - [ ] WhichKey.nvim
     - [ ] packer.nvim
-    - [x] todo-comments.nvim
 
 - [ ] Add wide syntax highlight:
-    - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-    - [ ] Markdown
+    - [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
     - [x] Ruby
+    - [x] Lua
+    - [x] TOML
+    - [x] YAML
+    - [x] Jinja
+    - [x] Markdown
+        - [x] Pandoc
     - [ ] COBOL
     - [ ] Python
     - [ ] Rust
-    - [x] Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
     - [ ] HTML
-    - [x] Lua with [vim-lua](https://github.com/tbastos/vim-lua)
-    - [x] TOML with [vim-toml](https://github.com/cespare/vim-toml)
-    - [x] YAML
 
 - [ ] Add plugins support:
     - [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)

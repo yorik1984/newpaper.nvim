@@ -1,13 +1,12 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local tomlSyn  = {}
-    tomlSyn.colors = require("newpaper.colors").setup(config)
-    tomlSyn.style  = require("newpaper.style").setup_style(config)
+    tomlSyn.colors = configColors
+    tomlSyn.style  = configStyle
     local newpaper = tomlSyn.colors
     local style    = tomlSyn.style
 

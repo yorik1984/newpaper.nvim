@@ -1,13 +1,12 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local rubySyn  = {}
-    rubySyn.colors = require("newpaper.colors").setup(config)
-    rubySyn.style  = require("newpaper.style").setup_style(config)
+    rubySyn.colors = configColors
+    rubySyn.style  = configStyle
     local newpaper = rubySyn.colors
     local style    = rubySyn.style
 
@@ -33,7 +32,7 @@ function M.setup(config)
             rubyTSKeywordOperator = { fg = newpaper.boolean, style = style.o_style },
             rubyTSLabel           = { fg = newpaper.darkengreen },
             rubyTSType            = { fg = newpaper.teal, style = style.k_style },
-            rubyTSVariableBuiltin = { fg = newpaper.maroon },
+            rubyTSVariableBuiltin = { fg = newpaper.maroon, style = style.v_style },
             rubyTSError           = { style = style.undercurl },
 
         }
@@ -81,7 +80,7 @@ function M.setup(config)
 
             -- rubyBeginEnd                   Statement
             -- rubyEval                       Statement
-            rubyPseudoVariable              = { fg = newpaper.maroon },
+            rubyPseudoVariable              = { fg = newpaper.maroon, style = style.v_style },
             rubyCapitalizedMethod           = { style = style.k_style },
 
             -- rubyComment                    Comment
@@ -143,7 +142,7 @@ function M.setup(config)
         else
             plugins.rubyClassVariable          = { fg = newpaper.darkengreen, style = style.k_style  }
             plugins.rubyGlobalVariable         = { fg = newpaper.green, style = style.k_style }
-            plugins.rubyInstanceVariable       = { fg = newpaper.darkengreen }
+            plugins.rubyInstanceVariable       = { fg = newpaper.darkengreen, style = style.v_style }
             plugins.rubyPredefinedConstant     = { fg = newpaper.ruby_green }
             plugins.rubyPredefinedVariable     = { fg = newpaper.ruby_green, style = style.k_style }
         end

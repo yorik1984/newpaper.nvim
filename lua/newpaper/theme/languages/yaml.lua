@@ -1,13 +1,12 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local yamlSyn  = {}
-    yamlSyn.colors = require("newpaper.colors").setup(config)
-    yamlSyn.style  = require("newpaper.style").setup_style(config)
+    yamlSyn.colors = configColors
+    yamlSyn.style  = configStyle
     local newpaper = yamlSyn.colors
     local style    = yamlSyn.style
 

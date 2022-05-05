@@ -1,13 +1,12 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local luaSyn   = {}
-    luaSyn.colors  = require("newpaper.colors").setup(config)
-    luaSyn.style   = require("newpaper.style").setup_style(config)
+    luaSyn.colors  = configColors
+    luaSyn.style   = configStyle
     local newpaper = luaSyn.colors
     local style    = luaSyn.style
 
@@ -37,12 +36,15 @@ function M.setup(config)
         local treesitter = {
 
             luaTSField           = { fg = newpaper.fg },
-            luaTSVariable        = { fg = newpaper.darkengreen },
+            luaTSVariable        = { fg = newpaper.darkengreen, style = style.v_style },
+            luaTSVariableBuiltin = { fg = newpaper.ocean, style = style.v_style },
             luaTSFuncBuiltin     = { fg = newpaper.redorange },
             luaTSLabel           = { fg = newpaper.magenta },
-            luaTSPunctBracket    = { fg = newpaper.lua_navy },
-            luaTSOperator        = { fg = newpaper.lua_navy, style = style.o_style },
-            luaTSKeywordOperator = { fg = newpaper.tag_navy, style = style.o_style },
+            luaTSPunctBracket    = { fg = newpaper.tag_navy },
+            luaTSConstructor     = { fg = newpaper.lua_blue,    style = style.k_style },
+            luaTSOperator        = { fg = newpaper.lua_navy,    style = style.o_style },
+            luaTSKeywordOperator = { fg = newpaper.tag_navy,    style = style.o_style },
+            luaTSKeywordReturn   = { fg = newpaper.tex_keyword, style = style.o_style },
         }
 
         return treesitter
@@ -58,7 +60,7 @@ function M.setup(config)
             luaParens           = { fg = newpaper.lua_navy },
             luaBraces           = { fg = newpaper.blue },
             luaBrackets         = { fg = newpaper.lua_navy, style = style.o_style },
-            luaBuiltIn          = { fg = newpaper.olive },
+            luaBuiltIn          = { fg = newpaper.ocean, style = style.v_style },
             -- luaComment          Comment
             -- luaCommentLongTag   luaCommentLong
             -- luaCommentLong      luaComment

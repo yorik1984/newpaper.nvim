@@ -1,13 +1,12 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local jinjaSyn  = {}
-    jinjaSyn.colors = require("newpaper.colors").setup(config)
-    jinjaSyn.style  = require("newpaper.style").setup_style(config)
+    jinjaSyn.colors = configColors
+    jinjaSyn.style  = configStyle
     local newpaper  = jinjaSyn.colors
     local style     = jinjaSyn.style
 
