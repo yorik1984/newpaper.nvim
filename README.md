@@ -408,7 +408,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [vimtex](https://github.com/lervag/vimtex)
 + [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 + [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
-+ [vim-shoot](https://github.com/JMcKiern/vim-shoot) - generated HTML version of highlighting 
++ [vim-shoot](https://github.com/JMcKiern/vim-shoot) - generate HTML version of highlighting 
 + [toml](https://github.com/toml-lang/toml) - spec and code preview example
 + [yaml](https://github.com/yaml/yaml-spec) - spec and code preview example
 

@@ -146,6 +146,7 @@ function M.setup(config, configColors, configStyle)
             Warnings         = { fg = newpaper.magenta },
             WildMenu         = { fg = newpaper.wildmenu_fg, bg = newpaper.wildmenu_bg, style = style.b_bold }, -- current match in 'wildmenu' completion
             WinSeparator     = { fg = newpaper.bg, bg = newpaper.none }, -- separators between window splits
+            VertSplit        = { link = "WinSeparator" },
             healthError      = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg },
             healthSuccess    = { fg = newpaper.hint_fg },
             healthWarning    = { fg = newpaper.warn_fg },
@@ -775,10 +776,10 @@ function M.setup(config, configColors, configStyle)
 
             -- Trouble --------------------------------------------------------
             TroubleCount                  = { fg = newpaper.orange, bg = newpaper.none, style = style.b_bold },
-            TroubleNormal                 = { fg = newpaper.fg, bg = newpaper.bg },
+            TroubleNormal                 = { fg = newpaper.sb_fg, bg = newpaper.sb_bg },
             TroubleText                   = { fg = newpaper.fg, bg = newpaper.none },
-            TroubleSource                 = { link = "TroubleNormal" },
-            TroubleCode                   = { link = "TroubleNormal" },
+            TroubleSource                 = { fg = newpaper.sb_fg, bg = newpaper.none },
+            TroubleCode                   = { fg = newpaper.sb_fg, bg = newpaper.none },
             TroubleLocation               = { fg = newpaper.teal, bg = newpaper.none },
             TroubleTextInformation        = { fg = newpaper.info_fg, bg = newpaper.none },
             TroubleTextError              = { fg = newpaper.error_fg, bg = newpaper.none },
