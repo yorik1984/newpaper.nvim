@@ -815,15 +815,22 @@ function M.setup(config, configColors, configStyle)
             WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
             WhichKeyValue                 = { fg = newpaper.darkgrey },
 
-            -- Devicon --------------------------------------------------------
-            DevIconRb                     = { fg = newpaper.ruby_red },
-            DevIconErb                    = { fg = newpaper.ruby_red },
-            DevIconRs                     = { fg = newpaper.rust_green },
-            DevIconPy                     = { fg = newpaper.python_blue },
-            DevIconPyc                    = { fg = newpaper.python_blue },
-            DevIconPyd                    = { fg = newpaper.python_blue },
-            DevIconPyo                    = { fg = newpaper.python_blue },
         }
+
+        -- Devicon ------------------------------------------------------------
+        local devIcons = {
+            Rb  = { fg = newpaper.ruby_red },
+            Erb = { fg = newpaper.ruby_red },
+            Rs  = { fg = newpaper.rust_green },
+            Py  = { fg = newpaper.python_blue },
+            Pyc = { fg = newpaper.python_blue },
+            Pyd = { fg = newpaper.python_blue },
+            Pyo = { fg = newpaper.python_blue },
+        }
+        for key, value in pairs(devIcons) do
+            plugins["DevIcon" .. key] = value
+        end
+
         return plugins
 
         -- stylua: ignore end
