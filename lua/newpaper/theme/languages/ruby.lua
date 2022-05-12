@@ -31,7 +31,7 @@ function M.setup(configColors, configStyle)
             rubyTSInclude         = { fg = newpaper.ruby_red },
             rubyTSKeywordOperator = { fg = newpaper.boolean, style = style.o_style },
             rubyTSLabel           = { fg = newpaper.darkengreen },
-            rubyTSType            = { fg = newpaper.teal, style = style.k_style },
+            rubyTSType            = { fg = newpaper.ocean, style = style.k_style },
             rubyTSVariableBuiltin = { fg = newpaper.maroon, style = style.v_style },
             rubyTSError           = { style = style.undercurl },
 
@@ -55,7 +55,7 @@ function M.setup(configColors, configStyle)
             rubyAttribute                  = { fg = newpaper.magenta },
             rubyMacro                      = { fg = newpaper.magenta, style = style.k_style },
             -- rubyMethodName                 rubyFunction
-            -- rubyFunction                   Function
+            rubyFunction                   = { fg = newpaper.navy },
             -- rubyConditional                Conditional
             -- rubyConditionalModifier        rubyConditional
             rubyExceptionHandler           = { fg = newpaper.ruby_red, style = style.k_style },
@@ -71,9 +71,9 @@ function M.setup(configColors, configStyle)
             -- rubyBoolean                    Boolean
             rubyException                  = { fg = newpaper.ruby_red,  style = style.k_style },
 
-            rubyConstant                   = { fg = newpaper.teal,      style = style.k_style },
+            rubyConstant                   = { fg = newpaper.ocean,     style = style.k_style },
             rubyClassName                  = { fg = newpaper.ruby_navy, style = style.k_style },
-            rubyModuleName                 = { fg = newpaper.ocean,     style = style.k_style },
+            rubyModuleName                 = { fg = newpaper.teal,     style = style.k_style },
             rubySymbol                     = { fg = newpaper.darkyellow },
             -- rubyKeyword                    Keyword
 

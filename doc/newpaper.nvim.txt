@@ -61,7 +61,7 @@ FEATURES                                                *newpaper.nvim-features*
         - symbols-outline.nvim
         - nvim-notify
         - headlines.nvim
-
+        - vim-rbs
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.
