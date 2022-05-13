@@ -513,7 +513,42 @@ function M.setup(configColors, configStyle)
             texTikzEnvBgn    = { fg = newpaper.tex_tikz_purple },
 
             -- todonotes.vim --------------------------------------------------
-            texTodoOpt = { fg = newpaper.todo_warn }
+            texTodoOpt = { fg = newpaper.todo_warn },
+
+            -- vimtex own highlights
+
+            VimtexImapsArrow          = { fg = newpaper.tex_math, style = style.b_bold },
+            VimtexImapsLhs            = { fg = newpaper.tex_keyword },
+            VimtexImapsRhs            = { fg = newpaper.tex_string },
+            VimtexImapsWrapper        = { fg = newpaper.tex_math },
+            VimtexInfo                = { fg = newpaper.hint_fg, style = style.b_bold },
+            VimtexInfoTitle           = { fg = newpaper.tex_keyword, style = style.b_bold },
+            VimtexInfoKey             = { fg = newpaper.ocean },
+            VimtexInfoValue           = { fg = newpaper.tex_string, style = style.s_style },
+            -- VimtexInfoOther        ,
+            VimtexMsg                 = { fg = newpaper.info_fg },
+            VimtexSuccess             = { fg = newpaper.tex_math, style = style.b_bold },
+            -- VimtexTocHelp          helpVim,
+            VimtexTocHelpKey          = { fg = newpaper.tex_blue,    style = style.b_bold },
+            VimtexTocHelpLayerOn      = { fg = newpaper.tex_keyword, style = style.b_bold },
+            -- VimtexTocHelpLayerOff  Comment,
+            VimtexTocHelpKeySeparator = { fg = newpaper.tex_orange },
+            -- VimtexTocTodo          Todo,
+            -- VimtexTocNum           Number,
+            VimtexTocSec0             = { link = "texPartArgTitle" },
+            VimtexTocSec1             = { fg = newpaper.tex_part_title },
+            VimtexTocSec2             = { fg = newpaper.fg },
+            VimtexTocSec3             = { fg = newpaper.fg, style= style.s_style },
+            VimtexTocSec4             = { fg = newpaper.tex_verb },
+            -- VimtexTocHotkey        Comment,
+            VimtexTocLabelsSecs       = { fg = newpaper.tex_aqua, style= style.tex_m_style },
+            VimtexTocLabelsEq         = { fg = newpaper.tex_math_delim },
+            VimtexTocLabelsFig        = { fg = newpaper.tex_aqua },
+            VimtexTocLabelsTab        = { fg = newpaper.tex_darkorange },
+            VimtexTocIncl             = { fg = newpaper.tex_maroon },
+            VimtexTocInclPath         = { fg = newpaper.tex_navy },
+            VimtexWarning             = { fg = newpaper.warn_fg, style = style.b_bold },
+            -- VimtexError            ErrorMsg,
         }
 
         return plugins
