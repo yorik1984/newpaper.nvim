@@ -161,7 +161,6 @@ function M.setup(config)
         -- HTML
         tag_navy             = "#0044AA",
     }
-
     if config.style == "light" then
         -- Default fg and bg
         newpaper.fg = newpaper.black

@@ -11,21 +11,15 @@ function M.setup(configColors, configStyle)
     local style    = rubySyn.style
 
     rubySyn.loadSyntax = function ()
-
         local syntax = {
-
             -- Basic ruby groups
             -- NOTE: basic groups init in plugins part. See below
-
         }
-
         return syntax
     end
 
     rubySyn.loadTreeSitter = function ()
-
         local treesitter = {
-
             rubyTSConstBuiltin    = { fg = newpaper.maroon },
             rubyTSException       = { fg = newpaper.ruby_red, style = style.k_style },
             rubyTSInclude         = { fg = newpaper.ruby_red },
@@ -34,19 +28,15 @@ function M.setup(configColors, configStyle)
             rubyTSType            = { fg = newpaper.ocean, style = style.k_style },
             rubyTSVariableBuiltin = { fg = newpaper.maroon, style = style.v_style },
             rubyTSError           = { style = style.undercurl },
-
         }
-
         return treesitter
     end
 
     rubySyn.loadPlugins = function()
 
         local plugins = {
-
             -- vim-ruby
             -- NOTE: groups from basic syntax include this
-
             rubyClass                      = { fg = newpaper.ruby_magenta, style = style.k_style },
             rubyModule                     = { fg = newpaper.ruby_purple,  style = style.k_style },
             rubyExceptionHandler2          = { fg = newpaper.ruby_red,     style = style.k_style },
@@ -130,9 +120,7 @@ function M.setup(configColors, configStyle)
 
             -- eruby
             erubyDelimiter = { fg = newpaper.ruby_red },
-
         }
-
         if vim.g.ruby_no_identifiers == 1 then
             plugins.rubyClassVariable          = { fg = newpaper.fg }
             plugins.rubyGlobalVariable         = { fg = newpaper.fg }
@@ -146,7 +134,6 @@ function M.setup(configColors, configStyle)
             plugins.rubyPredefinedConstant     = { fg = newpaper.ruby_green }
             plugins.rubyPredefinedVariable     = { fg = newpaper.ruby_green, style = style.k_style }
         end
-
         if vim.g.ruby_operators == 1 then
             plugins.rubyOperator               = { fg = newpaper.navy, style = style.o_style }
             -- rubyDefinedOperator               rubyOperator
@@ -169,7 +156,6 @@ function M.setup(configColors, configStyle)
             plugins.rubyAssignmentOperator     = { fg = newpaper.fg }
             plugins.rubyEqualityOperator       = { fg = newpaper.fg }
         end
-
         if vim.g.ruby_pseudo_operators == 1 then
             plugins.rubyPseudoOperator = { fg = newpaper.orange }
             -- rubyDotOperator                rubyPseudoOperator
@@ -184,7 +170,6 @@ function M.setup(configColors, configStyle)
             plugins.rubyPseudoOperator = { fg = newpaper.fg }
         end
         return plugins
-
     end
 
     -- stylua: ignore end

@@ -10,13 +10,8 @@ function M.setup(configColors, configStyle)
     local newpaper = tomlSyn.colors
     local style    = tomlSyn.style
 
-
     tomlSyn.loadSyntax = function ()
-
-        -- Toml highlight groups
-
         local syntax = {
-
             tomlEscape        = { fg = newpaper.magenta },
             tomlLineEscape    = { fg = newpaper.maroon, style = style.o_style },
             -- tomlString     String
@@ -33,18 +28,12 @@ function M.setup(configColors, configStyle)
             tomlDotInKey      = { fg = newpaper.orange },
             -- tomlTodo       Todo
             -- tomlComment    Comment
-
         }
-
         return syntax
     end
 
     tomlSyn.loadTreeSitter = function ()
-
-        -- Toml treeSitter highlight syntax groups
-
         local treesitter = {
-
             -- tomlTSString
             -- tomlTSBoolean
             -- tomlTSComment
@@ -56,20 +45,13 @@ function M.setup(configColors, configStyle)
             -- tomlTSPunctDelimiter
             tomlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
             tomlTSProperty       = { fg = newpaper.darkengreen, style = style.f_style },
-
         }
-
         return treesitter
     end
 
     tomlSyn.loadPlugins = function()
-
-        -- Toml special plugins highlight groups
-
         local plugins = {}
-
         return plugins
-
     end
 
     -- stylua: ignore end

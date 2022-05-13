@@ -11,11 +11,7 @@ function M.setup(configColors, configStyle)
     local style        = markdownSyn.style
 
     markdownSyn.loadSyntax = function ()
-
-        -- Markdown syntax highlight groups
-
         local syntax = {
-
             markdownH1Delimiter         = { fg = newpaper.tex_part_title },
             markdownH2Delimiter         = { fg = newpaper.tex_navy },
             markdownH3Delimiter         = { fg = newpaper.keyword },
@@ -64,22 +60,16 @@ function M.setup(configColors, configStyle)
             -- markdownError                 Error
 
             -- rmd syntax
-
             rmdInlineDelim              = { fg = newpaper.orange },
             rmdCodeDelim                = { fg = newpaper.regexp_blue },
             rmdYamlBlockDelim           = { fg = newpaper.orange },
             rmdYamlFieldTtl             = { fg = newpaper.orange },
         }
-
         return syntax
     end
 
-            markdownSyn.loadTreeSitter = function ()
-
-        -- Markdown treeSitter highlight syntax groups
-
+    markdownSyn.loadTreeSitter = function ()
         local treesitter = {
-
             markdownTSTitle          = { fg = newpaper.keyword, style = style.k_style },
             markdownTSEmphasis       = { fg = newpaper.fg,      style = style.italic },
             markdownTSStrong         = { fg = newpaper.fg,      style = style.bold },
@@ -91,18 +81,12 @@ function M.setup(configColors, configStyle)
             markdownTSPunctDelimiter = { fg = newpaper.orange },
             markdownTSNone           = { fg = newpaper.fg },
         }
-
         return treesitter
     end
 
     markdownSyn.loadPlugins = function()
-
-        -- Markdown special plugins highlight groups
-
         local plugins = {
-
             -- [n]vim-markdown
-
             -- mkdString        String
             mkdCode          = { fg = newpaper.string },
             mkdCodeDelimiter = { fg = newpaper.regexp_blue },
@@ -123,8 +107,7 @@ function M.setup(configColors, configStyle)
             mkdLinkTitle     = { fg = newpaper.regexp_blue },
             mkdDelimiter     = { fg = newpaper.orange },
 
-            -- vim-pandoc
-
+            -- vim-pandoc -----------------------------------------------------
             -- pandocOperator                       Operator
             pandocTitleBlock                     = { fg = newpaper.comment,  style = style.c_style },
             pandocTitleBlockTitle                = { fg = newpaper.comment,  style = style.comment_title },
@@ -225,7 +208,6 @@ function M.setup(configColors, configStyle)
             -- pandocNewLine                        Error
             -- pandocHRule                          Delimiter
         }
-
         return plugins
     end
 

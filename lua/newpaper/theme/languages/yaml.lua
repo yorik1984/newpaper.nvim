@@ -11,11 +11,7 @@ function M.setup(configColors, configStyle)
     local style    = yamlSyn.style
 
     yamlSyn.loadSyntax = function ()
-
-        -- yaml highlight groups
-
         local syntax = {
-
             -- yamlTodo                     Todo
             -- yamlComment                  Comment
 
@@ -61,18 +57,12 @@ function M.setup(configColors, configStyle)
             -- yamlInteger                  Number
             -- yamlFloat                    Float
             yamlTimestamp                = { fg = newpaper.maroon },
-
         }
-
         return syntax
     end
 
     yamlSyn.loadTreeSitter = function ()
-
-        -- yaml treeSitter highlight syntax groups
-
         local treesitter = {
-
             -- yamlTSBoolean
             -- yamlTSNumber
             -- yamlTSComment
@@ -86,18 +76,12 @@ function M.setup(configColors, configStyle)
             yamlTSString         = { fg = newpaper.string,   style = style.s_style },
             yamlTSField          = { fg = newpaper.ocean,    style = style.f_style },
             yamlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
-
         }
-
         return treesitter
     end
 
     yamlSyn.loadPlugins = function()
-
-        -- yaml special plugins highlight groups
-
         local plugins = {}
-
         return plugins
     end
 

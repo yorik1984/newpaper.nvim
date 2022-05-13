@@ -11,9 +11,7 @@ function M.setup(configColors, configStyle)
     local style    = luaSyn.style
 
     luaSyn.loadSyntax = function ()
-
         local syntax = {
-
             -- Basic lua groups
             -- NOTE: some basic groups init in plugins part. See below
 
@@ -25,16 +23,12 @@ function M.setup(configColors, configStyle)
             -- luaBraceError   Error
             -- luaSpecial      SpecialChar
             luaFunc         = { fg = newpaper.lua_navy },
-
         }
-
         return syntax
     end
 
     luaSyn.loadTreeSitter = function ()
-
         local treesitter = {
-
             luaTSField           = { fg = newpaper.fg },
             luaTSVariable        = { fg = newpaper.darkengreen, style = style.v_style },
             luaTSVariableBuiltin = { fg = newpaper.ocean, style = style.v_style },
@@ -46,17 +40,13 @@ function M.setup(configColors, configStyle)
             luaTSKeywordOperator = { fg = newpaper.tag_navy,    style = style.o_style },
             luaTSKeywordReturn   = { fg = newpaper.tex_keyword, style = style.o_style },
         }
-
         return treesitter
     end
 
     luaSyn.loadPlugins = function()
-
         local plugins = {
-
             -- vim-lua
             -- NOTE: Some groups from basic syntax include this
-
             luaParens           = { fg = newpaper.lua_navy },
             luaBraces           = { fg = newpaper.blue },
             luaBrackets         = { fg = newpaper.lua_navy, style = style.o_style },
@@ -99,7 +89,6 @@ function M.setup(configColors, configStyle)
             -- luaStringSpecial    SpecialChar
             -- luaErrHand          Exception
         }
-
         return plugins
     end
 

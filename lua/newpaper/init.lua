@@ -27,7 +27,6 @@ local function setup(userConfig)
         elseif config.style == "dark" then
             vim.o.background = "dark"
         end
-
         vim.g.newpaper_colors = config.colors
         vim.g.newpaper_lualine_bold = config.lualine_bold
         if userConfig.lualine_style then
@@ -39,11 +38,9 @@ local function setup(userConfig)
         if vim.g.newpaper_colors == nil then
             vim.g.newpaper_colors = config.colors
         end
-
         if vim.g.newpaper_lualine_bold == nil then
             vim.g.newpaper_lualine_bold = config.lualine_bold
         end
-
         if vim.g.newpaper_lualine_style == nil then
             vim.g.newpaper_lualine_style = config.lualine_style
         end
@@ -54,15 +51,12 @@ local function setup(userConfig)
     local configStyle  = require("newpaper.style").setup_style(configApply)
 
     util.load(theme.setup(configApply, configColors, configStyle))
-
     for key, _ in pairs(langSyn) do
         util.loadSyntax(langSyn[key].setup(configColors, configStyle))
     end
-
     for key, _ in pairs(plugSyn) do
         util.loadPluginSyntax(plugSyn[key].setup(configColors, configStyle))
     end
-
     util.loadCustomSyntax(configApply)
 end
 

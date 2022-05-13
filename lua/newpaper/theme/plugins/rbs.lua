@@ -11,11 +11,8 @@ function M.setup(configColors, configStyle)
     local style    = rbsSyn.style
 
     rbsSyn.loadPlugins = function()
-
         local plugins = {
-
             -- vim-rbs
-
             rbsDefine                    = { fg = newpaper.keyword,  style = style.k_style },
             rbsClassNameDefinition       = { fg = newpaper.ruby_navy, style = style.k_style },
             -- rbsDelimiter                 Delimiter
@@ -78,9 +75,7 @@ function M.setup(configColors, configStyle)
             rbsType                      = { fg = newpaper.nephritis, style = style.v_style },
             rbsTypeOperator              = { fg = newpaper.tag_navy,  style = style.o_style },
             -- rbsOptionalTypeOperator      rbsTypeOperator
-
         }
-
         return plugins
     end
 

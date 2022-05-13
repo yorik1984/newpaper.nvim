@@ -11,14 +11,8 @@ function M.setup(config)
     local newpaper     = languageSyn.colors
     local style        = languageSyn.style
 
-
     languageSyn.loadSyntax = function ()
-
-        -- Language syntax highlight groups
-
         local syntax = {
-
-
 
         }
 
@@ -26,12 +20,7 @@ function M.setup(config)
     end
 
     languageSyn.loadTreeSitter = function ()
-
-        -- Language treeSitter highlight syntax groups
-
         local treesitter = {
-
-
 
         }
 
@@ -39,13 +28,8 @@ function M.setup(config)
     end
 
     languageSyn.loadPlugins = function()
-
-        -- Language special plugins highlight groups
-
         local plugins = {
-
             -- Plugin
-
         }
 
         return plugins

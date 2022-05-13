@@ -11,12 +11,9 @@ function M.setup(configColors, configStyle)
     local style    = tex.style
 
     tex.loadSyntax = function ()
-
         local syntax = {
-
             -- Basic tex groups
             -- NOTE:some basic groups init in Vimtex part. See below
-
             texCursor         = { fg = newpaper.bg, bg = newpaper.tex_aqua },
             texBadMath        = { bg = newpaper.tex_math_error, style = style.error },
             texMathDelimBad   = { bg = newpaper.tex_math_delim_error, style = style.error },
@@ -80,18 +77,12 @@ function M.setup(configColors, configStyle)
             bibType           = { fg = newpaper.tex_keyword, style = style.tex_m_style },
             bibMath           = { fg = newpaper.tex_math },
             bibKey            = { fg = newpaper.tex_darkorange }
-
         }
-
         return syntax
     end
 
     tex.loadTreeSitter = function ()
-
         local treesitter = {
-
-            -- Latex
-
             latexTSType            = { fg = newpaper.tex_blue, style = style.tex_k_style },
             latexTSTitle           = { fg = newpaper.tex_part_title, style = style.tex_m_style },
             latexTSMath            = { fg = newpaper.tex_math },
@@ -125,16 +116,12 @@ function M.setup(configColors, configStyle)
             bibtexTSString         = { fg = newpaper.tex_teal },
             bibtexTSField          = { fg = newpaper.tex_blue },
             bibtexTSNumber         = { fg = newpaper.tex_pink }
-
         }
-
         return treesitter
     end
 
     tex.loadPlugins = function()
-
         local plugins = {
-
             -- Vimtex groups
             -- NOTE:Some groups from tex basic syntax include this
 
@@ -515,8 +502,7 @@ function M.setup(configColors, configStyle)
             -- todonotes.vim --------------------------------------------------
             texTodoOpt = { fg = newpaper.todo_warn },
 
-            -- vimtex own highlights
-
+            -- vimtex own highlights ------------------------------------------
             VimtexImapsArrow          = { fg = newpaper.tex_math, style = style.b_bold },
             VimtexImapsLhs            = { fg = newpaper.tex_keyword },
             VimtexImapsRhs            = { fg = newpaper.tex_string },
@@ -550,7 +536,6 @@ function M.setup(configColors, configStyle)
             VimtexWarning             = { fg = newpaper.warn_fg, style = style.b_bold },
             -- VimtexError            ErrorMsg,
         }
-
         return plugins
     end
 

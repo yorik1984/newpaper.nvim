@@ -48,7 +48,6 @@ end
 
 function M.autocmds(config)
     local group = vim.api.nvim_create_augroup("newpaper", {})
-
     vim.api.nvim_create_autocmd({ "ColorScheme" }, {
         group = group,
         pattern = { "*" },
@@ -56,7 +55,6 @@ function M.autocmds(config)
             require("newpaper.util").onColorScheme()
         end,
     })
-
     vim.api.nvim_create_autocmd({ "TermOpen" }, {
         group = group,
         pattern = { "*" },
@@ -66,7 +64,6 @@ function M.autocmds(config)
             .. "CursorLine:CursorLineTerm"
             .. " signcolumn=no nocursorline nonumber",
     })
-
     for _, sidebar in ipairs(config.sidebars_contrast) do
         if sidebar ~= "NvimTree" then
             vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -86,10 +83,8 @@ function M.load(theme)
     if vim.g.colors_name then
         vim.cmd("hi clear")
     end
-
     vim.o.termguicolors = true
     vim.g.colors_name = "newpaper"
-
     -- Load plugins and lsp async
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function()
@@ -97,17 +92,13 @@ function M.load(theme)
         M.syntax(theme.loadPlugins())
         M.syntax(theme.loadLSP())
         theme.loadTerminal()
-
         async:close()
     end))
-
     -- load base theme
     M.syntax(theme.loadEditor())
     M.syntax(theme.loadSyntax())
     M.syntax(theme.loadTreeSitter())
-
     async:send()
-
     M.autocmds(theme.config)
 end
 
@@ -115,14 +106,11 @@ function M.loadSyntax(synTheme)
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function()
         M.syntax(synTheme.loadPlugins())
-
         async:close()
     end))
-
     -- Load other syntax
     M.syntax(synTheme.loadSyntax())
     M.syntax(synTheme.loadTreeSitter())
-
     async:send()
 end
 
@@ -130,10 +118,8 @@ function M.loadPluginSyntax(synTheme)
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function()
         M.syntax(synTheme.loadPlugins())
-
         async:close()
     end))
-
     async:send()
 end
 
@@ -141,10 +127,8 @@ function M.loadCustomSyntax(config)
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function()
         M.syntax(config.custom_highlights)
-
         async:close()
     end))
-
     async:send()
 end
 

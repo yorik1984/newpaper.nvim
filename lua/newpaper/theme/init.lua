@@ -12,9 +12,6 @@ function M.setup(config, configColors, configStyle)
     local style    = theme.style
 
     theme.loadSyntax = function ()
-
-        -- Syntax highlight groups
-
         local syntax = {
             StorageClass   = { fg = newpaper.ocean, style = style.k_style }, -- static, register, volatile, etc.
             Structure      = { fg = newpaper.darkpurple, style = style.k_style }, -- struct, union, enum, etc.
@@ -56,17 +53,12 @@ function M.setup(config, configColors, configStyle)
             helpCommand        = { fg = newpaper.teal },
             helpExample        = { fg = newpaper.string, style = style.s_style },
             helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
-            helpURL            = { fg = newpaper.string, style = style.s_underline }
-
+            helpURL            = { fg = newpaper.string, style = style.s_underline },
         }
-
         return syntax
     end
 
     theme.loadEditor = function ()
-
-        -- Editor highlights
-
         local editor = {
             Comment          = { fg = newpaper.comment, style = style.c_style },
             ColorColumn      = { bg = newpaper.colorcolumn }, --  used for the columns set with 'colorcolumn'
@@ -161,10 +153,9 @@ function M.setup(config, configColors, configStyle)
             TermCursorTerm   = { fg = newpaper.term_bg, bg = newpaper.term_fg },
             TermCursorNCTerm = { fg = newpaper.term_bg, bg = newpaper.term_fg },
             CursorLineTerm   = { bg = newpaper.none, cbg = newpaper.none },
-
         }
 
-        -- Options:
+        -- Options ------------------------------------------------------------
 
         -- Remove window split borders
         if config.borders then
@@ -180,7 +171,6 @@ function M.setup(config, configColors, configStyle)
     end
 
     theme.loadTerminal = function ()
-
         vim.g.terminal_color_0  = newpaper.black
         vim.g.terminal_color_1  = newpaper.maroon
         vim.g.terminal_color_2  = newpaper.darkgreen
@@ -197,13 +187,9 @@ function M.setup(config, configColors, configStyle)
         vim.g.terminal_color_13 = newpaper.magenta
         vim.g.terminal_color_14 = newpaper.aqua
         vim.g.terminal_color_15 = newpaper.white
-
     end
 
     theme.loadTreeSitter = function ()
-
-        -- TreeSitter highlight groups
-
         local treesitter = {
             TSAnnotation           = { fg = newpaper.red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
             TSConditional          = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
@@ -258,17 +244,12 @@ function M.setup(config, configColors, configStyle)
             TSString               = { fg = newpaper.string, style = style.s_style }, -- For strings.
             TSTitle                = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
             TSLiteral              = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
-            TSURI                  = { fg = newpaper.link, style = style.underline } -- Any URI like a link or email.
-
+            TSURI                  = { fg = newpaper.link, style = style.underline }, -- Any URI like a link or email.
         }
-
         return treesitter
     end
 
     theme.loadLSP = function ()
-
-        -- Lsp highlight groups
-
         local lsp = {
             LspDiagnosticsDefaultError           = { fg = newpaper.error_fg }, -- "Error" diagnostic virtual text
             LspDiagnosticsSignError              = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg }, -- "Error" diagnostic signs in sign column
@@ -332,11 +313,7 @@ function M.setup(config, configColors, configStyle)
     end
 
     theme.loadPlugins = function()
-
-        -- Plugins highlight groups
-
        local plugins = {
-
             -- BufferLine -----------------------------------------------------
             BufferLineInfoDiagnosticSelected    = { fg = newpaper.info_fg,  style = style.b_bold_i },
             BufferLineHintDiagnosticSelected    = { fg = newpaper.hint_fg,  style = style.b_bold_i },
@@ -814,7 +791,6 @@ function M.setup(config, configColors, configStyle)
             WhichKeyDesc                  = { fg = newpaper.teal },
             WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
             WhichKeyValue                 = { fg = newpaper.darkgrey },
-
         }
 
         -- Devicon ------------------------------------------------------------

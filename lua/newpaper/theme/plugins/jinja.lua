@@ -11,11 +11,8 @@ function M.setup(configColors, configStyle)
     local style     = jinjaSyn.style
 
     jinjaSyn.loadPlugins = function()
-
         local plugins = {
-
             -- Vim-Jinja2-Syntax
-
             jinjaPunctuation  = { fg = newpaper.blueviolet },
             jinjaAttribute    = { fg = newpaper.darkengreen },
             jinjaFunction     = { fg = newpaper.navy, style = style.f_style },
@@ -37,9 +34,7 @@ function M.setup(configColors, configStyle)
             jinjaString       = { fg = newpaper.string, style = style.s_style },
             jinjaNumber       = { fg = newpaper.red },
             -- jinjaComment      Comment
-
         }
-
         return plugins
     end
 

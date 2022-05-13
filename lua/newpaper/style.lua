@@ -5,7 +5,6 @@ function M.setup_style(config)
     -- stylua: ignore start
 
     local style = {
-
         -- default styles
         none          = "NONE",
         bold          = "bold",
@@ -39,7 +38,6 @@ function M.setup_style(config)
         tex_o_style = "NONE", -- operators style
 
     }
-
     -- Combine style
     style.bold_i      = style.bold .. "," .. style.italic
     style.bold_u      = style.bold .. "," .. style.underline

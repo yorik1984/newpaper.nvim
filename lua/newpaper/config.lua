@@ -1,9 +1,6 @@
 local check = require("newpaper.check")
 
--- shim vim for kitty and other generators
 vim = vim or { g = {}, o = {} }
-
--- stylua: ignore start
 
 local opt = function(key, default)
     key = "newpaper_" .. key
@@ -17,6 +14,8 @@ local opt = function(key, default)
         end
     end
 end
+
+-- stylua: ignore start
 
 local term_opt = {
     contrast            = "contrast",
@@ -66,7 +65,6 @@ local applyConfiguration = function(userConfig)
     for key, help in pairs(error_help) do
         check.notTableError(key, userConfig[key], help)
     end
-
     for key, value in pairs(userConfig) do
         if value ~= nil then
             check.keyExistsError(userConfig, config, "Option", "See :help newpaper.nvim-configuration")

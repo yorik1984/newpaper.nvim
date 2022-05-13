@@ -11,11 +11,7 @@ function M.setup(configColors, configStyle)
     local style    = htmlSyn.style
 
     htmlSyn.loadSyntax = function ()
-        -- TODO: Add syntax
-        -- HTML syntax highlight groups
-
         local syntax = {
-
             htmlH1                      = { fg = newpaper.tex_part_title, style = style.tag_style },
             htmlH2                      = { fg = newpaper.tex_navy,       style = style.tag_style },
             htmlH3                      = { fg = newpaper.keyword,        style = style.tag_style },
@@ -81,16 +77,11 @@ function M.setup(configColors, configStyle)
             -- htmlCssStyleComment        Comment
             -- htmlCssDefinition          Special
         }
-
         return syntax
     end
 
     htmlSyn.loadTreeSitter = function ()
-
-        -- HTML treeSitter highlight syntax groups
-
         local treesitter = {
-
             htmlTSTag                   = { fg = newpaper.tag_navy, style = style.k_style },
             htmlTSTagDelimiter          = { fg = newpaper.tag_navy },
             htmlTSOperator              = { fg = newpaper.tag_navy, style = style.o_style },
@@ -99,22 +90,12 @@ function M.setup(configColors, configStyle)
             htmlTSString                = { fg = newpaper.string,   style = style.s_style },
             htmlTSTitle                 = { fg = newpaper.title,    style = style.k_style },
             htmlTSText                  = { fg = newpaper.fg },
-
         }
-
         return treesitter
     end
 
     htmlSyn.loadPlugins = function()
-
-        -- HTML special plugins highlight groups
-
-        local plugins = {
-
-            -- Plugin
-
-        }
-
+        local plugins = {}
         return plugins
     end
 
