@@ -15,9 +15,9 @@ function M.setup(configColors, configStyle)
             -- Basic tex groups
             -- NOTE:some basic groups init in Vimtex part. See below
             texCursor         = { fg = newpaper.bg, bg = newpaper.tex_aqua },
-            texBadMath        = { bg = newpaper.tex_math_error, style = style.error },
-            texMathDelimBad   = { bg = newpaper.tex_math_delim_error, style = style.error },
-            texOnlyMath       = { bg = newpaper.tex_only_math_error, style = style.error },
+            texBadMath        = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
+            texMathDelimBad   = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_keyword, style = style.error },
+            texOnlyMath       = { bg = newpaper.tex_only_math_error, sp = newpaper.tex_olive, style = style.error },
             texCite           = { fg = newpaper.tex_lightviolet },
             texDefCmd         = { fg = newpaper.tex_magenta },
             texDefName        = { fg = newpaper.tex_blue },
@@ -208,12 +208,11 @@ function M.setup(configColors, configStyle)
             texCmdItem            = { fg = newpaper.tex_string }, -- \item
 
             -- Inherited groups -----------------------------------------------
-            texGroupError         = { bg = newpaper.tex_group_error, style = style.error },
-            texMinipageOptHeight  = { fg = newpaper.tex_red },
+            texGroupError         = { bg = newpaper.tex_group_error, sp = newpaper.tex_aqua, style = style.error }, texMinipageOptHeight  = { fg = newpaper.tex_red },
             texMinipageOptIPos    = { fg = newpaper.tex_redorange },
             texMinipageOptPos     = { fg = newpaper.tex_redorange },
-            texMathError          = { bg = newpaper.tex_math_error, style = style.error },
-            texMathErrorDelim     = { bg = newpaper.tex_math_delim_error, style = style.error },
+            texMathError          = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
+            texMathErrorDelim     = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_keyword, style = style.error },
             texParboxOptHeight    = { fg = newpaper.tex_red },
             texParboxOptIPos      = { fg = newpaper.tex_orange },
             texParboxOptPos       = { fg = newpaper.tex_orange },

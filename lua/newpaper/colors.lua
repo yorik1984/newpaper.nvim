@@ -66,9 +66,9 @@ function M.setup(config)
 
         -- Spell
         spellbad             = "#FFF4FF",
-        spellcap             = "#FFFFDF",
-        spellrare            = "#E3FFD5",
-        spelllocal           = "#E7E7FF",
+        spellcap             = "#E7E7FF",
+        spellrare            = "#FFFFDF",
+        spelllocal           = "#E3FFD5",
 
         -- Error message
         error_fg             = "#D75F66",
@@ -131,9 +131,8 @@ function M.setup(config)
         tex_SI_yellow        = "#C88900",
 
         tex_group_error      = "#EBF2FF",
-        tex_minipage_error   = "#FBE5CC",
         tex_math_error       = "#CCE5CC",
-        tex_math_delim_error = "#E0DBEA",
+        tex_math_delim_error = "#FBE5CC",
         tex_parbox_opt_error = "#F0D4D1",
         tex_only_math_error  = "#EAE8D5",
 
@@ -226,10 +225,10 @@ function M.setup(config)
         newpaper.diffchange_bg        = "#005F5F"
 
         -- Spell
-        newpaper.spellbad             = "#5F0000"
-        newpaper.spellcap             = "#5F005F"
-        newpaper.spellrare            = "#005F00"
-        newpaper.spelllocal           = "#00005F"
+        newpaper.spellbad             = "#330000"
+        newpaper.spellcap             = "#000042"
+        newpaper.spellrare            = "#332C00"
+        newpaper.spelllocal           = "#003B00"
 
         -- Error message
         newpaper.error_fg             = "#DB4B4B"
@@ -292,9 +291,8 @@ function M.setup(config)
         newpaper.tex_SI_yellow        = "#DBB158"
 
         newpaper.tex_group_error      = "#39404C"
-        newpaper.tex_minipage_error   = "#310012"
         newpaper.tex_math_error       = "#003300"
-        newpaper.tex_math_delim_error = "#34264C"
+        newpaper.tex_math_delim_error = "#341C00"
         newpaper.tex_parbox_opt_error = "#462600"
         newpaper.tex_only_math_error  = "#3D3912"
 
@@ -443,7 +441,6 @@ function M.setup(config)
         newpaper.spelllocal           = newpaper.none
         newpaper.spellrare            = newpaper.none
         newpaper.tex_group_error      = newpaper.none
-        newpaper.tex_minipage_error   = newpaper.none
         newpaper.tex_math_error       = newpaper.none
         newpaper.tex_math_delim_error = newpaper.none
         newpaper.tex_parbox_opt_error = newpaper.none

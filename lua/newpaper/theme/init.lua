@@ -112,10 +112,10 @@ function M.setup(config, configColors, configStyle)
             SignColumn       = { fg = newpaper.fg, bg = newpaper.linenumber_bg },
             SignColumnSB     = { fg = newpaper.sb_fg, bg = newpaper.none },
             SpecialKey       = { fg = newpaper.disabled }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-            SpellBad         = { bg = newpaper.spellbad, style = style.error }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-            SpellCap         = { bg = newpaper.spellcap, style = style.error }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-            SpellLocal       = { bg = newpaper.spelllocal, style = style.error }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-            SpellRare        = { bg = newpaper.spellrare, style = style.error }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+            SpellBad         = { bg = newpaper.spellbad,   sp = newpaper.red,           style = style.error }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+            SpellCap         = { bg = newpaper.spellcap,   sp = newpaper.tag_navy,      style = style.error }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+            SpellLocal       = { bg = newpaper.spelllocal, sp = newpaper.regexp_green,  style = style.error }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+            SpellRare        = { bg = newpaper.spellrare,  sp = newpaper.regexp_orange, style = style.error }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
             StatusLine       = { fg = newpaper.teal, bg = newpaper.silver }, -- status line of current window
             StatusLineNC     = { fg = newpaper.lightgrey, bg = newpaper.silver }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             StatusLineTerm   = { fg = newpaper.fg, bg = newpaper.silver }, -- status line of current terminal window
