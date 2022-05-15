@@ -1,15 +1,16 @@
+---
+lang: en-US
+---
+
 <div align="center">
 <p align="center">
     <img width="302" height="302" src="https://user-images.githubusercontent.com/1559192/163754338-7f265280-9a6c-4c39-932a-858b75746d0a.png">
 </p>
 
-
 # 🎨 newpaper.nvim
 
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
-
----
 
 </div>
 
@@ -417,46 +418,46 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 
 ## 🛠️ TODO:
 
-+ [x] Add dark style
+* [X] Add dark style
 
-+ [ ] Add syntax screenshots, HTML-preview:
-    + [x] Ruby 
-    + [x] Lua
-    + [x] TOML
-    + [x] YAML
-    + [x] Markdown
-        + [x] Pandoc
-    + [ ] LaTeX
-    + [ ] HTML
-    + [ ] Python
-    + [ ] COBOL
+* [ ] Add syntax screenshots, HTML-preview:
+    * [X] Ruby 
+    * [X] Lua
+    * [X] TOML
+    * [X] YAML
+    * [X] Markdown
+        * [X] Pandoc
+    * [ ] LaTeX
+    * [ ] HTML
+    * [ ] Python
+    * [ ] COBOL
 
-+ [ ] Add plugins screenshots:
-    + [x] todo-comments.nvim
-    + [ ] LSP Diagnostics
-    + [ ] Lsp Saga
-    + [ ] nvim-cmp
-    + [ ] Trouble
-    + [ ] Telescope.nvim
-    + [ ] Nvim-Tree.lua
-    + [ ] WhichKey.nvim
-    + [ ] packer.nvim
+* [ ] Add plugins screenshots:
+    * [X] todo-comments.nvim
+    * [ ] LSP Diagnostics
+    * [ ] Lsp Saga
+    * [ ] nvim-cmp
+    * [ ] Trouble
+    * [ ] Telescope.nvim
+    * [ ] Nvim-Tree.lua
+    * [ ] WhichKey.nvim
+    * [ ] packer.nvim
 
-+ [ ] Add wide syntax highlight:
-    + [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
-    + [x] Ruby
-    + [x] Lua
-    + [x] TOML
-    + [x] YAML
-    + [x] Jinja
-    + [x] Markdown
-        + [x] Pandoc
-    + [x] HTML
-    + [ ] COBOL
-    + [ ] Python
-    + [ ] Rust
+* [ ] Add wide syntax highlight:
+    * [X] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
+    * [X] Ruby
+    * [X] Lua
+    * [X] TOML
+    * [X] YAML
+    * [X] Jinja
+    * [X] Markdown
+        * [X] Pandoc
+    * [X] HTML
+    * [ ] COBOL
+    * [ ] Python
+    * [ ] Rust
 
-+ [ ] Add plugins support:
-    + [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
-    + [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)
-    + [ ] [i3config.vim](https://github.com/mboughaba/i3config.vim)
+* [ ] Add plugins support:
+    * [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
+    * [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)
+    * [ ] [i3config.vim](https://github.com/mboughaba/i3config.vim)
