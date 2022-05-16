@@ -17,9 +17,9 @@ lang: en-US
 ### W.I.P.🚧
 
 ### ℹ️ Info
-A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for NeoVim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and Markdown syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
+A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and Markdown syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
 
-Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
+Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to Neovim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
 <div align="center">
 
@@ -33,9 +33,9 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
     + Light
     + Dark
 + Lualine theme
-+ Ability to change background on sidebar-like windows like Nvim-Tree, Packer, terminal etc.
++ Ability to change background on sidebar like windows like NvimTree, packer, terminal etc.
 + Asynchronous highlight loading which makes the theme extremely fast
-+ Added functions for live theme switching without the need to restart NeoVim
++ Added functions for live theme switching without the need to restart Neovim
 
 #### Special syntax highlight:
 
@@ -169,28 +169,28 @@ require("newpaper").setup({
 | contrast_float     | `true`     | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope | `true`     | Make Telescope have a different foreground and background |
 | operators_bold     | `true`     | Make booleans, escape characters, operators, `=`, `*`, delimiter like `<>/` bold |
-| keywords           | `"bold"`   | Make keywords like if, for, while etc. bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
-| tags               | `"bold"`   | Make HTML tag bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
-| tex_major          | `"bold"`   | Make only major tex word like`\documentclass`, `\section`, ... bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| keywords           | `"bold"`   | Make keywords like if, for, while etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tags               | `"bold"`   | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tex_major          | `"bold"`   | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
 | tex_operators_bold | `"true"`   | Make tex operators bold |
 | tex_keywords       | `"NONE"`   | Make other tex keywords bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
-| tex_zone           | `"italic"` | Make some tex `...Zone...` bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
-| tex_arg            | `"italic"` | Make some tex `...Arg...` bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
-| error_highlight    | `"undercurl"` | Make spell or `tex`-files errors hightlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`.  |
+| tex_zone           | `"italic"` | Make some tex `...Zone...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| tex_arg            | `"italic"` | Make some tex `...Arg...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. |
+| error_highlight    | `"undercurl"` | Make spell or `tex`-files errors highlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`.  |
 | italic_strings     | `true`     | Make strings italic |
 | italic_comments    | `true`     | Make comments italic |
 | italic_functions   | `false`    | Make function calls and names italic |
 | italic_variables   | `false`    | Make variable names and identifiers italic |
 | borders            | `true`     | Enable the border between vertically split windows visible |
-| disable_background | `false`    | Disable the setting of background color so that NeoVim can use your terminal background |
+| disable_background | `false`    | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`     | Enable background color for LSP virtual text |
 | hide_eob           | `false`    | Hide the end of buffer lines (`~`) |
-| colors             | `{}`       | Override the default colors and use your own. Also owerride lualine colors if you have same name for more good view |
+| colors             | `{}`       | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view |
 | custom_highlights  | `{}`       | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold       | `true`     | When true, section headers in the lualine theme will be bold |
 | lualine_style      | `"light"`  | Set different style from main theme:`"dark"`, `"light"` |
 
-##### Colorscheme default setings:
+##### Colorscheme default settings:
 
 ```lua
 -- Default settings
@@ -222,7 +222,7 @@ require("newpaper").setup({
     colors              = {},
     custom_highlights   = {},
     lualine_bold        = true,
-    lualine_style       = "light"
+    lualine_style       = "light",
 })
 ```
 
@@ -292,7 +292,7 @@ EOF
     TermCursor   = { fg = newpaper.bg, bg = newpaper.cursor },     -- active cursor in terminal
     TermCursorNC = { fg = newpaper.bg, bg = newpaper.lightgrey },  -- inactive cursor in terminal
 }
--- This colors cam be using or overiding by own colors. See above.
+-- This colors cam be using or overriding by own colors. See above.
 
 -- init.lua example
 vim.o.guicursor = "n:block-nCursor,v:block-vCursor,i:ver25-iCursor,r:hor25-rCursor,c:ver25-cCursor"
@@ -317,7 +317,7 @@ Lualine theme name and style automatically using from main theme
 
 #### ⚙️ Hint
 
-You can temporally use just only lualine theme with any others colorschemes. It also depends on `vim.o.background` 
+You can temporally use just only lualine theme with any others colorschemes. It also depends on `vim.o.background`. 
 
 ```lua
 -- Set bold style
@@ -439,7 +439,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     * [ ] nvim-cmp
     * [ ] Trouble
     * [ ] Telescope.nvim
-    * [ ] Nvim-Tree.lua
+    * [ ] NvimTree.lua
     * [ ] WhichKey.nvim
     * [ ] packer.nvim
 
