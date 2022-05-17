@@ -92,6 +92,9 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [nvim-notify](https://github.com/rcarriga/nvim-notify)
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 + [vim-rbs](https://github.com/jlcrochet/vim-rbs)
++ [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
+
+
 
 ### ⚡️ Requirements
 

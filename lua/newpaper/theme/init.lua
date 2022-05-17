@@ -695,7 +695,7 @@ function M.setup(config, configColors, configStyle)
             TelescopePreviewCharDev         = { fg = newpaper.magenta },
             -- TelescopePreviewDirectory       Directory
             TelescopePreviewBlock           = { fg = newpaper.red },
-            TelescopePreviewLink            = { fg = newpaper.link, style = style.underline },
+            TelescopePreviewLink            = { fg = newpaper.link, style = style.link },
             TelescopePreviewSocket          = { fg = newpaper.darkyellow },
             -- TelescopePreviewNormal          Normal
             TelescopePreviewRead            = { fg = newpaper.darkgreen },
@@ -715,15 +715,15 @@ function M.setup(config, configColors, configStyle)
             TelescopeResultsConstant        = { fg = newpaper.darkengreen },
             TelescopeResultsField           = { fg = newpaper.ocean },
             TelescopeResultsFunction        = { fg = newpaper.navy },
-            TelescopeResultsMethod          = { fg = newpaper.navy },
-            TelescopeResultsOperator        = { fg = newpaper.darkyellow },
+            TelescopeResultsMethod          = { fg = newpaper.darkpurple },
+            TelescopeResultsOperator        = { fg = newpaper.tag_navy, style.o_style },
             TelescopeResultsStruct          = { fg = newpaper.keyword },
             TelescopeResultsVariable        = { fg = newpaper.darkengreen },
             TelescopeResultsLineNr          = { fg = newpaper.linenumber_fg },
             TelescopeResultsIdentifier      = { fg = newpaper.teal },
             TelescopeResultsNumber          = { fg = newpaper.red },
             TelescopeResultsComment         = { fg = newpaper.comment, style = style.c_style },
-            TelescopeResultsSpecialComment  = { fg = newpaper.comment },
+            TelescopeResultsSpecialComment  = { fg = newpaper.comment, style = style.comment_title },
 
             -- Used for git status Results highlighting
             TelescopeResultsDiffChange      = { fg = newpaper.git_modified },

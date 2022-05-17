@@ -15,8 +15,9 @@ local langSyn = {
 }
 
 local plugSyn = {
-    jinja = require("newpaper.theme.plugins.jinja"),
-    rbs   = require("newpaper.theme.plugins.rbs"),
+    jinja      = require("newpaper.theme.plugins.jinja"),
+    rbs        = require("newpaper.theme.plugins.rbs"),
+    cheatsheet = require("newpaper.theme.plugins.cheatsheet"),
 }
 
 local function setup(userConfig)

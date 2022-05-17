@@ -62,6 +62,7 @@ FEATURES                                                *newpaper.nvim-features*
         - nvim-notify
         - headlines.nvim
         - vim-rbs
+        - cheatsheet.nvim
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.

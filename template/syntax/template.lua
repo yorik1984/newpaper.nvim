@@ -1,17 +1,16 @@
 local M = {}
 
-function M.setup(config)
-    config = config or require("newpaper.config").config
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
-    local languageSyn  = {}
-    languageSyn.colors = require("newpaper.colors").setup(config)
-    languageSyn.style  = require("newpaper.style").setup_style(config)
-    local newpaper     = languageSyn.colors
-    local style        = languageSyn.style
+    local langSyn  = {}
+    langSyn.colors = configColors
+    langSyn.style  = configStyle
+    local newpaper = langSyn.colors
+    local style    = langSyn.style
 
-    languageSyn.loadSyntax = function ()
+    langSyn.loadSyntax = function ()
         local syntax = {
 
         }
@@ -19,7 +18,7 @@ function M.setup(config)
         return syntax
     end
 
-    languageSyn.loadTreeSitter = function ()
+    langSyn.loadTreeSitter = function ()
         local treesitter = {
 
         }
@@ -27,7 +26,7 @@ function M.setup(config)
         return treesitter
     end
 
-    languageSyn.loadPlugins = function()
+    langSyn.loadPlugins = function()
         local plugins = {
             -- Plugin
         }
@@ -37,7 +36,7 @@ function M.setup(config)
 
     -- stylua: ignore end
 
-    return languageSyn
+    return langSyn
 end
 
 return M
