@@ -1,23 +1,22 @@
-local util = require("newpaper.util")
-local theme = require("newpaper.theme")
+local util         = require("newpaper.util")
+local theme        = require("newpaper.theme")
 local configModule = require("newpaper.config")
-local config = configModule.config
+local config       = configModule.config
 
-local langSyn = {
-    texSyn  = require("newpaper.theme.languages.tex"),
-    vimSyn  = require("newpaper.theme.languages.vim"),
-    mkdSyn  = require("newpaper.theme.languages.markdown"),
-    htmlSyn = require("newpaper.theme.languages.html"),
-    rubySyn = require("newpaper.theme.languages.ruby"),
-    tomlSyn = require("newpaper.theme.languages.toml"),
-    yamlSyn = require("newpaper.theme.languages.yaml"),
-    luaSyn  = require("newpaper.theme.languages.lua"),
+local filetypes = {
+    "tex",
+    "vim",
+    "markdown",
+    "html",
+    "ruby",
+    "toml",
+    "yaml",
+    "lua",
 }
-
-local plugSyn = {
-    jinja      = require("newpaper.theme.plugins.jinja"),
-    rbs        = require("newpaper.theme.plugins.rbs"),
-    cheatsheet = require("newpaper.theme.plugins.cheatsheet"),
+local plugins = {
+    "jinja",
+    "rbs",
+    "cheatsheet",
 }
 
 local function setup(userConfig)
@@ -52,11 +51,13 @@ local function setup(userConfig)
     local configStyle  = require("newpaper.style").setup_style(configApply)
 
     util.load(theme.setup(configApply, configColors, configStyle))
-    for key, _ in pairs(langSyn) do
-        util.loadSyntax(langSyn[key].setup(configColors, configStyle))
+    for _, value in ipairs(filetypes) do
+        local fileSyn = "newpaper.theme.filetypes." .. value
+        util.loadSyntax(require(fileSyn).setup(configColors, configStyle))
     end
-    for key, _ in pairs(plugSyn) do
-        util.loadPluginSyntax(plugSyn[key].setup(configColors, configStyle))
+    for _, value in ipairs(plugins) do
+        local fileSyn = "newpaper.theme.plugins." .. value
+        util.loadPluginSyntax(require(fileSyn).setup(configColors, configStyle))
     end
     util.loadCustomSyntax(configApply)
 end
