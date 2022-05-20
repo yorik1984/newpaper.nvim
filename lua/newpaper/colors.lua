@@ -342,7 +342,6 @@ function M.setup(config)
     newpaper.disabled            = newpaper.lightlightgrey
     newpaper.contrast            = newpaper.lightlightgrey
     newpaper.active              = newpaper.silver
-    newpaper.border              = newpaper.purple
     newpaper.text                = newpaper.darkgrey
     newpaper.title               = newpaper.fg
     newpaper.variable            = newpaper.fg
@@ -363,6 +362,9 @@ function M.setup(config)
     newpaper.msgarea_fg          = newpaper.fg
     newpaper.msgarea_bg          = newpaper.bg
     newpaper.colorcolumn         = newpaper.silver
+    newpaper.border              = newpaper.purple
+    newpaper.win_border          = newpaper.purple
+    newpaper.eob                 = newpaper.disabled
 
     -- Search
     newpaper.search_bg           = newpaper.yellow
@@ -433,6 +435,23 @@ function M.setup(config)
         newpaper.linenumber_bg   = newpaper.none
         newpaper.git_sign_bg     = newpaper.none
         newpaper.msgarea_bg      = newpaper.none
+    end
+
+    -- Remove window split borders
+    if not config.borders then
+        newpaper.win_border = newpaper.bg
+    end
+
+    -- Set End of Buffer lines (~)
+    if config.hide_eob then
+        newpaper.eob = newpaper.bg
+    end
+
+    if not config.lsp_virtual_text_bg then
+        newpaper.lsp_error_bg = newpaper.none
+        newpaper.warn_bg      = newpaper.none
+        newpaper.info_bg      = newpaper.none
+        newpaper.hint_bg      = newpaper.none
     end
 
     if config.error_highlight ~= "both" and config.error_highlight ~= "bg" then

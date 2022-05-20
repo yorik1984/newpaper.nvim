@@ -50,7 +50,7 @@ local function setup(userConfig)
     local configColors = require("newpaper.colors").setup(configApply)
     local configStyle  = require("newpaper.style").setup_style(configApply)
 
-    util.load(theme.setup(configApply, configColors, configStyle))
+    util.load(configApply, theme.setup(configColors, configStyle))
     for _, value in ipairs(filetypes) do
         local fileSyn = "newpaper.theme.filetypes." .. value
         util.loadSyntax(require(fileSyn).setup(configColors, configStyle))

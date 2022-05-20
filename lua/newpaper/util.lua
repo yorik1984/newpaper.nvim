@@ -61,8 +61,8 @@ function M.autocmds(config)
         command = "setlocal winhighlight=Normal:NormalTerm,"
             .. "SignColumn:SignColumnTerm,LineNr:LineNrTerm,"
             .. "TermCursor:TermCursorTerm,TermCursorNC:TermCursorNCTerm,"
-            .. "CursorLine:CursorLineTerm"
-            .. " signcolumn=no nocursorline nonumber",
+            .. "CursorLine:CursorLineTerm "
+            .. "signcolumn=no nocursorline nonumber",
     })
     for _, sidebar in ipairs(config.sidebars_contrast) do
         if sidebar ~= "NvimTree" then
@@ -70,14 +70,15 @@ function M.autocmds(config)
                 group = group,
                 pattern = { sidebar },
                 command = "setlocal winhighlight=Normal:NormalContrastSB,"
-                    .. "SignColumn:SignColumnSB,LineNr:LineNrSB"
-                    .. " signcolumn=yes:1 nonumber",
+                    .. "SignColumn:SignColumnSB,LineNr:LineNrSB,"
+                    .. "CursorLineSign:CursorLineSignSB "
+                    .. "signcolumn=yes:1 nonumber",
             })
         end
     end
 end
 
-function M.load(theme)
+function M.load(config, theme)
     -- Patch https://github.com/folke/tokyonight.nvim/commit/0ead86afe390603f9bd688103d7a5fc6724a828e
     -- only needed to clear when not the default colorscheme
     if vim.g.colors_name then
@@ -99,7 +100,7 @@ function M.load(theme)
     M.syntax(theme.loadSyntax())
     M.syntax(theme.loadTreeSitter())
     async:send()
-    M.autocmds(theme.config)
+    M.autocmds(config)
 end
 
 function M.loadSyntax(synTheme)

@@ -1,11 +1,10 @@
 local M = {}
 
-function M.setup(config, configColors, configStyle)
+function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
     local theme    = {}
-    theme.config   = config
     theme.colors   = configColors
     theme.style    = configStyle
     local newpaper = theme.colors
@@ -84,7 +83,7 @@ function M.setup(config, configColors, configStyle)
             DiffChange       = { fg = newpaper.text, bg = newpaper.diffchange_bg }, --  diff mode: Changed line
             DiffDelete       = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg }, -- diff mode: Deleted line
             DiffText         = { fg = newpaper.text, bg = newpaper.difftext_bg }, -- diff mode: Changed text within a changed line
-            EndOfBuffer      = { fg = newpaper.disabled, bg = newpaper.none }, -- filler lines (~) after the end of the buffer.
+            EndOfBuffer      = { fg = newpaper.eob, bg = newpaper.none }, -- filler lines (~) after the end of the buffer.
             ErrorMsg         = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- error messages
             FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
             Folded           = { fg = newpaper.folded_fg, bg = newpaper.folded_bg }, -- line used for closed folds
@@ -93,6 +92,7 @@ function M.setup(config, configColors, configStyle)
             Substitute       = { fg = newpaper.search_fg, bg = newpaper.yellow }, -- |:substitute| replacement text highlighting
             LineNr           = { fg = newpaper.linenumber_fg, bg = newpaper.linenumber_bg },-- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
             CursorLineNr     = { fg = newpaper.cursor_nr_fg, bg = newpaper.cursor_nr_bg }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+            CursorLineSign   = { bg = newpaper.linenumber_bg },
             MatchParen       = { bg = newpaper.aqua, style = style.b_bold }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
             ModeMsg          = { fg = newpaper.accent, style = style.b_bold }, -- 'showmode' message (e.g., "-- INSERT -- ")
             MsgArea          = { fg = newpaper.msgarea_fg, bg = newpaper.msgarea_bg }, -- Area for messages and cmdline
@@ -137,7 +137,7 @@ function M.setup(config, configColors, configStyle)
             CommandMode      = { fg = newpaper.orange, style = style.reverse }, -- Command mode message in the cmdline
             Warnings         = { fg = newpaper.magenta },
             WildMenu         = { fg = newpaper.wildmenu_fg, bg = newpaper.wildmenu_bg, style = style.b_bold }, -- current match in 'wildmenu' completion
-            WinSeparator     = { fg = newpaper.bg, bg = newpaper.none }, -- separators between window splits
+            WinSeparator     = { fg = newpaper.win_border, bg = newpaper.none }, -- separators between window splits
             VertSplit        = { link = "WinSeparator" },
             healthError      = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg },
             healthSuccess    = { fg = newpaper.hint_fg },
@@ -153,20 +153,8 @@ function M.setup(config, configColors, configStyle)
             TermCursorTerm   = { fg = newpaper.term_bg, bg = newpaper.term_fg },
             TermCursorNCTerm = { fg = newpaper.term_bg, bg = newpaper.term_fg },
             CursorLineTerm   = { bg = newpaper.none, cbg = newpaper.none },
+            CursorLineSignSB = { bg = newpaper.none },
         }
-
-        -- Options ------------------------------------------------------------
-
-        -- Remove window split borders
-        if config.borders then
-            editor.WinSeparator.fg = newpaper.border
-        end
-
-        -- Set End of Buffer lines (~)
-        if config.hide_eob then
-            editor.EndOfBuffer.fg = newpaper.bg
-        end
-
         return editor
     end
 
@@ -251,26 +239,30 @@ function M.setup(config, configColors, configStyle)
 
     theme.loadLSP = function ()
         local lsp = {
-            LspDiagnosticsDefaultError           = { fg = newpaper.error_fg }, -- "Error" diagnostic virtual text
-            LspDiagnosticsSignError              = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg }, -- "Error" diagnostic signs in sign column
-            LspDiagnosticsFloatingError          = { fg = newpaper.error_fg }, -- "Error" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineError         = { style = style.error, sp = newpaper.error_fg }, -- used to underline "Error" diagnostics.
-            LspDiagnosticsDefaultWarning         = { fg = newpaper.warn_fg }, -- "Warning" diagnostic signs in sign column
-            LspDiagnosticsSignWarning            = { fg = newpaper.warn_fg, bg = newpaper.linenumber_bg }, -- "Warning" diagnostic signs in sign column
-            LspDiagnosticsFloatingWarning        = { fg = newpaper.warn_fg }, -- "Warning" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineWarning       = { style = style.error, sp = newpaper.warn_fg }, -- used to underline "Warning" diagnostics.
-            LspDiagnosticsDefaultInformation     = { fg = newpaper.info_fg }, -- "Information" diagnostic virtual text
-            LspDiagnosticsSignInformation        = { fg = newpaper.info_fg, bg = newpaper.linenumber_bg }, -- "Information" diagnostic signs in sign column
-            LspDiagnosticsFloatingInformation    = { fg = newpaper.info_fg }, -- "Information" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineInformation   = { style = style.error, sp = newpaper.info_fg }, -- used to underline "Information" diagnostics.
-            LspDiagnosticsDefaultHint            = { fg = newpaper.hint_fg }, -- "Hint" diagnostic virtual text
-            LspDiagnosticsSignHint               = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg }, -- "Hint" diagnostic signs in sign column
-            LspDiagnosticsFloatingHint           = { fg = newpaper.hint_fg }, -- "Hint" diagnostic messages in the diagnostics float
-            LspDiagnosticsUnderlineHint          = { style = style.error, sp = newpaper.hint_fg }, -- used to underline  s "    Hint" diagnostics.
+            LspDiagnosticsDefaultError           = { fg = newpaper.error_fg },
+            LspDiagnosticsSignError              = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg },
+            LspDiagnosticsFloatingError          = { fg = newpaper.error_fg },
+            LspDiagnosticsUnderlineError         = { style = style.error, sp = newpaper.error_fg },
+            LspDiagnosticsDefaultWarning         = { fg = newpaper.warn_fg },
+            LspDiagnosticsSignWarning            = { fg = newpaper.warn_fg, bg = newpaper.linenumber_bg },
+            LspDiagnosticsFloatingWarning        = { fg = newpaper.warn_fg },
+            LspDiagnosticsUnderlineWarning       = { style = style.error, sp = newpaper.warn_fg },
+            LspDiagnosticsDefaultInformation     = { fg = newpaper.info_fg },
+            LspDiagnosticsSignInformation        = { fg = newpaper.info_fg, bg = newpaper.linenumber_bg },
+            LspDiagnosticsFloatingInformation    = { fg = newpaper.info_fg },
+            LspDiagnosticsUnderlineInformation   = { style = style.error, sp = newpaper.info_fg },
+            LspDiagnosticsDefaultHint            = { fg = newpaper.hint_fg },
+            LspDiagnosticsSignHint               = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg },
+            LspDiagnosticsFloatingHint           = { fg = newpaper.hint_fg },
+            LspDiagnosticsUnderlineHint          = { style = style.error, sp = newpaper.hint_fg },
             LspCodeLens                          = { fg = newpaper.comment, bg = newpaper.lightsilver },
-            LspReferenceText                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "text" references
-            LspReferenceRead                     = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "read" references
-            LspReferenceWrite                    = { fg = newpaper.accent,  bg = newpaper.highlight }, -- used for highlighting "write" references
+            LspReferenceText                     = { fg = newpaper.accent,  bg = newpaper.highlight },
+            LspReferenceRead                     = { fg = newpaper.accent,  bg = newpaper.highlight },
+            LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg, bg = newpaper.lsp_error_bg },
+            LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg,  bg = newpaper.warn_bg },
+            LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg,  bg = newpaper.info_bg },
+            LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg,  bg = newpaper.hint_bg },
+            LspReferenceWrite                    = { fg = newpaper.accent,  bg = newpaper.highlight },
 
             DiagnosticUnderlineError             = { link = "LspDiagnosticsUnderlineError" },
             DiagnosticFloatingError              = { link = "LspDiagnosticsFloatingError" },
@@ -285,30 +277,16 @@ function M.setup(config, configColors, configStyle)
             DiagnosticFloatingHint               = { link = "LspDiagnosticsFloatingHint" },
             DiagnosticSignHint                   = { link = "LspDiagnosticsSignHint" },
             DiagnosticSignOther                  = { fg = newpaper.magenta },
-
             DiagnosticError                      = { link = "LspDiagnosticsDefaultError" },
             DiagnosticWarn                       = { link = "LspDiagnosticsDefaultWarning" },
             DiagnosticInfo                       = { link = "LspDiagnosticsDefaultInformation" },
             DiagnosticHint                       = { link = "LspDiagnosticsDefaultHint" },
             DiagnosticOther                      = { fg = newpaper.magenta },
-
-            LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg, bg = newpaper.lsp_error_bg },
-            LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg, bg = newpaper.warn_bg },
-            LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg, bg = newpaper.info_bg },
-            LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg, bg = newpaper.hint_bg },
+            DiagnosticVirtualTextError           = { link = "LspDiagnosticsVirtualTextError" },
+            DiagnosticVirtualTextWarn            = { link = "LspDiagnosticsVirtualTextWarning" },
+            DiagnosticVirtualTextInfo            = { link = "LspDiagnosticsVirtualTextInformation" },
+            DiagnosticVirtualTextHint            = { link = "LspDiagnosticsVirtualTextHint" },
         }
-
-        if not config.lsp_virtual_text_bg then
-            lsp.LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg }
-            lsp.LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg }
-            lsp.LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg }
-            lsp.LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg }
-        end
-            lsp.DiagnosticVirtualTextError           = { link = "LspDiagnosticsVirtualTextError" }
-            lsp.DiagnosticVirtualTextWarn            = { link = "LspDiagnosticsVirtualTextWarning" }
-            lsp.DiagnosticVirtualTextInfo            = { link = "LspDiagnosticsVirtualTextInformation" }
-            lsp.DiagnosticVirtualTextHint            = { link = "LspDiagnosticsVirtualTextHint" }
-
         return lsp
     end
 
