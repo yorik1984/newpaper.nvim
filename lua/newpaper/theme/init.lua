@@ -255,14 +255,14 @@ function M.setup(configColors, configStyle)
             LspDiagnosticsSignHint               = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg },
             LspDiagnosticsFloatingHint           = { fg = newpaper.hint_fg },
             LspDiagnosticsUnderlineHint          = { style = style.error, sp = newpaper.hint_fg },
-            LspCodeLens                          = { fg = newpaper.comment, bg = newpaper.lightsilver },
-            LspReferenceText                     = { fg = newpaper.accent,  bg = newpaper.highlight },
-            LspReferenceRead                     = { fg = newpaper.accent,  bg = newpaper.highlight },
+            LspCodeLens                          = { fg = newpaper.comment,  bg = newpaper.lightsilver },
+            LspReferenceText                     = { fg = newpaper.accent,   bg = newpaper.highlight },
+            LspReferenceRead                     = { fg = newpaper.accent,   bg = newpaper.highlight },
             LspDiagnosticsVirtualTextError       = { fg = newpaper.error_fg, bg = newpaper.lsp_error_bg },
             LspDiagnosticsVirtualTextWarning     = { fg = newpaper.warn_fg,  bg = newpaper.warn_bg },
             LspDiagnosticsVirtualTextInformation = { fg = newpaper.info_fg,  bg = newpaper.info_bg },
             LspDiagnosticsVirtualTextHint        = { fg = newpaper.hint_fg,  bg = newpaper.hint_bg },
-            LspReferenceWrite                    = { fg = newpaper.accent,  bg = newpaper.highlight },
+            LspReferenceWrite                    = { fg = newpaper.accent,   bg = newpaper.highlight },
 
             DiagnosticUnderlineError             = { link = "LspDiagnosticsUnderlineError" },
             DiagnosticFloatingError              = { link = "LspDiagnosticsFloatingError" },
@@ -438,7 +438,7 @@ function M.setup(configColors, configStyle)
             DefinitionPreviewTitle        = { fg = newpaper.darkgreen },
             LspSagaLightBulb              = { fg = newpaper.hint_fg },
             LspSagaLightBulbSign          = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg },
-            LspLinesDiagBorder            = { fg = newpaper.border, bg = newpaper.float_bg },
+            LspLinesDiagBorder            = { fg = newpaper.border,  bg = newpaper.float_bg },
 
             -- Lua-dev --------------------------------------------------------
             RedrawDebugNormal             = { fg = newpaper.bg, bg = newpaper.fg },
@@ -480,10 +480,6 @@ function M.setup(configColors, configStyle)
             CmpItemKindEvent              = { fg = newpaper.orange },       -- Event         = ""
             CmpItemKindOperator           = { fg = newpaper.tag_navy },     -- Operator      = ""
             CmpItemKindTypeParameter      = { fg = newpaper.orange },       -- TypeParameter = " "
-
-            -- Nvim-Compe -----------------------------------------------------
-            CompeDocumentation            = { fg = newpaper.text,   bg = newpaper.float_bg },
-            CompeDocumentationBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
 
             -- Neogit ---------------------------------------------------------
             NeogitBranch                  = { fg = newpaper.blue },
@@ -635,80 +631,6 @@ function M.setup(configColors, configStyle)
             --     TypeParameter = { icon = "𝙏",    hl = "TSParameter"}
             -- },
 
-            -- Telescope ------------------------------------------------------
-            -- Sets the highlight for selected items within the picker
-            TelescopeSelection              = { fg = newpaper.telescope_fg, bg = newpaper.aqua },
-            TelescopeSelectionCaret         = { fg = newpaper.purple, style = style.b_bold },
-            TelescopeMultiSelection         = { fg = newpaper.orange },
-
-            -- Normal in the floating windows created by telescope
-            TelescopeNormal                 = { fg = newpaper.telescope_fg, bg = newpaper.telescope_bg },
-            -- TelescopePreviewNormal          TelescopeNormal
-            -- TelescopePromptNormal           TelescopeNormal
-            -- TelescopeResultsNormal          TelescopeNormal
-
-            -- Border highlight groups. Use TelescopeBorder to override the default. Otherwise set them specifically
-            -- TelescopeBorder               TelescopeNormal
-            TelescopePromptBorder           = { fg = newpaper.blue,       bg = newpaper.telescope_bg },
-            TelescopeResultsBorder          = { fg = newpaper.purple, bg = newpaper.telescope_bg },
-            TelescopePreviewBorder          = { fg = newpaper.green,      bg = newpaper.telescope_bg },
-
-            -- Title highlight groups. Use TelescopeTitle to override the default. Otherwise set them specifically
-            -- TelescopeTitle        TelescopeBorder
-            TelescopePromptTitle            = { fg = newpaper.teal,      bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopeResultsTitle           = { fg = newpaper.purple,    bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopePreviewTitle           = { fg = newpaper.darkgreen, bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopePromptCounter          = { fg = newpaper.teal },
-
-            -- Used for highlighting characters that you match.
-            TelescopeMatching               = { fg = newpaper.magenta, style = style.b_bold },
-
-            -- Used for the prompt prefix
-            TelescopePromptPrefix           = { fg = newpaper.teal },
-
-            -- Used for highlighting the matched line inside Previewer
-            -- TelescopePreviewLine            Visual
-            -- TelescopePreviewMatch           Search
-            TelescopePreviewPipe            = { fg = newpaper.nephritis },
-            TelescopePreviewCharDev         = { fg = newpaper.magenta },
-            -- TelescopePreviewDirectory       Directory
-            TelescopePreviewBlock           = { fg = newpaper.red },
-            TelescopePreviewLink            = { fg = newpaper.link, style = style.link },
-            TelescopePreviewSocket          = { fg = newpaper.darkyellow },
-            -- TelescopePreviewNormal          Normal
-            TelescopePreviewRead            = { fg = newpaper.darkgreen },
-            TelescopePreviewWrite           = { fg = newpaper.maroon },
-            TelescopePreviewExecute         = { fg = newpaper.keyword },
-            TelescopePreviewHyphen          = { fg = newpaper.blue },
-            TelescopePreviewSticky          = { fg = newpaper.orange },
-            TelescopePreviewSize            = { fg = newpaper.teal },
-            TelescopePreviewUser            = { fg = newpaper.ocean },
-            TelescopePreviewGroup           = { fg = newpaper.green },
-            TelescopePreviewDate            = { fg = newpaper.string },
-            TelescopePreviewMessage         = { fg = newpaper.string },
-            TelescopePreviewMessageFillchar = { fg = newpaper.string, style = style.b_bold },
-
-            -- Used for Picker specific Results highlighting
-            TelescopeResultsClass           = { fg = newpaper.keyword },
-            TelescopeResultsConstant        = { fg = newpaper.darkengreen },
-            TelescopeResultsField           = { fg = newpaper.ocean },
-            TelescopeResultsFunction        = { fg = newpaper.navy },
-            TelescopeResultsMethod          = { fg = newpaper.darkpurple },
-            TelescopeResultsOperator        = { fg = newpaper.tag_navy, style.o_style },
-            TelescopeResultsStruct          = { fg = newpaper.keyword },
-            TelescopeResultsVariable        = { fg = newpaper.darkengreen },
-            TelescopeResultsLineNr          = { fg = newpaper.linenumber_fg },
-            TelescopeResultsIdentifier      = { fg = newpaper.teal },
-            TelescopeResultsNumber          = { fg = newpaper.red },
-            TelescopeResultsComment         = { fg = newpaper.comment, style = style.c_style },
-            TelescopeResultsSpecialComment  = { fg = newpaper.comment, style = style.comment_title },
-
-            -- Used for git status Results highlighting
-            TelescopeResultsDiffChange      = { fg = newpaper.git_modified },
-            TelescopeResultsDiffAdd         = { fg = newpaper.git_added },
-            TelescopeResultsDiffDelete      = { fg = newpaper.git_removed },
-            -- TelescopeResultsDiffUntracked   NonText
-
             -- Todo-comments --------------------------------------------------
             TodoSignWARN                  = { fg = newpaper.todo_warn,    bg = newpaper.linenumber_bg },
             TodoSignTODO                  = { fg = newpaper.todo_info,    bg = newpaper.linenumber_bg },
@@ -770,21 +692,6 @@ function M.setup(configColors, configStyle)
             WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
             WhichKeyValue                 = { fg = newpaper.darkgrey },
         }
-
-        -- Devicon ------------------------------------------------------------
-        local devIcons = {
-            Rb  = { fg = newpaper.ruby_red },
-            Erb = { fg = newpaper.ruby_red },
-            Rs  = { fg = newpaper.rust_green },
-            Py  = { fg = newpaper.python_blue },
-            Pyc = { fg = newpaper.python_blue },
-            Pyd = { fg = newpaper.python_blue },
-            Pyo = { fg = newpaper.python_blue },
-        }
-        for key, value in pairs(devIcons) do
-            plugins["DevIcon" .. key] = value
-        end
-
         return plugins
 
         -- stylua: ignore end

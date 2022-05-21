@@ -4,22 +4,25 @@ local configModule = require("newpaper.config")
 local config       = configModule.config
 
 local filetypes = {
-    "tex",
-    "vim",
-    "markdown",
     "html",
-    "ruby",
-    "toml",
-    "yaml",
     "lua",
+    "markdown",
+    "ruby",
+    "tex",
+    "toml",
+    "vim",
+    "yaml",
 }
 local plugins = {
+    "cheatsheet",
+    "devicons",
     "jinja",
     "rbs",
-    "cheatsheet",
+    "telescope",
 }
 
 local function setup(userConfig)
+
     if userConfig then
         configModule.applyConfiguration(userConfig)
         if config.style == "light" then
@@ -48,18 +51,27 @@ local function setup(userConfig)
 
     local configApply  = configModule.config
     local configColors = require("newpaper.colors").setup(configApply)
-    local configStyle  = require("newpaper.style").setup_style(configApply)
+    local configStyle  = require("newpaper.style").setupStyle(configApply)
+    local ftypesFolder = "newpaper.theme.filetypes."
+    local plugsFolder  = "newpaper.theme.plugins."
+    local devIcons     = "newpaper.theme.plugins.devicons"
 
     util.load(configApply, theme.setup(configColors, configStyle))
+
     for _, value in ipairs(filetypes) do
-        local fileSyn = "newpaper.theme.filetypes." .. value
+        local fileSyn = ftypesFolder .. value
         util.loadSyntax(require(fileSyn).setup(configColors, configStyle))
     end
+
     for _, value in ipairs(plugins) do
-        local fileSyn = "newpaper.theme.plugins." .. value
+        local fileSyn = plugsFolder .. value
         util.loadPluginSyntax(require(fileSyn).setup(configColors, configStyle))
     end
+
+    util.loadPluginSyntax(require(devIcons).setup(configColors))
+
     util.loadCustomSyntax(configApply)
+
 end
 
 return { setup = setup }

@@ -54,8 +54,8 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
-+ [Lsp Saga](https://github.com/glepnir/lspsaga.nvim) or [tami5/lspsaga.nvim](https://github.com/tami5/lspsaga.nvim)
-+ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) and [nvim-compe](https://github.com/hrsh7th/nvim-compe)
++ [tami5/lspsaga.nvim](https://github.com/tami5/lspsaga.nvim)
++ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 + [Trouble](https://github.com/folke/trouble.nvim)
 + [Git Gutter](https://github.com/airblade/vim-gitgutter)
 + [git-messenger](https://github.com/rhysd/git-messenger.vim)
@@ -83,7 +83,6 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [vim-lua](https://github.com/tbastos/vim-lua)
 + [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- [🖼️](#todo-commentsnvim)
-+ [🖼️](#todo-commentsnvim)
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)
@@ -93,8 +92,6 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 + [vim-rbs](https://github.com/jlcrochet/vim-rbs)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
-
-
 
 ### ⚡️ Requirements
 
@@ -303,7 +300,6 @@ vim.o.guicursor = "n:block-nCursor,v:block-vCursor,i:ver25-iCursor,r:hor25-rCurs
 
 For more information see in `:h guicursor`
 
-
 ## 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
 
 To enable the `newpaper` theme for `Lualine`, simply specify it in your lualine settings:
@@ -422,7 +418,6 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 ## 🛠️ TODO:
 
 * [X] Add dark style
-
 * [ ] Add syntax screenshots, HTML-preview:
     * [X] Ruby 
     * [X] Lua
@@ -434,7 +429,6 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     * [ ] HTML
     * [ ] Python
     * [ ] COBOL
-
 * [ ] Add plugins screenshots:
     * [X] todo-comments.nvim
     * [ ] LSP Diagnostics
@@ -445,7 +439,6 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     * [ ] NvimTree.lua
     * [ ] WhichKey.nvim
     * [ ] packer.nvim
-
 * [ ] Add wide syntax highlight:
     * [X] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
     * [X] Ruby
@@ -459,7 +452,6 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     * [ ] COBOL
     * [ ] Python
     * [ ] Rust
-
 * [ ] Add plugins support:
     * [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
     * [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)

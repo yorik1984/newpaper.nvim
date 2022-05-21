@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup_style(config)
+function M.setupStyle(config)
 
     -- stylua: ignore start
 

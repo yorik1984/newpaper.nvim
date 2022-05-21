@@ -12,7 +12,6 @@ function M.setup(configColors, configStyle)
 
     cheatsheetSyn.loadPlugins = function()
         local plugins = {
-            -- Cheatsheet -----------------------------------------------------
             -- cheatComment         Comment
             -- cheatMetadataComment Comment
             cheatMetadataTag     = { fg = newpaper.maroon },
