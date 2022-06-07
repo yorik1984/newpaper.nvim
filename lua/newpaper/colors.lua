@@ -97,7 +97,7 @@ function M.setup(config)
         tex_magenta          = "#E00050",
         tex_aqua             = "#14A9E2",
         tex_orange           = "#D37300",
-        tex_redorange        = "#F26515",
+        tex_redorange        = "#F3752D",
         tex_darkorange       = "#BA6400",
 
         tex_lightpurple      = "#684D99",
