@@ -40,8 +40,8 @@ function M.setup(configColors, configStyle)
             markdownUrl                 = { fg = newpaper.tex_string },
             markdownUrlTitle            = { fg = newpaper.regexp_blue },
             markdownIdDelimiter         = { fg = newpaper.red },
-            markdownLinkDelimiter       = { fg = newpaper.orange },
-            markdownLinkTextDelimiter   = { fg = newpaper.orange },
+            markdownLinkDelimiter       = { fg = newpaper.tex_redorange },
+            markdownLinkTextDelimiter   = { fg = newpaper.tex_redorange },
             markdownListMarker          = { fg = newpaper.keyword },
             markdownOrderedListMarker   = { fg = newpaper.red },
             markdownUrlDelimiter        = { fg = newpaper.tag_navy },
@@ -108,7 +108,7 @@ function M.setup(configColors, configStyle)
             mkdDelimiter     = { fg = newpaper.orange },
 
             -- vim-pandoc -----------------------------------------------------
-            -- pandocOperator                       Operator
+            pandocOperator                       = { fg = newpaper.tex_redorange },
             pandocTitleBlock                     = { fg = newpaper.comment,  style = style.c_style },
             pandocTitleBlockTitle                = { fg = newpaper.comment,  style = style.comment_title },
             pandocAtxHeader                      = { fg = newpaper.keyword,  style = style.o_style },
