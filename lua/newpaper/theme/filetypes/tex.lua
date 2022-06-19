@@ -289,6 +289,7 @@ function M.setup(configColors, configStyle)
             texTabularChar        = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             texTabularCol         = { fg = newpaper.tex_blue },
             -- texTabularOpt         texEnvOpt
+            texTabularVertline    = { fg = newpaper.tex_math,   style = style.tex_o_style },
             texTheoremEnvOpt      = { fg = newpaper.tex_string, style = style.s_style },
 
             -- no highlighting in syntax files ================================
@@ -327,7 +328,6 @@ function M.setup(configColors, configStyle)
             -- array.vim ------------------------------------------------------
             texTabularCmd        = { fg = newpaper.tex_teal, style = style.tex_k_style },
             -- texTabularCmdOpt     texOpt
-            texTabularVertline   = { fg = newpaper.tex_math, style = style.tex_o_style },
             texTabularPostPre    = { fg = newpaper.tex_math, style = style.tex_o_style },
             -- texTabularMathdelim  texMathDelimZone
 
