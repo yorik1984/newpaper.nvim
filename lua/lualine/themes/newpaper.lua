@@ -35,21 +35,21 @@ newpaper.insert = {
 newpaper.visual = {
     a = { fg = colors.bg,         bg = colors.purple },
     c = { fg = colors.grey,       bg = colors.blueviolet },
-    x = { fg = colors.grey,       bg = colors.blueviolet },
+    x = { fg = colors.grey,       bg = colors.silver },
     y = { fg = colors.grey,       bg = colors.blueviolet },
     z = { fg = colors.bg,         bg = colors.purple },
 }
 newpaper.replace = {
     a = { fg = colors.bg,         bg = colors.magenta },
     c = { fg = colors.grey,       bg = colors.pink },
-    x = { fg = colors.grey,       bg = colors.pink },
+    x = { fg = colors.grey,       bg = colors.silver },
     y = { fg = colors.grey,       bg = colors.pink },
     z = { fg = colors.bg,         bg = colors.magenta },
 }
 newpaper.command = {
     a = { bg = colors.darkorange, fg = colors.bg },
     c = { fg = colors.grey,       bg = colors.lightorange },
-    x = { fg = colors.grey,       bg = colors.lightorange },
+    x = { fg = colors.grey,       bg = colors.silver },
     y = { fg = colors.grey,       bg = colors.lightorange },
     z = { fg = colors.bg,         bg = colors.darkorange },
 }
@@ -57,6 +57,9 @@ newpaper.inactive = {
     a = { fg = colors.lightgrey,  bg = colors.silver },
     b = { fg = colors.lightgrey,  bg = colors.silver },
     c = { fg = colors.lightgrey,  bg = colors.silver },
+    x = { fg = colors.lightgrey,  bg = colors.silver },
+    y = { fg = colors.lightgrey,  bg = colors.silver },
+    z = { fg = colors.lightgrey,  bg = colors.silver },
 }
 
 -- stylua: ignore end
