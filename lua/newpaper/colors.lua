@@ -44,6 +44,7 @@ function M.setup(config)
         redorange            = "#D1301A",
         bluegreen            = "#257D90",
         darkengreen          = "#007F00",
+        aqualight            = "#DFE4EB",
 
         codeblock            = "#DEDEDE",
 
@@ -204,6 +205,7 @@ function M.setup(config)
         newpaper.redorange            = "#FE7967"
         newpaper.bluegreen            = "#66A4B1"
         newpaper.darkengreen          = "#5FAF5F"
+        newpaper.aqualight            = "#2E3032"
 
         newpaper.codeblock            = "#343434"
 
@@ -363,7 +365,7 @@ function M.setup(config)
     newpaper.msgarea_bg          = newpaper.bg
     newpaper.colorcolumn         = newpaper.silver
     newpaper.border              = newpaper.purple
-    newpaper.win_border          = newpaper.purple
+    newpaper.win_border          = newpaper.grey
     newpaper.eob                 = newpaper.disabled
 
     -- Search
@@ -414,7 +416,7 @@ function M.setup(config)
     -- NvimTree
     if table.contains(config.sidebars_contrast, "NvimTree") then
         newpaper.nvimtree_fg     = newpaper.sb_contrast_fg
-        newpaper.nvimtree_bg     = newpaper.sb_contrast_bg
+        newpaper.nvimtree_bg     = newpaper.aqualight
     else
         newpaper.nvimtree_fg     = newpaper.sb_fg
         newpaper.nvimtree_bg     = newpaper.sb_bg
