@@ -63,7 +63,7 @@ function M.setup(configColors, configStyle)
 
             rubyConstant                   = { fg = newpaper.ocean,     style = style.k_style },
             rubyClassName                  = { fg = newpaper.ruby_navy, style = style.k_style },
-            rubyModuleName                 = { fg = newpaper.teal,     style = style.k_style },
+            rubyModuleName                 = { fg = newpaper.ruby_teal,     style = style.k_style },
             rubySymbol                     = { fg = newpaper.darkyellow },
             -- rubyKeyword                    Keyword
 
@@ -140,7 +140,7 @@ function M.setup(configColors, configStyle)
             plugins.rubyEnglishBooleanOperator = { fg = newpaper.boolean, style = style.o_style }
             plugins.rubyTernaryOperator        = { fg = newpaper.keyword, style = style.o_style }
             -- rubyArithmeticOperator            rubyOperator
-            plugins.rubyComparisonOperator     = { fg = newpaper.teal, style = style.o_style }
+            plugins.rubyComparisonOperator     = { fg = newpaper.ruby_teal, style = style.o_style }
             plugins.rubyBitwiseOperator        = { fg = newpaper.redorange, style = style.o_style }
             plugins.rubyBooleanOperator        = { fg = newpaper.boolean,   style = style.o_style }
             -- rubyRangeOperator                 rubyOperator

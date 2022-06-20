@@ -42,7 +42,7 @@ function M.setup(config)
         nephritis            = "#009760",
         darkpurple           = "#5823C7",
         redorange            = "#D1301A",
-        bluegreen            = "#257D90",
+        bluegreen            = "#4C6F81",
         darkengreen          = "#007F00",
         aqualight            = "#DFE4EB",
 
@@ -144,6 +144,7 @@ function M.setup(config)
         ruby_red             = "#CC342D",
         ruby_green           = "#00AF2F",
         ruby_magenta         = "#A626A4",
+        ruby_teal            = "#366071",
 
         -- Lua
         lua_navy             = "#030380",
@@ -172,15 +173,15 @@ function M.setup(config)
         newpaper.black                = "#2B2B2B" -- color00
         newpaper.maroon               = "#CC5555" -- color01
         newpaper.darkgreen            = "#5FAF5F" -- color02
-        newpaper.olive                = "#A4A400" -- color03
+        newpaper.olive                = "#9FAA00" -- color03
         newpaper.navy                 = "#8195E7" -- color04
         newpaper.purple               = "#A274D1" -- color05
-        newpaper.teal                 = "#5F8787" -- color06
+        newpaper.teal                 = "#86A3A3" -- color06
         newpaper.silver               = "#3A3A3A" -- color07
         newpaper.grey                 = "#808080" -- color08
         newpaper.red                  = "#E06C75" -- color09
         newpaper.green                = "#00875F" -- color10
-        newpaper.yellow               = "#AFD700" -- color11
+        newpaper.yellow               = "#C9D05C" -- color11
         newpaper.blue                 = "#5FAFD7" -- color12
         newpaper.magenta              = "#D75FAF" -- color13
         newpaper.aqua                 = "#536074" -- color14
@@ -191,7 +192,7 @@ function M.setup(config)
         newpaper.orange               = "#F19321"
         newpaper.darkorange           = "#AF5F00"
         newpaper.darkyellow           = "#E5C07B"
-        newpaper.pink                 = "#5F0000"
+        newpaper.pink                 = "#2A010A"
         newpaper.darkgrey             = "#BCBCBC"
         newpaper.lightgrey            = "#787878"
         newpaper.lightlightgrey       = "#4E4E4E"
@@ -199,11 +200,11 @@ function M.setup(config)
         newpaper.blueviolet           = "#5F005F"
         newpaper.lightviolet          = "#332442"
         newpaper.lightblue            = "#8BC5ED"
-        newpaper.ocean                = "#56B6C2"
-        newpaper.nephritis            = "#66CAA6"
+        newpaper.ocean                = "#77B499"
+        newpaper.nephritis            = "#36C692"
         newpaper.darkpurple           = "#C966D5"
         newpaper.redorange            = "#FE7967"
-        newpaper.bluegreen            = "#66A4B1"
+        newpaper.bluegreen            = "#56B6C2"
         newpaper.darkengreen          = "#5FAF5F"
         newpaper.aqualight            = "#2E3032"
 
@@ -213,7 +214,7 @@ function M.setup(config)
         newpaper.regexp_green         = "#46C146"
         newpaper.regexp_orange        = "#E39232"
         newpaper.regexp_magenta       = "#DA46DA"
-        newpaper.regexp_brown         = "#943F3C"
+        newpaper.regexp_brown         = "#804A5A"
 
         -- Git and diff
         newpaper.git_fg               = "#EBEAE2"
@@ -239,8 +240,8 @@ function M.setup(config)
         newpaper.hint_fg              = "#10B981"
         newpaper.lsp_error_bg         = "#362C3D"
         newpaper.warn_bg              = "#373640"
-        newpaper.info_bg              = "#22374B"
-        newpaper.hint_bg              = "#233745"
+        newpaper.info_bg              = "#2C2C41"
+        newpaper.hint_bg              = "#2E3130"
 
         -- Todo
         newpaper.todo_error           = "#D75F66"
@@ -255,32 +256,32 @@ function M.setup(config)
         newpaper.tex_navy             = "#738AE5"
         newpaper.tex_red              = "#EF5D5B"
         newpaper.tex_blue             = "#6DA6CF"
-        newpaper.tex_teal             = "#82A0B1"
+        newpaper.tex_teal             = "#88B3B2"
         newpaper.tex_magenta          = "#E5559D"
         newpaper.tex_aqua             = "#14BCCF"
-        newpaper.tex_orange           = "#CC6C00"
-        newpaper.tex_redorange        = "#FE9879"
+        newpaper.tex_orange           = "#DA854A"
+        newpaper.tex_redorange        = "#F09479"
         newpaper.tex_darkorange       = "#D28F3F"
 
         newpaper.tex_lightpurple      = "#A494C1"
-        newpaper.tex_lightviolet      = "#D0B2D0"
+        newpaper.tex_lightviolet      = "#D7AFC1"
         newpaper.tex_pink             = "#EF6A72"
         newpaper.tex_lightgreen       = "#00CA93"
 
         newpaper.tex_math             = "#5FAF5F"
         newpaper.tex_math_delim       = "#ABCE8C"
         newpaper.tex_part_title       = "#9FB866"
-        newpaper.tex_ch_brown         = "#FA9D98"
-        newpaper.tex_ch_orange        = "#FBD199"
+        newpaper.tex_ch_brown         = "#AA7477"
+        newpaper.tex_ch_orange        = "#E5AC41"
         newpaper.tex_ch_green         = "#8CC63E"
         newpaper.tex_ch_red           = "#F76B68"
-        newpaper.tex_ch_blue          = "#91B2CF"
+        newpaper.tex_ch_blue          = "#9AACCE"
         newpaper.tex_keyword          = "#9D79C1"
         newpaper.tex_verb             = "#BCBCBC"
-        newpaper.tex_string           = "#8CC5F3"
+        newpaper.tex_string           = "#73CEF4"
         newpaper.tex_tikz_purple      = "#AAA3CD"
         newpaper.tex_tikz_green       = "#8BC18B"
-        newpaper.tex_tikz_orange      = "#B6B76B"
+        newpaper.tex_tikz_orange      = "#E49B5D"
         newpaper.tex_tikz_navy        = "#9AAAEC"
         newpaper.tex_tikz_verb        = "#ACACAC"
         newpaper.tex_quotes           = "#6684C1"
@@ -290,7 +291,7 @@ function M.setup(config)
         newpaper.tex_SI_navy          = "#709DCC"
         newpaper.tex_SI_green         = "#98C379"
         newpaper.tex_SI_magenta       = "#D69CC7"
-        newpaper.tex_SI_yellow        = "#DBB158"
+        newpaper.tex_SI_yellow        = "#E3C78A"
 
         newpaper.tex_group_error      = "#39404C"
         newpaper.tex_math_error       = "#003300"
@@ -299,12 +300,13 @@ function M.setup(config)
         newpaper.tex_only_math_error  = "#3D3912"
 
         -- Ruby
-        newpaper.ruby_maroon          = "#985759"
+        newpaper.ruby_maroon          = "#925760"
         newpaper.ruby_navy            = "#6A82D9"
         newpaper.ruby_purple          = "#C596CA"
         newpaper.ruby_red             = "#C2534D"
         newpaper.ruby_green           = "#98C379"
         newpaper.ruby_magenta         = "#B751B6"
+        newpaper.ruby_teal            = "#6690A2"
 
         -- Lua
         newpaper.lua_navy             = "#9191C7"
