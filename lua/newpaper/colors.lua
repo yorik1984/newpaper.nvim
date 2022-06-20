@@ -38,11 +38,11 @@ function M.setup(config)
         blueviolet           = "#AF87D7",
         lightviolet          = "#E5D9F2",
         lightblue            = "#0072C1",
-        ocean                = "#25817D",
+        ocean                = "#30877A",
         nephritis            = "#009760",
         darkpurple           = "#5823C7",
         redorange            = "#D1301A",
-        bluegreen            = "#4C6F81",
+        bluegreen            = "#0B5394",
         darkengreen          = "#007F00",
         aqualight            = "#DFE4EB",
 
@@ -144,7 +144,7 @@ function M.setup(config)
         ruby_red             = "#CC342D",
         ruby_green           = "#00AF2F",
         ruby_magenta         = "#A626A4",
-        ruby_teal            = "#366071",
+        ruby_teal            = "#196F93",
 
         -- Lua
         lua_navy             = "#030380",
@@ -173,7 +173,7 @@ function M.setup(config)
         newpaper.black                = "#2B2B2B" -- color00
         newpaper.maroon               = "#CC5555" -- color01
         newpaper.darkgreen            = "#5FAF5F" -- color02
-        newpaper.olive                = "#9FAA00" -- color03
+        newpaper.olive                = "#C3AF40" -- color03
         newpaper.navy                 = "#8195E7" -- color04
         newpaper.purple               = "#A274D1" -- color05
         newpaper.teal                 = "#86A3A3" -- color06
@@ -181,7 +181,7 @@ function M.setup(config)
         newpaper.grey                 = "#808080" -- color08
         newpaper.red                  = "#E06C75" -- color09
         newpaper.green                = "#00875F" -- color10
-        newpaper.yellow               = "#C9D05C" -- color11
+        newpaper.yellow               = "#D8E24F" -- color11
         newpaper.blue                 = "#5FAFD7" -- color12
         newpaper.magenta              = "#D75FAF" -- color13
         newpaper.aqua                 = "#536074" -- color14
