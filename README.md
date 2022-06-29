@@ -53,6 +53,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 ### 🔌 Supported plugins
 
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
++ [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
 + [tami5/lspsaga.nvim](https://github.com/tami5/lspsaga.nvim)
 + [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
@@ -92,6 +93,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 + [vim-rbs](https://github.com/jlcrochet/vim-rbs)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
++ [virtcolumn.nvim](https://github.com/xiyaowong/virtcolumn.nvim)
 
 ### ⚡️ Requirements
 
