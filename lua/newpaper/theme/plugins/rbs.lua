@@ -54,12 +54,12 @@ function M.setup(configColors, configStyle)
             rbsMethodDot                 = { fg = newpaper.orange },
             rbsNamespaceSeparator        = { fg = newpaper.orange },
             rbsClassName                 = { fg = newpaper.olive },
-            rbsInterfaceName             = { fg = newpaper.ruby_red },
+            rbsInterfaceName             = { fg = newpaper.redorange },
             rbsSingleton                 = { fg = newpaper.green },
             -- rbsString                    String
             -- rbsStringStart               rbsString
             -- rbsStringEnd                 rbsStringStart
-            rbsStringEscape              = { fg = newpaper.ruby_red },
+            rbsStringEscape              = { fg = newpaper.redorange },
             -- rbsQuoteEscape               rbsStringEscape
             -- rbsParenthesisEscape         rbsStringEscape
             -- rbsSquareBracketEscape       rbsStringEscape

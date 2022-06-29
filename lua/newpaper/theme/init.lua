@@ -12,7 +12,7 @@ function M.setup(configColors, configStyle)
 
     theme.loadSyntax = function ()
         local syntax = {
-            StorageClass   = { fg = newpaper.ocean, style = style.k_style }, -- static, register, volatile, etc.
+            StorageClass   = { fg = newpaper.class, style = style.k_style }, -- static, register, volatile, etc.
             Structure      = { fg = newpaper.darkpurple, style = style.k_style }, -- struct, union, enum, etc.
             Conditional    = { fg = newpaper.keyword, style = style.k_style }, -- if, then, else, endif, switch, etc.
             Keyword        = { fg = newpaper.keyword, style = style.k_style }, -- for, do, while, etc.
@@ -25,10 +25,10 @@ function M.setup(configColors, configStyle)
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
             Function       = { fg = newpaper.navy, style = style.f_style }, -- function names
-            Method         = { fg = newpaper.navy, style = style.f_style },
+            Method         = { fg = newpaper.bluegreen, style = style.f_style },
             Label          = { fg = newpaper.magenta }, -- case, default, etc.
             Operator       = { fg = newpaper.navy, style = style.o_style }, -- sizeof", "+", "*", etc.
-            Exception      = { fg = newpaper.maroon }, -- try, catch, throw
+            Exception      = { fg = newpaper.redorange }, -- try, catch, throw
             PreProc        = { fg = newpaper.navy }, -- generic Preprocessor
             Include        = { fg = newpaper.maroon }, -- preprocessor #include
             Identifier     = { fg = newpaper.variable, style = style.v_style }, -- any variable name
@@ -45,7 +45,7 @@ function M.setup(configColors, configStyle)
             Debug          = { fg = newpaper.red }, -- debugging statements
             Underlined     = { fg = newpaper.link, style = style.underline }, -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
-            Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg, style = style.b_bold_u }, -- any erroneous construct
+            Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- any erroneous construct
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
 
             -- Help
@@ -84,7 +84,7 @@ function M.setup(configColors, configStyle)
             DiffDelete       = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg }, -- diff mode: Deleted line
             DiffText         = { fg = newpaper.text, bg = newpaper.difftext_bg }, -- diff mode: Changed text within a changed line
             EndOfBuffer      = { fg = newpaper.eob, bg = newpaper.none }, -- filler lines (~) after the end of the buffer.
-            ErrorMsg         = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- error messages
+            ErrorMsg         = { fg = newpaper.errormsg_fg }, -- error messages
             FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
             Folded           = { fg = newpaper.folded_fg, bg = newpaper.folded_bg }, -- line used for closed folds
             FoldColumn       = { fg = newpaper.folded_fg, bg = newpaper.linenumber_bg }, -- 'foldcolumn'
@@ -139,7 +139,7 @@ function M.setup(configColors, configStyle)
             WildMenu         = { fg = newpaper.wildmenu_fg, bg = newpaper.wildmenu_bg, style = style.b_bold }, -- current match in 'wildmenu' completion
             WinSeparator     = { fg = newpaper.win_border, bg = newpaper.none }, -- separators between window splits
             VertSplit        = { link = "WinSeparator" },
-            healthError      = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg },
+            healthError      = { fg = newpaper.errormsg_fg },
             healthSuccess    = { fg = newpaper.hint_fg },
             healthWarning    = { fg = newpaper.warn_fg },
 
@@ -180,6 +180,7 @@ function M.setup(configColors, configStyle)
     theme.loadTreeSitter = function ()
         local treesitter = {
             TSAnnotation           = { fg = newpaper.red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+            TSAttribute            = { fg = newpaper.blue },
             TSConditional          = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
             TSKeyword              = { fg = newpaper.keyword, style = style.k_style }, -- For keywords that don't fall in previous categories.
             TSRepeat               = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
@@ -193,7 +194,7 @@ function M.setup(configColors, configStyle)
             TSBoolean              = { fg = newpaper.boolean, style = style.k_style }, -- For booleans.
             TSCharacter            = { fg = newpaper.orange }, -- For characters.
             TSComment              = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
-            TSConstructor          = { fg = newpaper.bluegreen }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+            TSConstructor          = { fg = newpaper.lua_blue, style = style.o_style }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
             TSConstant             = { fg = newpaper.darkgreen }, -- For constants
             TSConstBuiltin         = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
             TSConstMacro           = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
@@ -201,18 +202,18 @@ function M.setup(configColors, configStyle)
             TSWarning              = { fg = newpaper.bg, bg = newpaper.info_fg },
             TSDanger               = { fg = newpaper.bg, bg = newpaper.warn_fg },
             TSError                = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- For syntax/parser errors.
-            TSException            = { fg = newpaper.maroon }, -- For exception related keywords.
+            TSException            = { fg = newpaper.redorange }, -- For exception related keywords.
             TSField                = { fg = newpaper.ocean }, -- For fields.
             TSFloat                = { fg = newpaper.magenta }, -- For floats.
             TSFuncMacro            = { fg = newpaper.magenta }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
             TSInclude              = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-            TSLabel                = { fg = newpaper.darkgreen }, -- For labels: `label:` in C and `:label:` in Lua.
+            TSLabel                = { fg = newpaper.green }, -- For labels: `label:` in C and `:label:` in Lua.
             TSNamespace            = { fg = newpaper.darkyellow }, -- For identifiers referring to modules and namespaces.
             TSNumber               = { fg = newpaper.red }, -- For all numbers
             TSOperator             = { fg = newpaper.navy, style = style.o_style }, -- For any operator: `+`, but also `->` and `*` in C.
             TSParameter            = { fg = newpaper.orange }, -- For parameters of a function.
             TSParameterReference   = { fg = newpaper.orange }, -- For references to parameters of a function.
-            TSProperty             = { fg = newpaper.darkengreen }, -- Same as `TSField`,accesing for struct members in C.
+            TSProperty             = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
             TSPunctDelimiter       = { fg = newpaper.orange }, -- For delimiters ie: `.`
             TSPunctBracket         = { fg = newpaper.navy }, -- For brackets and parens.
             TSPunctSpecial         = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
@@ -220,6 +221,7 @@ function M.setup(configColors, configStyle)
             TSStringEscape         = { fg = newpaper.maroon }, -- For escape characters within a string.
             TSSymbol               = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
             TSType                 = { fg = newpaper.darkengreen }, -- For types.
+            TSTypeQualifier        = { fg = newpaper.green },
             TSTypeBuiltin          = { fg = newpaper.magenta }, -- For builtin types.
             TSVariable             = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
             TSVariableBuiltin      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
@@ -233,29 +235,32 @@ function M.setup(configColors, configStyle)
             TSTitle                = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
             TSLiteral              = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
             TSURI                  = { fg = newpaper.link, style = style.underline }, -- Any URI like a link or email.
+            TSMath                 = { fg = newpaper.tex_math },
+            TSEnvironment          = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            TSEnvironmentName      = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
         }
         return treesitter
     end
 
     theme.loadLSP = function ()
         local lsp = {
-            LspCodeLens                          = { fg = newpaper.comment,  bg = newpaper.lightsilver },
-            LspReferenceText                     = { fg = newpaper.accent,   bg = newpaper.highlight },
-            LspReferenceRead                     = { fg = newpaper.accent,   bg = newpaper.highlight },
-            LspReferenceWrite                    = { fg = newpaper.accent,   bg = newpaper.highlight },
+            LspCodeLens                          = { fg = newpaper.comment,   bg = newpaper.lightsilver },
+            LspReferenceText                     = { fg = newpaper.accent,    bg = newpaper.highlight },
+            LspReferenceRead                     = { fg = newpaper.accent,    bg = newpaper.highlight },
+            LspReferenceWrite                    = { fg = newpaper.accent,    bg = newpaper.highlight },
 
-            DiagnosticUnderlineError             = { style = style.error,    sp = newpaper.error_fg },
-            DiagnosticUnderlineWarn              = { style = style.error,    sp = newpaper.warn_fg },
-            DiagnosticUnderlineInfo              = { style = style.error,    sp = newpaper.info_fg },
-            DiagnosticUnderlineHint              = { style = style.error,    sp = newpaper.hint_fg },
-            DiagnosticSignError                  = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg },
-            DiagnosticSignWarn                   = { fg = newpaper.warn_fg,  bg = newpaper.linenumber_bg },
-            DiagnosticSignInfo                   = { fg = newpaper.info_fg,  bg = newpaper.linenumber_bg },
-            DiagnosticSignHint                   = { fg = newpaper.hint_fg,  bg = newpaper.linenumber_bg },
-            DiagnosticVirtualTextError           = { fg = newpaper.error_fg, bg = newpaper.lsp_error_bg },
-            DiagnosticVirtualTextWarn            = { fg = newpaper.warn_fg,  bg = newpaper.warn_bg },
-            DiagnosticVirtualTextInfo            = { fg = newpaper.info_fg,  bg = newpaper.info_bg },
-            DiagnosticVirtualTextHint            = { fg = newpaper.hint_fg,  bg = newpaper.hint_bg },
+            DiagnosticUnderlineError             = { style = style.undercurl, sp = newpaper.error_fg },
+            DiagnosticUnderlineWarn              = { style = style.undercurl, sp = newpaper.warn_fg },
+            DiagnosticUnderlineInfo              = { style = style.undercurl, sp = newpaper.info_fg },
+            DiagnosticUnderlineHint              = { style = style.undercurl, sp = newpaper.hint_fg },
+            DiagnosticSignError                  = { fg = newpaper.error_fg,  bg = newpaper.linenumber_bg },
+            DiagnosticSignWarn                   = { fg = newpaper.warn_fg,   bg = newpaper.linenumber_bg },
+            DiagnosticSignInfo                   = { fg = newpaper.info_fg,   bg = newpaper.linenumber_bg },
+            DiagnosticSignHint                   = { fg = newpaper.hint_fg,   bg = newpaper.linenumber_bg },
+            DiagnosticVirtualTextError           = { fg = newpaper.error_fg,  bg = newpaper.lsp_error_bg },
+            DiagnosticVirtualTextWarn            = { fg = newpaper.warn_fg,   bg = newpaper.warn_bg },
+            DiagnosticVirtualTextInfo            = { fg = newpaper.info_fg,   bg = newpaper.info_bg },
+            DiagnosticVirtualTextHint            = { fg = newpaper.hint_fg,   bg = newpaper.hint_bg },
             DiagnosticFloatingError              = { fg = newpaper.error_fg },
             DiagnosticFloatingWarn               = { fg = newpaper.warn_fg  },
             DiagnosticFloatingInfo               = { fg = newpaper.info_fg  },
@@ -520,7 +525,7 @@ function M.setup(configColors, configStyle)
             LspInstallerMuted             = { fg = newpaper.comment },
             LspInstallerLabel             = { fg = newpaper.fg,        style = style.b_bold },
             LspInstallerGreen             = { fg = newpaper.darkgreen },
-            LspInstallerError             = { fg = newpaper.error_fg },
+            LspInstallerError             = { fg = newpaper.errormsg_fg },
             LspInstallerLink              = { fg = newpaper.link,      style = style.underline },
 
             -- Nvim-notify
@@ -668,7 +673,10 @@ function M.setup(configColors, configStyle)
             VistaHeadNr                   = { fg = newpaper.darkgrey },
 
             -- Vim-matchup ----------------------------------------------------
-            MatchWord                    = { bg = newpaper.lightviolet, style = style.b_bold },
+            MatchWord                     = { bg = newpaper.lightviolet, style = style.b_bold },
+
+            -- Virtcolumn -----------------------------------------------------
+            VirtColumn                    = { fg = newpaper.lightlightgrey, bg = newpaper.none },
 
             -- WhichKey -------------------------------------------------------
             WhichKey                      = { fg = newpaper.keyword },
