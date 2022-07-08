@@ -74,6 +74,14 @@ function M.autocmds(config)
                     .. "CursorLineSign:CursorLineSignSB "
                     .. "signcolumn=yes:1 nonumber",
             })
+        else
+            vim.api.nvim_create_autocmd({ "FileType" }, {
+                group = group,
+                pattern = { sidebar },
+                command = "setlocal winhighlight=Normal:NvimTreeNormal,"
+                    .. "SignColumn:NvimTreeNormal,LineNr:NvimTreeNormal,"
+                    .. "CursorLineSign:NvimTreeNormal ",
+            })
         end
     end
 end

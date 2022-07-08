@@ -17,6 +17,7 @@ local plugins = {
     "cheatsheet",
     "devicons",
     "jinja",
+    "nvim-tree",
     "rbs",
     "telescope",
 }
