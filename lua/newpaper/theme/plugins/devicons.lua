@@ -82,13 +82,15 @@ function M.setup(configColors)
             ZshProfile          = { fg = newpaper.nephritis },
             Zshrc               = { fg = newpaper.nephritis },
         }
+
+        -- stylua: ignore end
+
         for key, value in pairs(devIcons) do
             plugins["DevIcon" .. key] = value
         end
+
         return plugins
     end
-
-    -- stylua: ignore end
 
     return deviconSyn
 end

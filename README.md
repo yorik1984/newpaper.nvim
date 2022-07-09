@@ -115,7 +115,7 @@ Enable the colorscheme:
 
 ```vim
 " init.vim
-lua << EOF 
+lua << EOF
     require("newpaper").setup()
 EOF
 ```
@@ -135,7 +135,7 @@ Set the desired style using:
 
 ```vim
 " init.vim
-lua << EOF 
+lua << EOF
     require("newpaper").setup({
         style = "dark"
     })
@@ -191,6 +191,7 @@ require("newpaper").setup({
 | custom_highlights  | `{}`       | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold       | `true`     | When true, section headers in the lualine theme will be bold |
 | lualine_style      | `"light"`  | Set different style from main theme:`"dark"`, `"light"` |
+| devicons_custom    | `{}`  | Set devicons custom color(override all icons by one color). Use `gui`, `cterm` or both options: `gui = "#HEX_COLOR"`, `cterm = NUMBER` |
 
 ##### Colorscheme default settings:
 
@@ -225,6 +226,8 @@ require("newpaper").setup({
     custom_highlights   = {},
     lualine_bold        = true,
     lualine_style       = "light",
+    lualine_style       = "light",
+    devicons_custom     = {},
 })
 ```
 
@@ -241,7 +244,7 @@ vim.g.newpaper_custom_highlights = {
     Number    = { fg = "#00FF00" },
     rubyClass = { fg = "#00FFF0" },
     Comment   = { fg = "#FF0000", style = "italic,underline" }
-}   
+}
 require("newpaper").setup()
 
 -- OR better with user configuration
@@ -259,12 +262,13 @@ require("newpaper").setup({
     colors              = colors,
     custom_highlights   = custom_highlights,
     -- ...
+    devicons_custom     = { gui = "#FFFF00", cterm = 3},
 })
 ```
 
 ```vim
 " init.vim
-lua << EOF 
+lua << EOF
     require("newpaper").setup({
         style    = "dark",
         keywords = "italic",
@@ -357,7 +361,7 @@ Lualine theme name and style automatically using from main theme
 
 #### ⚙️ Hint
 
-You can temporally use just only lualine theme with any others colorschemes. It also depends on `vim.o.background`. 
+You can temporally use just only lualine theme with any others colorschemes. It also depends on `vim.o.background`.
 
 ```lua
 -- Set bold style
@@ -426,11 +430,9 @@ Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/
 
 ![vim_lua_code_lua](https://user-images.githubusercontent.com/1559192/145305955-76106720-b9c7-4fa6-ad99-407454758c2d.png)
 
-
 🖼️ **Treesitter**  light and dark
 
 ![treesitter_lua](https://user-images.githubusercontent.com/1559192/145304230-13153261-d9c0-45b5-b625-93df493ade5b.png)
-
 
 ### 🎛️ Plugins:
 
@@ -452,7 +454,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [vimtex](https://github.com/lervag/vimtex)
 + [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 + [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
-+ [vim-shoot](https://github.com/JMcKiern/vim-shoot) -- generate HTML version of highlighting 
++ [vim-shoot](https://github.com/JMcKiern/vim-shoot) -- generate HTML version of highlighting
 + [toml](https://github.com/toml-lang/toml) -- spec and code preview example
 + [yaml](https://github.com/yaml/yaml-spec) -- spec and code preview example
 
@@ -460,7 +462,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 
 * [X] Add dark style
 * [ ] Add syntax screenshots, HTML-preview:
-    * [X] Ruby 
+    * [X] Ruby
     * [X] Lua
     * [X] TOML
     * [X] YAML

@@ -1,7 +1,7 @@
-local util         = require("newpaper.util")
-local theme        = require("newpaper.theme")
+local util = require("newpaper.util")
+local theme = require("newpaper.theme")
 local configModule = require("newpaper.config")
-local config       = configModule.config
+local config = configModule.config
 
 local filetypes = {
     "html",
@@ -15,7 +15,6 @@ local filetypes = {
 }
 local plugins = {
     "cheatsheet",
-    "devicons",
     "jinja",
     "nvim-tree",
     "rbs",
@@ -24,7 +23,6 @@ local plugins = {
 }
 
 local function setup(userConfig)
-
     if userConfig then
         configModule.applyConfiguration(userConfig)
         if config.style == "light" then
@@ -51,12 +49,12 @@ local function setup(userConfig)
         end
     end
 
-    local configApply  = configModule.config
+    local configApply = configModule.config
     local configColors = require("newpaper.colors").setup(configApply)
-    local configStyle  = require("newpaper.style").setupStyle(configApply)
+    local configStyle = require("newpaper.style").setupStyle(configApply)
     local ftypesFolder = "newpaper.theme.filetypes."
-    local plugsFolder  = "newpaper.theme.plugins."
-    local devIcons     = "newpaper.theme.plugins.devicons"
+    local plugsFolder = "newpaper.theme.plugins."
+    local devIcons = "newpaper.theme.plugins.devicons"
 
     util.load(configApply, theme.setup(configColors, configStyle))
 
@@ -70,10 +68,16 @@ local function setup(userConfig)
         util.loadPluginSyntax(require(fileSyn).setup(configColors, configStyle))
     end
 
-    util.loadPluginSyntax(require(devIcons).setup(configColors))
+    if configApply.devicons_custom.cterm and not configApply.devicons_custom.gui then
+        util.deviconsOverrides(configApply)
+        util.loadPluginSyntax(require(devIcons).setup(configColors))
+    elseif configApply.devicons_custom.gui then
+        util.deviconsOverrides(configApply)
+    else
+        util.loadPluginSyntax(require(devIcons).setup(configColors))
+    end
 
     util.loadCustomSyntax(configApply)
-
 end
 
 return { setup = setup }

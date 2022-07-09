@@ -161,4 +161,38 @@ function M.colorOverrides(colors, config)
     end
 end
 
+function M.deviconsOverrides(config)
+    local devIconCustom      = config.devicons_custom.gui
+    local devIconCustomCterm = config.devicons_custom.cterm
+
+    -- https://github.com/kyazdani42/nvim-web-devicons/blob/master/lua/nvim-web-devicons.lua
+
+    local group = vim.api.nvim_create_augroup("devIconsCustom", {})
+    vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
+        group = group,
+        pattern = { "*" },
+        callback = function()
+            local function get_highlight_name(data)
+                return data.name and "DevIcon" .. data.name
+            end
+            local function set_up_highlight(icon_data)
+                local hl_group = get_highlight_name(icon_data)
+                local highlight_command = "highlight! " .. hl_group
+                if icon_data.color and devIconCustom then
+                    highlight_command = highlight_command .. " guifg=" .. devIconCustom
+                    vim.api.nvim_command(highlight_command)
+                end
+                if icon_data.cterm_color and devIconCustomCterm then
+                    highlight_command = highlight_command .. " ctermfg=" .. devIconCustomCterm
+                    vim.api.nvim_command(highlight_command)
+                end
+            end
+            local icons = require("nvim-web-devicons").get_icons()
+            for _, icon_data in pairs(icons) do
+                set_up_highlight(icon_data)
+            end
+        end,
+    })
+end
+
 return M

@@ -1,6 +1,6 @@
 ================================================================================
                                                                  *newpaper.nvim*
-                                                                                
+
 newpaper.nvim is a colorscheme for NeoVim written in Lua with built in support
 for native LSP, TreeSitter and many more plugins.
 
@@ -22,6 +22,7 @@ FEATURES                                                *newpaper.nvim-features*
 
     + A wide array of supprted plugiuns like:
         - TreeSitter
+        - nvim-web-devicons
         - LSP Diagnostics
         - LSP Saga
         - LSP Trouble
@@ -63,6 +64,7 @@ FEATURES                                                *newpaper.nvim-features*
         - headlines.nvim
         - vim-rbs
         - cheatsheet.nvim
+        - virtcolumn.nvim
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.
@@ -153,10 +155,10 @@ Options:
         foreground and background
 
     + contrast_telescope {booleans} (default = true)
-        Make Telescope have a different foreground and background 
+        Make Telescope have a different foreground and background
 
     + operators_bold     {booleans} (default = true)
-        Make booleans, escape characters, operators, delimiter like =,<>/* bold 
+        Make booleans, escape characters, operators, delimiter like =,<>/* bold
 
     + keywords           {string} (default = `"bold"`)
         Make keywords like if, for, while etc. bold, italic or NONE.
@@ -171,7 +173,7 @@ Options:
         italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + tex_operators_bold {booleans} (default = true)
-        Make tex operators bold 
+        Make tex operators bold
 
     + tex_keywords       {string} (default = `"NONE"`)
         Make  other tex keywords bold, italic or NONE.
@@ -191,10 +193,10 @@ Options:
         Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`.
 
     + italic_strings     {booleans} (default = true)
-        Make strings italic 
+        Make strings italic
 
     + italic_comments    {booleans} (default = true)
-        Make comments italic 
+        Make comments italic
 
     + italic_functions   {booleans} (default = false)
         Make function calls and names italic
@@ -203,7 +205,7 @@ Options:
         Make variable names and identifiers italic
 
     + borders            {booleans} (default = true)
-        Enable the border between vertically split windows visible 
+        Enable the border between vertically split windows visible
 
     + disable_background {booleans} (default = false)
         Disable the setting of background color so that NeoVim can use
@@ -236,10 +238,16 @@ Options:
 <
 
     + lualine_bold       {booleans} (default = true)
-        When true, section headers in the lualine theme will be bold 
+        When true, section headers in the lualine theme will be bold
 
     + lualine_style      {string} (default = `"light"`)
         Set different style from main theme: `"dark"`, `"light"`
+
+    + devicons_custom    {table} (default = {})
+        Set devicons custom color(override all icons by one color).
+        Use `gui`, `cterm` or both options
+>
+        vim.g.devicons_custom = { gui = "#FFFF00", cterm = 3}
 
 
 Default settings:
@@ -271,6 +279,7 @@ Default settings:
         colors              = {},
         lualine_bold        = true,
         lualine_style       = "light"
+        devicons_custom     = {},
     })
 <
 Example config in lua with global variables
@@ -302,11 +311,13 @@ OR better with user configuration
         colors              = colors,
         custom_highlights   = custom_highlights,
         -- ...
+        devicons_custom     = { gui = "#FFFF00", cterm = 3},
+
     })
 <
 Example config in init.vim:
 >
-    lua << EOF 
+    lua << EOF
         require("newpaper").setup({
             style    = "dark",
             keywords = "italic",

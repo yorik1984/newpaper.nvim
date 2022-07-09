@@ -51,6 +51,7 @@ local config = {
     custom_highlights   = opt("custom_highlights", {}),
     lualine_bold        = opt("lualine_bold", true),
     lualine_style       = opt("lualine_style", "light"),
+    devicons_custom     = opt("devicons_custom", {}),
 }
 
 local applyConfiguration = function(userConfig)
