@@ -110,7 +110,6 @@ function M.setup(configColors, configStyle)
             qfLineNr         = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse }, -- Line numbers for quickfix lists
             Search           = { fg = newpaper.search_fg, bg = newpaper.search_bg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
             SignColumn       = { fg = newpaper.fg, bg = newpaper.linenumber_bg },
-            SignColumnSB     = { fg = newpaper.sb_fg, bg = newpaper.none },
             SpecialKey       = { fg = newpaper.disabled }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
             SpellBad         = { bg = newpaper.spellbad,   sp = newpaper.red,           style = style.error }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
             SpellCap         = { bg = newpaper.spellcap,   sp = newpaper.tag_navy,      style = style.error }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -144,8 +143,11 @@ function M.setup(configColors, configStyle)
             healthWarning    = { fg = newpaper.warn_fg },
 
             -- Custom newpaper groups
-            LineNrSB         = { fg = newpaper.linenumber_fg, bg = newpaper.none },
             NormalContrastSB = { fg = newpaper.sb_contrast_fg, bg = newpaper.sb_contrast_bg },
+            LineNrSB         = { bg = newpaper.sb_contrast_bg },
+            CursorLineSB     = { bg = newpaper.bg },
+            CursorLineSignSB = { bg = newpaper.sb_contrast_bg },
+            SignColumnSB     = { bg = newpaper.sb_contrast_bg },
             NormalInverse    = { fg = newpaper.normal_bg, bg = newpaper.normal_fg },
             NormalTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
             LineNrTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
@@ -153,7 +155,6 @@ function M.setup(configColors, configStyle)
             TermCursorTerm   = { fg = newpaper.term_bg, bg = newpaper.term_fg },
             TermCursorNCTerm = { fg = newpaper.term_bg, bg = newpaper.term_fg },
             CursorLineTerm   = { bg = newpaper.none, cbg = newpaper.none },
-            CursorLineSignSB = { bg = newpaper.none },
         }
         return editor
     end
@@ -614,18 +615,6 @@ function M.setup(configColors, configStyle)
             TodoBgNOTE                    = { fg = newpaper.bg, bg = newpaper.todo_hint,    style = style.b_bold },
             TodoBgHACK                    = { fg = newpaper.bg, bg = newpaper.todo_warn,    style = style.b_bold },
             TodoBgFIX                     = { fg = newpaper.bg, bg = newpaper.todo_error,   style = style.b_bold },
-
-            -- Trouble --------------------------------------------------------
-            TroubleCount                  = { fg = newpaper.orange, bg = newpaper.none, style = style.b_bold },
-            TroubleNormal                 = { fg = newpaper.sb_fg, bg = newpaper.sb_bg },
-            TroubleText                   = { fg = newpaper.fg, bg = newpaper.none },
-            TroubleSource                 = { fg = newpaper.sb_fg, bg = newpaper.none },
-            TroubleCode                   = { fg = newpaper.sb_fg, bg = newpaper.none },
-            TroubleLocation               = { fg = newpaper.teal, bg = newpaper.none },
-            TroubleTextInformation        = { fg = newpaper.info_fg, bg = newpaper.none },
-            TroubleTextError              = { fg = newpaper.error_fg, bg = newpaper.none },
-            TroubleTextWarning            = { fg = newpaper.warn_fg, bg = newpaper.none },
-            TroubleTextHint               = { fg = newpaper.hint_fg, bg = newpaper.none },
 
             -- Vista ----------------------------------------------------------
             VistaParenthesis              = { fg = newpaper.navy, style = style.b_bold },

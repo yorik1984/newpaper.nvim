@@ -20,6 +20,7 @@ local plugins = {
     "nvim-tree",
     "rbs",
     "telescope",
+    "trouble",
 }
 
 local function setup(userConfig)

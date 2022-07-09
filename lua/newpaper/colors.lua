@@ -410,19 +410,29 @@ function M.setup(config)
     -- IndentBlankline
     newpaper.contextchar         = newpaper.blueviolet
 
+    -- Sidebars ----------------------------------------------------------------
+    newpaper.nvimtree_fg         = newpaper.sb_fg
+    newpaper.nvimtree_bg         = newpaper.sb_bg
+    newpaper.trouble_fg          = newpaper.sb_fg
+    newpaper.trouble_bg          = newpaper.sb_bg
     -- NvimTree
     if table.contains(config.sidebars_contrast, "NvimTree") then
         newpaper.nvimtree_fg     = newpaper.sb_contrast_fg
         newpaper.nvimtree_bg     = newpaper.aqualight
-    else
-        newpaper.nvimtree_fg     = newpaper.sb_fg
-        newpaper.nvimtree_bg     = newpaper.sb_bg
     end
+    -- Troule
+    if table.contains(config.sidebars_contrast, "Trouble") then
+        newpaper.trouble_fg      = newpaper.sb_contrast_fg
+        newpaper.trouble_bg      = newpaper.sb_contrast_bg
+    end
+    ----------------------------------------------------------------------------
 
+    -- Float
     if config.contrast_float then
         newpaper.float_bg        = newpaper.float_contrast
     end
 
+    -- Telescope
     if config.contrast_telescope then
         newpaper.telescope_bg    = newpaper.telescope_contrast
     end

@@ -59,8 +59,10 @@ function M.autocmds(config)
         group = group,
         pattern = { "*" },
         command = "setlocal winhighlight=Normal:NormalTerm,"
-            .. "SignColumn:SignColumnTerm,LineNr:LineNrTerm,"
-            .. "TermCursor:TermCursorTerm,TermCursorNC:TermCursorNCTerm,"
+            .. "SignColumn:SignColumnTerm,"
+            .. "LineNr:LineNrTerm,"
+            .. "TermCursor:TermCursorTerm,"
+            .. "TermCursorNC:TermCursorNCTerm,"
             .. "CursorLine:CursorLineTerm "
             .. "signcolumn=no nocursorline nonumber",
     })
@@ -70,17 +72,12 @@ function M.autocmds(config)
                 group = group,
                 pattern = { sidebar },
                 command = "setlocal winhighlight=Normal:NormalContrastSB,"
-                    .. "SignColumn:SignColumnSB,LineNr:LineNrSB,"
+                    .. "SignColumn:SignColumnSB,"
+                    .. "LineNr:LineNrSB,"
+                    .. "CursorLineNr:LineNrSB,"
+                    .. "CursorLine:CursorLineSB,"
                     .. "CursorLineSign:CursorLineSignSB "
                     .. "signcolumn=yes:1 nonumber",
-            })
-        else
-            vim.api.nvim_create_autocmd({ "FileType" }, {
-                group = group,
-                pattern = { sidebar },
-                command = "setlocal winhighlight=Normal:NvimTreeNormal,"
-                    .. "SignColumn:NvimTreeNormal,LineNr:NvimTreeNormal,"
-                    .. "CursorLineSign:NvimTreeNormal ",
             })
         end
     end
