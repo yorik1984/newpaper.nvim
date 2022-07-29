@@ -185,7 +185,7 @@ function M.setup(config)
         newpaper.white                = "#C6C8CD" -- color15
 
         -- Other colors
-        newpaper.lightorange          = "#413932"
+        newpaper.lightorange          = "#443924"
         newpaper.orange               = "#F19321"
         newpaper.darkorange           = "#AF5F00"
         newpaper.darkyellow           = "#CEAC6E"

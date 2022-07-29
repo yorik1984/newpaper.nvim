@@ -516,19 +516,6 @@ function M.setup(configColors, configStyle)
             NvimDapVirtualTextError       = { fg = newpaper.error_fg, style = style.c_style },
             NvimDapVirtualTextInfo        = { fg = newpaper.info_fg,  style = style.c_style },
 
-            -- Nvim-lsp-installer ---------------------------------------------
-            LspInstallerServerExpanded    = { fg = newpaper.fg,        style = style.b_italic },
-            LspInstallerHighlighted       = { fg = newpaper.blue },
-            LspInstallerVaderSaber        = { fg = newpaper.redorange, style = style.b_bold },
-            LspInstallerHeading           = { fg = newpaper.keyword,   style = style.b_bold },
-            LspInstallerOrange            = { fg = newpaper.orange },
-            LspInstallerHeader            = { fg = newpaper.orange,    style = style.b_bold },
-            LspInstallerMuted             = { fg = newpaper.comment },
-            LspInstallerLabel             = { fg = newpaper.fg,        style = style.b_bold },
-            LspInstallerGreen             = { fg = newpaper.darkgreen },
-            LspInstallerError             = { fg = newpaper.errormsg_fg },
-            LspInstallerLink              = { fg = newpaper.link,      style = style.underline },
-
             -- Nvim-notify
             NotifyERRORBorder             = { fg = newpaper.error_fg },
             NotifyWARNBorder              = { fg = newpaper.warn_fg },
