@@ -481,6 +481,11 @@ function M.setup(configColors, configStyle)
             -- texSIArgNumNU  texSIArgNum
             -- texSIArgNumNNU texSIArgNum
 
+            -- tabularx.vim --------------------------------------------------
+            -- texTabularxPreamble    texOpt
+            -- texTabularxWidth       texLength
+            -- texTabularxOpt         texEnvOpt
+
             -- tcolorbox.vim --------------------------------------------------
             texTCBZone = { fg = newpaper.tex_verb },
             -- texTCBEnvArg texArg
