@@ -115,7 +115,7 @@ function M.setup(config)
         tex_ch_red           = "#E04A4A",
         tex_ch_blue          = "#394892",
         tex_keyword          = "#7F2DC2",
-        tex_verb             = "#4D4D4D",
+        tex_verb             = "#4E5B5F",
         tex_string           = "#007FD7",
         tex_tikz_purple      = "#635F8C",
         tex_tikz_green       = "#568355",
@@ -173,7 +173,7 @@ function M.setup(config)
         newpaper.olive                = "#9D8D33" -- color03
         newpaper.navy                 = "#8195E7" -- color04
         newpaper.purple               = "#A274D1" -- color05
-        newpaper.teal                 = "#86A3A3" -- color06
+        newpaper.teal                 = "#72AEB3" -- color06
         newpaper.silver               = "#3A3A3A" -- color07
         newpaper.grey                 = "#808080" -- color08
         newpaper.red                  = "#E06C75" -- color09
@@ -194,7 +194,7 @@ function M.setup(config)
         newpaper.lightgrey            = "#787878"
         newpaper.lightlightgrey       = "#4E4E4E"
         newpaper.lightsilver          = "#303030"
-        newpaper.blueviolet           = "#32174D"
+        newpaper.blueviolet           = "#342840"
         newpaper.lightviolet          = "#332442"
         newpaper.lightblue            = "#7DB1D5"
         newpaper.ocean                = "#77B499"
@@ -253,7 +253,7 @@ function M.setup(config)
         newpaper.tex_navy             = "#738AE5"
         newpaper.tex_red              = "#EF5D5B"
         newpaper.tex_blue             = "#6DA6CF"
-        newpaper.tex_teal             = "#88B3B2"
+        newpaper.tex_teal             = "#709CAD"
         newpaper.tex_magenta          = "#E5559D"
         newpaper.tex_aqua             = "#14BCCF"
         newpaper.tex_orange           = "#DA854A"
@@ -274,7 +274,7 @@ function M.setup(config)
         newpaper.tex_ch_red           = "#F76B68"
         newpaper.tex_ch_blue          = "#34ACE0"
         newpaper.tex_keyword          = "#9D79C1"
-        newpaper.tex_verb             = "#BCBCBC"
+        newpaper.tex_verb             = "#94AEAE"
         newpaper.tex_string           = "#73CEF4"
         newpaper.tex_tikz_purple      = "#AAA3CD"
         newpaper.tex_tikz_green       = "#78E08F"

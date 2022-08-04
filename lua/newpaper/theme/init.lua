@@ -631,7 +631,7 @@ function M.setup(configColors, configStyle)
             WhichKey                      = { fg = newpaper.keyword },
             WhichKeyGroup                 = { fg = newpaper.teal, style = style.b_bold },
             WhichKeySeparator             = { fg = newpaper.darkgreen },
-            WhichKeyDesc                  = { fg = newpaper.teal },
+            WhichKeyDesc                  = { fg = newpaper.string },
             WhichKeyFloat                 = { fg = newpaper.float_fg, bg = newpaper.float_bg },
             WhichKeyValue                 = { fg = newpaper.darkgrey },
         }

@@ -129,11 +129,11 @@ function M.setup(configColors, configStyle)
 
             pandocCodeBlockInsideIndent          = { fg = newpaper.string },
 
-            pandocDelimitedCodeBlock             = { fg = newpaper.string },
+            pandocDelimitedCodeBlock             = { fg = newpaper.tex_verb },
 
             pandocDelimitedCodeBlockStart        = { fg = newpaper.regexp_blue, style = style.s_style },
             pandocDelimitedCodeBlockEnd          = { fg = newpaper.regexp_blue, style = style.s_style },
-            pandocDelimitedCodeBlockLanguage     = { fg = newpaper.regexp_blue, style = style.s_style },
+            pandocDelimitedCodeBlockLanguage     = { fg = newpaper.regexp_blue, style = style.k_style },
             pandocBlockQuoteinDelimitedCodeBlock = { fg = newpaper.tex_quotes,  style = style.s_style },
             pandocCodePre                        = { fg = newpaper.string,      style = style.s_style },
 
