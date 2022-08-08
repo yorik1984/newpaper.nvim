@@ -9,25 +9,25 @@ lang: en-US
 
 # 🎨 newpaper.nvim
 
+**WIP**🚧
+
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 
 </div>
 
-### W.I.P.🚧
-
-### ℹ️ Info
+## ℹ️ Info
 A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and Markdown syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to Neovim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
 <div align="center">
 
-### [More screenshots](#-screenshots)🖼️
+## [More screenshots](#-screenshots)🖼️
 
 </div>
 
-### 🌟 Features
+## 🌟 Features
 
 + Two styles to choose from:
     + Light
@@ -37,7 +37,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Asynchronous highlight loading which makes the theme extremely fast
 + Added functions for live theme switching without the need to restart Neovim
 
-#### Special syntax highlight:
+### Special syntax highlight
 
 + L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
 + [Ruby](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb) with [vim-ruby](https://github.com/vim-ruby/vim-ruby) -- [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html)
@@ -95,21 +95,21 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [virtcolumn.nvim](https://github.com/xiyaowong/virtcolumn.nvim)
 
-### ⚡️ Requirements
+## ⚡️ Requirements
 
 + Neovim >= 0.7
 
-### 📦 Installation
+## 📦 Installation
 
 Install via your favorite package manager:
 
-#### [packer.nvim](https://github.com/wbthomason/packer.nvim)
+**[packer.nvim](https://github.com/wbthomason/packer.nvim)**
 
 ```lua
 use "yorik1984/newpaper.nvim"
 ```
 
-### 🚀 Usage
+## 🚀 Usage
 
 Enable the colorscheme:
 
@@ -125,7 +125,7 @@ EOF
 require("newpaper").setup()
 ```
 
-### ⚙️ Configuration
+## ⚙️ Configuration
 
 + There are 2 different styles available:
     + dark
@@ -153,14 +153,14 @@ require("newpaper").setup({
 })
 ```
 
- #### 💻 Commands
+### 💻 Commands
 
 | Command          | Description                            |
 |------------------|----------------------------------------|
 | `:NewpaperLight` | Change style to light mode(by default) |
 | `:NewpaperDark`  | Change style to dark mode              |
 
-##### Available options:
+### Available options
 
 | Option             | Default    | Description                                                  |
 |--------------------|------------|--------------------------------------------------------------|
@@ -193,7 +193,7 @@ require("newpaper").setup({
 | lualine_style      | `"light"`  | Set different style from main theme:`"dark"`, `"light"` |
 | devicons_custom    | `{}`  | Set devicons custom color(override all icons by one color). Use `gui`, `cterm` or both options: `gui = "#HEX_COLOR"`, `cterm = NUMBER` |
 
-##### Colorscheme default settings:
+### Colorscheme default settings
 
 ```lua
 -- Default settings
@@ -231,7 +231,7 @@ require("newpaper").setup({
 })
 ```
 
-##### Colorscheme customizing:
+### Colorscheme customizing
 
 ```lua
 -- Example config in lua with global variables
@@ -278,7 +278,7 @@ lua << EOF
 EOF
 ```
 
-##### ⚠️`guicursor` customizing:
+### ⚠️`guicursor` customizing
 
 ```lua
 -- guicursor advansed settigs:
@@ -359,7 +359,7 @@ require("lualine").setup({
 
 Lualine theme name and style automatically using from main theme
 
-#### ⚙️ Hint
+### ⚙️ Hint
 
 You can temporally use just only lualine theme with any others colorschemes. It also depends on `vim.o.background`.
 
@@ -381,7 +381,7 @@ vim.g.newpaper_colors        = { teal = "#008080" }
 ⚠️ More recommended configuration here:
 [yorik1984/lualine-theme.nvim](https://github.com/yorik1984/lualine-theme.nvim#%EF%B8%8F-configuration)
 
-#### 📺 Screenshots lualine
+### 📺 Screenshots lualine
 
 #### 🖼️ light
 
@@ -404,9 +404,9 @@ vim.g.newpaper_colors        = { teal = "#008080" }
 
 ## 📺 Screenshots
 
-### 🎼 Languages:
+### 🎼 Languages
 
-+ ### RUBY
+#### RUBY
 
 Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb)
 
@@ -422,7 +422,7 @@ Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/
 
 ![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
 
-+ ### LUA
+#### LUA
 
 Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua)
 
@@ -434,9 +434,9 @@ Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/
 
 ![treesitter_lua](https://user-images.githubusercontent.com/1559192/145304230-13153261-d9c0-45b5-b625-93df493ade5b.png)
 
-### 🎛️ Plugins:
+### 🎛️ Plugins
 
-+ #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+#### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
 ![todo-comments_light](https://user-images.githubusercontent.com/1559192/140816021-fd16ab48-e3f0-4ab4-a984-34bb14205b0c.png)
 
@@ -458,7 +458,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [toml](https://github.com/toml-lang/toml) -- spec and code preview example
 + [yaml](https://github.com/yaml/yaml-spec) -- spec and code preview example
 
-## 🛠️ TODO:
+## 🛠️ TODO
 
 * [X] Add dark style
 * [ ] Add syntax screenshots, HTML-preview:
