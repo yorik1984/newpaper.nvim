@@ -207,3 +207,5 @@
 (interpolation
   "#{" @symbol
   "}" @symbol) @none
+
+(pair key: (hash_key_symbol) ":" @symbol)
