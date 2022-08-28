@@ -7,7 +7,6 @@ local filetypes = {
     "html",
     "lua",
     "markdown",
-    "rbs",
     "ruby",
     "tex",
     "toml",
@@ -16,6 +15,7 @@ local filetypes = {
 }
 local plugins = {
     "cheatsheet",
+    "rbs",
     "jinja",
     "nvim-tree",
     "mason",
