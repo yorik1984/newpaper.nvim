@@ -423,7 +423,7 @@ function M.setup(configColors, configStyle)
             DiagnosticWarning             = { fg = newpaper.warn_fg },
             DefinitionPreviewTitle        = { fg = newpaper.darkgreen },
             LspSagaLightBulb              = { fg = newpaper.hint_fg },
-            LspSagaLightBulbSign          = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg },
+            LspSagaLightBulbSign          = { fg = newpaper.hint_fg },
             LspLinesDiagBorder            = { fg = newpaper.border,  bg = newpaper.float_bg },
 
             -- Lua-dev --------------------------------------------------------
