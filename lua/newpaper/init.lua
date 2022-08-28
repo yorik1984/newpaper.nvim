@@ -1,12 +1,13 @@
-local util = require("newpaper.util")
-local theme = require("newpaper.theme")
+local util         = require("newpaper.util")
+local theme        = require("newpaper.theme")
 local configModule = require("newpaper.config")
-local config = configModule.config
+local config       = configModule.config
 
 local filetypes = {
     "html",
     "lua",
     "markdown",
+    "rbs",
     "ruby",
     "tex",
     "toml",
@@ -18,7 +19,6 @@ local plugins = {
     "jinja",
     "nvim-tree",
     "mason",
-    "rbs",
     "telescope",
     "trouble",
 }
@@ -50,12 +50,12 @@ local function setup(userConfig)
         end
     end
 
-    local configApply = configModule.config
+    local configApply  = configModule.config
     local configColors = require("newpaper.colors").setup(configApply)
-    local configStyle = require("newpaper.style").setupStyle(configApply)
+    local configStyle  = require("newpaper.style").setupStyle(configApply)
     local ftypesFolder = "newpaper.theme.filetypes."
-    local plugsFolder = "newpaper.theme.plugins."
-    local devIcons = "newpaper.theme.plugins.devicons"
+    local plugsFolder  = "newpaper.theme.plugins."
+    local devIcons     = "newpaper.theme.plugins.devicons"
 
     util.load(configApply, theme.setup(configColors, configStyle))
 

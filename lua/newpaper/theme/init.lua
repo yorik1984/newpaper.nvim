@@ -60,7 +60,7 @@ function M.setup(configColors, configStyle)
     theme.loadEditor = function ()
         local editor = {
             Comment          = { fg = newpaper.comment, style = style.c_style },
-            ColorColumn      = { bg = newpaper.colorcolumn }, --  used for the columns set with 'colorcolumn'
+            ColorColumn      = { fg = newpaper.colorcolumn, bg = newpaper.none }, --  used for the columns set with 'colorcolumn'
             Conceal          = { fg = newpaper.tex_math }, -- placeholder characters substituted for concealed text (see 'conceallevel')
             Cursor           = { fg = newpaper.bg, bg = newpaper.cursor }, -- the character under the cursor
             nCursor          = { fg = newpaper.bg, bg = newpaper.teal }, -- Normal mode
@@ -145,7 +145,7 @@ function M.setup(configColors, configStyle)
             -- Custom newpaper groups
             NormalContrastSB = { fg = newpaper.sb_contrast_fg, bg = newpaper.sb_contrast_bg },
             LineNrSB         = { bg = newpaper.sb_contrast_bg },
-            CursorLineSB     = { bg = newpaper.bg },
+            CursorLineSB     = { bg = newpaper.aqua },
             CursorLineSignSB = { bg = newpaper.sb_contrast_bg },
             SignColumnSB     = { bg = newpaper.sb_contrast_bg },
             NormalInverse    = { fg = newpaper.normal_bg, bg = newpaper.normal_fg },
@@ -423,7 +423,7 @@ function M.setup(configColors, configStyle)
             DiagnosticWarning             = { fg = newpaper.warn_fg },
             DefinitionPreviewTitle        = { fg = newpaper.darkgreen },
             LspSagaLightBulb              = { fg = newpaper.hint_fg },
-            LspSagaLightBulbSign          = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg },
+            LspSagaLightBulbSign          = { fg = newpaper.hint_fg },
             LspLinesDiagBorder            = { fg = newpaper.border,  bg = newpaper.float_bg },
 
             -- Lua-dev --------------------------------------------------------
@@ -623,9 +623,6 @@ function M.setup(configColors, configStyle)
 
             -- Vim-matchup ----------------------------------------------------
             MatchWord                     = { bg = newpaper.lightviolet, style = style.b_bold },
-
-            -- Virtcolumn -----------------------------------------------------
-            VirtColumn                    = { fg = newpaper.lightlightgrey, bg = newpaper.none },
 
             -- WhichKey -------------------------------------------------------
             WhichKey                      = { fg = newpaper.keyword },

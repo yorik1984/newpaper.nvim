@@ -21,7 +21,7 @@ function M.setup(config)
         yellow               = "#FFFF00", -- color11
         blue                 = "#0087AF", -- color12
         magenta              = "#D7005F", -- color13
-        aqua                 = "#AFD7FF", -- color14
+        aqua                 = "#C0D9F2", -- color14
         white                = "#F1F3F2", -- color15
         none                 = "NONE",
 
@@ -47,6 +47,7 @@ function M.setup(config)
         aqualight            = "#DFE4EB",
 
         codeblock            = "#DEDEDE",
+        disabled             = "#CCCCCC",
 
         regexp_blue          = "#3A72ED",
         regexp_green         = "#00AA00",
@@ -194,8 +195,8 @@ function M.setup(config)
         newpaper.lightgrey            = "#787878"
         newpaper.lightlightgrey       = "#4E4E4E"
         newpaper.lightsilver          = "#303030"
-        newpaper.blueviolet           = "#342840"
-        newpaper.lightviolet          = "#332442"
+        newpaper.blueviolet           = "#483D53"
+        newpaper.lightviolet          = "#3F334B"
         newpaper.lightblue            = "#7DB1D5"
         newpaper.ocean                = "#77B499"
         newpaper.nephritis            = "#36C692"
@@ -206,6 +207,7 @@ function M.setup(config)
         newpaper.aqualight            = "#2E3032"
 
         newpaper.codeblock            = "#343434"
+        newpaper.disabled             = "#3E3E3E"
 
         newpaper.regexp_blue          = "#618EF0"
         newpaper.regexp_green         = "#46C146"
@@ -355,11 +357,10 @@ function M.setup(config)
     newpaper.linenumber_bg       = newpaper.lightsilver
     newpaper.msgarea_fg          = newpaper.fg
     newpaper.msgarea_bg          = newpaper.bg
-    newpaper.colorcolumn         = newpaper.silver
+    newpaper.colorcolumn         = newpaper.disabled
     newpaper.border              = newpaper.purple
     newpaper.win_border          = newpaper.grey
     newpaper.highlight           = newpaper.silver
-    newpaper.disabled            = newpaper.lightlightgrey
     newpaper.contrast            = newpaper.lightlightgrey
     newpaper.active              = newpaper.silver
     newpaper.title               = newpaper.fg

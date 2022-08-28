@@ -179,13 +179,21 @@ function M.setup(configColors, configStyle)
             -- texBoxOptPosVal      texSymbol       \parbox[P][h][i]{w}{c} \begin{minipage}[P][h][i]{w}
             -- texBoxOptIPosVal     texBoxOptPosVal \parbox[p][h][I]{w}{c} \begin{minipage}[p][h][I]{w}
             -------------------------------------------------------------------
-            texMathZone           = { fg = newpaper.tex_math }, -- \( HERE \); \[ HERE \]
+            texMathZone           = { fg = newpaper.tex_math },
+            -- texMathZoneLI            texMathZone       \( HERE \)
+            -- texMathZoneLD            texMathZone       \[ HERE \]
+            texMathZoneTI         = { fg = newpaper.tex_math, style = style.italic }, -- $ HERE $
+            texMathZoneTD         = { fg = newpaper.tex_math }, -- $$ HERE $$
             texMathZoneEnv        = { fg = newpaper.tex_math }, -- \begin{menv}  HERE \end{menv}
             texMathZoneEnvStarred = { fg = newpaper.tex_math }, -- \begin{menv*} HERE \end{menv*}
-            texMathZoneX          = { fg = newpaper.tex_math, style = style.italic }, -- $ HERE $
-            texMathZoneXX         = { fg = newpaper.tex_math }, -- $$ HERE $$
             texMathZoneEnsured    = { fg = newpaper.tex_math, style = style.italic }, -- \ensuremath{HERE}
-            texCmdMathEnv         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END (for math environments)
+            texMathDelimZone      = { fg = newpaper.tex_olive },
+            -- texMathDelimZoneLI       texMathDelimZone  \(; \)
+            -- texMathDelimZoneLD       texMathDelimZone  \[; \]
+            -- texMathDelimZoneTI       texMathDelimZone  $
+            -- texMathDelimZoneTD       texMathDelimZone  $$
+            texCmdMathEnv         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
+            -- (Only for math environments)
             texMathEnvArgName     = { fg = newpaper.tex_math, style = style.italic }, -- \begin{EQUATION}
             texCmdMath            = { fg = newpaper.tex_math, style = style.tex_m_style }, -- \ENSUREMATH
             texMathDelim          = { fg = newpaper.tex_math_delim }, -- \LVERT
@@ -262,7 +270,6 @@ function M.setup(configColors, configStyle)
             texMathCmdStyleBold   = { fg = newpaper.tex_math, style = style.bold },
             texMathCmdStyleItal   = { fg = newpaper.tex_math, style = style.italic },
             texMathCmdText        = { fg = newpaper.tex_navy },
-            texMathDelimZone      = { fg = newpaper.tex_olive },
             texMathTextConcArg    = { fg = newpaper.tex_pink },
             -- texMathGroup          texMathZone
             -- texMathStyleConcArg   texMathZone
@@ -462,6 +469,9 @@ function M.setup(configColors, configStyle)
             -- no highlighting in syntax files ================================
             texPythontexZone = { fg = newpaper.tex_verb },
             texPythontexArg  = { fg = newpaper.tex_verb },
+
+            -- pyluatex.vim ---------------------------------------------------
+            texCmdPyluatex = { fg = newpaper.python_blue, style = style.tex_m_style },
 
             -- siunitx.vim ----------------------------------------------------
             texCmdSI       = { fg = newpaper.tex_SI_purple, style = style.tex_k_style },
