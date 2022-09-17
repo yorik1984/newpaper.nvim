@@ -18,6 +18,7 @@ end
 -- stylua: ignore start
 
 local term_opt = {
+    bg                  = "bg",
     contrast            = "contrast",
     inverse             = "inverse",
     inverse_transparent = "inverse_transparent",
