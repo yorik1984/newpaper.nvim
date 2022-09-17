@@ -52,47 +52,46 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ### 🔌 Supported plugins
 
-+ [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-+ [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-+ [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
-+ [tami5/lspsaga.nvim](https://github.com/tami5/lspsaga.nvim)
-+ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-+ [Trouble](https://github.com/folke/trouble.nvim)
-+ [Git Gutter](https://github.com/airblade/vim-gitgutter)
-+ [git-messenger](https://github.com/rhysd/git-messenger.vim)
-+ [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
-+ [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-+ [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-+ [NERDTree](https://github.com/preservim/nerdtree)
-+ [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-+ [vim-which-key](https://github.com/liuchengxu/vim-which-key)
-+ [WhichKey.nvim](https://github.com/folke/which-key.nvim)
++ [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
++ [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [Dashboard](https://github.com/glepnir/dashboard-nvim)
++ [Git Gutter](https://github.com/airblade/vim-gitgutter)
++ [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
++ [git-messenger](https://github.com/rhysd/git-messenger.vim)
++ [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
++ [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
++ [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
++ [litee.nvim](https://github.com/ldelossa/litee.nvim)
++ [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
++ [lspsaga.nvim](https://github.com/tami5/lspsaga.nvim)
 + [Lualine](https://github.com/nvim-lualine/lualine.nvim) -- [🖼️](#-screenshots-lualine)
++ [mason.nvim](https://github.com/williamboman/mason.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
-+ [vim-sneak](https://github.com/justinmk/vim-sneak)
-+ [nvim-dap](https://github.com/mfussenegger/nvim-dap)
++ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 + [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 + [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
-+ [vim-illuminate](https://github.com/RRethy/vim-illuminate)
-+ [packer.nvim](https://github.com/wbthomason/packer.nvim)
-+ [vimtex](https://github.com/lervag/vimtex)
-+ [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
-+ [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-+ [vim-toml](https://github.com/cespare/vim-toml)
-+ [vim-ruby](https://github.com/vim-ruby/vim-ruby)
-+ [vim-lua](https://github.com/tbastos/vim-lua)
-+ [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
-+ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- [🖼️](#todo-commentsnvim)
-+ [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
++ [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 + [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
-+ [litee.nvim](https://github.com/ldelossa/litee.nvim)
-+ [vista.vim](https://github.com/liuchengxu/vista.vim)
-+ [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [nvim-notify](https://github.com/rcarriga/nvim-notify)
-+ [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
++ [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
++ [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
++ [packer.nvim](https://github.com/wbthomason/packer.nvim)
++ [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
++ [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
++ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- [🖼️](#todo-commentsnvim)
++ [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
++ [Trouble](https://github.com/folke/trouble.nvim)
++ [vim-illuminate](https://github.com/RRethy/vim-illuminate)
++ [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
++ [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
++ [vim-lua](https://github.com/tbastos/vim-lua)
 + [vim-rbs](https://github.com/jlcrochet/vim-rbs)
-+ [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
++ [vim-ruby](https://github.com/vim-ruby/vim-ruby)
++ [vim-sneak](https://github.com/justinmk/vim-sneak)
++ [vim-toml](https://github.com/cespare/vim-toml)
++ [vimtex](https://github.com/lervag/vimtex)
++ [vista.vim](https://github.com/liuchengxu/vista.vim)
++ [WhichKey.nvim](https://github.com/folke/which-key.nvim)
 
 ## ⚡️ Requirements
 
@@ -165,8 +164,8 @@ require("newpaper").setup({
 |--------------------|------------|--------------------------------------------------------------|
 | style              | `"light"`  | The theme comes in two styles:`"dark"`, `"light"` |
 | editor_better_view | `true`     | Make some interface like menu, title of editor and plugins menu bold and italic |
-| terminal           | `"contrast"` | Make `:terminal` window in different styles. Value:`"contrast"`, `"inverse"`, `"inverse_transparent"` |
-| sidebars_contrast  | `{}`       | Set a contrast background on sidebar-like windows. For example: `{ "NvimTree", "qf", "vista_kind", "terminal", "packer" }` |
+| terminal           | `"contrast"` | Make `:terminal` window in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
+| sidebars_contrast  | `{}`       | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars.  |
 | contrast_float     | `true`     | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope | `true`     | Make Telescope have a different foreground and background |
 | operators_bold     | `true`     | Make booleans, escape characters, operators, `=`, `*`, delimiter like `<>/` bold |
@@ -199,7 +198,6 @@ require("newpaper").setup({
 require("newpaper").setup({
     style               = "light",
     editor_better_view  = true,
-    contrast_sidebar    = false,
     terminal            = "contrast",
     sidebars_contrast   = {},
     contrast_float      = true,
@@ -224,7 +222,6 @@ require("newpaper").setup({
     colors              = {},
     custom_highlights   = {},
     lualine_bold        = true,
-    lualine_style       = "light",
     lualine_style       = "light",
     devicons_custom     = {},
 })

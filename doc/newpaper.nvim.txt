@@ -21,50 +21,46 @@ FEATURES                                                *newpaper.nvim-features*
         - dark
 
     + A wide array of supprted plugiuns like:
-        - TreeSitter
-        - nvim-web-devicons
-        - LSP Diagnostics
-        - LSP Saga
-        - LSP Trouble
-        - Nvim-Compe
-        - Nvim-Cmp
-        - Trouble
-        - Git Gutter
-        - git-messenger
-        - Git Signs
-        - Telescope.nvim
-        - Nvim-Tree.lua
-        - NERDTree
-        - Indent-Blankline.nvim
-        - vim-which-key
-        - WhichKey.nvim
+        - bufferline.nvim
+        - cheatsheet.nvim
         - Dashboard
+        - Git Gutter
+        - Git Signs
+        - git-messenger
+        - glyph-palette.vim
+        - headlines.nvim
+        - Indent-Blankline.nvim
+        - litee.nvim
+        - LSP Diagnostics
+        - lspsaga
         - Lualine
+        - mason.nvim
         - Neogit
-        - vim-sneak
+        - nvim-cmp
         - nvim-dap
         - nvim-dap-ui
         - nvim-dap-virtual-text
-        - vim-illuminate
-        - packer.nvim
-        - vimtex
-        - glyph-palette.vim
-        - Vim-Jinja2-Syntax
-        - vim-toml
-        - vim-ruby
-        - vim-lua
-        - vim-LanguageTool
-        - todo-comments.nvim
-        - bufferline.nvim
         - nvim-lsp-installer
-        - calltree.nvim
-        - vista.vim
-        - symbols-outline.nvim
         - nvim-notify
-        - headlines.nvim
+        - Nvim-Tree.lua
+        - nvim-web-devicons
+        - packer.nvim
+        - symbols-outline.nvim
+        - Telescope.nvim
+        - todo-comments.nvim
+        - TreeSitter
+        - Trouble
+        - vim-illuminate
+        - Vim-Jinja2-Syntax
+        - vim-LanguageTool
+        - vim-lua
         - vim-rbs
-        - cheatsheet.nvim
-        - virtcolumn.nvim
+        - vim-ruby
+        - vim-sneak
+        - vim-toml
+        - vimtex
+        - vista.vim
+        - WhichKey.nvim
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.
@@ -144,11 +140,13 @@ Options:
 
     + terminal           {string} (default = `"contrast"`)
         Make `:terminal` window in different styles.
-        Value: `"contrast"`, `"inverse"`, `"inverse_transparent"
+        Value: `"bg"`,`"contrast"`, `"inverse"`, `"inverse_transparent"`
         `
     + sidebars_contrast  {table} (default = {})
         Set a contrast background on sidebar-like windows.
-        For example: `{ "NvimTree", "qf", "vista_kind", "terminal", "packer" }`
+        Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`
+        `"NvimTree"` and `"Trouble"` groups has own highlight colors.
+        Can be overridden separate from others sidebars.
 
     + contrast_float     {booleans} (default = true)
         Make popup menus like nvim-compe, lsp-saga have a different
@@ -255,8 +253,8 @@ Default settings:
     require("newpaper").setup({
         style               = "light",
         editor_better_view  = true,
-        contrast_sidebar    = false,
-        sidebars            = {},
+        terminal            = "contrast",
+        sidebars_contrast   = {},
         contrast_float      = true,
         contrast_telescope  = true,
         operators_bold      = true,
@@ -277,8 +275,9 @@ Default settings:
         lsp_virtual_text_bg = true,
         hide_eob            = false,
         colors              = {},
+        custom_highlights   = {},
         lualine_bold        = true,
-        lualine_style       = "light"
+        lualine_style       = "light",
         devicons_custom     = {},
     })
 <
