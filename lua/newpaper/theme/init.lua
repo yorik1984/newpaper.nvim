@@ -49,6 +49,7 @@ function M.setup(configColors, configStyle)
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
 
             -- Help
+            helpBacktick       = { fg = newpaper.magenta },
             helpCommand        = { fg = newpaper.teal },
             helpExample        = { fg = newpaper.string, style = style.s_style },
             helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },

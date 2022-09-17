@@ -138,9 +138,9 @@ function M.loadCustomSyntax(config)
     async:send()
 end
 
-function M.colorOverrides(colors, config)
-    for key, value in pairs(config.colors) do
-        check.keyExistsError(config.colors, colors, "color", "Use: from newpaper/colors.lua")
+function M.colorOverrides(colors, configColors)
+    for key, value in pairs(configColors) do
+        check.keyExistsError(configColors, colors, "color", "Use: from newpaper/colors.lua")
         -- Patch: https://github.com/ful1e5/onedark.nvim/issues/6
         if type(colors[key]) == "table" then
             M.colorOverrides(colors[key], { colors = value })

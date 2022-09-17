@@ -185,7 +185,8 @@ require("newpaper").setup({
 | disable_background | `false`    | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`     | Enable background color for LSP virtual text |
 | hide_eob           | `false`    | Hide the end of buffer lines (`~`) |
-| colors             | `{}`       | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view |
+| colors             | `{}`       | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code `lua/newpaper/colors.lua[13:167, 171:325]`|
+| colors_advanced     | `{}`       | Override the advanced default colors and use your own. See possible value in sorce code `lua/newpaper/colors.lua[331:481]` |
 | custom_highlights  | `{}`       | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold       | `true`     | When true, section headers in the lualine theme will be bold |
 | lualine_style      | `"light"`  | Set different style from main theme:`"dark"`, `"light"` |
@@ -220,6 +221,7 @@ require("newpaper").setup({
     lsp_virtual_text_bg = true,
     hide_eob            = false,
     colors              = {},
+    colors_advanced     = {},
     custom_highlights   = {},
     lualine_bold        = true,
     lualine_style       = "light",
@@ -231,10 +233,11 @@ require("newpaper").setup({
 
 ```lua
 -- Example config in lua with global variables
-vim.g.newpaper_style    = "dark"
-vim.g.newpaper_keywords = "italic"
-vim.g.newpaper_borders  = false
-vim.g.newpaper_colors   = { teal = "#0000FF" }
+vim.g.newpaper_style             = "dark"
+vim.g.newpaper_keywords          = "italic"
+vim.g.newpaper_borders           = false
+vim.g.newpaper_colors            = { teal = "#0000FF" }
+vim.g.newpaper_colors_advanced   = { keyword = "#AA00AA", string = "#008800" }
 vim.g.newpaper_custom_highlights = {
     Float     = { fg = vim.g.newpaper_colors.teal },
     Number    = { fg = "#00FF00" },
@@ -244,7 +247,8 @@ vim.g.newpaper_custom_highlights = {
 require("newpaper").setup()
 
 -- OR better with user configuration
-local colors = { teal = "#0000FF" } -- use one color for many groups
+local colors            = { teal = "#0000FF" } -- use one color for many groups
+local colors_advanced   = { keyword = "#AA00AA", string = "#008800" }
 local custom_highlights = {
     Float     = { fg = colors.teal }, -- prefer override by name
     Number    = { fg = "#00FF00" },   -- but hex colos also good
@@ -256,6 +260,7 @@ require("newpaper").setup({
     keywords = "italic",
     -- ...
     colors              = colors,
+    colors_advanced     = colors_advanced,
     custom_highlights   = custom_highlights,
     -- ...
     devicons_custom     = { gui = "#FFFF00", cterm = 3},

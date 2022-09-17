@@ -49,6 +49,7 @@ local config = {
     lsp_virtual_text_bg = opt("lsp_virtual_text_bg", true),
     hide_eob            = opt("hide_eob", false),
     colors              = opt("colors", {}),
+    colors_advanced     = opt("colors_advanced", {}),
     custom_highlights   = opt("custom_highlights", {}),
     lualine_bold        = opt("lualine_bold", true),
     lualine_style       = opt("lualine_style", "light"),
