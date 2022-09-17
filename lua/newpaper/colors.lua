@@ -195,8 +195,8 @@ function M.setup(config)
         newpaper.lightgrey            = "#787878"
         newpaper.lightlightgrey       = "#4E4E4E"
         newpaper.lightsilver          = "#303030"
-        newpaper.blueviolet           = "#483D53"
-        newpaper.lightviolet          = "#3F334B"
+        newpaper.blueviolet           = "#342840"
+        newpaper.lightviolet          = "#473954"
         newpaper.lightblue            = "#7DB1D5"
         newpaper.ocean                = "#77B499"
         newpaper.nephritis            = "#36C692"
@@ -399,6 +399,7 @@ function M.setup(config)
     newpaper.term_contrast_fg    = newpaper.fg
     newpaper.term_contrast_bg    = newpaper.silver
     local term_color = {
+        bg                  = { fg = newpaper.normal_fg, bg = newpaper.normal_bg },
         contrast            = { fg = newpaper.term_contrast_fg, bg = newpaper.term_contrast_bg },
         inverse             = { fg = newpaper.normal_bg, bg = newpaper.normal_fg },
         inverse_transparent = { fg = newpaper.normal_bg, bg = newpaper.none },
