@@ -4,6 +4,7 @@ local configModule = require("newpaper.config")
 local config       = configModule.config
 
 local filetypes = {
+    "help",
     "html",
     "lua",
     "markdown",
