@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -62,22 +63,22 @@ function M.setup(configColors, configStyle)
     end
 
     yamlSyn.loadTreeSitter = function ()
-        local treesitter = {
-            -- yamlTSBoolean
-            -- yamlTSNumber
-            -- yamlTSComment
-            -- yamlTSKeyword
-            -- yamlTSError
-            -- yamlTSPunctDelimiter
-            -- yamlTSConstBuiltin
-            yamlTSStringEscape   = { fg = newpaper.magenta },
-            -- yamlTSType
-            yamlTSPunctSpecial   = { fg = newpaper.magenta },
-            yamlTSString         = { fg = newpaper.string,   style = style.s_style },
-            yamlTSField          = { fg = newpaper.ocean,    style = style.f_style },
-            yamlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@field.yaml"]                 = "yamlTSField",
+            ["@punctuation.bracket.yaml"]   = "yamlTSPunctBracket",
+            ["@string.escape.yaml"]         = "yamlTSStringEscape",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@field.yaml"]                 = { fg = newpaper.ocean,    style = style.f_style },
+            ["@punctuation.bracket.yaml"]   = { fg = newpaper.tag_navy, style = style.o_style },
+            ["@string.escape.yaml"]         = { fg = newpaper.magenta },
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     yamlSyn.loadPlugins = function()

@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -81,17 +82,18 @@ function M.setup(configColors, configStyle)
     end
 
     htmlSyn.loadTreeSitter = function ()
-        local treesitter = {
-            htmlTSTag                   = { fg = newpaper.tag_navy, style = style.k_style },
-            htmlTSTagDelimiter          = { fg = newpaper.tag_navy },
-            htmlTSOperator              = { fg = newpaper.tag_navy, style = style.o_style },
-            htmlTSTagAttribute          = { fg = newpaper.darkengreen },
-            htmlTSConstant              = { fg = newpaper.comment,  style = style.c_style },
-            htmlTSString                = { fg = newpaper.string,   style = style.s_style },
-            htmlTSTitle                 = { fg = newpaper.title,    style = style.k_style },
-            htmlTSText                  = { fg = newpaper.fg },
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@constant.html"] = "htmlTSConstant",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@constant.html"] = { fg = newpaper.comment,  style = style.c_style },
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     htmlSyn.loadPlugins = function()

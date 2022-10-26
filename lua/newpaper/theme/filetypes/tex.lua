@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -82,42 +83,82 @@ function M.setup(configColors, configStyle)
     end
 
     tex.loadTreeSitter = function ()
-        local treesitter = {
-            latexTSType            = { fg = newpaper.tex_blue, style = style.tex_k_style },
-            latexTSTitle           = { fg = newpaper.tex_part_title, style = style.tex_m_style },
-            latexTSMath            = { fg = newpaper.tex_math },
-            latexTSPunctDelimiter  = { fg = newpaper.tex_lightpurple },
-            latexTSOperator        = { fg = newpaper.tex_math, style = style.tex_o_style },
-            latexTSFuncMacro       = { fg = newpaper.tex_magenta },
-            latexTSFunction        = { fg = newpaper.tex_navy },
-            latexTSPunctBracket    = { fg = newpaper.tex_lightpurple },
-            latexTSPunctSpecial    = { fg = newpaper.tex_string },
-            latexTSEnvironment     = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            latexTSEnvironmentName = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
-            latexTSNamespace       = { fg = newpaper.tex_blue, style = style.tex_m_style },
-            latexTSInclude         = { fg = newpaper.tex_blue, style = style.tex_k_style },
-            latexTSParameter       = { fg = newpaper.tex_orange, style = style.tex_a_style },
-            latexTSError           = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },
-            latexTSTextReference   = { fg = newpaper.tex_lightgreen },
-            latexTSEmphasis        = { fg = newpaper.fg, style = style.italic },
-            latexTSStrong          = { fg = newpaper.fg, style = style.bold },
-            latexTSString          = { fg = newpaper.tex_string, style = style.tex_string },
-            latexTSURI             = { fg = newpaper.tex_navy, style = style.underline },
-            latexTSComment         = { fg = newpaper.comment, style = style.c_style },
 
-            bibtexTSPunctDelimiter = { fg = newpaper.tex_orange },
-            bibtexTSPunctBracket   = { fg = newpaper.tex_lightpurple },
-            bibtexTSFuncBuiltin    = { fg = newpaper.tex_maroon },
-            bibtexTSParameter      = { fg = newpaper.tex_orange },
-            bibtexTSOperator       = { fg = newpaper.tex_math, style = style.tex_o_style },
-            bibtexTSConstant       = { fg = newpaper.tex_math },
-            bibtexTSKeyword        = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            bibtexTSSymbol         = { fg = newpaper.tex_darkorange },
-            bibtexTSString         = { fg = newpaper.tex_teal },
-            bibtexTSField          = { fg = newpaper.tex_blue },
-            bibtexTSNumber         = { fg = newpaper.tex_pink }
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@error.latex"]                  = "latexTSError",
+            ["@function.latex"]               = "latexTSFunction",
+            ["@function.macro.latex"]         = "latexTSFuncMacro",
+            ["@include.latex"]                = "latexTSInclude",
+            ["@namespace.latex"]              = "latexTSNamespace",
+            ["@operator.latex"]               = "latexTSOperator",
+            ["@parameter.latex"]              = "latexTSParameter",
+            ["@punctuation.bracket.latex"]    = "latexTSPunctBracket",
+            ["@punctuation.delimiter.latex"]  = "latexTSPunctDelimiter",
+            ["@punctuation.special.latex"]    = "latexTSPunctSpecial",
+            ["@text.comment.latex"]           = "latexTSComment",
+            ["@text.emphasis.latex"]          = "latexTSEmphasis",
+            ["@text.environment.latex"]       = "latexTSEnvironment",
+            ["@text.environment.name.latex"]  = "latexTSEnvironmentName",
+            ["@text.math.latex"]              = "latexTSMath",
+            ["@text.reference.latex"]         = "latexTSTextReference",
+            ["@text.string.latex"]            = "latexTSString",
+            ["@text.strong.latex"]            = "latexTSStrong",
+            ["@text.title.latex"]             = "latexTSTitle",
+            ["@text.uri.latex"]               = "latexTSURI",
+            ["@type.latex"]                   = "latexTSType",
+
+            ["@constant.bibtex"]              = "bibtexTSConstant",
+            ["@field.bibtex"]                 = "bibtexTSField",
+            ["@function.builtin.bibtex"]      = "bibtexTSFuncBuiltin",
+            ["@keyword.bibtex"]               = "bibtexTSKeyword",
+            ["@number.bibtex"]                 = "bibtexTSNumber",
+            ["@operator.bibtex"]              = "bibtexTSOperator",
+            ["@parameter.bibtex"]             = "bibtexTSParameter",
+            ["@punctuation.bracket.bibtex"]   = "bibtexTSPunctBracket",
+            ["@punctuation.delimiter.bibtex"] = "bibtexTSPunctDelimiter",
+            ["@string.bibtex"]                = "bibtexTSString",
+            ["@symbol.bibtex"]                = "bibtexTSSymbol",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@error.latex"]                  = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },
+            ["@function.latex"]               = { fg = newpaper.tex_navy },
+            ["@function.macro.latex"]         = { fg = newpaper.tex_magenta },
+            ["@include.latex"]                = { fg = newpaper.tex_blue, style = style.tex_k_style },
+            ["@namespace.latex"]              = { fg = newpaper.tex_blue, style = style.tex_m_style },
+            ["@operator.latex"]               = { fg = newpaper.tex_math, style = style.tex_o_style },
+            ["@parameter.latex"]              = { fg = newpaper.tex_orange, style = style.tex_a_style },
+            ["@punctuation.bracket.latex"]    = { fg = newpaper.tex_lightpurple },
+            ["@punctuation.delimiter.latex"]  = { fg = newpaper.tex_lightpurple },
+            ["@punctuation.special.latex"]    = { fg = newpaper.tex_string },
+            ["@text.comment.latex"]           = { fg = newpaper.comment, style = style.c_style },
+            ["@text.emphasis.latex"]          = { fg = newpaper.fg, style = style.italic },
+            ["@text.environment.latex"]       = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            ["@text.environment.name.latex"]  = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
+            ["@text.math.latex"]              = { fg = newpaper.tex_math },
+            ["@text.reference.latex"]         = { fg = newpaper.tex_lightgreen },
+            ["@text.string.latex"]            = { fg = newpaper.tex_string, style = style.tex_string },
+            ["@text.strong.latex"]            = { fg = newpaper.fg, style = style.bold },
+            ["@text.title.latex"]             = { fg = newpaper.tex_part_title, style = style.tex_m_style },
+            ["@text.uri.latex"]               = { fg = newpaper.tex_navy, style = style.underline },
+            ["@type.latex"]                   = { fg = newpaper.tex_blue, style = style.tex_k_style },
+
+            ["@constant.bibtex"]              = { fg = newpaper.tex_math },
+            ["@field.bibtex"]                 = { fg = newpaper.tex_blue },
+            ["@function.builtin.bibtex"]      = { fg = newpaper.tex_maroon },
+            ["@keyword.bibtex"]               = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            ["@number.bibtex"]                = { fg = newpaper.tex_pink },
+            ["@operator.bibtex"]              = { fg = newpaper.tex_math, style = style.tex_o_style },
+            ["@parameter.bibtex"]             = { fg = newpaper.tex_orange },
+            ["@punctuation.bracket.bibtex"]   = { fg = newpaper.tex_lightpurple },
+            ["@punctuation.delimiter.bibtex"] = { fg = newpaper.tex_orange },
+            ["@string.bibtex"]                = { fg = newpaper.tex_teal },
+            ["@symbol.bibtex"]                = { fg = newpaper.tex_darkorange },
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     tex.loadPlugins = function()
@@ -386,9 +427,19 @@ function M.setup(configColors, configStyle)
             -- dot2tex.vim ----------------------------------------------------
             texDotZone = { fg = newpaper.tex_verb },
 
+            -- fixme.vim ------------------------------------------------------
+            -- texFixmeEnvBgn texCmdTodo
+            -- texFixmeEnvEnd texFixmeEnvBgn
+            -- texFixmeArg    texArg
+
+            -- fontawesome5.vim ------------------------------------------------------
+            -- texCmdFontawesome texCmd
+            -- texFontawesomeArg texArg
+            -- texFontawesomeOpt texOpt
+
             -- geometry.vim ---------------------------------------------------
-            --  texCmdGeometry texCmd
-            --  texGeometryArg texOpt
+            -- texCmdGeometry texCmd
+            -- texGeometryArg texOpt
 
             -- glossaries.vim -------------------------------------------------
             -- texCmdAcr         texCmd

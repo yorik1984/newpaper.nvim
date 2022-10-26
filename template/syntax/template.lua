@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -19,11 +20,17 @@ function M.setup(configColors, configStyle)
     end
 
     langSyn.loadTreeSitter = function ()
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+        }
+
         local treesitter = {
 
         }
 
-        return treesitter
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     langSyn.loadPlugins = function()

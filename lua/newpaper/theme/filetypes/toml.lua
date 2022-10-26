@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -33,20 +34,20 @@ function M.setup(configColors, configStyle)
     end
 
     tomlSyn.loadTreeSitter = function ()
-        local treesitter = {
-            -- tomlTSString
-            -- tomlTSBoolean
-            -- tomlTSComment
-            -- tomlTSNumber
-            -- tomlTSFloat
-            -- tomlTSOperator
-            -- tomlTSError
-            -- tomlTSStringSpecial
-            -- tomlTSPunctDelimiter
-            tomlTSPunctBracket   = { fg = newpaper.tag_navy, style = style.o_style },
-            tomlTSProperty       = { fg = newpaper.darkengreen, style = style.f_style },
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@punctuation.bracket.toml"] = "tomlTSPunctBracket",
+            ["@property.toml"]            = "tomlTSProperty",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@punctuation.bracket.toml"] = { fg = newpaper.tag_navy, style = style.o_style },
+            ["@property.toml"]            = { fg = newpaper.darkengreen, style = style.f_style },
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     tomlSyn.loadPlugins = function()

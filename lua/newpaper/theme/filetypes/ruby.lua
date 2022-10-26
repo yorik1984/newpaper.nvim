@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -19,22 +20,40 @@ function M.setup(configColors, configStyle)
     end
 
     rubySyn.loadTreeSitter = function ()
-        local treesitter = {
-            rubyTSConstructor     = { fg = newpaper.blue, style = style.o_style },
-            rubyTSConstBuilin     = { fg = newpaper.ruby_maroon },
-            rubyTSFuncMacro       = { fg = newpaper.ruby_maroon, style = style.k_style },
-            rubyTSException       = { fg = newpaper.redorange, style = style.k_style },
-            rubyTSInclude         = { fg = newpaper.redorange },
-            rubyTSKeywordOperator = { fg = newpaper.navy, style = style.k_style },
-            rubyTSLabel           = { fg = newpaper.darkengreen },
-            rubyTSMath            = { fg = newpaper.tex_math, style = style.o_style },
-            rubyTSConstant        = { fg = newpaper.ocean, style = style.k_style },
-            rubyTSPunctSpecial    = { fg = newpaper.magenta, style = style.o_style },
-            rubyTSStorageClass    = { fg = newpaper.ruby_navy, style = style.k_style },
-            rubyTSTypeQualifier   = { fg = newpaper.green, style = style.k_style },
-            rubyTSType            = { fg = newpaper.darkgreen },
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@constant.ruby"]            = "rubyTSConstant",
+            ["@constant.builtin.ruby"]    = "rubyTSConstBuiltin",
+            ["@constructor.ruby"]         = "rubyTSConstructor",
+            ["@exception.ruby"]           = "rubyTSException",
+            ["@function.macro.ruby"]      = "rubyTSFuncMacro",
+            ["@include.ruby"]             = "rubyTSInclude",
+            ["@keyword.operator.ruby"]    = "rubyTSKeywordOperator",
+            ["@label.ruby"]               = "rubyTSLabel",
+            ["@text.math.ruby"]           = "rubyTSMath",
+            ["@punctuation.special.ruby"] = "rubyTSPunctSpecial",
+            ["@type.ruby"]                = "rubyTSType",
+            ["@type.qualifier.ruby"]      = "rubyTSTypeQualifier",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@constant.ruby"]            = { fg = newpaper.ocean, style = style.k_style },
+            ["@constant.builtin.ruby"]    = { fg = newpaper.ruby_maroon },
+            ["@constructor.ruby"]         = { fg = newpaper.blue, style = style.o_style },
+            ["@exception.ruby"]           = { fg = newpaper.redorange, style = style.k_style },
+            ["@function.macro.ruby"]      = { fg = newpaper.ruby_maroon, style = style.k_style },
+            ["@include.ruby"]             = { fg = newpaper.redorange },
+            ["@keyword.operator.ruby"]    = { fg = newpaper.navy, style = style.k_style },
+            ["@label.ruby"]               = { fg = newpaper.darkengreen },
+            ["@text.math.ruby"]           = { fg = newpaper.tex_math, style = style.o_style },
+            ["@punctuation.special.ruby"] = { fg = newpaper.magenta, style = style.o_style },
+            ["@type.ruby"]                = { fg = newpaper.darkgreen },
+            ["@type.qualifier.ruby"]      = { fg = newpaper.green, style = style.k_style },
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     rubySyn.loadPlugins = function()
@@ -69,7 +88,6 @@ function M.setup(configColors, configStyle)
             rubyModuleName                 = { fg = newpaper.blue, style = style.k_style },
             rubySymbol                     = { fg = newpaper.darkyellow },
             -- rubyKeyword                    Keyword
-
 
             -- rubyBeginEnd                   Statement
             -- rubyEval                       Statement

@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -47,13 +48,6 @@ function M.setup(configColors, configStyle)
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
             Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- any erroneous construct
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
-
-            -- Help
-            helpBacktick       = { fg = newpaper.magenta },
-            helpCommand        = { fg = newpaper.teal },
-            helpExample        = { fg = newpaper.string, style = style.s_style },
-            helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
-            helpURL            = { fg = newpaper.string, style = style.s_underline },
         }
         return syntax
     end
@@ -180,68 +174,160 @@ function M.setup(configColors, configStyle)
     end
 
     theme.loadTreeSitter = function ()
-        local treesitter = {
-            TSAnnotation           = { fg = newpaper.red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-            TSAttribute            = { fg = newpaper.blue },
-            TSConditional          = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
-            TSKeyword              = { fg = newpaper.keyword, style = style.k_style }, -- For keywords that don't fall in previous categories.
-            TSRepeat               = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
-            TSKeywordFunction      = { fg = newpaper.darkpurple, style = style.k_style }, -- keywords used to define a fuction.
-            TSKeywordReturn        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
-            TSFunction             = { fg = newpaper.navy, style = style.f_style }, -- For fuction (calls and definitions).
-            TSMethod               = { fg = newpaper.bluegreen, style = style.f_style }, -- For method calls and definitions.
-            TSFuncBuiltin          = { fg = newpaper.navy, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
-            TSKeywordOperator      = { fg = newpaper.tag_navy, style = style.o_style }, -- define a operators like and, or.
-            TSTag                  = { fg = newpaper.tag, style = style.tag_style }, -- HTML tag names.
-            TSBoolean              = { fg = newpaper.boolean, style = style.k_style }, -- For booleans.
-            TSCharacter            = { fg = newpaper.orange }, -- For characters.
-            TSComment              = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
-            TSConstructor          = { fg = newpaper.lua_blue, style = style.o_style }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-            TSConstant             = { fg = newpaper.darkgreen }, -- For constants
-            TSConstBuiltin         = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
-            TSConstMacro           = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
-            TSNote                 = { fg = newpaper.bg, bg = newpaper.hint_fg },
-            TSWarning              = { fg = newpaper.bg, bg = newpaper.info_fg },
-            TSDanger               = { fg = newpaper.bg, bg = newpaper.warn_fg },
-            TSError                = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- For syntax/parser errors.
-            TSException            = { fg = newpaper.redorange }, -- For exception related keywords.
-            TSField                = { fg = newpaper.ocean }, -- For fields.
-            TSFloat                = { fg = newpaper.magenta }, -- For floats.
-            TSFuncMacro            = { fg = newpaper.magenta }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-            TSInclude              = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-            TSLabel                = { fg = newpaper.green }, -- For labels: `label:` in C and `:label:` in Lua.
-            TSNamespace            = { fg = newpaper.darkyellow }, -- For identifiers referring to modules and namespaces.
-            TSNumber               = { fg = newpaper.red }, -- For all numbers
-            TSOperator             = { fg = newpaper.navy, style = style.o_style }, -- For any operator: `+`, but also `->` and `*` in C.
-            TSParameter            = { fg = newpaper.orange }, -- For parameters of a function.
-            TSParameterReference   = { fg = newpaper.orange }, -- For references to parameters of a function.
-            TSProperty             = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
-            TSPunctDelimiter       = { fg = newpaper.orange }, -- For delimiters ie: `.`
-            TSPunctBracket         = { fg = newpaper.navy }, -- For brackets and parens.
-            TSPunctSpecial         = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
-            TSStringRegex          = { fg = newpaper.regexp_blue }, -- For regexes.
-            TSStringEscape         = { fg = newpaper.maroon }, -- For escape characters within a string.
-            TSSymbol               = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
-            TSType                 = { fg = newpaper.darkengreen }, -- For types.
-            TSTypeQualifier        = { fg = newpaper.green },
-            TSTypeBuiltin          = { fg = newpaper.magenta }, -- For builtin types.
-            TSVariable             = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
-            TSVariableBuiltin      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
-            TSTagDelimiter         = { fg = newpaper.navy, style = style.o_style }, -- Tag delimiter like `<` `>` `/`
-            TSText                 = { fg = newpaper.fg }, -- For strings considered text in a markup language.
-            TSTextReference        = { fg = newpaper.orange }, -- FIXME
-            TSEmphasis             = { fg = newpaper.fg, style = style.italic }, -- For text to be represented with emphasis.
-            TSUnderline            = { fg = newpaper.fg, style = style.underline }, -- For text to be represented with an underline.
-            TSStrike               = { fg = newpaper.fg, style = style.b_italic }, -- For strikethrough text.
-            TSString               = { fg = newpaper.string, style = style.s_style }, -- For strings.
-            TSTitle                = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
-            TSLiteral              = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
-            TSURI                  = { fg = newpaper.link, style = style.underline }, -- Any URI like a link or email.
-            TSMath                 = { fg = newpaper.tex_math },
-            TSEnvironment          = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            TSEnvironmentName      = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@annotation"]            = "TSAnnotation",
+            ["@attribute"]             = "TSAttribute",
+            ["@boolean"]               = "TSBoolean",
+            ["@character"]             = "TSCharacter",
+            ["@character.special"]     = "TSCharacterSpecial",
+            ["@comment"]               = "TSComment",
+            ["@conditional"]           = "TSConditional",
+            ["@constant"]              = "TSConstant",
+            ["@constant.builtin"]      = "TSConstBuiltin",
+            ["@constant.macro"]        = "TSConstMacro",
+            ["@constructor"]           = "TSConstructor",
+            ["@debug"]                 = "TSDebug",
+            ["@define"]                = "TSDefine",
+            ["@error"]                 = "TSError",
+            ["@exception"]             = "TSException",
+            ["@field"]                 = "TSField",
+            ["@float"]                 = "TSFloat",
+            ["@function"]              = "TSFunction",
+            ["@function.builtin"]      = "TSFuncBuiltin",
+            ["@function.call"]         = "TSFunctionCall",
+            ["@function.macro"]        = "TSFuncMacro",
+            ["@include"]               = "TSInclude",
+            ["@keyword"]               = "TSKeyword",
+            ["@keyword.function"]      = "TSKeywordFunction",
+            ["@keyword.operator"]      = "TSKeywordOperator",
+            ["@keyword.return"]        = "TSKeywordReturn",
+            ["@label"]                 = "TSLabel",
+            ["@method"]                = "TSMethod",
+            ["@method.call"]           = "TSMethodCall",
+            ["@namespace"]             = "TSNamespace",
+            ["@none"]                  = "TSNone",
+            ["@number"]                = "TSNumber",
+            ["@operator"]              = "TSOperator",
+            ["@parameter"]             = "TSParameter",
+            ["@parameter.reference"]   = "TSParameterReference",
+            ["@preproc"]               = "TSPreProc",
+            ["@property"]              = "TSProperty",
+            ["@punctuation.bracket"]   = "TSPunctBracket",
+            ["@punctuation.delimiter"] = "TSPunctDelimiter",
+            ["@punctuation.special"]   = "TSPunctSpecial",
+            ["@repeat"]                = "TSRepeat",
+            ["@storageclass"]          = "TSStorageClass",
+            ["@string"]                = "TSString",
+            ["@string.escape"]         = "TSStringEscape",
+            ["@string.regex"]          = "TSStringRegex",
+            ["@string.special"]        = "TSStringSpecial",
+            ["@symbol"]                = "TSSymbol",
+            ["@tag"]                   = "TSTag",
+            ["@tag.attribute"]         = "TSTagAttribute",
+            ["@tag.delimiter"]         = "TSTagDelimiter",
+            ["@text"]                  = "TSText",
+            ["@text.danger"]           = "TSDanger",
+            ["@text.emphasis"]         = "TSEmphasis",
+            ["@text.environment"]      = "TSEnvironment",
+            ["@text.environment.name"] = "TSEnvironmentName",
+            ["@text.literal"]          = "TSLiteral",
+            ["@text.math"]             = "TSMath",
+            ["@text.note"]             = "TSNote",
+            ["@text.reference"]        = "TSTextReference",
+            ["@text.strike"]           = "TSStrike",
+            ["@text.strong"]           = "TSStrong",
+            ["@text.title"]            = "TSTitle",
+            ["@text.underline"]        = "TSUnderline",
+            ["@text.uri"]              = "TSURI",
+            ["@text.warning"]          = "TSWarning",
+            ["@todo"]                  = "TSTodo",
+            ["@type"]                  = "TSType",
+            ["@type.builtin"]          = "TSTypeBuiltin",
+            ["@type.definition"]       = "TSTypeDefinition",
+            ["@type.qualifier"]        = "TSTypeQualifier",
+            ["@variable"]              = "TSVariable",
+            ["@variable.builtin"]      = "TSVariableBuiltin",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@annotation"]            = { fg = newpaper.red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+            ["@attribute"]             = { fg = newpaper.blue },
+            ["@boolean"]               = { fg = newpaper.boolean, style = style.k_style }, -- For booleans.
+            ["@character"]             = { fg = newpaper.orange }, -- For characters.
+            ["@character.special"]     = { fg = newpaper.maroon },
+            ["@comment"]               = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
+            ["@conditional"]           = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
+            ["@constant"]              = { fg = newpaper.darkgreen }, -- For constants
+            ["@constant.builtin"]      = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
+            ["@constant.macro"]        = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
+            ["@constructor"]           = { fg = newpaper.lua_blue, style = style.o_style }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+            ["@debug"]                 = { fg = newpaper.red },
+            ["@define"]                = { fg = newpaper.magenta },
+            ["@error"]                 = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- For syntax/parser errors.
+            ["@exception"]             = { fg = newpaper.redorange }, -- For exception related keywords.
+            ["@field"]                 = { fg = newpaper.ocean }, -- For fields.
+            ["@float"]                 = { fg = newpaper.magenta }, -- For floats.
+            ["@function"]              = { fg = newpaper.tag_navy, style = style.f_style }, -- For fuction definitions.
+            ["@function.builtin"]      = { fg = newpaper.lua_blue, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
+            ["@function.call"]         = { fg = newpaper.navy, style = style.f_style }, -- For fuction calls.
+            ["@function.macro"]        = { fg = newpaper.magenta }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+            ["@include"]               = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+            ["@keyword"]               = { fg = newpaper.keyword, style = style.k_style }, -- For keywords that don't fall in previous categories.
+            ["@keyword.function"]      = { fg = newpaper.darkpurple, style = style.k_style }, -- keywords used to define a fuction.
+            ["@keyword.operator"]      = { fg = newpaper.tag_navy, style = style.o_style }, -- define a operators like and, or.
+            ["@keyword.return"]        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
+            ["@label"]                 = { fg = newpaper.green }, -- For labels: `label:` in C and `:label:` in Lua.
+            ["@method"]                = { fg = newpaper.bluegreen, style = style.f_style }, -- For method definitions.
+            ["@method.call"]           = { fg = newpaper.teal, style = style.f_style }, -- For method calls definitions.
+            ["@namespace"]             = { fg = newpaper.darkyellow }, -- For identifiers referring to modules and namespaces.
+            ["@none"]                  = { fg = newpaper.disabled },
+            ["@number"]                = { fg = newpaper.red }, -- For all numbers
+            ["@operator"]              = { fg = newpaper.navy, style = style.o_style }, -- For any operator: `+`, but also `->` and `*` in C.
+            ["@parameter"]             = { fg = newpaper.orange }, -- For parameters of a function.
+            ["@parameter.reference"]   = { fg = newpaper.orange }, -- For references to parameters of a function.
+            ["@preproc"]               = { fg = newpaper.navy },
+            ["@property"]              = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
+            ["@punctuation.bracket"]   = { fg = newpaper.navy }, -- For brackets and parens.
+            ["@punctuation.delimiter"] = { fg = newpaper.orange }, -- For delimiters ie: `.`
+            ["@punctuation.special"]   = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
+            ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
+            ["@storageclass"]          = { fg = newpaper.ruby_navy, style = style.k_style },
+            ["@string"]                = { fg = newpaper.string, style = style.s_style }, -- For strings.
+            ["@string.escape"]         = { fg = newpaper.maroon }, -- For escape characters within a string.
+            ["@string.regex"]          = { fg = newpaper.regexp_blue }, -- For regexes.
+            ["@string.special"]        = { fg = newpaper.maroon, style = style.s_style },
+            ["@symbol"]                = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
+            ["@tag"]                   = { fg = newpaper.tag, style = style.tag_style }, -- HTML tag names.
+            ["@tag.attribute"]         = { fg = newpaper.darkengreen },
+            ["@tag.delimiter"]         = { fg = newpaper.tag_navy }, -- Tag delimiter like `<` `>` `/`
+            ["@text"]                  = { fg = newpaper.fg }, -- For strings considered text in a markup language.
+            ["@text.danger"]           = { fg = newpaper.bg, bg = newpaper.warn_fg },
+            ["@text.emphasis"]         = { fg = newpaper.fg, style = style.italic }, -- For text to be represented with emphasis.
+            ["@text.environment"]      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            ["@text.environment.name"] = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
+            ["@text.literal"]          = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
+            ["@text.math"]             = { fg = newpaper.tex_math },
+            ["@text.note"]             = { fg = newpaper.bg, bg = newpaper.hint_fg },
+            ["@text.reference"]        = { fg = newpaper.orange },
+            ["@text.strike"]           = { fg = newpaper.fg, style = style.b_italic }, -- For strikethrough text.
+            ["@text.strong"]           = { fg = newpaper.fg, style = style.bold },
+            ["@text.title"]            = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
+            ["@text.underline"]        = { fg = newpaper.fg, style = style.underline }, -- For text to be represented with an underline.
+            ["@text.uri"]              = { fg = newpaper.link, style = style.link }, -- Any URI like a link or email.
+            ["@text.warning"]          = { fg = newpaper.bg, bg = newpaper.info_fg },
+            ["@todo"]                  = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            ["@type"]                  = { fg = newpaper.darkengreen }, -- For types.
+            ["@type.builtin"]          = { fg = newpaper.magenta }, -- For builtin types.
+            ["@type.definition"]       = { fg = newpaper.maroon },
+            ["@type.qualifier"]        = { fg = newpaper.green },
+            ["@variable"]              = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
+            ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     theme.loadLSP = function ()

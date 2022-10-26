@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -28,19 +29,34 @@ function M.setup(configColors, configStyle)
     end
 
     luaSyn.loadTreeSitter = function ()
-        local treesitter = {
-            luaTSField           = { fg = newpaper.fg },
-            luaTSVariable        = { fg = newpaper.darkengreen, style = style.v_style },
-            luaTSVariableBuiltin = { fg = newpaper.ocean, style = style.v_style },
-            luaTSFuncBuiltin     = { fg = newpaper.redorange },
-            luaTSLabel           = { fg = newpaper.magenta },
-            luaTSPunctBracket    = { fg = newpaper.tag_navy },
-            luaTSConstructor     = { fg = newpaper.lua_blue,    style = style.k_style },
-            luaTSOperator        = { fg = newpaper.lua_navy,    style = style.o_style },
-            luaTSKeywordOperator = { fg = newpaper.tag_navy,    style = style.o_style },
-            luaTSKeywordReturn   = { fg = newpaper.tex_keyword, style = style.o_style },
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@constructor.lua"]           = "luaTSConstructor",
+            ["@field.lua"]                 = "luaTSField",
+            ["@function.builtin.lua"]      = "luaTSFuncBuiltin",
+            ["@function.call.lua"]         = "luaTSFunctionCall",
+            ["@keyword.return.lua"]        = "luaTSKeywordReturn",
+            ["@label.lua"]                 = "luaTSLabel",
+            ["@operator.lua"]              = "luaTSOperator",
+            ["@punctuation.bracket.lua"]   = "luaTSPunctBracket",
+            ["@variable.lua"]              = "luaTSVariable",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.k_style },
+            ["@field.lua"]                 = { fg = newpaper.fg },
+            ["@function.builtin.lua"]      = { fg = newpaper.redorange },
+            ["@function.call.lua"]         = { fg = newpaper.lua_navy, style = style.f_style },
+            ["@keyword.return.lua"]        = { fg = newpaper.tex_keyword, style = style.o_style },
+            ["@label.lua"]                 = { fg = newpaper.magenta },
+            ["@operator.lua"]              = { fg = newpaper.lua_navy,    style = style.o_style },
+            ["@punctuation.bracket.lua"]   = { fg = newpaper.lua_navy },
+            ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     luaSyn.loadPlugins = function()

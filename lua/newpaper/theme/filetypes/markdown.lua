@@ -1,4 +1,5 @@
-local M = {}
+local util = require("newpaper.util")
+local M    = {}
 
 function M.setup(configColors, configStyle)
 
@@ -69,19 +70,30 @@ function M.setup(configColors, configStyle)
     end
 
     markdownSyn.loadTreeSitter = function ()
-        local treesitter = {
-            markdownTSTitle          = { fg = newpaper.keyword, style = style.k_style },
-            markdownTSEmphasis       = { fg = newpaper.fg,      style = style.italic },
-            markdownTSStrong         = { fg = newpaper.fg,      style = style.bold },
-            markdownTSTextReference  = { fg = newpaper.link,    style = style.underline },
-            markdownTSPunctSpecial   = { fg = newpaper.teal },
-            markdownTSURI            = { fg = newpaper.tex_string },
-            markdownTSLiteral        = { fg = newpaper.regexp_blue },
-            markdownTSStringEscape   = { fg = newpaper.tex_magenta },
-            markdownTSPunctDelimiter = { fg = newpaper.orange },
-            markdownTSNone           = { fg = newpaper.fg },
+
+        -- fallback to 0.7
+        local treesitterOldKey = {
+            ["@none.markdown"]                = "markdownTSNone",
+            ["@punctuation.special.markdown"] = "markdownTSPunctSpecial",
+            ["@string.escape.markdown"]       = "markdownTSStringEscape",
+            ["@text.literal.markdown"]        = "markdownTSLiteral",
+            ["@text.reference.markdown"]      = "markdownTSTextReference",
+            ["@text.title.markdown"]          = "markdownTSTitle",
+            ["@text.uri.markdown"]            = "markdownTSURI",
         }
-        return treesitter
+
+        local treesitter = {
+            ["@none.markdown"]                = { fg = newpaper.fg },
+            ["@punctuation.special.markdown"] = { fg = newpaper.teal },
+            ["@string.escape.markdown"]       = { fg = newpaper.tex_magenta },
+            ["@text.literal.markdown"]        = { fg = newpaper.regexp_blue },
+            ["@text.reference.markdown"]      = { fg = newpaper.link,    style = style.underline },
+            ["@text.title.markdown"]          = { fg = newpaper.keyword, style = style.k_style },
+            ["@text.uri.markdown"]            = { fg = newpaper.tex_string },
+        }
+
+        -- fallback to 0.7
+        return util.treesitterOverride(treesitter, treesitterOldKey)
     end
 
     markdownSyn.loadPlugins = function()
