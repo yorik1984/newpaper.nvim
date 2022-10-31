@@ -15,69 +15,70 @@ function M.setup(configColors, configStyle)
         local syntax = {
             -- Basic tex groups
             -- NOTE:some basic groups init in Vimtex part. See below
-            texCursor         = { fg = newpaper.bg, bg = newpaper.tex_aqua },
-            texBadMath        = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
-            texMathDelimBad   = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_keyword, style = style.error },
-            texOnlyMath       = { bg = newpaper.tex_only_math_error, sp = newpaper.tex_olive, style = style.error },
-            texCite           = { fg = newpaper.tex_lightviolet },
-            texDefCmd         = { fg = newpaper.tex_magenta },
-            texDefName        = { fg = newpaper.tex_blue },
-            texDocType        = { fg = newpaper.tex_keyword, style = style.tex_m_style },
-            texDocTypeArgs    = { fg = newpaper.tex_navy },
-            texInputFileOpt   = { fg = newpaper.tex_orange },
+
             -- texInputCurlies   texDelimiter
-            texMathDelimSet1  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
-            texMathDelimSet2  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
-            texMathDelimKey   = { fg = newpaper.tex_pink },
             -- texMathMatcher    texMath
             texAccent         = { fg = newpaper.tex_math },
+            texBadMath        = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
+            texBeginEnd       = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            texBeginEndName   = { fg = newpaper.tex_darkorange },
+            texCite           = { fg = newpaper.tex_lightviolet },
+            texCmdArgs        = { fg = newpaper.tex_navy },
+            texCmdName        = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            texCursor         = { fg = newpaper.bg, bg = newpaper.tex_aqua },
+            texDef            = { fg = newpaper.tex_blue },
+            texDefCmd         = { fg = newpaper.tex_magenta },
+            texDefName        = { fg = newpaper.tex_blue },
+            texDelimiter      = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
+            texDocType        = { fg = newpaper.tex_keyword, style = style.tex_m_style },
+            texDocTypeArgs    = { fg = newpaper.tex_navy },
             texGreek          = { fg = newpaper.tex_math },
-            texSuperscript    = { fg = newpaper.tex_math },
-            texSubscript      = { fg = newpaper.tex_math },
-            texSuperscripts   = { fg = newpaper.tex_math },
-            texSubscripts     = { fg = newpaper.tex_math },
+            texInput          = { fg = newpaper.tex_blue },
+            texInputFile      = { fg = newpaper.tex_navy },
+            texInputFileOpt   = { fg = newpaper.tex_orange },
+            texMath           = { fg = newpaper.tex_math },
+            texMathDelimBad   = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_keyword, style = style.error },
+            texMathDelimKey   = { fg = newpaper.tex_pink },
+            texMathDelimSet1  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
+            texMathDelimSet2  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             texMathZoneV      = { fg = newpaper.tex_math, style = style.italic },
             texMathZoneW      = { fg = newpaper.tex_math },
             texMathZoneY      = { fg = newpaper.tex_math },
             texMathZoneZ      = { fg = newpaper.tex_math },
-            texBeginEnd       = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            texBeginEndName   = { fg = newpaper.tex_darkorange },
-            texSpaceCode      = { fg = newpaper.tex_blue },
-            texStyleStatement = { fg = newpaper.tex_blue },
-            texTypeSize       = { fg = newpaper.tex_navy },
-            texTypeStyle      = { fg = newpaper.tex_navy },
-            texCmdArgs        = { fg = newpaper.tex_navy },
-            texCmdName        = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            texDef            = { fg = newpaper.tex_blue },
-            texDelimiter      = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
-            texInput          = { fg = newpaper.tex_blue },
-            texInputFile      = { fg = newpaper.tex_navy },
-            texMath           = { fg = newpaper.tex_math },
             texNewCmd         = { fg = newpaper.tex_magenta },
             texNewEnv         = { fg = newpaper.tex_magenta },
+            texOnlyMath       = { bg = newpaper.tex_only_math_error, sp = newpaper.tex_olive, style = style.error },
             texOption         = { fg = newpaper.tex_orange },
             texRefZone        = { fg = newpaper.tex_lightgreen },
             texSection        = { fg = newpaper.tex_blue,    style = style.tex_m_style },
+            texSpaceCode      = { fg = newpaper.tex_blue },
             texSpaceCodeChar  = { fg = newpaper.tex_maroon },
             texStatement      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            texStyleStatement = { fg = newpaper.tex_blue },
+            texSubscript      = { fg = newpaper.tex_math },
+            texSubscripts     = { fg = newpaper.tex_math },
+            texSuperscript    = { fg = newpaper.tex_math },
+            texSuperscripts   = { fg = newpaper.tex_math },
             texType           = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            texTypeSize       = { fg = newpaper.tex_navy },
+            texTypeStyle      = { fg = newpaper.tex_navy },
 
             -- bibUnescapedSpecial Error
             -- bibComment          Comment
             -- bibComment2         Comment
             -- bibComment3         Comment
-            bibNSEntryKw      = { fg = newpaper.tex_keyword },
-            bibEntryData      = { fg = newpaper.tex_pink },
-            bibVariable       = { fg = newpaper.tex_orange, style = style.v_style },
-            bibEntryKw        = { fg = newpaper.tex_blue, style = style.tex_k_style},
-            bibQuote          = { fg = newpaper.tex_string },
-            bibParen          = { fg = newpaper.tex_math_delim },
-            bibField          = { fg = newpaper.tex_math, style = style.tex_o_style },
-            bibEntry          = { fg = newpaper.tex_keyword, style = style.tex_m_style },
             bibBrace          = { fg = newpaper.tex_teal },
-            bibType           = { fg = newpaper.tex_keyword, style = style.tex_m_style },
+            bibEntry          = { fg = newpaper.tex_keyword, style = style.tex_m_style },
+            bibEntryData      = { fg = newpaper.tex_pink },
+            bibEntryKw        = { fg = newpaper.tex_blue, style = style.tex_k_style},
+            bibField          = { fg = newpaper.tex_math, style = style.tex_o_style },
+            bibKey            = { fg = newpaper.tex_darkorange },
             bibMath           = { fg = newpaper.tex_math },
-            bibKey            = { fg = newpaper.tex_darkorange }
+            bibNSEntryKw      = { fg = newpaper.tex_keyword },
+            bibParen          = { fg = newpaper.tex_math_delim },
+            bibQuote          = { fg = newpaper.tex_string },
+            bibType           = { fg = newpaper.tex_keyword, style = style.tex_m_style },
+            bibVariable       = { fg = newpaper.tex_orange, style = style.v_style },
         }
         return syntax
     end
@@ -166,10 +167,11 @@ function M.setup(configColors, configStyle)
             -- Vimtex groups
             -- NOTE:Some groups from tex basic syntax include this
 
-            -- Primitive TeX highlighting groups
-            -- texError            Error
-            -- texComment          Comment
-            texCommentTodo         = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.comment_title },
+            texCmdType            = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            texParm               = { fg = newpaper.tex_maroon },
+            texZone               = { fg = newpaper.fg },
+            texSymbol             = { fg = newpaper.tex_maroon },
+            -- texError             VimtexError
 
             -- texStyleBold          gui=bold                  cterm=bold
             -- texStyleItal          gui=italic                cterm=italic
@@ -180,12 +182,10 @@ function M.setup(configColors, configStyle)
             -- texStyleBoldItalUnder gui=bold,italic,underline cterm=bold,italic,underline
             -- texMathStyleBold      gui=bold        cterm=bold
             -- texMathStyleItal      gui=italic      cterm=italic
+
             -------------------------------------------------------------------
-            texCmdType            = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            texParm               = { fg = newpaper.tex_maroon },
-            texZone               = { fg = newpaper.fg },
-            texSymbol             = { fg = newpaper.tex_maroon },
-            -------------------------------------------------------------------
+            -- texComment          Comment
+            texCommentTodo        = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.comment_title },
             texDelim              = { fg = newpaper.tex_lightpurple }, -- {, }, [, and ]
             texCmd                = { fg = newpaper.tex_blue, style = style.tex_k_style }, -- \CMD
             texOpt                = { fg = newpaper.tex_orange }, -- \cmd[OPT]
@@ -248,6 +248,9 @@ function M.setup(configColors, configStyle)
             texCmdLigature        = { fg = newpaper.tex_blue }, -- \ss; \ae
             texCmdSpaceCodeChar   = { fg = newpaper.tex_maroon }, -- Catcodes. For more info, see: https://en.wikibooks.org/wikicatcode
             texCmdTodo            = { fg = newpaper.todo_warn, style = style.b_bold },-- \TODOSOMETHING
+            -- texCmdWarning       VimtexWarning
+            -- texCmdError         VimtexError
+            -- texCmdFatal         VimtexFatal
             texCmdVerb            = { fg = newpaper.tex_verb, style = style.tex_m_style }, -- \VERB
             texVerbZoneInline     = { fg = newpaper.tex_verb }, -- \verb+VERB TEXT+
             texVerbZone           = { fg = newpaper.tex_verb }, -- \begin{verbatim} VERB TEXT \end{verbatim}
@@ -428,9 +431,15 @@ function M.setup(configColors, configStyle)
             texDotZone = { fg = newpaper.tex_verb },
 
             -- fixme.vim ------------------------------------------------------
-            -- texFixmeEnvBgn texCmdTodo
-            -- texFixmeEnvEnd texFixmeEnvBgn
-            -- texFixmeArg    texArg
+            -- texFixmeEnvBgn        texCmdTodo
+            -- texFixmeTodoEnvBgn    texCmdTodo
+            -- texFixmeTodoEnvEnd    texFixmeTodoEnvBgn
+            -- texFixmeWarningEnvBgn texCmdWarning
+            -- texFixmeWarningEnvEnd texFixmeWarningEnvBgn
+            -- texFixmeErrorEnvBgn   texCmdError
+            -- texFixmeErrorEnvEnd   texFixmeErrorEnvBgn
+            -- texFixmeFatalEnvBgn   texCmdFatal
+            -- texFixmeFatalEnvEnd   texFixmeFatalEnvBgn
 
             -- fontawesome5.vim ------------------------------------------------------
             -- texCmdFontawesome texCmd
@@ -567,7 +576,7 @@ function M.setup(configColors, configStyle)
             -- todonotes.vim --------------------------------------------------
             texTodoOpt = { fg = newpaper.todo_warn },
 
-            -- vimtex own highlights ------------------------------------------
+            -- vimtex highlights ------------------------------------------
             VimtexImapsArrow          = { fg = newpaper.tex_math, style = style.b_bold },
             VimtexImapsLhs            = { fg = newpaper.tex_keyword },
             VimtexImapsRhs            = { fg = newpaper.tex_string },
@@ -600,6 +609,8 @@ function M.setup(configColors, configStyle)
             VimtexTocInclPath         = { fg = newpaper.tex_navy },
             VimtexWarning             = { fg = newpaper.warn_fg, style = style.b_bold },
             -- VimtexError            ErrorMsg,
+            -- VimtexFatal            Error
+            -- VimtexTodo             Todo
         }
         return plugins
     end
