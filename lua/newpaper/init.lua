@@ -14,12 +14,14 @@ local filetypes = {
     "vim",
     "yaml",
 }
+
 local plugins = {
     "cheatsheet",
     "rbs",
     "jinja",
     "nvim-tree",
     "mason",
+    "lspsaga",
     "telescope",
     "trouble",
 }
