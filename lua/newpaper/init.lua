@@ -1,30 +1,13 @@
 local util         = require("newpaper.util")
 local theme        = require("newpaper.theme")
+local filetypes    = require("newpaper.theme.filetypes")
+local plugins      = require("newpaper.theme.plugins")
+local devIcons     = require("newpaper.theme.plugins.devicons")
 local configModule = require("newpaper.config")
 local config       = configModule.config
-
-local filetypes = {
-    "help",
-    "html",
-    "lua",
-    "markdown",
-    "ruby",
-    "tex",
-    "toml",
-    "vim",
-    "yaml",
-}
-
-local plugins = {
-    "cheatsheet",
-    "rbs",
-    "jinja",
-    "nvim-tree",
-    "mason",
-    "lspsaga",
-    "telescope",
-    "trouble",
-}
+local configApply  = configModule.config
+local configColors = require("newpaper.colors").setup(configApply)
+local configStyle  = require("newpaper.style").setupStyle(configApply)
 
 local function setup(userConfig)
     if userConfig then
@@ -53,32 +36,22 @@ local function setup(userConfig)
         end
     end
 
-    local configApply  = configModule.config
-    local configColors = require("newpaper.colors").setup(configApply)
-    local configStyle  = require("newpaper.style").setupStyle(configApply)
-    local ftypesFolder = "newpaper.theme.filetypes."
-    local plugsFolder  = "newpaper.theme.plugins."
-    local devIcons     = "newpaper.theme.plugins.devicons"
-
     util.load(configApply, theme.setup(configColors, configStyle))
 
-    for _, value in ipairs(filetypes) do
-        local fileSyn = ftypesFolder .. value
+    for _, fileSyn in ipairs(filetypes) do
         util.loadSyntax(require(fileSyn).setup(configColors, configStyle))
     end
-
-    for _, value in ipairs(plugins) do
-        local fileSyn = plugsFolder .. value
+    for _, fileSyn in ipairs(plugins) do
         util.loadPluginSyntax(require(fileSyn).setup(configColors, configStyle))
     end
 
     if configApply.devicons_custom.cterm and not configApply.devicons_custom.gui then
         util.deviconsOverrides(configApply)
-        util.loadPluginSyntax(require(devIcons).setup(configColors))
+        util.loadPluginSyntax(devIcons.setup(configColors))
     elseif configApply.devicons_custom.gui then
         util.deviconsOverrides(configApply)
     else
-        util.loadPluginSyntax(require(devIcons).setup(configColors))
+        util.loadPluginSyntax(devIcons.setup(configColors))
     end
 
     util.loadCustomSyntax(configApply)
