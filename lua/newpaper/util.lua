@@ -177,7 +177,7 @@ function M.deviconsOverrides(config)
     local devIconCustom      = config.devicons_custom.gui
     local devIconCustomCterm = config.devicons_custom.cterm
 
-    -- https://github.com/kyazdani42/nvim-web-devicons/blob/master/lua/nvim-web-devicons.lua
+    -- https://github.com/nvim-tree/nvim-web-devicons/blob/master/lua/nvim-web-devicons.lua
 
     local group = vim.api.nvim_create_augroup("devIconsCustom", {})
     vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
