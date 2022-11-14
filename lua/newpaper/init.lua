@@ -5,9 +5,6 @@ local plugins      = require("newpaper.theme.plugins")
 local devIcons     = require("newpaper.theme.plugins.devicons")
 local configModule = require("newpaper.config")
 local config       = configModule.config
-local configApply  = configModule.config
-local configColors = require("newpaper.colors").setup(configApply)
-local configStyle  = require("newpaper.style").setupStyle(configApply)
 
 local function setup(userConfig)
     if userConfig then
@@ -35,6 +32,10 @@ local function setup(userConfig)
             vim.g.newpaper_lualine_style = config.lualine_style
         end
     end
+
+    local configApply  = configModule.config
+    local configColors = require("newpaper.colors").setup(configApply)
+    local configStyle  = require("newpaper.style").setupStyle(configApply)
 
     util.load(configApply, theme.setup(configColors, configStyle))
 
