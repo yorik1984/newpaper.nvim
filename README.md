@@ -96,7 +96,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ## ⚡️ Requirements
 
-+ Neovim >= 0.7
++ Neovim >= 0.7.2
 
 ## 📦 Installation
 

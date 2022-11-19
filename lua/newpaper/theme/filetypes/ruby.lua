@@ -34,7 +34,6 @@ function M.setup(configColors, configStyle)
             ["@text.math.ruby"]           = "rubyTSMath",
             ["@punctuation.special.ruby"] = "rubyTSPunctSpecial",
             ["@type.ruby"]                = "rubyTSType",
-            ["@type.qualifier.ruby"]      = "rubyTSTypeQualifier",
         }
 
         local treesitter = {
@@ -49,7 +48,6 @@ function M.setup(configColors, configStyle)
             ["@text.math.ruby"]           = { fg = newpaper.tex_math, style = style.o_style },
             ["@punctuation.special.ruby"] = { fg = newpaper.magenta, style = style.o_style },
             ["@type.ruby"]                = { fg = newpaper.darkgreen },
-            ["@type.qualifier.ruby"]      = { fg = newpaper.green, style = style.k_style },
         }
 
         -- fallback to 0.7

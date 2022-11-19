@@ -149,7 +149,7 @@ function M.setup(configColors, configStyle)
             SignColumnTerm   = { fg = newpaper.term_fg, bg = newpaper.term_bg },
             TermCursorTerm   = { fg = newpaper.term_bg, bg = newpaper.term_fg },
             TermCursorNCTerm = { fg = newpaper.term_bg, bg = newpaper.term_fg },
-            CursorLineTerm   = { bg = newpaper.none, cbg = newpaper.none },
+            CursorLineTerm   = { bg = newpaper.none, ctermbg = newpaper.none },
         }
         return editor
     end
@@ -183,6 +183,7 @@ function M.setup(configColors, configStyle)
             ["@character"]             = "TSCharacter",
             ["@character.special"]     = "TSCharacterSpecial",
             ["@comment"]               = "TSComment",
+            ["@conceal"]               = "TSConceal",
             ["@conditional"]           = "TSConditional",
             ["@constant"]              = "TSConstant",
             ["@constant.builtin"]      = "TSConstBuiltin",
@@ -219,6 +220,7 @@ function M.setup(configColors, configStyle)
             ["@punctuation.special"]   = "TSPunctSpecial",
             ["@repeat"]                = "TSRepeat",
             ["@storageclass"]          = "TSStorageClass",
+            ["@storageclass.lifetime"] = "TSStorageClassLifetime",
             ["@string"]                = "TSString",
             ["@string.escape"]         = "TSStringEscape",
             ["@string.regex"]          = "TSStringRegex",
@@ -229,6 +231,8 @@ function M.setup(configColors, configStyle)
             ["@tag.delimiter"]         = "TSTagDelimiter",
             ["@text"]                  = "TSText",
             ["@text.danger"]           = "TSDanger",
+            ["@text.diff.add"]         = "TSDiffAdd",
+            ["@text.diff.delete"]      = "TSDiffDelete",
             ["@text.emphasis"]         = "TSEmphasis",
             ["@text.environment"]      = "TSEnvironment",
             ["@text.environment.name"] = "TSEnvironmentName",
@@ -242,7 +246,7 @@ function M.setup(configColors, configStyle)
             ["@text.underline"]        = "TSUnderline",
             ["@text.uri"]              = "TSURI",
             ["@text.warning"]          = "TSWarning",
-            ["@todo"]                  = "TSTodo",
+            ["@text.todo"]             = "TSTodo",
             ["@type"]                  = "TSType",
             ["@type.builtin"]          = "TSTypeBuiltin",
             ["@type.definition"]       = "TSTypeDefinition",
@@ -258,6 +262,7 @@ function M.setup(configColors, configStyle)
             ["@character"]             = { fg = newpaper.orange }, -- For characters.
             ["@character.special"]     = { fg = newpaper.maroon },
             ["@comment"]               = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
+            ["@conceal"]               = { fg = newpaper.tex_math },
             ["@conditional"]           = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
             ["@constant"]              = { fg = newpaper.darkgreen }, -- For constants
             ["@constant.builtin"]      = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
@@ -272,7 +277,7 @@ function M.setup(configColors, configStyle)
             ["@function"]              = { fg = newpaper.tag_navy, style = style.f_style }, -- For fuction definitions.
             ["@function.builtin"]      = { fg = newpaper.lua_blue, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
             ["@function.call"]         = { fg = newpaper.navy, style = style.f_style }, -- For fuction calls.
-            ["@function.macro"]        = { fg = newpaper.magenta }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+            ["@function.macro"]        = { fg = newpaper.magenta, style = style.f_style }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
             ["@include"]               = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
             ["@keyword"]               = { fg = newpaper.keyword, style = style.k_style }, -- For keywords that don't fall in previous categories.
             ["@keyword.function"]      = { fg = newpaper.darkpurple, style = style.k_style }, -- keywords used to define a fuction.
@@ -294,6 +299,7 @@ function M.setup(configColors, configStyle)
             ["@punctuation.special"]   = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
             ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
             ["@storageclass"]          = { fg = newpaper.ruby_navy, style = style.k_style },
+            ["@storageclass.lifetime"] = { fg = newpaper.navy, style = style.k_style },
             ["@string"]                = { fg = newpaper.string, style = style.s_style }, -- For strings.
             ["@string.escape"]         = { fg = newpaper.maroon }, -- For escape characters within a string.
             ["@string.regex"]          = { fg = newpaper.regexp_blue }, -- For regexes.
@@ -303,6 +309,8 @@ function M.setup(configColors, configStyle)
             ["@tag.attribute"]         = { fg = newpaper.darkengreen },
             ["@tag.delimiter"]         = { fg = newpaper.tag_navy }, -- Tag delimiter like `<` `>` `/`
             ["@text"]                  = { fg = newpaper.fg }, -- For strings considered text in a markup language.
+            ["@text.diff.add"]         = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
+            ["@text.diff.delete"]      = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
             ["@text.danger"]           = { fg = newpaper.bg, bg = newpaper.warn_fg },
             ["@text.emphasis"]         = { fg = newpaper.fg, style = style.italic }, -- For text to be represented with emphasis.
             ["@text.environment"]      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
@@ -317,13 +325,14 @@ function M.setup(configColors, configStyle)
             ["@text.underline"]        = { fg = newpaper.fg, style = style.underline }, -- For text to be represented with an underline.
             ["@text.uri"]              = { fg = newpaper.link, style = style.link }, -- Any URI like a link or email.
             ["@text.warning"]          = { fg = newpaper.bg, bg = newpaper.info_fg },
-            ["@todo"]                  = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            ["@text.todo"]             = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
             ["@type"]                  = { fg = newpaper.darkengreen }, -- For types.
             ["@type.builtin"]          = { fg = newpaper.magenta }, -- For builtin types.
             ["@type.definition"]       = { fg = newpaper.maroon },
             ["@type.qualifier"]        = { fg = newpaper.green },
             ["@variable"]              = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
             ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
+            ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },
         }
 
         -- fallback to 0.7

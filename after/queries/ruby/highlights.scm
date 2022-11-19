@@ -74,7 +74,6 @@
 ; Identifiers
 
 (class_variable) @constant
-(global_variable) @type.qualifier
 
 [
  (self)

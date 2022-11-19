@@ -35,32 +35,30 @@ function M.syntax(syntax)
 end
 
 function M.highlight(group, color)
-    -- stylua: ignore start
-    local c = {
-        fg  = color.fg    and "guifg=" .. color.fg    or "guifg=NONE",
-        bg  = color.bg    and "guibg=" .. color.bg    or "guibg=NONE",
-        st  = color.style and "gui=" ..   color.style or "gui=NONE",
-        sp  = color.sp    and "guisp=" .. color.sp    or "",
-    }
-    -- stylua: ignore end
-    local hl = "highlight " .. group .. " " .. c.st .. " " .. c.fg .. " " .. c.bg .. " " .. c.sp
-    if color.link then
-        vim.cmd("highlight! link " .. group .. " " .. color.link)
-    else
-        vim.cmd(hl)
+
+    -- https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
+    if color.style then
+        if type(color.style) == "table" then
+            color = vim.tbl_extend("force", color, color.style)
+        elseif color.style:lower() ~= "none" then
+            -- handle old string style definitions
+            for s in string.gmatch(color.style, "([^,]+)") do
+                color[s] = true
+            end
+        end
+        color.style = nil
     end
+    vim.api.nvim_set_hl(0, group, color)
 end
 
 -- Delete the autocmds when the theme changes to something else
 function M.onColorScheme()
-    if vim.g.colors_name ~= "newpaper" then
-        vim.api.nvim_clear_autocmds({ group = "newpaper" })
-    end
+    vim.api.nvim_clear_autocmds({ group = "newpaper" })
 end
 
 function M.autocmds(config)
     local group = vim.api.nvim_create_augroup("newpaper", {})
-    vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+    vim.api.nvim_create_autocmd({ "ColorSchemePre" }, {
         group = group,
         pattern = { "*" },
         callback = function()
@@ -174,32 +172,33 @@ function M.colorOverrides(colors, configColors)
 end
 
 function M.deviconsOverrides(config)
-    local devIconCustom      = config.devicons_custom.gui
-    local devIconCustomCterm = config.devicons_custom.cterm
+    local help = "Add nvim-web-devicons to runtime path or do not use in setup() option «devicons_custom»"
+    local plugin = "nvim-web-devicons"
+    check.requiresPluginError(plugin, help)
 
     -- https://github.com/nvim-tree/nvim-web-devicons/blob/master/lua/nvim-web-devicons.lua
-
-    local group = vim.api.nvim_create_augroup("devIconsCustom", {})
+    local group = vim.api.nvim_create_augroup("newpaper", {})
     vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
         group = group,
         pattern = { "*" },
         callback = function()
+            local devIconCustom      = config.devicons_custom.gui
+            local devIconCustomCterm = config.devicons_custom.cterm
             local function get_highlight_name(data)
                 return data.name and "DevIcon" .. data.name
             end
+
             local function set_up_highlight(icon_data)
                 local hl_group = get_highlight_name(icon_data)
-                local highlight_command = "highlight! " .. hl_group
-                if icon_data.color and devIconCustom then
-                    highlight_command = highlight_command .. " guifg=" .. devIconCustom
-                    vim.api.nvim_command(highlight_command)
-                end
-                if icon_data.cterm_color and devIconCustomCterm then
-                    highlight_command = highlight_command .. " ctermfg=" .. devIconCustomCterm
-                    vim.api.nvim_command(highlight_command)
+                if hl_group and (icon_data.color or icon_data.cterm_color) then
+                    vim.api.nvim_set_hl(0, hl_group, {
+                        fg = devIconCustom,
+                        ctermfg = tonumber(devIconCustomCterm),
+                    })
                 end
             end
-            local icons = require("nvim-web-devicons").get_icons()
+
+            local icons = require(plugin).get_icons()
             for _, icon_data in pairs(icons) do
                 set_up_highlight(icon_data)
             end

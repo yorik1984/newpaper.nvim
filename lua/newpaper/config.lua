@@ -60,7 +60,9 @@ local applyConfiguration = function(userConfig)
     local error_help = {
         sidebars_contrast = "Use: sidebars_contrast = { 'name' }",
         colors            = "Use: colors = { name = color }",
+        colors_advanced   = "Use: colors_advanced = { name = color }",
         custom_highlights = "Use: custom_highlights = { hlGroup = { arg = color } }",
+        devicons_custom   = "Use: devicons_custom = { gui = '#XXXXXX', cterm = number(0-15) }. See :help cterm-colors",
     }
 
     -- stylua: ignore end

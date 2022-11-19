@@ -49,10 +49,10 @@ function M.setupStyle(config)
     style.b_link      = style.bold_u
 
     -- comments style underline
-    style.c_underline = style.c_style .. "," .. style.underline
+    style.c_underline = style.underline
 
     -- strings style underline
-    style.s_underline = style.s_style .. "," .. style.underline
+    style.s_underline = style.underline
 
     -- Make bold or italic style for editor groups
     if config.editor_better_view then
@@ -79,11 +79,13 @@ function M.setupStyle(config)
     -- Make italic strings
     if config.italic_strings then
         style.s_style = style.italic
+        style.s_underline = style.s_style .. "," .. style.underline
     end
 
     -- Make italic comments
     if config.italic_comments then
         style.c_style = style.italic
+        style.c_underline = style.c_style .. "," .. style.underline
     end
 
     -- Make italic functions
