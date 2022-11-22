@@ -193,7 +193,7 @@ function M.deviconsOverrides(config)
                 if hl_group and (icon_data.color or icon_data.cterm_color) then
                     vim.api.nvim_set_hl(0, hl_group, {
                         fg = devIconCustom,
-                        ctermfg = tonumber(devIconCustomCterm),
+                        ctermfg = devIconCustomCterm,
                     })
                 end
             end

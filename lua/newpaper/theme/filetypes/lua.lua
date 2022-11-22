@@ -35,7 +35,6 @@ function M.setup(configColors, configStyle)
             ["@constructor.lua"]           = "luaTSConstructor",
             ["@field.lua"]                 = "luaTSField",
             ["@function.builtin.lua"]      = "luaTSFuncBuiltin",
-            ["@function.call.lua"]         = "luaTSFunctionCall",
             ["@keyword.return.lua"]        = "luaTSKeywordReturn",
             ["@label.lua"]                 = "luaTSLabel",
             ["@operator.lua"]              = "luaTSOperator",
@@ -47,11 +46,10 @@ function M.setup(configColors, configStyle)
             ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.k_style },
             ["@field.lua"]                 = { fg = newpaper.fg },
             ["@function.builtin.lua"]      = { fg = newpaper.redorange },
-            ["@function.call.lua"]         = { fg = newpaper.lua_navy, style = style.f_style },
             ["@keyword.return.lua"]        = { fg = newpaper.tex_keyword, style = style.o_style },
             ["@label.lua"]                 = { fg = newpaper.magenta },
             ["@operator.lua"]              = { fg = newpaper.lua_navy,    style = style.o_style },
-            ["@punctuation.bracket.lua"]   = { fg = newpaper.lua_navy },
+            ["@punctuation.bracket.lua"]   = { fg = newpaper.tag_navy },
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
         }
 

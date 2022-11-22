@@ -25,7 +25,7 @@ function M.setup(configColors, configStyle)
             Boolean        = { fg = newpaper.boolean, style = style.k_style }, -- a boolean constant: TRUE, false
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
-            Function       = { fg = newpaper.navy, style = style.f_style }, -- function names
+            Function       = { fg = newpaper.lua_navy, style = style.f_style }, -- function names
             Method         = { fg = newpaper.bluegreen, style = style.f_style },
             Label          = { fg = newpaper.magenta }, -- case, default, etc.
             Operator       = { fg = newpaper.navy, style = style.o_style }, -- sizeof", "+", "*", etc.
@@ -212,7 +212,6 @@ function M.setup(configColors, configStyle)
             ["@number"]                = "TSNumber",
             ["@operator"]              = "TSOperator",
             ["@parameter"]             = "TSParameter",
-            ["@parameter.reference"]   = "TSParameterReference",
             ["@preproc"]               = "TSPreProc",
             ["@property"]              = "TSProperty",
             ["@punctuation.bracket"]   = "TSPunctBracket",
@@ -253,6 +252,7 @@ function M.setup(configColors, configStyle)
             ["@type.qualifier"]        = "TSTypeQualifier",
             ["@variable"]              = "TSVariable",
             ["@variable.builtin"]      = "TSVariableBuiltin",
+            ["@variable.global"]       = "TSVariableGlobal",
         }
 
         local treesitter = {
@@ -274,9 +274,9 @@ function M.setup(configColors, configStyle)
             ["@exception"]             = { fg = newpaper.redorange }, -- For exception related keywords.
             ["@field"]                 = { fg = newpaper.ocean }, -- For fields.
             ["@float"]                 = { fg = newpaper.magenta }, -- For floats.
-            ["@function"]              = { fg = newpaper.tag_navy, style = style.f_style }, -- For fuction definitions.
+            ["@function"]              = { fg = newpaper.lua_navy, style = style.f_style }, -- For fuction definitions.
             ["@function.builtin"]      = { fg = newpaper.lua_blue, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
-            ["@function.call"]         = { fg = newpaper.navy, style = style.f_style }, -- For fuction calls.
+            ["@function.call"]         = { fg = newpaper.lua_navy, style = style.f_style }, -- For fuction calls.
             ["@function.macro"]        = { fg = newpaper.magenta, style = style.f_style }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
             ["@include"]               = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
             ["@keyword"]               = { fg = newpaper.keyword, style = style.k_style }, -- For keywords that don't fall in previous categories.
@@ -291,14 +291,13 @@ function M.setup(configColors, configStyle)
             ["@number"]                = { fg = newpaper.red }, -- For all numbers
             ["@operator"]              = { fg = newpaper.navy, style = style.o_style }, -- For any operator: `+`, but also `->` and `*` in C.
             ["@parameter"]             = { fg = newpaper.orange }, -- For parameters of a function.
-            ["@parameter.reference"]   = { fg = newpaper.orange }, -- For references to parameters of a function.
             ["@preproc"]               = { fg = newpaper.navy },
             ["@property"]              = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
             ["@punctuation.bracket"]   = { fg = newpaper.navy }, -- For brackets and parens.
             ["@punctuation.delimiter"] = { fg = newpaper.orange }, -- For delimiters ie: `.`
             ["@punctuation.special"]   = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
             ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
-            ["@storageclass"]          = { fg = newpaper.ruby_navy, style = style.k_style },
+            ["@storageclass"]          = { fg = newpaper.lua_navy, style = style.k_style },
             ["@storageclass.lifetime"] = { fg = newpaper.navy, style = style.k_style },
             ["@string"]                = { fg = newpaper.string, style = style.s_style }, -- For strings.
             ["@string.escape"]         = { fg = newpaper.maroon }, -- For escape characters within a string.
@@ -329,7 +328,7 @@ function M.setup(configColors, configStyle)
             ["@type"]                  = { fg = newpaper.darkengreen }, -- For types.
             ["@type.builtin"]          = { fg = newpaper.magenta }, -- For builtin types.
             ["@type.definition"]       = { fg = newpaper.maroon },
-            ["@type.qualifier"]        = { fg = newpaper.green },
+            ["@type.qualifier"]        = { fg = newpaper.navy },
             ["@variable"]              = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
             ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
             ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },

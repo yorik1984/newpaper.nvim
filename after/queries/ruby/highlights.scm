@@ -1,6 +1,6 @@
 ; extends
 
-; Keywords
+;;; Keywords
 
 [
  "def"
@@ -36,16 +36,16 @@
 ((identifier) @keyword
  (#vim-match? @keyword "^(class|instance|module)_eval$"))
 
-; Function calls
+;;; Function calls
 
 "defined?" @keyword.operator
 
 (call
-   receiver: (constant)? @storageclass
+   receiver: (constant)? @definition.type
    method: [
             (identifier)
             (constant)
-            ] @function
+            ] @definition.function
    )
 
 ((identifier) @exception
@@ -56,7 +56,7 @@
   (identifier) @include)
  (#vim-match? @include "^(autoload|gem|require|require_relative|load)$"))
 
-; Function definitions
+;;; Function definitions
 
 ((identifier) @include
  (#vim-match? @include "^attr_(accessor|reader|writer)$"))
@@ -67,11 +67,9 @@
 ((identifier) @constant.builtin
  (#vim-match? @constant.builtin "^(initialize|new)$"))
 
-(class name: (constant) @storageclass)
-(module name: (constant) @constructor)
-(superclass (constant) @operator)
+(superclass (constant) @storageclass)
 
-; Identifiers
+;;; Identifiers
 
 (class_variable) @constant
 
@@ -80,7 +78,7 @@
  (super)
  ] @constant.builtin
 
-; rubyPredefinedConstant
+;;; rubyPredefinedConstant
 
 ((constant) @constant
  (#vim-match? @constant "^(ARGF|ARGV|ENV|DATA|STDERR|STDIN|STDOUT|TOPLEVEL_BINDING)$"))
@@ -88,7 +86,7 @@
 ((constant) @constant
  (#vim-match? @constant "^RUBY_(VERSION|RELEASE_DATE|PLATFORM|PATCHLEVEL|REVISION|DESCRIPTION|COPYRIGHT|ENGINE)$"))
 
-; rubyPredefinedVariable
+;;; rubyPredefinedVariable
 
 ((global_variable) @variable.builtin
  (#vim-match? @variable.builtin "^\\\$[!\$&\\\"\'*+,.0:;<>?@`~_]$"))
@@ -105,9 +103,9 @@
 ((global_variable) @variable.builtin
  (#vim-match? @variable.builtin "^\\\$(DEBUG|FILENAME|LOADED_FEATURES|LOAD_PATH|PROGRAM_NAME|SAFE|VERBOSE)$"))
 
-; Operators
+;;; Operators
 
-; rubyLambdaOperator
+;;; rubyLambdaOperator
 
 [
  "->"
@@ -119,7 +117,7 @@
  "::"
  ] @punctuation.delimiter
 
-; rubyBooleanOperator
+;;; rubyBooleanOperator
 
 [
  "!"
@@ -128,16 +126,17 @@
  "and"
  "or"
  "not"
+ "&."
  ] @boolean
 
-; rubyTernaryOperator
+;;; rubyTernaryOperator
 
 [
  "?"
  ":"
  ] @keyword
 
-; rubyEqualityOperator
+;;; rubyEqualityOperator
 
 [
  "==="
@@ -147,14 +146,14 @@
  "=~"
  ] @punctuation.special
 
-; rubyRangeOperator
+;;; rubyRangeOperator
 
 [
  ".."
  "..."
  ] @text.math
 
-; rubyBitwiseOperator
+;;; rubyBitwiseOperator
 
 [
  "|"
@@ -165,7 +164,7 @@
  ">>"
  ] @exception
 
-; rubyComparisonOperator
+;;; rubyComparisonOperator
 
 [
  ">"
@@ -175,7 +174,7 @@
  "<=>"
  ] @constructor
 
-; rubyArithmeticOperator
+;;; rubyArithmeticOperator
 
 [
  "+"
@@ -186,7 +185,7 @@
  "%"
  ] @text.math
 
-; rubyAssignmentOperator
+;;; rubyAssignmentOperator
 
 [
  "="
@@ -210,3 +209,15 @@
   "}" @symbol) @none
 
 (pair key: (hash_key_symbol) ":" @symbol)
+
+;;; DECLARATIONS AND SCOPES
+
+(module name: (constant) @definition.namespace)
+(class name: (constant) @definition.type)
+(method name: [(identifier) (constant)] @definition.function)
+(singleton_method name: [(identifier) (constant)] @definition.function)
+
+(scope_resolution
+   scope: (constant) @definition.type
+   name: (constant) @type
+)
