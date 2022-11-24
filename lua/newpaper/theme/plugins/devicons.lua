@@ -72,6 +72,7 @@ function M.setup(configColors)
             Rs                  = { fg = newpaper.rust_green },
             Sql                 = { fg = newpaper.darkgrey },
             Sh                  = { fg = newpaper.grey },
+            Scheme              = { fg = newpaper.fg },
             Txt                 = { fg = newpaper.tag_navy },
             Tex                 = { fg = newpaper.tex_part_title },
             TextResource        = { fg = newpaper.olive },
