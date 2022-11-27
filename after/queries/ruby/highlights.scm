@@ -7,31 +7,31 @@
  ] @keyword.function
 
 ((identifier) @keyword.function
- (#vim-match? @keyword.function "^(alias|undef)$"))
+ (#any-of? @keyword.function "alias" "undef"))
 
 ((identifier) @keyword.function
- (#vim-match? @keyword.function "^(extend|include|prepend|refine|using)$"))
+ (#any-of? @keyword.function "extend" "include" "prepend" "refine" "using"))
 
 ((identifier) @keyword.function
  (#vim-match? @keyword.function "^(alias|define|define_singleton|remove|undef)_method$"))
 
-((identifier) @function.macro
- (#vim-match? @function.macro "^(private|protected|public|module_function)$"))
+((identifier) @type.qualifier
+ (#any-of? @type.qualifier "module_function"))
 
-((identifier) @function.macro
- (#vim-match? @function.macro "^(public|private)_class_method$"))
+((identifier) @type.qualifier
+ (#vim-match? @type.qualifier "^(public|private)_class_method$"))
 
-((identifier) @function.macro
- (#vim-match? @function.macro "^(public|private)_constant$"))
-
-((identifier) @exception
- (#vim-match? @exception "^(catch|throw)$"))
+((identifier) @type.qualifier
+ (#vim-match? @type.qualifier "^(public|private)_constant$"))
 
 ((identifier) @exception
- (#vim-match? @exception "^(abort|at_exit|exit|fork|loop|trap)$"))
+ (#any-of? @exception "catch" "throw"))
+
+((identifier) @exception
+ (#any-of? @exception "abort" "at_exit" "exit" "fork" "loop" "trap"))
 
 ((identifier) @keyword
- (#vim-match? @keyword "^(callcc|caller|lambda|proc|eval)$"))
+ (#any-of? @keyword "callcc" "caller" "lambda" "proc" "eval"))
 
 ((identifier) @keyword
  (#vim-match? @keyword "^(class|instance|module)_eval$"))
@@ -48,13 +48,10 @@
             ] @definition.function
    )
 
-((identifier) @exception
- (#vim-match? @exception "^(fail|raise)$"))
-
 (program
  (call
   (identifier) @include)
- (#vim-match? @include "^(autoload|gem|require|require_relative|load)$"))
+ (#any-of? @include "require" "require_relative" "load" "autoload" "gem"))
 
 ;;; Function definitions
 
@@ -65,7 +62,7 @@
  (#vim-match? @include "^\%(\%(\^|;)\\s*)\@<=attr\>(\\s*[.=])\@!$"))
 
 ((identifier) @constant.builtin
- (#vim-match? @constant.builtin "^(initialize|new)$"))
+ (#any-of? @constant.builtin "initialize" "new"))
 
 (superclass (constant) @storageclass)
 
@@ -81,7 +78,7 @@
 ;;; rubyPredefinedConstant
 
 ((constant) @constant
- (#vim-match? @constant "^(ARGF|ARGV|ENV|DATA|STDERR|STDIN|STDOUT|TOPLEVEL_BINDING)$"))
+ (#any-of? @constant "ARGF" "ARGV" "ENV" "DATA" "STDERR" "STDIN" "STDOUT" "TOPLEVEL_BINDING"))
 
 ((constant) @constant
  (#vim-match? @constant "^RUBY_(VERSION|RELEASE_DATE|PLATFORM|PATCHLEVEL|REVISION|DESCRIPTION|COPYRIGHT|ENGINE)$"))
@@ -210,7 +207,7 @@
 
 (pair key: (hash_key_symbol) ":" @symbol)
 
-;;; DECLARATIONS AND SCOPES
+;;; From locals.scm
 
 (module name: (constant) @definition.namespace)
 (class name: (constant) @definition.type)
@@ -221,3 +218,5 @@
    scope: (constant) @definition.type
    name: (constant) @type
 )
+
+(method_parameters (identifier) @definition.var)
