@@ -284,7 +284,7 @@ function M.setup(configColors, configStyle)
             ["@keyword.operator"]      = { fg = newpaper.tag_navy, style = style.o_style }, -- define a operators like and, or.
             ["@keyword.return"]        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
             ["@label"]                 = { fg = newpaper.green }, -- For labels: `label:` in C and `:label:` in Lua.
-            ["@method"]                = { fg = newpaper.bluegreen, style = style.f_style }, -- For method definitions.
+            ["@method"]                = { fg = newpaper.ruby_navy, style = style.f_style }, -- For method definitions.
             ["@method.call"]           = { fg = newpaper.teal, style = style.f_style }, -- For method calls definitions.
             ["@namespace"]             = { fg = newpaper.darkyellow }, -- For identifiers referring to modules and namespaces.
             ["@none"]                  = { fg = newpaper.disabled },
@@ -328,7 +328,7 @@ function M.setup(configColors, configStyle)
             ["@type"]                  = { fg = newpaper.darkengreen }, -- For types.
             ["@type.builtin"]          = { fg = newpaper.magenta }, -- For builtin types.
             ["@type.definition"]       = { fg = newpaper.maroon },
-            ["@type.qualifier"]        = { fg = newpaper.navy },
+            ["@type.qualifier"]        = { fg = newpaper.maroon, style = style.k_style },
             ["@variable"]              = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
             ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
             ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },
