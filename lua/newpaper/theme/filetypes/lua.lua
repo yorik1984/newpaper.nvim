@@ -39,18 +39,34 @@ function M.setup(configColors, configStyle)
             ["@label.lua"]                 = "luaTSLabel",
             ["@operator.lua"]              = "luaTSOperator",
             ["@punctuation.bracket.lua"]   = "luaTSPunctBracket",
-            ["@variable.lua"]              = "luaTSVariable",
+            ["@variable.lua "]             = "luaTSVariable",
+            ["@definition.lua"]            = "luaTSDefinition",
+            ["@definition.associated.lua"] = "luaTSDefinitionAssociated",
+            ["@definition.enum.lua"]       = "luaTSEnum",
+            ["@definition.field.lua"]      = "luaTSDefinitionField",
+            ["@definition.function.lua"]   = "luaTSDefinitionFunction",
+            ["@definition.macro.lua"]      = "luaTSDefinitionMacro",
+            ["@definition.parameter.lua"]  = "luaTSDefinitionParameter",
+            ["@definition.var.lua"]        = "luaTSDefinitionVar",
         }
 
         local treesitter = {
             ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.k_style },
             ["@field.lua"]                 = { fg = newpaper.fg },
-            ["@function.builtin.lua"]      = { fg = newpaper.redorange },
+            ["@function.builtin.lua"]      = { fg = newpaper.redorange, style = style.f_style },
             ["@keyword.return.lua"]        = { fg = newpaper.tex_keyword, style = style.o_style },
             ["@label.lua"]                 = { fg = newpaper.magenta },
-            ["@operator.lua"]              = { fg = newpaper.lua_navy,    style = style.o_style },
+            ["@operator.lua"]              = { fg = newpaper.lua_navy, style = style.o_style },
             ["@punctuation.bracket.lua"]   = { fg = newpaper.tag_navy },
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
+            ["@definition.lua"]            = { fg = newpaper.fg, style = style.v_style },
+            ["@definition.associated.lua"] = { fg = newpaper.ocean, style = style.k_style },
+            ["@definition.enum.lua"]       = { fg = newpaper.teal },
+            ["@definition.field.lua"]      = { fg = newpaper.bluegreen },
+            ["@definition.function.lua"]   = { fg = newpaper.lua_navy, style = style.f_style },
+            ["@definition.macro.lua"]      = { fg = newpaper.string, style = style.o_style },
+            ["@definition.parameter.lua"]  = { fg = newpaper.darkorange },
+            ["@definition.var.lua"]        = { fg = newpaper.darkgreen, style = style.v_style },
         }
 
         -- fallback to 0.7
