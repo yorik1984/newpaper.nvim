@@ -33,7 +33,7 @@ function M.setup(config)
 
             -- Other colors
             lightorange          = "#E4C07A",
-            orange               = "#DB6F19",
+            orange               = "#DE7D2F",
             darkorange           = "#AF5F00",
             darkyellow           = "#C18301",
             pink                 = "#FFEEFF",
@@ -145,7 +145,7 @@ function M.setup(config)
             tex_only_math_error  = "#EAE8D5",
 
             -- Ruby
-            ruby_maroon          = "#990000",
+            ruby_maroon          = "#880000",
             ruby_navy            = "#09529B",
             ruby_purple          = "#6838CC",
             ruby_magenta         = "#A626A4",
@@ -192,7 +192,7 @@ function M.setup(config)
             -- Other colors
             lightorange          = "#443924",
             orange               = "#E28B46",
-            darkorange           = "#AF5F00",
+            darkorange           = "#B76F19",
             darkyellow           = "#CEAC6E",
             pink                 = "#2E2323",
             darkgrey             = "#BCBCBC",
@@ -303,14 +303,14 @@ function M.setup(config)
             tex_only_math_error  = "#3D3912",
 
             -- Ruby
-            ruby_maroon          = "#A44C49",
+            ruby_maroon          = "#9A626F",
             ruby_navy            = "#6A82D9",
             ruby_purple          = "#C596CA",
             ruby_magenta         = "#BE62BD",
 
             -- Lua
-            lua_navy             = "#9191C7",
-            lua_blue             = "#85BCDD",
+            lua_navy             = "#8080BE",
+            lua_blue             = "#5DA6D2",
 
             -- Jinja
             jinja_red            = "#D05858",
