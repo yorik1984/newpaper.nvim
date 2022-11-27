@@ -27,16 +27,17 @@ function M.setup(configColors, configStyle)
             ["@constant.builtin.ruby"]     = "rubyTSConstBuiltin",
             ["@constructor.ruby"]          = "rubyTSConstructor",
             ["@exception.ruby"]            = "rubyTSException",
-            ["@function.macro.ruby"]       = "rubyTSFuncMacro",
             ["@include.ruby"]              = "rubyTSInclude",
             ["@keyword.operator.ruby"]     = "rubyTSKeywordOperator",
             ["@label.ruby"]                = "rubyTSLabel",
             ["@text.math.ruby"]            = "rubyTSMath",
             ["@punctuation.special.ruby"]  = "rubyTSPunctSpecial",
             ["@type.ruby"]                 = "rubyTSType",
+            ["@type.qualifier.ruby"]       = "rubyTSTypeQualifier",
             ["@definition.function.ruby"]  = "rubyTSDefinitionFunction",
             ["@definition.type.ruby"]      = "rubyTSDefinitionType",
             ["@definition.namespace.ruby"] = "rubyTSDefinitionNamespace",
+            ["@definition.var.ruby"]       = "rubyTSDefinitionVar",
         }
 
         local treesitter = {
@@ -44,16 +45,17 @@ function M.setup(configColors, configStyle)
             ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon },
             ["@constructor.ruby"]          = { fg = newpaper.blue, style = style.o_style },
             ["@exception.ruby"]            = { fg = newpaper.redorange, style = style.k_style },
-            ["@function.macro.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@include.ruby"]              = { fg = newpaper.redorange },
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
             ["@text.math.ruby"]            = { fg = newpaper.tex_math, style = style.o_style },
             ["@punctuation.special.ruby"]  = { fg = newpaper.magenta, style = style.o_style },
             ["@type.ruby"]                 = { fg = newpaper.darkgreen },
+            ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@definition.function.ruby"]  = { fg = newpaper.lua_navy, style = style.f_style },-- functions
             ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
             ["@definition.namespace.ruby"] = { fg = newpaper.blue, style = style.k_style }, -- modules or namespaces
+            ["@definition.var.ruby"]       = { fg = newpaper.darkorange, style = style.v_style },
         }
 
         -- fallback to 0.7

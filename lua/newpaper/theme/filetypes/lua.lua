@@ -39,7 +39,7 @@ function M.setup(configColors, configStyle)
             ["@label.lua"]                 = "luaTSLabel",
             ["@operator.lua"]              = "luaTSOperator",
             ["@punctuation.bracket.lua"]   = "luaTSPunctBracket",
-            ["@variable.lua "]             = "luaTSVariable",
+            ["@variable.lua"]              = "luaTSVariable",
             ["@definition.lua"]            = "luaTSDefinition",
             ["@definition.associated.lua"] = "luaTSDefinitionAssociated",
             ["@definition.enum.lua"]       = "luaTSEnum",
