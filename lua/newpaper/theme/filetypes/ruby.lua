@@ -31,7 +31,6 @@ function M.setup(configColors, configStyle)
             ["@keyword.operator.ruby"]     = "rubyTSKeywordOperator",
             ["@label.ruby"]                = "rubyTSLabel",
             ["@text.math.ruby"]            = "rubyTSMath",
-            ["@punctuation.special.ruby"]  = "rubyTSPunctSpecial",
             ["@type.ruby"]                 = "rubyTSType",
             ["@type.qualifier.ruby"]       = "rubyTSTypeQualifier",
             ["@definition.function.ruby"]  = "rubyTSDefinitionFunction",
@@ -49,7 +48,6 @@ function M.setup(configColors, configStyle)
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
             ["@text.math.ruby"]            = { fg = newpaper.tex_math, style = style.o_style },
-            ["@punctuation.special.ruby"]  = { fg = newpaper.magenta, style = style.o_style },
             ["@type.ruby"]                 = { fg = newpaper.darkgreen },
             ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@definition.function.ruby"]  = { fg = newpaper.lua_navy, style = style.f_style },-- functions

@@ -58,7 +58,7 @@ function M.setup(config)
             regexp_blue          = "#3A72ED",
             regexp_green         = "#00AA00",
             regexp_orange        = "#DD7700",
-            regexp_magenta       = "#CC00CC",
+            regexp_magenta       = "#E563BA",
             regexp_brown         = "#884400",
 
             -- Git and diff
@@ -181,7 +181,7 @@ function M.setup(config)
             green                = "#00875F", -- color10
             yellow               = "#D8E24F", -- color11
             blue                 = "#5FAFD7", -- color12
-            magenta              = "#D75FAF", -- color13
+            magenta              = "#C86EA5", -- color13
             aqua                 = "#34495E", -- color14
             white                = "#C6C8CD", -- color15
 
@@ -206,7 +206,7 @@ function M.setup(config)
             nephritis            = "#36C692",
             darkpurple           = "#9A7BDD",
             redorange            = "#DB7067",
-            bluegreen            = "#38ADA9",
+            bluegreen            = "#4BB5B1",
             darkengreen          = "#48B46C",
             aqualight            = "#2E3032",
 
@@ -216,7 +216,7 @@ function M.setup(config)
             regexp_blue          = "#618EF0",
             regexp_green         = "#46C146",
             regexp_orange        = "#E39232",
-            regexp_magenta       = "#DA46DA",
+            regexp_magenta       = "#F046DA",
             regexp_brown         = "#A5767D",
 
             -- Git and diff

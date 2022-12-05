@@ -25,7 +25,7 @@
 
 [
  ".."
- ] @punctuation.bracket
+ ] @string.escape
 
 (unary_expression
   [
@@ -34,10 +34,15 @@
 
 ;; Constants
 
-((identifier) @variable.global
- (#lua-match? @variable.global "^[_][A-Z][A-Z_0-9]*$"))
-
 (vararg_expression) @label
+
+;; Variables
+
+((identifier) @variable.builtin
+ (#eq? @variable.builtin "_ENV"))
+
+((identifier) @function.builtin
+ (#eq? @function.builtin "_VERSION"))
 
 ;; Tables
 
@@ -66,6 +71,31 @@
   name: (dot_index_expression
     . (_) @definition.associated (identifier) @definition.function))
   (#set! definition.method.scope "parent"))
+
+((function_declaration
+  name: (method_index_expression
+    . (_) @definition.associated (identifier) @definition.method))
+  (#set! definition.method.scope "parent"))
+
+;; Functions
+
+(function_call
+  name: (dot_index_expression
+   table: (identifier) @definition.associated))
+
+(function_call
+  name: (method_index_expression
+   table: (identifier) @definition.associated))
+
+(dot_index_expression
+  table: (identifier) @definition.import
+    (#any-of? @definition.import
+      "_G" "bit32" "debug" "io" "math" "os" "package" "string" "table" "utf8"))
+
+(dot_index_expression
+  table: (identifier) @variable.global
+    (#any-of? @variable.global
+      "vim" ))
 
 (arguments (identifier) @definition.parameter)
 

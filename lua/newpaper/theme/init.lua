@@ -26,7 +26,7 @@ function M.setup(configColors, configStyle)
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
             Function       = { fg = newpaper.lua_navy, style = style.f_style }, -- function names
-            Method         = { fg = newpaper.bluegreen, style = style.f_style },
+            Method         = { fg = newpaper.ruby_navy, style = style.f_style },
             Label          = { fg = newpaper.magenta }, -- case, default, etc.
             Operator       = { fg = newpaper.navy, style = style.o_style }, -- sizeof", "+", "*", etc.
             Exception      = { fg = newpaper.redorange }, -- try, catch, throw
@@ -295,7 +295,7 @@ function M.setup(configColors, configStyle)
             ["@property"]              = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
             ["@punctuation.bracket"]   = { fg = newpaper.navy }, -- For brackets and parens.
             ["@punctuation.delimiter"] = { fg = newpaper.orange }, -- For delimiters ie: `.`
-            ["@punctuation.special"]   = { fg = newpaper.magenta }, -- For special punctutation that does not fall in the catagories before.
+            ["@punctuation.special"]   = { fg = newpaper.regexp_magenta }, -- For special punctutation that does not fall in the catagories before.
             ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
             ["@storageclass"]          = { fg = newpaper.lua_navy, style = style.k_style },
             ["@storageclass.lifetime"] = { fg = newpaper.navy, style = style.k_style },
@@ -326,7 +326,7 @@ function M.setup(configColors, configStyle)
             ["@text.warning"]          = { fg = newpaper.bg, bg = newpaper.info_fg },
             ["@text.todo"]             = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
             ["@type"]                  = { fg = newpaper.darkengreen }, -- For types.
-            ["@type.builtin"]          = { fg = newpaper.magenta }, -- For builtin types.
+            ["@type.builtin"]          = { fg = newpaper.bluegreen, style = style.k_style }, -- For builtin types.
             ["@type.definition"]       = { fg = newpaper.maroon },
             ["@type.qualifier"]        = { fg = newpaper.maroon, style = style.k_style },
             ["@variable"]              = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
