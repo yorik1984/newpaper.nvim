@@ -316,7 +316,7 @@ function M.setup(configColors, configStyle)
             ["@text.emphasis"]         = { fg = newpaper.fg, style = style.italic }, -- For text to be represented with emphasis.
             ["@text.environment"]      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             ["@text.environment.name"] = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
-            ["@text.literal"]          = { fg = newpaper.fg, style = style.o_style }, -- Literal text.
+            ["@text.literal"]          = { fg = newpaper.regexp_blue }, -- Literal text.
             ["@text.math"]             = { fg = newpaper.tex_math },
             ["@text.note"]             = { fg = newpaper.bg, bg = newpaper.hint_fg },
             ["@text.reference"]        = { fg = newpaper.orange },

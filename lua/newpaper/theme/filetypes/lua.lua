@@ -33,6 +33,7 @@ function M.setup(configColors, configStyle)
         -- fallback to 0.7
         local treesitterOldKey = {
             ["@constructor.lua"]           = "luaTSConstructor",
+            ["@constant.builtin.lua"]      = "luaTSConstBuiltin",
             ["@field.lua"]                 = "luaTSField",
             ["@function.builtin.lua"]      = "luaTSFuncBuiltin",
             ["@keyword.return.lua"]        = "luaTSKeywordReturn",
@@ -51,6 +52,7 @@ function M.setup(configColors, configStyle)
 
         local treesitter = {
             ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.k_style },
+            ["@constant.builtin.lua"]      = { fg = newpaper.maroon, style = style.o_style },
             ["@field.lua"]                 = { fg = newpaper.fg },
             ["@function.builtin.lua"]      = { fg = newpaper.redorange, style = style.f_style },
             ["@keyword.return.lua"]        = { fg = newpaper.tex_keyword, style = style.o_style },

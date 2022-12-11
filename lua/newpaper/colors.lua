@@ -48,7 +48,7 @@ function M.setup(config)
             ocean                = "#2E8B57",
             nephritis            = "#00AB66",
             darkpurple           = "#5823C7",
-            redorange            = "#EA3323",
+            redorange            = "#E12D23",
             bluegreen            = "#147B8B",
             darkengreen          = "#007200",
             aqualight            = "#DFE4EB",
