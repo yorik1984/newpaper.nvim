@@ -1,4 +1,4 @@
-<div align="center">
+zR<div align="center">
 <p align="center">
     <img width="302" height="302" src="https://user-images.githubusercontent.com/1559192/163754338-7f265280-9a6c-4c39-932a-858b75746d0a.png">
 </p>
@@ -35,17 +35,19 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ### Extra syntax highlights
 
-+ [Ruby](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb) with [vim-ruby](https://github.com/vim-ruby/vim-ruby) -- [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
-  + [Rbs](https://github.com/ruby/rbs) with [vim-rbs](https://github.com/jlcrochet/vim-rbs)
- + [Lua](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua) with [vim-lua](https://github.com/tbastos/vim-lua) -- [🖼️](#LUA), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
++ [**Ruby**](http:ws://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb) with [vim-ruby](https://github.com/vim-ruby/vim-ruby) -- [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
+  + [**Rbs**](https://github.com/ruby/rbs) with [vim-rbs](https://github.com/jlcrochet/vim-rbs)
+ + [**Lua**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua) with [vim-lua](https://github.com/tbastos/vim-lua) -- [🖼️](#LUA), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
+ + **Rust** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
+ + **Vim** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
 
-+ L<big><sup>A</sup></big>T<big><sub>E</sub></big>X with [vimtex](https://github.com/lervag/vimtex)
-+ Jinja with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-+ [TOML](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/code.toml) with [vim-toml](https://github.com/cespare/vim-toml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/dark_code.toml.html)
-+ [YAML](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/code.yaml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/dark_code.yaml.html)
-+ [Markdown](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) native [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.md.html)
-  + [Markdown](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) with [vim-markdown](https://github.com/preservim/vim-markdown), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_vm_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_vm_code.md.html)
-  + [Pandoc](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.rmd) with [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.rmd.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.rmd.html)
++ **L<big><sup>A</sup></big>T<big><sub>E</sub></big>X** with [vimtex](https://github.com/lervag/vimtex)
++ **Jinja** with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
++ [**TOML**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/code.toml) with [vim-toml](https://github.com/cespare/vim-toml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/dark_code.toml.html)
++ [**YAML**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/code.yaml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/dark_code.yaml.html)
++ [**Markdown**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) native [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.md.html)
+  + [**Markdown**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) with [vim-markdown](https://github.com/preservim/vim-markdown), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_vm_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_vm_code.md.html)
+  + [**Pandoc**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.rmd) with [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.rmd.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.rmd.html)
 
 ### 🔌 Supported plugins
 
@@ -157,37 +159,42 @@ require("newpaper").setup({
 
 ### Available options
 
-| Option              | Default       | Description                                                                                                                                                                                                                     |
-| ------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"`                                                                                                                                                                               |
-| editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic                                                                                                                                                 |
-| terminal            | `"contrast"`  | Make `:terminal` window in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"`                                                                                                                   |
-| sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars. |
-| contrast_float      | `true`        | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background                                                                                                                                             |
-| contrast_telescope  | `true`        | Make Telescope have a different foreground and background                                                                                                                                                                       |
-| operators_bold      | `true`        | Make booleans, escape characters, operators, `=`, `*`, delimiter like `<>/` bold                                                                                                                                                |
-| keywords            | `"bold"`      | Make keywords like if, for, while etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`.                                                                                                           |
-| tags                | `"bold"`      | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`.                                                                                                                                    |
-| tex_major           | `"bold"`      | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`.                                                                                     |
-| tex_operators_bold  | `"true"`      | Make tex operators bold                                                                                                                                                                                                         |
-| tex_keywords        | `"NONE"`      | Make other tex keywords bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`.                                                                                                                           |
-| tex_zone            | `"italic"`    | Make some tex `...Zone...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`.                                                                                                                       |
-| tex_arg             | `"italic"`    | Make some tex `...Arg...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`.                                                                                                                        |
-| error_highlight     | `"undercurl"` | Make spell or `tex`-files errors highlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`.                                                                                       |
-| italic_strings      | `true`        | Make strings italic                                                                                                                                                                                                             |
-| italic_comments     | `true`        | Make comments italic                                                                                                                                                                                                            |
-| italic_functions    | `false`       | Make function calls and names italic                                                                                                                                                                                            |
-| italic_variables    | `false`       | Make variable names and identifiers italic                                                                                                                                                                                      |
-| borders             | `true`        | Enable the border between vertically split windows visible                                                                                                                                                                      |
-| disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background                                                                                                                                         |
-| lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text                                                                                                                                                                                    |
-| hide_eob            | `false`       | Hide the end of buffer lines (`~`)                                                                                                                                                                                              |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code `lua/newpaper/colors.lua[13:167, 171:325]`                               |
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in sorce code `lua/newpaper/colors.lua[331:481]`                                                                                                      |
-| custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above                     |
-| lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold                                                                                                                                                                    |
-| lualine_style       | `"light"`     | Set different style from main theme:`"dark"`, `"light"`                                                                                                                                                                         |
-| devicons_custom     | `{}`          | Set devicons custom color(override all icons by one color). Use `gui`, `cterm` or both options: `gui = "#HEX_COLOR"`, `cterm = NUMBER`                                                                                          |
+| Option              | Default       | Description |
+| ------------------- | ------------- | ------------|
+| style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` |
+| editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic |
+| terminal            | `"contrast"`  | Make `:terminal` window in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
+| sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
+| contrast_float      | `true`        | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
+| contrast_telescope  | `true`        | Make Telescope have a different foreground and background |
+| operators_bold      | `true`        | Make booleans, escape characters, operators like `=`, `/`, `*`, `+`, `-`, `&`, `%`, `#`, `~`, `<`, `>`, `|` etc bold |
+| delimiters_bold     | `false`       | Make delimiter `,`,`;`,`:`,`.` bold |
+| brackets_bold       | `false`       | Make brackets like `{}`, `()`, `[]` bold |
+| keywords            | `"bold"`      | Make keywords like `if`, `for`, `while` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tags                | `"bold"`      | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tags_brackets_bold  | `true`        | Make tags delimiters like `<` or `/>` bold |
+| tex_major           | `"bold"`      | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_operators_bold  | `"true"`      | Make tex operators bold |
+| tex_brackets_bold   | `"false"`     | Make tex brackets like `{}`, `[]` bold |
+| tex_math_delim_bold | `"false"`     | Make tex math delimiters like `\[\]`, `\(\)`, `$ $`, `$$ $$` bold |
+| tex_keywords        | `"NONE"`      | Make other tex keywords bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_zone            | `"italic"`    | Make some tex `...Zone...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_arg             | `"italic"`    | Make some tex `...Arg...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| error_highlight     | `"undercurl"` | Make spell or `tex`-files errors highlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"` |
+| italic_strings      | `true`        | Make strings italic |
+| italic_comments     | `true`        | Make comments italic |
+| italic_functions    | `false`       | Make function calls and names italic |
+| italic_variables    | `false`       | Make variable names and identifiers italic |
+| borders             | `true`        | Enable the border between vertically split windows visible |
+| disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
+| lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
+| hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code `lua/newpaper/colors.lua[13:170, 174:331]`|
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in sorce code `lua/newpaper/colors.lua[331:481]` |
+| custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
+| lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
+| lualine_style       | `"light"`     | Set different style from main theme:`"dark"`, `"light"`|
+| devicons_custom     | `{}`          | Set devicons custom color(override all icons by one color). Use `gui`, `cterm` or both options: `gui = "#HEX_COLOR"`, `cterm = NUMBER` |
 
 ### Colorscheme default settings
 
@@ -201,10 +208,14 @@ require("newpaper").setup({
     contrast_float      = true,
     contrast_telescope  = true,
     operators_bold      = true,
+    delimiters_bold     = false,
+    brackets_bold       = true,
     keywords            = "bold",
     tags                = "bold",
+    tags_brackets_bold  = true,
     tex_major           = "bold",
     tex_operators_bold  = true,
+    tex_brackets_bold   = false,
     tex_keywords        = "NONE",
     tex_zone            = "italic",
     tex_arg             = "italic",
@@ -306,7 +317,7 @@ For more information see in `:h guicursor`
 
 ## 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
 
-To enable the `newpaper` theme for `Lualine`, simply specify it in your lualine settings:
+Enable the `newpaper` theme for `Lualine`:
 
 ```lua
 require("lualine").setup({

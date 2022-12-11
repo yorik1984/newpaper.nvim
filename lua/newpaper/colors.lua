@@ -19,7 +19,7 @@ function M.setup(config)
             teal                 = "#005F87", -- color06
             silver               = "#E4E4E4", -- color07
             grey                 = "#585858", -- color08
-            red                  = "#E45649", -- color09
+            red                  = "#E14133", -- color09
             green                = "#50A14F", -- color10
             yellow               = "#FFFF00", -- color11
             blue                 = "#0087AF", -- color12
@@ -33,6 +33,7 @@ function M.setup(config)
 
             -- Other colors
             lightorange          = "#E4C07A",
+            persimona            = "#F48F5F",
             orange               = "#DE7D2F",
             darkorange           = "#AF5F00",
             darkyellow           = "#C18301",
@@ -47,10 +48,11 @@ function M.setup(config)
             ocean                = "#2E8B57",
             nephritis            = "#00AB66",
             darkpurple           = "#5823C7",
-            redorange            = "#D23C0A",
+            redorange            = "#EA3323",
             bluegreen            = "#147B8B",
             darkengreen          = "#007200",
             aqualight            = "#DFE4EB",
+            dark_maroon          = "#8C1919",
 
             codeblock            = "#DEDEDE",
             disabled             = "#CCCCCC",
@@ -149,6 +151,7 @@ function M.setup(config)
             ruby_navy            = "#09529B",
             ruby_purple          = "#6838CC",
             ruby_magenta         = "#A626A4",
+            ruby_orange          = "#BF5019",
 
             -- Lua
             lua_navy             = "#030380",
@@ -177,7 +180,7 @@ function M.setup(config)
             teal                 = "#72AEB3", -- color06
             silver               = "#3A3A3A", -- color07
             grey                 = "#808080", -- color08
-            red                  = "#E06C75", -- color09
+            red                  = "#DC5761", -- color09
             green                = "#00875F", -- color10
             yellow               = "#D8E24F", -- color11
             blue                 = "#5FAFD7", -- color12
@@ -191,8 +194,9 @@ function M.setup(config)
 
             -- Other colors
             lightorange          = "#443924",
+            persimona            = "#DC6937",
             orange               = "#E28B46",
-            darkorange           = "#B76F19",
+            darkorange           = "#D28228",
             darkyellow           = "#CEAC6E",
             pink                 = "#2E2323",
             darkgrey             = "#BCBCBC",
@@ -209,6 +213,7 @@ function M.setup(config)
             bluegreen            = "#4BB5B1",
             darkengreen          = "#48B46C",
             aqualight            = "#2E3032",
+            dark_maroon          = "#A64C4C",
 
             codeblock            = "#343434",
             disabled             = "#3E3E3E",
@@ -303,10 +308,11 @@ function M.setup(config)
             tex_only_math_error  = "#3D3912",
 
             -- Ruby
-            ruby_maroon          = "#9A626F",
+            ruby_maroon          = "#D26969",
             ruby_navy            = "#6A82D9",
             ruby_purple          = "#C596CA",
             ruby_magenta         = "#BE62BD",
+            ruby_orange          = "#E6855F",
 
             -- Lua
             lua_navy             = "#8080BE",

@@ -44,7 +44,7 @@ function M.setup(configColors, configStyle)
 
             yamlMappingKeyStart          = { fg = newpaper.orange },
             yamlFlowIndicator            = { fg = newpaper.tag_navy, style = style.o_style },
-            yamlKeyValueDelimiter        = { fg = newpaper.orange },
+            yamlKeyValueDelimiter        = { fg = newpaper.orange,   style = style.d_style },
 
             yamlConstant                 = { fg = newpaper.darkengreen, style = style.k_style  },
 
@@ -72,8 +72,8 @@ function M.setup(configColors, configStyle)
         }
 
         local treesitter = {
-            ["@field.yaml"]                 = { fg = newpaper.ocean,    style = style.f_style },
-            ["@punctuation.bracket.yaml"]   = { fg = newpaper.tag_navy, style = style.o_style },
+            ["@field.yaml"]                 = { fg = newpaper.ocean, style = style.f_style },
+            ["@punctuation.bracket.yaml"]   = { fg = newpaper.tag_navy, style = style.br_style },
             ["@string.escape.yaml"]         = { fg = newpaper.magenta },
         }
 

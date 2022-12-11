@@ -76,15 +76,15 @@ USAGE                                                      *newpaper.nvim-usage*
     To use the default settings, just apply the theme
 
     If you are using Vim-Script:
->
+>vim
         colorscheme newpaper
 <
     If you are using Lua:
->
+>lua
         require("newpaper").setup()
 <
     newpaper.nvim also includes a Lualine theme. Set it in your Lualine config
->
+>lua
         require("lualine").setup ({
             options = {
                 -- ... your lualine config
@@ -109,11 +109,11 @@ STYLES                                                    *newpaper.nvim-styles*
     For example:
 
         Vim-Script:
->
+>vim
             let g:newpaper_style = "dark"
 <
         Lua:
->
+>lua
             vim.g.newpaper_style = "dark"
 <
     Just make sure to set the style before applying the colorscheme
@@ -132,7 +132,7 @@ init.vim/init.lua before applying the colorscheme
 Options:
 
     + style              {string} (default = `"light"`)
-        The theme comes in two styles:`"dark"`, `"light"`
+        The theme comes in two styles: `"dark"`, `"light"`
 
     + editor_better_view {booleans} (default = true)
         Make some interface like menu, title of editor and plugins
@@ -140,7 +140,7 @@ Options:
 
     + terminal           {string} (default = `"contrast"`)
         Make `:terminal` window in different styles.
-        Value: `"bg"`,`"contrast"`, `"inverse"`, `"inverse_transparent"`
+        Value: `"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"`
         `
     + sidebars_contrast  {table} (default = {})
         Set a contrast background on sidebar-like windows.
@@ -156,15 +156,25 @@ Options:
         Make Telescope have a different foreground and background
 
     + operators_bold     {booleans} (default = true)
-        Make booleans, escape characters, operators, delimiter like =,<>/* bold
+        Make booleans, escape characters, operators
+        like `=`, `/`, `*`, `+`, `-`, `&`, `%`, `#`, `~`, `<`, `>`, `|` etc bold
+
+    + delimiter_bold     {booleans} (default = false)
+        Make delimiter `,`,`;`,`:`,`.` bold
+
+    + brackets_bold      {booleans} (default = false)
+        Make brackets like `{}`, `()`, `[]` bold
 
     + keywords           {string} (default = `"bold"`)
-        Make keywords like if, for, while etc. bold, italic or NONE.
+        Make keywords like `if`, `for`, `while` etc. bold, italic or NONE.
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + tags               {string} (default = `"bold"`)
-        Make HTML tagg bold, italic or NONE.
+        Make HTML tags bold, italic or NONE.
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
+
+    + tags_brackets_bold {booleans} (default = true)
+        Make tags delimiters like `<` or `/>` bold
 
     + tex_major          {string} (default = `"bold"`)
         Make only major tex word like\documentclass, \section, ... bold,
@@ -173,9 +183,15 @@ Options:
     + tex_operators_bold {booleans} (default = true)
         Make tex operators bold
 
+    + tex_brackets_bold  {booleans} (default = false)
+        Make tex brackets like `{}`, `[]` bold
+
+    + tex_math_delim_bold {booleans} (default = false)
+        Make tex math zone delimeters like `\(\)`, `\[\]`, `$ $`, `$$ $$` bold
+
     + tex_keywords       {string} (default = `"NONE"`)
         Make  other tex keywords bold, italic or NONE.
-        Value: `"bold"`,`"italic"`, `"bold,italic"`, `"NONE"`
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + tex_zone           {string} (default = `"italic"`)
         Make some tex ...Zone...  bold, italic or NONE.
@@ -209,30 +225,33 @@ Options:
         Disable the setting of background color so that NeoVim can use
         yours terminal background
 
-    + lsp_virtual_text_bg{booleans} (default = true)
+    + lsp_virtual_text_bg {booleans} (default = true)
         Enable background color for LSP virtual text
 
     + hide_eob           {booleans} (default = false)
-        Hide the end of buffer lines (~)
+        Hide the end of buffer lines (`~`)
 
     + colors             {table} (default = {})
         Override the default colors and use your own.
         Also owerride lualine colors if have same name for more good view.
-        See possible value in sorce code `lua/newpaper/colors.lua[13:167, 171:325]`
->
+        See possible value in sorce code `lua/newpaper/colors.lua[13:170, 174:331]`
+
+>lua
         vim.g.newpaper_colors = { black = "#000000", bg = "#0F111A" }
 <
     + colors_advanced    {table} (default = {})
         Override the advanced default colors and use your own.
         See possible value in sorce code `lua/newpaper/colors.lua[331:481]`
->
+
+>lua
         vim.g.newpaper_colors_advanced = { keyword = "#AA00AA", string = "#008800" }
 <
     + custom_highlights  {table} (default = {})
         Override the default and plugins highlights groups. Table  predefine
-        any syntax colors. Use `fg`,`bg`, `sp`, `style` style options.
+        any syntax colors. Use `fg`, `bg`, `sp`, `style` style options.
         `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`
->
+
+>lua
         vim.g.newpaper_custom_highlights = {
             Number    = { fg = "#00FF00" },
             rubyClass = { fg = "#00FFF0" },
@@ -248,11 +267,13 @@ Options:
     + devicons_custom    {table} (default = {})
         Set devicons custom color(override all icons by one color).
         Use `gui`, `cterm` or both options
->
-        vim.g.devicons_custom = { gui = "#FFFF00", cterm = 3}
+
+>lua
+    vim.g.devicons_custom = { gui = "#FFFF00", cterm = 3}
 <
+
 Default settings:
->
+>lua
     require("newpaper").setup({
         style               = "light",
         editor_better_view  = true,
@@ -261,10 +282,14 @@ Default settings:
         contrast_float      = true,
         contrast_telescope  = true,
         operators_bold      = true,
+        delimiters_bold     = false,
+        brackets_bold       = false,
         keywords            = "bold",
         tags                = "bold",
+        tags_brackets_bold  = true,
         tex_major           = "bold",
         tex_operators_bold  = true,
+        tex_brackets_bold   = true,
         tex_keywords        = "NONE",
         tex_zone            = "italic",
         tex_arg             = "italic",
@@ -286,7 +311,7 @@ Default settings:
     })
 <
 Example config in lua with global variables
->
+>lua
     vim.g.newpaper_style             = "dark"
     vim.g.newpaper_keywords          = "italic"
     vim.g.newpaper_borders           = false
@@ -300,7 +325,7 @@ Example config in lua with global variables
     }
 <
 OR better with user configuration
->
+>lua
     local colors            = { teal = "#0000FF" } -- use one color for many groups
     local colors_advanced   = { keyword = "#AA00AA", string = "#008800" }
     local custom_highlights = {
@@ -322,7 +347,7 @@ OR better with user configuration
     })
 <
 Example config in init.vim:
->
+>vim
     lua << EOF
         require("newpaper").setup({
             style    = "dark",
@@ -345,7 +370,7 @@ LUALINE SETTINGS                                         *newpaper.nvim-lualine*
 To enable the newpaper theme for Lualine, specify it in your lualine settings:
 
 in init.lua:
->
+>lua
     require("lualine").setup {
         options = {
             -- ... your lualine config
@@ -359,7 +384,7 @@ NOTE You can temporally use just only lualine theme with any colorscheme.
 It also depend from vim.o.background
 
 init.lua:
->
+>lua
     -- Set bold style
     vim.g.newpaper_lualine_bold = true
     -- If want to enable style like in main colorscheme no need to set style

@@ -42,7 +42,7 @@ function M.setup(configColors, configStyle)
         }
 
         local treesitter = {
-            ["@punctuation.bracket.toml"] = { fg = newpaper.tag_navy, style = style.o_style },
+            ["@punctuation.bracket.toml"] = { fg = newpaper.tag_navy, style = style.br_style },
             ["@property.toml"]            = { fg = newpaper.darkengreen, style = style.f_style },
         }
 

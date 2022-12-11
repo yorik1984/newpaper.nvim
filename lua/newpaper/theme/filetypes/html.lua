@@ -20,8 +20,8 @@ function M.setup(configColors, configStyle)
             htmlH5                      = { fg = newpaper.darkyellow,     style = style.tag_style },
             htmlH6                      = { fg = newpaper.orange,         style = style.tag_style },
 
-            htmlTag                     = { fg = newpaper.tag_navy },
-            htmlEndTag                  = { fg = newpaper.tag_navy },
+            htmlTag                     = { fg = newpaper.tag_navy, style = style.tb_style },
+            htmlEndTag                  = { fg = newpaper.tag_navy, style = style.tb_style },
             htmlArg                     = { fg = newpaper.darkengreen },
             -- htmlTagName                 htmlStatement
             htmlSpecialTagName          = { fg = newpaper.maroon },

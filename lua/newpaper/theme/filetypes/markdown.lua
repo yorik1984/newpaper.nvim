@@ -45,7 +45,7 @@ function M.setup(configColors, configStyle)
             markdownLinkTextDelimiter   = { fg = newpaper.tex_redorange },
             markdownListMarker          = { fg = newpaper.keyword },
             markdownOrderedListMarker   = { fg = newpaper.red },
-            markdownUrlDelimiter        = { fg = newpaper.tag_navy },
+            markdownUrlDelimiter        = { fg = newpaper.tag_navy, style = style.d_bold },
             markdownUrlTitleDelimiter   = { fg = newpaper.regexp_blue },
 
             markdownItalic              = { fg = newpaper.fg,       style = style.italic },
@@ -117,7 +117,7 @@ function M.setup(configColors, configStyle)
             mkdLinkDef       = { fg = newpaper.tex_maroon, style = style.k_style },
             mkdLinkDefTarget = { fg = newpaper.teal, style = style.underline },
             mkdLinkTitle     = { fg = newpaper.regexp_blue },
-            mkdDelimiter     = { fg = newpaper.orange },
+            mkdDelimiter     = { fg = newpaper.orange, style = style.d_style },
 
             -- vim-pandoc -----------------------------------------------------
             pandocOperator                       = { fg = newpaper.tex_redorange },
@@ -170,13 +170,13 @@ function M.setup(configColors, configStyle)
             pandocDefinitionBlockTerm            = { fg = newpaper.tex_verb, style = style.k_style },
             pandocDefinitionBlockMark            = { fg = newpaper.tex_orange },
 
-            pandocSimpleTableDelims              = { fg = newpaper.tex_orange },
+            pandocSimpleTableDelims              = { fg = newpaper.tex_orange, style = style.d_style },
             -- pandocSimpleTableHeader              pandocStrong
             -- pandocTableMultilineHeader           pandocStrong
-            pandocTableDelims                    = { fg = newpaper.tex_orange },
-            pandocGridTableDelims                = { fg = newpaper.tex_orange },
+            pandocTableDelims                    = { fg = newpaper.tex_orange, style = style.d_style },
+            pandocGridTableDelims                = { fg = newpaper.tex_orange, style = style.d_style },
             pandocGridTableHeader                = { fg = newpaper.tex_orange },
-            pandocPipeTableDelims                = { fg = newpaper.tex_orange },
+            pandocPipeTableDelims                = { fg = newpaper.tex_orange, style = style.d_style },
             pandocPipeTableHeader                = { fg = newpaper.tex_orange },
             -- pandocTableHeaderWord                pandocStrong
 

@@ -19,6 +19,9 @@ function M.setupStyle(config)
         b_bold_u      = "NONE", -- editor style bold underline
         c_style       = "NONE", -- comments style
         o_style       = "NONE", -- operators style
+        d_style       = "NONE", -- delimiters style
+        br_style      = "NONE", -- brackets style
+        tb_style      = "NONE", -- tags brackets style
         s_style       = "NONE", -- strings style
         v_style       = "NONE", -- variables style
         f_style       = "NONE", -- functions style
@@ -31,11 +34,13 @@ function M.setupStyle(config)
         k_style = config.keywords,
 
         -- Tex settings
-        tex_m_style = config.tex_major,
-        tex_k_style = config.tex_keywords,
-        tex_z_style = config.tex_zone,
-        tex_a_style = config.tex_arg,
-        tex_o_style = "NONE", -- operators style
+        tex_m_style  = config.tex_major,
+        tex_k_style  = config.tex_keywords,
+        tex_z_style  = config.tex_zone,
+        tex_a_style  = config.tex_arg,
+        tex_o_style  = "NONE", -- operators style
+        tex_br_style = "NONE", -- brackets style
+        tex_md_style = "NONE", -- math delim style
 
     }
     -- Combine style
@@ -66,9 +71,29 @@ function M.setupStyle(config)
         style.o_style = style.bold
     end
 
+    if config.delimiters_bold then
+        style.d_style = style.bold
+    end
+
+    if config.brackets_bold then
+        style.br_style = style.bold
+    end
+
+    if config.tags_brackets_bold then
+        style.tb_style = style.bold
+    end
+
     -- Tex settings
     if config.tex_operators_bold then
         style.tex_o_style = style.bold
+    end
+
+    if config.tex_brackets_bold then
+        style.tex_br_style = style.bold
+    end
+
+    if config.tex_math_delim_bold then
+        style.tex_md_style = style.bold
     end
 
     -- Error style

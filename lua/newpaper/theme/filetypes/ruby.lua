@@ -30,12 +30,14 @@ function M.setup(configColors, configStyle)
             ["@include.ruby"]              = "rubyTSInclude",
             ["@keyword.operator.ruby"]     = "rubyTSKeywordOperator",
             ["@label.ruby"]                = "rubyTSLabel",
+            ["@punctuation.bracket.ruby"]  = "rubyTSPunctBracket",
             ["@text.math.ruby"]            = "rubyTSMath",
             ["@type.ruby"]                 = "rubyTSType",
             ["@type.qualifier.ruby"]       = "rubyTSTypeQualifier",
             ["@definition.function.ruby"]  = "rubyTSDefinitionFunction",
-            ["@definition.type.ruby"]      = "rubyTSDefinitionType",
             ["@definition.namespace.ruby"] = "rubyTSDefinitionNamespace",
+            ["@definition.parameter.ruby"] = "rubyTSDefinitionParameter",
+            ["@definition.type.ruby"]      = "rubyTSDefinitionType",
             ["@definition.var.ruby"]       = "rubyTSDefinitionVar",
         }
 
@@ -47,12 +49,14 @@ function M.setup(configColors, configStyle)
             ["@include.ruby"]              = { fg = newpaper.redorange },
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
+            ["@punctuation.bracket.ruby"]  = { fg = newpaper.ruby_navy, style = style.br_style },
             ["@text.math.ruby"]            = { fg = newpaper.tex_math, style = style.o_style },
             ["@type.ruby"]                 = { fg = newpaper.darkgreen },
             ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@definition.function.ruby"]  = { fg = newpaper.lua_navy, style = style.f_style },-- functions
-            ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
             ["@definition.namespace.ruby"] = { fg = newpaper.blue, style = style.k_style }, -- modules or namespaces
+            ["@definition.parameter.ruby"] = { fg = newpaper.ruby_orange, style = style.v_style }, -- modules or namespaces
+            ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
             ["@definition.var.ruby"]       = { fg = newpaper.darkorange, style = style.v_style },
         }
 
@@ -120,11 +124,11 @@ function M.setup(configColors, configStyle)
             rubyStringDelimiter            = { fg = newpaper.string, style = style.s_style },
             -- rubyHeredocDelimiter           rubyStringDelimiter
             -- rubyPercentSymbolDelimiter     rubySymbolDelimiter
-            rubySymbolDelimiter            = { fg = newpaper.darkyellow },
-            rubyPercentStringDelimiter     = { fg = newpaper.tag_navy,   style = style.o_style },
+            rubySymbolDelimiter            = { fg = newpaper.darkyellow, style = style.d_style },
+            rubyPercentStringDelimiter     = { fg = newpaper.tag_navy,   style = style.br_style },
             -- rubyString                     String
             rubyPercentRegexpDelimiter     = { fg = newpaper.text,        style = style.o_style },
-            rubyRegexpDelimiter            = { fg = newpaper.regexp_blue, style = style.o_style },
+            rubyRegexpDelimiter            = { fg = newpaper.regexp_blue, style = style.d_style },
             rubyRegexpEscape               = { fg = newpaper.regexp_magenta },
             rubyRegexpQuantifier           = { fg = newpaper.regexp_blue,  style = style.o_style },
             rubyRegexpAnchor               = { fg = newpaper.regexp_brown, style = style.o_style },
@@ -144,7 +148,7 @@ function M.setup(configColors, configStyle)
             -- rubySingleQuoteSymbolDelimiter rubySymbolDelimiter
 
             -- eruby
-            erubyDelimiter = { fg = newpaper.redorange },
+            erubyDelimiter = { fg = newpaper.redorange, style = style.d_style },
         }
         if vim.g.ruby_no_identifiers == 1 then
             plugins.rubyClassVariable          = { fg = newpaper.fg }

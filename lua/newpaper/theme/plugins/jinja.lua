@@ -20,7 +20,7 @@ function M.setup(configColors, configStyle)
             -- jinjaTagDelim     jinjaTagBlock
             -- jinjaVarDelim     jinjaVarBlock
             -- jinjaCommentDelim jinjaComment
-            jinjaRawDelim     = { fg = newpaper.darkgrey, style = style.o_style },
+            jinjaRawDelim     = { fg = newpaper.darkgrey, style = style.d_style },
 
             jinjaSpecial      = { fg = newpaper.darkgreen, style = style.o_style },
             jinjaOperator     = { fg = newpaper.navy, style = style.o_style },

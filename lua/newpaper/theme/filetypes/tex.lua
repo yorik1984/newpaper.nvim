@@ -29,7 +29,7 @@ function M.setup(configColors, configStyle)
             texDef            = { fg = newpaper.tex_blue },
             texDefCmd         = { fg = newpaper.tex_magenta },
             texDefName        = { fg = newpaper.tex_blue },
-            texDelimiter      = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
+            texDelimiter      = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             texDocType        = { fg = newpaper.tex_keyword, style = style.tex_m_style },
             texDocTypeArgs    = { fg = newpaper.tex_navy },
             texGreek          = { fg = newpaper.tex_math },
@@ -37,10 +37,10 @@ function M.setup(configColors, configStyle)
             texInputFile      = { fg = newpaper.tex_navy },
             texInputFileOpt   = { fg = newpaper.tex_orange },
             texMath           = { fg = newpaper.tex_math },
-            texMathDelimBad   = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_keyword, style = style.error },
+            texMathDelimBad   = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_lightpurple, style = style.error },
             texMathDelimKey   = { fg = newpaper.tex_pink },
-            texMathDelimSet1  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
-            texMathDelimSet2  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
+            texMathDelimSet1  = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
+            texMathDelimSet2  = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             texMathZoneV      = { fg = newpaper.tex_math, style = style.italic },
             texMathZoneW      = { fg = newpaper.tex_math },
             texMathZoneY      = { fg = newpaper.tex_math },
@@ -130,8 +130,8 @@ function M.setup(configColors, configStyle)
             ["@namespace.latex"]              = { fg = newpaper.tex_blue, style = style.tex_m_style },
             ["@operator.latex"]               = { fg = newpaper.tex_math, style = style.tex_o_style },
             ["@parameter.latex"]              = { fg = newpaper.tex_orange, style = style.tex_a_style },
-            ["@punctuation.bracket.latex"]    = { fg = newpaper.tex_lightpurple },
-            ["@punctuation.delimiter.latex"]  = { fg = newpaper.tex_lightpurple },
+            ["@punctuation.bracket.latex"]    = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
+            ["@punctuation.delimiter.latex"]  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             ["@punctuation.special.latex"]    = { fg = newpaper.tex_string },
             ["@text.comment.latex"]           = { fg = newpaper.comment, style = style.c_style },
             ["@text.emphasis.latex"]          = { fg = newpaper.fg, style = style.italic },
@@ -152,7 +152,7 @@ function M.setup(configColors, configStyle)
             ["@number.bibtex"]                = { fg = newpaper.tex_pink },
             ["@operator.bibtex"]              = { fg = newpaper.tex_math, style = style.tex_o_style },
             ["@parameter.bibtex"]             = { fg = newpaper.tex_orange },
-            ["@punctuation.bracket.bibtex"]   = { fg = newpaper.tex_lightpurple },
+            ["@punctuation.bracket.bibtex"]   = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             ["@punctuation.delimiter.bibtex"] = { fg = newpaper.tex_orange },
             ["@string.bibtex"]                = { fg = newpaper.tex_teal },
             ["@symbol.bibtex"]                = { fg = newpaper.tex_darkorange },
@@ -186,7 +186,7 @@ function M.setup(configColors, configStyle)
             -------------------------------------------------------------------
             -- texComment          Comment
             texCommentTodo        = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.comment_title },
-            texDelim              = { fg = newpaper.tex_lightpurple }, -- {, }, [, and ]
+            texDelim              = { fg = newpaper.tex_lightpurple, style = style.tex_br_style }, -- {, }, [, and ]
             texCmd                = { fg = newpaper.tex_blue, style = style.tex_k_style }, -- \CMD
             texOpt                = { fg = newpaper.tex_orange }, -- \cmd[OPT]
             texOptSep             = { fg = newpaper.tex_orange }, -- [a, b] (commas)
@@ -228,7 +228,7 @@ function M.setup(configColors, configStyle)
             texMathZoneEnv        = { fg = newpaper.tex_math }, -- \begin{menv}  HERE \end{menv}
             texMathZoneEnvStarred = { fg = newpaper.tex_math }, -- \begin{menv*} HERE \end{menv*}
             texMathZoneEnsured    = { fg = newpaper.tex_math, style = style.italic }, -- \ensuremath{HERE}
-            texMathDelimZone      = { fg = newpaper.tex_olive },
+            texMathDelimZone      = { fg = newpaper.tex_olive, style = style.tex_md_style },
             -- texMathDelimZoneLI       texMathDelimZone  \(; \)
             -- texMathDelimZoneLD       texMathDelimZone  \[; \]
             -- texMathDelimZoneTI       texMathDelimZone  $
@@ -244,8 +244,8 @@ function M.setup(configColors, configStyle)
             -------------------------------------------------------------------
             texLength             = { fg = newpaper.tex_red }, -- Length units, e.g. "4 cm". Only when contained e.g. in option groups.
             texLigature           = { fg = newpaper.tex_maroon, style = style.tex_o_style }, -- --; ---; ``; ''; ,,
-            texCmdAccent          = { fg = newpaper.tex_navy }, -- \"{a}
-            texCmdLigature        = { fg = newpaper.tex_blue }, -- \ss; \ae
+            texCmdAccent          = { fg = newpaper.tex_navy, style = style.tex_k_style }, -- \"{a}
+            texCmdLigature        = { fg = newpaper.tex_navy }, -- \ss; \ae
             texCmdSpaceCodeChar   = { fg = newpaper.tex_maroon }, -- Catcodes. For more info, see: https://en.wikibooks.org/wikicatcode
             texCmdTodo            = { fg = newpaper.todo_warn, style = style.b_bold },-- \TODOSOMETHING
             -- texCmdWarning       VimtexWarning
@@ -264,7 +264,7 @@ function M.setup(configColors, configStyle)
             texMinipageOptIPos    = { fg = newpaper.tex_redorange },
             texMinipageOptPos     = { fg = newpaper.tex_redorange },
             texMathError          = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
-            texMathErrorDelim     = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_keyword, style = style.error },
+            texMathErrorDelim     = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_math_delim, style = style.error },
             texParboxOptHeight    = { fg = newpaper.tex_red },
             texParboxOptIPos      = { fg = newpaper.tex_orange },
             texParboxOptPos       = { fg = newpaper.tex_orange },
@@ -334,7 +334,7 @@ function M.setup(configColors, configStyle)
             -- texRefConcealedOpt1   texRefOpt
             -- texRefConcealedOpt2   texRefOpt
             texRefConcealedArg    = { fg = newpaper.tex_lightviolet },
-            texRefConcealedDelim  = { fg = newpaper.tex_lightviolet },
+            texRefConcealedDelim  = { fg = newpaper.tex_lightviolet, style = style.tex_br_style },
             -- texTabularArg         texOpt
             -- texTabularAtSep       texMathDelim
             texTabularChar        = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },

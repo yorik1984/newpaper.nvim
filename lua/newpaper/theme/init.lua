@@ -38,10 +38,10 @@ function M.setup(configColors, configStyle)
             Typedef        = { fg = newpaper.maroon }, -- A typedef
             PreCondit      = { fg = newpaper.magenta }, -- preprocessor #if, #else, #endif, etc.
             Type           = { fg = newpaper.darkengreen }, -- int, long, char, etc.
-            Special        = { fg = newpaper.magenta }, -- any special symbol
+            Special        = { fg = newpaper.dark_maroon }, -- any special symbol
             SpecialChar    = { fg = newpaper.maroon }, -- special character in a constant
             String         = { fg = newpaper.string, style = style.s_style }, -- any string
-            Delimiter      = { fg = newpaper.orange }, -- character that needs attention like , or .
+            Delimiter      = { fg = newpaper.persimona, style = style.d_style }, -- character that needs attention like , or .
             SpecialComment = { fg = newpaper.comment, style = style.k_style }, -- special things inside a comment
             Debug          = { fg = newpaper.red }, -- debugging statements
             Underlined     = { fg = newpaper.link, style = style.underline }, -- text that stands out, HTML links
@@ -185,6 +185,7 @@ function M.setup(configColors, configStyle)
             ["@comment"]               = "TSComment",
             ["@conceal"]               = "TSConceal",
             ["@conditional"]           = "TSConditional",
+            ["@conditional.ternary"]   = "TSConditionalTernary",
             ["@constant"]              = "TSConstant",
             ["@constant.builtin"]      = "TSConstBuiltin",
             ["@constant.macro"]        = "TSConstMacro",
@@ -264,6 +265,7 @@ function M.setup(configColors, configStyle)
             ["@comment"]               = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
             ["@conceal"]               = { fg = newpaper.tex_math },
             ["@conditional"]           = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
+            ["@conditional.ternary"]   = { fg = newpaper.keyword, style = style.k_style },
             ["@constant"]              = { fg = newpaper.darkgreen }, -- For constants
             ["@constant.builtin"]      = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
             ["@constant.macro"]        = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
@@ -283,7 +285,7 @@ function M.setup(configColors, configStyle)
             ["@keyword.function"]      = { fg = newpaper.darkpurple, style = style.k_style }, -- keywords used to define a fuction.
             ["@keyword.operator"]      = { fg = newpaper.tag_navy, style = style.o_style }, -- define a operators like and, or.
             ["@keyword.return"]        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
-            ["@label"]                 = { fg = newpaper.green }, -- For labels: `label:` in C and `:label:` in Lua.
+            ["@label"]                 = { fg = newpaper.redorange }, -- For labels: `label:` in C and `:label:` in Lua.
             ["@method"]                = { fg = newpaper.ruby_navy, style = style.f_style }, -- For method definitions.
             ["@method.call"]           = { fg = newpaper.teal, style = style.f_style }, -- For method calls definitions.
             ["@namespace"]             = { fg = newpaper.darkyellow }, -- For identifiers referring to modules and namespaces.
@@ -293,20 +295,20 @@ function M.setup(configColors, configStyle)
             ["@parameter"]             = { fg = newpaper.orange }, -- For parameters of a function.
             ["@preproc"]               = { fg = newpaper.navy },
             ["@property"]              = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
-            ["@punctuation.bracket"]   = { fg = newpaper.navy }, -- For brackets and parens.
-            ["@punctuation.delimiter"] = { fg = newpaper.orange }, -- For delimiters ie: `.`
+            ["@punctuation.bracket"]   = { fg = newpaper.navy, style = style.br_style  }, -- For brackets and parens.
+            ["@punctuation.delimiter"] = { fg = newpaper.persimona, style = style.d_style }, -- For delimiters ie: `.`
             ["@punctuation.special"]   = { fg = newpaper.regexp_magenta }, -- For special punctutation that does not fall in the catagories before.
             ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
             ["@storageclass"]          = { fg = newpaper.lua_navy, style = style.k_style },
-            ["@storageclass.lifetime"] = { fg = newpaper.navy, style = style.k_style },
+            ["@storageclass.lifetime"] = { fg = newpaper.tag_navy, style = style.k_style },
             ["@string"]                = { fg = newpaper.string, style = style.s_style }, -- For strings.
             ["@string.escape"]         = { fg = newpaper.maroon }, -- For escape characters within a string.
             ["@string.regex"]          = { fg = newpaper.regexp_blue }, -- For regexes.
-            ["@string.special"]        = { fg = newpaper.maroon, style = style.s_style },
+            ["@string.special"]        = { fg = newpaper.dark_maroon, style = style.s_style },
             ["@symbol"]                = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
             ["@tag"]                   = { fg = newpaper.tag, style = style.tag_style }, -- HTML tag names.
             ["@tag.attribute"]         = { fg = newpaper.darkengreen },
-            ["@tag.delimiter"]         = { fg = newpaper.tag_navy }, -- Tag delimiter like `<` `>` `/`
+            ["@tag.delimiter"]         = { fg = newpaper.tag_navy, style = style.tb_style }, -- Tag delimiter like `<` `>` `/`
             ["@text"]                  = { fg = newpaper.fg }, -- For strings considered text in a markup language.
             ["@text.diff.add"]         = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
             ["@text.diff.delete"]      = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },

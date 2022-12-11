@@ -14,8 +14,9 @@ function M.setup(configColors, configStyle)
     helpSyn.loadSyntax = function ()
         local syntax = {
             helpBacktick       = { fg = newpaper.magenta },
-            helpCommand        = { fg = newpaper.teal },
-            helpExample        = { fg = newpaper.string, style = style.s_style },
+            helpSpecial        = { fg = newpaper.magenta },
+            helpCommand        = { fg = newpaper.regexp_blue },
+            helpExample        = { fg = newpaper.regexp_blue },
             helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
             helpHyperTextJump  = { fg = newpaper.link, style = style.s_underline },
             helpURL            = { fg = newpaper.string, style = style.link },
@@ -31,20 +32,22 @@ function M.setup(configColors, configStyle)
             ["@conceal.help"]        = "helpTSConceal",
             ["@label.help"]          = "helpTSLabel",
             ["@parameter.help"]      = "helpTSParameter",
-            ["@string.help"]         = "helpTSString",
             ["@text.literal.help"]   = "helpTSTextLiteral",
             ["@text.reference.help"] = "helpTSTextReference",
             ["@text.title.help"]     = "helpTSTitle",
+            ["@text.uri.help"]       = "helpTSUri",
+            ["@type.help"]           = "helpTSType",
         }
 
         local treesitter = {
             ["@conceal.help"]        = { fg = newpaper.magenta },
             ["@label.help"]          = { fg = newpaper.keyword, style = style.s_style },
             ["@parameter.help"]      = { fg = newpaper.magenta },
-            ["@string.help"]         = { fg = newpaper.teal },
-            ["@text.literal.help"]   = { fg = newpaper.darkengreen },
+            ["@text.literal.help"]   = { fg = newpaper.regexp_blue },
             ["@text.reference.help"] = { fg = newpaper.link, style = style.s_underline },
             ["@text.title.help"]     = { fg = newpaper.keyword, style = style.k_style },
+            ["@text.uri.help"]       = { fg = newpaper.string, style = style.link },
+            ["@type.help"]           = { fg = newpaper.darkengreen, style = style.link },
         }
 
         -- fallback to 0.7

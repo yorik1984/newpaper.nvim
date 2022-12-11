@@ -36,8 +36,6 @@ function M.setup(configColors, configStyle)
             ["@field.lua"]                 = "luaTSField",
             ["@function.builtin.lua"]      = "luaTSFuncBuiltin",
             ["@keyword.return.lua"]        = "luaTSKeywordReturn",
-            ["@label.lua"]                 = "luaTSLabel",
-            ["@operator.lua"]              = "luaTSOperator",
             ["@punctuation.bracket.lua"]   = "luaTSPunctBracket",
             ["@variable.lua"]              = "luaTSVariable",
             ["@definition.lua"]            = "luaTSDefinition",
@@ -56,16 +54,14 @@ function M.setup(configColors, configStyle)
             ["@field.lua"]                 = { fg = newpaper.fg },
             ["@function.builtin.lua"]      = { fg = newpaper.redorange, style = style.f_style },
             ["@keyword.return.lua"]        = { fg = newpaper.tex_keyword, style = style.o_style },
-            ["@label.lua"]                 = { fg = newpaper.tex_magenta, style = style.o_style },
-            ["@operator.lua"]              = { fg = newpaper.lua_navy, style = style.o_style },
-            ["@punctuation.bracket.lua"]   = { fg = newpaper.tag_navy },
+            ["@punctuation.bracket.lua"]   = { fg = newpaper.lua_navy, style = style.br_style },
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
             ["@definition.lua"]            = { fg = newpaper.fg, style = style.v_style },
             ["@definition.associated.lua"] = { fg = newpaper.teal },
             ["@definition.enum.lua"]       = { fg = newpaper.blue },
             ["@definition.field.lua"]      = { fg = newpaper.bluegreen },
             ["@definition.function.lua"]   = { fg = newpaper.lua_navy, style = style.f_style },
-            ["@definition.import.lua"]     = { fg = newpaper.magenta, style = style.f_style },
+            ["@definition.import.lua"]     = { fg = newpaper.tex_magenta, style = style.f_style },
             ["@definition.macro.lua"]      = { fg = newpaper.string, style = style.o_style },
             ["@definition.parameter.lua"]  = { fg = newpaper.darkorange },
             ["@definition.var.lua"]        = { fg = newpaper.darkgreen, style = style.v_style },
@@ -81,7 +77,7 @@ function M.setup(configColors, configStyle)
             -- NOTE: Some groups from basic syntax include this
             luaParens           = { fg = newpaper.lua_navy },
             luaBraces           = { fg = newpaper.blue },
-            luaBrackets         = { fg = newpaper.lua_navy, style = style.o_style },
+            luaBrackets         = { fg = newpaper.lua_navy, style = style.br_style },
             luaBuiltIn          = { fg = newpaper.olive, style = style.v_style },
             -- luaComment          Comment
             -- luaCommentLongTag   luaCommentLong
@@ -103,7 +99,7 @@ function M.setup(configColors, configStyle)
             -- luaFunction         Structure
             luaFuncParens       = { fg = newpaper.blue },
             -- luaGoto             luaStatement
-            luaGotoLabel        = { fg = newpaper.magenta },
+            luaGotoLabel        = { fg = newpaper.redorange },
             -- luaIn               Repeat
             -- luaLabel            Label
             luaLocal            = { fg = newpaper.keyword },
