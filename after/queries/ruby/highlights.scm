@@ -46,6 +46,7 @@
             (identifier)
             (constant)
             ] @definition.function
+
    )
 
 (program
@@ -108,12 +109,6 @@
  "->"
  ] @punctuation.delimiter
 
-; rubyScopeOperator
-
-[
- "::"
- ] @punctuation.delimiter
-
 ;;; rubyBooleanOperator
 
 [
@@ -128,10 +123,7 @@
 
 ;;; rubyTernaryOperator
 
-[
- "?"
- ":"
- ] @keyword
+(conditional ["?" ":"] @conditional.ternary)
 
 ;;; rubyEqualityOperator
 
@@ -199,7 +191,23 @@
  "**="
  "/="
  "^="
+ "."
+ "::"
  ] @operator
+
+;; rubyDotOperator
+
+[
+"."
+ ] @include
+
+; rubyScopeOperator
+
+[
+ "::"
+ ] @include
+
+(block_parameters "|" @operator)
 
 (pair key: (hash_key_symbol) ":" @symbol)
 
@@ -215,4 +223,16 @@
    name: (constant) @type
 )
 
-(method_parameters (identifier) @definition.var)
+(method_parameters (identifier) @definition.parameter)
+(splat_parameter (identifier) @definition.parameter)
+(hash_splat_parameter (identifier) @definition.parameter)
+(argument_list (identifier) @definition.var)
+
+(splat_parameter "*" @method)
+(splat_argument "*" @method)
+(hash_splat_parameter "**" @method)
+(hash_splat_argument "**" @method)
+(block_parameter "&" @method)
+(block_argument "&" @method)
+
+(superclass "<" @storageclass)

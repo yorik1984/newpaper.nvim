@@ -26,15 +26,10 @@
 ;; Arithmetic
 
 [
-  "%"
-  "%="
-  "*="
   "+"
-  "+="
   "-"
-  "-="
+  "%"
   "/"
-  "/="
   ".."
  ] @text.math
 
@@ -71,7 +66,19 @@
 
 ;; Other
 
+[
+ "::"
+ "."
+ ] @label
+
 (type_arguments ["<" ">"] @punctuation.bracket)
 (type_parameters ["<" ">"] @punctuation.bracket)
 (bracketed_type ["<" ">"] @punctuation.bracket)
 (for_lifetimes ["<" ">"] @punctuation.bracket)
+
+[
+ "ref"
+ (mutable_specifier)
+] @keyword.operator
+
+ (dynamic_type "dyn" @keyword.operator)

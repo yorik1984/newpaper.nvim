@@ -23,9 +23,20 @@
  ">>"
  ] @exception
 
+;; Arithmetic
+
+[
+  "+"
+  "-"
+  "^"
+  "%"
+  "/"
+  "//"
+ ] @text.math
+
 [
  ".."
- ] @string.escape
+ ] @character.special
 
 (unary_expression
   [
