@@ -319,7 +319,7 @@ function M.setup(configColors, configStyle)
             ["@text.literal"]          = { fg = newpaper.regexp_blue }, -- Literal text.
             ["@text.math"]             = { fg = newpaper.tex_math },
             ["@text.note"]             = { fg = newpaper.bg, bg = newpaper.hint_fg },
-            ["@text.reference"]        = { fg = newpaper.orange },
+            ["@text.reference"]        = { fg = newpaper.tex_maroon },
             ["@text.strike"]           = { fg = newpaper.fg, style = style.b_italic }, -- For strikethrough text.
             ["@text.strong"]           = { fg = newpaper.fg, style = style.bold },
             ["@text.title"]            = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.

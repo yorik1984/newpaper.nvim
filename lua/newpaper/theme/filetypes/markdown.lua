@@ -73,23 +73,23 @@ function M.setup(configColors, configStyle)
 
         -- fallback to 0.7
         local treesitterOldKey = {
-            ["@none.markdown"]                = "markdownTSNone",
-            ["@punctuation.special.markdown"] = "markdownTSPunctSpecial",
-            ["@string.escape.markdown"]       = "markdownTSStringEscape",
-            ["@text.literal.markdown"]        = "markdownTSLiteral",
-            ["@text.reference.markdown"]      = "markdownTSTextReference",
-            ["@text.title.markdown"]          = "markdownTSTitle",
-            ["@text.uri.markdown"]            = "markdownTSURI",
+            ["@none.markdown"]                  = "markdownTSNone",
+            ["@punctuation.special.markdown"]   = "markdownTSPunctSpecial",
+            ["@string.escape.markdown"]         = "markdownTSStringEscape",
+            ["@text.title.markdown"]            = "markdownTSTitle",
+            ["@text.todo.checked.markdown"]     = "markdownTSTodoCheked",
+            ["@text.todo.unchecked.markdown"]   = "markdownTSTodoUncheked",
+            ["@text.uri.markdown"]              = "markdownTSURI",
         }
 
         local treesitter = {
-            ["@none.markdown"]                = { fg = newpaper.fg },
-            ["@punctuation.special.markdown"] = { fg = newpaper.teal },
-            ["@string.escape.markdown"]       = { fg = newpaper.tex_magenta },
-            ["@text.literal.markdown"]        = { fg = newpaper.regexp_blue },
-            ["@text.reference.markdown"]      = { fg = newpaper.link,    style = style.underline },
-            ["@text.title.markdown"]          = { fg = newpaper.keyword, style = style.k_style },
-            ["@text.uri.markdown"]            = { fg = newpaper.tex_string },
+            ["@none.markdown"]                  = { fg = newpaper.fg },
+            ["@punctuation.special.markdown"]   = { fg = newpaper.teal },
+            ["@string.escape.markdown"]         = { fg = newpaper.tex_magenta },
+            ["@text.title.markdown"]            = { fg = newpaper.keyword, style = style.k_style },
+            ["@text.todo.checked.markdown"]     = { fg = newpaper.todo_hint, style = style.b_bold },
+            ["@text.todo.unchecked.markdown"]   = { fg = newpaper.comment },
+            ["@text.uri.markdown"]              = { fg = newpaper.tex_string },
         }
 
         -- fallback to 0.7
