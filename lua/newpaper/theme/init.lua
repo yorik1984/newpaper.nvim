@@ -287,7 +287,7 @@ function M.setup(configColors, configStyle)
             ["@keyword.return"]        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
             ["@label"]                 = { fg = newpaper.redorange }, -- For labels: `label:` in C and `:label:` in Lua.
             ["@method"]                = { fg = newpaper.ruby_navy, style = style.f_style }, -- For method definitions.
-            ["@method.call"]           = { fg = newpaper.teal, style = style.f_style }, -- For method calls definitions.
+            ["@method.call"]           = { fg = newpaper.navy, style = style.f_style }, -- For method calls definitions.
             ["@namespace"]             = { fg = newpaper.darkyellow }, -- For identifiers referring to modules and namespaces.
             ["@none"]                  = { fg = newpaper.disabled },
             ["@number"]                = { fg = newpaper.red }, -- For all numbers
