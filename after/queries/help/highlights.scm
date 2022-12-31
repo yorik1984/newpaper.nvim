@@ -1,6 +1,5 @@
 ; extends
 
-(codeblock) @string
 (column_heading) @preproc
 
 (optionlink
