@@ -390,7 +390,7 @@ init.lua:
     vim.g.newpaper_lualine_bold = true
     -- If want to enable style like in main colorscheme no need to set style
     -- of lualine
-    vim.g.newpaper_lualine_style = `"light"`
+    vim.g.newpaper_lualine_style = "light"
     -- Also you can predefine colors
     vim.g.newpaper_colors        = {teal = "#008080"}
 
