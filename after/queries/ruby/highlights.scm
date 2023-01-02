@@ -1,7 +1,16 @@
 ; extends
 
-;;; Keywords
+;;; From locals.scm
+(method_parameters (identifier) @definition.parameter)
+(method_parameters
+  (keyword_parameter name: [(identifier) @definition.parameter]
+    ":" @type))
+(splat_parameter (identifier) @definition.parameter)
+(hash_splat_parameter (identifier) @definition.parameter)
+(argument_list (identifier) @definition.var)
+(parenthesized_statements(identifier) @definition.parameter)
 
+;;; Keywords
 [
  "def"
  ] @keyword.function
@@ -36,26 +45,19 @@
 ((identifier) @keyword
  (#vim-match? @keyword "^(class|instance|module)_eval$"))
 
-;;; Function calls
+((identifier) @exception
+ (#any-of? @exception "fail" "raise"))
 
+;;; Function calls
 "defined?" @keyword.operator
 
-(call
-   receiver: (constant)? @definition.type
-   method: [
-            (identifier)
-            (constant)
-            ] @definition.function
-
-   )
-
+(call receiver: (constant)? @definition.type)
 (program
  (call
   (identifier) @include)
  (#any-of? @include "require" "require_relative" "load" "autoload" "gem"))
 
 ;;; Function definitions
-
 ((identifier) @include
  (#vim-match? @include "^attr_(accessor|reader|writer)$"))
 
@@ -68,8 +70,10 @@
 (superclass (constant) @storageclass)
 
 ;;; Identifiers
-
 (class_variable) @constant
+
+((identifier) @constant.builtin
+ (#vim-match? @constant.builtin "^__(callee|dir|id|method|send|ENCODING|FILE|LINE)__$"))
 
 [
  (self)
@@ -77,7 +81,6 @@
  ] @constant.builtin
 
 ;;; rubyPredefinedConstant
-
 ((constant) @constant
  (#any-of? @constant "ARGF" "ARGV" "ENV" "DATA" "STDERR" "STDIN" "STDOUT" "TOPLEVEL_BINDING"))
 
@@ -85,7 +88,6 @@
  (#vim-match? @constant "^RUBY_(VERSION|RELEASE_DATE|PLATFORM|PATCHLEVEL|REVISION|DESCRIPTION|COPYRIGHT|ENGINE)$"))
 
 ;;; rubyPredefinedVariable
-
 ((global_variable) @variable.builtin
  (#vim-match? @variable.builtin "^\\\$[!\$&\\\"\'*+,.0:;<>?@`~_]$"))
 
@@ -104,13 +106,11 @@
 ;;; Operators
 
 ;;; rubyLambdaOperator
-
 [
  "->"
  ] @punctuation.delimiter
 
 ;;; rubyBooleanOperator
-
 [
  "!"
  "&&"
@@ -122,11 +122,9 @@
  ] @boolean
 
 ;;; rubyTernaryOperator
-
 (conditional ["?" ":"] @conditional.ternary)
 
 ;;; rubyEqualityOperator
-
 [
  "==="
  "=="
@@ -136,14 +134,12 @@
  ] @punctuation.special
 
 ;;; rubyRangeOperator
-
 [
  ".."
  "..."
  ] @text.math
 
 ;;; rubyBitwiseOperator
-
 [
  "|"
  "&"
@@ -154,7 +150,6 @@
  ] @exception
 
 ;;; rubyComparisonOperator
-
 [
  ">"
  "<"
@@ -164,18 +159,9 @@
  ] @constructor
 
 ;;; rubyArithmeticOperator
-
-[
- "+"
- "-"
- "*"
- "**"
- "/"
- "%"
- ] @text.math
+(binary ["+" "-" "*" "**" "/" "%"] @text.math)
 
 ;;; rubyAssignmentOperator
-
 [
  "="
  ">>="
@@ -196,13 +182,11 @@
  ] @operator
 
 ;; rubyDotOperator
-
 [
 "."
  ] @include
 
 ; rubyScopeOperator
-
 [
  "::"
  ] @include
@@ -212,7 +196,6 @@
 (pair key: (hash_key_symbol) ":" @symbol)
 
 ;;; From locals.scm
-
 (module name: (constant) @definition.namespace)
 (class name: (constant) @definition.type)
 (method name: [(identifier) (constant)] @definition.function)
@@ -223,11 +206,6 @@
    name: (constant) @type
 )
 
-(method_parameters (identifier) @definition.parameter)
-(splat_parameter (identifier) @definition.parameter)
-(hash_splat_parameter (identifier) @definition.parameter)
-(argument_list (identifier) @definition.var)
-
 (splat_parameter "*" @method)
 (splat_argument "*" @method)
 (hash_splat_parameter "**" @method)
@@ -235,4 +213,11 @@
 (block_parameter "&" @method)
 (block_argument "&" @method)
 
+;;; rubySuperClassOperator
 (superclass "<" @storageclass)
+
+;;; rubyEigenClassOperator
+(singleton_class "<<" @constant.builtin)
+
+;;; regex
+(regex "/" @string.regex)
