@@ -1,4 +1,4 @@
-zR<div align="center">
+<div align="center">
 <p align="center">
     <img width="302" height="302" src="https://user-images.githubusercontent.com/1559192/163754338-7f265280-9a6c-4c39-932a-858b75746d0a.png">
 </p>
