@@ -11,7 +11,7 @@ function M.setup(configColors, configStyle)
     local newpaper = tomlSyn.colors
     local style    = tomlSyn.style
 
-    tomlSyn.loadSyntax = function ()
+    tomlSyn.loadSyntax = function()
         local syntax = {
             tomlEscape        = { fg = newpaper.magenta },
             tomlLineEscape    = { fg = newpaper.maroon, style = style.o_style },
@@ -26,24 +26,28 @@ function M.setup(configColors, configStyle)
             tomlKeyValueArray = { fg = newpaper.operator },
             tomlTable         = { fg = newpaper.keyword,    style = style.k_style },
             tomlTableArray    = { fg = newpaper.darkpurple, style = style.k_style },
-            tomlDotInKey      = { fg = newpaper.orange },
+            tomlDotInKey      = { fg = newpaper.persimona },
             -- tomlTodo       Todo
             -- tomlComment    Comment
         }
         return syntax
     end
 
-    tomlSyn.loadTreeSitter = function ()
+    tomlSyn.loadTreeSitter = function()
 
         -- fallback to 0.7
         local treesitterOldKey = {
             ["@punctuation.bracket.toml"] = "tomlTSPunctBracket",
             ["@property.toml"]            = "tomlTSProperty",
+            ["@string.special.toml"]      = "tomlTSStringSpecial",
+            ["@type.toml"]                = "tomlTSType",
         }
 
         local treesitter = {
-            ["@punctuation.bracket.toml"] = { fg = newpaper.tag_navy, style = style.br_style },
-            ["@property.toml"]            = { fg = newpaper.darkengreen, style = style.f_style },
+            ["@punctuation.bracket.toml"] = { fg = newpaper.navy, style = style.br_style },
+            ["@property.toml"]            = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
+            ["@string.special.toml"]      = { fg = newpaper.maroon },
+            ["@type.toml"]                = { fg = newpaper.keyword, style = style.k_style },
         }
 
         -- fallback to 0.7
