@@ -38,7 +38,6 @@ function M.setup(configColors, configStyle)
             ["@definition.parameter.ruby"] = "rubyTSDefinitionParameter",
             ["@definition.type.ruby"]      = "rubyTSDefinitionType",
             ["@definition.var.ruby"]       = "rubyTSDefinitionVar",
-            ["@string.regex.special.ruby"] = "rubyTSStringRegexSpecial",
         }
 
         local treesitter = {
@@ -51,13 +50,12 @@ function M.setup(configColors, configStyle)
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
             ["@punctuation.bracket.ruby"]  = { fg = newpaper.ruby_navy, style = style.br_style },
             ["@text.math.ruby"]            = { fg = newpaper.tex_math, style = style.o_style },
-            ["@type.ruby"]                 = { fg = newpaper.darkgreen },
+            ["@type.ruby"]                 = { fg = newpaper.darkgreen, nocombine = true },
             ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@definition.namespace.ruby"] = { fg = newpaper.blue, style = style.k_style }, -- modules or namespaces
             ["@definition.parameter.ruby"] = { fg = newpaper.ruby_orange, style = style.v_style }, -- modules or namespaces
             ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
             ["@definition.var.ruby"]       = { fg = newpaper.darkorange, style = style.v_style },
-            ["@string.regex.special.ruby"] = { fg = newpaper.regexp_green },
         }
 
         -- fallback to 0.7

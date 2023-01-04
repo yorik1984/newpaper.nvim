@@ -3,8 +3,8 @@
 ;;; From locals.scm
 (method_parameters (identifier) @definition.parameter)
 (method_parameters
-  (keyword_parameter name: [(identifier) @definition.parameter]
-    ":" @type))
+  (keyword_parameter name: [(identifier) @symbol]
+    ":" @symbol))
 (splat_parameter (identifier) @definition.parameter)
 (hash_splat_parameter (identifier) @definition.parameter)
 (argument_list (identifier) @definition.var)
@@ -198,13 +198,20 @@
 ;;; From locals.scm
 (module name: (constant) @definition.namespace)
 (class name: (constant) @definition.type)
-(method name: [(identifier) (constant)] @definition.function)
-(singleton_method name: [(identifier) (constant)] @definition.function)
+(method name: [
+               (identifier) @definition.function
+               (constant) @definition.type
+               ])
+(singleton_method name: [
+                         (identifier) @definition.function
+                         (constant) @definition.type
+                         ])
 
-(scope_resolution
-   scope: (constant) @definition.type
-   name: (constant) @type
-)
+(scope_resolution scope: (constant) @definition.type)
+(scope_resolution name: (constant) @definition.type)
+
+((scope_resolution name: (constant) @type)
+  (#vim-match? @type "^[A-Z0-9_]+$"))
 
 (splat_parameter "*" @method)
 (splat_argument "*" @method)
