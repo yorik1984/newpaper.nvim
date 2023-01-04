@@ -113,7 +113,7 @@ function M.setup(configColors, configStyle)
             ["@field.bibtex"]                 = "bibtexTSField",
             ["@function.builtin.bibtex"]      = "bibtexTSFuncBuiltin",
             ["@keyword.bibtex"]               = "bibtexTSKeyword",
-            ["@number.bibtex"]                 = "bibtexTSNumber",
+            ["@number.bibtex"]                = "bibtexTSNumber",
             ["@operator.bibtex"]              = "bibtexTSOperator",
             ["@parameter.bibtex"]             = "bibtexTSParameter",
             ["@punctuation.bracket.bibtex"]   = "bibtexTSPunctBracket",
