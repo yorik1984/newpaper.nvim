@@ -11,7 +11,7 @@ function M.setup(configColors, configStyle)
     local newpaper = tex.colors
     local style    = tex.style
 
-    tex.loadSyntax = function ()
+    tex.loadSyntax = function()
         local syntax = {
             -- Basic tex groups
             -- NOTE:some basic groups init in Vimtex part. See below

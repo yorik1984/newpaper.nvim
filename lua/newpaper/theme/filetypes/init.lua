@@ -5,6 +5,7 @@ local ftypesFolder = "newpaper.theme.filetypes."
 local filetypes = {
     "help",
     "html",
+    "json",
     "lua",
     "markdown",
     "ruby",

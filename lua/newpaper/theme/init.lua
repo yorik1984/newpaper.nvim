@@ -48,6 +48,8 @@ function M.setup(configColors, configStyle)
             Ignore         = { fg = newpaper.disabled }, -- left blank, hidden
             Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- any erroneous construct
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            Noise          = { link = "Delimiter" },
+            Quote          = { link = "String" },
         }
         return syntax
     end
