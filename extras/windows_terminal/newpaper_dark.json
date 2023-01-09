@@ -1,0 +1,26 @@
+{
+    "name": "Newpaper Dark",
+
+    "foreground": "#C6C8CD",
+    "background": "#2B2B2B",
+    "cursorColor": "#14BCCF",
+    "selectionBackground": "#5FAFD7",
+
+    "black": "#2B2B2B",
+    "red": "#CC5555",
+    "green": "#00875F",
+    "yellow": "#E28B46",
+    "blue": "#8195E7",
+    "purple": "#A274D1",
+    "cyan": "#0087AF",
+    "white": "#787878",
+
+    "brightBlack": "#4E4E4E",
+    "brightRed": "#FE7967",
+    "brightGreen": "#5FAF5F",
+    "brightYellow": "#E5C07B",
+    "brightBlue": "#8BC5ED",
+    "brightPurple": "#D75FAF",
+    "brightCyan": "#4BB5B1",
+    "brightWhite": "#C6C8CD"
+}

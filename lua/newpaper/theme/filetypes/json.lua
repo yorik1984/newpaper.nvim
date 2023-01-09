@@ -13,7 +13,7 @@ function M.setup(configColors, configStyle)
 
     jsonSyn.loadSyntax = function()
         local syntax = {
-            jsonKeyword = { fg = newpaper.darkengreen },
+            jsonKeyword = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
         }
         return syntax
     end
@@ -28,9 +28,9 @@ function M.setup(configColors, configStyle)
         }
 
         local treesitter = {
-            ["@label.json"]    = { fg = newpaper.darkengreen },
-            ["@label.hjson"]   = { fg = newpaper.darkengreen },
-            ["@label.jsonnet"] = { fg = newpaper.darkengreen },
+            ["@label.json"]    = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
+            ["@label.hjson"]   = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
+            ["@label.jsonnet"] = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
         }
 
         -- fallback to 0.7

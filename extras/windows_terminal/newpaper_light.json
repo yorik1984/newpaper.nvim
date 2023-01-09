@@ -1,0 +1,26 @@
+{
+    "name": "Newpaper Light",
+
+    "foreground": "#2B2B2B",
+    "background": "#F1F3F2",
+    "cursorColor": "#14A9E2",
+    "selectionBackground": "#0087AF",
+
+    "black": "#2B2B2B",
+    "red": "#E12D23",
+    "green": "#008700",
+    "yellow": "#AF5F00",
+    "blue": "#0044AA",
+    "purple": "#8700AF",
+    "cyan": "#147B8B",
+    "white": "#878787",
+
+    "brightBlack": "#444444",
+    "brightRed": "#E45649",
+    "brightGreen": "#50A14F",
+    "brightYellow": "#DE7D2F",
+    "brightBlue": "#0072C1",
+    "brightPurple": "#AF87D7",
+    "brightCyan": "#0D98BA",
+    "brightWhite": "#585858"
+}
