@@ -7,20 +7,20 @@
     "selectionBackground": "#0087AF",
 
     "black": "#2B2B2B",
-    "red": "#E12D23",
+    "red": "#AF0000",
     "green": "#008700",
     "yellow": "#AF5F00",
-    "blue": "#0044AA",
+    "blue": "#27408B",
     "purple": "#8700AF",
     "cyan": "#147B8B",
     "white": "#878787",
 
     "brightBlack": "#444444",
-    "brightRed": "#E45649",
+    "brightRed": "#E14133",
     "brightGreen": "#50A14F",
-    "brightYellow": "#DE7D2F",
+    "brightYellow": "#C18301",
     "brightBlue": "#0072C1",
-    "brightPurple": "#AF87D7",
+    "brightPurple": "#E563BA",
     "brightCyan": "#0D98BA",
     "brightWhite": "#585858"
 }
