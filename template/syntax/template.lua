@@ -11,7 +11,7 @@ function M.setup(configColors, configStyle)
     local newpaper = langSyn.colors
     local style    = langSyn.style
 
-    langSyn.loadSyntax = function ()
+    langSyn.loadSyntax = function()
         local syntax = {
 
         }
@@ -19,7 +19,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    langSyn.loadTreeSitter = function ()
+    langSyn.loadTreeSitter = function()
 
         -- fallback to 0.7
         local treesitterOldKey = {

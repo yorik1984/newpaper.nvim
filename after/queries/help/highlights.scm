@@ -3,4 +3,4 @@
 (column_heading) @preproc
 
 (optionlink
-   text: (_) @type)
+  text: (_) @type)

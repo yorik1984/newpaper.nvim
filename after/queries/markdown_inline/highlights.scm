@@ -8,5 +8,3 @@
 
 ; Conceal full reference links
 (full_reference_link (link_label) @text.uri)
-
-
