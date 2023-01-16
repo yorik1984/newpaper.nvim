@@ -191,7 +191,7 @@
  "::"
  ] @include
 
-(block_parameters "|" @operator)
+(block_parameters "|" @constant.builtin)
 
 (pair key: (hash_key_symbol) ":" @symbol)
 
@@ -213,12 +213,14 @@
 ((scope_resolution name: (constant) @type)
   (#vim-match? @type "^[A-Z0-9_]+$"))
 
-(splat_parameter "*" @method)
-(splat_argument "*" @method)
-(hash_splat_parameter "**" @method)
-(hash_splat_argument "**" @method)
-(block_parameter "&" @method)
-(block_argument "&" @method)
+(splat_parameter "*" @number)
+(splat_argument "*" @number)
+(hash_splat_parameter "**" @number)
+(hash_splat_argument "**" @number)
+(hash ["{" "}"] @symbol)
+(pair "=>" @symbol)
+(block_parameter "&" @punctuation.delimiter)
+(block_argument "&" @punctuation.delimiter)
 
 ;;; rubySuperClassOperator
 (superclass "<" @storageclass)
@@ -228,3 +230,7 @@
 
 ;;; regex
 (regex "/" @string.regex)
+
+(interpolation
+  "#{" @include
+  "}" @include) @text.emphasis

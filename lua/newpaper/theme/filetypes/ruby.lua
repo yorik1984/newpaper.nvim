@@ -23,39 +23,41 @@ function M.setup(configColors, configStyle)
 
         -- fallback to 0.7
         local treesitterOldKey = {
-            ["@constant.ruby"]             = "rubyTSConstant",
             ["@constant.builtin.ruby"]     = "rubyTSConstBuiltin",
+            ["@constant.ruby"]             = "rubyTSConstant",
             ["@constructor.ruby"]          = "rubyTSConstructor",
+            ["@definition.namespace.ruby"] = "rubyTSDefinitionNamespace",
+            ["@definition.parameter.ruby"] = "rubyTSDefinitionParameter",
+            ["@definition.type.ruby"]      = "rubyTSDefinitionType",
+            ["@definition.var.ruby"]       = "rubyTSDefinitionVar",
             ["@exception.ruby"]            = "rubyTSException",
             ["@include.ruby"]              = "rubyTSInclude",
             ["@keyword.operator.ruby"]     = "rubyTSKeywordOperator",
             ["@label.ruby"]                = "rubyTSLabel",
             ["@punctuation.bracket.ruby"]  = "rubyTSPunctBracket",
+            ["@text.emphasis.ruby"]        = "rubyTSEmphasis",
             ["@text.math.ruby"]            = "rubyTSMath",
-            ["@type.ruby"]                 = "rubyTSType",
             ["@type.qualifier.ruby"]       = "rubyTSTypeQualifier",
-            ["@definition.namespace.ruby"] = "rubyTSDefinitionNamespace",
-            ["@definition.parameter.ruby"] = "rubyTSDefinitionParameter",
-            ["@definition.type.ruby"]      = "rubyTSDefinitionType",
-            ["@definition.var.ruby"]       = "rubyTSDefinitionVar",
+            ["@type.ruby"]                 = "rubyTSType",
         }
 
         local treesitter = {
-            ["@constant.ruby"]             = { fg = newpaper.ocean, style = style.k_style },
             ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon },
+            ["@constant.ruby"]             = { fg = newpaper.ocean, style = style.k_style },
             ["@constructor.ruby"]          = { fg = newpaper.blue, style = style.o_style },
+            ["@definition.namespace.ruby"] = { fg = newpaper.blue, style = style.k_style }, -- modules or namespaces
+            ["@definition.parameter.ruby"] = { fg = newpaper.ruby_orange, style = style.v_style },
+            ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
+            ["@definition.var.ruby"]       = { fg = newpaper.darkorange, style = style.v_style },
             ["@exception.ruby"]            = { fg = newpaper.redorange, style = style.k_style },
-            ["@include.ruby"]              = { fg = newpaper.redorange },
+            ["@include.ruby"]              = { fg = newpaper.redorange, nocombine = true },
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
             ["@punctuation.bracket.ruby"]  = { fg = newpaper.ruby_navy, style = style.br_style },
+            ["@text.emphasis.ruby"]        = { style = style.none, nocombine = true },
             ["@text.math.ruby"]            = { fg = newpaper.tex_math, style = style.o_style },
-            ["@type.ruby"]                 = { fg = newpaper.darkgreen, nocombine = true },
             ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
-            ["@definition.namespace.ruby"] = { fg = newpaper.blue, style = style.k_style }, -- modules or namespaces
-            ["@definition.parameter.ruby"] = { fg = newpaper.ruby_orange, style = style.v_style }, -- modules or namespaces
-            ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
-            ["@definition.var.ruby"]       = { fg = newpaper.darkorange, style = style.v_style },
+            ["@type.ruby"]                 = { fg = newpaper.darkgreen, nocombine = true },
         }
 
         -- fallback to 0.7
@@ -115,27 +117,29 @@ function M.setup(configColors, configStyle)
             -- rubyCurlyBraceEscape           rubyStringEscape
             -- rubyAngleBracketEscape         rubyStringEscape
             -- rubySquareBracketEscape        rubyStringEscape
-            rubyStringEscape               = { fg = newpaper.redorange },
+            rubyStringEscape               = { fg = newpaper.maroon },
 
-            rubyInterpolationDelimiter     = { fg = newpaper.darkorange },
+            rubyInterpolationDelimiter     = { fg = newpaper.redorange, nocombine = true },
             -- rubySharpBang                  PreProc
             rubyStringDelimiter            = { fg = newpaper.string, style = style.s_style },
             -- rubyHeredocDelimiter           rubyStringDelimiter
             -- rubyPercentSymbolDelimiter     rubySymbolDelimiter
             rubySymbolDelimiter            = { fg = newpaper.darkyellow, style = style.d_style },
-            rubyPercentStringDelimiter     = { fg = newpaper.tag_navy,   style = style.br_style },
+            rubyPercentStringDelimiter     = { fg = newpaper.tag_navy, style = style.br_style },
+            rubyCurlyBlockDelimiter        = { fg = newpaper.ruby_navy, style = style.br_style },
+            rubyArrayDelimiter             = { fg = newpaper.ruby_navy, style = style.br_style },
             -- rubyString                     String
-            rubyPercentRegexpDelimiter     = { fg = newpaper.text,        style = style.o_style },
+            rubyPercentRegexpDelimiter     = { fg = newpaper.text, style = style.o_style },
             rubyRegexpDelimiter            = { fg = newpaper.regexp_blue, style = style.d_style },
             rubyRegexpEscape               = { fg = newpaper.regexp_magenta },
-            rubyRegexpQuantifier           = { fg = newpaper.regexp_blue,  style = style.o_style },
+            rubyRegexpQuantifier           = { fg = newpaper.regexp_blue, style = style.o_style },
             rubyRegexpAnchor               = { fg = newpaper.regexp_brown, style = style.o_style },
             rubyRegexpDot                  = { fg = newpaper.regexp_orange },
             rubyRegexpCharClass            = { fg = newpaper.regexp_orange },
             rubyRegexpIntersection         = { fg = newpaper.regexp_brown, style = style.o_style },
             rubyRegexpSpecial              = { fg = newpaper.regexp_green },
             rubyRegexp                     = { fg = newpaper.regexp_blue, style = style.s_style },
-            rubyRegexpComment              = { fg = newpaper.comment,     style = style.comment_title },
+            rubyRegexpComment              = { fg = newpaper.comment, style = style.comment_title },
 
             -- rubyError                      Error
             -- rubyUselessLineContinuation    rubyError
@@ -170,9 +174,9 @@ function M.setup(configColors, configStyle)
             plugins.rubyComparisonOperator     = { fg = newpaper.blue, style = style.o_style }
             plugins.rubyBitwiseOperator        = { fg = newpaper.redorange, style = style.o_style }
             plugins.rubyBooleanOperator        = { fg = newpaper.boolean,   style = style.o_style }
-            plugins.rubyRangeOperator          = { fg = newpaper.keyword, style = style.o_style }
+            plugins.rubyRangeOperator          = { fg = newpaper.tex_math, style = style.o_style }
             plugins.rubyAssignmentOperator     = { fg = newpaper.tag_navy, style = style.o_style }
-            plugins.rubyEqualityOperator       = { fg = newpaper.magenta,  style = style.o_style }
+            plugins.rubyEqualityOperator       = { fg = newpaper.regexp_magenta,  style = style.o_style }
         else
             plugins.rubyOperator               = { fg = newpaper.fg }
             plugins.rubyDefinedOperator        = { fg = newpaper.fg }
@@ -187,15 +191,15 @@ function M.setup(configColors, configStyle)
             plugins.rubyEqualityOperator       = { fg = newpaper.fg }
         end
         if vim.g.ruby_pseudo_operators == 1 then
-            plugins.rubyPseudoOperator = { fg = newpaper.orange }
-            -- rubyDotOperator                rubyPseudoOperator
-            -- rubyScopeOperator              rubyPseudoOperator
-            -- rubySuperClassOperator         rubyPseudoOperator
-            -- rubyEigenClassOperator         rubyPseudoOperator
-            -- rubyLambdaOperator             rubyPseudoOperator
-            -- rubyDoubleSplatOperator        rubyPseudoOperator
-            -- rubySplatOperator              rubyPseudoOperator
-            -- rubyProcOperator               rubyPseudoOperator
+            plugins.rubyPseudoOperator         = { fg = newpaper.orange, style = style.o_style }
+            plugins.rubyDotOperator            = { fg = newpaper.redorange, nocombine = true }
+            plugins.rubyScopeOperator          = { fg = newpaper.redorange, nocombine = true }
+            plugins.rubySuperClassOperator     = { fg = newpaper.lua_navy, style = style.o_style }
+            plugins.rubyEigenClassOperator     = { fg = newpaper.ruby_maroon, style = style.o_style }
+            plugins.rubyLambdaOperator         = { fg = newpaper.persimona, style = style.o_style }
+            plugins.rubyDoubleSplatOperator    = { fg = newpaper.red, style = style.o_style }
+            plugins.rubySplatOperator          = { fg = newpaper.red, style = style.o_style }
+            plugins.rubyProcOperator           = { fg = newpaper.persimona, style = style.o_style }
         else
             plugins.rubyPseudoOperator = { fg = newpaper.fg }
         end
