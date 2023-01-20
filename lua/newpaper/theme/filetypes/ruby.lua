@@ -176,7 +176,7 @@ function M.setup(configColors, configStyle)
             plugins.rubyBooleanOperator        = { fg = newpaper.boolean,   style = style.o_style }
             plugins.rubyRangeOperator          = { fg = newpaper.tex_math, style = style.o_style }
             plugins.rubyAssignmentOperator     = { fg = newpaper.tag_navy, style = style.o_style }
-            plugins.rubyEqualityOperator       = { fg = newpaper.regexp_magenta,  style = style.o_style }
+            plugins.rubyEqualityOperator       = { fg = newpaper.lightmagenta, style = style.o_style }
         else
             plugins.rubyOperator               = { fg = newpaper.fg }
             plugins.rubyDefinedOperator        = { fg = newpaper.fg }
