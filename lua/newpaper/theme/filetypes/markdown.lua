@@ -11,7 +11,7 @@ function M.setup(configColors, configStyle)
     local newpaper     = markdownSyn.colors
     local style        = markdownSyn.style
 
-    markdownSyn.loadSyntax = function ()
+    markdownSyn.loadSyntax = function()
         local syntax = {
             markdownH1Delimiter         = { fg = newpaper.tex_part_title },
             markdownH2Delimiter         = { fg = newpaper.tex_navy },
@@ -84,7 +84,7 @@ function M.setup(configColors, configStyle)
 
         local treesitter = {
             ["@none.markdown"]                  = { fg = newpaper.fg },
-            ["@punctuation.special.markdown"]   = { fg = newpaper.teal },
+            ["@punctuation.special.markdown"]   = { fg = newpaper.teal, style = style.d_style},
             ["@string.escape.markdown"]         = { fg = newpaper.tex_magenta },
             ["@text.title.markdown"]            = { fg = newpaper.keyword, style = style.k_style },
             ["@text.todo.checked.markdown"]     = { fg = newpaper.todo_hint, style = style.b_bold },
@@ -117,7 +117,7 @@ function M.setup(configColors, configStyle)
             mkdLinkDef       = { fg = newpaper.tex_maroon, style = style.k_style },
             mkdLinkDefTarget = { fg = newpaper.teal, style = style.underline },
             mkdLinkTitle     = { fg = newpaper.regexp_blue },
-            mkdDelimiter     = { fg = newpaper.orange, style = style.d_style },
+            mkdDelimiter     = { fg = newpaper.persimona, style = style.d_style },
 
             -- vim-pandoc -----------------------------------------------------
             pandocOperator                       = { fg = newpaper.tex_redorange },
