@@ -31,6 +31,7 @@ function M.setup(configColors, configStyle)
             ["@definition.type.ruby"]      = "rubyTSDefinitionType",
             ["@definition.var.ruby"]       = "rubyTSDefinitionVar",
             ["@exception.ruby"]            = "rubyTSException",
+            ["@function.call"]             = "rubyTSFunctionCall",
             ["@include.ruby"]              = "rubyTSInclude",
             ["@keyword.operator.ruby"]     = "rubyTSKeywordOperator",
             ["@label.ruby"]                = "rubyTSLabel",
@@ -50,6 +51,7 @@ function M.setup(configColors, configStyle)
             ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
             ["@definition.var.ruby"]       = { fg = newpaper.darkorange, style = style.v_style },
             ["@exception.ruby"]            = { fg = newpaper.redorange, style = style.k_style },
+            ["@function.call.ruby"]        = { fg = newpaper.ruby_navy, style = style.f_style },
             ["@include.ruby"]              = { fg = newpaper.redorange, nocombine = true },
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
