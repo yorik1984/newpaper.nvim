@@ -6,6 +6,7 @@ local filetypes = {
     "help",
     "html",
     "json",
+    "liquid",
     "lua",
     "markdown",
     "ruby",
