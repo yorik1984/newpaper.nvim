@@ -11,7 +11,7 @@ function M.setup(configColors, configStyle)
     local newpaper = theme.colors
     local style    = theme.style
 
-    theme.loadSyntax = function ()
+    theme.loadSyntax = function()
         local syntax = {
             StorageClass   = { fg = newpaper.class, style = style.k_style }, -- static, register, volatile, etc.
             Structure      = { fg = newpaper.darkpurple, style = style.k_style }, -- struct, union, enum, etc.
@@ -54,7 +54,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    theme.loadEditor = function ()
+    theme.loadEditor = function()
         local editor = {
             Comment          = { fg = newpaper.comment, style = style.c_style },
             ColorColumn      = { fg = newpaper.colorcolumn, bg = newpaper.none }, --  used for the columns set with 'colorcolumn'
@@ -70,8 +70,8 @@ function M.setup(configColors, configStyle)
             ciCursor         = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Insert mode
             crCursor         = { fg = newpaper.bg, bg = newpaper.darkorange }, -- Command-line Replace mode
             smCursor         = { fg = newpaper.bg, bg = newpaper.yellow }, -- showmatch in Insert mode
-            TermCursor       = { fg = newpaper.bg, bg = newpaper.cursor }, -- active cursor in terminal
-            TermCursorNC     = { fg = newpaper.bg, bg = newpaper.lightgrey }, -- inactive cursor in terminal
+            TermCursor       = { style = style.reverse }, -- active cursor in terminal
+            TermCursorNC     = { style = style.reverse }, -- inactive cursor in terminal
             CursorColumn     = { bg = newpaper.active }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
             CursorLine       = { bg = newpaper.active }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
             CursorIM         = { fg = newpaper.bg, bg = newpaper.cursor }, -- like Cursor, but used when in IME mode
@@ -135,6 +135,8 @@ function M.setup(configColors, configStyle)
             WildMenu         = { fg = newpaper.wildmenu_fg, bg = newpaper.wildmenu_bg, style = style.b_bold }, -- current match in 'wildmenu' completion
             WinSeparator     = { fg = newpaper.win_border, bg = newpaper.none }, -- separators between window splits
             VertSplit        = { link = "WinSeparator" },
+            WinBar           = { fg = newpaper.winbar_fg, bg = newpaper.winbar_bg },-- Window bar of current window.
+            WinBarNC         = { fg = newpaper.winbar_fg, bg = newpaper.winbar_bg },-- Window bar of not-current
             healthError      = { fg = newpaper.errormsg_fg },
             healthSuccess    = { fg = newpaper.hint_fg },
             healthWarning    = { fg = newpaper.warn_fg },
@@ -147,35 +149,37 @@ function M.setup(configColors, configStyle)
             SignColumnSB     = { bg = newpaper.sb_contrast_bg },
             NormalInverse    = { fg = newpaper.normal_bg, bg = newpaper.normal_fg },
             NormalTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
+            FloatBorderTerm  = { fg = newpaper.win_act_border, bg = newpaper.term_fl_bg },
+            NormalTermFloat  = { fg = newpaper.term_fl_fg, bg = newpaper.term_fl_bg },
             LineNrTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
             SignColumnTerm   = { fg = newpaper.term_fg, bg = newpaper.term_bg },
-            TermCursorTerm   = { fg = newpaper.term_bg, bg = newpaper.term_fg },
-            TermCursorNCTerm = { fg = newpaper.term_bg, bg = newpaper.term_fg },
+            TermCursorTerm   = { style = style.reverse },
+            TermCursorNCTerm = { style = style.reverse },
             CursorLineTerm   = { bg = newpaper.none, ctermbg = newpaper.none },
         }
         return editor
     end
 
-    theme.loadTerminal = function ()
+    theme.loadTerminal = function()
         vim.g.terminal_color_0  = newpaper.black
         vim.g.terminal_color_1  = newpaper.maroon
         vim.g.terminal_color_2  = newpaper.darkgreen
-        vim.g.terminal_color_3  = newpaper.olive
+        vim.g.terminal_color_3  = newpaper.darkorange
         vim.g.terminal_color_4  = newpaper.navy
         vim.g.terminal_color_5  = newpaper.purple
         vim.g.terminal_color_6  = newpaper.teal
-        vim.g.terminal_color_7  = newpaper.silver
-        vim.g.terminal_color_8  = newpaper.grey
+        vim.g.terminal_color_7  = newpaper.bg
+        vim.g.terminal_color_8  = newpaper.darkgrey
         vim.g.terminal_color_9  = newpaper.red
         vim.g.terminal_color_10 = newpaper.green
-        vim.g.terminal_color_11 = newpaper.yellow
-        vim.g.terminal_color_12 = newpaper.blue
-        vim.g.terminal_color_13 = newpaper.magenta
-        vim.g.terminal_color_14 = newpaper.aqua
-        vim.g.terminal_color_15 = newpaper.white
+        vim.g.terminal_color_11 = newpaper.orange
+        vim.g.terminal_color_12 = newpaper.lightblue
+        vim.g.terminal_color_13 = newpaper.lightmagenta
+        vim.g.terminal_color_14 = newpaper.blue
+        vim.g.terminal_color_15 = newpaper.fg
     end
 
-    theme.loadTreeSitter = function ()
+    theme.loadTreeSitter = function()
 
         -- fallback to 0.7
         local treesitterOldKey = {
@@ -249,6 +253,7 @@ function M.setup(configColors, configStyle)
             ["@text.uri"]              = "TSURI",
             ["@text.warning"]          = "TSWarning",
             ["@text.todo"]             = "TSTodo",
+            ["@text.quote"]            = "TSQuote",
             ["@type"]                  = "TSType",
             ["@type.builtin"]          = "TSTypeBuiltin",
             ["@type.definition"]       = "TSTypeDefinition",
@@ -267,7 +272,7 @@ function M.setup(configColors, configStyle)
             ["@comment"]               = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
             ["@conceal"]               = { fg = newpaper.tex_math },
             ["@conditional"]           = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
-            ["@conditional.ternary"]   = { fg = newpaper.keyword, style = style.k_style },
+            ["@conditional.ternary"]   = { fg = newpaper.keyword, style = style.d_style },
             ["@constant"]              = { fg = newpaper.darkgreen }, -- For constants
             ["@constant.builtin"]      = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
             ["@constant.macro"]        = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
@@ -299,7 +304,7 @@ function M.setup(configColors, configStyle)
             ["@property"]              = { fg = newpaper.darkgreen }, -- Same as `TSField`,accesing for struct members in C.
             ["@punctuation.bracket"]   = { fg = newpaper.navy, style = style.br_style  }, -- For brackets and parens.
             ["@punctuation.delimiter"] = { fg = newpaper.persimona, style = style.d_style }, -- For delimiters ie: `.`
-            ["@punctuation.special"]   = { fg = newpaper.regexp_magenta }, -- For special punctutation that does not fall in the catagories before.
+            ["@punctuation.special"]   = { fg = newpaper.lightmagenta }, -- For special punctutation that does not fall in the catagories before.
             ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
             ["@storageclass"]          = { fg = newpaper.lua_navy, style = style.k_style },
             ["@storageclass.lifetime"] = { fg = newpaper.tag_navy, style = style.k_style },
@@ -322,13 +327,14 @@ function M.setup(configColors, configStyle)
             ["@text.math"]             = { fg = newpaper.tex_math },
             ["@text.note"]             = { fg = newpaper.bg, bg = newpaper.hint_fg },
             ["@text.reference"]        = { fg = newpaper.tex_maroon },
-            ["@text.strike"]           = { fg = newpaper.fg, style = style.b_italic }, -- For strikethrough text.
+            ["@text.strike"]           = { fg = newpaper.fg, style = style.strike }, -- For strikethrough text.
             ["@text.strong"]           = { fg = newpaper.fg, style = style.bold },
             ["@text.title"]            = { fg = newpaper.title, style = style.b_bold }, -- Text that is part of a title.
             ["@text.underline"]        = { fg = newpaper.fg, style = style.underline }, -- For text to be represented with an underline.
             ["@text.uri"]              = { fg = newpaper.link, style = style.link }, -- Any URI like a link or email.
             ["@text.warning"]          = { fg = newpaper.bg, bg = newpaper.info_fg },
             ["@text.todo"]             = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            ["@text.quote"]            = { fg = newpaper.tex_navy },
             ["@type"]                  = { fg = newpaper.darkengreen }, -- For types.
             ["@type.builtin"]          = { fg = newpaper.bluegreen, style = style.k_style }, -- For builtin types.
             ["@type.definition"]       = { fg = newpaper.maroon },
@@ -432,7 +438,7 @@ function M.setup(configColors, configStyle)
             GlyphPalette9                 = { fg = newpaper.magenta },
             GlyphPaletteDirectory         = { fg = newpaper.navy },
 
-            -- Headlines -----------------------------------------------------
+            -- Headlines ------------------------------------------------------
             Headline                      = { bg = newpaper.none, style = style.k_bold },
             CodeBlock                     = { bg = newpaper.codeblock },
             Dash                          = { fg = newpaper.orange, bg = newpaper.none },
@@ -459,7 +465,11 @@ function M.setup(configColors, configStyle)
             LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = style.error },
             LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = style.error },
 
-            -- Litee -------------------------------------------------------
+            -- LazyGit --------------------------------------------------------
+            LazyGitFloat                  = { fg = newpaper.git_fg, bg = newpaper.term_fl_bg },
+            LazyGitBorder                 = { fg = newpaper.win_act_border, bg = newpaper.term_fl_bg },
+
+            -- Litee ----------------------------------------------------------
             LTBoolean                     = { fg = newpaper.boolean, style = style.k_style },
             LTConstant                    = { fg = newpaper.darkengreen },
             LTConstructor                 = { fg = newpaper.bluegreen },
@@ -574,7 +584,7 @@ function M.setup(configColors, configStyle)
             NvimDapVirtualTextError       = { fg = newpaper.error_fg, style = style.c_style },
             NvimDapVirtualTextInfo        = { fg = newpaper.info_fg,  style = style.c_style },
 
-            -- Nvim-notify
+            -- Nvim-notify ----------------------------------------------------
             NotifyERRORBorder             = { fg = newpaper.error_fg },
             NotifyWARNBorder              = { fg = newpaper.warn_fg },
             NotifyINFOBorder              = { fg = newpaper.info_fg },

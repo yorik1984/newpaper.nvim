@@ -1,6 +1,6 @@
 <div align="center">
 <p align="center">
-    <img width="302" height="302" src="https://user-images.githubusercontent.com/1559192/163754338-7f265280-9a6c-4c39-932a-858b75746d0a.png">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/logo/logo-newpaper.png" width="200" alt="Logo"/>
 </p>
 
 # 🎨 newpaper.nvim
@@ -12,9 +12,23 @@
 
 ## ℹ️ Info
 
-A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX and Markdown syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
+A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](https://github.com/NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to Neovim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
+
+### Light
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/nvim_preview_light.png">
+</p>
+
+<div align="center">
+
+### Dark
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/nvim_preview_dark.png">
+</p>
 
 <div align="center">
 
@@ -32,10 +46,11 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Asynchronous highlight loading which makes the theme extremely fast
 + Added functions for live theme switching without the need to restart Neovim
 + Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
++ [Extras](#Extras) colors configs for terminal-based and GUI application.
 
 ### Extra syntax highlights
 
-+ [**Ruby**](http:ws://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb) with [vim-ruby](https://github.com/vim-ruby/vim-ruby) -- [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
++ [**Ruby**](http://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb) with [vim-ruby](https://github.com/vim-ruby/vim-ruby) -- [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
   + [**Rbs**](https://github.com/ruby/rbs) with [vim-rbs](https://github.com/jlcrochet/vim-rbs)
  + [**Lua**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua) with [vim-lua](https://github.com/tbastos/vim-lua) -- [🖼️](#LUA), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
  + **Rust** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
@@ -59,6 +74,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [git-messenger](https://github.com/rhysd/git-messenger.vim)
 + [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
++ [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) with extras for [light](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/newpaper_light.yaml) or [dark](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/newpaper_dark.yaml) background.
 + [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
@@ -163,7 +179,7 @@ require("newpaper").setup({
 | ------------------- | ------------- | ------------|
 | style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` |
 | editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic |
-| terminal            | `"contrast"`  | Make `:terminal` window in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
+| terminal            | `"contrast"`  | Make `:terminal`buffers and windows  in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
 | sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
 | contrast_float      | `true`        | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope  | `true`        | Make Telescope have a different foreground and background |
@@ -456,6 +472,13 @@ Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/
 
 For a complete guide on usage and Configuration of the theme, see `:help newpaper.nvim`.
 
+## Extras
+
+[Extra](https://github.com/yorik1984/newpaper.nvim/blob/main/extras) config with newpaper-based color palette for some terminal and GUI application can be found in extras.
+See README in folders:
++ [lazygit](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/README.md)
++ [Windows Terminal](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/windows_terminal/README.md)
+
 ## ©️ Credits
 
 + [onedark.nvim](https://github.com/ful1e5/onedark.nvim) ⚡
@@ -467,23 +490,24 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [vim-shoot](https://github.com/JMcKiern/vim-shoot) -- generate HTML version of highlighting
 + [toml](https://github.com/toml-lang/toml) -- spec and code preview example
 + [yaml](https://github.com/yaml/yaml-spec) -- spec and code preview example
++ [catppuccin](https://github.com/catppuccin) -- community-driven pastel theme
 
 ## 🛠️ TODO
 
-* [x] Add dark style
+* [X] Add dark style
 * [ ] Add syntax screenshots, HTML-preview:
-  * [x] Ruby
-  * [x] Lua
-  * [x] TOML
-  * [x] YAML
-  * [x] Markdown
-    * [x] Pandoc
+  * [X] Ruby
+  * [X] Lua
+  * [X] TOML
+  * [X] YAML
+  * [X] Markdown
+    * [X] Pandoc
   * [ ] LaTeX
   * [ ] HTML
   * [ ] Python
   * [ ] COBOL
 * [ ] Add plugins screenshots:
-  * [x] todo-comments.nvim
+  * [X] todo-comments.nvim
   * [ ] LSP Diagnostics
   * [ ] Lsp Saga
   * [ ] nvim-cmp
@@ -492,19 +516,19 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
   * [ ] NvimTree.lua
   * [ ] WhichKey.nvim
   * [ ] packer.nvim
-* [ ] Add extra syntax highlights:
-  * [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
-  * [x] Ruby
-  * [x] Lua
-  * [x] TOML
-  * [x] YAML
-  * [x] Jinja
-  * [x] Markdown
-    * [x] Pandoc
-  * [x] HTML
+* [-] Add extra syntax highlights:
+  * [X] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
+  * [X] Ruby
+  * [X] Lua
+  * [X] TOML
+  * [X] YAML
+  * [X] Jinja
+  * [X] Markdown
+    * [X] Pandoc
+  * [X] HTML
   * [ ] COBOL
   * [ ] Python
-  * [ ] Rust
+  * [X] Rust
 * [ ] Add plugins support:
   * [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
   * [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)

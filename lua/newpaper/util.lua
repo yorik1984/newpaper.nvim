@@ -56,7 +56,7 @@ function M.onColorScheme()
     vim.api.nvim_clear_autocmds({ group = "newpaper" })
 end
 
-function M.autocmds(config)
+function M.autocmds(config, theme)
     local group = vim.api.nvim_create_augroup("newpaper", {})
     vim.api.nvim_create_autocmd({ "ColorSchemePre" }, {
         group = group,
@@ -67,8 +67,10 @@ function M.autocmds(config)
     })
     vim.api.nvim_create_autocmd({ "TermOpen" }, {
         group = group,
-        pattern = { "*" },
+        pattern = { "*\\(lazygit\\)\\@<!" },
         command = "setlocal winhighlight=Normal:NormalTerm,"
+            .. "NormalFloat:NormalTermFloat,"
+            .. "FloatBorder:FloatBorderTerm,"
             .. "SignColumn:SignColumnTerm,"
             .. "LineNr:LineNrTerm,"
             .. "TermCursor:TermCursorTerm,"
@@ -76,6 +78,18 @@ function M.autocmds(config)
             .. "CursorLine:CursorLineTerm "
             .. "signcolumn=no nocursorline nonumber",
     })
+
+    vim.api.nvim_create_autocmd({ "TermOpen" }, {
+        group = group,
+        pattern = { "*\\(lazygit\\)" },
+        callback = function()
+            local newpaper = theme.colors
+            vim.b.terminal_color_1  = newpaper.git_removed
+            vim.b.terminal_color_2  = newpaper.git_added
+            vim.b.terminal_color_15 = newpaper.git_fg
+        end
+    })
+
     for _, sidebar in ipairs(config.sidebars_contrast) do
         if sidebar ~= "NvimTree" then
             vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -115,7 +129,7 @@ function M.load(config, theme)
     M.syntax(theme.loadSyntax())
     M.syntax(theme.loadTreeSitter())
     async:send()
-    M.autocmds(config)
+    M.autocmds(config, theme)
 end
 
 function M.loadSyntax(synTheme)

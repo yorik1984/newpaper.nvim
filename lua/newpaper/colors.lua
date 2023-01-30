@@ -13,47 +13,48 @@ function M.setup(config)
             black                = "#2B2B2B", -- color00
             maroon               = "#AF0000", -- color01
             darkgreen            = "#008700", -- color02
-            olive                = "#5F8700",
+            darkorange           = "#AF5F00", -- color03
             navy                 = "#27408B", -- color04
             purple               = "#8700AF", -- color05
-            teal                 = "#005F87",
-            silver               = "#E4E4E4", -- color07
-            grey                 = "#585858",
+            teal                 = "#005F87", -- color06
+            darkgrey             = "#444444", -- color08
             red                  = "#E14133", -- color09
-            green                = "#50A14F",
-            yellow               = "#FFFF00",
-            blue                 = "#0087AF",
-            magenta              = "#D7005F",
-            aqua                 = "#C0D9F2",
+            green                = "#50A14F", -- color10
+            orange               = "#D75F00", -- color11
+            lightblue            = "#0072C1", -- color12
+            lightmagenta         = "#E563BA", -- color13
+            blue                 = "#0087AF", -- color14
             white                = "#F1F3F2",
 
             -- Default fg and bg
             fg                   = "#2B2B2B", -- color15
-            bg                   = "#F1F3F2",
+            bg                   = "#F1F3F2", -- color07
 
             -- Other colors
+            dark_maroon          = "#8C1919",
+            redorange            = "#E12D23",
+            pink                 = "#FFEEFF",
             lightorange          = "#E4C07A",
             persimona            = "#F48F5F",
-            orange               = "#DE7D2F", -- color11
-            darkorange           = "#AF5F00", -- color03
+            yellow               = "#FFFF00",
             darkyellow           = "#C18301",
-            pink                 = "#FFEEFF",
-            darkgrey             = "#444444", -- color08
-            lightgrey            = "#878787",
-            lightlightgrey       = "#C0C0C0",
-            lightsilver          = "#EEEEEE",
-            violet               = "#957CC6",
-            blueviolet           = "#AF87D7",
-            lightviolet          = "#E5D9F2",
-            lightblue            = "#0072C1", -- color12
+            olive                = "#5F8700",
+            darkengreen          = "#007200",
             ocean                = "#2E8B57",
             nephritis            = "#00AB66",
-            darkpurple           = "#5823C7",
-            redorange            = "#E12D23",
-            bluegreen            = "#147B8B", -- color06
-            darkengreen          = "#007200",
+            bluegreen            = "#147B8B",
+            aqua                 = "#C0D9F2",
             aqualight            = "#DFE4EB",
-            dark_maroon          = "#8C1919",
+            lightviolet          = "#E5D9F2",
+            blueviolet           = "#AF87D7",
+            violet               = "#957CC6",
+            darkpurple           = "#5823C7",
+            magenta              = "#D7005F",
+            grey                 = "#585858",
+            lightgrey            = "#878787",
+            lightlightgrey       = "#C0C0C0",
+            silver               = "#E4E4E4",
+            lightsilver          = "#EEEEEE",
 
             codeblock            = "#DEDEDE",
             disabled             = "#CCCCCC",
@@ -61,7 +62,7 @@ function M.setup(config)
             regexp_blue          = "#3A72ED",
             regexp_green         = "#00AA00",
             regexp_orange        = "#DD7700",
-            regexp_magenta       = "#E563BA", -- color13
+            regexp_magenta       = "#E64BE1",
             regexp_brown         = "#884400",
 
             -- Git and diff
@@ -156,7 +157,7 @@ function M.setup(config)
 
             -- Lua
             lua_navy             = "#030380",
-            lua_blue             = "#0D98BA", -- color14
+            lua_blue             = "#0D98BA",
 
             -- Jinja
             jinja_red            = "#b80000",
@@ -175,47 +176,48 @@ function M.setup(config)
             black                = "#2B2B2B", -- color00
             maroon               = "#CC5555", -- color01
             darkgreen            = "#75B680", -- color02
-            olive                = "#8B9240",
+            darkorange           = "#C57A30", -- color03
             navy                 = "#8195E7", -- color04
             purple               = "#A274D1", -- color05
-            teal                 = "#72AEB3",
-            silver               = "#3A3A3A", -- color07
-            grey                 = "#808080",
+            teal                 = "#72AEB3", -- color06
+            darkgrey             = "#BCBCBC", -- color08
             red                  = "#DC5761", -- color09
-            green                = "#5FAF5F",
-            yellow               = "#D8E24F",
-            blue                 = "#5FAFD7",
-            magenta              = "#C86EA5",
-            aqua                 = "#34495E",
+            green                = "#5FAF5F", -- color10
+            orange               = "#F5824B", -- color11
+            lightblue            = "#7DB1D5", -- color12
+            lightmagenta         = "#E878D8", -- color13
+            blue                 = "#5FAFD7", -- color14
             white                = "#C6C8CD",
 
             -- Default fg and bg
             fg                   = "#C6C8CD", -- color15
-            bg                   = "#2B2B2B",
+            bg                   = "#303030", -- color07
 
             -- Other colors
-            lightorange          = "#443924",
-            persimona            = "#DC6937",
-            orange               = "#E28B46", -- color11
-            darkorange           = "#D28228", -- color03
-            darkyellow           = "#CEAC6E",
+            dark_maroon          = "#A64C4C",
+            redorange            = "#E56755",
             pink                 = "#2E2323",
-            darkgrey             = "#BCBCBC", -- color08
-            lightgrey            = "#787878",
-            lightlightgrey       = "#4E4E4E",
-            lightsilver          = "#303030",
-            violet               = "#957CC6",
-            blueviolet           = "#342840",
-            lightviolet          = "#473954",
-            lightblue            = "#7DB1D5", -- color12
+            lightorange          = "#443924",
+            persimona            = "#E59400",
+            yellow               = "#D8E24F",
+            darkyellow           = "#C6A863",
+            olive                = "#8B9240",
+            darkengreen          = "#589A58",
             ocean                = "#43A68A",
             nephritis            = "#36C692",
-            darkpurple           = "#9A7BDD",
-            redorange            = "#E47661",
-            bluegreen            = "#4BB5B1", -- color06
-            darkengreen          = "#589A58",
+            bluegreen            = "#4BB5B1",
+            aqua                 = "#34495E",
             aqualight            = "#2E3032",
-            dark_maroon          = "#A64C4C",
+            lightviolet          = "#473954",
+            blueviolet           = "#3c2846",
+            violet               = "#9A6EB7",
+            darkpurple           = "#9A7BDD",
+            magenta              = "#D75FAF",
+            grey                 = "#808080",
+            lightgrey            = "#787878",
+            lightlightgrey       = "#4E4E4E",
+            silver               = "#3A3A3A",
+            lightsilver          = "#303030",
 
             codeblock            = "#343434",
             disabled             = "#3E3E3E",
@@ -223,7 +225,7 @@ function M.setup(config)
             regexp_blue          = "#618EF0",
             regexp_green         = "#46C146",
             regexp_orange        = "#E39232",
-            regexp_magenta       = "#F046DA", -- color13
+            regexp_magenta       = "#FA50E4",
             regexp_brown         = "#A5767D",
 
             -- Git and diff
@@ -318,7 +320,7 @@ function M.setup(config)
 
             -- Lua
             lua_navy             = "#8080BE",
-            lua_blue             = "#5DA6D2", -- color14
+            lua_blue             = "#5DA6D2",
 
             -- Jinja
             jinja_red            = "#D05858",
@@ -376,6 +378,8 @@ function M.setup(config)
     newpaper.active              = newpaper.silver
     newpaper.title               = newpaper.fg
     newpaper.eob                 = newpaper.disabled
+    newpaper.winbar_fg           = newpaper.grey
+    newpaper.winbar_bg           = newpaper.bg
 
     -- Search
     newpaper.search_bg           = newpaper.yellow
@@ -427,7 +431,7 @@ function M.setup(config)
     end
 
     -- IndentBlankline
-    newpaper.contextchar         = newpaper.blueviolet
+    newpaper.contextchar         = newpaper.violet
 
     -- Sidebars ----------------------------------------------------------------
     newpaper.nvimtree_fg         = newpaper.sb_fg

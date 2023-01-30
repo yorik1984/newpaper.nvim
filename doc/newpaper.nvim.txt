@@ -30,6 +30,7 @@ FEATURES                                                *newpaper.nvim-features*
         - glyph-palette.vim
         - headlines.nvim
         - Indent-Blankline.nvim
+        - lazygit.nvim
         - litee.nvim
         - LSP Diagnostics
         - lspsaga
