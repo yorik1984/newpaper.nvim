@@ -16,8 +16,8 @@ function M.setup(configColors, configStyle)
             -- yamlTodo                     Todo
             -- yamlComment                  Comment
 
-            yamlDocumentStart            = { fg = newpaper.magenta },
-            yamlDocumentEnd              = { fg = newpaper.magenta },
+            yamlDocumentStart            = { fg = newpaper.persimona, style = style.d_style },
+            yamlDocumentEnd              = { link = "yamlDocumentStart" },
 
             -- yamlDirectiveName            Keyword
 
