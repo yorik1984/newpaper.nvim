@@ -9,93 +9,71 @@ function M.setup(configColors, configStyle)
     lspsagaSyn.style  = configStyle
     local newpaper    = lspsagaSyn.colors
     local style       = lspsagaSyn.style
-
     lspsagaSyn.loadPlugins = function()
         local plugins = {
-
+            -- general
+            TitleString           = { fg = newpaper.fg },
+            TitleIcon             = { fg = newpaper.red },
+            SagaBorder            = { fg = newpaper.border, bg = newpaper.float_bg, default = false },
+            SagaNormal            = { fg = newpaper.float_fg, bg = newpaper.float_bg, default = false },
+            SagaExpand            = { fg = newpaper.red },
+            SagaCollapse          = { fg = newpaper.red },
+            SagaBeacon            = { bg = newpaper.lightviolet },
             -- code action
-            LspSagaCodeActionTitle        = { fg = newpaper.green, style = style.b_bold },
-            LspSagaCodeActionBorder       = { fg = newpaper.lightblue, bg = newpaper.float_bg },
-            LspSagaCodeActionTrunCateLine = { link = "LspSagaCodeActionBorder" },
-            LspSagaCodeActionContent      = { fg = newpaper.olive },
-
+            ActionPreviewNormal   = { link = "SagaNormal" },
+            ActionPreviewBorder   = { fg = newpaper.lightblue, bg = newpaper.float_bg },
+            ActionPreviewTitle    = { fg = newpaper.green, style = style.b_bold },
+            CodeActionNormal      = { link = "SagaNormal" },
+            CodeActionBorder      = { fg = newpaper.lightblue, bg = newpaper.float_bg },
+            CodeActionText        = { fg = newpaper.olive },
+            CodeActionNumber      = { fg = newpaper.green },
             -- finder
-            LspSagaLspFinderBorder        = { fg = newpaper.blue, bg = newpaper.float_bg },
-            LspSagaAutoPreview            = { fg = newpaper.orange, bg = newpaper.float_bg},
-            LspSagaFinderSelection        = { fg = newpaper.darkgreen, style = style.b_bold },
-            TargetFileName                = { fg = newpaper.comment, style = style.underline },
-            FinderParam                   = { fg = newpaper.blueviolet, bg = newpaper.darkgrey, style = style.b_bold },
-            FinderVirtText                = { fg = newpaper.red },
-            DefinitionsIcon               = { fg = newpaper.tag_navy },
-            Definitions                   = { fg = newpaper.purple, style = style.b_bold },
-            DefinitionCount               = { fg = newpaper.orange },
-            ReferencesIcon                = { fg = newpaper.tag_navy },
-            References                    = { fg = newpaper.darkpurple, style = style.b_bold },
-            ReferencesCount               = { fg = newpaper.orange },
-            ImplementsIcon                = { fg = newpaper.olive },
-            Implements                    = { fg = newpaper.blueviolet, style = style.b_bold },
-            ImplementsCount               = { link = "Title" },
-
+            FinderSelection       = { fg = newpaper.darkgreen, style = style.b_bold },
+            FinderFileName        = { fg = newpaper.navy },
+            FinderCount           = { fg = newpaper.orange },
+            FinderIcon            = { fg = newpaper.tag_navy },
+            FinderType            = { fg = newpaper.purple },
             --finder spinner
-            FinderSpinnerBorder           = { fg = newpaper.lightblue, bg = newpaper.float_bg },
-            FinderSpinnerTitle            = { fg = newpaper.magenta, style = style.b_bold },
-            FinderSpinner                 = { fg = newpaper.magenta },
-            FinderPreviewSearch           = { link = "Search" },
-
+            FinderSpinnerTitle    = { fg = newpaper.purple, style = style.b_bold },
+            FinderSpinner         = { fg = newpaper.lightmagenta },
+            FinderPreviewSearch   = { link = "Search" },
+            FinderVirtText        = { fg = newpaper.red },
+            FinderNormal          = { link = "SagaNormal" },
+            FinderBorder          = { fg = newpaper.blue, bg = newpaper.float_bg },
+            FinderPreviewBorder   = { fg = newpaper.orange, bg = newpaper.float_bg},
             -- definition
-            DefinitionBorder              = { fg = newpaper.regexp_blue, bg = newpaper.float_bg },
-            DefinitionArrow               = { fg = newpaper.maroon },
-            DefinitionSearch              = { link = "Search" },
-            DefinitionFile                = { fg = newpaper.navy, bg = newpaper.float_bg },
-
+            DefinitionBorder      = { fg = newpaper.regexp_blue, bg = newpaper.float_bg },
+            DefinitionNormal      = { link = "SagaNormal" },
+            DefinitionSearch      = { link = "Search" },
             -- hover
-            LspSagaHoverBorder            = { fg = newpaper.teal, bg = newpaper.float_bg },
-            LspSagaHoverTrunCateLine      = { link = "LspSagaHoverBorder" },
-
+            HoverNormal           = { link = "SagaNormal" },
+            HoverBorder           = { fg = newpaper.teal, bg = newpaper.float_bg },
             -- rename
-            LspSagaRenameBorder           = { fg = newpaper.green, bg = newpaper.float_bg },
-            LspSagaRenameMatch            = { link = "Search" },
-
+            RenameBorder          = { fg = newpaper.green, bg = newpaper.float_bg },
+            RenameNormal          = { fg = newpaper.fg, bg = newpaper.float_bg },
+            RenameMatch           = { link = "Search" },
             -- diagnostic
-            LspSagaDiagnosticSource       = { fg = newpaper.tex_verb },
-            LspSagaDiagnosticError        = { fg = newpaper.error_fg, bg = newpaper.float_bg},
-            LspSagaDiagnosticWarn         = { fg = newpaper.warn_fg,  bg = newpaper.float_bg },
-            LspSagaDiagnosticInfo         = { fg = newpaper.info_fg,  bg = newpaper.float_bg },
-            LspSagaDiagnosticHint         = { fg = newpaper.hint_fg,  bg = newpaper.float_bg },
-            LspSagaErrorTrunCateLine      = { fg = newpaper.error_fg, bg = newpaper.float_bg},
-            LspSagaWarnTrunCateLine       = { fg = newpaper.warn_fg,  bg = newpaper.float_bg },
-            LspSagaInfoTrunCateLine       = { fg = newpaper.info_fg,  bg = newpaper.float_bg },
-            LspSagaHintTrunCateLine       = { fg = newpaper.hint_fg,  bg = newpaper.float_bg },
-            LspSagaDiagnosticBorder       = { fg = newpaper.border,   bg = newpaper.float_bg },
-            LspSagaDiagnosticHeader       = { fg = newpaper.keyword },
-            DiagnosticQuickFix            = { fg = newpaper.green,    style = style.b_bold },
-            DiagnosticMap                 = { fg = newpaper.keyword },
-            DiagnosticLineCol             = { fg = newpaper.grey },
-            LspSagaDiagnosticTruncateLine = { fg = newpaper.border, bg = newpaper.float_bg },
-            ColInLineDiagnostic           = { link = "Comment" },
+            DiagnosticBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
+            DiagnosticSource      = { fg = newpaper.tex_verb },
+            DiagnosticNormal      = { link = "SagaNormal" },
+            DiagnosticErrorBorder = { fg = newpaper.error_fg, bg = newpaper.float_bg },
+            DiagnosticWarnBorder  = { fg = newpaper.warn_fg,  bg = newpaper.float_bg },
+            DiagnosticHintBorder  = { fg = newpaper.hint_fg,  bg = newpaper.float_bg },
+            DiagnosticInfoBorder  = { fg = newpaper.info_fg,  bg = newpaper.float_bg },
+            DiagnosticPos         = { fg = newpaper.darkorange },
+            DiagnosticWord        = { link = "SagaNormal" },
+            -- Call Hierachry
+            OutlinePreviewBorder  = { link = "SagaBorder" },
+            OutlinePreviewNormal  = { fg = newpaper.darkgrey, bg = newpaper.float_bg },
+            -- Float term
+            TerminalBorder        = { fg = newpaper.win_act_border, bg = newpaper.term_fl_bg },
+            TerminalNormal        = { fg = newpaper.term_fl_fg, bg = newpaper.term_fl_bg },
 
-            -- signture help
-            LspSagaSignatureHelpBorder    = { fg = newpaper.olive, bg = newpaper.float_bg },
-            LspSagaShTrunCateLine         = { link = "LspSagaSignatureHelpBorder" },
-
-            -- lightbulb
-            LspSagaLightBulb              = { fg = newpaper.hint_fg },
-
-            -- shadow
-            SagaShadow                    = { fg = newpaper.grey },
-
-            -- float
-            LspSagaBorderTitle            = { fg = newpaper.orange, bg = newpaper.float_bg },
-
-            -- Outline
-            LSOutlinePreviewBorder        = { fg = newpaper.ocean, bg = newpaper.float_bg  },
-            OutlineIndentEvn              = { fg = newpaper.regexp_magenta },
-            OutlineIndentOdd              = { fg = newpaper.regexp_orange },
-            OutlineFoldPrefix             = { fg = newpaper.maroon },
-            OutlineDetail                 = { fg = newpaper.comment },
-
-            -- all floatwindow of lspsaga
-            LspFloatWinNormal             = { fg = newpaper.text, bg = newpaper.float_bg },
+            -- LspSagaWinbar
+            LspSagaWinbarFile       = { fg = newpaper.teal, bg = newpaper.winbar_bg },
+            LspSagaWinbarWord       = { fg = newpaper.winbar_fg, bg = newpaper.winbar_bg },
+            LspSagaWinbarFolderName = { fg = newpaper.navy, bg = newpaper.winbar_bg },
+            LspSagaWinbarSep        = { fg = newpaper.red, bg = newpaper.winbar_bg },
         }
         return plugins
     end
