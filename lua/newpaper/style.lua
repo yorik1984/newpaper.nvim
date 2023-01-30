@@ -12,6 +12,7 @@ function M.setupStyle(config)
         underline     = "underline",
         undercurl     = "undercurl",
         reverse       = "reverse",
+        strike        = "strikethrough",
 
         b_bold        = "NONE", -- editor style bold
         b_italic      = "NONE", -- editor style italic
