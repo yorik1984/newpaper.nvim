@@ -1,10 +1,22 @@
 ;; extends
 
-; Conceal inline links
-(inline_link (link_destination) @text.uri)
+(full_reference_link (link_label) @text.underline)
 
-; Conceal image links
-(image (link_destination) @text.uri)
+[
+  (link_destination)
+] @text.underline
 
-; Conceal full reference links
-(full_reference_link (link_label) @text.uri)
+[
+  (emphasis_delimiter)
+] @text.quote
+
+[
+  (code_span_delimiter)
+] @text.literal
+
+(image [ "[" "]" "(" ")"] @punctuation.delimiter)
+(image ["!"] @string.escape)
+(inline_link ["[" "]" "(" ")"] @punctuation.delimiter)
+(shortcut_link ["[" "]"] @punctuation.delimiter)
+(full_reference_link [ "[" "]" ] @punctuation.delimiter)
+(collapsed_reference_link [ "[" "]" ] @punctuation.delimiter)

@@ -494,20 +494,20 @@ See README in folders:
 
 ## 🛠️ TODO
 
-* [X] Add dark style
+* [x] Add dark style
 * [ ] Add syntax screenshots, HTML-preview:
-  * [X] Ruby
-  * [X] Lua
-  * [X] TOML
-  * [X] YAML
-  * [X] Markdown
-    * [X] Pandoc
+  * [x] Ruby
+  * [x] Lua
+  * [x] TOML
+  * [x] YAML
+  * [x] Markdown
+    * [x] Pandoc
   * [ ] LaTeX
   * [ ] HTML
   * [ ] Python
   * [ ] COBOL
 * [ ] Add plugins screenshots:
-  * [X] todo-comments.nvim
+  * [x] todo-comments.nvim
   * [ ] LSP Diagnostics
   * [ ] Lsp Saga
   * [ ] nvim-cmp
@@ -517,18 +517,18 @@ See README in folders:
   * [ ] WhichKey.nvim
   * [ ] packer.nvim
 * [-] Add extra syntax highlights:
-  * [X] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
-  * [X] Ruby
-  * [X] Lua
-  * [X] TOML
-  * [X] YAML
-  * [X] Jinja
-  * [X] Markdown
-    * [X] Pandoc
-  * [X] HTML
+  * [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
+  * [x] Ruby
+  * [x] Lua
+  * [x] TOML
+  * [x] YAML
+  * [x] Jinja
+  * [x] Markdown
+    * [x] Pandoc
+  * [x] HTML
   * [ ] COBOL
   * [ ] Python
-  * [X] Rust
+  * [x] Rust
 * [ ] Add plugins support:
   * [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
   * [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)

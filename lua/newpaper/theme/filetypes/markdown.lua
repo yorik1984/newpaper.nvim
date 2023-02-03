@@ -28,17 +28,17 @@ function M.setup(configColors, configStyle)
             markdownH6                  = { fg = newpaper.orange,         style = style.k_style },
             markdownHeadingRule         = { fg = newpaper.tex_part_title },
             markdownHeadingDelimiter    = { fg = newpaper.orange },
-            markdownBlockquote          = { fg = newpaper.tag_navy },
+            markdownBlockquote          = { fg = newpaper.keyword, style = style.k_style },
             markdownRule                = { fg = newpaper.tex_navy },
 
-            markdownFootnote            = { fg = newpaper.link, style = style.b_link },
-            markdownFootnoteDefinition  = { fg = newpaper.link, style = style.k_style },
+            markdownFootnote            = { fg = newpaper.tex_maroon, style = style.b_link },
+            markdownFootnoteDefinition  = { fg = newpaper.tex_maroon, style = style.k_style },
 
-            markdownLinkText            = { fg = newpaper.link, style = style.underline },
+            markdownLinkText            = { fg = newpaper.tex_maroon },
             markdownIdDeclaration       = { fg = newpaper.tex_maroon, style = style.k_style },
             markdownId                  = { fg = newpaper.maroon },
             markdownAutomaticLink       = { fg = newpaper.link, style = style.link },
-            markdownUrl                 = { fg = newpaper.tex_string },
+            markdownUrl                 = { fg = newpaper.tex_string, style = style.link },
             markdownUrlTitle            = { fg = newpaper.regexp_blue },
             markdownIdDelimiter         = { fg = newpaper.red },
             markdownLinkDelimiter       = { fg = newpaper.tex_redorange },
@@ -79,17 +79,18 @@ function M.setup(configColors, configStyle)
             ["@text.title.markdown"]            = "markdownTSTitle",
             ["@text.todo.checked.markdown"]     = "markdownTSTodoCheked",
             ["@text.todo.unchecked.markdown"]   = "markdownTSTodoUncheked",
-            ["@text.uri.markdown"]              = "markdownTSURI",
+            ["@text.underline.markdown"]        = "markdownTSUnderline",
+            ["@text.underline.markdown_inline"] = "markdown_inlineTSUnderline",
         }
 
         local treesitter = {
             ["@none.markdown"]                  = { fg = newpaper.fg },
-            ["@punctuation.special.markdown"]   = { fg = newpaper.teal, style = style.d_style},
-            ["@string.escape.markdown"]         = { fg = newpaper.tex_magenta },
-            ["@text.title.markdown"]            = { fg = newpaper.keyword, style = style.k_style },
+            ["@punctuation.special.markdown"]   = { fg = newpaper.tex_lightviolet, style = style.d_style},
+            ["@text.title.markdown"]            = { fg = newpaper.tex_part_title, style = style.k_style },
             ["@text.todo.checked.markdown"]     = { fg = newpaper.todo_hint, style = style.b_bold },
             ["@text.todo.unchecked.markdown"]   = { fg = newpaper.comment },
-            ["@text.uri.markdown"]              = { fg = newpaper.tex_string },
+            ["@text.underline.markdown"]        = { fg = newpaper.tex_string, style = style.underline },
+            ["@text.underline.markdown_inline"] = { link = "@text.underline.markdown" },
         }
 
         -- fallback to 0.7
@@ -110,12 +111,12 @@ function M.setup(configColors, configStyle)
             mkdRule          = { fg = newpaper.darkpurple },
             mkdLineBreak     = { bg = newpaper.aqua },
             mkdFootnotes     = { fg = newpaper.link, style = style.k_style },
-            mkdURL           = { fg = newpaper.tex_string },
+            mkdURL           = { fg = newpaper.tex_string, style = style.link },
             mkdLink          = { fg = newpaper.link, style = style.underline },
             mkdInlineURL     = { fg = newpaper.link, style = style.underline },
             mkdID            = { fg = newpaper.maroon},
             mkdLinkDef       = { fg = newpaper.tex_maroon, style = style.k_style },
-            mkdLinkDefTarget = { fg = newpaper.teal, style = style.underline },
+            mkdLinkDefTarget = { fg = newpaper.link, style = style.link },
             mkdLinkTitle     = { fg = newpaper.regexp_blue },
             mkdDelimiter     = { fg = newpaper.persimona, style = style.d_style },
 
@@ -156,7 +157,7 @@ function M.setup(configColors, configStyle)
             pandocListItemBulletId               = { fg = newpaper.red },
 
             pandocReferenceLabel                 = { fg = newpaper.tex_maroon},
-            pandocReferenceURL                   = { fg = newpaper.tex_string },
+            pandocReferenceURL                   = { fg = newpaper.tex_string, style = style.link },
             pandocLinkTip                        = { fg = newpaper.regexp_blue },
             pandocImageIcon                      = { fg = newpaper.tag_navy },
 

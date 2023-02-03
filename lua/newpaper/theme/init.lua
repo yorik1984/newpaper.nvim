@@ -309,7 +309,7 @@ function M.setup(configColors, configStyle)
             ["@storageclass"]          = { fg = newpaper.lua_navy, style = style.k_style },
             ["@storageclass.lifetime"] = { fg = newpaper.tag_navy, style = style.k_style },
             ["@string"]                = { fg = newpaper.string, style = style.s_style }, -- For strings.
-            ["@string.escape"]         = { fg = newpaper.maroon }, -- For escape characters within a string.
+            ["@string.escape"]         = { fg = newpaper.tex_magenta }, -- For escape characters within a string.
             ["@string.regex"]          = { fg = newpaper.regexp_blue }, -- For regexes.
             ["@string.special"]        = { fg = newpaper.dark_maroon, style = style.s_style },
             ["@symbol"]                = { fg = newpaper.darkyellow }, -- For identifiers referring to symbols or atoms.
@@ -461,7 +461,7 @@ function M.setup(configColors, configStyle)
             LanguageToolCmd               = { fg = newpaper.comment },
             LanguageToolErrorCount        = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
             LanguageToolLabel             = { fg = newpaper.darkgreen },
-            LanguageToolUrl               = { fg = newpaper.link, style = style.underline },
+            LanguageToolUrl               = { fg = newpaper.link, style = style.link },
             LanguageToolGrammarError      = { fg = newpaper.fg, bg = newpaper.spellrare, style = style.error },
             LanguageToolSpellingError     = { fg = newpaper.fg, bg = newpaper.spellbad,  style = style.error },
 
@@ -487,7 +487,7 @@ function M.setup(configColors, configStyle)
             LTSymbolJump                  = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
             LTSymbolJumpRefs              = { fg = newpaper.fg, bg = newpaper.lightorange, style = style.b_bold },
             LTType                        = { fg = newpaper.keyword },
-            LTURI                         = { fg = newpaper.link, style = style.underline },
+            LTURI                         = { fg = newpaper.link, style = style.link },
             LTIndentGuide                 = { fg = newpaper.comment },
             LTExpandedGuide               = { fg = newpaper.comment, style = style.b_bold },
             LTCollapsedGuide              = { fg = newpaper.comment },
