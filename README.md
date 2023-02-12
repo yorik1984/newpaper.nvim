@@ -18,17 +18,19 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ### Light
 
+<div align="center">
 <p align="center">
     <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/nvim_preview_light.png">
 </p>
-
-<div align="center">
+</div>
 
 ### Dark
 
+<div align="center">
 <p align="center">
     <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/nvim_preview_dark.png">
 </p>
+</div>
 
 <div align="center">
 
