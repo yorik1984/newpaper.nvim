@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -64,15 +63,6 @@ function M.setup(configColors, configStyle)
 
     yamlSyn.loadTreeSitter = function()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@constant.builtin.yaml"]    = "yamlTSConstBuiltin",
-            ["@field.yaml"]               = "yamlTSField",
-            ["@punctuation.bracket.yaml"] = "yamlTSPunctBracket",
-            ["@punctuation.special.yaml"] = "yamlTSPunctSpecial",
-            ["@string.escape.yaml"]       = "yamlTSStringEscape",
-        }
-
         local treesitter = {
             ["@constant.builtin.yaml"]    = { fg = newpaper.ocean, style = style.k_style },
             ["@field.yaml"]               = { fg = newpaper.ocean, style = style.f_style, nocombine = true },
@@ -81,8 +71,7 @@ function M.setup(configColors, configStyle)
             ["@string.escape.yaml"]       = { fg = newpaper.magenta },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     yamlSyn.loadPlugins = function()

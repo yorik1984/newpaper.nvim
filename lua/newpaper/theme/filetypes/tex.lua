@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -85,43 +84,6 @@ function M.setup(configColors, configStyle)
 
     tex.loadTreeSitter = function ()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@error.latex"]                  = "latexTSError",
-            ["@function.latex"]               = "latexTSFunction",
-            ["@function.macro.latex"]         = "latexTSFuncMacro",
-            ["@include.latex"]                = "latexTSInclude",
-            ["@namespace.latex"]              = "latexTSNamespace",
-            ["@operator.latex"]               = "latexTSOperator",
-            ["@parameter.latex"]              = "latexTSParameter",
-            ["@punctuation.bracket.latex"]    = "latexTSPunctBracket",
-            ["@punctuation.delimiter.latex"]  = "latexTSPunctDelimiter",
-            ["@punctuation.special.latex"]    = "latexTSPunctSpecial",
-            ["@text.comment.latex"]           = "latexTSComment",
-            ["@text.emphasis.latex"]          = "latexTSEmphasis",
-            ["@text.environment.latex"]       = "latexTSEnvironment",
-            ["@text.environment.name.latex"]  = "latexTSEnvironmentName",
-            ["@text.math.latex"]              = "latexTSMath",
-            ["@text.reference.latex"]         = "latexTSTextReference",
-            ["@text.string.latex"]            = "latexTSString",
-            ["@text.strong.latex"]            = "latexTSStrong",
-            ["@text.title.latex"]             = "latexTSTitle",
-            ["@text.uri.latex"]               = "latexTSURI",
-            ["@type.latex"]                   = "latexTSType",
-
-            ["@constant.bibtex"]              = "bibtexTSConstant",
-            ["@field.bibtex"]                 = "bibtexTSField",
-            ["@function.builtin.bibtex"]      = "bibtexTSFuncBuiltin",
-            ["@keyword.bibtex"]               = "bibtexTSKeyword",
-            ["@number.bibtex"]                = "bibtexTSNumber",
-            ["@operator.bibtex"]              = "bibtexTSOperator",
-            ["@parameter.bibtex"]             = "bibtexTSParameter",
-            ["@punctuation.bracket.bibtex"]   = "bibtexTSPunctBracket",
-            ["@punctuation.delimiter.bibtex"] = "bibtexTSPunctDelimiter",
-            ["@string.bibtex"]                = "bibtexTSString",
-            ["@symbol.bibtex"]                = "bibtexTSSymbol",
-        }
-
         local treesitter = {
             ["@error.latex"]                  = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },
             ["@function.latex"]               = { fg = newpaper.tex_navy },
@@ -158,8 +120,7 @@ function M.setup(configColors, configStyle)
             ["@symbol.bibtex"]                = { fg = newpaper.tex_darkorange },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     tex.loadPlugins = function()

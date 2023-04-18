@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -20,21 +19,13 @@ function M.setup(configColors, configStyle)
 
     jsonSyn.loadTreeSitter = function()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@label.json"]    = "jsonTSLabel",
-            ["@label.hjson"]   = "hjsonTSLabel",
-            ["@label.jsonnet"] = "jsonnetTSLabel",
-        }
-
         local treesitter = {
             ["@label.json"]    = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
             ["@label.hjson"]   = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
             ["@label.jsonnet"] = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     jsonSyn.loadPlugins = function()

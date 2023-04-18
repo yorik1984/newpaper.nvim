@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -83,17 +82,11 @@ function M.setup(configColors, configStyle)
 
     htmlSyn.loadTreeSitter = function ()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@constant.html"] = "htmlTSConstant",
-        }
-
         local treesitter = {
             ["@constant.html"] = { fg = newpaper.comment,  style = style.c_style },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     htmlSyn.loadPlugins = function()

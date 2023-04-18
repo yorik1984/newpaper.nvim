@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -27,17 +26,6 @@ function M.setup(configColors, configStyle)
 
     helpSyn.loadTreeSitter = function ()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@conceal.help"]        = "helpTSConceal",
-            ["@label.help"]          = "helpTSLabel",
-            ["@parameter.help"]      = "helpTSParameter",
-            ["@text.reference.help"] = "helpTSTextReference",
-            ["@text.title.help"]     = "helpTSTitle",
-            ["@text.uri.help"]       = "helpTSUri",
-            ["@type.help"]           = "helpTSType",
-        }
-
         local treesitter = {
             ["@conceal.help"]        = { fg = newpaper.magenta },
             ["@label.help"]          = { fg = newpaper.keyword, style = style.s_style },
@@ -48,8 +36,7 @@ function M.setup(configColors, configStyle)
             ["@type.help"]           = { fg = newpaper.darkengreen, style = style.link },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     helpSyn.loadPlugins = function()

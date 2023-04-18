@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -20,28 +19,6 @@ function M.setup(configColors, configStyle)
     end
 
     rubySyn.loadTreeSitter = function ()
-
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@constant.builtin.ruby"]     = "rubyTSConstBuiltin",
-            ["@constant.ruby"]             = "rubyTSConstant",
-            ["@constructor.ruby"]          = "rubyTSConstructor",
-            ["@definition.namespace.ruby"] = "rubyTSDefinitionNamespace",
-            ["@definition.parameter.ruby"] = "rubyTSDefinitionParameter",
-            ["@definition.type.ruby"]      = "rubyTSDefinitionType",
-            ["@definition.var.ruby"]       = "rubyTSDefinitionVar",
-            ["@exception.ruby"]            = "rubyTSException",
-            ["@function.call"]             = "rubyTSFunctionCall",
-            ["@include.ruby"]              = "rubyTSInclude",
-            ["@keyword.operator.ruby"]     = "rubyTSKeywordOperator",
-            ["@label.ruby"]                = "rubyTSLabel",
-            ["@punctuation.bracket.ruby"]  = "rubyTSPunctBracket",
-            ["@text.emphasis.ruby"]        = "rubyTSEmphasis",
-            ["@text.math.ruby"]            = "rubyTSMath",
-            ["@type.qualifier.ruby"]       = "rubyTSTypeQualifier",
-            ["@type.ruby"]                 = "rubyTSType",
-        }
-
         local treesitter = {
             ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon },
             ["@constant.ruby"]             = { fg = newpaper.ocean, style = style.k_style },
@@ -62,8 +39,7 @@ function M.setup(configColors, configStyle)
             ["@type.ruby"]                 = { fg = newpaper.darkgreen, nocombine = true },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     rubySyn.loadPlugins = function()

@@ -16,18 +16,6 @@ function table.contains(tbl, string)
     return false
 end
 
--- fallback to 0.7
-function M.treesitterOverride(treesitter, treesitterOldKey)
-    local newTreesitter = treesitter
-    if vim.fn.has('nvim-0.8') == 0 then
-        for newGroup, oldGgroup in pairs(treesitterOldKey) do
-            newTreesitter[oldGgroup] = treesitter[newGroup]
-            newTreesitter[newGroup]  = nil
-        end
-    end
-    return newTreesitter
-end
-
 function M.syntax(syntax)
     for group, colors in pairs(syntax) do
         M.highlight(group, colors)

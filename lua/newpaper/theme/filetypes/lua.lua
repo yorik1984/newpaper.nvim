@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -30,26 +29,6 @@ function M.setup(configColors, configStyle)
 
     luaSyn.loadTreeSitter = function ()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@constructor.lua"]           = "luaTSConstructor",
-            ["@constant.builtin.lua"]      = "luaTSConstBuiltin",
-            ["@field.lua"]                 = "luaTSField",
-            ["@function.builtin.lua"]      = "luaTSFuncBuiltin",
-            ["@keyword.return.lua"]        = "luaTSKeywordReturn",
-            ["@punctuation.bracket.lua"]   = "luaTSPunctBracket",
-            ["@variable.lua"]              = "luaTSVariable",
-            ["@definition.lua"]            = "luaTSDefinition",
-            ["@definition.associated.lua"] = "luaTSDefinitionAssociated",
-            ["@definition.enum.lua"]       = "luaTSEnum",
-            ["@definition.field.lua"]      = "luaTSDefinitionField",
-            ["@definition.function.lua"]   = "luaTSDefinitionFunction",
-            ["@definition.import.lua"]     = "luaTSDefinitionImport",
-            ["@definition.macro.lua"]      = "luaTSDefinitionMacro",
-            ["@definition.parameter.lua"]  = "luaTSDefinitionParameter",
-            ["@definition.var.lua"]        = "luaTSDefinitionVar",
-        }
-
         local treesitter = {
             ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.k_style },
             ["@constant.builtin.lua"]      = { fg = newpaper.maroon, style = style.o_style },
@@ -58,19 +37,18 @@ function M.setup(configColors, configStyle)
             ["@keyword.return.lua"]        = { fg = newpaper.tex_keyword, style = style.o_style },
             ["@punctuation.bracket.lua"]   = { fg = newpaper.lua_navy, style = style.br_style },
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
+            ["@variable.builtin.lua"]      = { fg = newpaper.tex_magenta, style = style.f_style },
             ["@definition.lua"]            = { fg = newpaper.fg, style = style.v_style },
             ["@definition.associated.lua"] = { fg = newpaper.bluegreen },
             ["@definition.enum.lua"]       = { fg = newpaper.blue },
             ["@definition.field.lua"]      = { fg = newpaper.teal },
             ["@definition.function.lua"]   = { fg = newpaper.lua_navy, style = style.f_style },
-            ["@definition.import.lua"]     = { fg = newpaper.tex_magenta, style = style.f_style },
             ["@definition.macro.lua"]      = { fg = newpaper.string, style = style.o_style },
             ["@definition.parameter.lua"]  = { fg = newpaper.darkorange },
             ["@definition.var.lua"]        = { fg = newpaper.darkgreen, style = style.v_style },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     luaSyn.loadPlugins = function()

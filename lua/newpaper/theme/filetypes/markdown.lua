@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -71,18 +70,6 @@ function M.setup(configColors, configStyle)
 
     markdownSyn.loadTreeSitter = function ()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@none.markdown"]                  = "markdownTSNone",
-            ["@punctuation.special.markdown"]   = "markdownTSPunctSpecial",
-            ["@string.escape.markdown"]         = "markdownTSStringEscape",
-            ["@text.title.markdown"]            = "markdownTSTitle",
-            ["@text.todo.checked.markdown"]     = "markdownTSTodoCheked",
-            ["@text.todo.unchecked.markdown"]   = "markdownTSTodoUncheked",
-            ["@text.underline.markdown"]        = "markdownTSUnderline",
-            ["@text.underline.markdown_inline"] = "markdown_inlineTSUnderline",
-        }
-
         local treesitter = {
             ["@none.markdown"]                  = { fg = newpaper.fg },
             ["@punctuation.special.markdown"]   = { fg = newpaper.tex_lightviolet, style = style.d_style},
@@ -93,8 +80,7 @@ function M.setup(configColors, configStyle)
             ["@text.underline.markdown_inline"] = { link = "@text.underline.markdown" },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     markdownSyn.loadPlugins = function()

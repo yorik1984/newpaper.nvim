@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -37,16 +36,11 @@ function M.setup(configColors, configStyle)
 
     liquidSyn.loadTreeSitter = function()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-        }
-
         local treesitter = {
 
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     liquidSyn.loadPlugins = function()
