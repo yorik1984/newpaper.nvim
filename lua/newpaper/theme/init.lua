@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M    = {}
 
 function M.setup(configColors, configStyle)
@@ -181,88 +180,6 @@ function M.setup(configColors, configStyle)
 
     theme.loadTreeSitter = function()
 
-        -- fallback to 0.7
-        local treesitterOldKey = {
-            ["@annotation"]            = "TSAnnotation",
-            ["@attribute"]             = "TSAttribute",
-            ["@boolean"]               = "TSBoolean",
-            ["@character"]             = "TSCharacter",
-            ["@character.special"]     = "TSCharacterSpecial",
-            ["@comment"]               = "TSComment",
-            ["@conceal"]               = "TSConceal",
-            ["@conditional"]           = "TSConditional",
-            ["@conditional.ternary"]   = "TSConditionalTernary",
-            ["@constant"]              = "TSConstant",
-            ["@constant.builtin"]      = "TSConstBuiltin",
-            ["@constant.macro"]        = "TSConstMacro",
-            ["@constructor"]           = "TSConstructor",
-            ["@debug"]                 = "TSDebug",
-            ["@define"]                = "TSDefine",
-            ["@error"]                 = "TSError",
-            ["@exception"]             = "TSException",
-            ["@field"]                 = "TSField",
-            ["@float"]                 = "TSFloat",
-            ["@function"]              = "TSFunction",
-            ["@function.builtin"]      = "TSFuncBuiltin",
-            ["@function.call"]         = "TSFunctionCall",
-            ["@function.macro"]        = "TSFuncMacro",
-            ["@include"]               = "TSInclude",
-            ["@keyword"]               = "TSKeyword",
-            ["@keyword.function"]      = "TSKeywordFunction",
-            ["@keyword.operator"]      = "TSKeywordOperator",
-            ["@keyword.return"]        = "TSKeywordReturn",
-            ["@label"]                 = "TSLabel",
-            ["@method"]                = "TSMethod",
-            ["@method.call"]           = "TSMethodCall",
-            ["@namespace"]             = "TSNamespace",
-            ["@none"]                  = "TSNone",
-            ["@number"]                = "TSNumber",
-            ["@operator"]              = "TSOperator",
-            ["@parameter"]             = "TSParameter",
-            ["@preproc"]               = "TSPreProc",
-            ["@property"]              = "TSProperty",
-            ["@punctuation.bracket"]   = "TSPunctBracket",
-            ["@punctuation.delimiter"] = "TSPunctDelimiter",
-            ["@punctuation.special"]   = "TSPunctSpecial",
-            ["@repeat"]                = "TSRepeat",
-            ["@storageclass"]          = "TSStorageClass",
-            ["@storageclass.lifetime"] = "TSStorageClassLifetime",
-            ["@string"]                = "TSString",
-            ["@string.escape"]         = "TSStringEscape",
-            ["@string.regex"]          = "TSStringRegex",
-            ["@string.special"]        = "TSStringSpecial",
-            ["@symbol"]                = "TSSymbol",
-            ["@tag"]                   = "TSTag",
-            ["@tag.attribute"]         = "TSTagAttribute",
-            ["@tag.delimiter"]         = "TSTagDelimiter",
-            ["@text"]                  = "TSText",
-            ["@text.danger"]           = "TSDanger",
-            ["@text.diff.add"]         = "TSDiffAdd",
-            ["@text.diff.delete"]      = "TSDiffDelete",
-            ["@text.emphasis"]         = "TSEmphasis",
-            ["@text.environment"]      = "TSEnvironment",
-            ["@text.environment.name"] = "TSEnvironmentName",
-            ["@text.literal"]          = "TSLiteral",
-            ["@text.math"]             = "TSMath",
-            ["@text.note"]             = "TSNote",
-            ["@text.reference"]        = "TSTextReference",
-            ["@text.strike"]           = "TSStrike",
-            ["@text.strong"]           = "TSStrong",
-            ["@text.title"]            = "TSTitle",
-            ["@text.underline"]        = "TSUnderline",
-            ["@text.uri"]              = "TSURI",
-            ["@text.warning"]          = "TSWarning",
-            ["@text.todo"]             = "TSTodo",
-            ["@text.quote"]            = "TSQuote",
-            ["@type"]                  = "TSType",
-            ["@type.builtin"]          = "TSTypeBuiltin",
-            ["@type.definition"]       = "TSTypeDefinition",
-            ["@type.qualifier"]        = "TSTypeQualifier",
-            ["@variable"]              = "TSVariable",
-            ["@variable.builtin"]      = "TSVariableBuiltin",
-            ["@variable.global"]       = "TSVariableGlobal",
-        }
-
         local treesitter = {
             ["@annotation"]            = { fg = newpaper.red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
             ["@attribute"]             = { fg = newpaper.blue },
@@ -344,8 +261,7 @@ function M.setup(configColors, configStyle)
             ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },
         }
 
-        -- fallback to 0.7
-        return util.treesitterOverride(treesitter, treesitterOldKey)
+        return treesitter
     end
 
     theme.loadLSP = function ()
