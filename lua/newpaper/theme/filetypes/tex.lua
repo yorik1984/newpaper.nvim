@@ -258,6 +258,8 @@ function M.setup(configColors, configStyle)
             texCommentAcronym     = { fg = newpaper.comment, style = style.comment_title },
             -- texCommentFalse       texComment
             texCommentURL         = { fg = newpaper.comment, style = style.c_underline },
+            -- texConcealedArg       texArg
+            -- texConcealedArgGroup  texConcealedArg
             -- texConditionalArg     texArg
             -- texConditionalINCChar texSymbol
             -- texE3Cmd              texCmd
@@ -296,6 +298,10 @@ function M.setup(configColors, configStyle)
             -- texRefConcealedOpt2   texRefOpt
             texRefConcealedArg    = { fg = newpaper.tex_lightviolet },
             texRefConcealedDelim  = { fg = newpaper.tex_lightviolet, style = style.tex_br_style },
+            -- texRefConcealedPOpt1  texRefOpt
+            -- texRefConcealedPOpt2  texRefOpt
+            -- texRefConcealedPArg   texRefArg
+            -- texRefConcealedPDelim texDelim
             -- texTabularArg         texOpt
             -- texTabularAtSep       texMathDelim
             texTabularChar        = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
@@ -430,6 +436,7 @@ function M.setup(configColors, configStyle)
             -- texHrefArgTextC  texArg
             -- texHrefLinkGroup texHrefArgLink
             texUrlArg        = { fg = newpaper.tex_navy, style = style.underline },
+            -- texTOPSArgPdf    texOpt
 
             -- ieeetrantools.vim ----------------------------------------------
             -- texMathEnvIEEEArg texArg
