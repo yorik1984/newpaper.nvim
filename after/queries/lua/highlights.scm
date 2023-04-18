@@ -99,11 +99,6 @@
    table: (identifier) @definition.associated))
 
 (dot_index_expression
-  table: (identifier) @definition.import
-    (#any-of? @definition.import
-      "_G" "bit32" "debug" "io" "math" "os" "package" "string" "table" "utf8"))
-
-(dot_index_expression
   table: (identifier) @variable.global
     (#any-of? @variable.global
       "vim" ))

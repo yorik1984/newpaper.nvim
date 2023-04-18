@@ -11,12 +11,9 @@
 (parenthesized_statements(identifier) @definition.parameter)
 
 ;;; Keywords
-[
- "def"
- ] @keyword.function
 
 ((identifier) @keyword.function
- (#any-of? @keyword.function "alias" "undef"))
+ (#any-of? @keyword.function "alias"))
 
 ((identifier) @keyword.function
  (#any-of? @keyword.function "extend" "include" "prepend" "refine" "using"))

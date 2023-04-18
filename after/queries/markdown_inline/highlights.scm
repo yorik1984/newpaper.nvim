@@ -1,6 +1,6 @@
 ;; extends
 
-(full_reference_link (link_label) @text.underline)
+(full_reference_link [(link_label)] @text.underline)
 
 [
   (link_destination)
@@ -14,9 +14,9 @@
   (code_span_delimiter)
 ] @text.literal
 
-(image [ "[" "]" "(" ")"] @punctuation.delimiter)
+(image ["[" "]" "(" ")"] @punctuation.delimiter)
 (image ["!"] @string.escape)
 (inline_link ["[" "]" "(" ")"] @punctuation.delimiter)
 (shortcut_link ["[" "]"] @punctuation.delimiter)
-(full_reference_link [ "[" "]" ] @punctuation.delimiter)
-(collapsed_reference_link [ "[" "]" ] @punctuation.delimiter)
+; (full_reference_link ["[" "]"] @punctuation.delimiter)
+(collapsed_reference_link ["[" "]"] @punctuation.delimiter)

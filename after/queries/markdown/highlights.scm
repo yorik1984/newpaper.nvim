@@ -18,6 +18,7 @@
 (pipe_table_delimiter_row "|" @punctuation.delimiter)
 (pipe_table_delimiter_cell) @punctuation.delimiter
 (link_label ["[" "]"] @punctuation.delimiter)
+
 [
   (info_string)
   (fenced_code_block_delimiter)
