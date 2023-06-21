@@ -3,16 +3,17 @@ local M = {}
 local ftypesFolder = "newpaper.theme.filetypes."
 
 local filetypes = {
-    "help",
     "html",
     "json",
     "liquid",
     "lua",
     "markdown",
     "ruby",
+    "rust",
     "tex",
     "toml",
     "vim",
+    "vimdoc",
     "yaml",
 }
 
