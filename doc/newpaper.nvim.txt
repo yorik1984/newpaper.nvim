@@ -213,6 +213,9 @@ Options:
     + italic_comments    {booleans} (default = true)
         Make comments italic
 
+    + italic_doc_comments {booleans} (default = true)
+        Make comments documenting code italic
+
     + italic_functions   {booleans} (default = false)
         Make function calls and names italic
 
@@ -298,6 +301,7 @@ Default settings:
         error_highlight     = "undercurl",
         italic_strings      = true,
         italic_comments     = true,
+        italic_doc_comments = true,
         italic_functions    = false,
         italic_variables    = false,
         borders             = true,

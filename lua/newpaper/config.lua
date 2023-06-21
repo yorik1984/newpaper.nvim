@@ -47,6 +47,7 @@ local config = {
     error_highlight     = opt("error_highlight", "undercurl"),
     italic_strings      = opt("italic_strings", true),
     italic_comments     = opt("italic_comments", true),
+    italic_doc_comments = opt("italic_doc_comments", true),
     italic_functions    = opt("italic_functions", false),
     italic_variables    = opt("italic_variables", false),
     borders             = opt("borders", true),

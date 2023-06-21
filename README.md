@@ -201,6 +201,7 @@ require("newpaper").setup({
 | error_highlight     | `"undercurl"` | Make spell or `tex`-files errors highlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"` |
 | italic_strings      | `true`        | Make strings italic |
 | italic_comments     | `true`        | Make comments italic |
+| italic_doc_comments | `true`        | Make comments documenting code italic |
 | italic_functions    | `false`       | Make function calls and names italic |
 | italic_variables    | `false`       | Make variable names and identifiers italic |
 | borders             | `true`        | Enable the border between vertically split windows visible |

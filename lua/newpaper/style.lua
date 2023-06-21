@@ -24,6 +24,7 @@ function M.setupStyle(config)
         br_style      = "NONE", -- brackets style
         tb_style      = "NONE", -- tags brackets style
         s_style       = "NONE", -- strings style
+        doc_style     = "NONE", -- comments documenting code style
         v_style       = "NONE", -- variables style
         f_style       = "NONE", -- functions style
         comment_title = "NONE", -- magic and tittle comments in VimL, Ruby and others
@@ -112,6 +113,11 @@ function M.setupStyle(config)
     if config.italic_comments then
         style.c_style = style.italic
         style.c_underline = style.c_style .. "," .. style.underline
+    end
+
+    -- Make italic comments documenting code
+    if config.italic_doc_comments then
+        style.doc_style = style.italic
     end
 
     -- Make italic functions

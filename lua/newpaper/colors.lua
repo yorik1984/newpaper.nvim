@@ -157,7 +157,7 @@ function M.setup(config)
 
             -- Lua
             lua_navy             = "#030380",
-            lua_blue             = "#0D98BA",
+            lua_blue             = "#128897",
 
             -- Jinja
             jinja_red            = "#b80000",
@@ -345,6 +345,7 @@ function M.setup(config)
     newpaper.string              = newpaper.lightblue
     newpaper.accent              = newpaper.blue
     newpaper.comment             = newpaper.lightgrey
+    newpaper.doc_comment         = newpaper.tex_verb
     newpaper.link                = newpaper.tag_navy
     newpaper.tag                 = newpaper.tag_navy
     newpaper.boolean             = newpaper.nephritis
