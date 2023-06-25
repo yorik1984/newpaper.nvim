@@ -12,13 +12,13 @@ function M.setup(configColors, configStyle)
 
     vimdocSyn.loadSyntax = function ()
         local syntax = {
-            vimdocBacktick       = { fg = newpaper.magenta },
-            vimdocSpecial        = { fg = newpaper.magenta },
-            vimdocCommand        = { fg = newpaper.regexp_blue },
-            vimdocExample        = { fg = newpaper.regexp_blue },
-            vimdocHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
-            vimdocHyperTextJump  = { fg = newpaper.link, style = style.s_underline },
-            vimdocURL            = { fg = newpaper.string, style = style.link },
+            helpBacktick       = { fg = newpaper.magenta },
+            helpSpecial        = { fg = newpaper.magenta },
+            helpCommand        = { fg = newpaper.regexp_blue },
+            helpExample        = { fg = newpaper.regexp_blue },
+            helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
+            helpHyperTextJump  = { fg = newpaper.link, style = style.s_underline },
+            helpURL            = { fg = newpaper.string, style = style.link },
         }
 
         return syntax
@@ -28,11 +28,11 @@ function M.setup(configColors, configStyle)
 
         local treesitter = {
             ["@conceal.vimdoc"]        = { fg = newpaper.magenta },
-            ["@label.vimdoc"]          = { fg = newpaper.keyword },
+            ["@label.vimdoc"]          = { fg = newpaper.bluegreen },
+            ["@string.special.vimdoc"] = { fg = newpaper.keyword, nocombine = true },
             ["@text.reference.vimdoc"] = { fg = newpaper.link, style = style.underline },
-            ["@text.title.vimdoc"]     = { fg = newpaper.keyword, style = style.k_style },
             ["@text.uri.vimdoc"]       = { fg = newpaper.string, style = style.link },
-            ["@type.vimdoc"]           = { fg = newpaper.darkgreen, nocombine = true },
+            ["@type.vimdoc"]           = { fg = newpaper.tex_red, nocombine = true },
         }
 
         return treesitter

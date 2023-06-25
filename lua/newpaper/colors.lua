@@ -42,7 +42,7 @@ function M.setup(config)
             darkengreen          = "#007200",
             ocean                = "#2E8B57",
             nephritis            = "#00AB66",
-            bluegreen            = "#147B8B",
+            bluegreen            = "#1B7F82",
             aqua                 = "#C0D9F2",
             aqualight            = "#DFE4EB",
             lightviolet          = "#E5D9F2",
@@ -82,7 +82,7 @@ function M.setup(config)
             spellrare            = "#FFFFDF",
             spelllocal           = "#E3FFD5",
 
-            -- Error message
+            -- LSP message
             error_fg             = "#D75F66",
             warn_fg              = "#D37300",
             info_fg              = "#005FAF",
@@ -107,7 +107,7 @@ function M.setup(config)
             tex_blue             = "#0089B3",
             tex_teal             = "#005579",
             tex_magenta          = "#E00050",
-            tex_aqua             = "#14A9E2",
+            tex_aqua             = "#14B9C4",
             tex_orange           = "#D37300",
             tex_redorange        = "#F3752D",
             tex_darkorange       = "#BA6400",
@@ -245,7 +245,7 @@ function M.setup(config)
             spellrare            = "#332C00",
             spelllocal           = "#003B00",
 
-            -- Error message
+            -- LSP message
             error_fg             = "#DB4B4B",
             warn_fg              = "#E0AF68",
             info_fg              = "#0DB9D7",
@@ -351,6 +351,7 @@ function M.setup(config)
     newpaper.boolean             = newpaper.nephritis
     newpaper.text                = newpaper.darkgrey
     newpaper.variable            = newpaper.fg
+    newpaper.number              = newpaper.tex_ch_red
     newpaper.none                = "NONE"
 
     -- Editor

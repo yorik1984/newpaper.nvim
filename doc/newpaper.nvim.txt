@@ -71,6 +71,8 @@ FEATURES                                                *newpaper.nvim-features*
     + Added functions for live style switching, without the need to reload
       NeoVim
 
+    + support LSP SEMANTIC HIGHLIGHTS
+
 ================================================================================
 USAGE                                                      *newpaper.nvim-usage*
 

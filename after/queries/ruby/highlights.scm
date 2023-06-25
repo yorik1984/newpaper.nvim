@@ -1,14 +1,14 @@
 ; extends
 
 ;;; From locals.scm
-(method_parameters (identifier) @definition.parameter)
+(method_parameters (identifier) @definition.var)
 (method_parameters
   (keyword_parameter name: [(identifier) @symbol]
     ":" @symbol))
-(splat_parameter (identifier) @definition.parameter)
-(hash_splat_parameter (identifier) @definition.parameter)
-(argument_list (identifier) @definition.var)
-(parenthesized_statements(identifier) @definition.parameter)
+(splat_parameter (identifier) @definition.var)
+(hash_splat_parameter (identifier) @definition.var)
+(argument_list (identifier) @definition.parameter)
+(parenthesized_statements(identifier) @definition.var)
 
 ;;; Keywords
 

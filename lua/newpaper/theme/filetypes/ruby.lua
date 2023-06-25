@@ -23,11 +23,7 @@ function M.setup(configColors, configStyle)
             ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon },
             ["@constant.ruby"]             = { fg = newpaper.ocean, style = style.k_style },
             ["@constructor.ruby"]          = { fg = newpaper.blue, style = style.o_style },
-            ["@definition.namespace.ruby"] = { fg = newpaper.blue, style = style.k_style }, -- modules or namespaces
-            ["@definition.parameter.ruby"] = { fg = newpaper.ruby_orange, style = style.v_style },
-            ["@definition.type.ruby"]      = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
-            ["@definition.var.ruby"]       = { fg = newpaper.darkorange, style = style.v_style },
-            ["@exception.ruby"]            = { fg = newpaper.redorange, style = style.k_style },
+            ["@definition.var.ruby"]       = { fg = newpaper.ruby_orange, style = style.v_style },
             ["@function.call.ruby"]        = { fg = newpaper.ruby_navy, style = style.f_style },
             ["@include.ruby"]              = { fg = newpaper.redorange, nocombine = true },
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },

@@ -30,22 +30,15 @@ function M.setup(configColors, configStyle)
     luaSyn.loadTreeSitter = function ()
 
         local treesitter = {
-            ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.k_style },
-            ["@constant.builtin.lua"]      = { fg = newpaper.maroon, style = style.o_style },
-            ["@field.lua"]                 = { fg = newpaper.fg },
-            ["@function.builtin.lua"]      = { fg = newpaper.redorange, style = style.f_style },
-            ["@keyword.return.lua"]        = { fg = newpaper.tex_keyword, style = style.o_style },
+            ["@field.lua"]                 = { fg = newpaper.bluegreen },
             ["@punctuation.bracket.lua"]   = { fg = newpaper.lua_navy, style = style.br_style },
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
-            ["@variable.builtin.lua"]      = { fg = newpaper.tex_magenta, style = style.f_style },
-            ["@definition.lua"]            = { fg = newpaper.fg, style = style.v_style },
-            ["@definition.associated.lua"] = { fg = newpaper.bluegreen },
-            ["@definition.enum.lua"]       = { fg = newpaper.blue },
-            ["@definition.field.lua"]      = { fg = newpaper.teal },
-            ["@definition.function.lua"]   = { fg = newpaper.lua_navy, style = style.f_style },
-            ["@definition.macro.lua"]      = { fg = newpaper.string, style = style.o_style },
-            ["@definition.parameter.lua"]  = { fg = newpaper.darkorange },
-            ["@definition.var.lua"]        = { fg = newpaper.darkgreen, style = style.v_style },
+
+            -- LSP semantic tokens
+            ["@lsp.type.variable.lua"]     = { link = "@variable.lua" },
+            ["@lsp.type.property.lua"]     = { link = "@definition.field" },
+            ["@lsp.type.method.lua"]       = { link = "@function.call" },
+            ["@lsp.type.parameter.lua"]    = { link = "@definition.parameter" },
         }
 
         return treesitter

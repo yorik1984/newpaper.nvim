@@ -20,7 +20,7 @@ function M.setup(configColors, configStyle)
             Repeat         = { fg = newpaper.keyword, style = style.k_style }, -- any other keyword
             Constant       = { fg = newpaper.darkengreen }, -- any constant
             Character      = { fg = newpaper.darkengreen, style = style.o_style }, -- any character constant: 'c', '\n'
-            Number         = { fg = newpaper.red }, -- a number constant: 5
+            Number         = { fg = newpaper.number }, -- a number constant: 5
             Boolean        = { fg = newpaper.boolean, style = style.k_style }, -- a boolean constant: TRUE, false
             Float          = { fg = newpaper.magenta }, -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style }, -- you can use CTRL-] on this
@@ -185,36 +185,39 @@ function M.setup(configColors, configStyle)
             ["@attribute"]             = { fg = newpaper.blue },
             ["@boolean"]               = { fg = newpaper.boolean, style = style.k_style }, -- For booleans.
             ["@character"]             = { fg = newpaper.orange }, -- For characters.
-            ["@character.special"]     = { fg = newpaper.maroon },
+            ["@character.special"]     = { fg = newpaper.maroon, nocombine = true },
             ["@comment"]               = { fg = newpaper.comment, style = style.c_style }, -- For comment blocks.
-            ["@conceal"]               = { fg = newpaper.tex_math },
+            ["@comment.documentation"] = { fg = newpaper.doc_comment, style = style.doc_style, nocombine = true }, -- comments documenting code
+            ["@conceal"]               = { fg = newpaper.tex_math }, -- for captures that are only used for concealing.
             ["@conditional"]           = { fg = newpaper.keyword, style = style.k_style }, -- conditionnals.
             ["@conditional.ternary"]   = { fg = newpaper.keyword, style = style.d_style },
             ["@constant"]              = { fg = newpaper.darkgreen }, -- For constants
             ["@constant.builtin"]      = { fg = newpaper.maroon }, -- For constant that are built in the language: `nil` in Lua.
             ["@constant.macro"]        = { fg = newpaper.maroon }, -- For constants that are defined by macros: `NULL` in C.
-            ["@constructor"]           = { fg = newpaper.lua_blue, style = style.o_style }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+            ["@constructor"]           = { fg = newpaper.lua_blue, style = style.br_style }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
             ["@debug"]                 = { fg = newpaper.red },
             ["@define"]                = { fg = newpaper.magenta },
             ["@error"]                 = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- For syntax/parser errors.
-            ["@exception"]             = { fg = newpaper.redorange }, -- For exception related keywords.
+            ["@exception"]             = { fg = newpaper.redorange, style = style.k_style }, -- For exception related keywords.
             ["@field"]                 = { fg = newpaper.ocean }, -- For fields.
             ["@float"]                 = { fg = newpaper.magenta }, -- For floats.
             ["@function"]              = { fg = newpaper.lua_navy, style = style.f_style }, -- For fuction definitions.
-            ["@function.builtin"]      = { fg = newpaper.lua_blue, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
+            ["@function.builtin"]      = { fg = newpaper.tex_red, style = style.f_style }, -- For builtin functions: `table.insert` in Lua.
             ["@function.call"]         = { fg = newpaper.lua_navy, style = style.f_style }, -- For fuction calls.
             ["@function.macro"]        = { fg = newpaper.magenta, style = style.f_style }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
             ["@include"]               = { fg = newpaper.maroon }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
             ["@keyword"]               = { fg = newpaper.keyword, style = style.k_style }, -- For keywords that don't fall in previous categories.
+            ["@keyword.coroutine"]     = { fg = newpaper.tex_keyword, style = style.k_style }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python).
             ["@keyword.function"]      = { fg = newpaper.darkpurple, style = style.k_style }, -- keywords used to define a fuction.
             ["@keyword.operator"]      = { fg = newpaper.tag_navy, style = style.o_style }, -- define a operators like and, or.
-            ["@keyword.return"]        = { fg = newpaper.keyword, style = style.k_style }, -- define a return.
+            ["@keyword.return"]        = { fg = newpaper.tex_keyword, style = style.k_style }, -- define a return.
             ["@label"]                 = { fg = newpaper.redorange }, -- For labels: `label:` in C and `:label:` in Lua.
             ["@method"]                = { fg = newpaper.ruby_navy, style = style.f_style }, -- For method definitions.
             ["@method.call"]           = { fg = newpaper.navy, style = style.f_style }, -- For method calls definitions.
             ["@namespace"]             = { fg = newpaper.darkyellow }, -- For identifiers referring to modules and namespaces.
+            ["@namespace.builtin"]     = { fg = newpaper.tex_magenta },
             ["@none"]                  = { fg = newpaper.disabled },
-            ["@number"]                = { fg = newpaper.red }, -- For all numbers
+            ["@number"]                = { fg = newpaper.number }, -- For all numbers
             ["@operator"]              = { fg = newpaper.navy, style = style.o_style }, -- For any operator: `+`, but also `->` and `*` in C.
             ["@parameter"]             = { fg = newpaper.orange }, -- For parameters of a function.
             ["@preproc"]               = { fg = newpaper.navy },
@@ -224,8 +227,8 @@ function M.setup(configColors, configStyle)
             ["@punctuation.special"]   = { fg = newpaper.lightmagenta }, -- For special punctutation that does not fall in the catagories before.
             ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style }, -- keywords related to loops.
             ["@storageclass"]          = { fg = newpaper.lua_navy, style = style.k_style },
-            ["@storageclass.lifetime"] = { fg = newpaper.tag_navy, style = style.k_style },
             ["@string"]                = { fg = newpaper.string, style = style.s_style }, -- For strings.
+            ["@string.documentation"]  = { fg = newpaper.regexp_blue, style = style.s_style }, -- string documenting code (e.g. Python docstrings).
             ["@string.escape"]         = { fg = newpaper.tex_magenta }, -- For escape characters within a string.
             ["@string.regex"]          = { fg = newpaper.regexp_blue }, -- For regexes.
             ["@string.special"]        = { fg = newpaper.dark_maroon, style = style.s_style },
@@ -241,6 +244,7 @@ function M.setup(configColors, configStyle)
             ["@text.environment"]      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             ["@text.environment.name"] = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
             ["@text.literal"]          = { fg = newpaper.regexp_blue }, -- Literal text.
+            ["@text.literal.block"]    = { fg = newpaper.regexp_blue }, -- literal or verbatim text as a stand-alone block.
             ["@text.math"]             = { fg = newpaper.tex_math },
             ["@text.note"]             = { fg = newpaper.bg, bg = newpaper.hint_fg },
             ["@text.reference"]        = { fg = newpaper.tex_maroon },
@@ -259,6 +263,69 @@ function M.setup(configColors, configStyle)
             ["@variable"]              = { fg = newpaper.variable, style = style.v_style }, -- Any variable name that does not have another highlight.
             ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_style },-- Variable names that are defined by the languages, like `this` or `self`.
             ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },
+
+            ["@text.title.1"]          = { fg = newpaper.tex_part_title, style = style.k_style },
+            ["@text.title.2"]          = { fg = newpaper.teal,           style = style.k_style },
+            ["@text.title.3"]          = { fg = newpaper.blue,           style = style.k_style },
+            ["@text.title.4"]          = { fg = newpaper.tex_math,       style = style.k_style },
+            ["@text.title.5"]          = { fg = newpaper.tex_lightpurple,       style = style.k_style },
+            ["@text.title.6"]          = { fg = newpaper.tex_darkorange, style = style.k_style },
+            ["@text.title.1.marker"]   = { fg = newpaper.tex_part_title },
+            ["@text.title.2.marker"]   = { fg = newpaper.teal },
+            ["@text.title.3.marker"]   = { fg = newpaper.blue },
+            ["@text.title.4.marker"]   = { fg = newpaper.tex_math },
+            ["@text.title.5.marker"]   = { fg = newpaper.tex_lightpurple },
+            ["@text.title.6.marker"]   = { fg = newpaper.tex_darkorange },
+
+            -- Locals
+            ["@definition"]            = { fg = newpaper.fg, style = style.v_style },
+            ["@definition.constant"]   = { fg = newpaper.darkgreen },
+            ["@definition.function"]   = { fg = newpaper.lua_navy, style = style.f_style },
+            ["@definition.method"]     = { fg = newpaper.ruby_navy, style = style.f_style },
+            ["@definition.var"]        = { fg = newpaper.tex_math, style = style.v_style },
+            ["@definition.parameter"]  = { fg = newpaper.darkorange, style = style.v_style },
+            ["@definition.macro"]      = { fg = newpaper.lightmagenta },
+            ["@definition.type"]       = { fg = newpaper.ruby_navy, style = style.k_style }, -- types or classes
+            ["@definition.field"]      = { fg = newpaper.tex_teal },
+            ["@definition.enum"]       = { fg = newpaper.blue },
+            ["@definition.namespace"]  = { fg = newpaper.blue, style = style.k_style }, -- modules or namespaces
+            ["@definition.import"]     = { fg = newpaper.olive },
+            ["@definition.associated"] = { fg = newpaper.bluegreen },
+
+            -- TODO: Add more groups
+            -- INFO: https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight
+
+            -- LSP semantic tokens
+            ["@lsp.type.class"]         = { link = "@storageclass" },
+            ["@lsp.type.comment"]       = { link = "@comment" },
+            ["@lsp.type.decorator"]     = { link = "@function.builtin" },
+            ["@lsp.type.enum"]          = { link = "@number" },
+            ["@lsp.type.enumMember"]    = { link = "@constant" },
+            ["@lsp.type.function"]      = { link = "@function" },
+            ["@lsp.type.interface"]     = { link = "@keyword.function" },
+            ["@lsp.type.macro"]         = { link = "@function.macro" },
+            ["@lsp.type.method"]        = { link = "@method" },
+            ["@lsp.type.namespace"]     = { link = "@namespace" },
+            ["@lsp.type.parameter"]     = { link = "@parameter" },
+            ["@lsp.type.property"]      = { link = "@field" },
+            ["@lsp.type.struct"]        = { link = "@symbol" },
+            ["@lsp.type.type"]          = { link = "@type" },
+            ["@lsp.type.typeParameter"] = { link = "@definition.parameter" },
+            ["@lsp.type.variable"]      = { link = "@variable" },
+
+            ["@lsp.typemod.class.defaultLibrary"]      = { link = "@type.builtin" },
+            ["@lsp.typemod.enum.defaultLibrary"]       = { link = "@type.builtin" },
+            ["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
+            ["@lsp.typemod.function.defaultLibrary"]   = { link = "@function.builtin" },
+            ["@lsp.typemod.macro.defaultLibrary"]      = { link = "@function.builtin" },
+            ["@lsp.typemod.method.defaultLibrary"]     = { link = "@function.builtin" },
+            ["@lsp.typemod.operator.injected"]         = { link = "@operator" },
+            ["@lsp.typemod.parameter.declaration"]     = { link = "@parameter" },
+            ["@lsp.typemod.string.injected"]           = { link = "@string" },
+            ["@lsp.typemod.type.defaultLibrary"]       = { link = "@type.builtin" },
+            ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@namespace.builtin" },
+            ["@lsp.typemod.variable.definition"]       = { link = "@variable.builtin" },
+            ["@lsp.typemod.variable.injected"]         = { link = "@variable" },
         }
 
         return treesitter
@@ -266,10 +333,11 @@ function M.setup(configColors, configStyle)
 
     theme.loadLSP = function ()
         local lsp = {
-            LspCodeLens                = { fg = newpaper.comment, bg = newpaper.lightsilver },
-            LspReferenceText           = { fg = newpaper.accent,  bg = newpaper.highlight },
-            LspReferenceRead           = { fg = newpaper.accent,  bg = newpaper.highlight },
-            LspReferenceWrite          = { fg = newpaper.accent,  bg = newpaper.highlight },
+            LspCodeLens                = { fg = newpaper.comment,      bg = newpaper.lightsilver },
+            LspCodeLensSeparator       = { fg = newpaper.comment,      bg = newpaper.lightsilver, style = style.b_bold },
+            LspReferenceText           = { fg = newpaper.todo_default, bg = newpaper.highlight },
+            LspReferenceRead           = { fg = newpaper.todo_info,    bg = newpaper.highlight },
+            LspReferenceWrite          = { fg = newpaper.todo_hint,    bg = newpaper.highlight },
 
             DiagnosticError            = { fg = newpaper.error_fg, bg = newpaper.none },
             DiagnosticFloatingError    = { fg = newpaper.error_fg },
@@ -442,7 +510,7 @@ function M.setup(configColors, configStyle)
             CmpItemKindModule             = { fg = newpaper.darkyellow },   -- Module        = ""
             CmpItemKindProperty           = { fg = newpaper.bluegreen },    -- Property      = "ﰠ"
             CmpItemKindUnit               = { fg = newpaper.darkpurple },   -- Unit          = "塞"
-            CmpItemKindValue              = { fg = newpaper.red },          -- Value         = ""
+            CmpItemKindValue              = { fg = newpaper.naamber },          -- Value         = ""
             CmpItemKindEnum               = { fg = newpaper.green },        -- Enum          = ""
             CmpItemKindKeyword            = { fg = newpaper.keyword },      -- Keyword       = ""
             CmpItemKindSnippet            = { fg = newpaper.darkpurple },   -- Snippet       = ""

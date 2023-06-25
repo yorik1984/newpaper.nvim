@@ -49,6 +49,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Added functions for live theme switching without the need to restart Neovim
 + Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
 + [Extras](#Extras) colors configs for terminal-based and GUI application.
++ [lsp-semantic-highlight](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight)
 
 ### Extra syntax highlights
 
@@ -112,7 +113,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ## ⚡️ Requirements
 
-+ Neovim >= 0.7.2
++ Neovim >= 0.8
 
 ## 📦 Installation
 
@@ -242,6 +243,7 @@ require("newpaper").setup({
     error_highlight     = "undercurl",
     italic_strings      = true,
     italic_comments     = true,
+    italic_doc_comments = true,
     italic_functions    = false,
     italic_variables    = false,
     borders             = true,

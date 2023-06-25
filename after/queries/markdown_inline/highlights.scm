@@ -15,8 +15,7 @@
 ] @text.literal
 
 (image ["[" "]" "(" ")"] @punctuation.delimiter)
-(image ["!"] @string.escape)
 (inline_link ["[" "]" "(" ")"] @punctuation.delimiter)
 (shortcut_link ["[" "]"] @punctuation.delimiter)
-; (full_reference_link ["[" "]"] @punctuation.delimiter)
+(full_reference_link ["[" "]"] @punctuation.delimiter)
 (collapsed_reference_link ["[" "]"] @punctuation.delimiter)
