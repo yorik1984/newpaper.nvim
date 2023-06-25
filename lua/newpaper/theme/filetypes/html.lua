@@ -12,12 +12,12 @@ function M.setup(configColors, configStyle)
 
     htmlSyn.loadSyntax = function ()
         local syntax = {
-            htmlH1                      = { fg = newpaper.tex_part_title, style = style.tag_style },
-            htmlH2                      = { fg = newpaper.tex_navy,       style = style.tag_style },
-            htmlH3                      = { fg = newpaper.keyword,        style = style.tag_style },
-            htmlH4                      = { fg = newpaper.blue,           style = style.tag_style },
-            htmlH5                      = { fg = newpaper.darkyellow,     style = style.tag_style },
-            htmlH6                      = { fg = newpaper.orange,         style = style.tag_style },
+            htmlH1                      = { fg = newpaper.tex_part_title,  style = style.tag_style },
+            htmlH2                      = { fg = newpaper.teal,            style = style.tag_style },
+            htmlH3                      = { fg = newpaper.blue,            style = style.tag_style },
+            htmlH4                      = { fg = newpaper.tex_math,        style = style.tag_style },
+            htmlH5                      = { fg = newpaper.tex_lightpurple, style = style.tag_style },
+            htmlH6                      = { fg = newpaper.tex_darkorangee, style = style.tag_style },
 
             htmlTag                     = { fg = newpaper.tag_navy, style = style.tb_style },
             htmlEndTag                  = { fg = newpaper.tag_navy, style = style.tb_style },
