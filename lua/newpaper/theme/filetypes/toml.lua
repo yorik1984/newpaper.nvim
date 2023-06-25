@@ -35,7 +35,6 @@ function M.setup(configColors, configStyle)
     tomlSyn.loadTreeSitter = function()
 
         local treesitter = {
-            ["@punctuation.bracket.toml"] = { fg = newpaper.navy, style = style.br_style },
             ["@property.toml"]            = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
             ["@string.special.toml"]      = { fg = newpaper.maroon },
             ["@type.toml"]                = { fg = newpaper.keyword, style = style.k_style },
