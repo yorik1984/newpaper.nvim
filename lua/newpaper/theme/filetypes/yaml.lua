@@ -68,7 +68,6 @@ function M.setup(configColors, configStyle)
             ["@field.yaml"]               = { fg = newpaper.ocean, style = style.f_style, nocombine = true },
             ["@punctuation.bracket.yaml"] = { fg = newpaper.tag_navy, style = style.br_style },
             ["@punctuation.special.yaml"] = { fg = newpaper.magenta },
-            ["@string.escape.yaml"]       = { fg = newpaper.magenta },
         }
 
         return treesitter
