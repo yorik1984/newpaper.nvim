@@ -1,5 +1,5 @@
 local util = require("newpaper.util")
-local M    = {}
+local M = {}
 
 function M.setup(configColors, configStyle)
 
@@ -41,9 +41,9 @@ function M.setup(configColors, configStyle)
         return plugins
     end
 
-    -- stylua: ignore end
+	-- stylua: ignore end
 
-    return langSyn
+	return langSyn
 end
 
 return M

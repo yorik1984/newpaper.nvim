@@ -1,6 +1,6 @@
 local M = {}
 
-local plugsFolder  = "newpaper.theme.plugins."
+local plugsFolder = "newpaper.theme.plugins."
 
 local plugins = {
     "cheatsheet",
