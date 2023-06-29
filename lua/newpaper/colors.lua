@@ -441,12 +441,12 @@ function M.setup(config)
     newpaper.trouble_fg          = newpaper.sb_fg
     newpaper.trouble_bg          = newpaper.sb_bg
     -- NvimTree
-    if table.contains(config.sidebars_contrast, "NvimTree") then
+    if util.contains(config.sidebars_contrast, "NvimTree") then
         newpaper.nvimtree_fg     = newpaper.sb_contrast_fg
         newpaper.nvimtree_bg     = newpaper.aqualight
     end
     -- Troule
-    if table.contains(config.sidebars_contrast, "Trouble") then
+    if util.contains(config.sidebars_contrast, "Trouble") then
         newpaper.trouble_fg      = newpaper.sb_contrast_fg
         newpaper.trouble_bg      = newpaper.sb_contrast_bg
     end

@@ -2,10 +2,10 @@ local check = require("newpaper.check")
 
 local M = {}
 
-function table.contains(tbl, string)
+function M.contains(tbl, string)
     for k, v in pairs(tbl) do
         if type(v) == "table" then
-            if table.contains(tbl[k], string) then
+            if M.contains(tbl[k], string) then
                 return true
             end
         end
@@ -23,7 +23,6 @@ function M.syntax(syntax)
 end
 
 function M.highlight(group, color)
-
     -- https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
     if color.style then
         if type(color.style) == "table" then
@@ -72,10 +71,10 @@ function M.autocmds(config, theme)
         pattern = { "*\\(lazygit\\)" },
         callback = function()
             local newpaper = theme.colors
-            vim.b.terminal_color_1  = newpaper.git_removed
-            vim.b.terminal_color_2  = newpaper.git_added
+            vim.b.terminal_color_1 = newpaper.git_removed
+            vim.b.terminal_color_2 = newpaper.git_added
             vim.b.terminal_color_15 = newpaper.git_fg
-        end
+        end,
     })
 
     for _, sidebar in ipairs(config.sidebars_contrast) do
@@ -184,7 +183,7 @@ function M.deviconsOverrides(config)
         group = group,
         pattern = { "*" },
         callback = function()
-            local devIconCustom      = config.devicons_custom.gui
+            local devIconCustom = config.devicons_custom.gui
             local devIconCustomCterm = config.devicons_custom.cterm
             local function get_highlight_name(data)
                 return data.name and "DevIcon" .. data.name
