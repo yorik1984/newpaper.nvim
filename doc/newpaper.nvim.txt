@@ -46,6 +46,7 @@ FEATURES                                                *newpaper.nvim-features*
         - Nvim-Tree.lua
         - nvim-web-devicons
         - packer.nvim
+        - rainbow-delimiters.nvim
         - symbols-outline.nvim
         - Telescope.nvim
         - todo-comments.nvim

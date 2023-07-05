@@ -170,6 +170,14 @@ function M.setup(config)
 
             -- HTML
             tag_navy             = "#0044AA",
+
+            rainbowred           = "#FF0000",
+            rainbowyellow        = "#FDA135",
+            rainbowblue          = "#0041FF",
+            rainboworange        = "#FF6A00",
+            rainbowgreen         = "#28CE00",
+            rainbowviolet        = "#7D00E5",
+            rainbowcyan          = "#E500E5",
         }
     elseif config.style == "dark" then
         newpaper = {
@@ -333,6 +341,14 @@ function M.setup(config)
 
             -- HTML
             tag_navy             = "#668ECC",
+
+            rainbowred           = "#E50000",
+            rainbowyellow        = "#FDA135",
+            rainbowblue          = "#2F46EA",
+            rainboworange        = "#FF6A00",
+            rainbowgreen         = "#28CE00",
+            rainbowviolet        = "#AE81FF",
+            rainbowcyan          = "#E500E5",
         }
     end
 

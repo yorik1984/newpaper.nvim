@@ -190,9 +190,9 @@ function M.setup(configColors, configStyle)
             ["@conceal"]                               = { fg = newpaper.tex_math },                               -- for captures that are only used for concealing.
             ["@conditional"]                           = { fg = newpaper.keyword, style = style.k_style },         -- conditionnals.
             ["@conditional.ternary"]                   = { fg = newpaper.keyword, style = style.d_style },
-            ["@constant"]                              = { fg = newpaper.darkgreen },                              -- For constants
-            ["@constant.builtin"]                      = { fg = newpaper.maroon },                                 -- For constant that are built in the language: `nil` in Lua.
-            ["@constant.macro"]                        = { fg = newpaper.maroon },                                 -- For constants that are defined by macros: `NULL` in C.
+            ["@constant"]                              = { fg = newpaper.darkgreen, nocombine = true },                              -- For constants
+            ["@constant.builtin"]                      = { fg = newpaper.maroon, nocombine = true },               -- For constant that are built in the language: `nil` in Lua.
+            ["@constant.macro"]                        = { fg = newpaper.maroon, nocombine = true },               -- For constants that are defined by macros: `NULL` in C.
             ["@constructor"]                           = { fg = newpaper.lua_blue, style = style.br_style },       -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
             ["@debug"]                                 = { fg = newpaper.red },
             ["@define"]                                = { fg = newpaper.magenta },
@@ -279,7 +279,7 @@ function M.setup(configColors, configStyle)
 
             -- Locals
             ["@definition"]                            = { fg = newpaper.fg, style = style.v_style },
-            ["@definition.constant"]                   = { fg = newpaper.darkgreen },
+            ["@definition.constant"]                   = { fg = newpaper.darkgreen, nocombine = true },
             ["@definition.function"]                   = { fg = newpaper.lua_navy, style = style.f_style },
             ["@definition.method"]                     = { fg = newpaper.ruby_navy, style = style.f_style },
             ["@definition.var"]                        = { fg = newpaper.tex_math, style = style.v_style },
@@ -598,6 +598,15 @@ function M.setup(configColors, configStyle)
             packerPackageName                   = { fg = newpaper.teal },
             packerWorking                       = { fg = newpaper.comment },
             packerProgress                      = { fg = newpaper.green, style = style.b_bold },
+
+            -- Rainbow Delimiters ---------------------------------------------
+            RainbowDelimiterRed                 = { fg = newpaper.rainbowred },
+            RainbowDelimiterYellow              = { fg = newpaper.rainbowyellow },
+            RainbowDelimiterBlue                = { fg = newpaper.rainbowblue },
+            RainbowDelimiterOrange              = { fg = newpaper.rainboworange },
+            RainbowDelimiterGreen               = { fg = newpaper.rainbowgreen },
+            RainbowDelimiterViolet              = { fg = newpaper.rainbowviolet },
+            RainbowDelimiterCyan                = { fg = newpaper.rainbowcyan },
 
             -- Sneak ----------------------------------------------------------
             Sneak                               = { fg = newpaper.bg, bg = newpaper.accent },

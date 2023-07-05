@@ -94,6 +94,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 + [packer.nvim](https://github.com/wbthomason/packer.nvim)
++ [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- [🖼️](#todo-commentsnvim)
@@ -119,25 +120,20 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 Install via your favorite package manager:
 
+**[lazy.nvim](https://github.com/folke/lazy.nvim)**
+
+```lua
+require("lazy").setup({
+    "yorik1984/newpaper.nvim",
+    config = true,
+})
+```
+
 **[packer.nvim](https://github.com/wbthomason/packer.nvim)**
 
 ```lua
 use "yorik1984/newpaper.nvim"
-```
-
-## 🚀 Usage
-
-Enable the colorscheme:
-
-```vim
-" init.vim
-lua << EOF
-    require("newpaper").setup()
-EOF
-```
-
-```lua
--- Lua:
+...
 require("newpaper").setup()
 ```
 
