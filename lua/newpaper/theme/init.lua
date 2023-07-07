@@ -396,6 +396,10 @@ function M.setup(configColors, configStyle)
             -- Fern -----------------------------------------------------------
             FernBranchText                      = { fg = newpaper.blue },
 
+            -- Flash ----------------------------------------------------------
+            FlashBackdrop                       = { fg = newpaper.comment },
+            FlashLabel                          = { fg = newpaper.fg, bg = newpaper.magenta_bg, style = style.b_bold },
+
             -- GitGutter ------------------------------------------------------
             GitGutterAdd                        = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
             GitGutterChange                     = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },

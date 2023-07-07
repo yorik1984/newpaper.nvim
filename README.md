@@ -72,6 +72,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [Dashboard](https://github.com/glepnir/dashboard-nvim)
++ [flash.nvim](https://github.com/folke/flash.nvim)
 + [Git Gutter](https://github.com/airblade/vim-gitgutter)
 + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 + [git-messenger](https://github.com/rhysd/git-messenger.vim)

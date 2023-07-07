@@ -24,6 +24,7 @@ FEATURES                                                *newpaper.nvim-features*
         - bufferline.nvim
         - cheatsheet.nvim
         - Dashboard
+        - flash.nvim
         - Git Gutter
         - Git Signs
         - git-messenger
