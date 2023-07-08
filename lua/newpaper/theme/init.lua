@@ -239,7 +239,7 @@ function M.setup(configColors, configStyle)
             ["@text.diff.add"]                         = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
             ["@text.diff.delete"]                      = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
             ["@text.danger"]                           = { fg = newpaper.bg, bg = newpaper.warn_fg },
-            ["@text.emphasis"]                         = { fg = newpaper.fg, style = style.italic },               -- For text to be represented with emphasis.
+            ["@text.emphasis"]                         = { style = style.italic },                                 -- For text to be represented with emphasis.
             ["@text.environment"]                      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             ["@text.environment.name"]                 = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
             ["@text.literal"]                          = { fg = newpaper.regexp_blue },                            -- Literal text.
@@ -247,16 +247,15 @@ function M.setup(configColors, configStyle)
             ["@text.math"]                             = { fg = newpaper.tex_math },
             ["@text.note"]                             = { fg = newpaper.bg, bg = newpaper.hint_fg },
             ["@text.reference"]                        = { fg = newpaper.tex_maroon },
-            ["@text.strike"]                           = { fg = newpaper.fg, style = style.strike },               -- For strikethrough text.
-            ["@text.strong"]                           = { fg = newpaper.fg, style = style.bold },
+            ["@text.strike"]                           = { style = style.strike },                                 -- For strikethrough text.
+            ["@text.strong"]                           = { style = style.bold },
             ["@text.title"]                            = { fg = newpaper.title, style = style.b_bold },            -- Text that is part of a title.
-            ["@text.underline"]                        = { fg = newpaper.fg, style = style.underline },            -- For text to be represented with an underline.
+            ["@text.underline"]                        = { style = style.underline },                              -- For text to be represented with an underline.
             ["@text.uri"]                              = { fg = newpaper.link, style = style.link },               -- Any URI like a link or email.
             ["@text.warning"]                          = { fg = newpaper.bg, bg = newpaper.info_fg },
-            ["@text.todo"]                             = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style
-            .b_bold },
+            ["@text.todo"]                             = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
             ["@text.quote"]                            = { fg = newpaper.tex_navy },
-            ["@type"]                                  = { fg = newpaper.darkengreen },      -- For types.
+            ["@type"]                                  = { fg = newpaper.darkengreen },                            -- For types.
             ["@type.builtin"]                          = { fg = newpaper.bluegreen, style = style.k_style },       -- For builtin types.
             ["@type.definition"]                       = { fg = newpaper.maroon },
             ["@type.qualifier"]                        = { fg = newpaper.maroon, style = style.k_style },
