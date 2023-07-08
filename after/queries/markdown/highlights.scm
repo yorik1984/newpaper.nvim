@@ -15,7 +15,6 @@
   (list_marker_plus)
   (list_marker_minus)
   (list_marker_star)
-  (thematic_break)
 ] @keyword
 
 [
