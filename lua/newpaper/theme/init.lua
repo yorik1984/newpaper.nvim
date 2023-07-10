@@ -603,13 +603,13 @@ function M.setup(configColors, configStyle)
             packerProgress                      = { fg = newpaper.green, style = style.b_bold },
 
             -- Rainbow Delimiters ---------------------------------------------
-            RainbowDelimiterRed                 = { fg = newpaper.rainbowred },
-            RainbowDelimiterYellow              = { fg = newpaper.rainbowyellow },
-            RainbowDelimiterBlue                = { fg = newpaper.rainbowblue },
-            RainbowDelimiterOrange              = { fg = newpaper.rainboworange },
-            RainbowDelimiterGreen               = { fg = newpaper.rainbowgreen },
-            RainbowDelimiterViolet              = { fg = newpaper.rainbowviolet },
-            RainbowDelimiterCyan                = { fg = newpaper.rainbowcyan },
+            RainbowDelimiterRed                 = { fg = newpaper.rainbowred,    style = style.d_r_style, nocombine = true },
+            RainbowDelimiterYellow              = { fg = newpaper.rainbowyellow, style = style.d_r_style, nocombine = true },
+            RainbowDelimiterBlue                = { fg = newpaper.rainbowblue,   style = style.d_r_style, nocombine = true },
+            RainbowDelimiterOrange              = { fg = newpaper.rainboworange, style = style.d_r_style, nocombine = true },
+            RainbowDelimiterGreen               = { fg = newpaper.rainbowgreen,  style = style.d_r_style, nocombine = true },
+            RainbowDelimiterViolet              = { fg = newpaper.rainbowviolet, style = style.d_r_style, nocombine = true },
+            RainbowDelimiterCyan                = { fg = newpaper.rainbowcyan,   style = style.d_r_style, nocombine = true },
 
             -- Sneak ----------------------------------------------------------
             Sneak                               = { fg = newpaper.bg, bg = newpaper.accent },

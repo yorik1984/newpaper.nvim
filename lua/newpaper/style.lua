@@ -22,6 +22,7 @@ function M.setupStyle(config)
         o_style       = "NONE", -- operators style
         d_style       = "NONE", -- delimiters style
         br_style      = "NONE", -- brackets style
+        d_r_style     = "NONE", -- delimiters rainbow style
         tb_style      = "NONE", -- tags brackets style
         s_style       = "NONE", -- strings style
         doc_style     = "NONE", -- comments documenting code style
@@ -79,6 +80,10 @@ function M.setupStyle(config)
 
     if config.brackets_bold then
         style.br_style = style.bold
+    end
+
+    if config.delim_rainbow_bold then
+        style.d_r_style = style.bold
     end
 
     if config.tags_brackets_bold then
