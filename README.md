@@ -92,6 +92,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 + [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 + [nvim-notify](https://github.com/rcarriga/nvim-notify)
++ [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 + [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 + [packer.nvim](https://github.com/wbthomason/packer.nvim)

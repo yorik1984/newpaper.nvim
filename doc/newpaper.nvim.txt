@@ -44,6 +44,7 @@ FEATURES                                                *newpaper.nvim-features*
         - nvim-dap-virtual-text
         - nvim-lsp-installer
         - nvim-notify
+        - nvim-treesitter-context
         - Nvim-Tree.lua
         - nvim-web-devicons
         - packer.nvim

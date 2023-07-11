@@ -325,6 +325,10 @@ function M.setup(configColors, configStyle)
             ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@namespace.builtin" },
             ["@lsp.typemod.variable.definition"]       = { link = "@variable.builtin" },
             ["@lsp.typemod.variable.injected"]         = { link = "@variable" },
+
+            -- Treesitter plugins
+            TreesitterContextLineNumber                = { fg = newpaper.linenumber_fg, bg = newpaper.linenumber_bg, style = style.b_bold },
+            TreesitterContextBottom                    = { style = style.underline, sp = newpaper.violet },
         }
 
         return treesitter
