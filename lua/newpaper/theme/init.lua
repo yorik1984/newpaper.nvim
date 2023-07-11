@@ -83,7 +83,7 @@ function M.setup(configColors, configStyle)
             FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
             Folded           = { fg = newpaper.folded_fg, bg = newpaper.folded_bg },                                         -- line used for closed folds
             FoldColumn       = { fg = newpaper.folded_fg, bg = newpaper.linenumber_bg },                                     -- 'foldcolumn'
-            IncSearch        = { fg = newpaper.search_fg, bg = newpaper.search_bg },                                         -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+            IncSearch        = { fg = newpaper.magenta, bg = newpaper.search_bg, style = style.b_bold },                     -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
             Substitute       = { fg = newpaper.search_fg, bg = newpaper.yellow },                                            -- |:substitute| replacement text highlighting
             LineNr           = { fg = newpaper.linenumber_fg, bg = newpaper.linenumber_bg },                                 -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
             CursorLineNr     = { fg = newpaper.cursor_nr_fg, bg = newpaper.cursor_nr_bg },                                   -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
