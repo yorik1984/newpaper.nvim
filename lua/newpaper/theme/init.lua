@@ -73,7 +73,7 @@ function M.setup(configColors, configStyle)
             CursorColumn     = { bg = newpaper.active },                                                                     -- Screen-column at the cursor, when 'cursorcolumn' is set.
             CursorLine       = { bg = newpaper.active },                                                                     -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
             CursorIM         = { fg = newpaper.bg, bg = newpaper.cursor },                                                   -- like Cursor, but used when in IME mode
-            Directory        = { fg = newpaper.navy, style = style.b_bold },                                                 -- directory names (and other special names in listings)
+            Directory        = { fg = newpaper.teal, style = style.b_bold },                                                 -- directory names (and other special names in listings)
             DiffAdd          = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },                                        -- diff mode: Added line
             DiffChange       = { fg = newpaper.text, bg = newpaper.diffchange_bg },                                          --  diff mode: Changed line
             DiffDelete       = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },                                   -- diff mode: Deleted line
