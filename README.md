@@ -82,7 +82,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
-+ [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
++ [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
 + [Lualine](https://github.com/nvim-lualine/lualine.nvim) -- [🖼️](#-screenshots-lualine)
 + [mason.nvim](https://github.com/williamboman/mason.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
