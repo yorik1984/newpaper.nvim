@@ -434,6 +434,9 @@ function M.setup(configColors, configStyle)
             CodeBlock                           = { bg = newpaper.codeblock },
             Dash                                = { fg = newpaper.orange, bg = newpaper.none },
 
+            -- Highlight-undo --------------------------------------------------
+            HighlightUndo                       = { bg = newpaper.diffchange_bg },
+
             -- Hop ------------------------------------------------------------
             HopNextKey                          = { fg = newpaper.accent, style = style.b_bold },
             HopNextKey1                         = { fg = newpaper.purple, style = style.b_bold },
