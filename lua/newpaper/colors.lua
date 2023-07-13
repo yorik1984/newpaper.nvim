@@ -88,10 +88,12 @@ function M.setup(config)
             warn_fg              = "#D37300",
             info_fg              = "#005FAF",
             hint_fg              = "#0EA674",
+            ok_fg                = "#0EA628",
             lsp_error_bg         = "#FDF0F0",
             warn_bg              = "#FDF5EC",
             info_bg              = "#EBF0FD",
             hint_bg              = "#E7F8F2",
+            ok_bg                = "#E6F6E9",
 
             -- Todo
             todo_error           = "#DF0000",
@@ -227,7 +229,7 @@ function M.setup(config)
             lightgrey            = "#787878",
             lightlightgrey       = "#4E4E4E",
             silver               = "#3A3A3A",
-            lightsilver          = "#303030",
+            lightsilver          = "#363636",
 
             codeblock            = "#343434",
             disabled             = "#3E3E3E",
@@ -260,10 +262,12 @@ function M.setup(config)
             warn_fg              = "#E0AF68",
             info_fg              = "#0DB9D7",
             hint_fg              = "#10B981",
+            ok_fg                = "#90EE90",
             lsp_error_bg         = "#362C3D",
             warn_bg              = "#373640",
             info_bg              = "#2C2C41",
             hint_bg              = "#2E3130",
+            ok_bg                = "#2F3F2F",
 
             -- Todo
             todo_error           = "#D75F66",
@@ -423,7 +427,7 @@ function M.setup(config)
     newpaper.sb_contrast_bg      = newpaper.silver
     newpaper.float_fg            = newpaper.fg
     newpaper.float_bg            = newpaper.bg
-    newpaper.git_sign_bg         = newpaper.git_bg
+    newpaper.git_sign_bg         = newpaper.lightsilver
     newpaper.telescope_fg        = newpaper.fg
     newpaper.telescope_bg        = newpaper.bg
     newpaper.float_contrast      = newpaper.silver
