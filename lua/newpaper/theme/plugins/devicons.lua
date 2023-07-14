@@ -55,6 +55,8 @@ function M.setup(configColors)
             Ksh                 = { fg = newpaper.grey },
             Less                = { fg = newpaper.purple },
             Log                 = { fg = newpaper.fg },
+            Lua                 = { fg = newpaper.lua_navy },
+            Luau                = { fg = newpaper.lua_navy },
             Md                  = { fg = newpaper.fg },
             Mjs                 = { fg = newpaper.olive },
             Nim                 = { fg = newpaper.darkyellow },
