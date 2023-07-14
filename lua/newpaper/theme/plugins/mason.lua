@@ -23,7 +23,7 @@ function M.setup(configColors, configStyle)
             LspInstallerLabel                = { fg = newpaper.fg,        style = style.b_bold },
             LspInstallerGreen                = { fg = newpaper.darkgreen },
             LspInstallerError                = { fg = newpaper.errormsg_fg },
-            LspInstallerLink                 = { fg = newpaper.link,      style = style.underline },
+            LspInstallerLink                 = { fg = newpaper.link,      style = style.link },
 
             MasonHeader                      = { link = "LspInstallerHeader" },
             MasonHeaderSecondary             = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
@@ -35,7 +35,7 @@ function M.setup(configColors, configStyle)
             MasonHighlightBlockBoldSecondary = { fg = newpaper.fg, bg = newpaper.lightorange, style = style.b_bold },
             MasonLink                        = { link = "LspInstallerLink" },
             MasonMuted                       = { link = "LspInstallerMuted"},
-            MasonMutedBlock                  = { fg = newpaper.grey, bg = newpaper.lightlightgrey },
+            MasonMutedBlock                  = { fg = newpaper.grey, bg = newpaper.bg },
             MasonMutedBlockBold              = { fg = newpaper.comment, style = style.b_bold },
             MasonError                       = { link = "LspInstallerError"},
             MasonHeading                     = { link = "LspInstallerHeading"},
