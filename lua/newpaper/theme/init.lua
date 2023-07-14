@@ -376,363 +376,158 @@ function M.setup(configColors, configStyle)
 
     theme.loadPlugins    = function()
         local plugins = {
-            -- BufferLine -----------------------------------------------------
-            BufferLineInfoDiagnosticSelected    = { fg = newpaper.info_fg, style = style.b_bold_i },
-            BufferLineHintDiagnosticSelected    = { fg = newpaper.hint_fg, style = style.b_bold_i },
-            BufferLineWarningDiagnosticSelected = { fg = newpaper.warn_fg, style = style.b_bold_i },
-            BufferLineErrorDiagnosticSelected   = { fg = newpaper.error_fg, style = style.b_bold_i },
-            BufferLineInfoSelected              = { fg = newpaper.info_fg, style = style.b_bold_i },
-            BufferLineHintSelected              = { fg = newpaper.hint_fg, style = style.b_bold_i },
-            BufferLineWarningSelected           = { fg = newpaper.warn_fg, style = style.b_bold_i },
-            BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
-
             -- Dashboard ------------------------------------------------------
-            DashboardShortCut                   = { fg = newpaper.red },
-            DashboardHeader                     = { fg = newpaper.comment },
-            DashboardCenter                     = { fg = newpaper.accent },
-            DashboardFooter                     = { fg = newpaper.green, style = style.b_italic },
+            DashboardShortCut           = { fg = newpaper.red },
+            DashboardHeader             = { fg = newpaper.comment },
+            DashboardCenter             = { fg = newpaper.accent },
+            DashboardFooter             = { fg = newpaper.green, style = style.b_italic },
 
             -- Diff -----------------------------------------------------------
-            diffAdded                           = { fg = newpaper.git_added },
-            diffRemoved                         = { fg = newpaper.git_removed },
-            diffChanged                         = { fg = newpaper.git_modified },
-            diffOldFile                         = { fg = newpaper.text },
-            diffNewFile                         = { fg = newpaper.title },
-            diffFile                            = { fg = newpaper.grey },
-            diffLine                            = { fg = newpaper.blue },
-            diffIndexLine                       = { fg = newpaper.purple },
+            diffAdded                   = { fg = newpaper.git_added },
+            diffRemoved                 = { fg = newpaper.git_removed },
+            diffChanged                 = { fg = newpaper.git_modified },
+            diffOldFile                 = { fg = newpaper.text },
+            diffNewFile                 = { fg = newpaper.title },
+            diffFile                    = { fg = newpaper.grey },
+            diffLine                    = { fg = newpaper.blue },
+            diffIndexLine               = { fg = newpaper.purple },
 
             -- Fern -----------------------------------------------------------
-            FernBranchText                      = { fg = newpaper.blue },
+            FernBranchText              = { fg = newpaper.blue },
 
             -- Flash ----------------------------------------------------------
-            FlashBackdrop                       = { fg = newpaper.comment },
-            FlashLabel                          = { fg = newpaper.fg, bg = newpaper.magenta_bg, style = style.b_bold },
+            FlashBackdrop               = { fg = newpaper.comment },
+            FlashLabel                  = { fg = newpaper.fg, bg = newpaper.magenta_bg, style = style.b_bold },
 
             -- GitGutter ------------------------------------------------------
-            GitGutterAdd                        = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-            GitGutterChange                     = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-            GitGutterDelete                     = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
+            GitGutterAdd                = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
+            GitGutterChange             = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitGutterDelete             = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
 
             -- GitSigns -------------------------------------------------------
-            GitSignsAdd                         = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-            GitSignsAddNr                       = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-            GitSignsAddLn                       = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-            GitSignsChange                      = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-            GitSignsChangeNr                    = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-            GitSignsChangeLn                    = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-            GitSignsDelete                      = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
-            GitSignsDeleteNr                    = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
-            GitSignsDeleteLn                    = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
+            GitSignsAdd                 = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
+            GitSignsAddNr               = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
+            GitSignsAddLn               = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
+            GitSignsChange              = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitSignsChangeNr            = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitSignsChangeLn            = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            GitSignsDelete              = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
+            GitSignsDeleteNr            = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
+            GitSignsDeleteLn            = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
 
             -- Glyph palette --------------------------------------------------
-            GlyphPalette1                       = { fg = newpaper.red },
-            GlyphPalette2                       = { fg = newpaper.green },
-            GlyphPalette3                       = { fg = newpaper.darkorange },
-            GlyphPalette4                       = { fg = newpaper.blue },
-            GlyphPalette6                       = { fg = newpaper.teal },
-            GlyphPalette7                       = { fg = newpaper.aqua },
-            GlyphPalette9                       = { fg = newpaper.magenta },
-            GlyphPaletteDirectory               = { fg = newpaper.navy },
+            GlyphPalette1               = { fg = newpaper.red },
+            GlyphPalette2               = { fg = newpaper.green },
+            GlyphPalette3               = { fg = newpaper.darkorange },
+            GlyphPalette4               = { fg = newpaper.blue },
+            GlyphPalette6               = { fg = newpaper.teal },
+            GlyphPalette7               = { fg = newpaper.aqua },
+            GlyphPalette9               = { fg = newpaper.magenta },
+            GlyphPaletteDirectory       = { fg = newpaper.navy },
 
             -- Headlines ------------------------------------------------------
-            Headline                            = { bg = newpaper.none, style = style.k_bold },
-            CodeBlock                           = { bg = newpaper.codeblock },
-            Dash                                = { fg = newpaper.orange, bg = newpaper.none },
+            Headline                    = { bg = newpaper.none, style = style.k_bold },
+            CodeBlock                   = { bg = newpaper.codeblock },
+            Dash                        = { fg = newpaper.orange, bg = newpaper.none },
 
             -- Highlight-undo --------------------------------------------------
-            HighlightUndo                       = { bg = newpaper.diffchange_bg },
+            HighlightUndo               = { bg = newpaper.diffchange_bg },
 
             -- Hop ------------------------------------------------------------
-            HopNextKey                          = { fg = newpaper.accent, style = style.b_bold },
-            HopNextKey1                         = { fg = newpaper.purple, style = style.b_bold },
-            HopNextKey2                         = { fg = newpaper.blue },
-            HopUnmatched                        = { fg = newpaper.comment },
+            HopNextKey                  = { fg = newpaper.accent, style = style.b_bold },
+            HopNextKey1                 = { fg = newpaper.purple, style = style.b_bold },
+            HopNextKey2                 = { fg = newpaper.blue },
+            HopUnmatched                = { fg = newpaper.comment },
 
             -- Illuminate -----------------------------------------------------
-            illuminatedWord                     = { bg = newpaper.highlight },
-            illuminatedCurWord                  = { bg = newpaper.contrast },
+            illuminatedWord             = { bg = newpaper.highlight },
+            illuminatedCurWord          = { bg = newpaper.contrast },
 
             -- IndentBlankline ------------------------------------------------
-            IndentBlanklineContextChar          = { fg = newpaper.contextchar },
-            IndentBlanklineContextStart         = { style = style.underline },
+            IndentBlanklineContextChar  = { fg = newpaper.contextchar },
+            IndentBlanklineContextStart = { style = style.underline },
 
             -- LanguageTool ---------------------------------------------------
-            LanguageToolCmd                     = { fg = newpaper.comment },
-            LanguageToolErrorCount              = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
-            LanguageToolLabel                   = { fg = newpaper.darkgreen },
-            LanguageToolUrl                     = { fg = newpaper.link, style = style.link },
-            LanguageToolGrammarError            = { fg = newpaper.fg, bg = newpaper.spellrare, style = style.error },
-            LanguageToolSpellingError           = { fg = newpaper.fg, bg = newpaper.spellbad, style = style.error },
-
-            -- Lazy -----------------------------------------------------------
-            Bold                                = { style = style.b_bold },
-            LazyNormal                          = { fg = newpaper.text, bg = newpaper.float_bg },
-            LazyH1                              = { fg = newpaper.search_fg, bg = newpaper.persimona },
-            LazyH2                              = { fg = newpaper.keyword, style = style.b_bold },
-            LazyCommit                          = { fg = newpaper.orange },
-            LazyCommitIssue                     = { fg = newpaper.git_removed },
-            LazyCommitType                      = { fg = newpaper.olive },
-            LazyCommitScope                     = { style = style.b_italic },
-            LazyDimmed                          = { fg = newpaper.darkgreen },
-            LazyProp                            = { fg = newpaper.ocean },
-            LazyValue                           = { fg = newpaper.string },
-            LazyReasonRuntime                   = { link = "LazyDir" },
-            LazyReasonEvent                     = { fg = newpaper.magenta},
-            LazyReasonKeys                      = { fg = newpaper.keyword },
-            LazyReasonStart                     = { fg = newpaper.green, style = style.b_bold },
-            LazyReasonFt                        = { fg = newpaper.lua_blue},
-            LazyReasonCmd                       = { fg = newpaper.lua_navy },
-            LazyReasonImport                    = { fg = newpaper.darkyellow },
-            LazyButton                          = { fg = newpaper.gray, bg = newpaper.bg },
-            LazyButtonActive                    = { fg = newpaper.text, bg = newpaper.aqua, style = style.b_bold },
-            LazyDir                             = { fg = newpaper.teal},
-            LazyUrl                             = { fg = newpaper.link, style = style.link },
+            LanguageToolCmd             = { fg = newpaper.comment },
+            LanguageToolErrorCount      = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
+            LanguageToolLabel           = { fg = newpaper.darkgreen },
+            LanguageToolUrl             = { fg = newpaper.link, style = style.link },
+            LanguageToolGrammarError    = { fg = newpaper.fg, bg = newpaper.spellrare, style = style.error },
+            LanguageToolSpellingError   = { fg = newpaper.fg, bg = newpaper.spellbad, style = style.error },
 
             -- LazyGit --------------------------------------------------------
-            LazyGitFloat                        = { fg = newpaper.git_fg, bg = newpaper.term_fl_bg },
-            LazyGitBorder                       = { fg = newpaper.win_act_border, bg = newpaper.term_fl_bg },
-
-            -- Litee ----------------------------------------------------------
-            LTBoolean                           = { fg = newpaper.boolean, style = style.k_style },
-            LTConstant                          = { fg = newpaper.darkengreen },
-            LTConstructor                       = { fg = newpaper.bluegreen },
-            LTField                             = { fg = newpaper.ocean },
-            LTFunction                          = { fg = newpaper.navy },
-            LTMethod                            = { fg = newpaper.bluegreen },
-            LTNamespace                         = { fg = newpaper.darkyellow },
-            LTNumber                            = { fg = newpaper.red },
-            LTOperator                          = { fg = newpaper.teal },
-            LTParameter                         = { fg = newpaper.orange },
-            LTParameterReference                = { fg = newpaper.olive },
-            LTString                            = { fg = newpaper.string, style = style.s_style },
-            LTSymbol                            = { fg = newpaper.teal, style = style.underline },
-            LTSymbolDetail                      = { fg = newpaper.darkgreen, style = style.b_italic },
-            LTSymbolJump                        = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
-            LTSymbolJumpRefs                    = { fg = newpaper.fg, bg = newpaper.lightorange, style = style.b_bold },
-            LTType                              = { fg = newpaper.keyword },
-            LTURI                               = { fg = newpaper.link, style = style.link },
-            LTIndentGuide                       = { fg = newpaper.comment },
-            LTExpandedGuide                     = { fg = newpaper.comment, style = style.b_bold },
-            LTCollapsedGuide                    = { fg = newpaper.comment },
-            LTSelectFiletree                    = { fg = newpaper.string },
-            LTNormalSB                          = { fg = newpaper.fg, bg = newpaper.bg },
+            LazyGitFloat                = { fg = newpaper.git_fg, bg = newpaper.term_fl_bg },
+            LazyGitBorder               = { fg = newpaper.win_act_border, bg = newpaper.term_fl_bg },
 
             -- Lua-dev --------------------------------------------------------
-            RedrawDebugNormal                   = { fg = newpaper.bg, bg = newpaper.fg },
-            RedrawDebugClear                    = { fg = newpaper.fg, bg = newpaper.lightorange },
-            RedrawDebugComposed                 = { fg = newpaper.fg, bg = newpaper.green },
-            RedrawDebugRecompose                = { fg = newpaper.fg, bg = newpaper.red },
+            RedrawDebugNormal           = { fg = newpaper.bg, bg = newpaper.fg },
+            RedrawDebugClear            = { fg = newpaper.fg, bg = newpaper.lightorange },
+            RedrawDebugComposed         = { fg = newpaper.fg, bg = newpaper.green },
+            RedrawDebugRecompose        = { fg = newpaper.fg, bg = newpaper.red },
 
             -- Lualine custom color for lualine with bg
-            LualineDiagnosticError              = { fg = newpaper.error_fg, bg = newpaper.silver },
-            LualineDiagnosticWarn               = { fg = newpaper.warn_fg, bg = newpaper.silver },
-            LualineDiagnosticInfo               = { fg = newpaper.info_fg, bg = newpaper.silver },
-            LualineDiagnosticHint               = { fg = newpaper.hint_fg, bg = newpaper.silver },
-
-            -- Nvim-Cmp -------------------------------------------------------
-            CmpDocumentation                    = { fg = newpaper.float_fg, bg = newpaper.float_bg },
-            CmpDocumentationBorder              = { fg = newpaper.border, bg = newpaper.float_bg },
-            CmpItemMenu                         = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },
-            CmpItemKind                         = { fg = newpaper.lightblue },
-            CmpItemAbbr                         = { fg = newpaper.pmenu_fg },
-            CmpItemAbbrDeprecated               = { fg = newpaper.lightgrey },
-            CmpItemAbbrMatch                    = { fg = newpaper.navy, style = style.b_bold },
-            CmpItemAbbrMatchFuzzy               = { fg = newpaper.magenta, style = style.b_bold },
-            CmpItemKindText                     = { fg = newpaper.string },       -- Text          = ""
-            CmpItemKindMethod                   = { fg = newpaper.bluegreen },    -- Method        = ""
-            CmpItemKindFunction                 = { fg = newpaper.navy },         -- Function      = ""
-            CmpItemKindConstructor              = { fg = newpaper.bluegreen },    -- Constructor   = ""
-            CmpItemKindField                    = { fg = newpaper.ocean },        -- Field         = "ﰠ"
-            CmpItemKindVariable                 = { fg = newpaper.darkengreen },  -- Variable      = ""
-            CmpItemKindClass                    = { fg = newpaper.ruby_magenta }, -- Class         = "ﴯ"
-            CmpItemKindInterface                = { fg = newpaper.olive },        -- Interface     = ""
-            CmpItemKindModule                   = { fg = newpaper.darkyellow },   -- Module        = ""
-            CmpItemKindProperty                 = { fg = newpaper.bluegreen },    -- Property      = "ﰠ"
-            CmpItemKindUnit                     = { fg = newpaper.darkpurple },   -- Unit          = "塞"
-            CmpItemKindValue                    = { fg = newpaper.naamber },      -- Value         = ""
-            CmpItemKindEnum                     = { fg = newpaper.green },        -- Enum          = ""
-            CmpItemKindKeyword                  = { fg = newpaper.keyword },      -- Keyword       = ""
-            CmpItemKindSnippet                  = { fg = newpaper.darkpurple },   -- Snippet       = ""
-            CmpItemKindColor                    = { fg = newpaper.magenta },      -- Color         = ""
-            CmpItemKindFile                     = { fg = newpaper.teal },         -- File          = ""
-            CmpItemKindReference                = { fg = newpaper.darkyellow },   -- Reference     = ""
-            CmpItemKindFolder                   = { fg = newpaper.teal },         -- Folder        = ""
-            CmpItemKindEnumMember               = { fg = newpaper.green },        -- EnumMember    = ""
-            CmpItemKindConstant                 = { fg = newpaper.darkengreen },  -- Constant      = ""
-            CmpItemKindStruct                   = { fg = newpaper.olive },        -- Struct        = "פּ"
-            CmpItemKindEvent                    = { fg = newpaper.orange },       -- Event         = ""
-            CmpItemKindOperator                 = { fg = newpaper.tag_navy },     -- Operator      = ""
-            CmpItemKindTypeParameter            = { fg = newpaper.orange },       -- TypeParameter = " "
+            LualineDiagnosticError      = { fg = newpaper.error_fg, bg = newpaper.silver },
+            LualineDiagnosticWarn       = { fg = newpaper.warn_fg, bg = newpaper.silver },
+            LualineDiagnosticInfo       = { fg = newpaper.info_fg, bg = newpaper.silver },
+            LualineDiagnosticHint       = { fg = newpaper.hint_fg, bg = newpaper.silver },
 
             -- Neogit ---------------------------------------------------------
-            NeogitBranch                        = { fg = newpaper.blue },
-            NeogitRemote                        = { fg = newpaper.purple },
-            NeogitHunkHeader                    = { fg = newpaper.fg, bg = newpaper.highlight },
-            NeogitHunkHeaderHighlight           = { fg = newpaper.fg, bg = newpaper.contrast },
-            NeogitDiffContextHighlight          = { fg = newpaper.text, bg = newpaper.contrast },
-            NeogitDiffDeleteHighlight           = { fg = newpaper.git_removed },
-            NeogitDiffAddHighlight              = { fg = newpaper.git_added },
+            NeogitBranch                = { fg = newpaper.blue },
+            NeogitRemote                = { fg = newpaper.purple },
+            NeogitHunkHeader            = { fg = newpaper.fg, bg = newpaper.highlight },
+            NeogitHunkHeaderHighlight   = { fg = newpaper.fg, bg = newpaper.contrast },
+            NeogitDiffContextHighlight  = { fg = newpaper.text, bg = newpaper.contrast },
+            NeogitDiffDeleteHighlight   = { fg = newpaper.git_removed },
+            NeogitDiffAddHighlight      = { fg = newpaper.git_added },
 
             -- Nvim dap -------------------------------------------------------
-            DapBreakpoint                       = { fg = newpaper.darkgreen, bg = newpaper.linenumber_bg },
-            DapBreakpointCondition              = { fg = newpaper.darkyellow, bg = newpaper.linenumber_bg },
-            DapBreakpointRejected               = { fg = newpaper.ocean, bg = newpaper.linenumber_bg },
-            DapLogPoint                         = { fg = newpaper.string, bg = newpaper.linenumber_bg },
-            DapStopped                          = { fg = newpaper.red, bg = newpaper.linenumber_bg },
+            DapBreakpoint               = { fg = newpaper.darkgreen, bg = newpaper.linenumber_bg },
+            DapBreakpointCondition      = { fg = newpaper.darkyellow, bg = newpaper.linenumber_bg },
+            DapBreakpointRejected       = { fg = newpaper.ocean, bg = newpaper.linenumber_bg },
+            DapLogPoint                 = { fg = newpaper.string, bg = newpaper.linenumber_bg },
+            DapStopped                  = { fg = newpaper.red, bg = newpaper.linenumber_bg },
 
             -- Nvim-dap-ui ----------------------------------------------------
-            DapUIVariable                       = { fg = newpaper.darkengreen, style = style.v_style },
-            DapUIScope                          = { fg = newpaper.teal, style = style.b_bold },
-            DapUIType                           = { fg = newpaper.keyword },
-            DapUIValue                          = { fg = newpaper.teal },
-            DapUIModifiedValue                  = { fg = newpaper.red },
-            DapUIDecoration                     = { fg = newpaper.blue },
-            DapUIThread                         = { fg = newpaper.ocean },
-            DapUIStoppedThread                  = { fg = newpaper.ocean, style = style.b_bold },
-            DapUIFrameName                      = { fg = newpaper.navy },
-            DapUISource                         = { fg = newpaper.lightblue },
-            DapUILineNumber                     = { fg = newpaper.darkorange },
-            DapUIFloatBorder                    = { fg = newpaper.border },
-            DapUIWatchesEmpty                   = { fg = newpaper.magenta },
-            DapUIWatchesValue                   = { fg = newpaper.nephritis },
-            DapUIWatchesError                   = { fg = newpaper.error_fg },
-            DapUIBreakpointsPath                = { fg = newpaper.lightblue, style = style.b_bold },
-            DapUIBreakpointsInfo                = { fg = newpaper.darkyellow },
-            DapUIBreakpointsCurrentLine         = { fg = newpaper.orange, style = style.b_bold },
-            DapUIBreakpointsLine                = { fg = newpaper.orange },
+            DapUIVariable               = { fg = newpaper.darkengreen, style = style.v_style },
+            DapUIScope                  = { fg = newpaper.teal, style = style.b_bold },
+            DapUIType                   = { fg = newpaper.keyword },
+            DapUIValue                  = { fg = newpaper.teal },
+            DapUIModifiedValue          = { fg = newpaper.red },
+            DapUIDecoration             = { fg = newpaper.blue },
+            DapUIThread                 = { fg = newpaper.ocean },
+            DapUIStoppedThread          = { fg = newpaper.ocean, style = style.b_bold },
+            DapUIFrameName              = { fg = newpaper.navy },
+            DapUISource                 = { fg = newpaper.lightblue },
+            DapUILineNumber             = { fg = newpaper.darkorange },
+            DapUIFloatBorder            = { fg = newpaper.border },
+            DapUIWatchesEmpty           = { fg = newpaper.magenta },
+            DapUIWatchesValue           = { fg = newpaper.nephritis },
+            DapUIWatchesError           = { fg = newpaper.error_fg },
+            DapUIBreakpointsPath        = { fg = newpaper.lightblue, style = style.b_bold },
+            DapUIBreakpointsInfo        = { fg = newpaper.darkyellow },
+            DapUIBreakpointsCurrentLine = { fg = newpaper.orange, style = style.b_bold },
+            DapUIBreakpointsLine        = { fg = newpaper.orange },
 
             -- Nvim-dap-virtual-text ------------------------------------------
-            NvimDapVirtualText                  = { fg = newpaper.grey, style = style.c_style },
-            NvimDapVirtualTextChanged           = { fg = newpaper.warn_fg, style = style.c_style },
-            NvimDapVirtualTextError             = { fg = newpaper.error_fg, style = style.c_style },
-            NvimDapVirtualTextInfo              = { fg = newpaper.info_fg, style = style.c_style },
-
-            -- Nvim-notify ----------------------------------------------------
-            NotifyERRORBorder                   = { fg = newpaper.error_fg },
-            NotifyWARNBorder                    = { fg = newpaper.warn_fg },
-            NotifyINFOBorder                    = { fg = newpaper.info_fg },
-            NotifyDEBUGBorder                   = { fg = newpaper.text },
-            NotifyTRACEBorder                   = { fg = newpaper.purple },
-            NotifyERRORIcon                     = { fg = newpaper.error_fg },
-            NotifyWARNIcon                      = { fg = newpaper.warn_fg },
-            NotifyINFOIcon                      = { fg = newpaper.info_fg },
-            NotifyDEBUGIcon                     = { fg = newpaper.text },
-            NotifyTRACEIcon                     = { fg = newpaper.purple },
-            NotifyERRORTitle                    = { fg = newpaper.error_fg },
-            NotifyWARNTitle                     = { fg = newpaper.warn_fg },
-            NotifyINFOTitle                     = { fg = newpaper.info_fg },
-            NotifyDEBUGTitle                    = { fg = newpaper.text },
-            NotifyTRACETitle                    = { fg = newpaper.purple },
-            NotifyERRORBody                     = { fg = newpaper.float_fg },
-            NotifyWARNBody                      = { fg = newpaper.float_fg },
-            NotifyINFOBody                      = { fg = newpaper.float_fg },
-            NotifyDEBUGBody                     = { fg = newpaper.float_fg },
-            NotifyTRACEBody                     = { fg = newpaper.float_fg },
-
-            -- Packer ---------------------------------------------------------
-            packerHash                          = { fg = newpaper.tag },
-            packerOutput                        = { fg = newpaper.keyword },
-            packerStatus                        = { fg = newpaper.teal },
-            packerStatusCommit                  = { fg = newpaper.git_modified },
-            packerPackageName                   = { fg = newpaper.teal },
-            packerWorking                       = { fg = newpaper.comment },
-            packerProgress                      = { fg = newpaper.green, style = style.b_bold },
-
-            -- Rainbow Delimiters ---------------------------------------------
-            RainbowDelimiterRed                 = { fg = newpaper.rainbowred,    style = style.d_r_style, nocombine = true },
-            RainbowDelimiterYellow              = { fg = newpaper.rainbowyellow, style = style.d_r_style, nocombine = true },
-            RainbowDelimiterBlue                = { fg = newpaper.rainbowblue,   style = style.d_r_style, nocombine = true },
-            RainbowDelimiterOrange              = { fg = newpaper.rainboworange, style = style.d_r_style, nocombine = true },
-            RainbowDelimiterGreen               = { fg = newpaper.rainbowgreen,  style = style.d_r_style, nocombine = true },
-            RainbowDelimiterViolet              = { fg = newpaper.rainbowviolet, style = style.d_r_style, nocombine = true },
-            RainbowDelimiterCyan                = { fg = newpaper.rainbowcyan,   style = style.d_r_style, nocombine = true },
+            NvimDapVirtualText          = { fg = newpaper.grey, style = style.c_style },
+            NvimDapVirtualTextChanged   = { fg = newpaper.warn_fg, style = style.c_style },
+            NvimDapVirtualTextError     = { fg = newpaper.error_fg, style = style.c_style },
+            NvimDapVirtualTextInfo      = { fg = newpaper.info_fg, style = style.c_style },
 
             -- Sneak ----------------------------------------------------------
-            Sneak                               = { fg = newpaper.bg, bg = newpaper.accent },
-            SneakScope                          = { bg = newpaper.selection },
-
-            -- Symbols-outline ------------------------------------------------
-            FocusedSymbol                       = { fg = newpaper.search_fg, bg = newpaper.search_bg,
-                style = style.b_bold },
-            SymbolsOutlineConnector             = { fg = newpaper.teal },
-            -- symbols = {
-            --     File          = { icon = "",    hl = "TSURI" },
-            --     Module        = { icon = "",    hl = "TSNamespace" },
-            --     Namespace     = { icon = "",    hl = "TSNamespace" },
-            --     Package       = { icon = "",    hl = "TSNamespace" },
-            --     Class         = { icon = "𝓒",    hl = "TSType" },
-            --     Method        = { icon = "ƒ",    hl = "TSMethod" },
-            --     Property      = { icon = "",    hl = "TSMethod" },
-            --     Field         = { icon = "",    hl = "TSField" },
-            --     Constructor   = { icon = "",    hl = "TSConstructor" },
-            --     Enum          = { icon = "ℰ",    hl = "TSType" },
-            --     Interface     = { icon = "ﰮ",    hl = "TSType" },
-            --     Function      = { icon = "",    hl = "TSFunction" },
-            --     Variable      = { icon = "",    hl = "TSConstant" },
-            --     Constant      = { icon = "",    hl = "TSConstant" },
-            --     String        = { icon = "𝓐",    hl = "TSString" },
-            --     Number        = { icon = "#",    hl = "TSNumber" },
-            --     Boolean       = { icon = "⊨",    hl = "TSBoolean" },
-            --     Array         = { icon = "",    hl = "TSConstant" },
-            --     Object        = { icon = "⦿",    hl = "TSType" },
-            --     Key           = { icon = "🔐",   hl = "TSType" },
-            --     Null          = { icon = "NULL", hl = "TSType" },
-            --     EnumMember    = { icon = "",    hl = "TSField" },
-            --     Struct        = { icon = "𝓢",    hl = "TSType" },
-            --     Event         = { icon = "🗲",    hl = "TSType" },
-            --     Operator      = { icon = "+",    hl = "TSOperator" },
-            --     TypeParameter = { icon = "𝙏",    hl = "TSParameter"}
-            -- },
-
-            -- Todo-comments --------------------------------------------------
-            TodoSignWARN                        = { fg = newpaper.todo_warn, bg = newpaper.linenumber_bg },
-            TodoSignTODO                        = { fg = newpaper.todo_info, bg = newpaper.linenumber_bg },
-            TodoSignPERF                        = { fg = newpaper.todo_default, bg = newpaper.linenumber_bg },
-            TodoSignNOTE                        = { fg = newpaper.todo_hint, bg = newpaper.linenumber_bg },
-            TodoSignHACK                        = { fg = newpaper.todo_warn, bg = newpaper.linenumber_bg },
-            TodoSignFIX                         = { fg = newpaper.todo_error, bg = newpaper.linenumber_bg },
-            TodoFgWARN                          = { fg = newpaper.todo_warn },
-            TodoFgTODO                          = { fg = newpaper.todo_info },
-            TodoFgPERF                          = { fg = newpaper.todo_default },
-            TodoFgNOTE                          = { fg = newpaper.todo_hint },
-            TodoFgHACK                          = { fg = newpaper.todo_warn },
-            TodoFgFIX                           = { fg = newpaper.todo_error },
-            TodoBgWARN                          = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
-            TodoBgTODO                          = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.b_bold },
-            TodoBgPERF                          = { fg = newpaper.bg, bg = newpaper.todo_default, style = style.b_bold },
-            TodoBgNOTE                          = { fg = newpaper.bg, bg = newpaper.todo_hint, style = style.b_bold },
-            TodoBgHACK                          = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
-            TodoBgFIX                           = { fg = newpaper.bg, bg = newpaper.todo_error, style = style.b_bold },
-
-            -- Vista ----------------------------------------------------------
-            VistaParenthesis                    = { fg = newpaper.navy, style = style.b_bold },
-            VistaScope                          = { fg = newpaper.keyword, style = style.k_style },
-            VistaTag                            = { fg = newpaper.navy },
-            VistaKind                           = { fg = newpaper.ocean, style = style.k_style },
-            VistaScopeKind                      = { fg = newpaper.teal, style = style.underline },
-            VistaLineNr                         = { fg = newpaper.cursor_nr_fg },
-            VistaColon                          = { fg = newpaper.orange },
-            VistaIcon                           = { fg = newpaper.teal },
-            VistaArgs                           = { fg = newpaper.darkengreen, style = style.b_italic },
-            VistaPublic                         = { fg = newpaper.green, style = style.k_style },
-            VistaProtected                      = { fg = newpaper.maroon, style = style.k_style },
-            VistaPrivate                        = { fg = newpaper.darkyellow, style = style.k_style },
-            VistaFloat                          = { fg = newpaper.float_fg, bg = newpaper.float_bg },
-            VistaBracket                        = { fg = newpaper.navy, style = style.b_bold },
-            VistaPrefix                         = { fg = newpaper.ocean },
-            VistaHeadNr                         = { fg = newpaper.darkgrey },
+            Sneak                       = { fg = newpaper.bg, bg = newpaper.accent },
+            SneakScope                  = { bg = newpaper.selection },
 
             -- Vim-matchup ----------------------------------------------------
-            MatchWord                           = { bg = newpaper.lightviolet, style = style.b_bold },
+            MatchWord                   = { bg = newpaper.lightviolet, style = style.b_bold },
 
             -- WhichKey -------------------------------------------------------
-            WhichKey                            = { fg = newpaper.keyword },
-            WhichKeyGroup                       = { fg = newpaper.teal, style = style.b_bold },
-            WhichKeySeparator                   = { fg = newpaper.darkgreen },
-            WhichKeyDesc                        = { fg = newpaper.string },
-            WhichKeyFloat                       = { fg = newpaper.float_fg, bg = newpaper.float_bg },
-            WhichKeyValue                       = { fg = newpaper.darkgrey },
+            WhichKey                    = { fg = newpaper.keyword },
+            WhichKeyGroup               = { fg = newpaper.teal, style = style.b_bold },
+            WhichKeySeparator           = { fg = newpaper.darkgreen },
+            WhichKeyDesc                = { fg = newpaper.string },
+            WhichKeyFloat               = { fg = newpaper.float_fg, bg = newpaper.float_bg },
+            WhichKeyValue               = { fg = newpaper.darkgrey },
         }
         return plugins
 
