@@ -57,7 +57,7 @@ function M.setup(configColors, configStyle)
             -- luaCommentLong      luaComment
             -- luaCommentTodo      Todo
             -- luaCond             Conditional
-            luaConstant         = { fg = newpaper.boolean,   style = style.k_style },
+            luaConstant         = { fg = newpaper.boolean,   style = style.bool_style },
             luaDocTag           = { fg = newpaper.darkgreen, style = style.c_style },
             luaEllipsis         = { fg = newpaper.orange },
             -- luaElse             Conditional

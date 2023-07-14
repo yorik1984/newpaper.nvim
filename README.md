@@ -190,6 +190,7 @@ require("newpaper").setup({
 | delimiters_bold     | `false`       | Make delimiter `,`,`;`,`:`,`.` bold |
 | brackets_bold       | `false`       | Make brackets like `{}`, `()`, `[]` bold |
 | delim_rainbow_bold  | `false`       | Make rainbow delimiters like `{}`, `()`, `[]` or others bold. Use specific plugin to highlight like [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) |
+| booleans            | `"bold"`      | Make booleans like `true`, `false` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | keywords            | `"bold"`      | Make keywords like `if`, `for`, `while` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | tags                | `"bold"`      | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | tags_brackets_bold  | `true`        | Make tags delimiters like `<` or `/>` bold |
@@ -232,6 +233,7 @@ require("newpaper").setup({
     delimiters_bold     = false,
     brackets_bold       = false,
     delim_rainbow_bold  = false,
+    booleans            = "bold",
     keywords            = "bold",
     tags                = "bold",
     tags_brackets_bold  = true,

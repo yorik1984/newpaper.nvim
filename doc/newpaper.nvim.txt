@@ -177,6 +177,10 @@ Options:
         Make rainbow delimiters like `{}`, `()`, `[]` or others bold
         Note: use specific plugin to highlight like *rainbow-delimiters*
 
+    + booleans           {string} (default = `"bold"`)
+        Make boleans like `true`, `false` etc. bold, italic or NONE.
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
+
     + keywords           {string} (default = `"bold"`)
         Make keywords like `if`, `for`, `while` etc. bold, italic or NONE.
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
@@ -300,6 +304,7 @@ Default settings:
         delimiters_bold     = false,
         brackets_bold       = false,
         delim_rainbow_bold  = false,
+        booleans            = "bold",
         keywords            = "bold",
         tags                = "bold",
         tags_brackets_bold  = true,

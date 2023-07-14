@@ -142,12 +142,12 @@ function M.setup(configColors, configStyle)
         if vim.g.ruby_operators == 1 then
             plugins.rubyOperator               = { fg = newpaper.navy, style = style.o_style }
             plugins.rubyDefinedOperator        = { fg = newpaper.navy, style = style.k_style }
-            plugins.rubyEnglishBooleanOperator = { fg = newpaper.boolean, style = style.o_style }
+            plugins.rubyEnglishBooleanOperator = { fg = newpaper.boolean, style = style.bool_style }
             plugins.rubyTernaryOperator        = { fg = newpaper.keyword, style = style.o_style }
             plugins.rubyArithmeticOperator     = { fg = newpaper.tex_math, style = style.o_style }
             plugins.rubyComparisonOperator     = { fg = newpaper.blue, style = style.o_style }
             plugins.rubyBitwiseOperator        = { fg = newpaper.redorange, style = style.o_style }
-            plugins.rubyBooleanOperator        = { fg = newpaper.boolean,   style = style.o_style }
+            plugins.rubyBooleanOperator        = { fg = newpaper.boolean,   style = style.bool_style }
             plugins.rubyRangeOperator          = { fg = newpaper.tex_math, style = style.o_style }
             plugins.rubyAssignmentOperator     = { fg = newpaper.tag_navy, style = style.o_style }
             plugins.rubyEqualityOperator       = { fg = newpaper.lightmagenta, style = style.o_style }

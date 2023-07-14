@@ -35,6 +35,7 @@ local config = {
     delimiters_bold     = opt("delimiters_bold", false),
     brackets_bold       = opt("brackets_bold", false),
     delim_rainbow_bold  = opt("delim_rainbow_bold", false),
+    booleans            = opt("booleans", "bold"),
     keywords            = opt("keywords", "bold"),
     tags                = opt("tags", "bold"),
     tags_brackets_bold  = opt("tags_brackets_bold", true),

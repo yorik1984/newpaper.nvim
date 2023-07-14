@@ -48,7 +48,7 @@ function M.setup(configColors, configStyle)
             yamlConstant                 = { fg = newpaper.darkengreen, style = style.k_style  },
 
             yamlNull                     = { fg = newpaper.maroon,  style = style.k_style },
-            yamlBool                     = { fg = newpaper.boolean, style = style.k_style },
+            yamlBool                     = { fg = newpaper.boolean, style = style.bool_style },
 
             -- yamlAnchor                   Type
             -- yamlAlias                    Type

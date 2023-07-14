@@ -33,8 +33,11 @@ function M.setupStyle(config)
         -- Spell style
         error = "NONE",
 
-        -- Make keywords bold or italic
+        -- Make keywords bold, italic or NONE
         k_style = config.keywords,
+
+        -- Make booleans bold, italic or NONE
+        bool_style = config.booleans,
 
         -- Tex settings
         tex_m_style  = config.tex_major,

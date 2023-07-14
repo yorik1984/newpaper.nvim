@@ -20,7 +20,7 @@ function M.setup(configColors, configStyle)
             Constant       = { fg = newpaper.darkengreen },                            -- any constant
             Character      = { fg = newpaper.darkengreen, style = style.o_style },     -- any character constant: 'c', '\n'
             Number         = { fg = newpaper.number },                                 -- a number constant: 5
-            Boolean        = { fg = newpaper.boolean, style = style.k_style },         -- a boolean constant: TRUE, false
+            Boolean        = { fg = newpaper.boolean, style = style.bool_style },         -- a boolean constant: TRUE, false
             Float          = { fg = newpaper.magenta },                                -- a floating point constant: 2.3e10
             Tag            = { fg = newpaper.tag, style = style.tag_style },           -- you can use CTRL-] on this
             Function       = { fg = newpaper.lua_navy, style = style.f_style },        -- function names
@@ -182,7 +182,7 @@ function M.setup(configColors, configStyle)
         local treesitter = {
             ["@annotation"]                            = { fg = newpaper.red },                                    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
             ["@attribute"]                             = { fg = newpaper.blue },
-            ["@boolean"]                               = { fg = newpaper.boolean, style = style.k_style },         -- For booleans.
+            ["@boolean"]                               = { fg = newpaper.boolean, style = style.bool_style },         -- For booleans.
             ["@character"]                             = { fg = newpaper.orange },                                 -- For characters.
             ["@character.special"]                     = { fg = newpaper.maroon, nocombine = true },
             ["@comment"]                               = { fg = newpaper.comment, style = style.c_style },         -- For comment blocks.
