@@ -116,8 +116,7 @@ function M.setup(configColors, configStyle)
             StatusLineTermNC = { fg = newpaper.lightgrey, bg = newpaper.bg },                                                -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg },
             TabLineFill      = { bg = newpaper.tabline_bg },                                                                 -- tab pages line, where there are no labels
-            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style
-            .b_bold_i },                                                                                                     -- tab pages line, active tab page label
+            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style .b_bold_i },-- tab pages line, active tab page label
             Title            = { fg = newpaper.title, style = style.b_bold },                                                -- titles for output from ":set all", ":autocmd" etc.
             ToolbarButton    = { fg = newpaper.fg, style = style.b_bold },
             Visual           = { fg = newpaper.bg, bg = newpaper.selection },                                                -- Visual mode selection
