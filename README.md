@@ -2,6 +2,14 @@
     <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/logo/logo-newpaper.png" width="200" alt="Logo"/>
 </p>
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/palette/newpaper_light.svg"/>
+</p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/palette/newpaper_dark.svg"/>
+</p>
+
 <div align="center">
 
 # 🎨 newpaper.nvim
