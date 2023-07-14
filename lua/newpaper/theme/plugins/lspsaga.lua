@@ -11,7 +11,6 @@ function M.setup(configColors, configStyle)
     local style       = lspsagaSyn.style
     lspsagaSyn.loadPlugins = function()
         local plugins = {
-
             -- general
             SagaTitle            = { fg = newpaper.purple, bg = newpaper.float_bg, style = style.b_bold },
             SagaBorder           = { fg = newpaper.border, bg = newpaper.float_bg, default = false },
@@ -26,6 +25,8 @@ function M.setup(configColors, configStyle)
             SagaSelect           = { fg = newpaper.orange, bg = newpaper.float_bg },
             SagaSearch           = { link = "Search" },
             SagaFinderFname      = { fg = newpaper.teal, bg = newpaper.float_bg },
+            SagaDetail           = { link = "Comment" },
+            SagaInCurrent        = { link = "KeyWord" },
 
             -- code action
             ActionFix            = { fg = newpaper.olive },
