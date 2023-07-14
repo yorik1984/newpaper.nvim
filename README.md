@@ -79,6 +79,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 + [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim)
++ [lazy.nvim](https://github.com/folke/lazy.nvim)
 + [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) with extras for [light](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/newpaper_light.yaml) or [dark](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/newpaper_dark.yaml) background.
 + [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)

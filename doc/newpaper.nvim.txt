@@ -32,6 +32,7 @@ FEATURES                                                *newpaper.nvim-features*
         - headlines.nvim
         - highlight-undo.nvim
         - Indent-Blankline.nvim
+        - lazy.nvim
         - lazygit.nvim
         - litee.nvim
         - LSP Diagnostics
