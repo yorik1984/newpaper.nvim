@@ -1,7 +1,8 @@
-<div align="center">
 <p align="center">
     <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/logo/logo-newpaper.png" width="200" alt="Logo"/>
 </p>
+
+<div align="center">
 
 # 🎨 newpaper.nvim
 
