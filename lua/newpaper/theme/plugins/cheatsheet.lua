@@ -18,7 +18,7 @@ function M.setup(configColors, configStyle)
             cheatMetadataSection = { fg = newpaper.darkengreen },
 
             cheatDescription     = { fg = newpaper.string },
-            cheatSeparator       = { fg = newpaper.tag_navy },
+            cheatSeparator       = { fg = newpaper.tag_navy, style = style.b_bold },
             cheatCode            = { fg = newpaper.darkorange },
         }
         return plugins
