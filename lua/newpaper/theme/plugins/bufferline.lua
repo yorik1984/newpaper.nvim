@@ -19,6 +19,7 @@ function M.setup(configColors, configStyle)
             BufferLineHintSelected              = { fg = newpaper.hint_fg, style = style.b_bold_i },
             BufferLineWarningSelected           = { fg = newpaper.warn_fg, style = style.b_bold_i },
             BufferLineErrorSelected             = { fg = newpaper.error_fg, style = style.b_bold_i },
+            BufferLineModifiedSelected          = { fg = newpaper.regexp_blue },
         }
         return plugins
     end
