@@ -10,7 +10,7 @@ function M.setup(configColors, configStyle)
     local newpaper = vimdocSyn.colors
     local style    = vimdocSyn.style
 
-    vimdocSyn.loadSyntax = function ()
+    vimdocSyn.loadSyntax = function()
         local syntax = {
             helpBacktick       = { fg = newpaper.magenta },
             helpSpecial        = { fg = newpaper.magenta },
@@ -24,7 +24,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    vimdocSyn.loadTreeSitter = function ()
+    vimdocSyn.loadTreeSitter = function()
 
         local treesitter = {
             ["@conceal.vimdoc"]        = { fg = newpaper.magenta },

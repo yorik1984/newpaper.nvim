@@ -10,7 +10,7 @@ function M.setup(configColors, configStyle)
     local newpaper = htmlSyn.colors
     local style    = htmlSyn.style
 
-    htmlSyn.loadSyntax = function ()
+    htmlSyn.loadSyntax = function()
         local syntax = {
             htmlH1                      = { fg = newpaper.tex_part_title,  style = style.tag_style },
             htmlH2                      = { fg = newpaper.teal,            style = style.tag_style },
@@ -80,7 +80,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    htmlSyn.loadTreeSitter = function ()
+    htmlSyn.loadTreeSitter = function()
 
         local treesitter = {
             ["@constant.html"] = { fg = newpaper.comment,  style = style.c_style },

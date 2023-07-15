@@ -10,7 +10,7 @@ function M.setup(configColors, configStyle)
     local newpaper = luaSyn.colors
     local style    = luaSyn.style
 
-    luaSyn.loadSyntax = function ()
+    luaSyn.loadSyntax = function()
         local syntax = {
             -- Basic lua groups
             -- NOTE: some basic groups init in plugins part. See below
@@ -27,7 +27,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    luaSyn.loadTreeSitter = function ()
+    luaSyn.loadTreeSitter = function()
 
         local treesitter = {
             ["@field.lua"]                 = { fg = newpaper.bluegreen },

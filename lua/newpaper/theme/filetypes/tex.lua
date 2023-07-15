@@ -82,7 +82,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    tex.loadTreeSitter = function ()
+    tex.loadTreeSitter = function()
 
         local treesitter = {
             ["@error.latex"]                  = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },

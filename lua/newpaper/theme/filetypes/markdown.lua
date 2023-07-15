@@ -68,7 +68,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    markdownSyn.loadTreeSitter = function ()
+    markdownSyn.loadTreeSitter = function()
 
         local treesitter = {
             ["@none.markdown"]                  = { fg = newpaper.fg },

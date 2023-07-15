@@ -10,14 +10,14 @@ function M.setup(configColors, configStyle)
     local newpaper = vimSyn.colors
     local style    = vimSyn.style
 
-    vimSyn.loadSyntax = function ()
+    vimSyn.loadSyntax = function()
         local syntax = {
             vimCommentTitle = { fg = newpaper.comment, style = style.comment_title }
         }
         return syntax
     end
 
-    vimSyn.loadTreeSitter = function ()
+    vimSyn.loadTreeSitter = function()
         local treesitter = {}
         return treesitter
     end

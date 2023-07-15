@@ -10,7 +10,7 @@ function M.setup(configColors, configStyle)
     local newpaper = rubySyn.colors
     local style    = rubySyn.style
 
-    rubySyn.loadSyntax = function ()
+    rubySyn.loadSyntax = function()
         local syntax = {
             -- Basic ruby groups
             -- NOTE: basic groups init in plugins part. See below
@@ -18,7 +18,7 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    rubySyn.loadTreeSitter = function ()
+    rubySyn.loadTreeSitter = function()
         local treesitter = {
             ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon },
             ["@constant.ruby"]             = { fg = newpaper.ocean, style = style.k_style },
