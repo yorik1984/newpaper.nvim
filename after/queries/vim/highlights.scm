@@ -1,4 +1,4 @@
-; extends
+;; extends
 
 (syntax_argument name: _ @keyword.operator)
 

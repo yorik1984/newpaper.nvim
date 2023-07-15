@@ -1,4 +1,4 @@
-; extends
+;; extends
 
 ;;; From locals.scm
 (method_parameters (identifier) @definition.var)
