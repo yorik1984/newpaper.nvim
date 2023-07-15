@@ -116,7 +116,7 @@ function M.setup(configColors, configStyle)
             StatusLineTermNC = { fg = newpaper.lightgrey, bg = newpaper.bg },                                                -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
             Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg },
             TabLineFill      = { bg = newpaper.tabline_bg },                                                                 -- tab pages line, where there are no labels
-            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style .b_bold_i },-- tab pages line, active tab page label
+            TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold_i }, -- tab pages line, active tab page label
             Title            = { fg = newpaper.title, style = style.b_bold },                                                -- titles for output from ":set all", ":autocmd" etc.
             ToolbarButton    = { fg = newpaper.fg, style = style.b_bold },
             Visual           = { fg = newpaper.bg, bg = newpaper.selection },                                                -- Visual mode selection
@@ -333,47 +333,7 @@ function M.setup(configColors, configStyle)
         return treesitter
     end
 
-    theme.loadLSP        = function()
-        local lsp = {
-            LspCodeLens                 = { fg = newpaper.comment, bg = newpaper.lightsilver },
-            LspCodeLensSeparator        = { fg = newpaper.comment, bg = newpaper.lightsilver, style = style.b_bold },
-            LspReferenceText            = { fg = newpaper.todo_default, bg = newpaper.highlight },
-            LspReferenceRead            = { fg = newpaper.todo_info, bg = newpaper.highlight },
-            LspReferenceWrite           = { fg = newpaper.todo_hint, bg = newpaper.highlight },
-            LspSignatureActiveParameter = { bg = newpaper.search_bg },
-
-            DiagnosticError            = { fg = newpaper.error_fg, bg = newpaper.none },
-            DiagnosticFloatingError    = { fg = newpaper.error_fg },
-            DiagnosticFloatingHint     = { fg = newpaper.hint_fg },
-            DiagnosticFloatingInfo     = { fg = newpaper.info_fg },
-            DiagnosticFloatingWarn     = { fg = newpaper.warn_fg },
-            DiagnosticFloatingOk       = { fg = newpaper.ok_fg },
-            DiagnosticHint             = { fg = newpaper.hint_fg, bg = newpaper.none },
-            DiagnosticInfo             = { fg = newpaper.info_fg, bg = newpaper.none },
-            DiagnosticOk               = { fg = newpaper.ok_fg, bg = newpaper.none },
-            DiagnosticDeprecated       = { fg = newpaper.comment, bg = newpaper.none, style = style.strike },
-            DiagnosticUnnecessary      = { fg = newpaper.comment, bg = newpaper.none },
-            DiagnosticSignError        = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg },
-            DiagnosticSignHint         = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg },
-            DiagnosticSignInfo         = { fg = newpaper.info_fg, bg = newpaper.linenumber_bg },
-            DiagnosticSignWarn         = { fg = newpaper.warn_fg, bg = newpaper.linenumber_bg },
-            DiagnosticSignOk           = { fg = newpaper.ok_fg, bg = newpaper.linenumber_bg },
-            DiagnosticUnderlineError   = { style = style.undercurl, sp = newpaper.error_fg },
-            DiagnosticUnderlineHint    = { style = style.undercurl, sp = newpaper.hint_fg },
-            DiagnosticUnderlineInfo    = { style = style.undercurl, sp = newpaper.info_fg },
-            DiagnosticUnderlineWarn    = { style = style.undercurl, sp = newpaper.warn_fg },
-            DiagnosticUnderlineOk      = { style = style.undercurl, sp = newpaper.ok_fg },
-            DiagnosticVirtualTextError = { fg = newpaper.error_fg, bg = newpaper.lsp_error_bg },
-            DiagnosticVirtualTextHint  = { fg = newpaper.hint_fg, bg = newpaper.hint_bg },
-            DiagnosticVirtualTextInfo  = { fg = newpaper.info_fg, bg = newpaper.info_bg },
-            DiagnosticVirtualTextWarn  = { fg = newpaper.warn_fg, bg = newpaper.warn_bg },
-            DiagnosticVirtualTextOk    = { fg = newpaper.ok_fg, bg = newpaper.ok_bg },
-            DiagnosticWarn             = { fg = newpaper.warn_fg, bg = newpaper.none },
-        }
-        return lsp
-    end
-
-    theme.loadPlugins    = function()
+    theme.loadPlugins = function()
         local plugins = {
             -- Dashboard ------------------------------------------------------
             DashboardShortCut           = { fg = newpaper.red },

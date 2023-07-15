@@ -102,51 +102,35 @@ function M.load(config, theme)
     end
     vim.o.termguicolors = true
     vim.g.colors_name = "newpaper"
-    -- Load plugins and lsp async
-    local async
-    async = vim.loop.new_async(vim.schedule_wrap(function()
-        -- imort tables for plugins and lsp
-        M.syntax(theme.loadPlugins())
-        M.syntax(theme.loadLSP())
-        theme.loadTerminal()
-        async:close()
-    end))
-    -- load base theme
     M.syntax(theme.loadEditor())
-    M.syntax(theme.loadSyntax())
-    M.syntax(theme.loadTreeSitter())
-    async:send()
+    theme.loadTerminal()
+    M.loadSyntax(theme)
     M.autocmds(config, theme)
 end
 
 function M.loadSyntax(synTheme)
-    local async
-    async = vim.loop.new_async(vim.schedule_wrap(function()
+    if synTheme.loadPlugins then
         M.syntax(synTheme.loadPlugins())
-        async:close()
-    end))
-    -- Load other syntax
-    M.syntax(synTheme.loadSyntax())
-    M.syntax(synTheme.loadTreeSitter())
-    async:send()
-end
-
-function M.loadPluginSyntax(synTheme)
-    local async
-    async = vim.loop.new_async(vim.schedule_wrap(function()
-        M.syntax(synTheme.loadPlugins())
-        async:close()
-    end))
-    async:send()
+    end
+    if synTheme.loadSyntax then
+        M.syntax(synTheme.loadSyntax())
+    end
+    if synTheme.loadTreeSitter then
+        M.syntax(synTheme.loadTreeSitter())
+    end
 end
 
 function M.loadCustomSyntax(config)
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function()
         M.syntax(config.custom_highlights)
-        async:close()
+        if async then
+            async:close()
+        end
     end))
-    async:send()
+    if async then
+        async:send()
+    end
 end
 
 function M.colorOverrides(colors, configColors)
