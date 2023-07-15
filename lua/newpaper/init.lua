@@ -1,10 +1,10 @@
-local util = require("newpaper.util")
-local theme = require("newpaper.theme")
-local filetypes = require("newpaper.theme.filetypes")
-local plugins = require("newpaper.theme.plugins")
-local devIcons = require("newpaper.theme.plugins.devicons")
+local util         = require("newpaper.util")
+local theme        = require("newpaper.theme")
+local filetypes    = require("newpaper.theme.filetypes")
+local plugins      = require("newpaper.theme.plugins")
+local devIcons     = require("newpaper.theme.plugins.devicons")
 local configModule = require("newpaper.config")
-local config = configModule.config
+local config       = configModule.config
 
 local function setup(userConfig)
     if userConfig then
@@ -43,16 +43,16 @@ local function setup(userConfig)
         util.loadSyntax(require(fileSyn).setup(configColors, configStyle))
     end
     for _, fileSyn in ipairs(plugins) do
-        util.loadPluginSyntax(require(fileSyn).setup(configColors, configStyle))
+        util.loadSyntax(require(fileSyn).setup(configColors, configStyle))
     end
 
     if configApply.devicons_custom.cterm and not configApply.devicons_custom.gui then
         util.deviconsOverrides(configApply)
-        util.loadPluginSyntax(devIcons.setup(configColors))
+        util.loadSyntax(devIcons.setup(configColors))
     elseif configApply.devicons_custom.gui then
         util.deviconsOverrides(configApply)
     else
-        util.loadPluginSyntax(devIcons.setup(configColors))
+        util.loadSyntax(devIcons.setup(configColors))
     end
 
     util.loadCustomSyntax(configApply)
