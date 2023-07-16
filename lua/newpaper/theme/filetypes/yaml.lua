@@ -73,11 +73,6 @@ function M.setup(configColors, configStyle)
         return treesitter
     end
 
-    yamlSyn.loadPlugins = function()
-        local plugins = {}
-        return plugins
-    end
-
     -- stylua: ignore end
 
     return yamlSyn

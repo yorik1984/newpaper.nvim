@@ -43,11 +43,6 @@ function M.setup(configColors, configStyle)
         return treesitter
     end
 
-    tomlSyn.loadPlugins = function()
-        local plugins = {}
-        return plugins
-    end
-
     -- stylua: ignore end
 
     return tomlSyn

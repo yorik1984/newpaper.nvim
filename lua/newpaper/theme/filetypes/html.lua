@@ -85,13 +85,7 @@ function M.setup(configColors, configStyle)
         local treesitter = {
             ["@constant.html"] = { fg = newpaper.comment,  style = style.c_style },
         }
-
         return treesitter
-    end
-
-    htmlSyn.loadPlugins = function()
-        local plugins = {}
-        return plugins
     end
 
     -- stylua: ignore end

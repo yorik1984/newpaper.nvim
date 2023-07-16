@@ -17,16 +17,6 @@ function M.setup(configColors, configStyle)
         return syntax
     end
 
-    vimSyn.loadTreeSitter = function()
-        local treesitter = {}
-        return treesitter
-    end
-
-    vimSyn.loadPlugins = function()
-        local plugins = {}
-        return plugins
-    end
-
     -- stylua: ignore end
 
     return vimSyn

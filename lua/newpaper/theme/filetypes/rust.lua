@@ -11,14 +11,6 @@ function M.setup(configColors, configStyle)
     local newpaper = rustSyn.colors
     local style    = rustSyn.style
 
-    rustSyn.loadSyntax = function()
-        local syntax = {
-
-        }
-
-        return syntax
-    end
-
     rustSyn.loadTreeSitter = function()
 
         local treesitter = {
@@ -26,14 +18,6 @@ function M.setup(configColors, configStyle)
         }
 
         return treesitter
-    end
-
-    rustSyn.loadPlugins = function()
-        local plugins = {
-            -- Plugin
-        }
-
-        return plugins
     end
 
     -- stylua: ignore end

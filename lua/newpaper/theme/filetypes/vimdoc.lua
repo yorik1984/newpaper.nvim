@@ -7,8 +7,8 @@ function M.setup(configColors, configStyle)
     local vimdocSyn  = {}
     vimdocSyn.colors = configColors
     vimdocSyn.style  = configStyle
-    local newpaper = vimdocSyn.colors
-    local style    = vimdocSyn.style
+    local newpaper   = vimdocSyn.colors
+    local style      = vimdocSyn.style
 
     vimdocSyn.loadSyntax = function()
         local syntax = {
@@ -36,14 +36,6 @@ function M.setup(configColors, configStyle)
         }
 
         return treesitter
-    end
-
-    vimdocSyn.loadPlugins = function()
-        local plugins = {
-            -- Plugin
-        }
-
-        return plugins
     end
 
     -- stylua: ignore end
