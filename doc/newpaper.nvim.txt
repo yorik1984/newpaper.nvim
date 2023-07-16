@@ -76,7 +76,9 @@ FEATURES                                                *newpaper.nvim-features*
     + Added functions for live style switching, without the need to reload
       NeoVim
 
-    + support LSP SEMANTIC HIGHLIGHTS
+    + Support LSP SEMANTIC HIGHLIGHTS
+
+    + Support regex highlight with treesitter
 
 ================================================================================
 USAGE                                                      *newpaper.nvim-usage*
@@ -184,6 +186,13 @@ Options:
     + keywords           {string} (default = `"bold"`)
         Make keywords like `if`, `for`, `while` etc. bold, italic or NONE.
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
+
+    + regex              {string} (default = `"bold"`)
+        Make regex  bold, italic or NONE.
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
+
+    + regex_bg              {string} (default = true)
+        Enable background color for regex capturing groups
 
     + tags               {string} (default = `"bold"`)
         Make HTML tags bold, italic or NONE.
@@ -306,6 +315,8 @@ Default settings:
         delim_rainbow_bold  = false,
         booleans            = "bold",
         keywords            = "bold",
+        regex               = "bold",
+        regex_bg            = true,
         tags                = "bold",
         tags_brackets_bold  = true,
         tex_major           = "bold",

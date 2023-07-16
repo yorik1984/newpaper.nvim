@@ -8,6 +8,8 @@ local filetypes = {
     "liquid",
     "lua",
     "markdown",
+    "query",
+    "regex",
     "ruby",
     "rust",
     "tex",

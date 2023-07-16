@@ -59,6 +59,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
 + [Extras](#extras) colors configs for terminal-based and GUI application.
 + [lsp-semantic-highlight](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight)
++ Support regex highlight with treesitter. Colors pick from [regexr.com](https://regexr.com).
 
 ### Extra syntax highlights
 
@@ -67,6 +68,8 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
  + [**Lua**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua) with [vim-lua](https://github.com/tbastos/vim-lua) -- [🖼️](#LUA), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
  + **Rust** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
  + **Vim** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
+ + **query** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
+ + **regex** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
 
 + **$\LaTeX$** with [vimtex](https://github.com/lervag/vimtex)
 + **Jinja** with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
@@ -201,6 +204,8 @@ require("newpaper").setup({
 | delim_rainbow_bold  | `false`       | Make rainbow delimiters like `{}`, `()`, `[]` or others bold. Use specific plugin to highlight like [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) |
 | booleans            | `"bold"`      | Make booleans like `true`, `false` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | keywords            | `"bold"`      | Make keywords like `if`, `for`, `while` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| regex               | `"bold"`      | Make regex  bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| regex_bg            | `true`        | Enable background color for regex capturing groups |
 | tags                | `"bold"`      | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | tags_brackets_bold  | `true`        | Make tags delimiters like `<` or `/>` bold |
 | tex_major           | `"bold"`      | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
@@ -244,6 +249,8 @@ require("newpaper").setup({
     delim_rainbow_bold  = false,
     booleans            = "bold",
     keywords            = "bold",
+    regex               = "bold",
+    regex_bg            = true,
     tags                = "bold",
     tags_brackets_bold  = true,
     tex_major           = "bold",
@@ -541,6 +548,8 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
   * [x] TOML
   * [x] YAML
   * [x] Jinja
+  * [x] regex with treesitter
+  * [x] query with treesitter
   * [x] Markdown
     * [x] Pandoc
   * [x] HTML

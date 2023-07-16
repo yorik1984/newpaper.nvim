@@ -60,11 +60,13 @@ function M.setup(config)
             codeblock            = "#DEDEDE",
             disabled             = "#CCCCCC",
 
-            regexp_blue          = "#3A72ED",
-            regexp_green         = "#00AA00",
-            regexp_orange        = "#DD7700",
-            regexp_magenta       = "#E64BE1",
+            regexp_blue          = "#5588FF",
             regexp_brown         = "#884400",
+            regexp_green         = "#00AA00",
+            regexp_magenta       = "#CC00CC",
+            regexp_orange        = "#DD7700",
+            regexp_green_bg      = "#E1F0E1",
+            regexp_orange_bg     = "#F0F0C8",
 
             -- Git and diff
             git_fg               = "#413932",
@@ -207,7 +209,7 @@ function M.setup(config)
             -- Other colors
             dark_maroon          = "#A64C4C",
             redorange            = "#E56755",
-            pink                 = "#2E2323",
+            pink                 = "#411616",
             lightorange          = "#443924",
             persimona            = "#E59400",
             yellow               = "#D8E24F",
@@ -235,10 +237,12 @@ function M.setup(config)
             disabled             = "#3E3E3E",
 
             regexp_blue          = "#618EF0",
-            regexp_green         = "#46C146",
-            regexp_orange        = "#E39232",
-            regexp_magenta       = "#FA50E4",
             regexp_brown         = "#A5767D",
+            regexp_green         = "#46C146",
+            regexp_magenta       = "#FA50E4",
+            regexp_orange        = "#E39232",
+            regexp_green_bg      = "#404840",
+            regexp_orange_bg     = "#494832",
 
             -- Git and diff
             git_fg               = "#EBEAE2",
@@ -508,6 +512,11 @@ function M.setup(config)
         newpaper.warn_bg      = newpaper.none
         newpaper.info_bg      = newpaper.none
         newpaper.hint_bg      = newpaper.none
+    end
+
+    if not config.regex_bg then
+        newpaper.regexp_green_bg   = newpaper.none
+        newpaper.regexp_orange_bg  = newpaper.none
     end
 
     if config.error_highlight ~= "both" and config.error_highlight ~= "bg" then

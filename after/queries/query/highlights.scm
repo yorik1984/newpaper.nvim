@@ -1,0 +1,3 @@
+;; extends
+
+"." @operator.dot
