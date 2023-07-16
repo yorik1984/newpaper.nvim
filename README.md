@@ -57,7 +57,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + Asynchronous highlight loading which makes the theme extremely fast
 + Added functions for live theme switching without the need to restart Neovim
 + Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
-+ [Extras](#Extras) colors configs for terminal-based and GUI application.
++ [Extras](#extras) colors configs for terminal-based and GUI application.
 + [lsp-semantic-highlight](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight)
 
 ### Extra syntax highlights
@@ -68,7 +68,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
  + **Rust** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
  + **Vim** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
 
-+ **L<big><sup>A</sup></big>T<big><sub>E</sub></big>X** with [vimtex](https://github.com/lervag/vimtex)
++ **$\LaTeX$** with [vimtex](https://github.com/lervag/vimtex)
 + **Jinja** with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
 + [**TOML**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/code.toml) with [vim-toml](https://github.com/cespare/vim-toml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/dark_code.toml.html)
 + [**YAML**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/code.yaml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/dark_code.yaml.html)
@@ -89,7 +89,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 + [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim)
 + [lazy.nvim](https://github.com/folke/lazy.nvim)
-+ [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) with extras for [light](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/newpaper_light.yaml) or [dark](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/newpaper_dark.yaml) background.
++ [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) with extras for [light](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_light.yml) [🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_light.png) or [dark](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_dark.yml)[🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_dark.png)background.
 + [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
@@ -452,39 +452,40 @@ vim.g.newpaper_colors        = { teal = "#008080" }
 
 #### RUBY
 
-Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb)
+Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb)
 
-**vim-ruby light** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html) and preview **vim-ruby dark** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) preview
+🖼️ **vim-ruby**
 
-![vim-ruby_code rb](https://user-images.githubusercontent.com/1559192/145306835-64ca7551-0b07-4ce1-b430-695c63de2f49.png)
+![vim-ruby](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/ruby/vim-ruby.png)
 
- 🖼️ **Treesitter** light
+🖼️ **Treesitter**
 
-![treesitter_light_code rb](https://user-images.githubusercontent.com/1559192/133896791-28348464-38b6-4c36-ab91-33f513d6bdf8.png)
-
-🖼️ **Treesitter** dark
-
-![treesitter_dark_code rb](https://user-images.githubusercontent.com/1559192/133896784-35df3f2a-07e8-4ade-a227-cc6fd5b70c46.png)
+![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/ruby/treesitter.png)
 
 #### LUA
 
-Source code [HERE](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua)
+Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)
 
-🖼️ **vim-lua light** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html) preview and **vim-lua dark** [HTML](https://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html) preview
+🖼️ **vim-lua**
+![vim-lua](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/lua/vim_lua.png)
 
-![vim_lua_code_lua](https://user-images.githubusercontent.com/1559192/145305955-76106720-b9c7-4fa6-ad99-407454758c2d.png)
+🖼️ **Treesitter** 
+![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/lua/treesitter.png)
 
-🖼️ **Treesitter**  light and dark
+#### MARKDOWN
 
-![treesitter_lua](https://user-images.githubusercontent.com/1559192/145304230-13153261-d9c0-45b5-b625-93df493ade5b.png)
+Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md)
+
+🖼️ **vim and Treesitter** 
+![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/markdown/all.png)
 
 ### 🎛️ Plugins
 
 #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
-![todo-comments_light](https://user-images.githubusercontent.com/1559192/140816021-fd16ab48-e3f0-4ab4-a984-34bb14205b0c.png)
+![todo-comments_light](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/todo-comments/todo-comments_light.png)
 
-![todo-comments_dark](https://user-images.githubusercontent.com/1559192/140816034-12ef3a17-f674-4a67-a490-693947de508d.png)
+![todo-comments_dark](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/todo-comments/todo-comments_dark.png)
 
 ## ❔ FAQ
 
@@ -493,9 +494,8 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 ## Extras
 
 [Extra](https://github.com/yorik1984/newpaper.nvim/blob/main/extras) config with newpaper-based color palette for some terminal and GUI application can be found in extras.
-See README in folders:
-+ [lazygit](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/lazygit/README.md)
-+ [Windows Terminal](https://github.com/yorik1984/newpaper.nvim/blob/main/extras/windows_terminal/README.md)
++ [lazygit](https://github.com/new-paper/lazygit#-features)
++ [Windows Terminal](https://github.com/new-paper/windows-terminal#-features)
 
 ## ©️ Credits
 
@@ -513,7 +513,7 @@ See README in folders:
 ## 🛠️ TODO
 
 * [x] Add dark style
-* [ ] Add syntax screenshots, HTML-preview:
+* [ ] Add syntax screenshots:
   * [x] Ruby
   * [x] Lua
   * [x] TOML
@@ -533,9 +533,9 @@ See README in folders:
   * [ ] Telescope.nvim
   * [ ] NvimTree.lua
   * [ ] WhichKey.nvim
-  * [ ] packer.nvim
+  * [ ] lazy.nvim
 * [-] Add extra syntax highlights:
-  * [x] L<big><sup>A</sup></big>T<big><sub>E</sub></big>X
+  * [x] $\LaTeX$ 
   * [x] Ruby
   * [x] Lua
   * [x] TOML
