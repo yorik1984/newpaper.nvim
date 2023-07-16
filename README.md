@@ -1,14 +1,7 @@
-<p align="center">
-    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/logo/logo-newpaper.png" width="200" alt="Logo"/>
-</p>
-
-<p align="center">
-    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/palette/newpaper_light.svg"/>
-</p>
-
-<p align="center">
-    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/palette/newpaper_dark.svg"/>
-</p>
+<h3 align="center">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/logo/logo-newpaper.png" width="400" alt="Logo"/><br/>
+    <a href="https://github.com/new-paper/newpaper">Newpaper</a> for <a href="https://neovim.io/">Neovim</a>
+</h3>
 
 <div align="center">
 
@@ -16,18 +9,20 @@
 
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
-
 </div>
 
 ## ℹ️ Info
 
 A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](https://github.com/NLKNguyen/papercolor-theme) color palette with small changes written in Lua. $\LaTeX$ syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
 
-Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to Neovim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
+`newpaper.nvim` is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to Neovim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
 ### Light
 
 <div align="center">
+<p align="center">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/palette/newpaper_light.svg"/>
+</p>
 <p align="center">
     <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/nvim_preview_light.png">
 </p>
@@ -36,6 +31,9 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 ### Dark
 
 <div align="center">
+<p align="center">
+    <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/palette/newpaper_dark.svg"/>
+</p>
 <p align="center">
     <img src="https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/nvim_preview_dark.png">
 </p>
@@ -83,7 +81,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 | **Vimdoc**              | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
 | **YAML**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/yaml/code.yaml)       |
 
-:thumbsup: -- detailed, :white_check_mark: -- support and recomended  as default, :heavy_check_mark: -- support, :x: -- not support
+:thumbsup: - detailed, :white_check_mark: - support and recomended  as default, :heavy_check_mark: - support, :x: - not support
 
 ### 🔌 Supported plugins
 
@@ -103,7 +101,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
 + [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
-+ [Lualine](https://github.com/nvim-lualine/lualine.nvim) -- [🖼️](#-screenshots-lualine)
++ [Lualine](https://github.com/nvim-lualine/lualine.nvim) [🖼️](#-screenshots-lualine)
 + [mason.nvim](https://github.com/williamboman/mason.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
@@ -119,7 +117,7 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 + [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-+ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) -- [🖼️](#todo-commentsnvim)
++ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) [🖼️](#todo-commentsnvim)
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 + [Trouble](https://github.com/folke/trouble.nvim)
 + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
@@ -467,23 +465,23 @@ vim.g.newpaper_colors        = { teal = "#008080" }
 
 Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb)
 
-🖼️ **vim-ruby**
-
-![vim-ruby](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/ruby/vim-ruby.png)
-
 🖼️ **Treesitter**
 
 ![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/ruby/treesitter.png)
+
+🖼️ **vim-ruby**
+
+![vim-ruby](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/ruby/vim-ruby.png)
 
 #### LUA
 
 Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)
 
-🖼️ **vim-lua**
-![vim-lua](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/lua/vim_lua.png)
-
 🖼️ **Treesitter** 
 ![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/lua/treesitter.png)
+
+🖼️ **vim-lua**
+![vim-lua](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/lua/vim_lua.png)
 
 #### MARKDOWN
 
@@ -506,7 +504,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 
 ## Extras
 
-[Extra](https://github.com/yorik1984/newpaper.nvim/blob/main/extras) config with newpaper-based color palette for some terminal and GUI application can be found in extras.
+[Extra](https://github.com/new-paper/newpaper#-ports) config with newpaper-based color palette for some terminal and GUI application.
 + [lazygit](https://github.com/new-paper/lazygit#-features)
 + [Windows Terminal](https://github.com/new-paper/windows-terminal#-features)
 
