@@ -21,7 +21,7 @@
 
 ## ℹ️ Info
 
-A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](https://github.com/NLKNguyen/papercolor-theme) color palette with small changes written in Lua. LaTeX syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
+A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](https://github.com/NLKNguyen/papercolor-theme) color palette with small changes written in Lua. $\LaTeX$ syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
 
 Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features added to Neovim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
@@ -63,21 +63,27 @@ Newpaper.nvim is meant to be a fast and modern colorscheme written in Lua that s
 
 ### Extra syntax highlights
 
-+ [**Ruby**](http://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/code.rb) with [vim-ruby](https://github.com/vim-ruby/vim-ruby) -- [🖼️](#RUBY), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_light_code.rb.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/ruby/vim-ruby_dark_code.rb.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
-  + [**Rbs**](https://github.com/ruby/rbs) with [vim-rbs](https://github.com/jlcrochet/vim-rbs)
- + [**Lua**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/code.lua) with [vim-lua](https://github.com/tbastos/vim-lua) -- [🖼️](#LUA), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_light_code_lua.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/lua/vim_lua_dark_code_lua.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
- + **Rust** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
- + **Vim** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
- + **query** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
- + **regex** extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
+| Language                | Core syntax        | [Treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) | Extra plugins | Preview  | Code example |
+| :---------------------- | :----------------: | :-------------------------------------------------------------------------------------------------------------: | :------------ | :------: | :----------- |
+| **$\LaTeX$** :thumbsup: | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: [vimtex](https://github.com/lervag/vimtex)                           |                 |                                                                                                         |
+| **HTML**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
+| **Jinja**               | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                               | :x:                | :x:                                                                                                             | :white_check_mark: [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)     |                 |                                                                                                         |
+| **Json**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                               | :heavy_check_mark: | :white_check_mark:                                                                                              | :x:                                                                                     |                 |                                                                                                         |
+| **Liquid**              | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                               | :white_check_mark: | :x:                                                                                                             | :x:                                                                                     |                 |                                                                                                         |
+| **Lua** :thumbsup:      | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-lua](https://github.com/tbastos/vim-lua)                        | [🖼️](#lua)      | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)         |
+| **Markdown** :thumbsup: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-markdown](https://github.com/preservim/vim-markdown)            | [🖼️](#markdown) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md)     |
+| **Pandoc** :thumbsup:   | :heavy_check_mark: | :x:                | :white_check_mark: [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md)     |
+| **Query**               | :x:                | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
+| **Rbs**                 | :x:                | :x:                | :white_check_mark: [vim-rbs](https://github.com/jlcrochet/vim-rbs)                      |                 |                                                                                                         |
+| **Regex** :thumbsup:    | :x:                | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/regex/code_regex.scm) |
+| **Ruby** :thumbsup:     | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-ruby](https://github.com/vim-ruby/vim-ruby)                     | [🖼️](#ruby)     | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb)         |
+| **Rust**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/rust/code.rs)         |
+| **TOML**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/toml/code.toml)       |
+| **Vim**                 | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
+| **Vimdoc**              | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
+| **YAML**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/yaml/code.yaml)       |
 
-+ **$\LaTeX$** with [vimtex](https://github.com/lervag/vimtex)
-+ **Jinja** with [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-+ [**TOML**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/code.toml) with [vim-toml](https://github.com/cespare/vim-toml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/light_code.toml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/toml/dark_code.toml.html)
-+ [**YAML**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/code.yaml) -- [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/light_code.yaml.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/yaml/dark_code.yaml.html)
-+ [**Markdown**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) native [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.md.html) and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights)
-  + [**Markdown**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.md) with [vim-markdown](https://github.com/preservim/vim-markdown), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_vm_code.md.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_vm_code.md.html)
-  + [**Pandoc**](https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/code.rmd) with [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax), [light HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/light_code.rmd.html), [dark HTML](http://htmlpreview.github.io/?https://github.com/yorik1984/newpaper-highlight-preview/blob/main/preview/markdown/dark_code.rmd.html)
+:thumbsup: -- detailed, :white_check_mark: -- support and recomended  as default, :heavy_check_mark: -- support, :x: -- not support
 
 ### 🔌 Supported plugins
 
@@ -397,10 +403,10 @@ require("lualine").setup({
                     hint  = "LualineDiagnosticHint",
                 },
                 symbols = {
-                    error = " ",
-                    warn  = " ",
-                    info  = " ",
-                    hint  = " ",
+                    error = " ",
+                    warn = " ",
+                    info = " ",
+                    hint = " ",
                 },
             },
         },
