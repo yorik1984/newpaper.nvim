@@ -41,7 +41,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 <div align="center">
 
-## [More screenshots](#-screenshots)🖼️
+## [More screenshots](#-screenshots)[🖼️](#-screenshots)
 
 </div>
 
@@ -96,12 +96,12 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 + [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim)
 + [lazy.nvim](https://github.com/folke/lazy.nvim)
-+ [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) with extras for [light](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_light.yml) [🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_light.png) or [dark](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_dark.yml)[🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_dark.png)background.
++ [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) with extras for [light](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_light.yml)[🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_light.png) or [dark](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_dark.yml)[🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_dark.png) background.
 + [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)
 + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
 + [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
-+ [Lualine](https://github.com/nvim-lualine/lualine.nvim) [🖼️](#-screenshots-lualine)
++ [Lualine](https://github.com/nvim-lualine/lualine.nvim)[🖼️](#-screenshots-lualine)
 + [mason.nvim](https://github.com/williamboman/mason.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
@@ -117,7 +117,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-+ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) [🖼️](#todo-commentsnvim)
++ [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)[🖼️](#todo-commentsnvim)
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 + [Trouble](https://github.com/folke/trouble.nvim)
 + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
@@ -438,7 +438,7 @@ vim.g.newpaper_colors        = { teal = "#008080" }
 
 ### 📺 Screenshots lualine
 
-#### 🖼️ light
+#### light
 
 ![newpaper-light-normal](https://user-images.githubusercontent.com/1559192/129404790-1cf23fab-7828-48c2-b704-32c65af0af22.png)
 ![newpaper-light-insert](https://user-images.githubusercontent.com/1559192/129404788-9d67bca5-fca0-4529-aa3c-4fbf63910059.png)
@@ -447,7 +447,7 @@ vim.g.newpaper_colors        = { teal = "#008080" }
 ![newpaper-light-replace](https://user-images.githubusercontent.com/1559192/129404792-3d698007-654b-4905-b01a-39e9b54a4b6f.png)
 ![newpaper-light-command](https://user-images.githubusercontent.com/1559192/129404785-7179d4dd-66e6-4a71-8135-fcf1cee67e8c.png)
 
-#### 🖼️ dark
+#### dark
 
 ![newpaper-dark-normal](https://user-images.githubusercontent.com/1559192/129481063-7f6651b5-2fe3-47f9-b522-5829105a43f3.png)
 ![newpaper-dark-insert](https://user-images.githubusercontent.com/1559192/129481065-f078c808-dbce-4ff2-a4cb-898d0e8dc750.png)
@@ -465,11 +465,11 @@ vim.g.newpaper_colors        = { teal = "#008080" }
 
 Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb)
 
-🖼️ **Treesitter**
+**Treesitter**
 
 ![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/ruby/treesitter.png)
 
-🖼️ **vim-ruby**
+**vim-ruby**
 
 ![vim-ruby](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/ruby/vim-ruby.png)
 
@@ -477,17 +477,17 @@ Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/cod
 
 Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)
 
-🖼️ **Treesitter** 
+**Treesitter** 
 ![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/lua/treesitter.png)
 
-🖼️ **vim-lua**
+**vim-lua**
 ![vim-lua](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/lua/vim_lua.png)
 
 #### MARKDOWN
 
 Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md)
 
-🖼️ **vim and Treesitter** 
+**vim and Treesitter** 
 ![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/markdown/all.png)
 
 ### 🎛️ Plugins
