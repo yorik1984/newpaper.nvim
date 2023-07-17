@@ -15,7 +15,7 @@ function M.setup(configColors, configStyle)
             ["@operator.dot.query"] = { fg = newpaper.redorange, style = style.d_style, nocombine = true },
             ["@preproc.query"]      = { link = "@define" },
             ["@property.query"]     = { fg = newpaper.darkyellow, nocombine = true },
-            ["@type.query"]         = { fg = newpaper.bluegreen },
+            ["@type.query"]         = { fg = newpaper.tex_teal },
             ["@variable.query"]     = { fg = newpaper.darkengreen, style = style.v_style },
         }
 
