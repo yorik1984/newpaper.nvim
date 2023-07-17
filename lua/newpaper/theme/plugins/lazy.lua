@@ -30,6 +30,7 @@ function M.setup(configColors, configStyle)
             LazyReasonCmd     = { fg = newpaper.lua_navy },
             LazyReasonImport  = { fg = newpaper.darkyellow },
             LazyButton        = { fg = newpaper.gray, bg = newpaper.bg },
+            LazyTaskOutput    = { fg = newpaper.tex_verb },
             LazyButtonActive  = { fg = newpaper.text, bg = newpaper.aqua, style = style.b_bold },
             LazyDir           = { fg = newpaper.teal},
             LazyUrl           = { fg = newpaper.link, style = style.link },
