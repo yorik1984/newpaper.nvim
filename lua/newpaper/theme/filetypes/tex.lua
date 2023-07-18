@@ -579,6 +579,9 @@ function M.setup(configColors, configStyle)
             -- VimtexError            ErrorMsg,
             -- VimtexFatal            Error
             -- VimtexTodo             Todo
+            -- VimtexPopupContent     PreProc
+            -- VimtexPopupPrompt      Special
+            -- VimtexPopupPromptInput Type
         }
         return plugins
     end
