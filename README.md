@@ -231,8 +231,8 @@ require("newpaper").setup({
 | disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
 | hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code `lua/newpaper/colors.lua[13:170, 174:331]`|
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in sorce code `lua/newpaper/colors.lua[331:481]` |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors.lua[13:185]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L13-L185) and [`colors.lua[189:361]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L189-L361) |
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in sorce code [`colors.lua[189:361]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L369-L531) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       | `"light"`     | Set different style from main theme:`"dark"`, `"light"`|
