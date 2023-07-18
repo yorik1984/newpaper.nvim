@@ -81,6 +81,7 @@ function M.setup(configColors, configStyle)
             EndOfBuffer      = { fg = newpaper.eob, bg = newpaper.none },                                                    -- filler lines (~) after the end of the buffer.
             ErrorMsg         = { fg = newpaper.errormsg_fg },                                                                -- error messages
             FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
+            FloatTitle       = { fg = newpaper.border, bg = newpaper.float_bg, style = style.b_bold },
             Folded           = { fg = newpaper.folded_fg, bg = newpaper.folded_bg },                                         -- line used for closed folds
             FoldColumn       = { fg = newpaper.folded_fg, bg = newpaper.linenumber_bg },                                     -- 'foldcolumn'
             IncSearch        = { fg = newpaper.magenta, bg = newpaper.search_bg, style = style.b_bold },                     -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -99,7 +100,7 @@ function M.setup(configColors, configStyle)
             Pmenu            = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },                                           -- Popup menu: normal item.
             PmenuSel         = { fg = newpaper.bg, bg = newpaper.pmenu_fg },                                                 -- Popup menu: selected item.
             PmenuSbar        = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },                                           -- Popup menu: scrollbar.
-            PmenuThumb       = { fg = newpaper.fg, bg = newpaper.pmenu_fg },                                                 -- Popup menu: Thumb of the scrollbar.
+            PmenuThumb       = { bg = newpaper.pmenu_fg },                                                 -- Popup menu: Thumb of the scrollbar.
             Question         = { fg = newpaper.darkgreen },                                                                  -- |hit-enter| prompt and yes/no questions
             QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse },                      -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
             qfLineNr         = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse },                      -- Line numbers for quickfix lists
@@ -154,6 +155,7 @@ function M.setup(configColors, configStyle)
             TermCursorTerm   = { style = style.reverse },
             TermCursorNCTerm = { style = style.reverse },
             CursorLineTerm   = { bg = newpaper.none, ctermbg = newpaper.none },
+            PmenuBorder      = { fg = newpaper.tag_navy, bg = newpaper.pmenu_bg },
         }
         return editor
     end
