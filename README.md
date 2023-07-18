@@ -104,6 +104,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [Lualine](https://github.com/nvim-lualine/lualine.nvim)[🖼️](#-screenshots-lualine)
 + [mason.nvim](https://github.com/williamboman/mason.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
++ [noice.nvim](https://github.com/folke/noice.nvim)
 + [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 + [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 + [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)

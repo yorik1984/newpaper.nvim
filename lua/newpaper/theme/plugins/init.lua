@@ -12,6 +12,7 @@ local plugins = {
     "lsp",
     "lspsaga",
     "mason",
+    "noice",
     "notify",
     "nvim-tree",
     "packer",

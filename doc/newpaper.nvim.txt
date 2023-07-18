@@ -40,6 +40,7 @@ FEATURES                                                *newpaper.nvim-features*
         - Lualine
         - mason.nvim
         - Neogit
+        - noice.nvim
         - nvim-cmp
         - nvim-dap
         - nvim-dap-ui

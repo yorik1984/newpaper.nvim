@@ -98,9 +98,9 @@ function M.setup(configColors, configStyle)
             NormalFloat      = { fg = newpaper.float_fg, bg = newpaper.float_bg },                                           -- normal text and background color for floating windows
             NonText          = { fg = newpaper.disabled },                                                                   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
             Pmenu            = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },                                           -- Popup menu: normal item.
-            PmenuSel         = { fg = newpaper.bg, bg = newpaper.pmenu_fg },                                                 -- Popup menu: selected item.
-            PmenuSbar        = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },                                           -- Popup menu: scrollbar.
-            PmenuThumb       = { bg = newpaper.pmenu_fg },                                                 -- Popup menu: Thumb of the scrollbar.
+            PmenuSel         = { bg = newpaper.aqua },                                                                       -- Popup menu: selected item.
+            PmenuSbar        = { fg = newpaper.teal, bg = newpaper.pmenu_bg },                                           -- Popup menu: scrollbar.
+            PmenuThumb       = { bg = newpaper.teal },                                                                   -- Popup menu: Thumb of the scrollbar.
             Question         = { fg = newpaper.darkgreen },                                                                  -- |hit-enter| prompt and yes/no questions
             QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse },                      -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
             qfLineNr         = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse },                      -- Line numbers for quickfix lists
@@ -155,7 +155,7 @@ function M.setup(configColors, configStyle)
             TermCursorTerm   = { style = style.reverse },
             TermCursorNCTerm = { style = style.reverse },
             CursorLineTerm   = { bg = newpaper.none, ctermbg = newpaper.none },
-            PmenuBorder      = { fg = newpaper.tag_navy, bg = newpaper.pmenu_bg },
+            PmenuBorder      = { fg = newpaper.teal, bg = newpaper.pmenu_bg },
         }
         return editor
     end
