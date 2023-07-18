@@ -53,7 +53,7 @@ function M.setup(config)
             magenta_bg           = "#FFBBFF",
             grey                 = "#585858",
             lightgrey            = "#878787",
-            lightlightgrey       = "#C0C0C0",
+            lightlightgrey       = "#CDCDCD",
             silver               = "#E4E4E4",
             lightsilver          = "#EEEEEE",
 
@@ -230,7 +230,7 @@ function M.setup(config)
             grey                 = "#808080",
             lightgrey            = "#787878",
             lightlightgrey       = "#4E4E4E",
-            silver               = "#3A3A3A",
+            silver               = "#414141",
             lightsilver          = "#363636",
 
             codeblock            = "#343434",
