@@ -11,39 +11,38 @@ function M.setup(configColors, configStyle)
 
     cmpSyn.loadPlugins = function()
         local plugins = {
-            CmpDocumentation         = { fg = newpaper.float_fg, bg = newpaper.float_bg },
-            CmpDocumentationBorder   = { fg = newpaper.border, bg = newpaper.float_bg },
-            CmpItemMenu              = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },
+            CmpItemMenu              = { fg = newpaper.pmenu_fg },
             CmpItemKind              = { fg = newpaper.lightblue },
+            CmpItemKindDefault       = { fg = newpaper.maroon },
             CmpItemAbbr              = { fg = newpaper.pmenu_fg },
             CmpItemAbbrDeprecated    = { fg = newpaper.lightgrey },
-            CmpItemAbbrMatch         = { fg = newpaper.navy, style = style.b_bold },
+            CmpItemAbbrMatch         = { fg = newpaper.tag_navy, style = style.b_bold },
             CmpItemAbbrMatchFuzzy    = { fg = newpaper.magenta, style = style.b_bold },
-            CmpItemKindText          = { fg = newpaper.string },       -- Text          = ""
-            CmpItemKindMethod        = { fg = newpaper.bluegreen },    -- Method        = ""
-            CmpItemKindFunction      = { fg = newpaper.navy },         -- Function      = ""
-            CmpItemKindConstructor   = { fg = newpaper.bluegreen },    -- Constructor   = ""
-            CmpItemKindField         = { fg = newpaper.ocean },        -- Field         = "ﰠ"
-            CmpItemKindVariable      = { fg = newpaper.darkengreen },  -- Variable      = ""
-            CmpItemKindClass         = { fg = newpaper.ruby_magenta }, -- Class         = "ﴯ"
+            CmpItemKindText          = { fg = newpaper.string },       -- Text          = "󰉿"
+            CmpItemKindMethod        = { fg = newpaper.ruby_navy },    -- Method        = "󰆧"
+            CmpItemKindFunction      = { fg = newpaper.navy },         -- Function      = "󰊕"
+            CmpItemKindConstructor   = { fg = newpaper.lua_blue },     -- Constructor   = ""
+            CmpItemKindField         = { fg = newpaper.ocean },        -- Field         = "󰜢"
+            CmpItemKindVariable      = { fg = newpaper.darkengreen },  -- Variable      = "󰀫"
+            CmpItemKindClass         = { fg = newpaper.ruby_magenta }, -- Class         = "󰠱"
             CmpItemKindInterface     = { fg = newpaper.olive },        -- Interface     = ""
-            CmpItemKindModule        = { fg = newpaper.darkyellow },   -- Module        = ""
-            CmpItemKindProperty      = { fg = newpaper.bluegreen },    -- Property      = "ﰠ"
-            CmpItemKindUnit          = { fg = newpaper.darkpurple },   -- Unit          = "塞"
-            CmpItemKindValue         = { fg = newpaper.naamber },      -- Value         = ""
-            CmpItemKindEnum          = { fg = newpaper.green },        -- Enum          = ""
-            CmpItemKindKeyword       = { fg = newpaper.keyword },      -- Keyword       = ""
+            CmpItemKindModule        = { fg = newpaper.lua_navy },     -- Module        = ""
+            CmpItemKindProperty      = { fg = newpaper.bluegreen },    -- Property      = "󰜢"
+            CmpItemKindUnit          = { fg = newpaper.darkpurple },   -- Unit          = "󰑭"
+            CmpItemKindValue         = { fg = newpaper.number },       -- Value         = "󰎠"
+            CmpItemKindEnum          = { fg = newpaper.maroon },       -- Enum          = ""
+            CmpItemKindKeyword       = { fg = newpaper.keyword },      -- Keyword       = "󰌋"
             CmpItemKindSnippet       = { fg = newpaper.darkpurple },   -- Snippet       = ""
-            CmpItemKindColor         = { fg = newpaper.magenta },      -- Color         = ""
-            CmpItemKindFile          = { fg = newpaper.teal },         -- File          = ""
-            CmpItemKindReference     = { fg = newpaper.darkyellow },   -- Reference     = ""
-            CmpItemKindFolder        = { fg = newpaper.teal },         -- Folder        = ""
-            CmpItemKindEnumMember    = { fg = newpaper.green },        -- EnumMember    = ""
-            CmpItemKindConstant      = { fg = newpaper.darkengreen },  -- Constant      = ""
-            CmpItemKindStruct        = { fg = newpaper.olive },        -- Struct        = "פּ"
+            CmpItemKindColor         = { fg = newpaper.magenta },      -- Color         = "󰏘"
+            CmpItemKindFile          = { fg = newpaper.teal },         -- File          = "󰈙"
+            CmpItemKindReference     = { fg = newpaper.darkyellow },   -- Reference     = "󰈇"
+            CmpItemKindFolder        = { fg = newpaper.teal },         -- Folder        = "󰉋"
+            CmpItemKindEnumMember    = { fg = newpaper.redorange },    -- EnumMember    = ""
+            CmpItemKindConstant      = { fg = newpaper.darkgreen },    -- Constant      = "󰏿"
+            CmpItemKindStruct        = { fg = newpaper.olive },        -- Struct        = "󰙅"
             CmpItemKindEvent         = { fg = newpaper.orange },       -- Event         = ""
-            CmpItemKindOperator      = { fg = newpaper.tag_navy },     -- Operator      = ""
-            CmpItemKindTypeParameter = { fg = newpaper.orange },       -- TypeParameter = " "
+            CmpItemKindOperator      = { fg = newpaper.tag_navy },     -- Operator      = "󰆕"
+            CmpItemKindTypeParameter = { fg = newpaper.tex_orange },   -- TypeParameter = ""
         }
         return plugins
     end
