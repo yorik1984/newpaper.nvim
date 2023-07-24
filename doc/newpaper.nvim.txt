@@ -98,7 +98,7 @@ USAGE                                                      *newpaper.nvim-usage*
 >lua
         require("lualine").setup ({
             options = {
-                -- ... your lualine config
+                -- ... lualine config
             }
         })
 <
@@ -145,19 +145,38 @@ Options:
     + style              {string} (default = `"light"`)
         The theme comes in two styles: `"dark"`, `"light"`
 
+    + lightness          {number} (default = 0)
+        Make all supported highlight groups lighter or darker
+        Useful with `saturation` to make more beauty and eye-friendly view
+        Value: from `-1`(all colors `"#000000"`) to `1`(all colors `"#FFFFFF"`)
+        Recommended value: `-0.2` - `0.2`
+
+    + saturation          {number} (default = 0)
+        Change color saturation of all supported highlight groups
+        Useful with `lightness` to make more beauty and eye-friendly view
+        Value: from `-1` to `1`
+        Recommended value: `-0.2` - `0.2`
+
+    + greyscale           {string} {booleans} (default = false)
+        Make all supported highlight groups in greyscale palette
+        Useful with `lightness` and `saturation` to make more beauty and
+        eye-friendly view
+        Value: `"lightness"`, `"average"`, `"luminosity"`, `false`
+        Recommended greyscale value: `"luminosity"`
+
     + editor_better_view {booleans} (default = true)
         Make some interface like menu, title of editor and plugins
         menu bold and italic
 
     + terminal           {string} (default = `"contrast"`)
-        Make `:terminal` window in different styles.
+        Make `:terminal` window in different styles
         Value: `"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"`
         `
     + sidebars_contrast  {table} (default = {})
         Set a contrast background on sidebar-like windows.
         Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`
         `"NvimTree"` and `"Trouble"` groups has own highlight colors.
-        Can be overridden separate from others sidebars.
+        Can be overridden separate from others sidebars
 
     + contrast_float     {booleans} (default = true)
         Make popup menus like nvim-compe, lsp-saga have a different
@@ -181,22 +200,22 @@ Options:
         Note: use specific plugin to highlight like *rainbow-delimiters*
 
     + booleans           {string} (default = `"bold"`)
-        Make boleans like `true`, `false` etc. bold, italic or NONE.
+        Make boleans like `true`, `false` etc. bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + keywords           {string} (default = `"bold"`)
-        Make keywords like `if`, `for`, `while` etc. bold, italic or NONE.
+        Make keywords like `if`, `for`, `while` etc. bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + regex              {string} (default = `"bold"`)
-        Make regex  bold, italic or NONE.
+        Make regex  bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + regex_bg              {string} (default = true)
         Enable background color for regex capturing groups
 
     + tags               {string} (default = `"bold"`)
-        Make HTML tags bold, italic or NONE.
+        Make HTML tags bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + tags_brackets_bold {booleans} (default = true)
@@ -216,21 +235,21 @@ Options:
         Make tex math zone delimeters like `\(\)`, `\[\]`, `$ $`, `$$ $$` bold
 
     + tex_keywords       {string} (default = `"NONE"`)
-        Make  other tex keywords bold, italic or NONE.
+        Make  other tex keywords bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + tex_zone           {string} (default = `"italic"`)
-        Make some tex ...Zone...  bold, italic or NONE.
+        Make some tex ...Zone...  bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + tex_arg            {string} (default = `"italic"`)
-        Make some tex  ...Arg... bold, italic or NONE.
+        Make some tex  ...Arg... bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
     + error_highlight    {string} (default = `"undercurl"`)
         Make spell or `tex`-files errors hightlighting with
         background, undercurl, both or NONE
-        Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`.
+        Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"`
 
     + italic_strings     {booleans} (default = true)
         Make strings italic
@@ -261,16 +280,16 @@ Options:
         Hide the end of buffer lines (`~`)
 
     + colors             {table} (default = {})
-        Override the default colors and use your own.
-        Also owerride lualine colors if have same name for more good view.
-        See possible value in sorce code `lua/newpaper/colors.lua[13:170, 174:331]`
+        Override the default colors and use your own
+        Also owerride lualine colors if have same name for more good view
+        See possible value in sorce code `lua/newpaper/colors.lua[12:184, 188:360]`
 
 >lua
         vim.g.newpaper_colors = { black = "#000000", bg = "#0F111A" }
 <
     + colors_advanced    {table} (default = {})
         Override the advanced default colors and use your own.
-        See possible value in sorce code `lua/newpaper/colors.lua[331:481]`
+        See possible value in sorce code `lua/newpaper/colors.lua[382:547]`
 
 >lua
         vim.g.newpaper_colors_advanced = { keyword = "#AA00AA", string = "#008800" }
@@ -305,6 +324,9 @@ Default settings:
 >lua
     require("newpaper").setup({
         style               = "light",
+        lightness           = 0,
+        saturation          = 0,
+        greyscale           = false,
         editor_better_view  = true,
         terminal            = "contrast",
         sidebars_contrast   = {},
@@ -408,7 +430,7 @@ in init.lua:
 >lua
     require("lualine").setup {
         options = {
-            -- ... your lualine config
+            -- ... lualine config
         }
     }
 <

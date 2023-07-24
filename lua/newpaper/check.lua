@@ -1,5 +1,15 @@
 local M = {}
 
+function M.isHex(value)
+    if value == nil then
+        return false
+    elseif string.sub(tostring(value), 1, 1) == "#" and #tostring(value) == 7 then
+        return true
+    else
+        return false
+    end
+end
+
 function M.isLoaded(plugin)
     local ok, _ = pcall(require, plugin)
     if not ok then

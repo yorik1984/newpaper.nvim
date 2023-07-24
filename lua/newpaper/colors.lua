@@ -1,9 +1,8 @@
 local util = require("newpaper.util")
-
+local configDefault = require("newpaper.config")
 local M = {}
 
 function M.setup(config)
-
     -- stylua: ignore start
 
     local newpaper = {}
@@ -35,7 +34,7 @@ function M.setup(config)
             redorange            = "#E12D23",
             pink                 = "#FFEEFF",
             lightorange          = "#E4C07A",
-            persimona            = "#F48F5F",
+            persimona            = "#EF7932",
             yellow               = "#FFFF00",
             darkyellow           = "#C18301",
             olive                = "#5F8700",
@@ -58,7 +57,7 @@ function M.setup(config)
             lightsilver          = "#EEEEEE",
 
             codeblock            = "#DEDEDE",
-            disabled             = "#CCCCCC",
+            disabled             = "#C3C3C3",
 
             regexp_blue          = "#5588FF",
             regexp_brown         = "#884400",
@@ -229,12 +228,12 @@ function M.setup(config)
             magenta_bg           = "#E5006F",
             grey                 = "#808080",
             lightgrey            = "#787878",
-            lightlightgrey       = "#494949",
-            silver               = "#414141",
+            lightlightgrey       = "#444444",
+            silver               = "#3b3b3b",
             lightsilver          = "#363636",
 
             codeblock            = "#343434",
-            disabled             = "#3E3E3E",
+            disabled             = "#464646",
 
             regexp_blue          = "#618EF0",
             regexp_brown         = "#A5767D",
@@ -281,8 +280,8 @@ function M.setup(config)
             todo_default         = "#A070F1",
 
             -- TeX
-            tex_maroon           = "#C9655C",
-            tex_olive            = "#BCB677",
+            tex_maroon           = "#d17475",
+            tex_olive            = "#a9a875",
             tex_navy             = "#738AE5",
             tex_red              = "#EF5D5B",
             tex_blue             = "#6DA6CF",
@@ -293,7 +292,7 @@ function M.setup(config)
             tex_redorange        = "#F09479",
             tex_darkorange       = "#D28F3F",
 
-            tex_lightpurple      = "#A494C1",
+            tex_lightpurple      = "#8E8EBB",
             tex_lightviolet      = "#D7AFC1",
             tex_pink             = "#EF6A72",
             tex_lightgreen       = "#00CA93",
@@ -362,9 +361,23 @@ function M.setup(config)
         }
     end
 
+    -- Advanced colors
+
+    -- apply HSLuv setting for basic colors
+    if config.lightness then
+        util.hsluvEdit(newpaper, configDefault.hsluv_opt.lightness, config.lightness)
+    end
+
+    if config.saturation then
+        util.hsluvEdit(newpaper, configDefault.hsluv_opt.saturation, config.saturation)
+    end
+
+    if util.contains(configDefault.greyscale_opt, config.greyscale) then
+        util.colorGreyscale(newpaper, config.greyscale)
+    end
+
     util.colorOverrides(newpaper, config.colors)
 
-    -- Advanced colors
     -- Optional colors
     newpaper.keyword             = newpaper.purple
     newpaper.class               = newpaper.ruby_navy
@@ -445,56 +458,59 @@ function M.setup(config)
     newpaper.term_contrast_fg    = newpaper.fg
     newpaper.term_contrast_bg    = newpaper.silver
     newpaper.term_contrast_fl_bg = newpaper.silver
-    local term_color = {
+
+    local term_color             = {
         bg                  = { fg = newpaper.normal_fg, bg = newpaper.normal_bg },
         contrast            = { fg = newpaper.term_contrast_fg, bg = newpaper.term_contrast_bg },
         inverse             = { fg = newpaper.normal_bg, bg = newpaper.normal_fg },
         inverse_transparent = { fg = newpaper.normal_bg, bg = newpaper.none },
     }
     if config.terminal ~= nil then
-        newpaper.term_fg         = term_color[config.terminal].fg
-        newpaper.term_bg         = term_color[config.terminal].bg
-        newpaper.term_fl_fg      = term_color[config.terminal].fg
-        newpaper.term_fl_bg      = term_color[config.terminal].bg
+        newpaper.term_fg    = term_color[config.terminal].fg
+        newpaper.term_bg    = term_color[config.terminal].bg
+        newpaper.term_fl_fg = term_color[config.terminal].fg
+        newpaper.term_fl_bg = term_color[config.terminal].bg
     end
 
     -- IndentBlankline
-    newpaper.contextchar         = newpaper.violet
+    newpaper.contextchar = newpaper.violet
 
     -- Sidebars ----------------------------------------------------------------
-    newpaper.nvimtree_fg         = newpaper.sb_fg
-    newpaper.nvimtree_bg         = newpaper.sb_bg
-    newpaper.trouble_fg          = newpaper.sb_fg
-    newpaper.trouble_bg          = newpaper.sb_bg
+    newpaper.nvimtree_fg = newpaper.sb_fg
+    newpaper.nvimtree_bg = newpaper.sb_bg
+    newpaper.trouble_fg  = newpaper.sb_fg
+    newpaper.trouble_bg  = newpaper.sb_bg
+
     -- NvimTree
     if util.contains(config.sidebars_contrast, "NvimTree") then
-        newpaper.nvimtree_fg     = newpaper.sb_contrast_fg
-        newpaper.nvimtree_bg     = newpaper.aqualight
+        newpaper.nvimtree_fg = newpaper.sb_contrast_fg
+        newpaper.nvimtree_bg = newpaper.aqualight
     end
+
     -- Troule
     if util.contains(config.sidebars_contrast, "Trouble") then
-        newpaper.trouble_fg      = newpaper.sb_contrast_fg
-        newpaper.trouble_bg      = newpaper.sb_contrast_bg
+        newpaper.trouble_fg = newpaper.sb_contrast_fg
+        newpaper.trouble_bg = newpaper.sb_contrast_bg
     end
     ----------------------------------------------------------------------------
 
     -- Float
     if config.contrast_float then
-        newpaper.float_bg        = newpaper.float_contrast
+        newpaper.float_bg = newpaper.float_contrast
     end
 
     -- Telescope
     if config.contrast_telescope then
-        newpaper.telescope_bg    = newpaper.telescope_contrast
+        newpaper.telescope_bg = newpaper.telescope_contrast
     end
 
     -- Set transparent background
     if config.disable_background then
-        newpaper.normal_bg       = newpaper.none
-        newpaper.sb_bg           = newpaper.none
-        newpaper.linenumber_bg   = newpaper.none
-        newpaper.git_sign_bg     = newpaper.none
-        newpaper.msgarea_bg      = newpaper.none
+        newpaper.normal_bg     = newpaper.none
+        newpaper.sb_bg         = newpaper.none
+        newpaper.linenumber_bg = newpaper.none
+        newpaper.git_sign_bg   = newpaper.none
+        newpaper.msgarea_bg    = newpaper.none
     end
 
     -- Remove window split borders
@@ -515,8 +531,8 @@ function M.setup(config)
     end
 
     if not config.regex_bg then
-        newpaper.regexp_green_bg   = newpaper.none
-        newpaper.regexp_orange_bg  = newpaper.none
+        newpaper.regexp_green_bg  = newpaper.none
+        newpaper.regexp_orange_bg = newpaper.none
     end
 
     if config.error_highlight ~= "both" and config.error_highlight ~= "bg" then

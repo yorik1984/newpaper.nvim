@@ -147,6 +147,7 @@ Install via your favorite package manager:
 ```lua
 require("lazy").setup({
     "yorik1984/newpaper.nvim",
+    priority = 1000,
     config = true,
 })
 ```
@@ -199,6 +200,9 @@ require("newpaper").setup({
 | Option              | Default       | Description |
 | ------------------- | ------------- | ------------|
 | style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` |
+| lightness           | `0`           | Make all supported highlight groups lighter or darker. Useful with `saturation` to make more beauty and eye-friendly view. Value: from `-1`(all colors `"#000000"`) to `1`(all colors `"#FFFFFF"`). Recommended value: `-0.2` - `0.2` |
+| saturation          | `0`           | Change color saturation of all supported highlight groups. Useful with `lightness` to make more beauty and eye-friendly view. Value: from `-1` to `1`. Recommended value: `-0.2` - `0.2` |
+| greyscale           | `false`        | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false` Recommended greyscale value: `"luminosity"`|
 | editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic |
 | terminal            | `"contrast"`  | Make `:terminal`buffers and windows  in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
 | sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
@@ -231,8 +235,8 @@ require("newpaper").setup({
 | disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
 | hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors.lua[13:185]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L13-L185) and [`colors.lua[189:361]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L189-L361) |
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in sorce code [`colors.lua[189:361]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L369-L531) |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors.lua[12:184]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L12-L184) and [`colors.lua[188:360]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L188-L360) |
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in sorce code [`colors.lua[382:547]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L382-L547) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       | `"light"`     | Set different style from main theme:`"dark"`, `"light"`|
@@ -244,6 +248,9 @@ require("newpaper").setup({
 -- Default settings
 require("newpaper").setup({
     style               = "light",
+    lightness           = 0,
+    saturation          = 0,
+    greyscale           = false,
     editor_better_view  = true,
     terminal            = "contrast",
     sidebars_contrast   = {},
