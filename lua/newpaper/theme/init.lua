@@ -337,12 +337,6 @@ function M.setup(configColors, configStyle)
 
     theme.loadPlugins = function()
         local plugins = {
-            -- Dashboard ------------------------------------------------------
-            DashboardShortCut           = { fg = newpaper.red },
-            DashboardHeader             = { fg = newpaper.comment },
-            DashboardCenter             = { fg = newpaper.accent },
-            DashboardFooter             = { fg = newpaper.green, style = style.b_italic },
-
             -- Diff -----------------------------------------------------------
             diffAdded                   = { fg = newpaper.git_added },
             diffRemoved                 = { fg = newpaper.git_removed },

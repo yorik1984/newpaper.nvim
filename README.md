@@ -88,7 +88,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
-+ [Dashboard](https://github.com/glepnir/dashboard-nvim)
++ [Dashboard](https://github.com/nvimdev/dashboard-nvim)
 + [flash.nvim](https://github.com/folke/flash.nvim)
 + [Git Gutter](https://github.com/airblade/vim-gitgutter)
 + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
@@ -202,7 +202,7 @@ require("newpaper").setup({
 | style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` |
 | lightness           | `0`           | Make all supported highlight groups lighter or darker. Useful with `saturation` to make more beauty and eye-friendly view. Value: from `-1`(all colors `"#000000"`) to `1`(all colors `"#FFFFFF"`). Recommended value: `-0.2` - `0.2` |
 | saturation          | `0`           | Change color saturation of all supported highlight groups. Useful with `lightness` to make more beauty and eye-friendly view. Value: from `-1` to `1`. Recommended value: `-0.2` - `0.2` |
-| greyscale           | `false`        | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false` Recommended greyscale value: `"luminosity"`|
+| greyscale           | `false`        | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|
 | editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic |
 | terminal            | `"contrast"`  | Make `:terminal`buffers and windows  in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
 | sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |

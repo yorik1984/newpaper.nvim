@@ -11,7 +11,7 @@ function M.isHex(value)
 end
 
 function M.isLoaded(plugin)
-    local ok, _ = pcall(require, plugin)
+    local ok = pcall(require, plugin)
     if not ok then
         return false
     end
