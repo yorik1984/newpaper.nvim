@@ -4,15 +4,16 @@ local plugsFolder = "newpaper.theme.plugins."
 
 local plugins = {
     "bufferline",
-    "dashboard-nvim",
     "cheatsheet",
     "cmp",
+    "dashboard-nvim",
     "jinja",
     "lazy",
     "litee",
     "lsp",
     "lspsaga",
     "mason",
+    "neogit",
     "noice",
     "notify",
     "nvim-tree",

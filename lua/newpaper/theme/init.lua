@@ -426,15 +426,6 @@ function M.setup(configColors, configStyle)
             LualineDiagnosticInfo       = { fg = newpaper.info_fg, bg = newpaper.silver },
             LualineDiagnosticHint       = { fg = newpaper.hint_fg, bg = newpaper.silver },
 
-            -- Neogit ---------------------------------------------------------
-            NeogitBranch                = { fg = newpaper.blue },
-            NeogitRemote                = { fg = newpaper.purple },
-            NeogitHunkHeader            = { fg = newpaper.fg, bg = newpaper.highlight },
-            NeogitHunkHeaderHighlight   = { fg = newpaper.fg, bg = newpaper.contrast },
-            NeogitDiffContextHighlight  = { fg = newpaper.text, bg = newpaper.contrast },
-            NeogitDiffDeleteHighlight   = { fg = newpaper.git_removed },
-            NeogitDiffAddHighlight      = { fg = newpaper.git_added },
-
             -- Nvim dap -------------------------------------------------------
             DapBreakpoint               = { fg = newpaper.darkgreen, bg = newpaper.linenumber_bg },
             DapBreakpointCondition      = { fg = newpaper.darkyellow, bg = newpaper.linenumber_bg },
