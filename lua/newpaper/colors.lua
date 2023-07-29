@@ -102,6 +102,7 @@ function M.setup(config)
             todo_info            = "#3A72ED",
             todo_hint            = "#199319",
             todo_default         = "#894DEE",
+            todo_test            = "#B748B7",
 
             -- TeX
             tex_maroon           = "#A2251A",
@@ -278,6 +279,7 @@ function M.setup(config)
             todo_info            = "#5082EF",
             todo_hint            = "#4CAB4C",
             todo_default         = "#A070F1",
+            todo_test            = "#E55BE5",
 
             -- TeX
             tex_maroon           = "#d17475",
