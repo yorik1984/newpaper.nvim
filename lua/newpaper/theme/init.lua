@@ -45,7 +45,7 @@ function M.setup(configColors, configStyle)
             Underlined     = { fg = newpaper.link, style = style.underline },          -- text that stands out, HTML links
             Ignore         = { fg = newpaper.disabled },                               -- left blank, hidden
             Error          = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg }, -- any erroneous construct
-            Todo           = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            Todo           = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.b_bold },
             Noise          = { link = "Delimiter" },
             Quote          = { link = "String" },
         }
@@ -239,22 +239,22 @@ function M.setup(configColors, configStyle)
             ["@text"]                                  = { fg = newpaper.fg },                                     -- For strings considered text in a markup language.
             ["@text.diff.add"]                         = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
             ["@text.diff.delete"]                      = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
-            ["@text.danger"]                           = { fg = newpaper.bg, bg = newpaper.warn_fg },
+            ["@text.danger"]                           = { fg = newpaper.bg, bg = newpaper.todo_error, style = style.b_bold },
             ["@text.emphasis"]                         = { style = style.italic },                                 -- For text to be represented with emphasis.
             ["@text.environment"]                      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             ["@text.environment.name"]                 = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
             ["@text.literal"]                          = { fg = newpaper.regexp_blue },                            -- Literal text.
             ["@text.literal.block"]                    = { fg = newpaper.regexp_blue },                            -- literal or verbatim text as a stand-alone block.
             ["@text.math"]                             = { fg = newpaper.tex_math },
-            ["@text.note"]                             = { fg = newpaper.bg, bg = newpaper.hint_fg },
+            ["@text.note"]                             = { fg = newpaper.bg, bg = newpaper.todo_hint, style = style.b_bold },
             ["@text.reference"]                        = { fg = newpaper.tex_maroon },
             ["@text.strike"]                           = { style = style.strike },                                 -- For strikethrough text.
             ["@text.strong"]                           = { style = style.bold },
             ["@text.title"]                            = { fg = newpaper.title, style = style.b_bold },            -- Text that is part of a title.
             ["@text.underline"]                        = { style = style.underline },                              -- For text to be represented with an underline.
             ["@text.uri"]                              = { fg = newpaper.link, style = style.link },               -- Any URI like a link or email.
-            ["@text.warning"]                          = { fg = newpaper.bg, bg = newpaper.info_fg },
-            ["@text.todo"]                             = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            ["@text.warning"]                          = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            ["@text.todo"]                             = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.b_bold },
             ["@text.quote"]                            = { fg = newpaper.tex_navy },
             ["@type"]                                  = { fg = newpaper.darkengreen },                            -- For types.
             ["@type.builtin"]                          = { fg = newpaper.bluegreen, style = style.k_style },       -- For builtin types.
@@ -297,7 +297,7 @@ function M.setup(configColors, configStyle)
 
             -- LSP semantic tokens
             ["@lsp.type.class"]                        = { link = "@storageclass" },
-            ["@lsp.type.comment"]                      = { link = "@comment" },
+            ["@lsp.type.comment"]                      = { default = true },
             ["@lsp.type.decorator"]                    = { link = "@function.builtin" },
             ["@lsp.type.enum"]                         = { link = "@number" },
             ["@lsp.type.enumMember"]                   = { link = "@constant" },

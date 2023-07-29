@@ -3,6 +3,7 @@ local M = {}
 local ftypesFolder = "newpaper.theme.filetypes."
 
 local filetypes = {
+    "comment",
     "html",
     "json",
     "liquid",

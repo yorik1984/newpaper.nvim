@@ -146,7 +146,7 @@ function M.setup(configColors, configStyle)
 
             -------------------------------------------------------------------
             -- texComment          Comment
-            texCommentTodo        = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.comment_title },
+            texCommentTodo        = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.comment_title },
             texDelim              = { fg = newpaper.tex_lightpurple, style = style.tex_br_style }, -- {, }, [, and ]
             texCmd                = { fg = newpaper.tex_blue, style = style.tex_k_style }, -- \CMD
             texOpt                = { fg = newpaper.tex_orange }, -- \cmd[OPT]
@@ -208,7 +208,7 @@ function M.setup(configColors, configStyle)
             texCmdAccent          = { fg = newpaper.tex_navy, style = style.tex_k_style }, -- \"{a}
             texCmdLigature        = { fg = newpaper.tex_navy }, -- \ss; \ae
             texCmdSpaceCodeChar   = { fg = newpaper.tex_maroon }, -- Catcodes. For more info, see: https://en.wikibooks.org/wikicatcode
-            texCmdTodo            = { fg = newpaper.todo_warn, style = style.b_bold },-- \TODOSOMETHING
+            texCmdTodo            = { fg = newpaper.todo_info, style = style.b_bold },-- \TODOSOMETHING
             -- texCmdWarning       VimtexWarning
             -- texCmdError         VimtexError
             -- texCmdFatal         VimtexFatal
@@ -542,7 +542,7 @@ function M.setup(configColors, configStyle)
             texTikzEnvBgn    = { fg = newpaper.tex_tikz_purple },
 
             -- todonotes.vim --------------------------------------------------
-            texTodoOpt = { fg = newpaper.todo_warn },
+            texTodoOpt = { fg = newpaper.todo_info },
 
             -- vimtex highlights ------------------------------------------
             VimtexImapsArrow          = { fg = newpaper.tex_math, style = style.b_bold },
