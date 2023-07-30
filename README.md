@@ -66,7 +66,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 | **$\LaTeX$** :thumbsup: | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: [vimtex](https://github.com/lervag/vimtex) | | |
 | **Comment** :thumbsup:  | :x:                | :white_check_mark: | :x: | [🖼️](#comment-todo) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/todo-comments.lua) |
 | **HTML**                | :heavy_check_mark: | :white_check_mark: | :x: | | |
-| **Jinja**               | :heavy_check_mark: | :white_check_mark: | :white_check_mark: [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax) | | |
+| **Jinja**               | :heavy_check_mark: | :x:                | :white_check_mark: [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax) | | |
 | **Json**                | :heavy_check_mark: | :white_check_mark: | :x: | | |
 | **Liquid**              | :heavy_check_mark: | :white_check_mark: | :x: | | |
 | **Lua** :thumbsup:      | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-lua](https://github.com/tbastos/vim-lua) | [🖼️](#lua) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)|
@@ -517,7 +517,7 @@ Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/cod
 
 ![todo-comments](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/todo-comments/todo-comments.png)
 
-##### Example config: 
+##### Example config:
 
 ```lua
 {
