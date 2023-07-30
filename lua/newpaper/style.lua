@@ -19,16 +19,16 @@ function M.setupStyle(config)
         b_bold_i      = "NONE", -- editor style bold italic
         b_bold_u      = "NONE", -- editor style bold underline
         c_style       = "NONE", -- comments style
+        doc_style     = "NONE", -- comments documenting code style
+        comment_title = "NONE", -- magic and tittle comments in VimL, Ruby and others
         o_style       = "NONE", -- operators style
         d_style       = "NONE", -- delimiters style
         br_style      = "NONE", -- brackets style
         d_r_style     = "NONE", -- delimiters rainbow style
         tb_style      = "NONE", -- tags brackets style
         s_style       = "NONE", -- strings style
-        doc_style     = "NONE", -- comments documenting code style
         v_style       = "NONE", -- variables style
         f_style       = "NONE", -- functions style
-        comment_title = "NONE", -- magic and tittle comments in VimL, Ruby and others
 
         -- Spell style
         error = "NONE",
@@ -38,6 +38,9 @@ function M.setupStyle(config)
 
         -- Make keywords bold, italic or NONE
         k_style = config.keywords,
+
+        -- Make keywords style in comments documenting code bold, italic or NONE
+        doc_k_style = config.doc_keywords,
 
         -- Make regex bold, italic or NONE
         regex = config.regex,

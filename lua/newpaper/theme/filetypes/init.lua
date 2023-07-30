@@ -8,6 +8,7 @@ local filetypes = {
     "json",
     "liquid",
     "lua",
+    "luadoc",
     "luap",
     "markdown",
     "query",

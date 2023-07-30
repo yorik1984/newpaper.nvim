@@ -61,26 +61,28 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 ### Extra syntax highlights
 
-| Language                | Core syntax        | [Treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) | Extra plugins | Preview  | Code example |
-| :---------------------- | :----------------: | :-------------------------------------------------------------------------------------------------------------: | :------------ | :------: | :----------- |
-| **$\LaTeX$** :thumbsup: | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: [vimtex](https://github.com/lervag/vimtex)                           |                 |                                                                                                         |
-| **HTML**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
-| **Jinja**               | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                               | :x:                | :x:                                                                                                             | :white_check_mark: [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)     |                 |                                                                                                         |
-| **Json**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                               | :heavy_check_mark: | :white_check_mark:                                                                                              | :x:                                                                                     |                 |                                                                                                         |
-| **Liquid**              | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                               | :white_check_mark: | :x:                                                                                                             | :x:                                                                                     |                 |                                                                                                         |
-| **Lua** :thumbsup:      | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-lua](https://github.com/tbastos/vim-lua)                        | [🖼️](#lua)      | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)         |
-| **Luap** :thumbsup:     | :x:                | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/luap/luap.lua) |
-| **Markdown** :thumbsup: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-markdown](https://github.com/preservim/vim-markdown)            | [🖼️](#markdown) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md)     |
-| **Pandoc** :thumbsup:   | :heavy_check_mark: | :x:                | :white_check_mark: [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md)     |
-| **Query**               | :x:                | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
-| **Rbs**                 | :x:                | :x:                | :white_check_mark: [vim-rbs](https://github.com/jlcrochet/vim-rbs)                      |                 |                                                                                                         |
-| **Regex** :thumbsup:    | :x:                | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/regex/code_regex.scm) |
-| **Ruby** :thumbsup:     | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-ruby](https://github.com/vim-ruby/vim-ruby)                     | [🖼️](#ruby)     | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb)         |
-| **Rust**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/rust/code.rs)         |
-| **TOML**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/toml/code.toml)       |
-| **Vim**                 | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
-| **Vimdoc**              | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 |                                                                                                         |
-| **YAML**                | :heavy_check_mark: | :white_check_mark: | :x:                                                                                     |                 | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/yaml/code.yaml)       |
+| Language            | Core syntax        | [Treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) | Extra plugins | Preview  | Code example |
+| :-------------------| :----------------: | :----------------: | :------------ | :------: | :----------- |
+| **$\LaTeX$** :thumbsup: | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: [vimtex](https://github.com/lervag/vimtex) | | |
+| **Comment** :thumbsup:  | :x:                | :white_check_mark: | :x: | [🖼️](#comment-todo) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/todo-comments.lua) |
+| **HTML**                | :heavy_check_mark: | :white_check_mark: | :x: | | |
+| **Jinja**               | :heavy_check_mark: | :white_check_mark: | :white_check_mark: [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax) | | |
+| **Json**                | :heavy_check_mark: | :white_check_mark: | :x: | | |
+| **Liquid**              | :heavy_check_mark: | :white_check_mark: | :x: | | |
+| **Lua** :thumbsup:      | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-lua](https://github.com/tbastos/vim-lua) | [🖼️](#lua) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)|
+| **Luadoc** :thumbsup:   | :x:                | :white_check_mark: | :x: | | |
+| **Luap** :thumbsup:     | :x:                | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/luap/luap.lua) |
+| **Markdown** :thumbsup: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-markdown](https://github.com/preservim/vim-markdown) | [🖼️](#markdown) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md) |
+| **Pandoc** :thumbsup:   | :heavy_check_mark: | :x:                | :white_check_mark: [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md) |
+| **Query**               | :x:                | :white_check_mark: | :x: | | |
+| **Rbs**                 | :x:                | :x:                | :white_check_mark: [vim-rbs](https://github.com/jlcrochet/vim-rbs) | | |
+| **Regex** :thumbsup:    | :x:                | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/regex/code_regex.scm) |
+| **Ruby** :thumbsup:     | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-ruby](https://github.com/vim-ruby/vim-ruby) | [🖼️](#ruby) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb) |
+| **Rust**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/rust/code.rs) |
+| **TOML**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/toml/code.toml) |
+| **Vim**                 | :heavy_check_mark: | :white_check_mark: | :x: | | |
+| **Vimdoc**              | :heavy_check_mark: | :white_check_mark: | :x: | | |
+| **YAML**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/yaml/code.yaml) |
 
 :thumbsup: - detailed, :white_check_mark: - support and recomended  as default, :heavy_check_mark: - support, :x: - not support
 
@@ -202,7 +204,7 @@ require("newpaper").setup({
 | style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` |
 | lightness           | `0`           | Make all supported highlight groups lighter or darker. Useful with `saturation` to make more beauty and eye-friendly view. Value: from `-1`(all colors `"#000000"`) to `1`(all colors `"#FFFFFF"`). Recommended value: `-0.2` - `0.2` |
 | saturation          | `0`           | Change color saturation of all supported highlight groups. Useful with `lightness` to make more beauty and eye-friendly view. Value: from `-1` to `1`. Recommended value: `-0.2` - `0.2` |
-| greyscale           | `false`        | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|
+| greyscale           | `false`       | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|
 | editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic |
 | terminal            | `"contrast"`  | Make `:terminal`buffers and windows  in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
 | sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
@@ -214,6 +216,7 @@ require("newpaper").setup({
 | delim_rainbow_bold  | `false`       | Make rainbow delimiters like `{}`, `()`, `[]` or others bold. Use specific plugin to highlight like [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) |
 | booleans            | `"bold"`      | Make booleans like `true`, `false` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | keywords            | `"bold"`      | Make keywords like `if`, `for`, `while` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| doc_keywords        | `"bold,italic"` |  Make documenting keywords like `@param`, `@return` etc. bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. Only support for: [treesitter-luadoc](https://github.com/amaanq/tree-sitter-luadoc) |
 | regex               | `"bold"`      | Make regex  bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | regex_bg            | `true`        | Enable background color for regex capturing groups |
 | tags                | `"bold"`      | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
@@ -499,13 +502,41 @@ Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/cod
 **vim and Treesitter** 
 ![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/markdown/all.png)
 
+#### COMMENT-TODO
+
+Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/todo-comments.lua)
+
+**Treesitter** 
+![treesitter](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/syntax/comment/treesitter.png)
+
 ### 🎛️ Plugins
 
 #### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
-![todo-comments_light](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/todo-comments/todo-comments_light.png)
+Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md)
 
-![todo-comments_dark](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/todo-comments/todo-comments_dark.png)
+![todo-comments](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/todo-comments/todo-comments.png)
+
+##### Example config: 
+
+```lua
+{
+    keywords = {
+        FIX =  { icon = "", alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "ERROR" } },
+        TODO = { icon = "", alt = { "WIP" } },
+        HACK = { icon = "" },
+        WARN = { icon = "" },
+        PERF = { icon = "" },
+        NOTE = { icon = "󰎞", alt = { "INFO", "DOCS" } },
+        TEST = { icon = "" },
+    },
+    highlight = {
+        multiline = true,
+        keyword   = "bg",
+        after     = "fg",
+    },
+}
+```
 
 ## ❔ FAQ
 

@@ -207,6 +207,11 @@ Options:
         Make keywords like `if`, `for`, `while` etc. bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
 
+    + doc_keywords       {string} (default = `"bold,italic"`)
+        Make documenting keywords like `@param` etc. bold, italic or NONE
+        Only support for: `treesitter-luadoc`
+        Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
+
     + regex              {string} (default = `"bold"`)
         Make regex  bold, italic or NONE
         Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`
@@ -338,6 +343,7 @@ Default settings:
         delim_rainbow_bold  = false,
         booleans            = "bold",
         keywords            = "bold",
+        doc_keywords        = "bold,italic",
         regex               = "bold",
         regex_bg            = true,
         tags                = "bold",

@@ -52,6 +52,7 @@ local config = {
     delim_rainbow_bold  = opt("delim_rainbow_bold", false),
     booleans            = opt("booleans", "bold"),
     keywords            = opt("keywords", "bold"),
+    doc_keywords        = opt("doc_keywords", "bold,italic"),
     regex               = opt("regex", "bold"),
     regex_bg            = opt("regex_bg", true),
     tags                = opt("tags", "bold"),
