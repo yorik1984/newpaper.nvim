@@ -33,6 +33,9 @@ function M.setup(configColors, configStyle)
             ["@text.math.ruby"]            = { fg = newpaper.tex_math, style = style.o_style },
             ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@type.ruby"]                 = { fg = newpaper.darkgreen, nocombine = true },
+
+            -- LSP semantic tokens
+            ["@lsp.type.namespace.ruby"]   = { link = "@definition.namespace" },
         }
 
         return treesitter
