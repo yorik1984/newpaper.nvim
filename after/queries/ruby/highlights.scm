@@ -231,3 +231,11 @@
 (interpolation
   "#{" @include
   "}" @include) @text.emphasis
+
+(class
+  (comment)+ @comment.documentation
+  (body_statement (singleton_method)))
+
+(body_statement
+  (comment)+ @comment.documentation
+  (singleton_method))
