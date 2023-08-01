@@ -7,6 +7,7 @@ local plugins = {
     "cheatsheet",
     "cmp",
     "dashboard-nvim",
+    "fugitive",
     "jinja",
     "lazy",
     "litee",

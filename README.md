@@ -92,6 +92,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [Dashboard](https://github.com/nvimdev/dashboard-nvim)
 + [flash.nvim](https://github.com/folke/flash.nvim)
++ [fugitive](https://github.com/tpope/vim-fugitive)
 + [Git Gutter](https://github.com/airblade/vim-gitgutter)
 + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 + [git-messenger](https://github.com/rhysd/git-messenger.vim)
