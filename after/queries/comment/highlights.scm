@@ -51,5 +51,5 @@
  (#eq? @keyword.function "@author"))
 
 ;FIXIT: literal `@!` don't highlight together with atrribute name
-("text" @keyword @nospell
- (#vim-match? @keyword "^(attribute|endgroup|group|macro|method|parse|scope|visibility)$"))
+; ("text" @keyword @nospell
+;  (#vim-match? @keyword "^[@][!](attribute|endgroup|group|macro|method|parse|scope|visibility)$"))
