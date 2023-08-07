@@ -261,7 +261,7 @@ function M.setup(configColors, configStyle)
             ["@type.definition"]       = { fg = newpaper.maroon },
             ["@type.qualifier"]        = { fg = newpaper.maroon, style = style.k_style },
             ["@variable"]              = { fg = newpaper.variable, style = style.v_style },
-            ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_b_style },
+            ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_b_style, nocombine = true },
             ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },
 
             ["@text.title.1"]          = { fg = newpaper.tex_part_title, style = style.k_style },
