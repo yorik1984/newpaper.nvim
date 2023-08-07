@@ -143,6 +143,14 @@ function M.setupStyle(config)
     if config.italic_variables then
         style.v_style = style.italic
     end
+    -- variables bold style
+    if config.italic_variables and config.editor_better_view then
+        style.v_b_style = style.bold_i
+    elseif config.editor_better_view then
+        style.v_b_style = style.b_bold
+    else
+        style.v_b_style = style.v_style
+    end
 
     -- comment for VimL
     if config.italic_comments and config.keywords then
