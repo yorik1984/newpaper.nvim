@@ -421,7 +421,10 @@ function M.setup(configColors, configStyle)
             RedrawDebugComposed         = { fg = newpaper.fg, bg = newpaper.green },
             RedrawDebugRecompose        = { fg = newpaper.fg, bg = newpaper.red },
 
-            -- Lualine custom color for lualine with bg
+            -- Lualine custom colors
+            LuaLineDiffAdd              = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
+            LuaLineDiffChang            = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
+            LuaLineDiffDelete           = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
             LualineDiagnosticError      = { fg = newpaper.error_fg, bg = newpaper.silver },
             LualineDiagnosticWarn       = { fg = newpaper.warn_fg, bg = newpaper.silver },
             LualineDiagnosticInfo       = { fg = newpaper.info_fg, bg = newpaper.silver },
