@@ -20,7 +20,7 @@ function M.setup(configColors, configStyle)
 
     rubySyn.loadTreeSitter = function()
         local treesitter = {
-            ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon },
+            ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon, nocombine = true },
             ["@constant.ruby"]             = { fg = newpaper.ocean, style = style.k_style },
             ["@constructor.ruby"]          = { fg = newpaper.blue, style = style.o_style },
             ["@definition.var.ruby"]       = { fg = newpaper.ruby_orange, style = style.v_style },
