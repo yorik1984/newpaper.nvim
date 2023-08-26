@@ -208,7 +208,7 @@
 (scope_resolution name: (constant) @definition.type)
 
 ((scope_resolution name: (constant) @type)
-  (#not-lua-match?? @type "^[A-Z0-9_]+$"))
+  (#not-lua-match? @type "^[A-Z0-9_]+$"))
 
 (splat_parameter "*" @number)
 (splat_argument "*" @number)
