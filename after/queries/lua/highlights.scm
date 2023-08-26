@@ -79,8 +79,8 @@
 ;; Functions
 
 (dot_index_expression
-  table: (identifier) @namespace.builtin
-    (#any-of? @namespace.builtin
+  table: (identifier) @namespace.builtin.core
+    (#any-of? @namespace.builtin.core
       "vim" ))
 
 (arguments (identifier) @definition.parameter)

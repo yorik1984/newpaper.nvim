@@ -32,6 +32,7 @@ function M.setup(configColors, configStyle)
         local treesitter = {
             ["@field.lua"]                 = { fg = newpaper.bluegreen },
             ["@punctuation.bracket.lua"]   = { fg = newpaper.lua_navy, style = style.br_style },
+            ["@namespace.builtin.core"]    = { fg = newpaper.neovim_green, style = style.k_style },
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
 
             -- LSP semantic tokens

@@ -183,6 +183,9 @@ function M.setup(config)
             rainbowgreen         = "#28CE00",
             rainbowviolet        = "#7D00E5",
             rainbowcyan          = "#E500E5",
+
+            -- Neovim
+            neovim_green         = "#54A23D",
         }
     elseif config.style == "dark" then
         newpaper = {
@@ -360,6 +363,9 @@ function M.setup(config)
             rainbowgreen         = "#28CE00",
             rainbowviolet        = "#AE81FF",
             rainbowcyan          = "#E500E5",
+
+            -- Neovim
+            neovim_green         = "#87BD77",
         }
     end
 
