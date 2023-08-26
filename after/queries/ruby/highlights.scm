@@ -19,16 +19,16 @@
  (#any-of? @keyword.function "extend" "include" "prepend" "refine" "using"))
 
 ((identifier) @keyword.function
- (#vim-match? @keyword.function "^(alias|define|define_singleton|remove|undef)_method$"))
+ (#match? @keyword.function "^(alias|define|define_singleton|remove|undef)_method$"))
 
 ((identifier) @type.qualifier
  (#any-of? @type.qualifier "module_function"))
 
 ((identifier) @type.qualifier
- (#vim-match? @type.qualifier "^(public|private)_class_method$"))
+ (#match? @type.qualifier "^(public|private)_class_method$"))
 
 ((identifier) @type.qualifier
- (#vim-match? @type.qualifier "^(public|private)_constant$"))
+ (#match? @type.qualifier "^(public|private)_constant$"))
 
 ((identifier) @exception
  (#any-of? @exception "catch" "throw"))
@@ -40,7 +40,7 @@
  (#any-of? @keyword "callcc" "caller" "lambda" "proc" "eval"))
 
 ((identifier) @keyword
- (#vim-match? @keyword "^(class|instance|module)_eval$"))
+ (#match? @keyword "^(class|instance|module)_eval$"))
 
 ((identifier) @exception
  (#any-of? @exception "fail" "raise"))
@@ -56,7 +56,7 @@
 
 ;;; Function definitions
 ((identifier) @include
- (#vim-match? @include "^attr_(accessor|reader|writer)$"))
+ (#match? @include "^attr_(accessor|reader|writer)$"))
 
 ((identifier) @include
  (#vim-match? @include "^\%(\%(\^|;)\\s*)\@<=attr\>(\\s*[.=])\@!$"))
@@ -70,7 +70,7 @@
 (class_variable) @constant
 
 ((identifier) @constant.builtin
- (#vim-match? @constant.builtin "^__(callee|dir|id|method|send|ENCODING|FILE|LINE)__$"))
+ (#match? @constant.builtin "^__(callee|dir|id|method|send|ENCODING|FILE|LINE)__$"))
 
 [
  (self)
@@ -82,7 +82,7 @@
  (#any-of? @constant "ARGF" "ARGV" "ENV" "DATA" "STDERR" "STDIN" "STDOUT" "TOPLEVEL_BINDING"))
 
 ((constant) @constant
- (#vim-match? @constant "^RUBY_(VERSION|RELEASE_DATE|PLATFORM|PATCHLEVEL|REVISION|DESCRIPTION|COPYRIGHT|ENGINE)$"))
+ (#match? @constant "^RUBY_(VERSION|RELEASE_DATE|PLATFORM|PATCHLEVEL|REVISION|DESCRIPTION|COPYRIGHT|ENGINE)$"))
 
 ;;; rubyPredefinedVariable
 ((global_variable) @variable.builtin
@@ -208,7 +208,7 @@
 (scope_resolution name: (constant) @definition.type)
 
 ((scope_resolution name: (constant) @type)
-  (#vim-match? @type "^[A-Z0-9_]+$"))
+  (#not-lua-match?? @type "^[A-Z0-9_]+$"))
 
 (splat_parameter "*" @number)
 (splat_argument "*" @number)
