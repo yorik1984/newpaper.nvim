@@ -408,8 +408,7 @@ function M.setup(configColors, configStyle)
             illuminatedCurWord          = { bg = newpaper.contrast },
 
             -- IndentBlankline ------------------------------------------------
-            IndentBlanklineContextChar  = { fg = newpaper.contextchar },
-            IndentBlanklineContextStart = { style = style.underline },
+            IblScope  = { fg = newpaper.contextchar },
 
             -- LanguageTool ---------------------------------------------------
             LanguageToolCmd             = { fg = newpaper.comment },
