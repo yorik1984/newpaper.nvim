@@ -43,6 +43,7 @@ function M.setup(config)
             nephritis            = "#00AB66",
             bluegreen            = "#1B7F82",
             aqua                 = "#BFD5EC",
+            aquadark             = "#AFD7FF",
             aqualight            = "#DFE4EB",
             lightviolet          = "#E5D9F2",
             blueviolet           = "#AF87D7",
@@ -222,7 +223,8 @@ function M.setup(config)
             ocean                = "#43A68A",
             nephritis            = "#36C692",
             bluegreen            = "#4BB5B1",
-            aqua                 = "#2B3A4C",
+            aqua                 = "#374655",
+            aquadark             = "#3C4b64",
             aqualight            = "#2E3032",
             lightviolet          = "#473954",
             blueviolet           = "#3c2846",
@@ -410,6 +412,7 @@ function M.setup(config)
     newpaper.wildmenu_bg         = newpaper.yellow
     newpaper.pmenu_fg            = newpaper.darkgrey
     newpaper.pmenu_bg            = newpaper.lightlightgrey
+    newpaper.pmenu_sel           = newpaper.aquadark
     newpaper.selection           = newpaper.blue
     newpaper.cursor              = newpaper.fg
     newpaper.cursor_nr_fg        = newpaper.darkorange

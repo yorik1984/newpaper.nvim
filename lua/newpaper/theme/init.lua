@@ -101,7 +101,7 @@ function M.setup(configColors, configStyle)
             NormalSB         = { fg = newpaper.sb_fg, bg = newpaper.sb_bg },
             Pmenu            = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },
             PmenuSbar        = { fg = newpaper.teal, bg = newpaper.pmenu_bg },
-            PmenuSel         = { bg = newpaper.aqua },
+            PmenuSel         = { bg = newpaper.pmenu_sel },
             PmenuThumb       = { bg = newpaper.teal },
             Question         = { fg = newpaper.darkgreen },
             QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse },
