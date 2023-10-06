@@ -203,7 +203,7 @@ function M.setup(configColors, configStyle)
             ["@float"]                 = { fg = newpaper.magenta },
             ["@function"]              = { fg = newpaper.lua_navy, style = style.f_style },
             ["@function.builtin"]      = { fg = newpaper.tex_red, style = style.f_style },
-            ["@function.call"]         = { fg = newpaper.lua_navy, style = style.f_style },
+            ["@function.call"]         = { fg = newpaper.tag_navy, style = style.f_style },
             ["@function.macro"]        = { fg = newpaper.magenta, style = style.f_style },
             ["@include"]               = { fg = newpaper.maroon },
             ["@keyword"]               = { fg = newpaper.keyword, style = style.k_style },
