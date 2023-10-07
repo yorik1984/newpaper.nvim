@@ -415,7 +415,7 @@ function M.setup(config)
     newpaper.folded_fg           = newpaper.blue
     newpaper.highlight           = newpaper.silver
     newpaper.linenumber_bg       = newpaper.lightsilver
-    newpaper.linenumber_fg       = newpaper.comment
+    newpaper.linenumber_fg       = newpaper.comments
     newpaper.msgarea_bg          = newpaper.bg
     newpaper.msgarea_fg          = newpaper.fg
     newpaper.normal_bg           = newpaper.bg
