@@ -13,7 +13,7 @@ function M.setup(configColors, configStyle)
     rbsSyn.loadPlugins = function()
         local plugins = {
             -- vim-rbs
-            rbsDefine                    = { fg = newpaper.keyword,  style = style.k_style },
+            rbsDefine                    = { fg = newpaper.keywords,  style = style.k_style },
             rbsClassNameDefinition       = { fg = newpaper.ruby_navy, style = style.k_style },
             -- rbsDelimiter                 Delimiter
             -- rbsTypeVariable              Identifier
@@ -24,7 +24,7 @@ function M.setup(configColors, configStyle)
             -- rbsModuleSelfType            rbsClassName
             rbsInterfaceNameDefinition   = { fg = newpaper.maroon },
             -- rbsKeyword                   Keyword
-            rbsTypeAlias                 = { fg = newpaper.keyword,  style = style.k_style },
+            rbsTypeAlias                 = { fg = newpaper.keywords, style = style.k_style },
             rbsAliasNameDefinition       = { fg = newpaper.blue,     style = style.k_style },
             rbsAliasOperator             = { fg = newpaper.tag_navy, style = style.o_style },
             rbsAliasNamespace            = { fg = newpaper.teal,     style = style.k_style },
@@ -35,7 +35,7 @@ function M.setup(configColors, configStyle)
             -- rbsComment                   Comment
             -- rbsCommentStart              rbsComment
             rbsInstanceVariable          = { fg = newpaper.darkengreen, style = style.v_style },
-            rbsMethod                    = { fg = newpaper.keyword,     style = style.k_style },
+            rbsMethod                    = { fg = newpaper.keywords,    style = style.k_style },
             rbsMethodName                = { fg = newpaper.navy },
             -- rbsMethodDeclarationOperator rbsDeclarationOperator
             -- rbsMethodUnaryOperator       rbsUnaryOperator
@@ -47,7 +47,7 @@ function M.setup(configColors, configStyle)
             -- rbsInclude                   Statement
             -- rbsExtend                    Statement
             -- rbsPrepend                   Statement
-            rbsMethodAlias               = { fg = newpaper.keyword, style = style.k_style },
+            rbsMethodAlias               = { fg = newpaper.keywords, style = style.k_style },
             -- rbsMethodAliasName           rbsMethodName
             rbsMethodSelf                = { fg = newpaper.maroon,  style = style.v_style },
             rbsMethodSelfModifier        = { fg = newpaper.maroon,  style = style.o_style },

@@ -12,7 +12,7 @@ function M.setup(configColors, configStyle)
 
     vimSyn.loadSyntax = function()
         local syntax = {
-            vimCommentTitle = { fg = newpaper.comment, style = style.comment_title }
+            vimCommentTitle = { fg = newpaper.comments, style = style.c_title }
         }
         return syntax
     end

@@ -11,12 +11,12 @@ function M.setup(configColors, configStyle)
 
     packerSyn.loadPlugins = function()
         local plugins = {
-            packerHash         = { fg = newpaper.tag },
-            packerOutput       = { fg = newpaper.keyword },
+            packerHash         = { fg = newpaper.tags },
+            packerOutput       = { fg = newpaper.keywords },
             packerStatus       = { fg = newpaper.teal },
             packerStatusCommit = { fg = newpaper.git_modified },
             packerPackageName  = { fg = newpaper.teal },
-            packerWorking      = { fg = newpaper.comment },
+            packerWorking      = { fg = newpaper.comments },
             packerProgress     = { fg = newpaper.green, style = style.b_bold },
         }
         return plugins

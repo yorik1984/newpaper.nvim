@@ -45,7 +45,7 @@ function M.onColorScheme()
     vim.api.nvim_clear_autocmds({ group = "newpaper" })
 end
 
-function M.autocmds(config, theme)
+function M.autocmds(config, colors)
     local group = vim.api.nvim_create_augroup("newpaper", {})
     vim.api.nvim_create_autocmd({ "ColorSchemePre" }, {
         group = group,
@@ -72,10 +72,9 @@ function M.autocmds(config, theme)
         group = group,
         pattern = { "*\\(lazygit\\)" },
         callback = function()
-            local newpaper = theme.colors
-            vim.b.terminal_color_1 = newpaper.git_removed
-            vim.b.terminal_color_2 = newpaper.git_added
-            vim.b.terminal_color_15 = newpaper.git_fg
+            vim.b.terminal_color_1 = colors.git_removed
+            vim.b.terminal_color_2 = colors.git_added
+            vim.b.terminal_color_15 = colors.git_fg
         end,
     })
 
@@ -96,6 +95,25 @@ function M.autocmds(config, theme)
     end
 end
 
+function M.terminal(colors)
+    vim.g.terminal_color_0 = colors.black
+    vim.g.terminal_color_1 = colors.maroon
+    vim.g.terminal_color_2 = colors.darkgreen
+    vim.g.terminal_color_3 = colors.darkorange
+    vim.g.terminal_color_4 = colors.navy
+    vim.g.terminal_color_5 = colors.purple
+    vim.g.terminal_color_6 = colors.teal
+    vim.g.terminal_color_7 = colors.bg
+    vim.g.terminal_color_8 = colors.darkgrey
+    vim.g.terminal_color_9 = colors.red
+    vim.g.terminal_color_10 = colors.green
+    vim.g.terminal_color_11 = colors.orange
+    vim.g.terminal_color_12 = colors.lightblue
+    vim.g.terminal_color_13 = colors.lightmagenta
+    vim.g.terminal_color_14 = colors.blue
+    vim.g.terminal_color_15 = colors.fg
+end
+
 function M.load(config, theme)
     -- Patch https://github.com/folke/tokyonight.nvim/commit/0ead86afe390603f9bd688103d7a5fc6724a828e
     -- only needed to clear when not the default colorscheme
@@ -105,9 +123,9 @@ function M.load(config, theme)
     vim.o.termguicolors = true
     vim.g.colors_name = "newpaper"
     M.syntax(theme.loadEditor())
-    theme.loadTerminal()
+    M.terminal(theme.colors)
     M.loadSyntax(theme)
-    M.autocmds(config, theme)
+    M.autocmds(config, theme.colors)
 end
 
 function M.loadSyntax(synTheme)
@@ -202,15 +220,15 @@ end
 ---@return string: "#XXXXXX" greyscaled color
 function M.hexGreyscale(hex, method)
     local function greyscaleLightness(r, g, b)
-        return (math.max(r, g, b) + math.min(r, g, b))/2
+        return (math.max(r, g, b) + math.min(r, g, b)) / 2
     end
 
     local function greyscaleAverage(r, g, b)
-        return (r + g + b)/3
+        return (r + g + b) / 3
     end
 
     local function greyscaleLuminosity(r, g, b)
-        return 0.21*r + 0.72*g + 0.07*b
+        return 0.21 * r + 0.72 * g + 0.07 * b
     end
     local rgb = hsluv.hex_to_rgb(hex)
     local R, G, B

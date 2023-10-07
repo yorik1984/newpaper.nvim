@@ -18,7 +18,7 @@ function M.setup(configColors, configStyle)
             ["@punctuation.delimiter.comment"] = { fg = newpaper.tex_SI_orange,   style = style.c_style, nocombine = true },
             ["@text.note.test.comment"]        = { fg = newpaper.bg, bg = newpaper.todo_test, style = style.b_bold },
             ["@text.note.perf.comment"]        = { fg = newpaper.bg, bg = newpaper.todo_default, style = style.b_bold },
-            ["@text.uri.comment"]              = { fg = newpaper.regexp_blue,     style = style.link, nocombine = true },
+            ["@text.uri.comment"]              = { fg = newpaper.regexp_blue,     style = style.links, nocombine = true },
 
             ["@keyword.comment"]               = { fg = newpaper.tex_keyword,     style = style.doc_k_style, nocombine = true },
             ["@keyword.function.comment"]      = { fg = newpaper.tex_navy,        style = style.doc_k_style, nocombine = true },

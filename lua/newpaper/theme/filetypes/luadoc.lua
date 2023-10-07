@@ -12,8 +12,8 @@ function M.setup(configColors, configStyle)
 
     luadocSyn.loadTreeSitter = function()
         local treesitter = {
-            ["@boolean.luadoc"]               = { fg = newpaper.boolean,         style = style.doc_k_style, nocombine = true },
-            ["@comment.luadoc"]               = { fg = newpaper.doc_comment,     style = style.doc_style,   nocombine = true },
+            ["@boolean.luadoc"]               = { fg = newpaper.booleans,        style = style.doc_k_style, nocombine = true },
+            ["@comment.luadoc"]               = { fg = newpaper.doc_comments,    style = style.doc_style,   nocombine = true },
             ["@constant.builtin.luadoc"]      = { fg = newpaper.dark_maroon,     style = style.doc_style,   nocombine = true },
             ["@constructor.luadoc"]           = { fg = newpaper.lua_blue,        style = style.doc_k_style, nocombine = true },
             ["@field.luadoc"]                 = { fg = newpaper.tex_math_delim,  style = style.doc_style,   nocombine = true },
@@ -31,10 +31,10 @@ function M.setup(configColors, configStyle)
             ["@punctuation.special.luadoc"]   = { fg = newpaper.tex_maroon,      style = style.doc_style,   nocombine = true },
             ["@string.luadoc"]                = { fg = newpaper.regexp_blue,     style = style.doc_style,   nocombine = true },
             ["@string.special.luadoc"]        = { fg = newpaper.tex_ch_brown,    style = style.doc_style,   nocombine = true },
-            ["@text.uri.luadoc"]              = { fg = newpaper.regexp_blue,     style = style.link,        nocombine = true },
+            ["@text.uri.luadoc"]              = { fg = newpaper.regexp_blue,     style = style.links,       nocombine = true },
             ["@type.builtin.luadoc"]          = { fg = newpaper.bluegreen,       style = style.doc_style,   nocombine = true },
-            ["@type.builtin.number.luadoc"]   = { fg = newpaper.number,          style = style.doc_k_style, nocombine = true },
-            ["@type.builtin.string.luadoc"]   = { fg = newpaper.string,          style = style.doc_k_style, nocombine = true },
+            ["@type.builtin.number.luadoc"]   = { fg = newpaper.numbers,         style = style.doc_k_style, nocombine = true },
+            ["@type.builtin.string.luadoc"]   = { fg = newpaper.strings,         style = style.doc_k_style, nocombine = true },
             ["@type.luadoc"]                  = { fg = newpaper.tex_math,        style = style.doc_style,   nocombine = true },
             ["@type.qualifier.luadoc"]        = { fg = newpaper.ruby_maroon,     style = style.doc_k_style, nocombine = true },
             ["@variable.builtin.luadoc"]      = { fg = newpaper.tex_olive,       style = style.doc_style,   nocombine = true },

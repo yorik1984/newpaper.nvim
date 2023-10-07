@@ -12,7 +12,7 @@ function M.setup(configColors, configStyle)
 
     luapSyn.loadTreeSitter = function()
         local treesitter = {
-            ["@constant.luap"]                   = { fg = newpaper.text,           style = style.regex, nocombine = true },
+            ["@constant.luap"]                   = { fg = newpaper.texts,          style = style.regex, nocombine = true },
             ["@character.luap"]                  = { fg = newpaper.redorange,      style = style.regex, nocombine = true },
             ["@operator.luap"]                   = { fg = newpaper.regexp_blue,    style = style.regex, nocombine = true },
             ["@punctuation.bracket.group.luap"]  = { fg = newpaper.regexp_green,   style = style.regex, nocombine = true },

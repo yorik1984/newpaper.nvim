@@ -1,49 +1,48 @@
 local M = {}
 
 function M.setupStyle(config)
-
     -- stylua: ignore start
 
-    local style = {
+    local style       = {
         -- default styles
-        none          = "NONE",
-        bold          = "bold",
-        italic        = "italic",
-        underline     = "underline",
-        undercurl     = "undercurl",
-        reverse       = "reverse",
-        strike        = "strikethrough",
+        none         = "NONE",
+        bold         = "bold",
+        italic       = "italic",
+        underline    = "underline",
+        undercurl    = "undercurl",
+        reverse      = "reverse",
+        strike       = "strikethrough",
 
-        b_bold        = "NONE", -- editor style bold
-        b_italic      = "NONE", -- editor style italic
-        b_bold_i      = "NONE", -- editor style bold italic
-        b_bold_u      = "NONE", -- editor style bold underline
-        c_style       = "NONE", -- comments style
-        doc_style     = "NONE", -- comments documenting code style
-        comment_title = "NONE", -- magic and tittle comments in VimL, Ruby and others
-        o_style       = "NONE", -- operators style
-        d_style       = "NONE", -- delimiters style
-        br_style      = "NONE", -- brackets style
-        d_r_style     = "NONE", -- delimiters rainbow style
-        tb_style      = "NONE", -- tags brackets style
-        s_style       = "NONE", -- strings style
-        v_style       = "NONE", -- variables style
-        f_style       = "NONE", -- functions style
+        b_bold       = "NONE", -- editor style bold
+        b_italic     = "NONE", -- editor style italic
+        b_bold_i     = "NONE", -- editor style bold italic
+        b_bold_u     = "NONE", -- editor style bold underline
+        c_style      = "NONE", -- comments style
+        doc_style    = "NONE", -- comments documenting code style
+        c_title      = "NONE", -- magic and tittle comments in VimL, Ruby etc
+        o_style      = "NONE", -- operators style
+        d_style      = "NONE", -- delimiters style
+        br_style     = "NONE", -- brackets style
+        d_r_style    = "NONE", -- delimiters rainbow style
+        tb_style     = "NONE", -- tags brackets style
+        s_style      = "NONE", -- strings style
+        v_style      = "NONE", -- variables style
+        f_style      = "NONE", -- functions style
 
         -- Spell style
-        error = "NONE",
+        error        = "NONE",
 
         -- Make booleans bold, italic or NONE
-        bool_style = config.booleans,
+        bool_style   = config.booleans,
 
         -- Make keywords bold, italic or NONE
-        k_style = config.keywords,
+        k_style      = config.keywords,
 
         -- Make keywords style in comments documenting code bold, italic or NONE
-        doc_k_style = config.doc_keywords,
+        doc_k_style  = config.doc_keywords,
 
         -- Make regex bold, italic or NONE
-        regex = config.regex,
+        regex        = config.regex,
 
         -- Tex settings
         tex_m_style  = config.tex_major,
@@ -60,10 +59,10 @@ function M.setupStyle(config)
     style.bold_u      = style.bold .. "," .. style.underline
     style.italic_u    = style.italic .. "," .. style.underline
 
-    -- HTML tag styles
-    style.tag_style   = config.tags
-    style.link        = style.italic_u
-    style.b_link      = style.bold_u
+    -- HTML tags styles
+    style.tags_style  = config.tags
+    style.links       = style.italic_u
+    style.b_links     = style.bold_u
 
     -- comments style underline
     style.c_underline = style.underline
@@ -139,7 +138,7 @@ function M.setupStyle(config)
         style.f_style = style.italic
     end
 
-    -- Make italic variable
+    -- Make italic variables
     if config.italic_variables then
         style.v_style = style.italic
     end
@@ -152,13 +151,13 @@ function M.setupStyle(config)
         style.v_b_style = style.v_style
     end
 
-    -- comment for VimL
+    -- comments for VimL
     if config.italic_comments and config.keywords then
-        style.comment_title = style.bold_i
+        style.c_title = style.bold_i
     elseif config.keywords then
-        style.comment_title = style.k_style
+        style.c_title = style.k_style
     else
-        style.comment_title = style.c_style
+        style.c_title = style.c_style
     end
 
     return style

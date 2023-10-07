@@ -16,9 +16,9 @@ function M.setup(configColors, configStyle)
             helpSpecial        = { fg = newpaper.magenta },
             helpCommand        = { fg = newpaper.regexp_blue },
             helpExample        = { fg = newpaper.regexp_blue },
-            helpHyperTextEntry = { fg = newpaper.keyword, style = style.s_style },
-            helpHyperTextJump  = { fg = newpaper.link, style = style.s_underline },
-            helpURL            = { fg = newpaper.string, style = style.link },
+            helpHyperTextEntry = { fg = newpaper.keywords, style = style.s_style },
+            helpHyperTextJump  = { fg = newpaper.links, style = style.s_underline },
+            helpURL            = { fg = newpaper.strings, style = style.links },
         }
 
         return syntax
@@ -29,9 +29,9 @@ function M.setup(configColors, configStyle)
         local treesitter = {
             ["@conceal.vimdoc"]        = { fg = newpaper.magenta },
             ["@label.vimdoc"]          = { fg = newpaper.bluegreen },
-            ["@string.special.vimdoc"] = { fg = newpaper.keyword, nocombine = true },
-            ["@text.reference.vimdoc"] = { fg = newpaper.link, style = style.underline },
-            ["@text.uri.vimdoc"]       = { fg = newpaper.string, style = style.link },
+            ["@string.special.vimdoc"] = { fg = newpaper.keywords, nocombine = true },
+            ["@text.reference.vimdoc"] = { fg = newpaper.links, style = style.underline },
+            ["@text.uri.vimdoc"]       = { fg = newpaper.strings, style = style.links },
             ["@type.vimdoc"]           = { fg = newpaper.tex_red, nocombine = true },
         }
 

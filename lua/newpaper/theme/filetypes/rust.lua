@@ -1,4 +1,3 @@
-local util = require("newpaper.util")
 local M = {}
 
 function M.setup(configColors, configStyle)

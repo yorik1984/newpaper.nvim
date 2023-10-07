@@ -31,7 +31,7 @@ function M.setup(configColors, configStyle)
             jinjaFilter       = { fg = newpaper.blue, style = style.f_style },
             jinjaBlockName    = { fg = newpaper.teal },
             -- jinjaVariable     Identifier
-            jinjaString       = { fg = newpaper.string, style = style.s_style },
+            jinjaString       = { fg = newpaper.strings, style = style.s_style },
             jinjaNumber       = { fg = newpaper.red },
             -- jinjaComment      Comment
         }

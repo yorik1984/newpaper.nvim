@@ -28,7 +28,7 @@ function M.setup(configColors, configStyle)
             -- yamlReservedDirective        Error
             yamlYAMLVersion              = { fg = newpaper.red, style = style.o_style },
 
-            yamlString                   = { fg = newpaper.string, style = style.s_style },
+            yamlString                   = { fg = newpaper.strings, style = style.s_style },
             -- yamlFlowString               yamlString
             -- yamlFlowStringDelimiter      yamlString
             yamlEscape                   = { fg = newpaper.magenta },
@@ -48,7 +48,7 @@ function M.setup(configColors, configStyle)
             yamlConstant                 = { fg = newpaper.darkengreen, style = style.k_style  },
 
             yamlNull                     = { fg = newpaper.maroon,  style = style.k_style },
-            yamlBool                     = { fg = newpaper.boolean, style = style.bool_style },
+            yamlBool                     = { fg = newpaper.booleans, style = style.bool_style },
 
             -- yamlAnchor                   Type
             -- yamlAlias                    Type

@@ -59,7 +59,7 @@ function M.setup(configColors, configStyle)
             -- luaCommentLong      luaComment
             -- luaCommentTodo      Todo
             -- luaCond             Conditional
-            luaConstant         = { fg = newpaper.boolean,   style = style.bool_style },
+            luaConstant         = { fg = newpaper.booleans,  style = style.bool_style },
             luaDocTag           = { fg = newpaper.darkgreen, style = style.c_style },
             luaEllipsis         = { fg = newpaper.orange },
             -- luaElse             Conditional
@@ -77,7 +77,7 @@ function M.setup(configColors, configStyle)
             luaGotoLabel        = { fg = newpaper.redorange },
             -- luaIn               Repeat
             -- luaLabel            Label
-            luaLocal            = { fg = newpaper.keyword },
+            luaLocal            = { fg = newpaper.keywords },
             -- luaNumber           Number
             -- luaSymbolOperator   luaOperator
             luaNotEqOperator    = { fg = newpaper.magenta,  style = style.o_style },

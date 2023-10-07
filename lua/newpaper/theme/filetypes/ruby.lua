@@ -60,7 +60,7 @@ function M.setup(configColors, configStyle)
             -- rubyRepeat                     Repeat
             -- rubyRepeatModifier             rubyRepeat
             -- rubyOptionalDo                 rubyRepeat
-            rubyControl                    = { fg = newpaper.keyword, style = style.k_style },
+            rubyControl                    = { fg = newpaper.keywords, style = style.k_style },
             rubyInclude                    = { fg = newpaper.redorange },
             -- rubyInteger                    Number
             -- rubyCharacter                  Character
@@ -81,7 +81,7 @@ function M.setup(configColors, configStyle)
 
             -- rubyComment                    Comment
             rubyEncoding                   = { fg = newpaper.maroon },
-            rubyMagicComment               = { fg = newpaper.comment, style = style.comment_title },
+            rubyMagicComment               = { fg = newpaper.comments, style = style.c_title },
             -- rubyData                       Comment
             -- rubyDataDirective              Delimiter
             -- rubyDocumentation              Comment
@@ -98,7 +98,7 @@ function M.setup(configColors, configStyle)
 
             rubyInterpolationDelimiter     = { fg = newpaper.redorange, nocombine = true },
             -- rubySharpBang                  PreProc
-            rubyStringDelimiter            = { fg = newpaper.string, style = style.s_style },
+            rubyStringDelimiter            = { fg = newpaper.strings, style = style.s_style },
             -- rubyHeredocDelimiter           rubyStringDelimiter
             -- rubyPercentSymbolDelimiter     rubySymbolDelimiter
             rubySymbolDelimiter            = { fg = newpaper.darkyellow, style = style.d_style },
@@ -106,7 +106,7 @@ function M.setup(configColors, configStyle)
             rubyCurlyBlockDelimiter        = { fg = newpaper.ruby_navy, style = style.br_style },
             rubyArrayDelimiter             = { fg = newpaper.ruby_navy, style = style.br_style },
             -- rubyString                     String
-            rubyPercentRegexpDelimiter     = { fg = newpaper.text, style = style.o_style },
+            rubyPercentRegexpDelimiter     = { fg = newpaper.texts, style = style.o_style },
             rubyRegexpDelimiter            = { fg = newpaper.regexp_blue, style = style.d_style },
             rubyRegexpEscape               = { fg = newpaper.regexp_magenta },
             rubyRegexpQuantifier           = { fg = newpaper.regexp_blue, style = style.o_style },
@@ -116,7 +116,7 @@ function M.setup(configColors, configStyle)
             rubyRegexpIntersection         = { fg = newpaper.regexp_brown, style = style.o_style },
             rubyRegexpSpecial              = { fg = newpaper.regexp_green },
             rubyRegexp                     = { fg = newpaper.regexp_blue, style = style.s_style },
-            rubyRegexpComment              = { fg = newpaper.comment, style = style.comment_title },
+            rubyRegexpComment              = { fg = newpaper.comments, style = style.c_title },
 
             -- rubyError                      Error
             -- rubyUselessLineContinuation    rubyError
@@ -145,12 +145,12 @@ function M.setup(configColors, configStyle)
         if vim.g.ruby_operators == 1 then
             plugins.rubyOperator               = { fg = newpaper.navy, style = style.o_style }
             plugins.rubyDefinedOperator        = { fg = newpaper.navy, style = style.k_style }
-            plugins.rubyEnglishBooleanOperator = { fg = newpaper.boolean, style = style.bool_style }
-            plugins.rubyTernaryOperator        = { fg = newpaper.keyword, style = style.o_style }
+            plugins.rubyEnglishBooleanOperator = { fg = newpaper.booleans, style = style.bool_style }
+            plugins.rubyTernaryOperator        = { fg = newpaper.keywords, style = style.o_style }
             plugins.rubyArithmeticOperator     = { fg = newpaper.tex_math, style = style.o_style }
             plugins.rubyComparisonOperator     = { fg = newpaper.blue, style = style.o_style }
             plugins.rubyBitwiseOperator        = { fg = newpaper.redorange, style = style.o_style }
-            plugins.rubyBooleanOperator        = { fg = newpaper.boolean,   style = style.bool_style }
+            plugins.rubyBooleanOperator        = { fg = newpaper.booleans,   style = style.bool_style }
             plugins.rubyRangeOperator          = { fg = newpaper.tex_math, style = style.o_style }
             plugins.rubyAssignmentOperator     = { fg = newpaper.tag_navy, style = style.o_style }
             plugins.rubyEqualityOperator       = { fg = newpaper.lightmagenta, style = style.o_style }

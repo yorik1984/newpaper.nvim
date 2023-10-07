@@ -12,7 +12,7 @@ function M.setup(configColors, configStyle)
 
     regexSyn.loadTreeSitter = function()
         local treesitter = {
-            ["@constant.regex"]                   = { fg = newpaper.text,           style = style.regex, nocombine = true },
+            ["@constant.regex"]                   = { fg = newpaper.texts,          style = style.regex, nocombine = true },
             ["@number.regex"]                     = { fg = newpaper.regexp_blue,    nocombine = true },
             ["@operator.regex"]                   = { fg = newpaper.regexp_blue,    style = style.regex, nocombine = true },
             ["@property.regex"]                   = { fg = newpaper.regexp_green,   style = style.regex, nocombine = true, bg = newpaper.regexp_green_bg },
@@ -23,7 +23,7 @@ function M.setup(configColors, configStyle)
             ["@string.escape.assertion.regex"]    = { fg = newpaper.regexp_brown,   style = style.regex, nocombine = true },
             ["@string.escape.regex"]              = { fg = newpaper.regexp_magenta, style = style.regex, nocombine = true },
             ["@string.escape.control.regex"]      = { fg = newpaper.regexp_orange,  style = style.regex, nocombine = true },
-            ["@text.title.regex"]                 = { fg = newpaper.text,           style = style.regex, nocombine = true },
+            ["@text.title.regex"]                 = { fg = newpaper.texts,          style = style.regex, nocombine = true },
 
             -- Capture group
             ["@string.class.regex"]               = { bg = newpaper.regexp_orange_bg },

@@ -34,7 +34,7 @@ function M.setup(configColors, configStyle)
             ActionPreviewBorder  = { fg = newpaper.lightblue, bg = newpaper.float_bg },
             ActionPreviewTitle   = { fg = newpaper.blue, bg = newpaper.float_bg, style = style.b_bold },
             CodeActionText       = { fg = newpaper.olive },
-            CodeActionNumber     = { fg = newpaper.number },
+            CodeActionNumber     = { fg = newpaper.numbers },
             -- hover
             HoverNormal          = { link = "SagaNormal" },
             HoverBorder          = { fg = newpaper.teal, bg = newpaper.float_bg },

@@ -389,49 +389,48 @@ function M.setup(config)
     util.colorOverrides(newpaper, config.colors)
 
     -- Optional colors
-    newpaper.keyword             = newpaper.purple
-    newpaper.class               = newpaper.ruby_navy
-    newpaper.string              = newpaper.lightblue
-    newpaper.accent              = newpaper.blue
-    newpaper.comment             = newpaper.lightgrey
-    newpaper.doc_comment         = newpaper.tex_verb
-    newpaper.link                = newpaper.tag_navy
-    newpaper.tag                 = newpaper.tag_navy
-    newpaper.boolean             = newpaper.nephritis
-    newpaper.text                = newpaper.darkgrey
-    newpaper.variable            = newpaper.fg
-    newpaper.number              = newpaper.tex_ch_red
+    newpaper.booleans            = newpaper.nephritis
+    newpaper.comments            = newpaper.lightgrey
+    newpaper.doc_comments        = newpaper.tex_verb
+    newpaper.keywords            = newpaper.purple
+    newpaper.links               = newpaper.tag_navy
+    newpaper.numbers             = newpaper.tex_ch_red
+    newpaper.strings             = newpaper.lightblue
+    newpaper.tags                = newpaper.tag_navy
+    newpaper.texts               = newpaper.darkgrey
+    newpaper.variables           = newpaper.fg
     newpaper.none                = "NONE"
 
     -- Editor
-    newpaper.normal_fg           = newpaper.fg
-    newpaper.normal_bg           = newpaper.bg
-    newpaper.folded_fg           = newpaper.blue
+    newpaper.accent              = newpaper.blue
+    newpaper.active              = newpaper.silver
+    newpaper.border              = newpaper.purple
+    newpaper.colorcolumn         = newpaper.disabled
+    newpaper.contrast            = newpaper.lightlightgrey
+    newpaper.cursor              = newpaper.fg
+    newpaper.cursor_nr_bg        = newpaper.lightsilver
+    newpaper.cursor_nr_fg        = newpaper.darkorange
+    newpaper.eob                 = newpaper.disabled
     newpaper.folded_bg           = newpaper.aqua
-    newpaper.wildmenu_fg         = newpaper.darkgrey
-    newpaper.wildmenu_bg         = newpaper.yellow
-    newpaper.pmenu_fg            = newpaper.darkgrey
+    newpaper.folded_fg           = newpaper.blue
+    newpaper.highlight           = newpaper.silver
+    newpaper.linenumber_bg       = newpaper.lightsilver
+    newpaper.linenumber_fg       = newpaper.comment
+    newpaper.msgarea_bg          = newpaper.bg
+    newpaper.msgarea_fg          = newpaper.fg
+    newpaper.normal_bg           = newpaper.bg
+    newpaper.normal_fg           = newpaper.fg
     newpaper.pmenu_bg            = newpaper.lightlightgrey
+    newpaper.pmenu_fg            = newpaper.darkgrey
     newpaper.pmenu_sel           = newpaper.aquadark
     newpaper.selection           = newpaper.blue
-    newpaper.cursor              = newpaper.fg
-    newpaper.cursor_nr_fg        = newpaper.darkorange
-    newpaper.cursor_nr_bg        = newpaper.lightsilver
-    newpaper.linenumber_fg       = newpaper.comment
-    newpaper.linenumber_bg       = newpaper.lightsilver
-    newpaper.msgarea_fg          = newpaper.fg
-    newpaper.msgarea_bg          = newpaper.bg
-    newpaper.colorcolumn         = newpaper.disabled
-    newpaper.border              = newpaper.purple
-    newpaper.win_border          = newpaper.grey
+    newpaper.titles              = newpaper.fg
+    newpaper.wildmenu_bg         = newpaper.yellow
+    newpaper.wildmenu_fg         = newpaper.darkgrey
     newpaper.win_act_border      = newpaper.violet
-    newpaper.highlight           = newpaper.silver
-    newpaper.contrast            = newpaper.lightlightgrey
-    newpaper.active              = newpaper.silver
-    newpaper.title               = newpaper.fg
-    newpaper.eob                 = newpaper.disabled
-    newpaper.winbar_fg           = newpaper.grey
+    newpaper.win_border          = newpaper.grey
     newpaper.winbar_bg           = newpaper.bg
+    newpaper.winbar_fg           = newpaper.grey
 
     -- Search
     newpaper.search_bg           = newpaper.yellow

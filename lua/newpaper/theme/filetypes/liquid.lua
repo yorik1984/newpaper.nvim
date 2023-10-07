@@ -27,7 +27,7 @@ function M.setup(configColors, configStyle)
             -- liquidNull             liquidBoolean
             -- liquidBoolean          Boolean
             liquidFilter           = { fg = newpaper.ruby_navy, style = style.f_style },
-            liquidForloop          = { fg = newpaper.keyword, style = style.k_style },
+            liquidForloop          = { fg = newpaper.keywords,  style = style.k_style },
             liquidForloopAttribute = { fg = newpaper.ruby_navy, style = style.k_style },
         }
         return syntax

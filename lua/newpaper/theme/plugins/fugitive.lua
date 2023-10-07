@@ -21,7 +21,7 @@ function M.setup(configColors, configStyle)
             fugitiveUntrackedModifier = { fg = newpaper.git_added },
             fugitiveUnstagedModifier  = { fg = newpaper.git_modified, style = style.b_bold },
             fugitiveStagedModifier    = { fg = newpaper.maroon },
-            fugitiveInstruction       = { fg = newpaper.string },
+            fugitiveInstruction       = { fg = newpaper.strings },
             fugitiveStop              = { fg = newpaper.tag_navy },
             fugitiveHash              = { fg = newpaper.orange },
             fugitiveSymbolicRef       = { fg = newpaper.green, style = style.b_bold },

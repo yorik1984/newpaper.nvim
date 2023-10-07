@@ -12,7 +12,7 @@ function M.setup(configColors, configStyle)
     vistaSyn.loadPlugins = function()
         local plugins = {
             VistaParenthesis = { fg = newpaper.navy, style = style.b_bold },
-            VistaScope       = { fg = newpaper.keyword, style = style.k_style },
+            VistaScope       = { fg = newpaper.keywords, style = style.k_style },
             VistaTag         = { fg = newpaper.navy },
             VistaKind        = { fg = newpaper.ocean, style = style.k_style },
             VistaScopeKind   = { fg = newpaper.teal, style = style.underline },

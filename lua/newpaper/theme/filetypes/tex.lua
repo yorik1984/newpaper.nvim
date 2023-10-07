@@ -95,7 +95,7 @@ function M.setup(configColors, configStyle)
             ["@punctuation.bracket.latex"]    = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             ["@punctuation.delimiter.latex"]  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             ["@punctuation.special.latex"]    = { fg = newpaper.tex_string },
-            ["@text.comment.latex"]           = { fg = newpaper.comment, style = style.c_style },
+            ["@text.comment.latex"]           = { fg = newpaper.comments, style = style.c_style },
             ["@text.emphasis.latex"]          = { fg = newpaper.fg, style = style.italic },
             ["@text.environment.latex"]       = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             ["@text.environment.name.latex"]  = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
@@ -146,7 +146,7 @@ function M.setup(configColors, configStyle)
 
             -------------------------------------------------------------------
             -- texComment          Comment
-            texCommentTodo        = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.comment_title },
+            texCommentTodo        = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.c_title },
             texDelim              = { fg = newpaper.tex_lightpurple, style = style.tex_br_style }, -- {, }, [, and ]
             texCmd                = { fg = newpaper.tex_blue, style = style.tex_k_style }, -- \CMD
             texOpt                = { fg = newpaper.tex_orange }, -- \cmd[OPT]
@@ -255,9 +255,9 @@ function M.setup(configColors, configStyle)
             texCmdStyleBoldItal   = { fg = newpaper.tex_navy, style = style.bold_i },
             texCmdStyleItal       = { fg = newpaper.tex_navy, style = style.italic },
             texCmdStyleItalBold   = { fg = newpaper.tex_navy, style = style.bold_i },
-            texCommentAcronym     = { fg = newpaper.comment, style = style.comment_title },
+            texCommentAcronym     = { fg = newpaper.comments, style = style.c_title },
             -- texCommentFalse       texComment
-            texCommentURL         = { fg = newpaper.comment, style = style.c_underline },
+            texCommentURL         = { fg = newpaper.comments, style = style.c_underline },
             -- texConcealedArg       texArg
             -- texConcealedArgGroup  texConcealedArg
             -- texConditionalArg     texArg

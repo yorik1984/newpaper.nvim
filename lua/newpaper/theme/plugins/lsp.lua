@@ -11,8 +11,8 @@ function M.setup(configColors, configStyle)
 
     lspSyn.loadPlugins = function()
         local plugins = {
-            LspCodeLens                 = { fg = newpaper.comment, bg = newpaper.lightsilver },
-            LspCodeLensSeparator        = { fg = newpaper.comment, bg = newpaper.lightsilver, style = style.b_bold },
+            LspCodeLens                 = { fg = newpaper.comments, bg = newpaper.lightsilver },
+            LspCodeLensSeparator        = { fg = newpaper.comments, bg = newpaper.lightsilver, style = style.b_bold },
             LspReferenceText            = { fg = newpaper.todo_default, bg = newpaper.highlight },
             LspReferenceRead            = { fg = newpaper.todo_info, bg = newpaper.highlight },
             LspReferenceWrite           = { fg = newpaper.todo_hint, bg = newpaper.highlight },
@@ -27,8 +27,8 @@ function M.setup(configColors, configStyle)
             DiagnosticHint             = { fg = newpaper.hint_fg, bg = newpaper.none },
             DiagnosticInfo             = { fg = newpaper.info_fg, bg = newpaper.none },
             DiagnosticOk               = { fg = newpaper.ok_fg, bg = newpaper.none },
-            DiagnosticDeprecated       = { fg = newpaper.comment, bg = newpaper.none, style = style.strike },
-            DiagnosticUnnecessary      = { fg = newpaper.comment, bg = newpaper.none },
+            DiagnosticDeprecated       = { fg = newpaper.comments, bg = newpaper.none, style = style.strike },
+            DiagnosticUnnecessary      = { fg = newpaper.comments, bg = newpaper.none },
             DiagnosticSignError        = { fg = newpaper.error_fg, bg = newpaper.linenumber_bg },
             DiagnosticSignHint         = { fg = newpaper.hint_fg, bg = newpaper.linenumber_bg },
             DiagnosticSignInfo         = { fg = newpaper.info_fg, bg = newpaper.linenumber_bg },

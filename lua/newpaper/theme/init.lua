@@ -11,9 +11,9 @@ function M.setup(configColors, configStyle)
 
     theme.loadSyntax = function()
         local syntax = {
-            Boolean        = { fg = newpaper.boolean, style = style.bool_style },
+            Boolean        = { fg = newpaper.booleans, style = style.bool_style },
             Character      = { fg = newpaper.darkengreen, style = style.o_style },
-            Conditional    = { fg = newpaper.keyword, style = style.k_style },
+            Conditional    = { fg = newpaper.keywords, style = style.k_style },
             Constant       = { fg = newpaper.darkengreen },
             Debug          = { fg = newpaper.red },
             Define         = { fg = newpaper.magenta },
@@ -22,32 +22,32 @@ function M.setup(configColors, configStyle)
             Exception      = { fg = newpaper.redorange },
             Float          = { fg = newpaper.magenta },
             Function       = { fg = newpaper.lua_navy, style = style.f_style },
-            Identifier     = { fg = newpaper.variable, style = style.v_style },
+            Identifier     = { fg = newpaper.variables, style = style.v_style },
             Ignore         = { fg = newpaper.disabled },
             Include        = { fg = newpaper.maroon },
-            Keyword        = { fg = newpaper.keyword, style = style.k_style },
+            Keyword        = { fg = newpaper.keywords, style = style.k_style },
             Label          = { fg = newpaper.magenta },
             Macro          = { fg = newpaper.magenta },
             Method         = { fg = newpaper.ruby_navy, style = style.f_style },
             Noise          = { link = "Delimiter" },
-            Number         = { fg = newpaper.number },
+            Number         = { fg = newpaper.numbers },
             Operator       = { fg = newpaper.navy, style = style.o_style },
             PreCondit      = { fg = newpaper.magenta },
             PreProc        = { fg = newpaper.navy },
             Quote          = { link = "String" },
-            Repeat         = { fg = newpaper.keyword, style = style.k_style },
+            Repeat         = { fg = newpaper.keywords, style = style.k_style },
             Special        = { fg = newpaper.dark_maroon },
             SpecialChar    = { fg = newpaper.maroon },
-            SpecialComment = { fg = newpaper.comment, style = style.k_style },
-            Statement      = { fg = newpaper.keyword, style = style.k_style },
-            StorageClass   = { fg = newpaper.class, style = style.k_style },
-            String         = { fg = newpaper.string, style = style.s_style },
+            SpecialComment = { fg = newpaper.comments, style = style.k_style },
+            Statement      = { fg = newpaper.keywords, style = style.k_style },
+            StorageClass   = { fg = newpaper.ruby_navy, style = style.k_style },
+            String         = { fg = newpaper.strings, style = style.s_style },
             Structure      = { fg = newpaper.darkpurple, style = style.k_style },
-            Tag            = { fg = newpaper.tag, style = style.tag_style },
+            Tag            = { fg = newpaper.tags, style = style.tags_style },
             Todo           = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.b_bold },
             Type           = { fg = newpaper.darkengreen },
             Typedef        = { fg = newpaper.maroon },
-            Underlined     = { fg = newpaper.link, style = style.underline },
+            Underlined     = { fg = newpaper.links, style = style.underline },
         }
         return syntax
     end
@@ -74,12 +74,12 @@ function M.setup(configColors, configStyle)
             CursorLineSign   = { bg = newpaper.linenumber_bg },
             ColorColumn      = { fg = newpaper.colorcolumn, bg = newpaper.none },
             CommandMode      = { fg = newpaper.orange, style = style.reverse },
-            Comment          = { fg = newpaper.comment, style = style.c_style },
+            Comment          = { fg = newpaper.comments, style = style.c_style },
             Conceal          = { fg = newpaper.tex_math },
             DiffAdd          = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
-            DiffChange       = { fg = newpaper.text, bg = newpaper.diffchange_bg },
+            DiffChange       = { fg = newpaper.texts, bg = newpaper.diffchange_bg },
             DiffDelete       = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
-            DiffText         = { fg = newpaper.text, bg = newpaper.difftext_bg },
+            DiffText         = { fg = newpaper.texts, bg = newpaper.difftext_bg },
             Directory        = { fg = newpaper.teal, style = style.b_bold },
             EndOfBuffer      = { fg = newpaper.eob, bg = newpaper.none },
             ErrorMsg         = { fg = newpaper.errormsg_fg },
@@ -104,7 +104,7 @@ function M.setup(configColors, configStyle)
             PmenuSel         = { bg = newpaper.pmenu_sel },
             PmenuThumb       = { bg = newpaper.teal },
             Question         = { fg = newpaper.darkgreen },
-            QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse },
+            QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.titles, style = style.reverse },
             ReplacelMode     = { fg = newpaper.magenta, style = style.reverse },
             Search           = { fg = newpaper.search_fg, bg = newpaper.search_bg },
             SignColumn       = { fg = newpaper.fg, bg = newpaper.linenumber_bg },
@@ -121,7 +121,7 @@ function M.setup(configColors, configStyle)
             TabLineFill      = { bg = newpaper.tabline_bg },
             Tabline          = { fg = newpaper.tabline_inactive_fg, bg = newpaper.tabline_inactive_bg },
             TablineSel       = { fg = newpaper.tabline_active_fg, bg = newpaper.tabline_active_bg, style = style.b_bold_i },
-            Title            = { fg = newpaper.title, style = style.b_bold },
+            Title            = { fg = newpaper.titles, style = style.b_bold },
             ToolbarButton    = { fg = newpaper.fg, style = style.b_bold },
             ToolbarLine      = { fg = newpaper.pmenu_fg, bg = newpaper.pmenu_bg },
             VertSplit        = { link = "WinSeparator" },
@@ -138,7 +138,7 @@ function M.setup(configColors, configStyle)
             healthError      = { fg = newpaper.errormsg_fg },
             healthSuccess    = { fg = newpaper.hint_fg },
             healthWarning    = { fg = newpaper.warn_fg },
-            qfLineNr         = { fg = newpaper.highlight, bg = newpaper.title, style = style.reverse },
+            qfLineNr         = { fg = newpaper.highlight, bg = newpaper.titles, style = style.reverse },
 
             -- Custom newpaper groups
             NormalContrastSB = { fg = newpaper.sb_contrast_fg, bg = newpaper.sb_contrast_bg },
@@ -160,37 +160,18 @@ function M.setup(configColors, configStyle)
         return editor
     end
 
-    theme.loadTerminal   = function()
-        vim.g.terminal_color_0  = newpaper.black
-        vim.g.terminal_color_1  = newpaper.maroon
-        vim.g.terminal_color_2  = newpaper.darkgreen
-        vim.g.terminal_color_3  = newpaper.darkorange
-        vim.g.terminal_color_4  = newpaper.navy
-        vim.g.terminal_color_5  = newpaper.purple
-        vim.g.terminal_color_6  = newpaper.teal
-        vim.g.terminal_color_7  = newpaper.bg
-        vim.g.terminal_color_8  = newpaper.darkgrey
-        vim.g.terminal_color_9  = newpaper.red
-        vim.g.terminal_color_10 = newpaper.green
-        vim.g.terminal_color_11 = newpaper.orange
-        vim.g.terminal_color_12 = newpaper.lightblue
-        vim.g.terminal_color_13 = newpaper.lightmagenta
-        vim.g.terminal_color_14 = newpaper.blue
-        vim.g.terminal_color_15 = newpaper.fg
-    end
-
     theme.loadTreeSitter = function()
         local treesitter = {
             ["@annotation"]            = { fg = newpaper.red },
             ["@attribute"]             = { fg = newpaper.blue },
-            ["@boolean"]               = { fg = newpaper.boolean, style = style.bool_style },
+            ["@boolean"]               = { fg = newpaper.booleans, style = style.bool_style },
             ["@character"]             = { fg = newpaper.orange },
             ["@character.special"]     = { fg = newpaper.maroon, nocombine = true },
-            ["@comment"]               = { fg = newpaper.comment, style = style.c_style },
-            ["@comment.documentation"] = { fg = newpaper.doc_comment, style = style.doc_style, nocombine = true },
+            ["@comment"]               = { fg = newpaper.comments, style = style.c_style },
+            ["@comment.documentation"] = { fg = newpaper.doc_comments, style = style.doc_style, nocombine = true },
             ["@conceal"]               = { fg = newpaper.tex_math },
-            ["@conditional"]           = { fg = newpaper.keyword, style = style.k_style },
-            ["@conditional.ternary"]   = { fg = newpaper.keyword, style = style.d_style },
+            ["@conditional"]           = { fg = newpaper.keywords, style = style.k_style },
+            ["@conditional.ternary"]   = { fg = newpaper.keywords, style = style.d_style },
             ["@constant"]              = { fg = newpaper.darkgreen, nocombine = true },
             ["@constant.builtin"]      = { fg = newpaper.maroon, nocombine = true },
             ["@constant.macro"]        = { fg = newpaper.maroon, nocombine = true },
@@ -206,7 +187,7 @@ function M.setup(configColors, configStyle)
             ["@function.call"]         = { fg = newpaper.tag_navy, style = style.f_style },
             ["@function.macro"]        = { fg = newpaper.magenta, style = style.f_style },
             ["@include"]               = { fg = newpaper.maroon },
-            ["@keyword"]               = { fg = newpaper.keyword, style = style.k_style },
+            ["@keyword"]               = { fg = newpaper.keywords, style = style.k_style },
             ["@keyword.coroutine"]     = { fg = newpaper.tex_keyword, style = style.k_style },
             ["@keyword.function"]      = { fg = newpaper.darkpurple, style = style.k_style },
             ["@keyword.operator"]      = { fg = newpaper.tag_navy, style = style.o_style },
@@ -217,7 +198,7 @@ function M.setup(configColors, configStyle)
             ["@namespace"]             = { fg = newpaper.darkyellow },
             ["@namespace.builtin"]     = { fg = newpaper.tex_magenta },
             ["@none"]                  = { fg = newpaper.disabled },
-            ["@number"]                = { fg = newpaper.number },
+            ["@number"]                = { fg = newpaper.numbers },
             ["@operator"]              = { fg = newpaper.navy, style = style.o_style },
             ["@parameter"]             = { fg = newpaper.orange },
             ["@preproc"]               = { fg = newpaper.navy },
@@ -225,15 +206,15 @@ function M.setup(configColors, configStyle)
             ["@punctuation.bracket"]   = { fg = newpaper.navy, style = style.br_style },
             ["@punctuation.delimiter"] = { fg = newpaper.persimona, style = style.d_style },
             ["@punctuation.special"]   = { fg = newpaper.lightmagenta },
-            ["@repeat"]                = { fg = newpaper.keyword, style = style.k_style },
+            ["@repeat"]                = { fg = newpaper.keywords, style = style.k_style },
             ["@storageclass"]          = { fg = newpaper.lua_navy, style = style.k_style },
-            ["@string"]                = { fg = newpaper.string, style = style.s_style },
+            ["@string"]                = { fg = newpaper.strings, style = style.s_style },
             ["@string.documentation"]  = { fg = newpaper.regexp_blue, style = style.s_style },
             ["@string.escape"]         = { fg = newpaper.tex_magenta },
             ["@string.regex"]          = { fg = newpaper.regexp_blue },
             ["@string.special"]        = { fg = newpaper.dark_maroon, style = style.s_style },
             ["@symbol"]                = { fg = newpaper.darkyellow },
-            ["@tag"]                   = { fg = newpaper.tag, style = style.tag_style },
+            ["@tag"]                   = { fg = newpaper.tags, style = style.tags_style },
             ["@tag.attribute"]         = { fg = newpaper.darkengreen },
             ["@tag.delimiter"]         = { fg = newpaper.tag_navy, style = style.tb_style },
             ["@text"]                  = { fg = newpaper.fg },
@@ -251,16 +232,16 @@ function M.setup(configColors, configStyle)
             ["@text.reference"]        = { fg = newpaper.tex_maroon },
             ["@text.strike"]           = { style = style.strike },
             ["@text.strong"]           = { style = style.bold },
-            ["@text.title"]            = { fg = newpaper.title, style = style.b_bold },
+            ["@text.title"]            = { fg = newpaper.titles, style = style.b_bold },
             ["@text.todo"]             = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.b_bold },
             ["@text.underline"]        = { style = style.underline },
-            ["@text.uri"]              = { fg = newpaper.link, style = style.link },
+            ["@text.uri"]              = { fg = newpaper.links, style = style.links },
             ["@text.warning"]          = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
             ["@type"]                  = { fg = newpaper.darkengreen },
             ["@type.builtin"]          = { fg = newpaper.bluegreen, style = style.k_style },
             ["@type.definition"]       = { fg = newpaper.maroon },
             ["@type.qualifier"]        = { fg = newpaper.maroon, style = style.k_style },
-            ["@variable"]              = { fg = newpaper.variable, style = style.v_style },
+            ["@variable"]              = { fg = newpaper.variables, style = style.v_style },
             ["@variable.builtin"]      = { fg = newpaper.olive, style = style.v_b_style, nocombine = true },
             ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },
 
@@ -350,8 +331,8 @@ function M.setup(configColors, configStyle)
             diffAdded                   = { fg = newpaper.git_added },
             diffRemoved                 = { fg = newpaper.git_removed },
             diffChanged                 = { fg = newpaper.git_modified },
-            diffOldFile                 = { fg = newpaper.text },
-            diffNewFile                 = { fg = newpaper.title },
+            diffOldFile                 = { fg = newpaper.texts },
+            diffNewFile                 = { fg = newpaper.titles },
             diffFile                    = { fg = newpaper.grey },
             diffLine                    = { fg = newpaper.blue },
             diffIndexLine               = { fg = newpaper.purple },
@@ -414,7 +395,7 @@ function M.setup(configColors, configStyle)
             LanguageToolCmd             = { fg = newpaper.comment },
             LanguageToolErrorCount      = { fg = newpaper.orange, bg = newpaper.active, style = style.b_bold },
             LanguageToolLabel           = { fg = newpaper.darkgreen },
-            LanguageToolUrl             = { fg = newpaper.link, style = style.link },
+            LanguageToolUrl             = { fg = newpaper.links, style = style.links },
             LanguageToolGrammarError    = { fg = newpaper.fg, bg = newpaper.spellrare, style = style.error },
             LanguageToolSpellingError   = { fg = newpaper.fg, bg = newpaper.spellbad, style = style.error },
 
@@ -441,13 +422,13 @@ function M.setup(configColors, configStyle)
             DapBreakpoint               = { fg = newpaper.darkgreen, bg = newpaper.linenumber_bg },
             DapBreakpointCondition      = { fg = newpaper.darkyellow, bg = newpaper.linenumber_bg },
             DapBreakpointRejected       = { fg = newpaper.ocean, bg = newpaper.linenumber_bg },
-            DapLogPoint                 = { fg = newpaper.string, bg = newpaper.linenumber_bg },
+            DapLogPoint                 = { fg = newpaper.strings, bg = newpaper.linenumber_bg },
             DapStopped                  = { fg = newpaper.red, bg = newpaper.linenumber_bg },
 
             -- Nvim-dap-ui ----------------------------------------------------
             DapUIVariable               = { fg = newpaper.darkengreen, style = style.v_style },
             DapUIScope                  = { fg = newpaper.teal, style = style.b_bold },
-            DapUIType                   = { fg = newpaper.keyword },
+            DapUIType                   = { fg = newpaper.keywords },
             DapUIValue                  = { fg = newpaper.teal },
             DapUIModifiedValue          = { fg = newpaper.red },
             DapUIDecoration             = { fg = newpaper.blue },
@@ -479,10 +460,10 @@ function M.setup(configColors, configStyle)
             MatchWord                   = { bg = newpaper.lightviolet, style = style.b_bold },
 
             -- WhichKey -------------------------------------------------------
-            WhichKey                    = { fg = newpaper.keyword },
+            WhichKey                    = { fg = newpaper.keywords },
             WhichKeyGroup               = { fg = newpaper.teal, style = style.b_bold },
             WhichKeySeparator           = { fg = newpaper.darkgreen },
-            WhichKeyDesc                = { fg = newpaper.string },
+            WhichKeyDesc                = { fg = newpaper.strings },
             WhichKeyFloat               = { fg = newpaper.float_fg, bg = newpaper.float_bg },
             WhichKeyValue               = { fg = newpaper.darkgrey },
         }

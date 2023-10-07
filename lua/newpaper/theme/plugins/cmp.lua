@@ -17,8 +17,8 @@ function M.setup(configColors, configStyle)
             CmpItemAbbr              = { fg = newpaper.pmenu_fg },
             CmpItemAbbrDeprecated    = { fg = newpaper.lightgrey },
             CmpItemAbbrMatch         = { fg = newpaper.tag_navy, style = style.b_bold },
-            CmpItemAbbrMatchFuzzy    = { fg = newpaper.magenta, style = style.b_bold },
-            CmpItemKindText          = { fg = newpaper.string },       -- Text          = "󰉿"
+            CmpItemAbbrMatchFuzzy    = { fg = newpaper.magenta,  style = style.b_bold },
+            CmpItemKindText          = { fg = newpaper.strings },      -- Text          = "󰉿"
             CmpItemKindMethod        = { fg = newpaper.ruby_navy },    -- Method        = "󰆧"
             CmpItemKindFunction      = { fg = newpaper.navy },         -- Function      = "󰊕"
             CmpItemKindConstructor   = { fg = newpaper.lua_blue },     -- Constructor   = ""
@@ -29,9 +29,9 @@ function M.setup(configColors, configStyle)
             CmpItemKindModule        = { fg = newpaper.lua_navy },     -- Module        = ""
             CmpItemKindProperty      = { fg = newpaper.bluegreen },    -- Property      = "󰜢"
             CmpItemKindUnit          = { fg = newpaper.darkpurple },   -- Unit          = "󰑭"
-            CmpItemKindValue         = { fg = newpaper.number },       -- Value         = "󰎠"
+            CmpItemKindValue         = { fg = newpaper.numbers },      -- Value         = "󰎠"
             CmpItemKindEnum          = { fg = newpaper.maroon },       -- Enum          = ""
-            CmpItemKindKeyword       = { fg = newpaper.keyword },      -- Keyword       = "󰌋"
+            CmpItemKindKeyword       = { fg = newpaper.keywords },     -- Keyword       = "󰌋"
             CmpItemKindSnippet       = { fg = newpaper.darkpurple },   -- Snippet       = ""
             CmpItemKindColor         = { fg = newpaper.magenta },      -- Color         = "󰏘"
             CmpItemKindFile          = { fg = newpaper.teal },         -- File          = "󰈙"

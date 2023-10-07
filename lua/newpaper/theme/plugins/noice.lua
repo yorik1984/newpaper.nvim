@@ -40,7 +40,7 @@ function M.setup(configColors, configStyle)
             -- NoiceFormatKind                    = { link = "NonText" },
             -- NoiceFormatDate                    = { link = "Special" },
             NoiceFormatConfirm                 = { fg = newpaper.gray, bg = newpaper.bg },
-            NoiceFormatConfirmDefault          = { fg = newpaper.text, bg = newpaper.aqua, style = style.b_bold },
+            NoiceFormatConfirmDefault          = { fg = newpaper.texts, bg = newpaper.aqua, style = style.b_bold },
             NoiceFormatTitle                   = { link = "Title" },
             -- NoiceFormatLevelDebug              = { link = "NonText" },
             -- NoiceFormatLevelTrace              = { link = "NonText" },

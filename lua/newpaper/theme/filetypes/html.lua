@@ -12,12 +12,12 @@ function M.setup(configColors, configStyle)
 
     htmlSyn.loadSyntax = function()
         local syntax = {
-            htmlH1                      = { fg = newpaper.tex_part_title,  style = style.tag_style },
-            htmlH2                      = { fg = newpaper.teal,            style = style.tag_style },
-            htmlH3                      = { fg = newpaper.blue,            style = style.tag_style },
-            htmlH4                      = { fg = newpaper.tex_math,        style = style.tag_style },
-            htmlH5                      = { fg = newpaper.tex_lightpurple, style = style.tag_style },
-            htmlH6                      = { fg = newpaper.tex_darkorangee, style = style.tag_style },
+            htmlH1                      = { fg = newpaper.tex_part_title,  style = style.tags_style },
+            htmlH2                      = { fg = newpaper.teal,            style = style.tags_style },
+            htmlH3                      = { fg = newpaper.blue,            style = style.tags_style },
+            htmlH4                      = { fg = newpaper.tex_math,        style = style.tags_style },
+            htmlH5                      = { fg = newpaper.tex_lightpurple, style = style.tags_style },
+            htmlH6                      = { fg = newpaper.tex_darkorangee, style = style.tags_style },
 
             htmlTag                     = { fg = newpaper.tag_navy, style = style.tb_style },
             htmlEndTag                  = { fg = newpaper.tag_navy, style = style.tb_style },
@@ -44,7 +44,7 @@ function M.setup(configColors, configStyle)
             -- htmlItalicBold              htmlBoldItalic
             -- htmlItalicBoldUnderline     htmlBoldUnderlineItalic
             -- htmlItalicUnderlineBold     htmlBoldUnderlineItalic
-            htmlLink                    = { fg = newpaper.link, style = style.underline },
+            htmlLink                    = { fg = newpaper.links, style = style.underline },
             -- htmlLeadingSpace            None
 
             -- html_my_rendering
@@ -64,7 +64,7 @@ function M.setup(configColors, configStyle)
             htmlPreProcAttrName         = { fg = newpaper.darkpurple },
             -- htmlPreProcAttrError        Error
             -- htmlString                  String
-            htmlStatement               = { fg = newpaper.tag_navy, style = style.tag_style },
+            htmlStatement               = { fg = newpaper.tag_navy, style = style.tags_style },
             -- htmlComment                 Comment
             -- htmlCommentNested           htmlError
             -- htmlCommentError            htmlError
@@ -83,7 +83,7 @@ function M.setup(configColors, configStyle)
     htmlSyn.loadTreeSitter = function()
 
         local treesitter = {
-            ["@constant.html"] = { fg = newpaper.comment,  style = style.c_style },
+            ["@constant.html"] = { fg = newpaper.comments,  style = style.c_style },
         }
         return treesitter
     end
