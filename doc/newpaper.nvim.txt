@@ -141,7 +141,7 @@ All options are set using global variables.
 In order for these settings to take effect, they should be placed in your
 init.vim/init.lua before applying the colorscheme
 
-Options:
+Options: ~
 
     + style              {string} (default = `"light"`)
         The theme comes in two styles: `"dark"`, `"light"`
@@ -298,7 +298,7 @@ Options:
         See possible value in sorce code `lua/newpaper/colors.lua[382:547]`
 
 >lua
-        vim.g.newpaper_colors_advanced = { keyword = "#AA00AA", string = "#008800" }
+        vim.g.newpaper_colors_advanced = { keywords = "#AA00AA", strings = "#008800" }
 <
     + custom_highlights  {table} (default = {})
         Override the default and plugins highlights groups. Table  predefine
@@ -326,7 +326,7 @@ Options:
     vim.g.devicons_custom = { gui = "#FFFF00", cterm = 3}
 <
 
-Default settings:
+Default settings: ~
 >lua
     require("newpaper").setup({
         style               = "light",
@@ -380,7 +380,7 @@ Example config in lua with global variables
     vim.g.newpaper_keywords          = "italic"
     vim.g.newpaper_borders           = false
     vim.g.newpaper_colors            = { teal = "#0000FF" }
-    vim.g.newpaper_colors_advanced   = { keyword = "#AA00AA", string = "#008800" }
+    vim.g.newpaper_colors_advanced   = { keywords = "#AA00AA", strings = "#008800" }
     vim.g.newpaper_custom_highlights = {
         Float     = { fg = vim.g.newpaper_colors.teal },
         Number    = { fg = "#00FF00" },
@@ -391,7 +391,7 @@ Example config in lua with global variables
 OR better with user configuration
 >lua
     local colors            = { teal = "#0000FF" } -- use one color for many groups
-    local colors_advanced   = { keyword = "#AA00AA", string = "#008800" }
+    local colors_advanced   = { keywords = "#AA00AA", strings = "#008800" }
     local custom_highlights = {
               Float     = { fg = colors.teal }, -- prefer override by name
               Number    = { fg = "#00FF00" },   -- but hex colos also good
