@@ -404,7 +404,7 @@ function M.setup(config)
     -- Editor
     newpaper.accent              = newpaper.blue
     newpaper.active              = newpaper.silver
-    newpaper.border              = newpaper.purple
+    newpaper.borders             = newpaper.purple
     newpaper.colorcolumn         = newpaper.disabled
     newpaper.contrast            = newpaper.lightlightgrey
     newpaper.cursor              = newpaper.fg
@@ -413,7 +413,6 @@ function M.setup(config)
     newpaper.eob                 = newpaper.disabled
     newpaper.folded_bg           = newpaper.aqua
     newpaper.folded_fg           = newpaper.blue
-    newpaper.highlight           = newpaper.silver
     newpaper.linenumber_bg       = newpaper.lightsilver
     newpaper.linenumber_fg       = newpaper.comments
     newpaper.msgarea_bg          = newpaper.bg

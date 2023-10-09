@@ -13,7 +13,7 @@ function M.setup(configColors, configStyle)
         local plugins = {
             -- general
             SagaTitle            = { fg = newpaper.purple, bg = newpaper.float_bg, style = style.b_bold },
-            SagaBorder           = { fg = newpaper.border, bg = newpaper.float_bg, default = false },
+            SagaBorder           = { fg = newpaper.borders, bg = newpaper.float_bg, default = false },
             SagaNormal           = { fg = newpaper.float_fg, bg = newpaper.float_bg, default = false },
             SagaToggle           = { fg = newpaper.grey },
             SagaCount            = { fg = newpaper.darkorange },

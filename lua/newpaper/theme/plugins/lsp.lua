@@ -13,9 +13,9 @@ function M.setup(configColors, configStyle)
         local plugins = {
             LspCodeLens                 = { fg = newpaper.comments, bg = newpaper.lightsilver },
             LspCodeLensSeparator        = { fg = newpaper.comments, bg = newpaper.lightsilver, style = style.b_bold },
-            LspReferenceText            = { fg = newpaper.todo_default, bg = newpaper.highlight },
-            LspReferenceRead            = { fg = newpaper.todo_info, bg = newpaper.highlight },
-            LspReferenceWrite           = { fg = newpaper.todo_hint, bg = newpaper.highlight },
+            LspReferenceText            = { fg = newpaper.todo_default, bg = newpaper.silver },
+            LspReferenceRead            = { fg = newpaper.todo_info, bg = newpaper.silver },
+            LspReferenceWrite           = { fg = newpaper.todo_hint, bg = newpaper.silver },
             LspSignatureActiveParameter = { bg = newpaper.search_bg },
 
             DiagnosticError            = { fg = newpaper.error_fg, bg = newpaper.none },

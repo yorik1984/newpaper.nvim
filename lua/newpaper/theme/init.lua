@@ -83,8 +83,8 @@ function M.setup(configColors, configStyle)
             Directory        = { fg = newpaper.teal, style = style.b_bold },
             EndOfBuffer      = { fg = newpaper.eob, bg = newpaper.none },
             ErrorMsg         = { fg = newpaper.errormsg_fg },
-            FloatBorder      = { fg = newpaper.border, bg = newpaper.float_bg },
-            FloatTitle       = { fg = newpaper.border, bg = newpaper.float_bg, style = style.b_bold },
+            FloatBorder      = { fg = newpaper.borders, bg = newpaper.float_bg },
+            FloatTitle       = { fg = newpaper.borders, bg = newpaper.float_bg, style = style.b_bold },
             FoldColumn       = { fg = newpaper.folded_fg, bg = newpaper.linenumber_bg },
             Folded           = { fg = newpaper.folded_fg, bg = newpaper.folded_bg },
             IncSearch        = { fg = newpaper.magenta, bg = newpaper.search_bg, style = style.b_bold },
@@ -104,7 +104,7 @@ function M.setup(configColors, configStyle)
             PmenuSel         = { bg = newpaper.pmenu_sel },
             PmenuThumb       = { bg = newpaper.teal },
             Question         = { fg = newpaper.darkgreen },
-            QuickFixLine     = { fg = newpaper.highlight, bg = newpaper.titles, style = style.reverse },
+            QuickFixLine     = { fg = newpaper.silver, bg = newpaper.titles, style = style.reverse },
             ReplacelMode     = { fg = newpaper.magenta, style = style.reverse },
             Search           = { fg = newpaper.search_fg, bg = newpaper.search_bg },
             SignColumn       = { fg = newpaper.fg, bg = newpaper.linenumber_bg },
@@ -138,7 +138,7 @@ function M.setup(configColors, configStyle)
             healthError      = { fg = newpaper.errormsg_fg },
             healthSuccess    = { fg = newpaper.hint_fg },
             healthWarning    = { fg = newpaper.warn_fg },
-            qfLineNr         = { fg = newpaper.highlight, bg = newpaper.titles, style = style.reverse },
+            qfLineNr         = { fg = newpaper.silver, bg = newpaper.titles, style = style.reverse },
 
             -- Custom newpaper groups
             NormalContrastSB = { fg = newpaper.sb_contrast_fg, bg = newpaper.sb_contrast_bg },
@@ -385,7 +385,7 @@ function M.setup(configColors, configStyle)
             HopUnmatched                = { fg = newpaper.comment },
 
             -- Illuminate -----------------------------------------------------
-            illuminatedWord             = { bg = newpaper.highlight },
+            illuminatedWord             = { bg = newpaper.silver },
             illuminatedCurWord          = { bg = newpaper.contrast },
 
             -- IndentBlankline ------------------------------------------------
@@ -437,7 +437,7 @@ function M.setup(configColors, configStyle)
             DapUIFrameName              = { fg = newpaper.navy },
             DapUISource                 = { fg = newpaper.lightblue },
             DapUILineNumber             = { fg = newpaper.darkorange },
-            DapUIFloatBorder            = { fg = newpaper.border },
+            DapUIFloatBorder            = { fg = newpaper.borders },
             DapUIWatchesEmpty           = { fg = newpaper.magenta },
             DapUIWatchesValue           = { fg = newpaper.nephritis },
             DapUIWatchesError           = { fg = newpaper.error_fg },
