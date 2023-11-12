@@ -10,6 +10,7 @@ local filetypes = {
     "lua",
     "luadoc",
     "luap",
+    "luau",
     "markdown",
     "query",
     "regex",
