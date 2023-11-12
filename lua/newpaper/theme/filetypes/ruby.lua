@@ -21,18 +21,17 @@ function M.setup(configColors, configStyle)
     rubySyn.loadTreeSitter = function()
         local treesitter = {
             ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon, nocombine = true },
-            ["@constant.ruby"]             = { fg = newpaper.ocean, style = style.k_style },
+            ["@constant.predef.ruby"]      = { fg = newpaper.ocean, style = style.k_style, nocombine = true},
             ["@constructor.ruby"]          = { fg = newpaper.blue, style = style.o_style },
             ["@definition.var.ruby"]       = { fg = newpaper.ruby_orange, style = style.v_style },
             ["@function.call.ruby"]        = { fg = newpaper.ruby_navy, style = style.f_style },
-            ["@include.ruby"]              = { fg = newpaper.redorange, nocombine = true },
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
             ["@punctuation.bracket.ruby"]  = { fg = newpaper.ruby_navy, style = style.br_style },
             ["@text.emphasis.ruby"]        = { style = style.none, nocombine = true },
-            ["@text.math.ruby"]            = { fg = newpaper.tex_math, style = style.o_style },
             ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@type.ruby"]                 = { fg = newpaper.darkgreen, nocombine = true },
+            ["@variable.global.predef"]    = { fg = newpaper.olive, style = style.k_style, nocombine = true },
 
             -- LSP semantic tokens
             ["@lsp.type.namespace.ruby"]   = { link = "@definition.namespace" },

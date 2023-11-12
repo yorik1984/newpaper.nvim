@@ -8,7 +8,7 @@
 
 [
   "..="
- ] @variable.builtin
+ ] @punctuation.delimiter
 
 ;; Bitwise
 
@@ -26,8 +26,11 @@
   "-"
   "%"
   "/"
+] @text.math.operator
+
+[
   ".."
- ] @text.math
+] @character.special
 
 ;; Short-circuiting logical
 

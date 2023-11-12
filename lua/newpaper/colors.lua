@@ -405,7 +405,7 @@ function M.setup(config)
     newpaper.accent              = newpaper.blue
     newpaper.active              = newpaper.silver
     newpaper.borders             = newpaper.purple
-    newpaper.colorcolumn         = newpaper.disabled
+    newpaper.colorcol            = newpaper.disabled
     newpaper.contrast            = newpaper.lightlightgrey
     newpaper.cursor              = newpaper.fg
     newpaper.cursor_nr_bg        = newpaper.lightsilver

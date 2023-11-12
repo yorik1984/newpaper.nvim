@@ -33,7 +33,7 @@
   "%"
   "/"
   "//"
- ] @text.math
+ ] @text.math.operator
 
 [
  ".."

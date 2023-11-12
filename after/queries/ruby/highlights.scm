@@ -72,33 +72,28 @@
 ((identifier) @constant.builtin
  (#match? @constant.builtin "^__(callee|dir|id|method|send|ENCODING|FILE|LINE)__$"))
 
-[
- (self)
- (super)
- ] @constant.builtin
-
 ;;; rubyPredefinedConstant
-((constant) @constant
- (#any-of? @constant "ARGF" "ARGV" "ENV" "DATA" "STDERR" "STDIN" "STDOUT" "TOPLEVEL_BINDING"))
+((constant) @constant.predef
+ (#any-of? @constant.predef "ARGF" "ARGV" "ENV" "DATA" "STDERR" "STDIN" "STDOUT" "TOPLEVEL_BINDING"))
 
-((constant) @constant
- (#match? @constant "^RUBY_(VERSION|RELEASE_DATE|PLATFORM|PATCHLEVEL|REVISION|DESCRIPTION|COPYRIGHT|ENGINE)$"))
+((constant) @constant.predef
+ (#match? @constant.predef "^RUBY_(VERSION|RELEASE_DATE|PLATFORM|PATCHLEVEL|REVISION|DESCRIPTION|COPYRIGHT|ENGINE)$"))
 
 ;;; rubyPredefinedVariable
-((global_variable) @variable.builtin
- (#vim-match? @variable.builtin "^\\\$[!\$&\\\"\'*+,.0:;<>?@`~_]$"))
+((global_variable) @variable.global.predef
+ (#vim-match? @variable.global.predef "^\\\$[!\$&\\\"\'*+,.0:;<>?@`~_]$"))
 
-((global_variable) @variable.builtin
- (#vim-match? @variable.builtin "^\\\$\\d+$"))
+((global_variable) @variable.global.predef
+ (#vim-match? @variable.global.predef "^\\\$\\d+$"))
 
-((global_variable) @variable.builtin
- (#vim-match? @variable.builtin "^\\\$-[0FIWadilpvw]$"))
+((global_variable) @variable.global.predef
+ (#vim-match? @variable.global.predef "^\\\$-[0FIWadilpvw]$"))
 
-((global_variable) @variable.builtin
- (#vim-match? @variable.builtin "^\\\$(stderr|stdin|stdout)$"))
+((global_variable) @variable.global.predef
+ (#vim-match? @variable.global.predef "^\\\$(stderr|stdin|stdout)$"))
 
-((global_variable) @variable.builtin
- (#vim-match? @variable.builtin "^\\\$(DEBUG|FILENAME|LOADED_FEATURES|LOAD_PATH|PROGRAM_NAME|SAFE|VERBOSE)$"))
+((global_variable) @variable.global.predef
+ (#vim-match? @variable.global.predef "^\\\$(DEBUG|FILENAME|LOADED_FEATURES|LOAD_PATH|PROGRAM_NAME|SAFE|VERBOSE)$"))
 
 ;;; Operators
 
@@ -134,7 +129,7 @@
 [
  ".."
  "..."
- ] @text.math
+] @text.math
 
 ;;; rubyBitwiseOperator
 [
@@ -156,7 +151,7 @@
  ] @constructor
 
 ;;; rubyArithmeticOperator
-(binary ["+" "-" "*" "**" "/" "%"] @text.math)
+(binary ["+" "-" "*" "**" "/" "%"] @text.math.operator)
 
 ;;; rubyAssignmentOperator
 [
@@ -174,8 +169,6 @@
  "**="
  "/="
  "^="
- "."
- "::"
  ] @operator
 
 ;; rubyDotOperator
