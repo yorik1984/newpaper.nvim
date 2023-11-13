@@ -73,8 +73,10 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 | **Lua** :thumbsup:      | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-lua](https://github.com/tbastos/vim-lua) | [🖼️](#lua) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)|
 | **Luadoc** :thumbsup:   | :x:                | :white_check_mark: | :x: | | |
 | **Luap** :thumbsup:     | :x:                | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/luap/luap.lua) |
+| **Luau**                | :x:                | :white_check_mark: | :x: | | |
 | **Markdown** :thumbsup: | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-markdown](https://github.com/preservim/vim-markdown) | [🖼️](#markdown) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md) |
 | **Pandoc** :thumbsup:   | :heavy_check_mark: | :x:                | :white_check_mark: [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md) |
+| **Python**              | :x:                | :white_check_mark: | :x: | | |
 | **Query**               | :x:                | :white_check_mark: | :x: | | |
 | **Rbs**                 | :x:                | :x:                | :white_check_mark: [vim-rbs](https://github.com/jlcrochet/vim-rbs) | | |
 | **Regex** :thumbsup:    | :x:                | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/regex/code_regex.scm) |
@@ -600,7 +602,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
     * [x] Pandoc
   * [x] HTML
   * [ ] COBOL
-  * [ ] Python
+  * [x] Python
   * [x] Rust
 * [ ] Add plugins support:
   * [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
