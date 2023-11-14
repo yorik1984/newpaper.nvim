@@ -2,28 +2,20 @@
 
 ;; Operators
 
-;; Relational Operators
+[
+  "=="
+  "~="
+  ">"
+  "<"
+  ">="
+  "<="
+] @punctuation.special
 
 [
- "=="
- "~="
- ">"
- "<"
- ">="
- "<="
- ] @punctuation.special
-
-;; Bitwise Operators
-
-[
- "&"
- "|"
- "~"
- "<<"
- ">>"
- ] @exception
-
-;; Arithmetic
+  "&"
+  "|"
+  "~"
+] @exception
 
 [
   "+"
@@ -33,13 +25,13 @@
   "%"
   "/"
   "//"
- ] @text.math.operator
+] @text.math.operator
 
 [
- ".."
- ] @character.special
+  ".."
+] @character.special
 
-;; Constants
+;; Literals
 
 (vararg_expression) @label
 
