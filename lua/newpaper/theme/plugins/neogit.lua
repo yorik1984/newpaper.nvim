@@ -67,6 +67,7 @@ function M.setup(configColors, configStyle)
             NeogitCommitViewHeader     = { fg = newpaper.navy, bg = newpaper.aqua },
 
             -- LOG VIEW BUFFER
+            NeogitGraphAuthor          = { fg = newpaper.navy },
             NeogitGraphBlack           = { fg = newpaper.black },
             NeogitGraphBoldBlack       = { fg = newpaper.black, style = style.b_bold },
             NeogitGraphRed             = { fg = newpaper.red },
