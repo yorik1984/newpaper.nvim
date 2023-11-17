@@ -78,6 +78,7 @@ function M.setup(configColors, configStyle)
             ["@text.todo.unchecked.markdown"]   = { fg = newpaper.comments },
             ["@text.underline.markdown"]        = { fg = newpaper.tex_string, style = style.underline },
             ["@text.underline.markdown_inline"] = { link = "@text.underline.markdown" },
+            ["@lsp.type.class.markdown"]        = { default = true },
         }
 
         return treesitter
