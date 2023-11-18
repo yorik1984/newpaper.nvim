@@ -57,9 +57,9 @@ function M.setup(configColors, configStyle)
             SagaImpIcon          = { fg = newpaper.red },
             --Winbar
             SagaWinbarSep        = { fg = newpaper.red, bg = newpaper.winbar_bg },
-            SagaFileName         = { fg = newpaper.teal, bg = newpaper.winbar_bg },
-            SagaFolderName       = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
-            SagaFolder           = { fg = newpaper.teal, bg = newpaper.winbar_bg },
+            SagaWinbarFileName   = { fg = newpaper.teal, bg = newpaper.winbar_bg },
+            SagaWinbarFolderName = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
+            SagaWinbarFolder     = { fg = newpaper.teal, bg = newpaper.winbar_bg },
 
         }
         return plugins
