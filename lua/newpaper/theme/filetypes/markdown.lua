@@ -207,6 +207,13 @@ function M.setup(configColors, configStyle)
             pandocStrikeout                      = { style = style.underline },
             -- pandocNewLine                        Error
             -- pandocHRule                          Delimiter
+
+            -- zotcite
+            zoteroRefAnchor                      = { fg = newpaper.tex_magenta },
+            zoteroCiteLocator                    = { fg = newpaper.tex_lightgreen, style = style.o_style },
+            zoteroRefLabel                       = { fg = newpaper.tex_lightviolet },
+            zoteroCiteKey                        = { fg = newpaper.tex_pink },
+            -- zoteroHidden                         Comment
         }
         return plugins
     end

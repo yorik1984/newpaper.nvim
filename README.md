@@ -139,6 +139,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [vimtex](https://github.com/lervag/vimtex)
 + [vista.vim](https://github.com/liuchengxu/vista.vim)
 + [WhichKey.nvim](https://github.com/folke/which-key.nvim)
++ [zotcite](https://github.com/jalvesaq/zotcite)
 
 ## ⚡️ Requirements
 

@@ -69,6 +69,7 @@ FEATURES                                                *newpaper.nvim-features*
         - vimtex
         - vista.vim
         - WhichKey.nvim
+        - zotcite
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
       Terminal, Packer, Whichkey, QuickFix etc.
