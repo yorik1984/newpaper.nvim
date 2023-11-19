@@ -42,9 +42,6 @@ luac.out
 # ctags
 tags
 
-# helptags
-doc/tags
-
 #Others
 contents.obv
 
