@@ -40,7 +40,7 @@ function M.setup(configColors, configStyle)
             SpecialChar    = { fg = newpaper.maroon },
             SpecialComment = { fg = newpaper.comments, style = style.k_style },
             Statement      = { fg = newpaper.keywords, style = style.k_style },
-            StorageClass   = { fg = newpaper.ruby_navy, style = style.k_style },
+            StorageClass   = { fg = newpaper.lua_navy, style = style.k_style },
             String         = { fg = newpaper.strings, style = style.s_style },
             Structure      = { fg = newpaper.darkpurple, style = style.k_style },
             Tag            = { fg = newpaper.tags, style = style.tags_style },

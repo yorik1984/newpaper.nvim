@@ -11,5 +11,7 @@
 (builtin_type "table") @constructor
 (builtin_type "function") @keyword.function
 
+(class_annotation (identifier) @storageclass)
+
 ((type) @boolean
  (#any-of? @boolean "true" "false"))

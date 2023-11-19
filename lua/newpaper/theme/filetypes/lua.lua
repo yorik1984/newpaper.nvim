@@ -36,10 +36,12 @@ function M.setup(configColors, configStyle)
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
 
             -- LSP semantic tokens
+            ["@lsp.type.class.lua"]                      = { default = true },
             ["@lsp.type.keyword.lua"]                    = { default = true },
+            ["@lsp.type.type.lua"]                       = { default = true },
             ["@lsp.type.method.lua"]                     = { link = "@function.call" },
-            ["@lsp.type.parameter.lua"]                  = { link = "@definition.parameter" },
-            ["@lsp.type.property.lua"]                   = { link = "@definition.field" },
+            ["@lsp.type.parameter.lua"]                  = { default = true },
+            ["@lsp.type.property.lua"]                   = { default = true },
             ["@lsp.type.variable.lua"]                   = { link = "@variable.lua" },
             ["@lsp.typemod.variable.defaultLibrary.lua"] = { link = "@namespace.builtin" },
         }
