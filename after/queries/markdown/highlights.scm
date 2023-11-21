@@ -32,6 +32,7 @@
   @keyword
   (#eq? @keyword "-")
   (#set! conceal "—"))
+
 [
   (link_destination)
 ] @text.underline
