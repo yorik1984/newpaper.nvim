@@ -51,7 +51,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
   + Light
   + Dark
 + Lualine theme
-+ Ability to change background on sidebar windows like NvimTree, packer, terminal etc.
++ Ability to change background on sidebar windows like NvimTree, terminal etc.
 + Asynchronous highlight loading which makes the theme extremely fast
 + Added functions for live theme switching without the need to restart Neovim
 + Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
@@ -121,7 +121,6 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 + [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-+ [packer.nvim](https://github.com/wbthomason/packer.nvim)
 + [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
@@ -157,14 +156,6 @@ require("lazy").setup({
     priority = 1000,
     config = true,
 })
-```
-
-**[packer.nvim](https://github.com/wbthomason/packer.nvim)**
-
-```lua
-use "yorik1984/newpaper.nvim"
-...
-require("newpaper").setup()
 ```
 
 ## ⚙️ Configuration
@@ -212,7 +203,7 @@ require("newpaper").setup({
 | greyscale           | `false`       | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|
 | editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic |
 | terminal            | `"contrast"`  | Make `:terminal`buffers and windows  in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
-| sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
+| sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
 | contrast_float      | `true`        | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope  | `true`        | Make Telescope have a different foreground and background |
 | operators_bold      | `true`        | Make booleans, escape characters, operators like `=`, `/`, `*`, `+`, `-`, `&`, `%`, `#`, `~`, `<`, `>`, `|` etc bold |

@@ -51,7 +51,6 @@ FEATURES                                                *newpaper.nvim-features*
         - nvim-treesitter-context
         - Nvim-Tree.lua
         - nvim-web-devicons
-        - packer.nvim
         - rainbow-delimiters.nvim
         - symbols-outline.nvim
         - Telescope.nvim
@@ -72,7 +71,7 @@ FEATURES                                                *newpaper.nvim-features*
         - zotcite
 
     + Ability to have a different background on sidebar windows like Nvim-Tree,
-      Terminal, Packer, Whichkey, QuickFix etc.
+      Terminal, Whichkey, QuickFix etc.
 
     + Asynchronous highlight loading which makes the theme extremely fast
 
@@ -176,7 +175,7 @@ Options: ~
         `
     + sidebars_contrast  {table} (default = {})
         Set a contrast background on sidebar-like windows.
-        Example: `{ "NvimTree", "vista_kind", "packer", "Trouble" }`
+        Example: `{ "NvimTree", "vista_kind", "Trouble" }`
         `"NvimTree"` and `"Trouble"` groups has own highlight colors.
         Can be overridden separate from others sidebars
 

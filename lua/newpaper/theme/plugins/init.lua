@@ -18,7 +18,6 @@ local plugins = {
     "noice",
     "notify",
     "nvim-tree",
-    "packer",
     "rainbow-delimiters",
     "rbs",
     "symbols-outline",
