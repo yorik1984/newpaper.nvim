@@ -43,6 +43,7 @@ function M.setup(configColors, configStyle)
             ["@lsp.type.parameter.lua"]                  = { default = true },
             ["@lsp.type.property.lua"]                   = { default = true },
             ["@lsp.type.variable.lua"]                   = { link = "@variable.lua" },
+            ["@lsp.typemod.class.declaration.lua"]       = { default = true },
             ["@lsp.typemod.variable.defaultLibrary.lua"] = { link = "@namespace.builtin" },
         }
 
