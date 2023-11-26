@@ -307,6 +307,7 @@ function M.setup(configColors, configStyle)
 
             ["@lsp.typemod.class.default_library"]      = { link = "@type.builtin" },
             ["@lsp.typemod.class.defaultLibrary"]       = { link = "@type.builtin" },
+            ["@lsp.typemod.class.declaration"]          = { link = "@storageclass" },
             ["@lsp.typemod.enum.default_library"]       = { link = "@type.builtin" },
             ["@lsp.typemod.enum.defaultLibrary"]        = { link = "@type.builtin" },
             ["@lsp.typemod.enumMember.default_library"] = { link = "@constant.builtin" },

@@ -23,18 +23,22 @@ function M.setup(configColors, configStyle)
             ["@constant.builtin.ruby"]     = { fg = newpaper.ruby_maroon, nocombine = true },
             ["@constant.predef.ruby"]      = { fg = newpaper.ocean, style = style.k_style, nocombine = true},
             ["@constructor.ruby"]          = { fg = newpaper.blue, style = style.o_style },
-            ["@definition.var.ruby"]       = { fg = newpaper.ruby_orange, style = style.v_style },
             ["@function.call.ruby"]        = { fg = newpaper.ruby_navy, style = style.f_style },
             ["@keyword.operator.ruby"]     = { fg = newpaper.navy, style = style.k_style },
             ["@label.ruby"]                = { fg = newpaper.darkengreen },
+            ["@parameter.var.ruby"]        = { fg = newpaper.ruby_orange, style = style.v_style },
             ["@punctuation.bracket.ruby"]  = { fg = newpaper.ruby_navy, style = style.br_style },
+            ["@storageclass.ruby"]         = { fg = newpaper.ruby_navy, style = style.k_style },
+            ["@storageclass.super.ruby"]   = { link = "@storageclass" },
             ["@text.emphasis.ruby"]        = { style = style.none, nocombine = true },
             ["@type.qualifier.ruby"]       = { fg = newpaper.ruby_maroon, style = style.k_style },
             ["@type.ruby"]                 = { fg = newpaper.darkgreen, nocombine = true },
             ["@variable.global.predef"]    = { fg = newpaper.olive, style = style.k_style, nocombine = true },
 
             -- LSP semantic tokens
-            ["@lsp.type.namespace.ruby"]   = { link = "@definition.namespace" },
+            ["@lsp.type.method.ruby"]               = { default = true },
+            ["@lsp.type.namespace.ruby"]            = { default = true },
+            ["@lsp.typemod.class.declaration.ruby"] = { link = "@storageclass.ruby" },
         }
 
         return treesitter
@@ -128,6 +132,7 @@ function M.setup(configColors, configStyle)
             -- eruby
             erubyDelimiter = { fg = newpaper.redorange, style = style.d_style },
         }
+        ---@diagnostic disable-next-line inject-field
         if vim.g.ruby_no_identifiers == 1 then
             plugins.rubyClassVariable          = { fg = newpaper.fg }
             plugins.rubyGlobalVariable         = { fg = newpaper.fg }
@@ -141,6 +146,7 @@ function M.setup(configColors, configStyle)
             plugins.rubyPredefinedConstant     = { fg = newpaper.ocean, style = style.k_style }
             plugins.rubyPredefinedVariable     = { fg = newpaper.olive, style = style.k_style }
         end
+        ---@diagnostic disable-next-line inject-field
         if vim.g.ruby_operators == 1 then
             plugins.rubyOperator               = { fg = newpaper.navy, style = style.o_style }
             plugins.rubyDefinedOperator        = { fg = newpaper.navy, style = style.k_style }
@@ -166,6 +172,7 @@ function M.setup(configColors, configStyle)
             plugins.rubyAssignmentOperator     = { fg = newpaper.fg }
             plugins.rubyEqualityOperator       = { fg = newpaper.fg }
         end
+        ---@diagnostic disable-next-line inject-field
         if vim.g.ruby_pseudo_operators == 1 then
             plugins.rubyPseudoOperator         = { fg = newpaper.orange, style = style.o_style }
             plugins.rubyDotOperator            = { fg = newpaper.redorange, nocombine = true }

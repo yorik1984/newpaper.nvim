@@ -1,14 +1,14 @@
 ;; extends
 
 ;;; From locals.scm
-(method_parameters (identifier) @definition.var)
 (method_parameters
   (keyword_parameter name: [(identifier) @symbol]
     ":" @symbol))
-(splat_parameter (identifier) @definition.var)
-(hash_splat_parameter (identifier) @definition.var)
+(method_parameters (identifier) @parameter.var)
+(splat_parameter (identifier) @parameter.var)
+(hash_splat_parameter (identifier) @parameter.var)
+(parenthesized_statements(identifier) @parameter.var)
 (argument_list (identifier) @definition.parameter)
-(parenthesized_statements(identifier) @definition.var)
 
 ;;; Keywords
 
@@ -48,7 +48,8 @@
 ;;; Function calls
 "defined?" @keyword.operator
 
-(call receiver: (constant)? @definition.type)
+(call receiver: (constant)? @storageclass)
+
 (program
  (call
   (identifier) @include)
@@ -64,7 +65,7 @@
 ((identifier) @constant.builtin
  (#any-of? @constant.builtin "initialize" "new"))
 
-(superclass (constant) @storageclass)
+(superclass (constant) @storageclass.super)
 
 ;;; Identifiers
 (class_variable) @constant
@@ -187,33 +188,36 @@
 
 ;;; From locals.scm
 (module name: (constant) @definition.namespace)
-(class name: (constant) @definition.type)
+(class name: (constant) @storageclass)
 (method name: [
                (identifier) @definition.function
-               (constant) @definition.type
+               (constant) @storageclass
                ])
 (singleton_method name: [
                          (identifier) @definition.function
-                         (constant) @definition.type
+                         (constant) @storageclass
                          ])
 
-(scope_resolution scope: (constant) @definition.type)
-(scope_resolution name: (constant) @definition.type)
+((scope_resolution scope: (constant) @storageclass)
+  (#lua-match? @storageclass "^[%u][%u%l%d]+$"))
 
-((scope_resolution name: (constant) @type)
-  (#not-lua-match? @type "^[A-Z0-9_]+$"))
+((scope_resolution name: (constant) @storageclass)
+  (#lua-match? @storageclass "^[%u][%u%l%d]+$"))
 
-(splat_parameter "*" @number)
-(splat_argument "*" @number)
-(hash_splat_parameter "**" @number)
-(hash_splat_argument "**" @number)
+((scope_resolution name: (constant) @constant)
+  (#lua-match? @constant "^[%u][%u%d_]+$"))
+
+(splat_parameter "*" @float)
+(splat_argument "*" @float)
+(hash_splat_parameter "**" @symbol)
+(hash_splat_argument "**" @symbol)
 (hash ["{" "}"] @symbol)
 (pair "=>" @symbol)
 (block_parameter "&" @punctuation.delimiter)
 (block_argument "&" @punctuation.delimiter)
 
 ;;; rubySuperClassOperator
-(superclass "<" @storageclass)
+(superclass "<" @storageclass.super)
 
 ;;; rubyEigenClassOperator
 (singleton_class "<<" @constant.builtin)
