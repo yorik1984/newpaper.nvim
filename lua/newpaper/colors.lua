@@ -558,7 +558,9 @@ function M.setup(config)
 
     -- stylua: ignore end
 
-    util.colorOverrides(newpaper, config.colors_advanced)
+    if config.colors_advanced then
+        util.colorOverrides(newpaper, config.colors_advanced)
+    end
 
     return newpaper
 end
