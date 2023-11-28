@@ -91,7 +91,7 @@ function M.autocmds(config, colors)
                     .. "CursorLineNr:CursorLineSignSB,"
                     .. "CursorLine:CursorLineSB,"
                     .. "CursorLineSign:CursorLineSignSB "
-                    .. "signcolumn=yes:1 nonumber foldcolumn=no",
+                    .. "signcolumn=yes:1 nonumber",
             })
         end
     end
