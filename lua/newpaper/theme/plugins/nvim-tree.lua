@@ -13,8 +13,11 @@ function M.setup(configColors, configStyle)
     nvimTreeSyn.loadPlugins = function()
         local plugins = {
             NvimTreeNormal            = { fg = newpaper.nvimtree_fg, bg = newpaper.nvimtree_bg },
+            NvimTreeLineNr            = { bg = newpaper.nvimtree_bg },
             NvimTreeCursorLine        = { bg = newpaper.aqua },
+            NvimTreeCursorLineNr      = { bg = newpaper.aqua },
             NvimTreeCursorColumn      = { bg = newpaper.aqua },
+            NvimTreeSignColumn        = { bg = newpaper.nvimtree_bg },
             NvimTreeSymlink           = { fg = newpaper.accent, style = style.links },
             NvimTreeFolderName        = { fg = newpaper.teal },
             NvimTreeFolderIcon        = { fg = newpaper.teal },
@@ -35,6 +38,10 @@ function M.setup(configColors, configStyle)
             NvimTreeMarkdownFile      = { fg = newpaper.strings },
             NvimTreeExecFile          = { fg = newpaper.texts },
             NvimTreeSpecialFile       = { fg = newpaper.purple, style = style.underline },
+            NvimTreeCopiedHL          = { bg = newpaper.difftext_bg },
+            NvimTreeCutHL             = { bg = newpaper.diffdelete_bg },
+            NvimTreeBookmark          = { fg = newpaper.darkgreen },
+            NvimTreeBookmarkHL        = { fg = newpaper.green, style = style.b_bold },
             LspDiagnosticsError       = { fg = newpaper.error_fg },
             LspDiagnosticsWarning     = { fg = newpaper.warn_fg },
             LspDiagnosticsInformation = { fg = newpaper.info_fg },

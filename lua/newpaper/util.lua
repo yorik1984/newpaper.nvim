@@ -86,10 +86,10 @@ function M.autocmds(config, colors)
                 command = "setlocal winhighlight=Normal:NormalContrastSB,"
                     .. "SignColumn:SignColumnSB,"
                     .. "LineNr:LineNrSB,"
-                    .. "CursorLineNr:LineNrSB,"
+                    .. "CursorLineNr:CursorLineSignSB,"
                     .. "CursorLine:CursorLineSB,"
                     .. "CursorLineSign:CursorLineSignSB "
-                    .. "signcolumn=yes:1 nonumber",
+                    .. "signcolumn=yes:1 nonumber foldcolumn=no",
             })
         end
     end
