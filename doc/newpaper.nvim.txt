@@ -66,6 +66,7 @@ FEATURES                                                *newpaper.nvim-features*
         - vim-sneak
         - vim-toml
         - vimtex
+        - virt-column.nvim
         - vista.vim
         - WhichKey.nvim
         - zotcite

@@ -136,6 +136,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [vim-sneak](https://github.com/justinmk/vim-sneak)
 + [vim-toml](https://github.com/cespare/vim-toml)
 + [vimtex](https://github.com/lervag/vimtex)
++ [virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim)
 + [vista.vim](https://github.com/liuchengxu/vista.vim)
 + [WhichKey.nvim](https://github.com/folke/which-key.nvim)
 + [zotcite](https://github.com/jalvesaq/zotcite)

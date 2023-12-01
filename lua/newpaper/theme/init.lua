@@ -72,7 +72,7 @@ function M.setup(configColors, configStyle)
             CursorIM         = { fg = newpaper.bg, bg = newpaper.cursor },
             CursorLineNr     = { fg = newpaper.cursor_nr_fg, bg = newpaper.cursor_nr_bg },
             CursorLineSign   = { bg = newpaper.linenumber_bg },
-            ColorColumn      = { fg = newpaper.colorcol, bg = newpaper.none },
+            ColorColumn      = { fg = newpaper.none, bg = newpaper.colorcol },
             CommandMode      = { fg = newpaper.orange, style = style.reverse },
             Comment          = { fg = newpaper.comments, style = style.c_style },
             Conceal          = { fg = newpaper.tex_math },
@@ -478,6 +478,9 @@ function M.setup(configColors, configStyle)
 
             -- Vim-matchup ----------------------------------------------------
             MatchWord                   = { bg = newpaper.lightviolet, style = style.b_bold },
+
+            -- Virt-column ----------------------------------------------------
+            VirtColumn                   = { fg = newpaper.colorcol, bg = newpaper.none },
 
             -- WhichKey -------------------------------------------------------
             WhichKey                    = { fg = newpaper.keywords },
