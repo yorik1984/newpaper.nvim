@@ -13,6 +13,7 @@ local filetypes = {
     "luau",
     "markdown",
     "query",
+    "rbs",
     "regex",
     "ruby",
     "rust",

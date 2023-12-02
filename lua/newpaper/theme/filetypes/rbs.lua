@@ -10,6 +10,19 @@ function M.setup(configColors, configStyle)
     local newpaper = rbsSyn.colors
     local style    = rbsSyn.style
 
+    rbsSyn.loadTreeSitter = function()
+        local treesitter = {
+            ["@constant.builtin.rbs"]    = { link = "@constant.builtin.ruby" },
+            ["@function.method.rbs"]     = { link = "@keyword.function" },
+            ["@namespace.rbs"]           = { link = "@definition.namespace" },
+            ["@storageclass.rbs"]        = { link = "@storageclass.ruby" },
+            ["@storageclass.super.rbs"]  = { link = "@storageclass" },
+            ["@type.qualifier.rbs"]      = { link = "@type.qualifier.ruby" },
+        }
+
+        return treesitter
+    end
+
     rbsSyn.loadPlugins = function()
         local plugins = {
             -- vim-rbs
@@ -36,11 +49,11 @@ function M.setup(configColors, configStyle)
             -- rbsCommentStart              rbsComment
             rbsInstanceVariable          = { fg = newpaper.darkengreen, style = style.v_style },
             rbsMethod                    = { fg = newpaper.keywords,    style = style.k_style },
-            rbsMethodName                = { fg = newpaper.navy },
+            rbsMethodName                = { fg = newpaper.ruby_navy },
             -- rbsMethodDeclarationOperator rbsDeclarationOperator
             -- rbsMethodUnaryOperator       rbsUnaryOperator
             rbsMethodArrow               = { fg = newpaper.navy, style = style.o_style },
-            rbsMethodType                = { fg = newpaper.ruby_green },
+            rbsMethodType                = { fg = newpaper.darkgreen, nocombine = true },
             rbsAttribute                 = { fg = newpaper.magenta },
             rbsAttributeName             = { fg = newpaper.darkyellow },
             -- rbsAttributeVariableName     rbsInstanceVariable
@@ -51,9 +64,9 @@ function M.setup(configColors, configStyle)
             -- rbsMethodAliasName           rbsMethodName
             rbsMethodSelf                = { fg = newpaper.maroon,  style = style.v_style },
             rbsMethodSelfModifier        = { fg = newpaper.maroon,  style = style.o_style },
-            rbsMethodDot                 = { fg = newpaper.orange },
-            rbsNamespaceSeparator        = { fg = newpaper.orange },
-            rbsClassName                 = { fg = newpaper.olive },
+            rbsMethodDot                 = { fg = newpaper.redorange },
+            rbsNamespaceSeparator        = { fg = newpaper.redorange },
+            rbsClassName                 = { link = "rbsClassNameDefinition" },
             rbsInterfaceName             = { fg = newpaper.redorange },
             rbsSingleton                 = { fg = newpaper.green },
             -- rbsString                    String
@@ -61,6 +74,7 @@ function M.setup(configColors, configStyle)
             -- rbsStringEnd                 rbsStringStart
             rbsStringEscape              = { fg = newpaper.redorange },
             -- rbsQuoteEscape               rbsStringEscape
+            --
             -- rbsParenthesisEscape         rbsStringEscape
             -- rbsSquareBracketEscape       rbsStringEscape
             -- rbsCurlyBraceEscape          rbsStringEscape
@@ -72,7 +86,7 @@ function M.setup(configColors, configStyle)
             -- rbsInteger                   Number
             -- rbsBoolean                   Boolean
             -- rbsRecordName                rbsSymbol
-            rbsType                      = { fg = newpaper.nephritis, style = style.v_style },
+            rbsType                      = { fg = newpaper.olive, style = style.v_style },
             rbsTypeOperator              = { fg = newpaper.tag_navy,  style = style.o_style },
             -- rbsOptionalTypeOperator      rbsTypeOperator
         }

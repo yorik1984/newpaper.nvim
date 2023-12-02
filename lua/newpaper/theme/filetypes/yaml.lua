@@ -66,7 +66,6 @@ function M.setup(configColors, configStyle)
         local treesitter = {
             ["@constant.builtin.yaml"]    = { fg = newpaper.ocean, style = style.k_style },
             ["@field.yaml"]               = { fg = newpaper.ocean, style = style.f_style, nocombine = true },
-            ["@punctuation.bracket.yaml"] = { fg = newpaper.tag_navy, style = style.br_style },
             ["@punctuation.special.yaml"] = { fg = newpaper.magenta },
         }
 

@@ -78,7 +78,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 | **Pandoc** :thumbsup:   | :heavy_check_mark: | :x:                | :white_check_mark: [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/markdown/code.md) |
 | **Python**              | :x:                | :white_check_mark: | :x: | | |
 | **Query**               | :x:                | :white_check_mark: | :x: | | |
-| **Rbs**                 | :x:                | :x:                | :white_check_mark: [vim-rbs](https://github.com/jlcrochet/vim-rbs) | | |
+| **Rbs** :thumbsup:      | :x:                | :white_check_mark: | :heavy_check_mark: [vim-rbs](https://github.com/jlcrochet/vim-rbs) | | |
 | **Regex** :thumbsup:    | :x:                | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/regex/code_regex.scm) |
 | **Ruby** :thumbsup:     | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-ruby](https://github.com/vim-ruby/vim-ruby) | [🖼️](#ruby) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb) |
 | **Rust**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/rust/code.rs) |
