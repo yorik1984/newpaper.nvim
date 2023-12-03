@@ -380,7 +380,7 @@ Fields: ~
 
                                               *newpaper.config.italic_functions*
     • {italic_functions} (bool)
-        Make function calls and names italic
+                    Make function calls and names italic.
 
                     Default: `false` ~
 
@@ -595,7 +595,7 @@ Lualine theme name and style automatically using from main theme.
 
 NOTE: ~
 You can temporally use just only lualine theme with any colorscheme.
-It also depend from `vim.o.background`
+It also depend from `vim.o.background`.
 
 init.lua: ~
 >lua
@@ -605,7 +605,7 @@ init.lua: ~
     -- of lualine
     vim.g.newpaper_lualine_style = "light"
     -- Also you can predefine colors
-    vim.g.newpaper_colors        = {teal = "#008080"}
+    vim.g.newpaper_colors = {teal = "#008080"}
 
     -- disable main theme
     -- require("newpaper").setup()
