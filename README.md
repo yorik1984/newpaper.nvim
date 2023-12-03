@@ -235,8 +235,8 @@ require("newpaper").setup({
 | disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
 | hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors.lua[12:184]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L12-L184) and [`colors.lua[188:360]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L188-L360) |
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in sorce code [`colors.lua[382:547]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L382-L547) |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors.lua[12:189]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L12-L189) and [`colors.lua[193:370]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L193-L370) |
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors.lua[392:556]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L392-L556) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       | `"light"`     | Set different style from main theme:`"dark"`, `"light"`|
@@ -557,6 +557,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 + [toml](https://github.com/toml-lang/toml) -- spec and code preview example
 + [yaml](https://github.com/yaml/yaml-spec) -- spec and code preview example
 + [catppuccin](https://github.com/catppuccin) -- community-driven pastel theme
++ thanks to [lukas-reineke](https://github.com/lukas-reineke) for inspired by good documentation style
 
 ## 🛠️ TODO
 

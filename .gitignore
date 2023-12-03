@@ -39,9 +39,6 @@ luac.out
 *.x86_64
 *.hex
 
-# ctags
-tags
-
 #Others
 contents.obv
 
