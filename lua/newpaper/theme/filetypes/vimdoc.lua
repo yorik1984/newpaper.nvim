@@ -27,11 +27,11 @@ function M.setup(configColors, configStyle)
     vimdocSyn.loadTreeSitter = function()
 
         local treesitter = {
-            ["@conceal.vimdoc"]        = { fg = newpaper.magenta },
+            ["@conceal.vimdoc"]        = { fg = newpaper.magenta, nocombine = true },
             ["@label.vimdoc"]          = { fg = newpaper.bluegreen },
             ["@string.special.vimdoc"] = { fg = newpaper.keywords, nocombine = true },
-            ["@text.reference.vimdoc"] = { fg = newpaper.links, style = style.underline },
-            ["@text.uri.vimdoc"]       = { fg = newpaper.strings, style = style.links },
+            ["@text.reference.vimdoc"] = { fg = newpaper.links, style = style.underline, nocombine = true },
+            ["@text.uri.vimdoc"]       = { fg = newpaper.strings, style = style.links, nocombine = true },
             ["@type.vimdoc"]           = { fg = newpaper.tex_red, nocombine = true },
         }
 
