@@ -480,7 +480,7 @@ function M.setup(configColors, configStyle)
             MatchWord                   = { bg = newpaper.lightviolet, style = style.b_bold },
 
             -- Virt-column ----------------------------------------------------
-            VirtColumn                   = { fg = newpaper.colorcol, bg = newpaper.none },
+            VirtColumn                   = { fg = newpaper.colorcol, bg = newpaper.none, nocombine = true },
 
             -- WhichKey -------------------------------------------------------
             WhichKey                    = { fg = newpaper.keywords },
