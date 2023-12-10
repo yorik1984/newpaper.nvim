@@ -12,7 +12,7 @@ function M.setup(configColors, configStyle)
     theme.loadSyntax = function()
         local syntax = {
             Boolean        = { fg = newpaper.booleans, style = style.bool_style },
-            Character      = { fg = newpaper.darkengreen, style = style.o_style },
+            Character      = { fg = newpaper.orange, style = style.o_style },
             Conditional    = { fg = newpaper.keywords, style = style.k_style },
             Constant       = { fg = newpaper.darkengreen },
             Debug          = { fg = newpaper.red },
