@@ -14,7 +14,7 @@ function M.setup(configColors, configStyle)
             Boolean        = { fg = newpaper.booleans, style = style.bool_style },
             Character      = { fg = newpaper.orange, style = style.o_style },
             Conditional    = { fg = newpaper.keywords, style = style.k_style },
-            Constant       = { fg = newpaper.darkengreen },
+            Constant       = { fg = newpaper.darkgreen },
             Debug          = { fg = newpaper.red },
             Define         = { fg = newpaper.magenta },
             Delimiter      = { fg = newpaper.persimona, style = style.d_style },
