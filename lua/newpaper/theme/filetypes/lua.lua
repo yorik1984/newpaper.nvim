@@ -42,7 +42,7 @@ function M.setup(configColors, configStyle)
             ["@lsp.type.method.lua"]                     = { link = "@function.call.lua" },
             ["@lsp.type.parameter.lua"]                  = { default = true },
             ["@lsp.type.property.lua"]                   = { default = true },
-            ["@lsp.type.variable.lua"]                   = { link = "@variable.lua" },
+            ["@lsp.type.variable.lua"]                   = { default = true },
             ["@lsp.typemod.class.declaration.lua"]       = { default = true },
             ["@lsp.typemod.variable.defaultLibrary.lua"] = { link = "@namespace.builtin" },
         }
