@@ -22,7 +22,7 @@ function M.setup(configColors, configStyle)
             -- luaParenError   Error
             -- luaBraceError   Error
             -- luaSpecial      SpecialChar
-            luaFunc         = { fg = newpaper.lua_navy },
+            luaFunc         = { fg = newpaper.lua_navy, style = style.f_style },
         }
         return syntax
     end
@@ -31,6 +31,7 @@ function M.setup(configColors, configStyle)
 
         local treesitter = {
             ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.br_style },
+            ["@function.call.lua"]         = { fg = newpaper.lua_navy, style = style.f_style },
             ["@namespace.builtin.core"]    = { fg = newpaper.neovim_green, style = style.k_style },
             ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
 
