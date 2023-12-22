@@ -124,6 +124,7 @@ function M.setup(config)
             tex_lightgreen       = "#20A93E",
 
             tex_math             = "#008000",
+            tex_math_cmd         = "#636D1D",
             tex_math_delim       = "#349279",
             tex_part_title       = "#5F8A00",
             tex_ch_brown         = "#8C1919",
@@ -166,7 +167,7 @@ function M.setup(config)
             lua_blue             = "#128897",
 
             -- Jinja
-            jinja_red            = "#b80000",
+            jinja_red            = "#B80000",
 
             -- Python
             python_blue          = "#336D9E",
@@ -287,8 +288,8 @@ function M.setup(config)
             todo_test            = "#E55BE5",
 
             -- TeX
-            tex_maroon           = "#d17475",
-            tex_olive            = "#a9a875",
+            tex_maroon           = "#D17475",
+            tex_olive            = "#A9A875",
             tex_navy             = "#738AE5",
             tex_red              = "#EF5D5B",
             tex_blue             = "#6DA6CF",
@@ -305,6 +306,7 @@ function M.setup(config)
             tex_lightgreen       = "#00CA93",
 
             tex_math             = "#5FAF5F",
+            tex_math_cmd         = "#989769",
             tex_math_delim       = "#BBE67E",
             tex_part_title       = "#9FB866",
             tex_ch_brown         = "#AA7477",

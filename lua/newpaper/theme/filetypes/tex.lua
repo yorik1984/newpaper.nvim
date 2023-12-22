@@ -196,11 +196,11 @@ function M.setup(configColors, configStyle)
             -- texMathDelimZoneTD       texMathDelimZone  $$
             texCmdMathEnv         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
             -- (Only for math environments)
-            texMathEnvArgName     = { fg = newpaper.tex_math, style = style.italic }, -- \begin{EQUATION}
-            texCmdMath            = { fg = newpaper.tex_math, style = style.tex_m_style }, -- \ENSUREMATH
+            texMathEnvArgName     = { fg = newpaper.tex_math_cmd, style = style.italic }, -- \begin{EQUATION}
+            texCmdMath            = { fg = newpaper.tex_math_cmd, style = style.tex_m_style }, -- \ENSUREMATH
             texMathDelim          = { fg = newpaper.tex_math_delim }, -- \LVERT
             texMathDelimMod       = { fg = newpaper.tex_math_delim, style = style.tex_k_style }, -- \LEFT\lvert \RIGHT\rvert
-            texMathOper           = { fg = newpaper.tex_math, style = style.tex_o_style }, -- Basic operators: +-=/
+            texMathOper           = { fg = newpaper.tex_olive, style = style.tex_o_style }, -- Basic operators: +-=/
             texMathSuperSub       = { fg = newpaper.tex_pink }, -- Sub and super operators (^, _)
             -------------------------------------------------------------------
             texLength             = { fg = newpaper.tex_red }, -- Length units, e.g. "4 cm". Only when contained e.g. in option groups.
@@ -272,10 +272,10 @@ function M.setup(configColors, configStyle)
             -- texLetArgName         texArgNew
             -- texMathArg            texMathZone
             -- texMathArrayArg       texOpt
-            texMathCmd            = { fg = newpaper.tex_math },
+            texMathCmd            = { fg = newpaper.tex_math_cmd },
             -- texMathCmdStyle       texMathCmd
-            texMathCmdStyleBold   = { fg = newpaper.tex_math, style = style.bold },
-            texMathCmdStyleItal   = { fg = newpaper.tex_math, style = style.italic },
+            texMathCmdStyleBold   = { fg = newpaper.tex_math_cmd, style = style.bold },
+            texMathCmdStyleItal   = { fg = newpaper.tex_math_cmd, style = style.italic },
             texMathCmdText        = { fg = newpaper.tex_navy },
             texMathTextConcArg    = { fg = newpaper.tex_pink },
             -- texMathGroup          texMathZone
