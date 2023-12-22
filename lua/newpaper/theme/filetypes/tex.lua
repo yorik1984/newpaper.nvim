@@ -196,7 +196,7 @@ function M.setup(configColors, configStyle)
             -- texMathDelimZoneTD       texMathDelimZone  $$
             texCmdMathEnv         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
             -- (Only for math environments)
-            texMathEnvArgName     = { fg = newpaper.tex_math_cmd, style = style.italic }, -- \begin{EQUATION}
+            texMathEnvArgName     = { fg = newpaper.tex_olive, style = style.italic }, -- \begin{EQUATION}
             texCmdMath            = { fg = newpaper.tex_math_cmd, style = style.tex_m_style }, -- \ENSUREMATH
             texMathDelim          = { fg = newpaper.tex_math_delim }, -- \LVERT
             texMathDelimMod       = { fg = newpaper.tex_math_delim, style = style.tex_k_style }, -- \LEFT\lvert \RIGHT\rvert
