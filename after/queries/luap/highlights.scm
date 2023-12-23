@@ -18,9 +18,7 @@
   "-" @punctuation.delimiter
   to: (character) @constant)
 
-(negated_set
-  "^" @punctuation.delimiter
-  (character) @constant)
+(negated_set "^" @punctuation.delimiter)
 
 [
   (set)
