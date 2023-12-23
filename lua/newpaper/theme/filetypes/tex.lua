@@ -90,7 +90,7 @@ function M.setup(configColors, configStyle)
             ["@function.macro.latex"]         = { fg = newpaper.tex_magenta },
             ["@include.latex"]                = { fg = newpaper.tex_blue, style = style.tex_k_style },
             ["@namespace.latex"]              = { fg = newpaper.tex_blue, style = style.tex_m_style },
-            ["@operator.latex"]               = { fg = newpaper.tex_math, style = style.tex_o_style },
+            ["@operator.latex"]               = { fg = newpaper.tex_operator, style = style.tex_o_style },
             ["@parameter.latex"]              = { fg = newpaper.tex_orange, style = style.tex_a_style },
             ["@punctuation.bracket.latex"]    = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             ["@punctuation.delimiter.latex"]  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
@@ -112,7 +112,7 @@ function M.setup(configColors, configStyle)
             ["@function.builtin.bibtex"]      = { fg = newpaper.tex_maroon },
             ["@keyword.bibtex"]               = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             ["@number.bibtex"]                = { fg = newpaper.tex_pink },
-            ["@operator.bibtex"]              = { fg = newpaper.tex_math, style = style.tex_o_style },
+            ["@operator.bibtex"]              = { fg = newpaper.tex_operator, style = style.tex_o_style },
             ["@parameter.bibtex"]             = { fg = newpaper.tex_orange },
             ["@punctuation.bracket.bibtex"]   = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             ["@punctuation.delimiter.bibtex"] = { fg = newpaper.tex_orange },
@@ -200,7 +200,7 @@ function M.setup(configColors, configStyle)
             texCmdMath            = { fg = newpaper.tex_math_cmd, style = style.tex_m_style }, -- \ENSUREMATH
             texMathDelim          = { fg = newpaper.tex_math_delim }, -- \LVERT
             texMathDelimMod       = { fg = newpaper.tex_math_delim, style = style.tex_k_style }, -- \LEFT\lvert \RIGHT\rvert
-            texMathOper           = { fg = newpaper.tex_olive, style = style.tex_o_style }, -- Basic operators: +-=/
+            texMathOper           = { fg = newpaper.tex_operator, style = style.tex_o_style }, -- Basic operators: +-=/
             texMathSuperSub       = { fg = newpaper.tex_pink }, -- Sub and super operators (^, _)
             -------------------------------------------------------------------
             texLength             = { fg = newpaper.tex_red }, -- Length units, e.g. "4 cm". Only when contained e.g. in option groups.
@@ -277,7 +277,7 @@ function M.setup(configColors, configStyle)
             texMathCmdStyleBold   = { fg = newpaper.tex_math_cmd, style = style.bold },
             texMathCmdStyleItal   = { fg = newpaper.tex_math_cmd, style = style.italic },
             texMathCmdText        = { fg = newpaper.tex_navy },
-            texMathTextConcArg    = { fg = newpaper.tex_pink },
+            texMathTextConcArg    = { fg = newpaper.tex_string },
             -- texMathGroup          texMathZone
             -- texMathStyleConcArg   texMathZone
             -- texMathSub            texMathZone
