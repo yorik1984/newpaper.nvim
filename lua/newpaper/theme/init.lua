@@ -397,6 +397,7 @@ function M.setup(configColors, configStyle)
 
             -- Highlight-undo --------------------------------------------------
             HighlightUndo               = { bg = newpaper.diffchange_bg },
+            HighlightRedo               = { bg = newpaper.diffadd_bg },
 
             -- Hop ------------------------------------------------------------
             HopNextKey                  = { fg = newpaper.accent, style = style.b_bold },
