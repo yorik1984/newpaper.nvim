@@ -221,7 +221,10 @@ function M.setup(configColors, configStyle)
             texCmdItem            = { fg = newpaper.tex_string }, -- \item
 
             -- Inherited groups -----------------------------------------------
-            texGroupError         = { bg = newpaper.tex_group_error, sp = newpaper.tex_aqua, style = style.error }, texMinipageOptHeight  = { fg = newpaper.tex_red },
+            texGroupError         = { bg = newpaper.tex_group_error, sp = newpaper.tex_aqua, style = style.error },
+            -- texItemLabel          texOpt
+            -- texItemLabelConcealed texItemLabel
+            texMinipageOptHeight  = { fg = newpaper.tex_red },
             texMinipageOptIPos    = { fg = newpaper.tex_redorange },
             texMinipageOptPos     = { fg = newpaper.tex_redorange },
             texMathError          = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
@@ -500,6 +503,9 @@ function M.setup(configColors, configStyle)
 
             -- pyluatex.vim ---------------------------------------------------
             texCmdPyluatex = { fg = newpaper.python_blue, style = style.tex_m_style },
+
+            -- sagetex.vim ----------------------------------------------------
+            texCmdSagetex  = { fg = newpaper.tex_math, style = style.tex_k_style },
 
             -- siunitx.vim ----------------------------------------------------
             texCmdSI       = { fg = newpaper.tex_SI_purple, style = style.tex_k_style },
