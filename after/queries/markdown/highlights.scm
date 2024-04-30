@@ -51,6 +51,8 @@
 ((task_list_marker_checked) @markup.list.checked
   (#offset! @markup.list.checked 0 -2 0 0) (#set! conceal ""))
 
+(list_item (task_list_marker_unchecked)) @comment
+
 ; Tables
 (pipe_table_header ("|") @punctuation.special (#set! conceal "┃"))
 (pipe_table_delimiter_row ("|") @punctuation.special (#set! conceal "┃"))
@@ -58,12 +60,3 @@
 ((pipe_table_align_left) @punctuation.special (#set! conceal "┣"))
 ((pipe_table_align_right) @punctuation.special (#set! conceal "┫"))
 (pipe_table_row ("|") @punctuation.special (#set! conceal "┃"))
-
-; Block quotes
-((block_quote_marker) @punctuation.special
-                      (#offset! @punctuation.special 0 0 0 -1)
-                      (#set! conceal "▐"))
-((block_continuation) @punctuation.special
-                      (#lua-match? @punctuation.special "^>")
-                      (#offset-first-n! @punctuation.special 1)
-                      (#set! conceal "▐"))
