@@ -218,7 +218,7 @@ require("newpaper").setup({
 | regex_bg            | `true`        | Enable background color for regex capturing groups |
 | tags                | `"bold"`      | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | tags_brackets_bold  | `true`        | Make tags delimiters like `<` or `/>` bold |
-| tex_major           | `"bold"`      | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_major           | `"bold"`      | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. Work only with [vimtex](https://github.com/lervag/vimtex) |
 | tex_operators_bold  | `"true"`      | Make tex operators bold |
 | tex_brackets_bold   | `"false"`     | Make tex brackets like `{}`, `[]` bold |
 | tex_math_delim_bold | `"false"`     | Make tex math delimiters like `\[\]`, `\(\)`, `$ $`, `$$ $$` bold |

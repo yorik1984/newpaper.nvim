@@ -1,15 +1,7 @@
 ;; extends
 
-;;; From locals.scm
-(method_parameters
-  (keyword_parameter name: [(identifier) @symbol]
-    ":" @symbol))
-(method_parameters (identifier) @parameter.var)
-(splat_parameter (identifier) @parameter.var)
-(hash_splat_parameter (identifier) @parameter.var)
-(parenthesized_statements(identifier) @parameter.var)
-(argument_list (identifier) @definition.parameter)
-
+(global_variable) @variable.global
+(instance_variable) @variable.member.instance
 ;;; Keywords
 
 ((identifier) @keyword.function
@@ -21,20 +13,20 @@
 ((identifier) @keyword.function
  (#match? @keyword.function "^(alias|define|define_singleton|remove|undef)_method$"))
 
-((identifier) @type.qualifier
- (#any-of? @type.qualifier "module_function"))
+((identifier) @keyword.modifier
+ (#any-of? @keyword.modifier "module_function"))
 
-((identifier) @type.qualifier
- (#match? @type.qualifier "^(public|private)_class_method$"))
+((identifier) @keyword.modifier
+ (#match? @keyword.modifier "^(public|private)_class_method$"))
 
-((identifier) @type.qualifier
- (#match? @type.qualifier "^(public|private)_constant$"))
+((identifier) @keyword.modifier
+ (#match? @keyword.modifier "^(public|private)_constant$"))
 
-((identifier) @exception
- (#any-of? @exception "catch" "throw"))
+((identifier) @keyword.exception
+ (#any-of? @keyword.exception "catch" "throw"))
 
-((identifier) @exception
- (#any-of? @exception "abort" "at_exit" "exit" "fork" "loop" "trap"))
+((identifier) @keyword.exception
+ (#any-of? @keyword.exception "abort" "at_exit" "exit" "fork" "loop" "trap"))
 
 ((identifier) @keyword
  (#any-of? @keyword "callcc" "caller" "lambda" "proc" "eval"))
@@ -42,36 +34,27 @@
 ((identifier) @keyword
  (#match? @keyword "^(class|instance|module)_eval$"))
 
-((identifier) @exception
- (#any-of? @exception "fail" "raise"))
-
 ;;; Function calls
 "defined?" @keyword.operator
 
-(call receiver: (constant)? @storageclass)
+(call receiver: (constant)? @local.definition.type)
 
 (program
  (call
-  (identifier) @include)
- (#any-of? @include "require" "require_relative" "load" "autoload" "gem"))
+  (identifier) @keyword.import)
+ (#any-of? @keyword.import "require" "require_relative" "load" "autoload" "gem"))
 
 ;;; Function definitions
-((identifier) @include
- (#match? @include "^attr_(accessor|reader|writer)$"))
+((identifier) @keyword.import
+ (#match? @keyword.import "^attr_(accessor|reader|writer)$"))
 
-((identifier) @include
- (#vim-match? @include "^\%(\%(\^|;)\\s*)\@<=attr\>(\\s*[.=])\@!$"))
+((identifier) @keyword.import
+ (#vim-match? @keyword.import "^\%(\%(\^|;)\\s*)\@<=attr\>(\\s*[.=])\@!$"))
 
 ((identifier) @constant.builtin
  (#any-of? @constant.builtin "initialize" "new"))
 
-(superclass (constant) @storageclass.super)
-
-;;; Identifiers
-(class_variable) @constant
-
-((identifier) @constant.builtin
- (#match? @constant.builtin "^__(callee|dir|id|method|send|ENCODING|FILE|LINE)__$"))
+(superclass (constant) @local.definition.type.super)
 
 ;;; rubyPredefinedConstant
 ((constant) @constant.predef
@@ -115,7 +98,7 @@
  ] @boolean
 
 ;;; rubyTernaryOperator
-(conditional ["?" ":"] @conditional.ternary)
+(conditional ["?" ":"] @keyword.conditional.ternary)
 
 ;;; rubyEqualityOperator
 [
@@ -130,7 +113,7 @@
 [
  ".."
  "..."
-] @text.math
+] @markup.math
 
 ;;; rubyBitwiseOperator
 [
@@ -140,7 +123,7 @@
  "~"
  "<<"
  ">>"
- ] @exception
+ ] @keyword.exception
 
 ;;; rubyComparisonOperator
 [
@@ -152,7 +135,7 @@
  ] @constructor
 
 ;;; rubyArithmeticOperator
-(binary ["+" "-" "*" "**" "/" "%"] @text.math.operator)
+(binary ["+" "-" "*" "**" "/" "%"] @operator.math)
 
 ;;; rubyAssignmentOperator
 [
@@ -175,59 +158,92 @@
 ;; rubyDotOperator
 [
 "."
- ] @include
+ ] @keyword.import
 
 ; rubyScopeOperator
 [
  "::"
- ] @include
+ ] @keyword.import
 
 (block_parameters "|" @constant.builtin)
 
-(pair key: (hash_key_symbol) ":" @symbol)
+(pair key: (hash_key_symbol) ":" @string.special.symbol)
 
 ;;; From locals.scm
-(module name: (constant) @definition.namespace)
-(class name: (constant) @storageclass)
+(module name: (constant) @local.definition.namespace)
+(class name: (constant) @local.definition.type)
 (method name: [
-               (identifier) @definition.function
-               (constant) @storageclass
+               (identifier) @local.definition.function
+               (constant) @local.definition.type
                ])
 (singleton_method name: [
-                         (identifier) @definition.function
-                         (constant) @storageclass
+                         (identifier) @local.definition.function
+                         (constant) @local.definition.type
                          ])
 
-((scope_resolution scope: (constant) @storageclass)
-  (#lua-match? @storageclass "^[%u][%u%l%d]+$"))
+((scope_resolution scope: (constant) @local.definition.type)
+  (#lua-match? @local.definition.type "^[%u][%u%l%d]+$"))
 
-((scope_resolution name: (constant) @storageclass)
-  (#lua-match? @storageclass "^[%u][%u%l%d]+$"))
+((scope_resolution name: (constant) @local.definition.type)
+  (#lua-match? @local.definition.type "^[%u][%u%l%d]+$"))
 
 ((scope_resolution name: (constant) @constant)
   (#lua-match? @constant "^[%u][%u%d_]+$"))
 
-(splat_parameter "*" @float)
-(splat_argument "*" @float)
-(hash_splat_parameter "**" @symbol)
-(hash_splat_argument "**" @symbol)
-(hash ["{" "}"] @symbol)
-(pair "=>" @symbol)
+(splat_parameter "*" @number.float)
+(splat_argument "*" @number.float)
+(hash_splat_parameter "**" @string.special.symbol)
+(hash_splat_argument "**" @string.special.symbol)
+(hash ["{" "}"] @string.special.symbol)
+(pair "=>" @string.special.symbol)
 (block_parameter "&" @punctuation.delimiter)
 (block_argument "&" @punctuation.delimiter)
 
+(method_parameters
+  (keyword_parameter name: [(identifier) @string.special.symbol]
+    ":" @string.special.symbol))
+(method_parameters
+  (identifier) @local.definition.var)
+
+(lambda_parameters
+  (identifier) @local.definition.var)
+
+(block_parameters
+  (identifier) @local.definition.var)
+
+(splat_parameter
+  (identifier) @local.definition.var)
+
+(hash_splat_parameter
+  (identifier) @local.definition.var)
+
+(optional_parameter
+  name: (identifier) @local.definition.var)
+
+(destructured_parameter
+  (identifier) @local.definition.var)
+
+(block_parameter
+  name: (identifier) @local.definition.var)
+
+(keyword_parameter
+  name: (identifier) @local.definition.var)
+
+(parenthesized_statements(identifier) @local.definition.var)
+(argument_list (identifier) @local.definition.parameter)
+
 ;;; rubySuperClassOperator
-(superclass "<" @storageclass.super)
+(superclass "<" @local.definition.type.super)
 
 ;;; rubyEigenClassOperator
 (singleton_class "<<" @constant.builtin)
 
-;;; regex
-(regex "/" @string.regex)
+;;; regexp
+(regex "/" @string.regexp)
 
 (interpolation
-  "#{" @include
-  "}" @include) @text.emphasis
+  "#{" @keyword.import
+  "}" @keyword.import) @markup.italic
 
 (class
   (comment)+ @comment.documentation
@@ -236,3 +252,5 @@
 (body_statement
   (comment)+ @comment.documentation
   (singleton_method))
+
+(heredoc_body) @comment.documentation

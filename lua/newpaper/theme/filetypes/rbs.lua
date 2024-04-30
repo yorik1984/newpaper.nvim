@@ -12,12 +12,10 @@ function M.setup(configColors, configStyle)
 
     rbsSyn.loadTreeSitter = function()
         local treesitter = {
-            ["@constant.builtin.rbs"]    = { link = "@constant.builtin.ruby" },
-            ["@function.method.rbs"]     = { link = "@keyword.function" },
-            ["@namespace.rbs"]           = { link = "@definition.namespace" },
-            ["@storageclass.rbs"]        = { link = "@storageclass.ruby" },
-            ["@storageclass.super.rbs"]  = { link = "@storageclass" },
-            ["@type.qualifier.rbs"]      = { link = "@type.qualifier.ruby" },
+            ["@constant.builtin.rbs"]            = { link = "@constant.builtin.ruby" },
+            ["@function.method.rbs"]             = { link = "@keyword.function" },
+            ["@local.definition.type.super.rbs"] = { link = "@local.definition.type.super.ruby" },
+            ["@module.rbs"]                      = { link = "@local.definition.namespace" },
         }
 
         return treesitter

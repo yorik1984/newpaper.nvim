@@ -21,7 +21,7 @@
  "~"
  "<<"
  ">>"
- ] @exception
+ ] @keyword.exception
 
 ;; Arithmetic
 
@@ -33,7 +33,7 @@
   "%"
   "/"
   "//"
- ] @text.math.operator
+ ] @operator.math
 
 [
  ".."
@@ -55,34 +55,34 @@
 
 ;; Tables
 
-(field name: (identifier) @definition.field)
+(field name: (identifier) @local.definition.field)
 
 ;; From locals.scm
 
 (assignment_statement
   (variable_list
-    (identifier) @definition))
+    (identifier) @local.definition))
 
 (variable_declaration
   (variable_list
-    (identifier) @definition.var))
+    (identifier) @local.definition.var))
 
 (variable_declaration
   (assignment_statement
     (variable_list
-      (identifier) @definition.var)))
+      (identifier) @local.definition.var)))
 
 ((function_declaration
-  name: (identifier) @definition.function)
+  name: (identifier) @local.definition.function)
   (#set! definition.function.scope "parent"))
 
 ;; Functions
 
 (dot_index_expression
-  table: (identifier) @namespace.builtin.core
-    (#any-of? @namespace.builtin.core
+  table: (identifier) @variable.global
+    (#any-of? @variable.global
       "vim" ))
 
-(arguments (identifier) @definition.parameter)
+(arguments (identifier) @local.definition.parameter)
 
-(bracket_index_expression field: (identifier) @definition.enum)
+(bracket_index_expression field: (identifier) @local.definition.enum)

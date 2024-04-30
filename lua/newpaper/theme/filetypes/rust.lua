@@ -13,7 +13,7 @@ function M.setup(configColors, configStyle)
     rustSyn.loadTreeSitter = function()
 
         local treesitter = {
-            ["@storageclass.lifetime"] = { fg = newpaper.tag_navy, style = style.k_style },
+            ["@punctuation.bracket.lifetime"] = { fg = newpaper.tag_navy, style = style.k_style },
         }
 
         return treesitter

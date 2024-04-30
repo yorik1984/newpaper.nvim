@@ -14,8 +14,7 @@
 [
   "&"
   "|"
-  "~"
-] @exception
+] @boolean
 
 [
   "+"
@@ -25,7 +24,7 @@
   "%"
   "/"
   "//"
-] @text.math.operator
+] @operator.math
 
 [
   ".."
@@ -37,4 +36,4 @@
 
 ;; Tables
 
-(field name: (identifier) @definition.field)
+(field name: (identifier) @local.definition.field)

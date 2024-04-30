@@ -10,7 +10,7 @@
   "%"
   "**"
   "//"
-] @text.math.operator
+] @operator.math
 
 [
   ">"
@@ -31,7 +31,7 @@
   "~"
   "<<"
   ">>"
-] @exception
+] @keyword.exception
 
 ; Keywords
 
@@ -42,5 +42,5 @@
 ] @boolean
 
 (interpolation
-  "{" @include
-  "}" @include)
+  "{" @keyword.import
+  "}" @keyword.import)

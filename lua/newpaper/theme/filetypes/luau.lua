@@ -19,10 +19,10 @@ function M.setup(configColors, configStyle)
 
             -- LSP semantic tokens
             ["@lsp.type.variable.luau"]                   = { link = "@variable.luau" },
-            ["@lsp.type.property.luau"]                   = { link = "@definition.field" },
+            ["@lsp.type.property.luau"]                   = { link = "@local.definition.field" },
             ["@lsp.type.method.luau"]                     = { link = "@function.call" },
-            ["@lsp.type.parameter.luau"]                  = { link = "@definition.parameter" },
-            ["@lsp.typemod.variable.defaultLibrary.luau"] = { link = "@namespace.builtin" },
+            ["@lsp.type.parameter.luau"]                  = { link = "@local.definition.parameter" },
+            ["@lsp.typemod.variable.defaultLibrary.luau"] = { link = "@module.builtin" },
         }
 
         return treesitter

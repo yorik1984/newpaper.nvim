@@ -35,9 +35,9 @@ function M.setup(configColors, configStyle)
     tomlSyn.loadTreeSitter = function()
 
         local treesitter = {
-            ["@property.toml"]            = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
-            ["@string.special.toml"]      = { fg = newpaper.maroon },
-            ["@type.toml"]                = { fg = newpaper.keywords, style = style.k_style },
+            ["@property.toml"]       = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
+            ["@string.special.toml"] = { fg = newpaper.maroon },
+            ["@type.toml"]           = { fg = newpaper.keywords, style = style.k_style },
         }
 
         return treesitter

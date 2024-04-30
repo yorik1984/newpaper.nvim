@@ -32,7 +32,7 @@ function M.setup(configColors, configStyle)
             Noise          = { link = "Delimiter" },
             Number         = { fg = newpaper.numbers },
             Operator       = { fg = newpaper.navy, style = style.o_style },
-            PreCondit      = { fg = newpaper.magenta },
+            PreCondit      = { fg = newpaper.magenta, style = style.k_style },
             PreProc        = { fg = newpaper.navy },
             Quote          = { link = "String" },
             Repeat         = { fg = newpaper.keywords, style = style.k_style },
@@ -48,6 +48,10 @@ function M.setup(configColors, configStyle)
             Type           = { fg = newpaper.darkengreen },
             Typedef        = { fg = newpaper.maroon },
             Underlined     = { fg = newpaper.links, style = style.underline },
+
+            Added          = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
+            Changed        = { fg = newpaper.texts, bg = newpaper.diffchange_bg },
+            Removed        = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
         }
         return syntax
     end
@@ -55,6 +59,7 @@ function M.setup(configColors, configStyle)
     theme.loadEditor     = function()
         local editor = {
             Cursor           = { fg = newpaper.bg, bg = newpaper.cursor },
+            CurSearch        = { fg = newpaper.search_fg, bg = newpaper.search_bg, style = style.b_bold },
             nCursor          = { fg = newpaper.bg, bg = newpaper.teal },
             vCursor          = { fg = newpaper.bg, bg = newpaper.purple },
             veCursor         = { fg = newpaper.bg, bg = newpaper.darkpurple },
@@ -169,117 +174,279 @@ function M.setup(configColors, configStyle)
 
     theme.loadTreeSitter = function()
         local treesitter = {
-            ["@annotation"]            = { fg = newpaper.red },
-            ["@attribute"]             = { fg = newpaper.blue },
-            ["@boolean"]               = { fg = newpaper.booleans, style = style.bool_style },
-            ["@character"]             = { fg = newpaper.orange, nocombine = true},
-            ["@character.special"]     = { fg = newpaper.maroon, nocombine = true },
-            ["@comment"]               = { fg = newpaper.comments, style = style.c_style },
-            ["@comment.documentation"] = { fg = newpaper.doc_comments, style = style.doc_style, nocombine = true },
-            ["@conceal"]               = { fg = newpaper.tex_math },
-            ["@conditional"]           = { fg = newpaper.keywords, style = style.k_style },
-            ["@conditional.ternary"]   = { fg = newpaper.keywords, style = style.d_style },
+-- @variable                    ; various variable names
+-- @variable.builtin            ; built-in variable names (e.g. `this`)
+-- @variable.parameter          ; parameters of a function
+-- @variable.parameter.builtin  ; special parameters (e.g. `_`, `it`)
+-- @variable.member             ; object and struct fields
+
+-- @constant          ; constant identifiers
+-- @constant.builtin  ; built-in constant values
+-- @constant.macro    ; constants defined by the preprocessor
+
+-- @module            ; modules or namespaces
+-- @module.builtin    ; built-in modules or namespaces
+-- @label             ; GOTO and other labels (e.g. `label:` in C), including heredoc labels
+
+-- Literals
+
+-- @string                 ; string literals
+-- @string.documentation   ; string documenting code (e.g. Python docstrings)
+-- @string.regexp          ; regular expressions
+-- @string.escape          ; escape sequences
+-- @string.special         ; other special strings (e.g. dates)
+-- @string.special.symbol  ; symbols or atoms
+-- @string.special.url     ; URIs (e.g. hyperlinks)
+-- @string.special.path    ; filenames
+
+-- @character              ; character literals
+-- @character.special      ; special characters (e.g. wildcards)
+
+-- @boolean                ; boolean literals
+-- @number                 ; numeric literals
+-- @number.float           ; floating-point number literals
+
+-- Types
+
+-- @type             ; type or class definitions and annotations
+-- @type.builtin     ; built-in types
+-- @type.definition  ; identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+
+-- @attribute          ; attribute annotations (e.g. Python decorators, Rust lifetimes)
+-- @attribute.builtin  ; builtin annotations (e.g. `@property` in Python)
+-- @property           ; the key in key/value pairs
+
+-- Functions
+
+-- @function             ; function definitions
+-- @function.builtin     ; built-in functions
+-- @function.call        ; function calls
+-- @function.macro       ; preprocessor macros
+
+-- @function.method      ; method definitions
+-- @function.method.call ; method calls
+
+-- @constructor          ; constructor calls and definitions
+-- @operator             ; symbolic operators (e.g. `+` / `*`)
+
+-- Keywords
+
+-- @keyword                   ; keywords not fitting into specific categories
+-- @keyword.coroutine         ; keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+-- @keyword.function          ; keywords that define a function (e.g. `func` in Go, `def` in Python)
+-- @keyword.operator          ; operators that are English words (e.g. `and` / `or`)
+-- @keyword.import            ; keywords for including modules (e.g. `import` / `from` in Python)
+-- @keyword.type              ; keywords describing composite types (e.g. `struct`, `enum`)
+-- @keyword.modifier          ; keywords modifying other constructs (e.g. `const`, `static`, `public`)
+-- @keyword.repeat            ; keywords related to loops (e.g. `for` / `while`)
+-- @keyword.return            ; keywords like `return` and `yield`
+-- @keyword.debug             ; keywords related to debugging
+-- @keyword.exception         ; keywords related to exceptions (e.g. `throw` / `catch`)
+--
+-- @keyword.conditional         ; keywords related to conditionals (e.g. `if` / `else`)
+-- @keyword.conditional.ternary ; ternary operator (e.g. `?` / `:`)
+--
+-- @keyword.directive         ; various preprocessor directives & shebangs
+-- @keyword.directive.define  ; preprocessor definition directives
+
+-- Punctuation
+
+-- @punctuation.delimiter ; delimiters (e.g. `;` / `.` / `,`)
+-- @punctuation.bracket   ; brackets (e.g. `()` / `{}` / `[]`)
+-- @punctuation.special   ; special symbols (e.g. `{}` in string interpolation)
+
+-- Comments
+
+-- @comment               ; line and block comments
+-- @comment.documentation ; comments documenting code
+--
+-- @comment.error         ; error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
+-- @comment.warning       ; warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
+-- @comment.todo          ; todo-type comments (e.g. `TODO`, `WIP`)
+-- @comment.note          ; note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
+
+-- Markup
+
+-- Mainly for markup languages.
+
+-- @markup.strong         ; bold text
+-- @markup.italic         ; italic text
+-- @markup.strikethrough  ; struck-through text
+-- @markup.underline      ; underlined text (only for literal underline markup!)
+
+-- @markup.heading        ; headings, titles (including markers)
+-- @markup.heading.1      ; top-level heading
+-- @markup.heading.2      ; section heading
+-- @markup.heading.3      ; subsection heading
+-- @markup.heading.4      ; and so on
+-- @markup.heading.5      ; and so forth
+-- @markup.heading.6      ; six levels ought to be enough for anybody
+
+-- @markup.quote          ; block quotes
+-- @markup.math           ; math environments (e.g. `$ ... $` in LaTeX)
+
+-- @markup.link           ; text references, footnotes, citations, etc.
+-- @markup.link.label     ; link, reference descriptions
+-- @markup.link.url       ; URL-style links
+
+-- @markup.raw            ; literal or verbatim text (e.g. inline code)
+-- @markup.raw.block      ; literal or verbatim text as a stand-alone block
+--                        ; (use priority 90 for blocks with injections)
+--
+-- @markup.list           ; list markers
+-- @markup.list.checked   ; checked todo-style list markers
+-- @markup.list.unchecked ; unchecked todo-style list markers
+
+-- @diff.plus       ; added text (for diff files)
+-- @diff.minus      ; deleted text (for diff files)
+-- @diff.delta      ; changed text (for diff files)
+
+-- @tag           ; XML-style tag names (and similar)
+-- @tag.builtin   ; builtin tag names (e.g. HTML5 tags)
+-- @tag.attribute ; XML-style tag attributes
+-- @tag.delimiter ; XML-style tag delimiters
+
+            ["@variable"]              = { fg = newpaper.variables, style = style.v_style },
+            ["@variable.builtin"]      = { fg = newpaper.ruby_maroon, style = style.v_style, nocombine = true },
+            ["@variable.parameter"]    = { fg = newpaper.orange },
+            ["@variable.member"]       = { fg = newpaper.bluegreen },
+            ["@variable.global"]       = { fg = newpaper.neovim_green, style = style.k_style },
+
             ["@constant"]              = { fg = newpaper.darkgreen, nocombine = true },
             ["@constant.builtin"]      = { fg = newpaper.maroon, nocombine = true },
-            ["@constant.macro"]        = { fg = newpaper.maroon, nocombine = true },
-            ["@constructor"]           = { fg = newpaper.tex_lightpurple },
-            ["@debug"]                 = { fg = newpaper.red },
-            ["@define"]                = { fg = newpaper.magenta },
-            ["@error"]                 = { fg = newpaper.errormsg_fg, bg = newpaper.errormsg_bg },
-            ["@exception"]             = { fg = newpaper.redorange, style = style.k_style },
-            ["@field"]                 = { fg = newpaper.bluegreen },
-            ["@float"]                 = { fg = newpaper.magenta },
+            ["@constant.macro"]        = { fg = newpaper.tex_maroon, nocombine = true },
+
+            ["@module"]                = { fg = newpaper.darkyellow },
+            ["@module.builtin"]        = { fg = newpaper.tex_magenta },
+            ["@label"]                 = { fg = newpaper.redorange },
+
+            ["@string"]                = { fg = newpaper.strings, style = style.s_style },
+            ["@string.documentation"]  = { fg = newpaper.regexp_blue, style = style.s_style },
+            ["@string.regexp"]         = { fg = newpaper.regexp_blue },
+            ["@string.escape"]         = { fg = newpaper.tex_magenta, nocombine = true},
+            ["@string.special"]        = { fg = newpaper.dark_maroon, style = style.s_style },
+            ["@string.special.symbol"] = { fg = newpaper.darkyellow },
+            ["@string.special.url"]    = { fg = newpaper.strings, style = style.links, nocombine = true },
+            ["@string.special.path"]   = { fg = newpaper.teal, style = style.links, nocombine = true },
+
+            ["@character"]             = { fg = newpaper.orange, nocombine = true},
+            ["@character.special"]     = { fg = newpaper.maroon, nocombine = true },
+
+            ["@boolean"]               = { fg = newpaper.booleans, style = style.bool_style },
+            ["@number"]                = { fg = newpaper.numbers },
+            ["@number.float"]          = { fg = newpaper.magenta },
+
+            ["@type"]                  = { fg = newpaper.darkengreen },
+            ["@type.builtin"]          = { fg = newpaper.olive },
+            ["@type.definition"]       = { fg = newpaper.maroon },
+
+            ["@attribute"]             = { fg = newpaper.blue },
+            ["@attribute.builtin"]     = { fg = newpaper.python_blue },
+            ["@property"]              = { fg = newpaper.darkgreen },
+
             ["@function"]              = { fg = newpaper.lua_navy, style = style.f_style },
             ["@function.builtin"]      = { fg = newpaper.tex_red, style = style.f_style },
             ["@function.call"]         = { fg = newpaper.tag_navy, style = style.f_style },
             ["@function.macro"]        = { fg = newpaper.magenta, style = style.f_style },
-            ["@include"]               = { fg = newpaper.redorange, nocombine = true },
-            ["@keyword"]               = { fg = newpaper.keywords, style = style.k_style },
-            ["@keyword.coroutine"]     = { fg = newpaper.tex_keyword, style = style.k_style },
-            ["@keyword.function"]      = { fg = newpaper.darkpurple, style = style.k_style },
-            ["@keyword.operator"]      = { fg = newpaper.lua_navy, style = style.o_style },
-            ["@keyword.return"]        = { fg = newpaper.tex_keyword, style = style.k_style },
-            ["@label"]                 = { fg = newpaper.redorange },
-            ["@method"]                = { fg = newpaper.ruby_navy, style = style.f_style },
-            ["@method.call"]           = { fg = newpaper.navy, style = style.f_style },
-            ["@namespace"]             = { fg = newpaper.darkyellow },
-            ["@namespace.builtin"]     = { fg = newpaper.tex_magenta },
-            ["@none"]                  = { fg = newpaper.disabled },
-            ["@number"]                = { fg = newpaper.numbers },
+
+            ["@function.method"]       = { fg = newpaper.ruby_navy, style = style.f_style },
+            ["@function.method.call"]  = { fg = newpaper.navy, style = style.f_style },
+
+            ["@constructor"]           = { fg = newpaper.tex_lightpurple },
             ["@operator"]              = { fg = newpaper.navy, style = style.o_style },
-            ["@parameter"]             = { fg = newpaper.orange },
-            ["@preproc"]               = { fg = newpaper.navy },
-            ["@property"]              = { fg = newpaper.darkgreen },
-            ["@punctuation.bracket"]   = { fg = newpaper.ruby_navy, style = style.br_style },
+            ["@operator.math"]         = { fg = newpaper.tex_olive, style = style.o_style, nocombine = true},
+
+            ["@keyword"]               = { fg = newpaper.keywords,    style = style.k_style },
+            ["@keyword.coroutine"]     = { fg = newpaper.tex_keyword, style = style.k_style },
+            ["@keyword.function"]      = { fg = newpaper.darkpurple,  style = style.k_style },
+            ["@keyword.operator"]      = { fg = newpaper.lua_navy,    style = style.k_style },
+            ["@keyword.import"]        = { fg = newpaper.redorange,   nocombine = true },
+            ["@keyword.type"]          = { fg = newpaper.darkengreen, style = style.k_style },
+            ["@keyword.modifier"]      = { fg = newpaper.ruby_maroon, style = style.k_style },
+            ["@keyword.repeat"]        = { fg = newpaper.keywords,    style = style.k_style },
+            ["@keyword.return"]        = { fg = newpaper.tex_keyword, style = style.k_style },
+            ["@keyword.exception"]     = { fg = newpaper.redorange,   style = style.k_style },
+            ["@keyword.debug"]         = { fg = newpaper.red,         style = style.k_style },
+
+            ["@keyword.conditional"]         = { fg = newpaper.keywords, style = style.k_style },
+            ["@keyword.conditional.ternary"] = { fg = newpaper.keywords, style = style.k_style },
+
+            ["@keyword.directive"]           = { fg = newpaper.navy,    style = style.k_style },
+            ["@keyword.directive.define"]    = { fg = newpaper.magenta, style = style.k_style },
+
             ["@punctuation.delimiter"] = { fg = newpaper.persimona, style = style.d_style },
+            ["@punctuation.bracket"]   = { fg = newpaper.ruby_navy, style = style.br_style },
             ["@punctuation.special"]   = { fg = newpaper.lightmagenta },
-            ["@repeat"]                = { fg = newpaper.keywords, style = style.k_style },
-            ["@storageclass"]          = { fg = newpaper.tag_navy, style = style.k_style },
-            ["@string"]                = { fg = newpaper.strings, style = style.s_style },
-            ["@string.documentation"]  = { fg = newpaper.regexp_blue, style = style.s_style },
-            ["@string.escape"]         = { fg = newpaper.tex_magenta, nocombine = true},
-            ["@string.regex"]          = { fg = newpaper.regexp_blue },
-            ["@string.special"]        = { fg = newpaper.dark_maroon, style = style.s_style },
-            ["@symbol"]                = { fg = newpaper.darkyellow },
-            ["@tag"]                   = { fg = newpaper.tags, style = style.tags_style },
+
+            ["@comment"]               = { fg = newpaper.comments, style = style.c_style },
+            ["@comment.documentation"] = { fg = newpaper.doc_comments, style = style.doc_style, nocombine = true },
+
+            ["@comment.error"]         = { fg = newpaper.bg, bg = newpaper.todo_error, style = style.b_bold },
+            ["@comment.warning"]       = { fg = newpaper.bg, bg = newpaper.todo_warn,  style = style.b_bold },
+            ["@comment.todo"]          = { fg = newpaper.bg, bg = newpaper.todo_info,  style = style.b_bold },
+            ["@comment.note"]          = { fg = newpaper.bg, bg = newpaper.todo_hint,  style = style.b_bold },
+
+            ["@markup.strong"]         = { style = style.bold },
+            ["@markup.italic"]         = { style = style.italic },
+            ["@markup.strikethrough"]  = { style = style.strike },
+            ["@markup.underline"]      = { style = style.underline },
+
+            ["@markup.heading"]          = { fg = newpaper.titles, style = style.b_bold },
+            ["@markup.heading.1"]        = { fg = newpaper.tex_part_title, style = style.k_style },
+            ["@markup.heading.2"]        = { fg = newpaper.teal, style = style.k_style },
+            ["@markup.heading.3"]        = { fg = newpaper.blue, style = style.k_style },
+            ["@markup.heading.4"]        = { fg = newpaper.tex_math, style = style.k_style },
+            ["@markup.heading.5"]        = { fg = newpaper.tex_lightpurple, style = style.k_style },
+            ["@markup.heading.6"]        = { fg = newpaper.tex_darkorange, style = style.k_style },
+            ["@markup.heading.1.marker"] = { fg = newpaper.tex_part_title },
+            ["@markup.heading.2.marker"] = { fg = newpaper.teal },
+            ["@markup.heading.3.marker"] = { fg = newpaper.blue },
+            ["@markup.heading.4.marker"] = { fg = newpaper.tex_math },
+            ["@markup.heading.5.marker"] = { fg = newpaper.tex_lightpurple },
+            ["@markup.heading.6.marker"] = { fg = newpaper.tex_darkorange },
+
+            ["@markup.quote"]          = { fg = newpaper.tex_navy, style = style.italic },
+            ["@markup.quote.marker"]   = { fg = newpaper.tex_navy, style = style.o_style },
+            ["@markup.math"]           = { fg = newpaper.tex_math, nocombine = true},
+
+            ["@markup.link"]           = { fg = newpaper.tex_lightviolet },
+            ["@markup.link.url"]       = { fg = newpaper.links, style = style.links },
+            ["@markup.link.label"]     = { fg = newpaper.tex_maroon },
+
+            ["@markup.raw"]            = { fg = newpaper.regexp_blue, nocombine = true },
+            ["@markup.raw.block"]      = { fg = newpaper.regexp_blue, nocombine = true },
+            ["@markup.raw.delimiter"]  = { fg = newpaper.magenta, style = style.o_style },
+
+            ["@markup.list"]           = { fg = newpaper.keywords,  style = style.o_bold },
+            ["@markup.list.checked"]   = { fg = newpaper.todo_hint, style = style.b_bold },
+            ["@markup.list.unchecked"] = { fg = newpaper.comments },
+
+            ["@diff.plus"]             = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
+            ["@diff.minus"]            = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
+            ["@diff.delta"]            = { fg = newpaper.texts, bg = newpaper.diffchange_bg },
+
+            ["@tag"]                   = { fg = newpaper.keywords, style = style.tags_style },
+            ["@tag.builtin"]           = { fg = newpaper.ruby_maroon },
             ["@tag.attribute"]         = { fg = newpaper.darkengreen },
             ["@tag.delimiter"]         = { fg = newpaper.tags, style = style.tb_style },
-            ["@text"]                  = { fg = newpaper.fg },
-            ["@text.danger"]           = { fg = newpaper.bg, bg = newpaper.todo_error, style = style.b_bold },
-            ["@text.diff.add"]         = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
-            ["@text.diff.delete"]      = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
-            ["@text.emphasis"]         = { style = style.italic },
-            ["@text.environment"]      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            ["@text.environment.name"] = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
-            ["@text.literal"]          = { fg = newpaper.regexp_blue, nocombine = true },
-            ["@text.literal.block"]    = { fg = newpaper.regexp_blue, nocombine = true },
-            ["@text.math"]             = { fg = newpaper.tex_math, nocombine = true},
-            ["@text.math.operator"]    = { fg = newpaper.tex_olive, style = style.o_style, nocombine = true},
-            ["@text.note"]             = { fg = newpaper.bg, bg = newpaper.todo_hint, style = style.b_bold },
-            ["@text.quote"]            = { fg = newpaper.tex_navy },
-            ["@text.reference"]        = { fg = newpaper.tex_maroon },
-            ["@text.strike"]           = { style = style.strike },
-            ["@text.strong"]           = { style = style.bold },
-            ["@text.title"]            = { fg = newpaper.titles, style = style.b_bold },
-            ["@text.todo"]             = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.b_bold },
-            ["@text.underline"]        = { style = style.underline },
-            ["@text.uri"]              = { fg = newpaper.links, style = style.links },
-            ["@text.warning"]          = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
-            ["@type"]                  = { fg = newpaper.darkengreen },
-            ["@type.builtin"]          = { fg = newpaper.olive },
-            ["@type.definition"]       = { fg = newpaper.maroon },
-            ["@type.qualifier"]        = { fg = newpaper.maroon, style = style.k_style },
-            ["@variable"]              = { fg = newpaper.variables, style = style.v_style },
-            ["@variable.builtin"]      = { fg = newpaper.ruby_maroon, style = style.v_style, nocombine = true },
-            ["@variable.global"]       = { fg = newpaper.green, style = style.k_style },
 
-            ["@text.title.1"]          = { fg = newpaper.tex_part_title, style = style.k_style },
-            ["@text.title.2"]          = { fg = newpaper.teal, style = style.k_style },
-            ["@text.title.3"]          = { fg = newpaper.blue, style = style.k_style },
-            ["@text.title.4"]          = { fg = newpaper.tex_math, style = style.k_style },
-            ["@text.title.5"]          = { fg = newpaper.tex_lightpurple, style = style.k_style },
-            ["@text.title.6"]          = { fg = newpaper.tex_darkorange, style = style.k_style },
-            ["@text.title.1.marker"]   = { fg = newpaper.tex_part_title },
-            ["@text.title.2.marker"]   = { fg = newpaper.teal },
-            ["@text.title.3.marker"]   = { fg = newpaper.blue },
-            ["@text.title.4.marker"]   = { fg = newpaper.tex_math },
-            ["@text.title.5.marker"]   = { fg = newpaper.tex_lightpurple },
-            ["@text.title.6.marker"]   = { fg = newpaper.tex_darkorange },
+            ["@none"]                  = { fg = newpaper.disabled },
+            ["@conceal"]               = { fg = newpaper.tex_math },
 
             -- Locals
-            ["@definition"]            = { fg = newpaper.fg, style = style.v_style },
-            ["@definition.constant"]   = { fg = newpaper.darkgreen, nocombine = true },
-            ["@definition.function"]   = { fg = newpaper.lua_navy, style = style.f_style },
-            ["@definition.method"]     = { fg = newpaper.ruby_navy, style = style.f_style },
-            ["@definition.var"]        = { fg = newpaper.tex_math, style = style.v_style },
-            ["@definition.parameter"]  = { fg = newpaper.darkorange, style = style.v_style },
-            ["@definition.macro"]      = { fg = newpaper.lightmagenta },
-            ["@definition.type"]       = { fg = newpaper.ruby_navy, style = style.k_style },
-            ["@definition.field"]      = { fg = newpaper.tex_teal },
-            ["@definition.enum"]       = { fg = newpaper.blue },
-            ["@definition.namespace"]  = { fg = newpaper.blue, style = style.k_style },
-            ["@definition.import"]     = { fg = newpaper.olive },
-            ["@definition.associated"] = { fg = newpaper.bluegreen },
+            ["@local.definition"]            = { fg = newpaper.fg, style = style.v_style },
+            ["@local.definition.constant"]   = { fg = newpaper.darkgreen, nocombine = true },
+            ["@local.definition.function"]   = { fg = newpaper.lua_navy, style = style.f_style },
+            ["@local.definition.method"]     = { fg = newpaper.ruby_navy, style = style.f_style },
+            ["@local.definition.var"]        = { fg = newpaper.tex_math, style = style.v_style },
+            ["@local.definition.parameter"]  = { fg = newpaper.darkorange, style = style.v_style },
+            ["@local.definition.macro"]      = { fg = newpaper.lightmagenta },
+            ["@local.definition.type"]       = { fg = newpaper.ruby_navy, style = style.k_style },
+            ["@local.definition.field"]      = { fg = newpaper.tex_teal },
+            ["@local.definition.enum"]       = { fg = newpaper.blue },
+            ["@local.definition.namespace"]  = { fg = newpaper.blue, style = style.k_style },
+            ["@local.definition.import"]     = { fg = newpaper.olive },
+            ["@local.definition.associated"] = { fg = newpaper.bluegreen },
 
             -- TODO: Add more groups
             -- INFO: https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight
@@ -293,48 +460,55 @@ function M.setup(configColors, configStyle)
             ["@lsp.type.enum"]                = { link = "@label" },
             ["@lsp.type.enumMember"]          = { link = "@constant" },
             ["@lsp.type.escapeSequence"]      = { link = "@string.escape" },
+            ["@lsp.type.event"]               = { link = "@type" },
             ["@lsp.type.formatSpecifier"]     = { link = "@punctuation" },
             ["@lsp.type.function"]            = { link = "@function" },
             ["@lsp.type.interface"]           = { link = "@keyword.function" },
             ["@lsp.type.keyword"]             = { link = "@keyword" },
             ["@lsp.type.macro"]               = { link = "@function.macro" },
-            ["@lsp.type.method"]              = { link = "@method" },
-            ["@lsp.type.namespace"]           = { link = "@namespace" },
+            ["@lsp.type.method"]              = { link = "@function.method" },
+            ["@lsp.type.modifier"]            = { link = "@type" },
+            ["@lsp.type.namespace"]           = { link = "@module" },
             ["@lsp.type.number"]              = { link = "@number" },
             ["@lsp.type.operator"]            = { link = "@operator" },
-            ["@lsp.type.parameter"]           = { link = "@parameter" },
-            ["@lsp.type.property"]            = { link = "@field" },
+            ["@lsp.type.parameter"]           = { link = "@variable.parameter" },
+            ["@lsp.type.property"]            = { link = "@variable.member" },
+            ["@lsp.type.regexp"]              = { link = "@string.regexp" },
             ["@lsp.type.selfKeyword"]         = { link = "@variable.builtin" },
-            ["@lsp.type.struct"]              = { link = "@symbol" },
+            ["@lsp.type.string"]              = { link = "@string" },
+            ["@lsp.type.struct"]              = { link = "@string.special.symbol" },
             ["@lsp.type.type"]                = { link = "@type" },
             ["@lsp.type.typeAlias"]           = { link = "@type" },
-            ["@lsp.type.typeParameter"]       = { link = "@definition.parameter" },
-            ["@lsp.type.unresolvedReference"] = { link = "@error" },
-            ["@lsp.typemod.keyword.async"]    = { link = "@keyword.coroutine" },
+            ["@lsp.type.typeParameter"]       = { link = "@local.definition.parameter" },
+            ["@lsp.type.variable"]            = { link = "@variable" },
+            ["@lsp.type.unresolvedReference"] = { link = "Error" },
 
-            ["@lsp.typemod.class.default_library"]      = { link = "@type.builtin" },
-            ["@lsp.typemod.class.defaultLibrary"]       = { link = "@type.builtin" },
+            ["@lsp.mod.defaultLibrary"]                 = { link = "@variable.builtin" },
+
             ["@lsp.typemod.class.declaration"]          = { link = "@storageclass" },
-            ["@lsp.typemod.enum.default_library"]       = { link = "@type.builtin" },
+            ["@lsp.typemod.class.defaultLibrary"]       = { link = "@type.builtin" },
+            ["@lsp.typemod.class.default_library"]      = { link = "@type.builtin" },
             ["@lsp.typemod.enum.defaultLibrary"]        = { link = "@type.builtin" },
-            ["@lsp.typemod.enumMember.default_library"] = { link = "@constant.builtin" },
+            ["@lsp.typemod.enum.default_library"]       = { link = "@type.builtin" },
             ["@lsp.typemod.enumMember.defaultLibrary"]  = { link = "@constant.builtin" },
-            ["@lsp.typemod.function.default_library"]   = { link = "@function.builtin" },
+            ["@lsp.typemod.enumMember.default_library"] = { link = "@constant.builtin" },
             ["@lsp.typemod.function.defaultLibrary"]    = { link = "@function.builtin" },
-            ["@lsp.typemod.macro.default_library"]      = { link = "@function.builtin" },
+            ["@lsp.typemod.function.default_library"]   = { link = "@function.builtin" },
+            ["@lsp.typemod.keyword.async"]              = { link = "@keyword.coroutine" },
             ["@lsp.typemod.macro.defaultLibrary"]       = { link = "@function.builtin" },
-            ["@lsp.typemod.method.default_library"]     = { link = "@function.builtin" },
+            ["@lsp.typemod.macro.default_library"]      = { link = "@function.builtin" },
             ["@lsp.typemod.method.defaultLibrary"]      = { link = "@function.builtin" },
-            ["@lsp.typemod.namespace.declaration"]      = { link = "@definition.namespace" },
+            ["@lsp.typemod.method.default_library"]     = { link = "@function.builtin" },
+            ["@lsp.typemod.namespace.declaration"]      = { link = "@local.definition.namespace" },
             ["@lsp.typemod.operator.injected"]          = { link = "@operator" },
-            ["@lsp.typemod.parameter.declaration"]      = { link = "@parameter" },
+            ["@lsp.typemod.parameter.declaration"]      = { link = "@variable.parameter" },
             ["@lsp.typemod.string.injected"]            = { link = "@string" },
-            ["@lsp.typemod.type.default_library"]       = { link = "@type.builtin" },
             ["@lsp.typemod.type.defaultLibrary"]        = { link = "@type.builtin" },
-            ["@lsp.typemod.variable.default_library"]   = { link = "@constant.builtin" },
+            ["@lsp.typemod.type.default_library"]       = { link = "@type.builtin" },
             ["@lsp.typemod.variable.defaultLibrary"]    = { link = "@constant.builtin" },
+            ["@lsp.typemod.variable.default_library"]   = { link = "@constant.builtin" },
             ["@lsp.typemod.variable.definition"]        = { link = "@variable.builtin" },
-            ["@lsp.typemod.variable.global"]            = { link = "@namespace.builtin" },
+            ["@lsp.typemod.variable.global"]            = { link = "@module.builtin" },
             ["@lsp.typemod.variable.injected"]          = { link = "@variable" },
 
             -- Treesitter plugins

@@ -303,6 +303,7 @@ Fields: ~
     • {tex_major}   (string)
                     Make only major tex word like `\documentclass`, `\section`
                     bold, italic or NONE.
+                    Work only with `vimtex`(https://github.com/lervag/vimtex).
 
                     Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` ~
 

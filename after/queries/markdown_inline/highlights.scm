@@ -1,18 +1,12 @@
 ;; extends
 
-(full_reference_link [(link_label)] @text.underline)
-
-[
-  (link_destination)
-] @text.underline
-
 [
   (emphasis_delimiter)
-] @text.quote
+] @markup.quote.marker
 
 [
   (code_span_delimiter)
-] @text.literal
+] @markup.raw.delimiter
 
 (image ["[" "]" "(" ")"] @punctuation.delimiter)
 (inline_link ["[" "]" "(" ")"] @punctuation.delimiter)

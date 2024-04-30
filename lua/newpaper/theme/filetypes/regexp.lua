@@ -4,13 +4,13 @@ function M.setup(configColors, configStyle)
 
     -- stylua: ignore start
 
-    local regexSyn  = {}
-    regexSyn.colors = configColors
-    regexSyn.style  = configStyle
-    local newpaper  = regexSyn.colors
-    local style     = regexSyn.style
+    local regexpSyn  = {}
+    regexpSyn.colors = configColors
+    regexpSyn.style  = configStyle
+    local newpaper   = regexpSyn.colors
+    local style      = regexpSyn.style
 
-    regexSyn.loadTreeSitter = function()
+    regexpSyn.loadTreeSitter = function()
         local treesitter = {
             ["@constant.regex"]                   = { fg = newpaper.texts,          style = style.regex, nocombine = true },
             ["@number.regex"]                     = { fg = newpaper.regexp_blue,    nocombine = true },
@@ -23,7 +23,7 @@ function M.setup(configColors, configStyle)
             ["@string.escape.assertion.regex"]    = { fg = newpaper.regexp_brown,   style = style.regex, nocombine = true },
             ["@string.escape.regex"]              = { fg = newpaper.regexp_magenta, style = style.regex, nocombine = true },
             ["@string.escape.control.regex"]      = { fg = newpaper.regexp_orange,  style = style.regex, nocombine = true },
-            ["@text.title.regex"]                 = { fg = newpaper.texts,          style = style.regex, nocombine = true },
+            ["@markup.heading.regex"]             = { fg = newpaper.texts,          style = style.regex, nocombine = true },
 
             -- Capture group
             ["@string.class.regex"]               = { bg = newpaper.regexp_orange_bg },
@@ -34,7 +34,7 @@ function M.setup(configColors, configStyle)
 
     -- stylua: ignore end
 
-    return regexSyn
+    return regexpSyn
 end
 
 return M

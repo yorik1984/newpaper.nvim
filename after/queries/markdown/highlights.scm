@@ -3,45 +3,31 @@
 (link_label ["[" "]"] @punctuation.delimiter)
 
 [
-  (info_string)
   (fenced_code_block_delimiter)
-] @text.literal
+] @markup.raw.delimiter
 
 ;; Conceal backticks
 (fenced_code_block
-  (fenced_code_block_delimiter) @text.literal
+  (fenced_code_block_delimiter) @markup.raw.delimiter
   (#set! conceal ""))
-(fenced_code_block
-  (info_string (language) @text.literal
-  (#set! conceal "")))
 
 ;; Conceal bullet points
 ([(list_marker_plus) (list_marker_star)]
-  @keyword
-  (#offset! @keyword 0 0 0 -1)
+  @markup.list
+  (#offset! @markup.list 0 0 0 -1)
   (#set! conceal "•"))
 ([(list_marker_plus) (list_marker_star)]
-  @keyword
-  (#any-of? @keyword "+" "*")
+  @markup.list
+  (#any-of? @markup.list "+" "*")
   (#set! conceal "•"))
 ((list_marker_minus)
-  @keyword
-  (#offset! @keyword 0 0 0 -1)
+  @markup.list
+  (#offset! @markup.list 0 0 0 -1)
   (#set! conceal "—"))
 ((list_marker_minus)
-  @keyword
-  (#eq? @keyword "-")
+  @markup.list
+  (#eq? @markup.list "-")
   (#set! conceal "—"))
-
-[
-  (link_destination)
-] @text.underline
-
-[
-  (list_marker_plus)
-  (list_marker_minus)
-  (list_marker_star)
-] @keyword
 
 [
   (list_marker_dot)
@@ -49,9 +35,35 @@
 
 [
   (list_marker_parenthesis)
-] @float
+] @number.float
 
 [
   (block_continuation)
   (block_quote_marker)
-] @text.quote.bracket
+] @markup.quote.marker
+
+;from https://raw.githubusercontent.com/megalithic/dotfiles/main/config/nvim/after/queries/markdown/highlights.scm
+
+; Checkbox list items
+((task_list_marker_unchecked) @markup.list.unchecked
+  (#offset! @markup.list.unchecked 0 -2 0 0) (#set! conceal ""))
+
+((task_list_marker_checked) @markup.list.checked
+  (#offset! @markup.list.checked 0 -2 0 0) (#set! conceal ""))
+
+; Tables
+(pipe_table_header ("|") @punctuation.special (#set! conceal "┃"))
+(pipe_table_delimiter_row ("|") @punctuation.special (#set! conceal "┃"))
+(pipe_table_delimiter_cell ("-") @punctuation.special (#set! conceal "━"))
+((pipe_table_align_left) @punctuation.special (#set! conceal "┣"))
+((pipe_table_align_right) @punctuation.special (#set! conceal "┫"))
+(pipe_table_row ("|") @punctuation.special (#set! conceal "┃"))
+
+; Block quotes
+((block_quote_marker) @punctuation.special
+                      (#offset! @punctuation.special 0 0 0 -1)
+                      (#set! conceal "▐"))
+((block_continuation) @punctuation.special
+                      (#lua-match? @punctuation.special "^>")
+                      (#offset-first-n! @punctuation.special 1)
+                      (#set! conceal "▐"))

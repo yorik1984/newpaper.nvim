@@ -44,7 +44,7 @@
 [
   (pattern_character)
   (class_character)
-] @text.title
+] @markup.heading
 
 [
  (start_assertion)
@@ -68,5 +68,3 @@
     "^" @punctuation.delimiter
     (class_range "-" @punctuation.delimiter)
   ])
-
-(ERROR) @error

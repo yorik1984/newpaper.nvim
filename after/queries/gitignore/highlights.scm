@@ -3,9 +3,9 @@
 [
   (directory_separator)
   (bracket_negation)
-] @keyword.operator
+] @string.special.path
 
-(wildcard_chars) @text.math
+(wildcard_chars) @markup.math
 
 [
   (wildcard_chars_allow_slash)
@@ -18,7 +18,6 @@
 
 ;; bracket expressions
 [
-  (negation)
   "["
   "]"
 ] @punctuation.delimiter
@@ -26,4 +25,4 @@
 (bracket_char) @number
 (bracket_range
   "-" @number)
-(bracket_char_class) @string.regex
+(bracket_char_class) @string.regexp

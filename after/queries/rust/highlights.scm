@@ -4,7 +4,7 @@
 
 [
   "=>"
- ] @debug
+ ] @keyword.debug
 
 [
   "..="
@@ -17,7 +17,7 @@
   "^"
   "^="
   "|="
- ] @exception
+ ] @keyword.exception
 
 ;; Arithmetic
 
@@ -26,7 +26,7 @@
   "-"
   "%"
   "/"
-] @text.math.operator
+] @operator.math
 
 [
   ".."
@@ -69,5 +69,11 @@
  "::"
  "."
  ] @label
+
+(for_lifetimes
+  [
+    "<"
+    ">"
+  ] @punctuation.bracket.lifetime)
 
  (dynamic_type "dyn" @keyword.operator)

@@ -20,7 +20,7 @@ function M.setup(configColors, configStyle)
             ["@punctuation.delimiter.luap"]      = { fg = newpaper.regexp_orange,  style = style.regex, nocombine = true },
             ["@string.escape.assertion.luap"]    = { fg = newpaper.regexp_brown,   style = style.regex, nocombine = true },
             ["@keyword.luap"]                    = { fg = newpaper.regexp_magenta, style = style.regex, nocombine = true },
-            ["@parameter.luap"]                  = { fg = newpaper.regexp_orange,  style = style.regex, nocombine = true },
+            ["@variable.parameter.luap"]         = { fg = newpaper.regexp_orange,  style = style.regex, nocombine = true },
 
             -- Capture group
             ["@string.set.luap"]                 = { bg = newpaper.regexp_orange_bg },

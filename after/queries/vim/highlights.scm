@@ -6,7 +6,7 @@
   "start"
   "skip"
   "end"
-] @type.qualifier)
+] @keyword.modifier)
 
 ;; Operators
 
@@ -31,4 +31,4 @@
 
 (hl_attribute
   key: _ @property
-  val: _ @preproc)
+  val: _ @number.float)

@@ -12,7 +12,7 @@ function M.setup(configColors, configStyle)
 
     liquidSyn.loadSyntax = function()
         local syntax = {
-            liquidDelimiter        = { fg = newpaper.redorange },
+            liquidDelimiter        = { fg = newpaper.jinja_red },
             -- liquidComment          Comment
             -- liquidTypeHighlight    Type
             -- liquidConditional      Conditional
@@ -31,6 +31,14 @@ function M.setup(configColors, configStyle)
             liquidForloopAttribute = { fg = newpaper.ruby_navy, style = style.k_style },
         }
         return syntax
+    end
+
+    liquidSyn.loadTreeSitter = function()
+
+        local treesitter = {
+            ["@tag.delimiter.liquid"] = { fg = newpaper.jinja_red, nocombine = true },
+        }
+        return treesitter
     end
 
     -- stylua: ignore end

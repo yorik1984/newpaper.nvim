@@ -14,7 +14,7 @@ local filetypes = {
     "markdown",
     "query",
     "rbs",
-    "regex",
+    "regexp",
     "ruby",
     "rust",
     "tex",

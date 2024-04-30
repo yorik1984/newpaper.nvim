@@ -84,6 +84,7 @@ function M.setup(configColors, configStyle)
 
         local treesitter = {
             ["@constant.html"] = { fg = newpaper.comments,  style = style.c_style },
+            ["@none.html"]     = { fg = newpaper.texts },
         }
         return treesitter
     end

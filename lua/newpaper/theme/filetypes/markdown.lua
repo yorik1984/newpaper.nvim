@@ -71,14 +71,11 @@ function M.setup(configColors, configStyle)
     markdownSyn.loadTreeSitter = function()
 
         local treesitter = {
-            ["@none.markdown"]                  = { fg = newpaper.fg },
-            ["@punctuation.special.markdown"]   = { fg = newpaper.tex_orange, style = style.d_style},
-            ["@text.quote.bracket.markdown"]    = { fg = newpaper.tex_navy,  style = style.br_style },
-            ["@text.todo.checked.markdown"]     = { fg = newpaper.todo_hint, style = style.b_bold },
-            ["@text.todo.unchecked.markdown"]   = { fg = newpaper.comments },
-            ["@text.underline.markdown"]        = { fg = newpaper.tex_string, style = style.underline },
-            ["@text.underline.markdown_inline"] = { link = "@text.underline.markdown" },
-            ["@lsp.type.class.markdown"]        = { default = true },
+            ["@keyword.directive.markdown"]   = { fg = newpaper.orange },
+            ["@label.markdown"]               = { fg = newpaper.tex_magenta },
+            ["@none.markdown"]                = { fg = newpaper.fg },
+            ["@punctuation.special.markdown"] = { fg = newpaper.tex_orange, style = style.d_style},
+            ["@lsp.type.class.markdown"]      = { default = true },
         }
 
         return treesitter

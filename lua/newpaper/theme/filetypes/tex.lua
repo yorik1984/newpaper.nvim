@@ -85,39 +85,34 @@ function M.setup(configColors, configStyle)
     tex.loadTreeSitter = function()
 
         local treesitter = {
-            ["@error.latex"]                  = { fg = newpaper.tex_red, bg = newpaper.errormsg_bg, style = style.error },
             ["@function.latex"]               = { fg = newpaper.tex_navy },
             ["@function.macro.latex"]         = { fg = newpaper.tex_magenta },
-            ["@include.latex"]                = { fg = newpaper.tex_blue, style = style.tex_k_style },
-            ["@namespace.latex"]              = { fg = newpaper.tex_blue, style = style.tex_m_style },
+            ["@keyword.import.latex"]         = { fg = newpaper.tex_blue, style = style.tex_k_style },
+            ["@label.latex"]                  = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
+            ["@markup.heading.latex"]         = { fg = newpaper.tex_navy, style = style.b_bold },
+            ["@markup.link.latex"]            = { fg = newpaper.tex_aqua },
+            ["@markup.link.url.latex"]        = { fg = newpaper.tex_navy, style = style.links },
+            ["@module.latex"]                 = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            ["@none.latex"]                   = { fg = newpaper.tex_pink },
             ["@operator.latex"]               = { fg = newpaper.tex_operator, style = style.tex_o_style },
-            ["@parameter.latex"]              = { fg = newpaper.tex_orange, style = style.tex_a_style },
             ["@punctuation.bracket.latex"]    = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             ["@punctuation.delimiter.latex"]  = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
             ["@punctuation.special.latex"]    = { fg = newpaper.tex_string },
-            ["@text.comment.latex"]           = { fg = newpaper.comments, style = style.c_style },
-            ["@text.emphasis.latex"]          = { fg = newpaper.fg, style = style.italic },
-            ["@text.environment.latex"]       = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            ["@text.environment.name.latex"]  = { fg = newpaper.tex_darkorange, style = style.tex_a_style },
-            ["@text.math.latex"]              = { fg = newpaper.tex_math },
-            ["@text.reference.latex"]         = { fg = newpaper.tex_lightgreen },
-            ["@text.string.latex"]            = { fg = newpaper.tex_string, style = style.tex_string },
-            ["@text.strong.latex"]            = { fg = newpaper.fg, style = style.bold },
-            ["@text.title.latex"]             = { fg = newpaper.tex_part_title, style = style.tex_m_style },
-            ["@text.uri.latex"]               = { fg = newpaper.tex_navy, style = style.underline },
+            ["@string.latex"]                 = { fg = newpaper.tex_teal },
             ["@type.latex"]                   = { fg = newpaper.tex_blue, style = style.tex_k_style },
+            ["@variable.parameter.latex"]     = { fg = newpaper.tex_orange, style = style.tex_a_style },
 
             ["@constant.bibtex"]              = { fg = newpaper.tex_math },
-            ["@field.bibtex"]                 = { fg = newpaper.tex_blue },
             ["@function.builtin.bibtex"]      = { fg = newpaper.tex_maroon },
             ["@keyword.bibtex"]               = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             ["@number.bibtex"]                = { fg = newpaper.tex_pink },
             ["@operator.bibtex"]              = { fg = newpaper.tex_operator, style = style.tex_o_style },
-            ["@parameter.bibtex"]             = { fg = newpaper.tex_orange },
             ["@punctuation.bracket.bibtex"]   = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
             ["@punctuation.delimiter.bibtex"] = { fg = newpaper.tex_orange },
             ["@string.bibtex"]                = { fg = newpaper.tex_teal },
-            ["@symbol.bibtex"]                = { fg = newpaper.tex_darkorange },
+            ["@string.special.symbol.bibtex"] = { fg = newpaper.tex_darkorange },
+            ["@variable.member.bibtex"]       = { fg = newpaper.tex_blue },
+            ["@variable.parameter.bibtex"]    = { fg = newpaper.tex_orange },
         }
 
         return treesitter
@@ -161,7 +156,7 @@ function M.setup(configColors, configStyle)
             -- texFileOpt           texOpt       \includegraphics[PACKAGE OPTIONS] \documentclass[CLASS OPTIONS]
             texFileArg            = { fg = newpaper.tex_navy }, -- \input{FILE} \include{FILE} \includegraphics[...]{FILE} \bibliographystyle{FILE} \documentclass[...]{CLASS}
             texFilesOpt           = { fg = newpaper.tex_orange }, -- \usepackage[PACKAGE OPTIONS] \RequirePackage[PACKAGE OPTIONS]
-            texFilesArg           = { fg = newpaper.tex_blue }, -- \includeonly{FILE1, FILE2} \bibliography{FILE1, FILE2} \usepackage[...]{PACKAGE1, PACKAGE2} \RequirePackage[...]{PACKAGE1, PACKAGE2}
+            texFilesArg           = { fg = newpaper.tex_teal }, -- \includeonly{FILE1, FILE2} \bibliography{FILE1, FILE2} \usepackage[...]{PACKAGE1, PACKAGE2} \RequirePackage[...]{PACKAGE1, PACKAGE2}
             texCmdTitle           = { fg = newpaper.tex_blue, style = style.tex_m_style }, -- \TITLE
             texTitleArg           = { fg = newpaper.tex_navy, style = style.tex_m_style }, -- \title{MAIN TITLE}
             texCmdAuthor          = { fg = newpaper.tex_keyword, style = style.tex_m_style }, -- \AUTHOR

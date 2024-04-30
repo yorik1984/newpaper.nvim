@@ -30,10 +30,9 @@ function M.setup(configColors, configStyle)
     luaSyn.loadTreeSitter = function()
 
         local treesitter = {
-            ["@constructor.lua"]           = { fg = newpaper.lua_blue, style = style.br_style },
-            ["@function.call.lua"]         = { fg = newpaper.lua_navy, style = style.f_style },
-            ["@namespace.builtin.core"]    = { fg = newpaper.neovim_green, style = style.k_style },
-            ["@variable.lua"]              = { fg = newpaper.darkengreen, style = style.v_style },
+            ["@constructor.lua"]     = { fg = newpaper.lua_blue, style = style.br_style },
+            ["@function.call.lua"]   = { fg = newpaper.lua_navy, style = style.f_style },
+            ["@variable.lua"]        = { fg = newpaper.darkengreen, style = style.v_style },
 
             -- LSP semantic tokens
             ["@lsp.type.class.lua"]                      = { default = true },
@@ -44,7 +43,7 @@ function M.setup(configColors, configStyle)
             ["@lsp.type.property.lua"]                   = { default = true },
             ["@lsp.type.variable.lua"]                   = { default = true },
             ["@lsp.typemod.class.declaration.lua"]       = { default = true },
-            ["@lsp.typemod.variable.defaultLibrary.lua"] = { link = "@namespace.builtin" },
+            ["@lsp.typemod.variable.defaultLibrary.lua"] = { link = "@module.builtin" },
         }
 
         return treesitter
