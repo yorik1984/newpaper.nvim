@@ -2,6 +2,8 @@
 
 ; Buitin constants and Keywords
 
+"module" @keyword.type
+
 [
   "alias"
 ] @keyword.function

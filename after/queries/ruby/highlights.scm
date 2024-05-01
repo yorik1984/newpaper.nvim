@@ -4,6 +4,8 @@
 (instance_variable) @variable.member.instance
 ;;; Keywords
 
+"module" @keyword.type
+
 ((identifier) @keyword.function
  (#any-of? @keyword.function "alias"))
 
@@ -31,8 +33,8 @@
 ((identifier) @keyword
  (#any-of? @keyword "callcc" "caller" "lambda" "proc" "eval"))
 
-((identifier) @keyword
- (#match? @keyword "^(class|instance|module)_eval$"))
+((identifier) @keyword.type
+ (#match? @keyword.type "^(class|instance|module)_eval$"))
 
 ;;; Function calls
 "defined?" @keyword.operator
