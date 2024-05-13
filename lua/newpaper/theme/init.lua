@@ -380,10 +380,6 @@ function M.setup(configColors, configStyle)
             ["@lsp.typemod.variable.definition"]        = { link = "@variable.builtin" },
             ["@lsp.typemod.variable.global"]            = { link = "@module.builtin" },
             ["@lsp.typemod.variable.injected"]          = { link = "@variable" },
-
-            -- Treesitter plugins
-            TreesitterContextLineNumber = { fg = newpaper.linenumber_fg, bg = newpaper.linenumber_bg, style = style.b_bold },
-            TreesitterContextBottom     = { style = style.underline, sp = newpaper.violet },
         }
 
         return treesitter
@@ -391,6 +387,11 @@ function M.setup(configColors, configStyle)
 
     theme.loadPlugins = function()
         local plugins = {
+
+            -- Treesitter plugins
+            TreesitterContextLineNumber = { fg = newpaper.linenumber_fg, bg = newpaper.linenumber_bg, style = style.b_bold },
+            TreesitterContextBottom     = { style = style.underline, sp = newpaper.violet },
+
             -- Diff -----------------------------------------------------------
             diffAdded                   = { fg = newpaper.git_added },
             diffRemoved                 = { fg = newpaper.git_removed },

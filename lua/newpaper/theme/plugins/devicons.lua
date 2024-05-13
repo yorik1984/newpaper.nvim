@@ -9,7 +9,6 @@ function M.setup(configColors)
     local newpaper    = deviconSyn.colors
 
     deviconSyn.loadPlugins = function()
-        local plugins = {}
         local devIcons = {
             Ai                  = { fg = newpaper.olive },
             Awk                 = { fg = newpaper.teal },
@@ -88,6 +87,7 @@ function M.setup(configColors)
 
         -- stylua: ignore end
 
+        local plugins = {}
         for key, value in pairs(devIcons) do
             plugins["DevIcon" .. key] = value
         end
