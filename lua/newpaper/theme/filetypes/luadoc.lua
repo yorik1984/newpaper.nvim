@@ -16,7 +16,7 @@ function M.setup(configColors, configStyle)
             ["@comment.luadoc"]               = { fg = newpaper.doc_comments,    style = style.doc_style,   nocombine = true },
             ["@constant.builtin.luadoc"]      = { fg = newpaper.dark_maroon,     style = style.doc_style,   nocombine = true },
             ["@constructor.luadoc"]           = { fg = newpaper.lua_blue,        style = style.doc_k_style, nocombine = true },
-            ["@function.macro.luadoc"]        = { fg = newpaper.lightmagenta,     style = style.doc_style,   nocombine = true },
+            ["@function.macro.luadoc"]        = { fg = newpaper.lightmagenta,    style = style.doc_style,   nocombine = true },
             ["@keyword.coroutine.luadoc"]     = { fg = newpaper.tex_lightpurple, style = style.doc_k_style, nocombine = true },
             ["@keyword.function.luadoc"]      = { fg = newpaper.tex_navy,        style = style.doc_k_style, nocombine = true },
             ["@keyword.import.luadoc"]        = { fg = newpaper.tex_red,         style = style.doc_k_style, nocombine = true },
