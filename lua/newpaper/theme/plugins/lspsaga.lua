@@ -12,6 +12,8 @@ function M.setup(configColors, configStyle)
     lspsagaSyn.loadPlugins = function()
         local plugins = {
             -- general
+            SagaActionTitle      = { fg = newpaper.bg, bg = newpaper.hint_fg },
+            SagaButton           = { fg = newpaper.hint_fg },
             SagaTitle            = { fg = newpaper.purple, bg = newpaper.float_bg, style = style.b_bold },
             SagaBorder           = { fg = newpaper.borders, bg = newpaper.float_bg, default = false },
             SagaNormal           = { fg = newpaper.float_fg, bg = newpaper.float_bg, default = false },
@@ -27,9 +29,9 @@ function M.setup(configColors, configStyle)
             SagaFinderFname      = { fg = newpaper.teal, bg = newpaper.float_bg },
             SagaDetail           = { link = "Comment" },
             SagaInCurrent        = { link = "KeyWord" },
+            SagaSep              = { fg = newpaper.red, bg = newpaper.winbar_bg },
 
             -- code action
-            ActionFix            = { fg = newpaper.olive },
             ActionPreviewNormal  = { link = "SagaNormal" },
             ActionPreviewBorder  = { fg = newpaper.lightblue, bg = newpaper.float_bg },
             ActionPreviewTitle   = { fg = newpaper.blue, bg = newpaper.float_bg, style = style.b_bold },
@@ -44,11 +46,15 @@ function M.setup(configColors, configStyle)
             RenameNormal         = { fg = newpaper.fg, bg = newpaper.float_bg },
             RenameMatch          = { link = "Search" },
             -- diagnostic
-            DiagnosticBorder     = { fg = newpaper.border, bg = newpaper.float_bg },
-            DiagnosticNormal     = { link = "SagaNormal" },
-            DiagnosticText       = {},
-            DiagnosticShowNormal = { link = "SagaNormal" },
-            DiagnosticShowBorder = { link = "@property" },
+            DiagnosticBorder       = { fg = newpaper.border, bg = newpaper.float_bg },
+            DiagnosticNormal       = { link = "SagaNormal" },
+            DiagnosticText         = {},
+            DiagnosticShowNormal   = { link = "SagaNormal" },
+            DiagnosticShowBorder   = { link = "@property" },
+            DiagnosticERRORReverse = { fg = newpaper.bg, bg = newpaper.error_fg },
+            DiagnosticWARNReverse  = { fg = newpaper.bg, bg = newpaper.warn_fg },
+            DiagnosticINFOReverse  = { fg = newpaper.bg, bg = newpaper.info_fg },
+            DiagnosticHINTReverse  = { fg = newpaper.bg, bg = newpaper.hint_fg },
             -- lightbulb
             SagaLightBulb        = { link = "DiagnosticSignHint" },
             -- Float term
@@ -57,10 +63,10 @@ function M.setup(configColors, configStyle)
             -- Implement
             SagaImpIcon          = { fg = newpaper.red },
             --Winbar
-            SagaSep              = { fg = newpaper.red, bg = newpaper.winbar_bg },
-            SagaFileName         = { fg = newpaper.teal, bg = newpaper.winbar_bg },
-            SagaFolderName       = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
-            SagaFolder           = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
+            SagaWinbarSep        = { fg = newpaper.red, bg = newpaper.winbar_bg },
+            SagaWinbarFileName   = { fg = newpaper.teal, bg = newpaper.winbar_bg },
+            SagaWinbarFolderName = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
+            SagaWinbarFolder     = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
 
         }
         return plugins
