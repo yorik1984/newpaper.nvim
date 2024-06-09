@@ -68,6 +68,10 @@ function M.setup(configColors, configStyle)
             SagaWinbarFolderName = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
             SagaWinbarFolder     = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
 
+            SagaFolderName       = { link = "SagaWinbarFolderName"},
+            SagaFolder           = { link = "SagaWinbarFolder"},
+            SagaFileName         = { link = "SagaWinbarFileName"},
+
         }
         return plugins
     end
