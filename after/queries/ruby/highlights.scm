@@ -10,22 +10,13 @@
  (#any-of? @keyword.function "alias"))
 
 ((identifier) @keyword.function
- (#any-of? @keyword.function "extend" "include" "prepend" "refine" "using"))
-
-((identifier) @keyword.function
  (#match? @keyword.function "^(alias|define|define_singleton|remove|undef)_method$"))
-
-((identifier) @keyword.modifier
- (#any-of? @keyword.modifier "module_function"))
 
 ((identifier) @keyword.modifier
  (#match? @keyword.modifier "^(public|private)_class_method$"))
 
 ((identifier) @keyword.modifier
  (#match? @keyword.modifier "^(public|private)_constant$"))
-
-((identifier) @keyword.exception
- (#any-of? @keyword.exception "catch" "throw"))
 
 ((identifier) @keyword.exception
  (#any-of? @keyword.exception "abort" "at_exit" "exit" "fork" "loop" "trap"))
@@ -44,15 +35,9 @@
 (program
  (call
   (identifier) @keyword.import)
- (#any-of? @keyword.import "require" "require_relative" "load" "autoload" "gem"))
+ (#any-of? @keyword.import "autoload" "gem"))
 
 ;;; Function definitions
-((identifier) @keyword.import
- (#match? @keyword.import "^attr_(accessor|reader|writer)$"))
-
-((identifier) @keyword.import
- (#vim-match? @keyword.import "^\%(\%(\^|;)\\s*)\@<=attr\>(\\s*[.=])\@!$"))
-
 ((identifier) @constant.builtin
  (#any-of? @constant.builtin "initialize" "new"))
 
