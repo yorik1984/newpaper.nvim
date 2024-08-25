@@ -183,7 +183,7 @@ function M.setup(configColors, configStyle)
             ["@variable.global"]       = { fg = newpaper.neovim_green, style = style.k_style },
 
             ["@constant"]              = { fg = newpaper.darkgreen, nocombine = true },
-            ["@constant.builtin"]      = { fg = newpaper.maroon, nocombine = true },
+            ["@constant.builtin"]      = { fg = newpaper.maroon },
             ["@constant.macro"]        = { fg = newpaper.tex_maroon, nocombine = true },
 
             ["@module"]                = { fg = newpaper.darkyellow },

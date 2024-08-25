@@ -23,7 +23,7 @@
   (#set! conceal ""))
 
 (column_heading
-  "~" @markup.raw.delimiter
+  (delimiter) @markup.raw.delimiter
   (#set! conceal ""))
 
 (tag
