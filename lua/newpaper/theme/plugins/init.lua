@@ -14,6 +14,7 @@ local plugins = {
     "lsp",
     "lspsaga",
     "mason",
+    "mini",
     "neogit",
     "noice",
     "notify",

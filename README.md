@@ -110,6 +110,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
 + [Lualine](https://github.com/nvim-lualine/lualine.nvim)[🖼️](#-screenshots-lualine)
 + [mason.nvim](https://github.com/williamboman/mason.nvim)
++ [mini.nvim](https://github.com/echasnovski/mini.nvim)
 + [Neogit](https://github.com/TimUntersberger/neogit)
 + [noice.nvim](https://github.com/folke/noice.nvim)
 + [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
