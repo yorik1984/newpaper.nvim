@@ -58,7 +58,9 @@ function M.setup(configColors, configStyle)
             rubyDefine                     = { fg = newpaper.darkpurple,   style = style.k_style },
             rubyAccess                     = { fg = newpaper.ruby_maroon,  style = style.k_style },
             rubyAttribute                  = { fg = newpaper.redorange },
-            rubyMacro                      = { fg = newpaper.darkpurple, style = style.k_style }, -- rubyMethodName                 rubyFunction rubyFunction                   = { fg = newpaper.navy },
+            rubyMacro                      = { fg = newpaper.darkpurple, style = style.k_style },
+            -- rubyMethodName                 rubyFunction
+            rubyFunction                   = { fg = newpaper.navy },
             -- rubyConditional                Conditional
             -- rubyConditionalModifier        rubyConditional
             rubyExceptionHandler           = { fg = newpaper.redorange, style = style.k_style },

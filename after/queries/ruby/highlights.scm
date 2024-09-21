@@ -6,6 +6,11 @@
 
 "module" @keyword.type
 
+((call
+  !receiver
+  method: (identifier) @keyword.function)
+  (#any-of? @keyword.function "include" "extend" "prepend" "refine" "using"))
+
 ((identifier) @keyword.function
  (#any-of? @keyword.function "alias"))
 
