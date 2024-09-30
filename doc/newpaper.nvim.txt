@@ -44,6 +44,7 @@ A wide array of supprted plugins like:
     • lspsaga
     • Lualine
     • mason.nvim
+    • mini.nvim
     • Neogit
     • noice.nvim
     • nvim-cmp
