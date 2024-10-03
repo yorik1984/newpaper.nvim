@@ -62,7 +62,7 @@ function M.setup(configColors, configStyle)
             MiniIconsPurple               = { fg = newpaper.purple },
             MiniIconsRed                  = { fg = newpaper.red },
             MiniIconsYellow               = { fg = newpaper.darkyellow },
-            MiniIndentscopeSymbol         = { fg = newpaper.borders },
+            MiniIndentscopeSymbol         = { fg = newpaper.contextchar },
             MiniIndentscopePrefix         = { nocombine = true },
             MiniJump                      = { fg = newpaper.bg, bg = newpaper.accent },
             MiniJump2dDim                 = { link = "Comment" },
