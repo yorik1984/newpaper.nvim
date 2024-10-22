@@ -19,6 +19,7 @@ local filetypes = {
     "rust",
     "tex",
     "toml",
+    "typescript",
     "vim",
     "vimdoc",
     "yaml",

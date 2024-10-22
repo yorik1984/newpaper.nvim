@@ -8,6 +8,7 @@ local plugins = {
     "cmp",
     "dashboard-nvim",
     "fugitive",
+    "gitsigns",
     "jinja",
     "lazy",
     "litee",

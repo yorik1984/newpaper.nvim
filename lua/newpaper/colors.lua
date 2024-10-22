@@ -241,7 +241,7 @@ function M.setup(config)
             lightsilver          = "#363636",
 
             codeblock            = "#343434",
-            disabled             = "#464646",
+            disabled             = "#585858",
 
             regexp_blue          = "#618EF0",
             regexp_brown         = "#A5767D",

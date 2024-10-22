@@ -414,17 +414,6 @@ function M.setup(configColors, configStyle)
             GitGutterChange             = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
             GitGutterDelete             = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
 
-            -- GitSigns -------------------------------------------------------
-            GitSignsAdd                 = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-            GitSignsAddNr               = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-            GitSignsAddLn               = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-            GitSignsChange              = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-            GitSignsChangeNr            = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-            GitSignsChangeLn            = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-            GitSignsDelete              = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
-            GitSignsDeleteNr            = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
-            GitSignsDeleteLn            = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
-
             -- Glyph palette --------------------------------------------------
             GlyphPalette1               = { fg = newpaper.red },
             GlyphPalette2               = { fg = newpaper.green },
