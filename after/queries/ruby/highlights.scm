@@ -246,3 +246,13 @@
   (singleton_method))
 
 (heredoc_body) @comment.documentation
+
+; debugger command strings
+((call
+  receiver: (identifier) @_receiver
+  method: (identifier) @_method
+  arguments: (argument_list
+    (pair
+      key: (hash_key_symbol)
+      value: (string
+        (string_content) @markup.italic)))))
