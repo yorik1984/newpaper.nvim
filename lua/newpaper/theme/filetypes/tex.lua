@@ -162,6 +162,9 @@ function M.setup(configColors, configStyle)
             texCmdAuthor          = { fg = newpaper.tex_keyword, style = style.tex_m_style }, -- \AUTHOR
             -- texAuthorOpt         texOpt       \author[OPT]
             texAuthorArg          = { fg = newpaper.tex_navy }, -- \author[...]{AUTHOR LIST}
+            -- texBasicCmd           texCmd
+            -- texBasicOpt           texOpt
+            -- texBasicDelimiter     texDelim
             texCmdPart            = { fg = newpaper.tex_blue, style = style.tex_m_style }, -- \(SUB*)SECTION
             texPartArgTitle       = { fg = newpaper.tex_part_title, style = style.tex_m_style }, -- \(sub*)section{TITLE}
             texCmdEnv             = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
