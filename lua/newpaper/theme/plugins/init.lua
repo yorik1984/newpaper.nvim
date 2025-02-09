@@ -9,7 +9,6 @@ local plugins = {
     "dashboard-nvim",
     "fugitive",
     "gitsigns",
-    "jinja",
     "lazy",
     "litee",
     "lsp",

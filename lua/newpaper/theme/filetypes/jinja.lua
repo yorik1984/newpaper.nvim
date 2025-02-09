@@ -38,7 +38,16 @@ function M.setup(configColors, configStyle)
         return plugins
     end
 
-    -- stylua: ignore end
+    jinjaSyn.loadTreeSitter = function()
+
+        local treesitter = {
+            ["@keyword.directive.jinja"] = { fg = newpaper.jinja_red, nocombine = true },
+        }
+
+        return treesitter
+    end
+
+        -- stylua: ignore end
 
     return jinjaSyn
 end

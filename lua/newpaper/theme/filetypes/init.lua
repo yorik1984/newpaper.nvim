@@ -5,6 +5,7 @@ local ftypesFolder = "newpaper.theme.filetypes."
 local filetypes = {
     "comment",
     "html",
+    "jinja",
     "json",
     "liquid",
     "lua",
