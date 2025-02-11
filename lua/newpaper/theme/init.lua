@@ -511,6 +511,9 @@ function M.setup(configColors, configStyle)
             Sneak                       = { fg = newpaper.bg, bg = newpaper.accent },
             SneakScope                  = { bg = newpaper.selection },
 
+            -- Trim -----------------------------------------------------------
+            ExtraWhitespace             = { fg = newpaper.disabled, bg = newpaper.pink },
+
             -- Vim-matchup ----------------------------------------------------
             MatchWord                   = { bg = newpaper.lightviolet, style = style.b_bold },
 

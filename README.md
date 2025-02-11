@@ -127,6 +127,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)[🖼️](#todo-commentsnvim)
 + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
++ [trim.nvim](https://github.com/cappyzawa/trim.nvim)
 + [Trouble](https://github.com/folke/trouble.nvim)
 + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 + [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)

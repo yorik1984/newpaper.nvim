@@ -61,6 +61,7 @@ A wide array of supprted plugins like:
     • Telescope.nvim
     • todo-comments.nvim
     • TreeSitter
+    • trim.nvim
     • Trouble
     • vim-illuminate
     • Vim-Jinja2-Syntax
