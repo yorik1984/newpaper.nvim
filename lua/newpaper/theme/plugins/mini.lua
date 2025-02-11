@@ -121,7 +121,7 @@ function M.setup(configColors, configStyle)
             MiniTestEmphasis              = { style = style.b_bold },
             MiniTestFail                  = { fg = newpaper.red,    style = style.b_bold },
             MiniTestPass                  = { fg = newpaper.darkgreen, style = style.b_bold },
-            MiniTrailspace                = { bg = newpaper.pink },
+            MiniTrailspace                = { fg = newpaper.disabled, bg = newpaper.pink },
         }
         return plugins
     end
