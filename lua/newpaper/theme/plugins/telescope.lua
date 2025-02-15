@@ -13,7 +13,7 @@ function M.setup(configColors, configStyle)
     telescopeSyn.loadPlugins = function()
         local plugins = {
             -- Sets the highlight for selected items within the picker
-            TelescopeSelection              = { fg = newpaper.telescope_fg, bg = newpaper.aqua },
+            TelescopeSelection              = { bg = newpaper.aqua },
             TelescopeSelectionCaret         = { fg = newpaper.purple, style = style.b_bold },
             TelescopeMultiSelection         = { fg = newpaper.orange },
             TelescopeMultiIcon              = { fg = newpaper.orange },
