@@ -160,6 +160,8 @@ function M.setup(configColors, configStyle)
             FloatCLineNr     = { fg = newpaper.cursor_nr_fg, bg = newpaper.float_bg },
             FloatFoldColumn  = { fg = newpaper.folded_fg, bg = newpaper.float_bg },
             FloatBorderTerm  = { fg = newpaper.win_act_border, bg = newpaper.term_fl_bg },
+            FloatBorderNorm  = { fg = newpaper.borders, bg = newpaper.bg },
+            FloatTitleNorm   = { fg = newpaper.borders, bg = newpaper.bg, style = style.b_bold },
             NormalTermFloat  = { fg = newpaper.term_fl_fg, bg = newpaper.term_fl_bg },
             NormalTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
             LineNrTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
@@ -169,6 +171,8 @@ function M.setup(configColors, configStyle)
             TermCursorNCTerm = { style = style.reverse },
             CursorLineTerm   = { bg = newpaper.none, ctermbg = newpaper.none },
             PmenuBorder      = { fg = newpaper.teal, bg = newpaper.pmenu_bg },
+            Italic           = { style = style.italic },
+            Bold             = { style = style.bold },
         }
         return editor
     end
@@ -390,7 +394,7 @@ function M.setup(configColors, configStyle)
 
             -- Treesitter plugins
             TreesitterContextLineNumber = { fg = newpaper.linenumber_fg, bg = newpaper.linenumber_bg, style = style.b_bold },
-            TreesitterContextBottom     = { style = style.underline, sp = newpaper.violet },
+            TreesitterContextBottom     = { style = style.underline, sp = newpaper.contextchar },
 
             -- Diff -----------------------------------------------------------
             diffAdded                   = { fg = newpaper.git_added },

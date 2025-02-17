@@ -57,6 +57,7 @@ A wide array of supprted plugins like:
     • Nvim-Tree.lua
     • nvim-web-devicons
     • rainbow-delimiters.nvim
+    • snacks.nvim
     • symbols-outline.nvim
     • Telescope.nvim
     • todo-comments.nvim

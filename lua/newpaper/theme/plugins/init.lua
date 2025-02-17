@@ -20,6 +20,7 @@ local plugins = {
     "notify",
     "nvim-tree",
     "rainbow-delimiters",
+    "snacks",
     "symbols-outline",
     "telescope",
     "todo-comments",

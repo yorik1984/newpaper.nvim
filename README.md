@@ -123,6 +123,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 + [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
++ [snacks.nvim](https://github.com/folke/snacks.nvim)
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)[🖼️](#todo-commentsnvim)
