@@ -93,7 +93,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
-+ [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim)[⚙️nvim-cmp](#nvim-cmp-settings)
++ [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) for [⚙️nvim-cmp](#nvim-cmp-settings)
 + [Dashboard](https://github.com/nvimdev/dashboard-nvim)
 + [flash.nvim](https://github.com/folke/flash.nvim)
 + [fugitive](https://github.com/tpope/vim-fugitive)
