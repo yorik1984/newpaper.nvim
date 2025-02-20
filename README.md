@@ -93,6 +93,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
++ [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim)[⚙️nvim-cmp](#nvim-cmp-settings)
 + [Dashboard](https://github.com/nvimdev/dashboard-nvim)
 + [flash.nvim](https://github.com/folke/flash.nvim)
 + [fugitive](https://github.com/tpope/vim-fugitive)
@@ -372,6 +373,16 @@ vim.o.guicursor = "n:block-nCursor,v:block-vCursor,i:ver25-iCursor,r:hor25-rCurs
 ```
 
 For more information see in `:h guicursor`
+
+### [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim)
+
+#### [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)-settings
+Apply recommended [settings](https://github.com/xzbdmw/colorful-menu.nvim?tab=readme-ov-file#screen)
+
+```lua
+-- init.lua
+vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { link = "CmpItemAbbrMatchCM" })
+```
 
 ## 🎨 [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme
 

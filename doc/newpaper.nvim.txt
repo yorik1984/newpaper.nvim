@@ -27,6 +27,7 @@ There are 2 |newpaper.styles| to choose from:
 A wide array of supprted plugins like:
     • bufferline.nvim
     • cheatsheet.nvim
+    • colorful-menu.nvim
     • Dashboard
     • flash.nvim
     • fugitive
