@@ -1,11 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    local cmpSyn       = {}
-    cmpSyn.colors      = configColors
-    cmpSyn.style       = configStyle
-    local newpaper     = cmpSyn.colors
-    local style        = cmpSyn.style
+    local cmpSyn   = {}
+    cmpSyn.colors  = configColors
+    cmpSyn.style   = configStyle
+    local newpaper = cmpSyn.colors
+    local style    = cmpSyn.style
 
     cmpSyn.loadPlugins = function()
         local plugins = {
