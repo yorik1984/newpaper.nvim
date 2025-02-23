@@ -162,7 +162,7 @@ function M.setup(configColors, configStyle)
             FoldColumnTerm   = { fg = newpaper.term_fg, bg = newpaper.term_bg },
             LineNrSB         = { fg = newpaper.linenumber_fg, bg = newpaper.sb_contrast_bg },
             LineNrTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
-            NonTextVisual    = { fg = newpaper.magenta, bg = newpaper.selection },
+            NonTextVisual    = { fg = newpaper.tex_tikz_orange, bg = newpaper.selection },
             NormalContrastSB = { fg = newpaper.sb_contrast_fg, bg = newpaper.sb_contrast_bg },
             NormalInverse    = { fg = newpaper.normal_bg, bg = newpaper.normal_fg },
             NormalTerm       = { fg = newpaper.term_fg, bg = newpaper.term_bg },
