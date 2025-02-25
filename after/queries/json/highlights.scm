@@ -1,8 +1,8 @@
 ;extends
 
-(("\"" @string)
- (#set! conceal ""))
+("\"" @string
+  (#set! conceal ""))
 
 ((escape_sequence) @string.escape
- (#eq? @string.escape "\\\"")
- (#set! conceal "\""))
+  (#eq? @string.escape "\\\"")
+  (#set! conceal "\""))

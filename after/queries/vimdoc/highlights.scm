@@ -1,4 +1,4 @@
-;; extends
+; extends
 
 (tag
   text: (_) @markup.link.label)

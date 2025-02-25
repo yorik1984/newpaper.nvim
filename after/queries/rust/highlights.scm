@@ -1,26 +1,19 @@
-;; extends
+; extends
 
-;; Operators & Punctuation
+; Operators & Punctuation
+"=>" @keyword.debug
 
-[
-  "=>"
- ] @keyword.debug
+"..=" @punctuation.delimiter
 
-[
-  "..="
- ] @punctuation.delimiter
-
-;; Bitwise
-
+; Bitwise
 [
   "&="
   "^"
   "^="
   "|="
- ] @keyword.exception
+] @keyword.exception
 
-;; Arithmetic
-
+; Arithmetic
 [
   "+"
   "-"
@@ -28,47 +21,41 @@
   "/"
 ] @operator.math
 
+".." @character.special
+
+; Short-circuiting logical
 [
-  ".."
-] @character.special
+  "&&"
+  "||"
+] @boolean
 
-;; Short-circuiting logical
-
-[
- "&&"
- "||"
- ] @boolean
-
-;; Comparison
-
+; Comparison
 [
   "!="
   "=="
   "@"
- ] @punctuation.special
+] @punctuation.special
 
 [
   "<"
   "<="
   ">"
   ">="
- ] @constructor
+] @constructor
 
-;; Shift
-
+; Shift
 [
   "<<"
   "<<="
   ">>"
   ">>="
- ] @character.special
+] @character.special
 
-;; Other
-
+; Other
 [
- "::"
- "."
- ] @label
+  "::"
+  "."
+] @label
 
 (for_lifetimes
   [
@@ -76,4 +63,5 @@
     ">"
   ] @punctuation.bracket.lifetime)
 
- (dynamic_type "dyn" @keyword.operator)
+(dynamic_type
+  "dyn" @keyword.operator)

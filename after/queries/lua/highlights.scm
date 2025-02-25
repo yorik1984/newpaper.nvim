@@ -1,30 +1,26 @@
-;; extends
+; extends
 
-;; Operators
-
-;; Relational Operators
-
+; Operators
+; Relational Operators
 [
- "=="
- "~="
- ">"
- "<"
- ">="
- "<="
- ] @punctuation.special
+  "=="
+  "~="
+  ">"
+  "<"
+  ">="
+  "<="
+] @punctuation.special
 
-;; Bitwise Operators
-
+; Bitwise Operators
 [
- "&"
- "|"
- "~"
- "<<"
- ">>"
- ] @keyword.exception
+  "&"
+  "|"
+  "~"
+  "<<"
+  ">>"
+] @keyword.exception
 
-;; Arithmetic
-
+; Arithmetic
 [
   "+"
   "-"
@@ -33,32 +29,25 @@
   "%"
   "/"
   "//"
- ] @operator.math
+] @operator.math
 
-[
- ".."
- ] @character.special
+".." @character.special
 
 (unary_expression
-  [
-  "#"
-] @constructor)
+  "#" @constructor)
 
-;; Constants
-
+; Constants
 (vararg_expression) @label
 
-;; Variables
-
+; Variables
 ((identifier) @constant.builtin
   (#eq? @constant.builtin "_ENV"))
 
-;; Tables
+; Tables
+(field
+  name: (identifier) @local.definition.field)
 
-(field name: (identifier) @local.definition.field)
-
-;; From locals.scm
-
+; From locals.scm
 (assignment_statement
   (variable_list
     (identifier) @local.definition))
@@ -76,13 +65,13 @@
   name: (identifier) @local.definition.function)
   (#set! definition.function.scope "parent"))
 
-;; Functions
-
+; Functions
 (dot_index_expression
   table: (identifier) @variable.global
-    (#any-of? @variable.global
-      "vim" ))
+  (#any-of? @variable.global "vim"))
 
-(arguments (identifier) @local.definition.parameter)
+(arguments
+  (identifier) @local.definition.parameter)
 
-(bracket_index_expression field: (identifier) @local.definition.enum)
+(bracket_index_expression
+  field: (identifier) @local.definition.enum)

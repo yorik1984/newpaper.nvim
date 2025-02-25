@@ -1,10 +1,8 @@
-local util = require("newpaper.util")
+local util          = require("newpaper.util")
 local configDefault = require("newpaper.config")
-local M = {}
+local M             = {}
 
 function M.setup(config)
-    -- stylua: ignore start
-
     local newpaper = {}
 
     if config.style == "light" then
@@ -561,8 +559,6 @@ function M.setup(config)
         newpaper.tex_parbox_opt_error = newpaper.none
         newpaper.tex_only_math_error  = newpaper.none
     end
-
-    -- stylua: ignore end
 
     if config.colors_advanced then
         util.colorOverrides(newpaper, config.colors_advanced)

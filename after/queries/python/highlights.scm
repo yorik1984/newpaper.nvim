@@ -1,7 +1,6 @@
-;; extends
+; extends
 
 ; Tokens
-
 [
   "+"
   "-"
@@ -34,7 +33,6 @@
 ] @keyword.exception
 
 ; Keywords
-
 [
   "and"
   "or"

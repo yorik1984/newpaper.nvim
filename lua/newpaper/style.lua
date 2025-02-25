@@ -1,8 +1,6 @@
 local M = {}
 
 function M.setupStyle(config)
-    -- stylua: ignore start
-
     local style       = {
         -- default styles
         none         = "NONE",
@@ -118,13 +116,13 @@ function M.setupStyle(config)
 
     -- Make italic strings
     if config.italic_strings then
-        style.s_style = style.italic
+        style.s_style     = style.italic
         style.s_underline = style.s_style .. "," .. style.underline
     end
 
     -- Make italic comments
     if config.italic_comments then
-        style.c_style = style.italic
+        style.c_style     = style.italic
         style.c_underline = style.c_style .. "," .. style.underline
     end
 
@@ -154,7 +152,5 @@ function M.setupStyle(config)
 
     return style
 end
-
--- stylua: ignore end
 
 return M

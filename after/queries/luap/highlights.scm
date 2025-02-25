@@ -1,4 +1,4 @@
-;;extends
+;extends
 
 [
   (anchor_begin)
@@ -6,11 +6,13 @@
 ] @string.escape.assertion
 
 [
-  "[" "]"
+  "["
+  "]"
 ] @punctuation.bracket.square
 
 [
-  "(" ")"
+  "("
+  ")"
 ] @punctuation.bracket.group
 
 (range
@@ -18,7 +20,8 @@
   "-" @punctuation.delimiter
   to: (character) @constant)
 
-(negated_set "^" @punctuation.delimiter)
+(negated_set
+  "^" @punctuation.delimiter)
 
 [
   (set)

@@ -38,8 +38,8 @@ local greyscale_opt = {
 
 local config = {
     style               = opt("style", "light"),
-    lightness           = opt(hsluv_opt.lightness, false ),
-    saturation          = opt(hsluv_opt.saturation, false ),
+    lightness           = opt(hsluv_opt.lightness, false),
+    saturation          = opt(hsluv_opt.saturation, false),
     greyscale           = opt("greyscale", false),
     editor_better_view  = opt("editor_better_view", true),
     terminal            = opt("terminal", term_opt.contrast),

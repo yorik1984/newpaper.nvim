@@ -1,7 +1,6 @@
-;; extends
+; extends
 
-;; Operators
-
+; Operators
 [
   "=="
   "~="
@@ -26,14 +25,11 @@
   "//"
 ] @operator.math
 
-[
-  ".."
-] @character.special
+".." @character.special
 
-;; Literals
-
+; Literals
 (vararg_expression) @label
 
-;; Tables
-
-(field name: (identifier) @local.definition.field)
+; Tables
+(field
+  name: (identifier) @local.definition.field)

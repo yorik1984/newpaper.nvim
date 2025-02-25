@@ -1,4 +1,4 @@
-;; extends
+; extends
 
 (regex
   (escape_sequence) @injection.content

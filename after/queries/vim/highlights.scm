@@ -1,33 +1,34 @@
-;; extends
+; extends
 
-(syntax_argument name: _ @keyword.operator)
+(syntax_argument
+  name: _ @keyword.operator)
 
-(syntax_argument [
-  "start"
-  "skip"
-  "end"
-] @keyword.modifier)
+(syntax_argument
+  [
+    "start"
+    "skip"
+    "end"
+  ] @keyword.modifier)
 
-;; Operators
+; Operators
+[
+  "=="
+  "!="
+  "!~"
+  "=~"
+] @punctuation.special
 
 [
- "=="
- "!="
- "!~"
- "=~"
- ] @punctuation.special
+  ">"
+  "<"
+  ">="
+  "<="
+] @constructor
 
 [
- ">"
- "<"
- ">="
- "<="
- ]@constructor
-
-[
- "&&"
- "||"
- ] @boolean
+  "&&"
+  "||"
+] @boolean
 
 (hl_attribute
   key: _ @property
