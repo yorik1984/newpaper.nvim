@@ -11,7 +11,8 @@
 ; Conceal backticks
 (fenced_code_block
   (fenced_code_block_delimiter) @markup.raw.delimiter
-  (#set! conceal ""))
+  (#set! conceal "")
+  (#set! conceal_lines ""))
 
 ; Conceal bullet points
 ([
