@@ -130,6 +130,10 @@ function M.load(config, theme)
     M.autocmds(config, theme.colors)
 end
 
+function M.loadHlGroups(synTheme)
+    M.syntax(synTheme)
+end
+
 function M.loadSyntax(synTheme)
     if synTheme.loadPlugins then
         M.syntax(synTheme.loadPlugins())

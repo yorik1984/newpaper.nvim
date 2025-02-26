@@ -39,20 +39,20 @@ local function setup(userConfig)
 
     util.load(configApply, theme.setup(configColors, configStyle))
 
-    for _, fileSyn in ipairs(filetypes) do
-        util.loadSyntax(require(fileSyn).setup(configColors, configStyle))
+    for _, syn in ipairs(filetypes) do
+        util.loadSyntax(require(syn).setup(configColors, configStyle))
     end
-    for _, fileSyn in ipairs(plugins) do
-        util.loadSyntax(require(fileSyn).setup(configColors, configStyle))
+    for _, syn in ipairs(plugins) do
+        util.loadHlGroups(require(syn).setup(configColors, configStyle))
     end
 
     if configApply.devicons_custom.cterm and not configApply.devicons_custom.gui then
         util.deviconsOverrides(configApply)
-        util.loadSyntax(devIcons.setup(configColors))
+        util.loadHlGroups(devIcons.setup(configColors))
     elseif configApply.devicons_custom.gui then
         util.deviconsOverrides(configApply)
     else
-        util.loadSyntax(devIcons.setup(configColors))
+        util.loadHlGroups(devIcons.setup(configColors))
     end
 
     util.loadCustomSyntax(configApply)
