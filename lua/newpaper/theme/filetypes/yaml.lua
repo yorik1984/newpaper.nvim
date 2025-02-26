@@ -1,16 +1,13 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
+    local yamlSyn          = {}
+    yamlSyn.colors         = configColors
+    yamlSyn.style          = configStyle
+    local newpaper         = yamlSyn.colors
+    local style            = yamlSyn.style
 
-    -- stylua: ignore start
-
-    local yamlSyn  = {}
-    yamlSyn.colors = configColors
-    yamlSyn.style  = configStyle
-    local newpaper = yamlSyn.colors
-    local style    = yamlSyn.style
-
-    yamlSyn.loadSyntax = function()
+    yamlSyn.loadSyntax     = function()
         local syntax = {
             -- yamlTodo                     Todo
             -- yamlComment                  Comment
@@ -45,9 +42,9 @@ function M.setup(configColors, configStyle)
             yamlFlowIndicator            = { fg = newpaper.tag_navy, style = style.br_style },
             yamlKeyValueDelimiter        = { fg = newpaper.persimona, style = style.d_style },
 
-            yamlConstant                 = { fg = newpaper.darkengreen, style = style.k_style  },
+            yamlConstant                 = { fg = newpaper.darkengreen, style = style.k_style },
 
-            yamlNull                     = { fg = newpaper.maroon,  style = style.k_style },
+            yamlNull                     = { fg = newpaper.maroon, style = style.k_style },
             yamlBool                     = { fg = newpaper.booleans, style = style.bool_style },
 
             -- yamlAnchor                   Type
@@ -62,17 +59,13 @@ function M.setup(configColors, configStyle)
     end
 
     yamlSyn.loadTreeSitter = function()
-
         local treesitter = {
             ["@constant.builtin.yaml"]    = { fg = newpaper.ocean, style = style.k_style },
             ["@property.yaml"]            = { fg = newpaper.ocean, style = style.f_style, nocombine = true },
             ["@punctuation.special.yaml"] = { fg = newpaper.magenta },
         }
-
         return treesitter
     end
-
-    -- stylua: ignore end
 
     return yamlSyn
 end

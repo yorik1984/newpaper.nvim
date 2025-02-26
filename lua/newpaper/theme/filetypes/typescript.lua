@@ -1,14 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-
-    -- stylua: ignore start
-
-    local typescriptSyn  = {}
-    typescriptSyn.colors = configColors
-    typescriptSyn.style  = configStyle
-    local newpaper       = typescriptSyn.colors
-    local style          = typescriptSyn.style
+    local typescriptSyn          = {}
+    typescriptSyn.colors         = configColors
+    typescriptSyn.style          = configStyle
+    local newpaper               = typescriptSyn.colors
+    local style                  = typescriptSyn.style
 
     typescriptSyn.loadTreeSitter = function()
         local treesitter = {
@@ -16,8 +13,6 @@ function M.setup(configColors, configStyle)
         }
         return treesitter
     end
-
-    -- stylua: ignore end
 
     return typescriptSyn
 end

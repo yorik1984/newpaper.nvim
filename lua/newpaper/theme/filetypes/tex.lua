@@ -1,16 +1,13 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
+    local tex          = {}
+    tex.colors         = configColors
+    tex.style          = configStyle
+    local newpaper     = tex.colors
+    local style        = tex.style
 
-    -- stylua: ignore start
-
-    local tex      = {}
-    tex.colors     = configColors
-    tex.style      = configStyle
-    local newpaper = tex.colors
-    local style    = tex.style
-
-    tex.loadSyntax = function()
+    tex.loadSyntax     = function()
         local syntax = {
             -- Basic tex groups
             -- NOTE:some basic groups init in Vimtex part. See below
@@ -49,7 +46,7 @@ function M.setup(configColors, configStyle)
             texOnlyMath       = { bg = newpaper.tex_only_math_error, sp = newpaper.tex_olive, style = style.error },
             texOption         = { fg = newpaper.tex_orange },
             texRefZone        = { fg = newpaper.tex_lightgreen },
-            texSection        = { fg = newpaper.tex_blue,    style = style.tex_m_style },
+            texSection        = { fg = newpaper.tex_blue, style = style.tex_m_style },
             texSpaceCode      = { fg = newpaper.tex_blue },
             texSpaceCodeChar  = { fg = newpaper.tex_maroon },
             texStatement      = { fg = newpaper.tex_keyword, style = style.tex_k_style },
@@ -69,7 +66,7 @@ function M.setup(configColors, configStyle)
             bibBrace          = { fg = newpaper.tex_teal },
             bibEntry          = { fg = newpaper.tex_keyword, style = style.tex_m_style },
             bibEntryData      = { fg = newpaper.tex_pink },
-            bibEntryKw        = { fg = newpaper.tex_blue, style = style.tex_k_style},
+            bibEntryKw        = { fg = newpaper.tex_blue, style = style.tex_k_style },
             bibField          = { fg = newpaper.tex_math, style = style.tex_o_style },
             bibKey            = { fg = newpaper.tex_darkorange },
             bibMath           = { fg = newpaper.tex_math },
@@ -83,7 +80,6 @@ function M.setup(configColors, configStyle)
     end
 
     tex.loadTreeSitter = function()
-
         local treesitter = {
             ["@function.latex"]               = { fg = newpaper.tex_navy },
             ["@function.macro.latex"]         = { fg = newpaper.tex_magenta },
@@ -114,19 +110,18 @@ function M.setup(configColors, configStyle)
             ["@variable.member.bibtex"]       = { fg = newpaper.tex_blue },
             ["@variable.parameter.bibtex"]    = { fg = newpaper.tex_orange },
         }
-
         return treesitter
     end
 
-    tex.loadPlugins = function()
+    tex.loadPlugins    = function()
         local plugins = {
             -- Vimtex groups
             -- NOTE:Some groups from tex basic syntax include this
 
-            texCmdType            = { fg = newpaper.tex_keyword, style = style.tex_k_style },
-            texParm               = { fg = newpaper.tex_maroon },
-            texZone               = { fg = newpaper.fg },
-            texSymbol             = { fg = newpaper.tex_maroon },
+            texCmdType                = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            texParm                   = { fg = newpaper.tex_maroon },
+            texZone                   = { fg = newpaper.fg },
+            texSymbol                 = { fg = newpaper.tex_maroon },
             -- texError             VimtexError
 
             -- texStyleBold          gui=bold                  cterm=bold
@@ -141,36 +136,36 @@ function M.setup(configColors, configStyle)
 
             -------------------------------------------------------------------
             -- texComment          Comment
-            texCommentTodo        = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.c_title },
-            texDelim              = { fg = newpaper.tex_lightpurple, style = style.tex_br_style }, -- {, }, [, and ]
-            texCmd                = { fg = newpaper.tex_blue, style = style.tex_k_style }, -- \CMD
-            texOpt                = { fg = newpaper.tex_orange }, -- \cmd[OPT]
-            texOptSep             = { fg = newpaper.tex_orange }, -- [a, b] (commas)
-            texOptEqual           = { fg = newpaper.tex_navy, style = style.tex_o_style }, -- [a=b]
-            texArg                = { fg = newpaper.tex_navy }, -- \cmd[...]{ARG}
-            texSpecialChar        = { fg = newpaper.tex_maroon, style = style.tex_o_style }, -- \S, \P, \$, \;, ...
-            texCmdInput           = { fg = newpaper.tex_blue, style = style.tex_k_style }, -- \INPUT \INCLUDE \INCLUDEONLY \INCLUDEGRAPHICS
-            texCmdBib             = { fg = newpaper.tex_blue, style = style.tex_k_style }, -- \BIBLIOGRAPHY \BIBLIOGRAPHYSTYLE
-            texCmdClass           = { fg = newpaper.tex_keyword, style = style.tex_m_style }, -- \DOCUMENTCLASS
-            texCmdPackage         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \USEPACKAGE \REQUIREPACKAGE
+            texCommentTodo            = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.c_title },
+            texDelim                  = { fg = newpaper.tex_lightpurple, style = style.tex_br_style }, -- {, }, [, and ]
+            texCmd                    = { fg = newpaper.tex_blue, style = style.tex_k_style },     -- \CMD
+            texOpt                    = { fg = newpaper.tex_orange },                              -- \cmd[OPT]
+            texOptSep                 = { fg = newpaper.tex_orange },                              -- [a, b] (commas)
+            texOptEqual               = { fg = newpaper.tex_navy, style = style.tex_o_style },     -- [a=b]
+            texArg                    = { fg = newpaper.tex_navy },                                -- \cmd[...]{ARG}
+            texSpecialChar            = { fg = newpaper.tex_maroon, style = style.tex_o_style },   -- \S, \P, \$, \;, ...
+            texCmdInput               = { fg = newpaper.tex_blue, style = style.tex_k_style },     -- \INPUT \INCLUDE \INCLUDEONLY \INCLUDEGRAPHICS
+            texCmdBib                 = { fg = newpaper.tex_blue, style = style.tex_k_style },     -- \BIBLIOGRAPHY \BIBLIOGRAPHYSTYLE
+            texCmdClass               = { fg = newpaper.tex_keyword, style = style.tex_m_style },  -- \DOCUMENTCLASS
+            texCmdPackage             = { fg = newpaper.tex_keyword, style = style.tex_k_style },  -- \USEPACKAGE \REQUIREPACKAGE
             -- texFileOpt           texOpt       \includegraphics[PACKAGE OPTIONS] \documentclass[CLASS OPTIONS]
-            texFileArg            = { fg = newpaper.tex_navy }, -- \input{FILE} \include{FILE} \includegraphics[...]{FILE} \bibliographystyle{FILE} \documentclass[...]{CLASS}
-            texFilesOpt           = { fg = newpaper.tex_orange }, -- \usepackage[PACKAGE OPTIONS] \RequirePackage[PACKAGE OPTIONS]
-            texFilesArg           = { fg = newpaper.tex_teal }, -- \includeonly{FILE1, FILE2} \bibliography{FILE1, FILE2} \usepackage[...]{PACKAGE1, PACKAGE2} \RequirePackage[...]{PACKAGE1, PACKAGE2}
-            texCmdTitle           = { fg = newpaper.tex_blue, style = style.tex_m_style }, -- \TITLE
-            texTitleArg           = { fg = newpaper.tex_navy, style = style.tex_m_style }, -- \title{MAIN TITLE}
-            texCmdAuthor          = { fg = newpaper.tex_keyword, style = style.tex_m_style }, -- \AUTHOR
+            texFileArg                = { fg = newpaper.tex_navy },                                -- \input{FILE} \include{FILE} \includegraphics[...]{FILE} \bibliographystyle{FILE} \documentclass[...]{CLASS}
+            texFilesOpt               = { fg = newpaper.tex_orange },                              -- \usepackage[PACKAGE OPTIONS] \RequirePackage[PACKAGE OPTIONS]
+            texFilesArg               = { fg = newpaper.tex_teal },                                -- \includeonly{FILE1, FILE2} \bibliography{FILE1, FILE2} \usepackage[...]{PACKAGE1, PACKAGE2} \RequirePackage[...]{PACKAGE1, PACKAGE2}
+            texCmdTitle               = { fg = newpaper.tex_blue, style = style.tex_m_style },     -- \TITLE
+            texTitleArg               = { fg = newpaper.tex_navy, style = style.tex_m_style },     -- \title{MAIN TITLE}
+            texCmdAuthor              = { fg = newpaper.tex_keyword, style = style.tex_m_style },  -- \AUTHOR
             -- texAuthorOpt         texOpt       \author[OPT]
-            texAuthorArg          = { fg = newpaper.tex_navy }, -- \author[...]{AUTHOR LIST}
+            texAuthorArg              = { fg = newpaper.tex_navy },                                -- \author[...]{AUTHOR LIST}
             -- texBasicCmd           texCmd
             -- texBasicOpt           texOpt
             -- texBasicDelimiter     texDelim
-            texCmdPart            = { fg = newpaper.tex_blue, style = style.tex_m_style }, -- \(SUB*)SECTION
-            texPartArgTitle       = { fg = newpaper.tex_part_title, style = style.tex_m_style }, -- \(sub*)section{TITLE}
-            texCmdEnv             = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
-            texEnvArgName         = { fg = newpaper.tex_darkorange, style = style.italic }, -- \begin{ENVNAME}
-            texCmdRef             = { fg = newpaper.tex_lightgreen }, -- \CITE; \LABEL
-            texRefArg             = { fg = newpaper.tex_aqua }, -- \cite{REFERENCE}; \label{REF}
+            texCmdPart                = { fg = newpaper.tex_blue, style = style.tex_m_style },   -- \(SUB*)SECTION
+            texPartArgTitle           = { fg = newpaper.tex_part_title, style = style.tex_m_style }, -- \(sub*)section{TITLE}
+            texCmdEnv                 = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
+            texEnvArgName             = { fg = newpaper.tex_darkorange, style = style.italic },  -- \begin{ENVNAME}
+            texCmdRef                 = { fg = newpaper.tex_lightgreen },                        -- \CITE; \LABEL
+            texRefArg                 = { fg = newpaper.tex_aqua },                              -- \cite{REFERENCE}; \label{REF}
             -- texE3Variable        texCmd          \G_MYFILE_NAME_STR
             -- texE3Constant        texE3Variable   \C_MYFILE_NAME_STR
             -- texE3Function        texCmdType      \STR_NEW:n
@@ -179,86 +174,86 @@ function M.setup(configColors, configStyle)
             -- texBoxOptPosVal      texSymbol       \parbox[P][h][i]{w}{c} \begin{minipage}[P][h][i]{w}
             -- texBoxOptIPosVal     texBoxOptPosVal \parbox[p][h][I]{w}{c} \begin{minipage}[p][h][I]{w}
             -------------------------------------------------------------------
-            texMathZone           = { fg = newpaper.tex_math },
+            texMathZone               = { fg = newpaper.tex_math },
             -- texMathZoneLI            texMathZone       \( HERE \)
             -- texMathZoneLD            texMathZone       \[ HERE \]
-            texMathZoneTI         = { fg = newpaper.tex_math, style = style.italic }, -- $ HERE $
-            texMathZoneTD         = { fg = newpaper.tex_math }, -- $$ HERE $$
-            texMathZoneEnv        = { fg = newpaper.tex_math }, -- \begin{menv}  HERE \end{menv}
-            texMathZoneEnvStarred = { fg = newpaper.tex_math }, -- \begin{menv*} HERE \end{menv*}
-            texMathZoneEnsured    = { fg = newpaper.tex_math, style = style.italic }, -- \ensuremath{HERE}
-            texMathDelimZone      = { fg = newpaper.tex_olive, style = style.tex_md_style },
+            texMathZoneTI             = { fg = newpaper.tex_math, style = style.italic }, -- $ HERE $
+            texMathZoneTD             = { fg = newpaper.tex_math },                   -- $$ HERE $$
+            texMathZoneEnv            = { fg = newpaper.tex_math },                   -- \begin{menv}  HERE \end{menv}
+            texMathZoneEnvStarred     = { fg = newpaper.tex_math },                   -- \begin{menv*} HERE \end{menv*}
+            texMathZoneEnsured        = { fg = newpaper.tex_math, style = style.italic }, -- \ensuremath{HERE}
+            texMathDelimZone          = { fg = newpaper.tex_olive, style = style.tex_md_style },
             -- texMathDelimZoneLI       texMathDelimZone  \(; \)
             -- texMathDelimZoneLD       texMathDelimZone  \[; \]
             -- texMathDelimZoneTI       texMathDelimZone  $
             -- texMathDelimZoneTD       texMathDelimZone  $$
-            texCmdMathEnv         = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
+            texCmdMathEnv             = { fg = newpaper.tex_keyword, style = style.tex_k_style }, -- \BEGIN; \END
             -- (Only for math environments)
-            texMathEnvArgName     = { fg = newpaper.tex_olive, style = style.italic }, -- \begin{EQUATION}
-            texCmdMath            = { fg = newpaper.tex_math_cmd, style = style.tex_m_style }, -- \ENSUREMATH
-            texMathDelim          = { fg = newpaper.tex_math_delim }, -- \LVERT
-            texMathDelimMod       = { fg = newpaper.tex_math_delim, style = style.tex_k_style }, -- \LEFT\lvert \RIGHT\rvert
-            texMathOper           = { fg = newpaper.tex_operator, style = style.tex_o_style }, -- Basic operators: +-=/
-            texMathSuperSub       = { fg = newpaper.tex_pink }, -- Sub and super operators (^, _)
+            texMathEnvArgName         = { fg = newpaper.tex_olive, style = style.italic },       -- \begin{EQUATION}
+            texCmdMath                = { fg = newpaper.tex_math_cmd, style = style.tex_m_style }, -- \ENSUREMATH
+            texMathDelim              = { fg = newpaper.tex_math_delim },                        -- \LVERT
+            texMathDelimMod           = { fg = newpaper.tex_math_delim, style = style.tex_k_style }, -- \LEFT\lvert \RIGHT\rvert
+            texMathOper               = { fg = newpaper.tex_operator, style = style.tex_o_style }, -- Basic operators: +-=/
+            texMathSuperSub           = { fg = newpaper.tex_pink },                              -- Sub and super operators (^, _)
             -------------------------------------------------------------------
-            texLength             = { fg = newpaper.tex_red }, -- Length units, e.g. "4 cm". Only when contained e.g. in option groups.
-            texLigature           = { fg = newpaper.tex_maroon, style = style.tex_o_style }, -- --; ---; ``; ''; ,,
-            texCmdAccent          = { fg = newpaper.tex_navy, style = style.tex_k_style }, -- \"{a}
-            texCmdLigature        = { fg = newpaper.tex_navy }, -- \ss; \ae
-            texCmdSpaceCodeChar   = { fg = newpaper.tex_maroon }, -- Catcodes. For more info, see: https://en.wikibooks.org/wikicatcode
-            texCmdTodo            = { fg = newpaper.todo_info, style = style.b_bold },-- \TODOSOMETHING
+            texLength                 = { fg = newpaper.tex_red },                               -- Length units, e.g. "4 cm". Only when contained e.g. in option groups.
+            texLigature               = { fg = newpaper.tex_maroon, style = style.tex_o_style }, -- --; ---; ``; ''; ,,
+            texCmdAccent              = { fg = newpaper.tex_navy, style = style.tex_k_style },   -- \"{a}
+            texCmdLigature            = { fg = newpaper.tex_navy },                              -- \ss; \ae
+            texCmdSpaceCodeChar       = { fg = newpaper.tex_maroon },                            -- Catcodes. For more info, see: https://en.wikibooks.org/wikicatcode
+            texCmdTodo                = { fg = newpaper.todo_info, style = style.b_bold },       -- \TODOSOMETHING
             -- texCmdWarning       VimtexWarning
             -- texCmdError         VimtexError
             -- texCmdFatal         VimtexFatal
-            texCmdVerb            = { fg = newpaper.tex_verb, style = style.tex_m_style }, -- \VERB
-            texVerbZoneInline     = { fg = newpaper.tex_verb }, -- \verb+VERB TEXT+
-            texVerbZone           = { fg = newpaper.tex_verb }, -- \begin{verbatim} VERB TEXT \end{verbatim}
+            texCmdVerb                = { fg = newpaper.tex_verb, style = style.tex_m_style }, -- \VERB
+            texVerbZoneInline         = { fg = newpaper.tex_verb },                        -- \verb+VERB TEXT+
+            texVerbZone               = { fg = newpaper.tex_verb },                        -- \begin{verbatim} VERB TEXT \end{verbatim}
             -- texCmdDef           texCmdNew       \DEF
-            texDefArgName         = { fg = newpaper.tex_navy }, -- \def\NAME
-            texDefParm            = { fg = newpaper.tex_orange }, -- \def\name #1
-            texCmdItem            = { fg = newpaper.tex_string }, -- \item
+            texDefArgName             = { fg = newpaper.tex_navy },                        -- \def\NAME
+            texDefParm                = { fg = newpaper.tex_orange },                      -- \def\name #1
+            texCmdItem                = { fg = newpaper.tex_string },                      -- \item
 
             -- Inherited groups -----------------------------------------------
-            texGroupError         = { bg = newpaper.tex_group_error, sp = newpaper.tex_aqua, style = style.error },
+            texGroupError             = { bg = newpaper.tex_group_error, sp = newpaper.tex_aqua, style = style.error },
             -- texItemLabel          texOpt
             -- texItemLabelConcealed texItemLabel
-            texMinipageOptHeight  = { fg = newpaper.tex_red },
-            texMinipageOptIPos    = { fg = newpaper.tex_redorange },
-            texMinipageOptPos     = { fg = newpaper.tex_redorange },
-            texMathError          = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
-            texMathErrorDelim     = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_math_delim, style = style.error },
-            texParboxOptHeight    = { fg = newpaper.tex_red },
-            texParboxOptIPos      = { fg = newpaper.tex_orange },
-            texParboxOptPos       = { fg = newpaper.tex_orange },
+            texMinipageOptHeight      = { fg = newpaper.tex_red },
+            texMinipageOptIPos        = { fg = newpaper.tex_redorange },
+            texMinipageOptPos         = { fg = newpaper.tex_redorange },
+            texMathError              = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
+            texMathErrorDelim         = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_math_delim, style = style.error },
+            texParboxOptHeight        = { fg = newpaper.tex_red },
+            texParboxOptIPos          = { fg = newpaper.tex_orange },
+            texParboxOptPos           = { fg = newpaper.tex_orange },
             -- texPartConcealed      texCmdPart
             -- texPartConcArgTitle   texPartArgTitle
-            texArgNew             = { link = 'texArg' },
+            texArgNew                 = { link = 'texArg' },
             -- texBibitemArg         texArg
             -- texBibitemOpt         texOpt
             -- texCmdBibitem         texCmd
-            texCmdConditional     = { fg = newpaper.tex_keyword, style = style.tex_k_style },
+            texCmdConditional         = { fg = newpaper.tex_keyword, style = style.tex_k_style },
             -- texCmdConditionalINC  texCmdConditional
             -- texCmdEnvM            texCmdEnv
             -- texCmdE3              texCmd
             -- texCmdFootnote        texCmd
-            texCmdGreek           = { fg = newpaper.tex_math, style = style.italic },
+            texCmdGreek               = { fg = newpaper.tex_math, style = style.italic },
             -- texCmdLet             texCmdNew
-            texCmdNew             = { fg = newpaper.tex_magenta, style = style.tex_k_style },
+            texCmdNew                 = { fg = newpaper.tex_magenta, style = style.tex_k_style },
             -- texCmdNewcmd          texCmdNew
-            texCmdNewenv          = { fg = newpaper.tex_magenta },
-            texCmdNewthm          = { fg = newpaper.tex_magenta },
+            texCmdNewenv              = { fg = newpaper.tex_magenta },
+            texCmdNewthm              = { fg = newpaper.tex_magenta },
             -- texCmdNoSpell         texCmd
-            texCmdRefConcealed    = { fg = newpaper.tex_lightgreen },
-            texCmdSize            = { fg = newpaper.tex_navy },
-            texCmdSpaceCode       = { fg = newpaper.tex_blue },
-            texCmdStyle           = { fg = newpaper.tex_navy },
-            texCmdStyleBold       = { fg = newpaper.tex_navy, style = style.bold },
-            texCmdStyleBoldItal   = { fg = newpaper.tex_navy, style = style.bold_i },
-            texCmdStyleItal       = { fg = newpaper.tex_navy, style = style.italic },
-            texCmdStyleItalBold   = { fg = newpaper.tex_navy, style = style.bold_i },
-            texCommentAcronym     = { fg = newpaper.comments, style = style.c_title },
+            texCmdRefConcealed        = { fg = newpaper.tex_lightgreen },
+            texCmdSize                = { fg = newpaper.tex_navy },
+            texCmdSpaceCode           = { fg = newpaper.tex_blue },
+            texCmdStyle               = { fg = newpaper.tex_navy },
+            texCmdStyleBold           = { fg = newpaper.tex_navy, style = style.bold },
+            texCmdStyleBoldItal       = { fg = newpaper.tex_navy, style = style.bold_i },
+            texCmdStyleItal           = { fg = newpaper.tex_navy, style = style.italic },
+            texCmdStyleItalBold       = { fg = newpaper.tex_navy, style = style.bold_i },
+            texCommentAcronym         = { fg = newpaper.comments, style = style.c_title },
             -- texCommentFalse       texComment
-            texCommentURL         = { fg = newpaper.comments, style = style.c_underline },
+            texCommentURL             = { fg = newpaper.comments, style = style.c_underline },
             -- texConcealedArg       texArg
             -- texConcealedArgGroup  texConcealedArg
             -- texConditionalArg     texArg
@@ -267,23 +262,23 @@ function M.setup(configColors, configStyle)
             -- texE3Delim            texDelim
             -- texE3Opt              texOpt
             -- texE3Parm             texParm
-            texEnvOpt             = { fg = newpaper.tex_redorange },
-            texEnvMArgName        = { fg = newpaper.tex_math, style = style.italic },
+            texEnvOpt                 = { fg = newpaper.tex_redorange },
+            texEnvMArgName            = { fg = newpaper.tex_math, style = style.italic },
             -- texLetArgEqual        texSymbol
             -- texLetArgName         texArgNew
             -- texMathArg            texMathZone
             -- texMathArrayArg       texOpt
-            texMathCmd            = { fg = newpaper.tex_math_cmd },
+            texMathCmd                = { fg = newpaper.tex_math_cmd },
             -- texMathCmdStyle       texMathCmd
-            texMathCmdStyleBold   = { fg = newpaper.tex_math_cmd, style = style.bold },
-            texMathCmdStyleItal   = { fg = newpaper.tex_math_cmd, style = style.italic },
-            texMathCmdText        = { fg = newpaper.tex_navy },
-            texMathTextConcArg    = { fg = newpaper.tex_string },
+            texMathCmdStyleBold       = { fg = newpaper.tex_math_cmd, style = style.bold },
+            texMathCmdStyleItal       = { fg = newpaper.tex_math_cmd, style = style.italic },
+            texMathCmdText            = { fg = newpaper.tex_navy },
+            texMathTextConcArg        = { fg = newpaper.tex_string },
             -- texMathGroup          texMathZone
             -- texMathStyleConcArg   texMathZone
             -- texMathSub            texMathZone
             -- texMathSuper          texMathZone
-            texMathSymbol         = { fg = newpaper.tex_math_delim },
+            texMathSymbol             = { fg = newpaper.tex_math_delim },
             -- texNewcmdArgName      texArgNew
             -- texNewcmdOpt          texOpt
             -- texNewcmdParm         texParm
@@ -297,29 +292,29 @@ function M.setup(configColors, configStyle)
             -- texRefOpt             texOpt
             -- texRefConcealedOpt1   texRefOpt
             -- texRefConcealedOpt2   texRefOpt
-            texRefConcealedArg    = { fg = newpaper.tex_lightviolet },
-            texRefConcealedDelim  = { fg = newpaper.tex_lightviolet, style = style.tex_br_style },
+            texRefConcealedArg        = { fg = newpaper.tex_lightviolet },
+            texRefConcealedDelim      = { fg = newpaper.tex_lightviolet, style = style.tex_br_style },
             -- texRefConcealedPOpt1  texRefOpt
             -- texRefConcealedPOpt2  texRefOpt
             -- texRefConcealedPArg   texRefArg
             -- texRefConcealedPDelim texDelim
             -- texTabularArg         texOpt
             -- texTabularAtSep       texMathDelim
-            texTabularChar        = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
-            texTabularCol         = { fg = newpaper.tex_blue },
+            texTabularChar            = { fg = newpaper.tex_lightpurple, style = style.tex_o_style },
+            texTabularCol             = { fg = newpaper.tex_blue },
             -- texTabularOpt         texEnvOpt
-            texTabularVertline    = { fg = newpaper.tex_math,   style = style.tex_o_style },
-            texTheoremEnvOpt      = { fg = newpaper.tex_string, style = style.s_style },
+            texTabularVertline        = { fg = newpaper.tex_math, style = style.tex_o_style },
+            texTheoremEnvOpt          = { fg = newpaper.tex_string, style = style.s_style },
 
             -- no highlighting in syntax files ================================
-            texCmdTabular         = { fg = newpaper.tex_teal, style = style.tex_k_style },
-            texTabularLength      = { fg = newpaper.tex_red },
+            texCmdTabular             = { fg = newpaper.tex_teal, style = style.tex_k_style },
+            texTabularLength          = { fg = newpaper.tex_red },
             -- texNewenvArgBegin
             -- texNewenvArgEnd
-            texMinipageArgWidth   = { fg = newpaper.tex_navy },
-            texParboxArgWidth     = { fg = newpaper.tex_red },
-            texNewthmArgPrinted   = { fg = newpaper.tex_part_title },
-            texMathTagArg         = { fg = newpaper.tex_aqua },
+            texMinipageArgWidth       = { fg = newpaper.tex_navy },
+            texParboxArgWidth         = { fg = newpaper.tex_red },
+            texNewthmArgPrinted       = { fg = newpaper.tex_part_title },
+            texMathTagArg             = { fg = newpaper.tex_aqua },
             -- texMathCmdEnv
 
             -- amsmath.vim ----------------------------------------------------
@@ -332,7 +327,7 @@ function M.setup(configColors, configStyle)
             -- texRefEqConcealedDelim texDelim
             -- texDeclmathoperArgName texArgNew
             -- texDeclmathoperArgBody texMathZone
-            texMathConcealedArg    = { fg = newpaper.tex_math },
+            texMathConcealedArg       = { fg = newpaper.tex_math },
             -- texNumberWithinArg1    texArg
             -- texNumberWithinArg2    texArg
             -- texOpnameArg           texMathZone
@@ -341,44 +336,44 @@ function M.setup(configColors, configStyle)
 
             -- amsthm.vim -----------------------------------------------------
             -- texCmdThmStyle texCmd
-            texProofEnvOpt = { fg = newpaper.tex_string, style = style.s_style },
+            texProofEnvOpt            = { fg = newpaper.tex_string, style = style.s_style },
             -- texThmStyleArg texArg
 
             -- array.vim ------------------------------------------------------
-            texTabularCmd        = { fg = newpaper.tex_teal, style = style.tex_k_style },
+            texTabularCmd             = { fg = newpaper.tex_teal, style = style.tex_k_style },
             -- texTabularCmdOpt     texOpt
-            texTabularPostPre    = { fg = newpaper.tex_math, style = style.tex_o_style },
+            texTabularPostPre         = { fg = newpaper.tex_math, style = style.tex_o_style },
             -- texTabularMathdelim  texMathDelimZone
 
-            texCmdNewcolumn      = { fg = newpaper.tex_magenta },
-            texCmdNewcolumnName  = { fg = newpaper.tex_navy, style = style.tex_k_style },
+            texCmdNewcolumn           = { fg = newpaper.tex_magenta },
+            texCmdNewcolumnName       = { fg = newpaper.tex_navy, style = style.tex_k_style },
             -- texNewcolumnArgName  texArg
             -- texNewcolumnOpt      texOpt
             -- texNewcolumnParm     texParm
-            texTabularMulti      = { fg = newpaper.tex_red },
+            texTabularMulti           = { fg = newpaper.tex_red },
 
             -- asymptote.vim --------------------------------------------------
-            texAsymptoteZone = { fg = newpaper.tex_verb },
+            texAsymptoteZone          = { fg = newpaper.tex_verb },
 
             -- beamer.vim -----------------------------------------------------
-            texCmdBeamer   = { fg = newpaper.tex_navy,        style = style.tex_m_style },
-            texBeamerOpt   = { fg = newpaper.tex_orange,      style = style.tex_m_style },
-            texBeamerDelim = { fg = newpaper.tex_lightpurple, style = style.tex_m_style },
+            texCmdBeamer              = { fg = newpaper.tex_navy, style = style.tex_m_style },
+            texBeamerOpt              = { fg = newpaper.tex_orange, style = style.tex_m_style },
+            texBeamerDelim            = { fg = newpaper.tex_lightpurple, style = style.tex_m_style },
 
             -- biblatex.vim ---------------------------------------------------
             -- texRefArgs texRefArg
             -- texRefOpts texRefOpt
 
             -- booktabs.vim ---------------------------------------------------
-            texCmdBooktabs = { fg = newpaper.tex_math_delim, style = style.tex_k_style },
+            texCmdBooktabs            = { fg = newpaper.tex_math_delim, style = style.tex_k_style },
 
             -- chemformula.vim ------------------------------------------------
-            texCmdCH       = { fg = newpaper.tex_ch_brown,  style = style.tex_k_style },
-            texMathCmdCH   = { fg = newpaper.tex_ch_green,  style = style.tex_k_style },
-            texCHOpt       = { fg = newpaper.tex_ch_orange, style = style.tex_k_style },
-            texCHArg       = { fg = newpaper.tex_ch_blue,   style = style.tex_k_style },
-            texCHSymb      = { fg = newpaper.tex_ch_red,    style = style.tex_k_style },
-            texCHText      = { fg = newpaper.tex_verb,      style = style.tex_string },
+            texCmdCH                  = { fg = newpaper.tex_ch_brown, style = style.tex_k_style },
+            texMathCmdCH              = { fg = newpaper.tex_ch_green, style = style.tex_k_style },
+            texCHOpt                  = { fg = newpaper.tex_ch_orange, style = style.tex_k_style },
+            texCHArg                  = { fg = newpaper.tex_ch_blue, style = style.tex_k_style },
+            texCHSymb                 = { fg = newpaper.tex_ch_red, style = style.tex_k_style },
+            texCHText                 = { fg = newpaper.tex_verb, style = style.tex_string },
 
             -- cleveref.vim ---------------------------------------------------
             --  texCRefArg           texRefArg
@@ -391,12 +386,12 @@ function M.setup(configColors, configStyle)
             --  texCRNameArgPlural   texCRNameArgSingular
 
             -- csquotes.vim ---------------------------------------------------
-            texCmdQuote = { fg = newpaper.tex_quotes, style = style.tex_k_style },
+            texCmdQuote               = { fg = newpaper.tex_quotes, style = style.tex_k_style },
             -- no highlighting in syntax files ================================
-            texQuoteArg = { fg = newpaper.tex_navy },
+            texQuoteArg               = { fg = newpaper.tex_navy },
 
             -- dot2tex.vim ----------------------------------------------------
-            texDotZone = { fg = newpaper.tex_verb },
+            texDotZone                = { fg = newpaper.tex_verb },
 
             -- fixme.vim ------------------------------------------------------
             -- texFixmeEnvBgn        texCmdTodo
@@ -422,21 +417,21 @@ function M.setup(configColors, configStyle)
             -- texCmdAcr         texCmd
             -- texCmdNewAcr      texCmdNew
             -- texNewAcrOpt      texOpt
-            texNewAcrArgLong  = { fg = newpaper.tex_string },
-            texNewAcrArgLabel = { fg = newpaper.tex_navy },
-            texAcrArgLabel    = { fg = newpaper.tex_navy },
-            texGlsArg         = { fg = newpaper.tex_navy },
-            texNewAcrArgAbbr  = { fg = newpaper.tex_math },
+            texNewAcrArgLong          = { fg = newpaper.tex_string },
+            texNewAcrArgLabel         = { fg = newpaper.tex_navy },
+            texAcrArgLabel            = { fg = newpaper.tex_navy },
+            texGlsArg                 = { fg = newpaper.tex_navy },
+            texNewAcrArgAbbr          = { fg = newpaper.tex_math },
 
             -- gnuplottex.vim -------------------------------------------------
-            texGnuplotZone = { fg = newpaper.tex_verb },
+            texGnuplotZone            = { fg = newpaper.tex_verb },
 
             -- hyperref.vim ---------------------------------------------------
             -- texCmdHyperref   texCmd
-            texHrefArgLink   = { fg = newpaper.tex_navy, style = style.underline },
+            texHrefArgLink            = { fg = newpaper.tex_navy, style = style.underline },
             -- texHrefArgTextC  texArg
             -- texHrefLinkGroup texHrefArgLink
-            texUrlArg        = { fg = newpaper.tex_navy, style = style.underline },
+            texUrlArg                 = { fg = newpaper.tex_navy, style = style.underline },
             -- texTOPSArgPdf    texOpt
 
             -- ieeetrantools.vim ----------------------------------------------
@@ -444,80 +439,80 @@ function M.setup(configColors, configStyle)
             -- texMathEnvIEEEOpt texOpt
 
             -- listings.vim ---------------------------------------------------
-            texCmdLstset     = { fg = newpaper.tex_verb, style = style.tex_m_style },
+            texCmdLstset              = { fg = newpaper.tex_verb, style = style.tex_m_style },
             -- texLstDelim      texDelim
             -- texLstInlineOpt  texOpt
-            texLstOpt        = { fg = newpaper.tex_redorange },
-            texLstZone       = { fg = newpaper.tex_verb },
+            texLstOpt                 = { fg = newpaper.tex_redorange },
+            texLstZone                = { fg = newpaper.tex_verb },
             -- texLstZoneInline texVerbZoneInline
-            texLstsetArg     = { link = 'texArg' },
+            texLstsetArg              = { link = 'texArg' },
 
             -- luacode.vim ----------------------------------------------------
-            texCmdLua = { fg = newpaper.lua_navy, style = style.tex_m_style  },
+            texCmdLua                 = { fg = newpaper.lua_navy, style = style.tex_m_style },
             -- no highlighting in syntax files ================================
-            texLuaZone = { fg = newpaper.tex_verb },
-            texLuaArg  = { fg = newpaper.tex_verb },
+            texLuaZone                = { fg = newpaper.tex_verb },
+            texLuaArg                 = { fg = newpaper.tex_verb },
 
             -- mathtools.vim --------------------------------------------------
-            texMathToolsOptPos1  = { link = 'texEnvOpt' },
-            texMathToolsOptPos2  = { link = 'texEnvOpt' },
-            texMathToolsOptWidth = { fg = newpaper.tex_pink },
+            texMathToolsOptPos1       = { link = 'texEnvOpt' },
+            texMathToolsOptPos2       = { link = 'texEnvOpt' },
+            texMathToolsOptWidth      = { fg = newpaper.tex_pink },
 
             -- minted.vim -----------------------------------------------------
-            texCmdMinted        = { fg = newpaper.tex_verb, style = style.tex_m_style },
-            texCmdNewmint       = { fg = newpaper.tex_magenta },
+            texCmdMinted              = { fg = newpaper.tex_verb, style = style.tex_m_style },
+            texCmdNewmint             = { fg = newpaper.tex_magenta },
             -- texMintedArg        texSymbol
             -- texMintedEnvArg     texSymbol
             -- texMintedEnvArgOpt  texOpt
-            texMintedEnvOpt     = { fg = newpaper.tex_redorange },
-            texMintedOpt        = { fg = newpaper.tex_redorange },
-            texMintedZone       = { fg = newpaper.tex_verb },
-            texMintedZoneInline = { fg = newpaper.tex_verb },
+            texMintedEnvOpt           = { fg = newpaper.tex_redorange },
+            texMintedOpt              = { fg = newpaper.tex_redorange },
+            texMintedZone             = { fg = newpaper.tex_verb },
+            texMintedZoneInline       = { fg = newpaper.tex_verb },
             -- texNewmintArgOpts   texOpt
             -- texNewmintArgX      texSymbol
             -- texNewmintArgY      texComment
             -- texNewmintOpt       texSymbol
 
             -- nameref.vim ----------------------------------------------------
-            texCmdNameref = { fg = newpaper.tex_lightgreen },
+            texCmdNameref             = { fg = newpaper.tex_lightgreen },
 
             -- pgfplots.vim ---------------------------------------------------
-            texCmdAxis        = { fg = newpaper.tex_tikz_purple },
-            texPgfNode        = { fg = newpaper.tex_tikz_purple },
-            texPgfType        = { fg = newpaper.tex_tikz_green},
-            texPgfFunc        = { fg = newpaper.tex_tikz_verb },
-            texPgfTableArg    = { fg = newpaper.tex_tikz_navy },
-            texPgfCoordinates = { fg = newpaper.tex_tikz_orange },
-            texPgfAddplotOpt  = { fg = newpaper.tex_tikz_orange },
-            texPgfTableOpt    = { fg = newpaper.tex_tikz_orange },
+            texCmdAxis                = { fg = newpaper.tex_tikz_purple },
+            texPgfNode                = { fg = newpaper.tex_tikz_purple },
+            texPgfType                = { fg = newpaper.tex_tikz_green },
+            texPgfFunc                = { fg = newpaper.tex_tikz_verb },
+            texPgfTableArg            = { fg = newpaper.tex_tikz_navy },
+            texPgfCoordinates         = { fg = newpaper.tex_tikz_orange },
+            texPgfAddplotOpt          = { fg = newpaper.tex_tikz_orange },
+            texPgfTableOpt            = { fg = newpaper.tex_tikz_orange },
             -- no highlighting in syntax files ================================
-            texPgfGnuplotArg = { fg = newpaper.tex_tikz_navy },
+            texPgfGnuplotArg          = { fg = newpaper.tex_tikz_navy },
 
             -- pythontex.vim --------------------------------------------------
-            texCmdPythontex = { fg = newpaper.python_blue, style = style.tex_m_style },
+            texCmdPythontex           = { fg = newpaper.python_blue, style = style.tex_m_style },
             -- no highlighting in syntax files ================================
-            texPythontexZone = { fg = newpaper.tex_verb },
-            texPythontexArg  = { fg = newpaper.tex_verb },
+            texPythontexZone          = { fg = newpaper.tex_verb },
+            texPythontexArg           = { fg = newpaper.tex_verb },
 
             -- pyluatex.vim ---------------------------------------------------
-            texCmdPyluatex = { fg = newpaper.python_blue, style = style.tex_m_style },
+            texCmdPyluatex            = { fg = newpaper.python_blue, style = style.tex_m_style },
 
             -- sagetex.vim ----------------------------------------------------
-            texCmdSagetex  = { fg = newpaper.tex_math, style = style.tex_k_style },
+            texCmdSagetex             = { fg = newpaper.tex_math, style = style.tex_k_style },
 
             -- siunitx.vim ----------------------------------------------------
-            texCmdSI       = { fg = newpaper.tex_SI_purple, style = style.tex_k_style },
-            texMathCmdSI   = { fg = newpaper.tex_SI_green, style = style.tex_k_style },
-            texSICmd       = { fg = newpaper.tex_SI_green },
-            texSIDelim     = { fg = newpaper.tex_SI_magenta },
-            texSIOpt       = { fg = newpaper.tex_SI_orange },
-            texSIOptU      = { fg = newpaper.tex_SI_yellow },
+            texCmdSI                  = { fg = newpaper.tex_SI_purple, style = style.tex_k_style },
+            texMathCmdSI              = { fg = newpaper.tex_SI_green, style = style.tex_k_style },
+            texSICmd                  = { fg = newpaper.tex_SI_green },
+            texSIDelim                = { fg = newpaper.tex_SI_magenta },
+            texSIOpt                  = { fg = newpaper.tex_SI_orange },
+            texSIOptU                 = { fg = newpaper.tex_SI_yellow },
             -- texSIOptN      texSIOpt
-            texSIOptNN     = { link = 'texSIOpt'},
+            texSIOptNN                = { link = 'texSIOpt' },
             -- texSIOptNU     texSIOpt
             -- texSIOptNNU    texSIOpt
-            texSIArgUnit   = { fg = newpaper.tex_SI_navy },
-            texSIArgNum    = { fg = newpaper.tex_SI_red },
+            texSIArgUnit              = { fg = newpaper.tex_SI_navy },
+            texSIArgNum               = { fg = newpaper.tex_SI_red },
             -- texSIArgNumN   texSIArgNum
             -- texSIArgNumU   texSIArgNum
             -- texSIArgNumNU  texSIArgNum
@@ -529,24 +524,24 @@ function M.setup(configColors, configStyle)
             -- texTabularxOpt         texEnvOpt
 
             -- tcolorbox.vim --------------------------------------------------
-            texTCBZone = { fg = newpaper.tex_verb },
+            texTCBZone                = { fg = newpaper.tex_verb },
             -- texTCBEnvArg texArg
 
             -- tikz.vim -------------------------------------------------------
-            texCmdTikz       = { fg = newpaper.tex_tikz_purple },
-            texCmdTikzset    = { fg = newpaper.tex_tikz_purple },
-            texTikzNodeOpt   = { fg = newpaper.tex_tikz_orange },
-            texTikzSemicolon = { fg = newpaper.tex_tikz_purple },
-            texTikzDraw      = { fg = newpaper.tex_tikz_purple },
-            texTikzCycle     = { fg = newpaper.tex_tikz_green },
-            texTikzsetArg    = { fg = newpaper.tex_tikz_navy },
-            texTikzOpt       = { fg = newpaper.tex_tikz_orange },
+            texCmdTikz                = { fg = newpaper.tex_tikz_purple },
+            texCmdTikzset             = { fg = newpaper.tex_tikz_purple },
+            texTikzNodeOpt            = { fg = newpaper.tex_tikz_orange },
+            texTikzSemicolon          = { fg = newpaper.tex_tikz_purple },
+            texTikzDraw               = { fg = newpaper.tex_tikz_purple },
+            texTikzCycle              = { fg = newpaper.tex_tikz_green },
+            texTikzsetArg             = { fg = newpaper.tex_tikz_navy },
+            texTikzOpt                = { fg = newpaper.tex_tikz_orange },
             -- no highlighting in syntax files ================================
-            texTikzZone      = { fg = newpaper.tex_tikz_verb },
-            texTikzEnvBgn    = { fg = newpaper.tex_tikz_purple },
+            texTikzZone               = { fg = newpaper.tex_tikz_verb },
+            texTikzEnvBgn             = { fg = newpaper.tex_tikz_purple },
 
             -- todonotes.vim --------------------------------------------------
-            texTodoOpt = { fg = newpaper.todo_info },
+            texTodoOpt                = { fg = newpaper.todo_info },
 
             -- vimtex highlights ------------------------------------------
             VimtexImapsArrow          = { fg = newpaper.tex_math, style = style.b_bold },
@@ -561,7 +556,7 @@ function M.setup(configColors, configStyle)
             VimtexMsg                 = { fg = newpaper.info_fg },
             VimtexSuccess             = { fg = newpaper.tex_math, style = style.b_bold },
             -- VimtexTocHelp          helpVim,
-            VimtexTocHelpKey          = { fg = newpaper.tex_blue,    style = style.b_bold },
+            VimtexTocHelpKey          = { fg = newpaper.tex_blue, style = style.b_bold },
             VimtexTocHelpLayerOn      = { fg = newpaper.tex_keyword, style = style.b_bold },
             -- VimtexTocHelpLayerOff  Comment,
             VimtexTocHelpKeySeparator = { fg = newpaper.tex_orange },
@@ -570,10 +565,10 @@ function M.setup(configColors, configStyle)
             VimtexTocSec0             = { link = "texPartArgTitle" },
             VimtexTocSec1             = { fg = newpaper.tex_part_title },
             VimtexTocSec2             = { fg = newpaper.fg },
-            VimtexTocSec3             = { fg = newpaper.fg, style= style.s_style },
+            VimtexTocSec3             = { fg = newpaper.fg, style = style.s_style },
             VimtexTocSec4             = { fg = newpaper.tex_verb },
             -- VimtexTocHotkey        Comment,
-            VimtexTocLabelsSecs       = { fg = newpaper.tex_aqua, style= style.tex_m_style },
+            VimtexTocLabelsSecs       = { fg = newpaper.tex_aqua, style = style.tex_m_style },
             VimtexTocLabelsEq         = { fg = newpaper.tex_math_delim },
             VimtexTocLabelsFig        = { fg = newpaper.tex_aqua },
             VimtexTocLabelsTab        = { fg = newpaper.tex_darkorange },
@@ -589,8 +584,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return tex
 end

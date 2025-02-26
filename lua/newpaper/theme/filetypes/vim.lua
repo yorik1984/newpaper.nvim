@@ -1,14 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-
-    -- stylua: ignore start
-
-    local vimSyn   = {}
-    vimSyn.colors  = configColors
-    vimSyn.style   = configStyle
-    local newpaper = vimSyn.colors
-    local style    = vimSyn.style
+    local vimSyn      = {}
+    vimSyn.colors     = configColors
+    vimSyn.style      = configStyle
+    local newpaper    = vimSyn.colors
+    local style       = vimSyn.style
 
     vimSyn.loadSyntax = function()
         local syntax = {
@@ -16,8 +13,6 @@ function M.setup(configColors, configStyle)
         }
         return syntax
     end
-
-    -- stylua: ignore end
 
     return vimSyn
 end

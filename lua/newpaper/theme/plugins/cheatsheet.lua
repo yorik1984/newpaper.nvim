@@ -1,14 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-
-    -- stylua: ignore start
-
-    local cheatsheetSyn  = {}
-    cheatsheetSyn.colors = configColors
-    cheatsheetSyn.style  = configStyle
-    local newpaper       = cheatsheetSyn.colors
-    local style          = cheatsheetSyn.style
+    local cheatsheetSyn       = {}
+    cheatsheetSyn.colors      = configColors
+    cheatsheetSyn.style       = configStyle
+    local newpaper            = cheatsheetSyn.colors
+    local style               = cheatsheetSyn.style
 
     cheatsheetSyn.loadPlugins = function()
         local plugins = {
@@ -23,8 +20,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return cheatsheetSyn
 end

@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local todoCommentsSyn  = {}
-    todoCommentsSyn.colors = configColors
-    todoCommentsSyn.style  = configStyle
-    local newpaper         = todoCommentsSyn.colors
-    local style            = todoCommentsSyn.style
+    local todoCommentsSyn       = {}
+    todoCommentsSyn.colors      = configColors
+    todoCommentsSyn.style       = configStyle
+    local newpaper              = todoCommentsSyn.colors
+    local style                 = todoCommentsSyn.style
 
     todoCommentsSyn.loadPlugins = function()
         local plugins = {
@@ -35,8 +33,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return todoCommentsSyn
 end

@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local liteeSyn  = {}
-    liteeSyn.colors = configColors
-    liteeSyn.style  = configStyle
-    local newpaper  = liteeSyn.colors
-    local style     = liteeSyn.style
+    local liteeSyn       = {}
+    liteeSyn.colors      = configColors
+    liteeSyn.style       = configStyle
+    local newpaper       = liteeSyn.colors
+    local style          = liteeSyn.style
 
     liteeSyn.loadPlugins = function()
         local plugins = {
@@ -37,8 +35,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return liteeSyn
 end

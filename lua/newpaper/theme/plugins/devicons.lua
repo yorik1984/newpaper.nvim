@@ -1,12 +1,9 @@
 local M = {}
 
 function M.setup(configColors)
-
-    -- stylua: ignore start
-
-    local deviconSyn  = {}
-    deviconSyn.colors = configColors
-    local newpaper    = deviconSyn.colors
+    local deviconSyn       = {}
+    deviconSyn.colors      = configColors
+    local newpaper         = deviconSyn.colors
 
     deviconSyn.loadPlugins = function()
         local devIcons = {
@@ -84,8 +81,6 @@ function M.setup(configColors)
             ZshProfile          = { fg = newpaper.nephritis },
             Zshrc               = { fg = newpaper.nephritis },
         }
-
-        -- stylua: ignore end
 
         local plugins = {}
         for key, value in pairs(devIcons) do

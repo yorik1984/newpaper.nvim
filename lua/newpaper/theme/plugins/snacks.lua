@@ -1,11 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    local snacksSyn  = {}
-    snacksSyn.colors = configColors
-    snacksSyn.style  = configStyle
-    local newpaper   = snacksSyn.colors
-    local style      = snacksSyn.style
+    local snacksSyn       = {}
+    snacksSyn.colors      = configColors
+    snacksSyn.style       = configStyle
+    local newpaper        = snacksSyn.colors
+    local style           = snacksSyn.style
 
     snacksSyn.loadPlugins = function()
         local plugins = {

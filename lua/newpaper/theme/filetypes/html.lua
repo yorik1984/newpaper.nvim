@@ -1,31 +1,28 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
+    local htmlSyn          = {}
+    htmlSyn.colors         = configColors
+    htmlSyn.style          = configStyle
+    local newpaper         = htmlSyn.colors
+    local style            = htmlSyn.style
 
-    -- stylua: ignore start
-
-    local htmlSyn  = {}
-    htmlSyn.colors = configColors
-    htmlSyn.style  = configStyle
-    local newpaper = htmlSyn.colors
-    local style    = htmlSyn.style
-
-    htmlSyn.loadSyntax = function()
+    htmlSyn.loadSyntax     = function()
         local syntax = {
-            htmlH1                      = { fg = newpaper.tex_part_title,  style = style.tags_style },
-            htmlH2                      = { fg = newpaper.teal,            style = style.tags_style },
-            htmlH3                      = { fg = newpaper.blue,            style = style.tags_style },
-            htmlH4                      = { fg = newpaper.tex_math,        style = style.tags_style },
-            htmlH5                      = { fg = newpaper.tex_lightpurple, style = style.tags_style },
-            htmlH6                      = { fg = newpaper.tex_darkorangee, style = style.tags_style },
+            htmlH1              = { fg = newpaper.tex_part_title, style = style.tags_style },
+            htmlH2              = { fg = newpaper.teal, style = style.tags_style },
+            htmlH3              = { fg = newpaper.blue, style = style.tags_style },
+            htmlH4              = { fg = newpaper.tex_math, style = style.tags_style },
+            htmlH5              = { fg = newpaper.tex_lightpurple, style = style.tags_style },
+            htmlH6              = { fg = newpaper.tex_darkorangee, style = style.tags_style },
 
-            htmlTag                     = { fg = newpaper.tag_navy, style = style.tb_style },
-            htmlEndTag                  = { fg = newpaper.tag_navy, style = style.tb_style },
-            htmlArg                     = { fg = newpaper.darkengreen },
+            htmlTag             = { fg = newpaper.tag_navy, style = style.tb_style },
+            htmlEndTag          = { fg = newpaper.tag_navy, style = style.tb_style },
+            htmlArg             = { fg = newpaper.darkengreen },
             -- htmlTagName                 htmlStatement
-            htmlSpecialTagName          = { fg = newpaper.maroon },
-            htmlValue                   = { fg = newpaper.tex_string },
-            htmlSpecialChar             = { fg = newpaper.tex_magenta },
+            htmlSpecialTagName  = { fg = newpaper.maroon },
+            htmlValue           = { fg = newpaper.tex_string },
+            htmlSpecialChar     = { fg = newpaper.tex_magenta },
 
             -- html_no_rendering
             -- htmlH1                      Title
@@ -34,7 +31,7 @@ function M.setup(configColors, configStyle)
             -- htmlH4                      htmlH3
             -- htmlH5                      htmlH4
             -- htmlH6                      htmlH5
-            htmlHead                    = { fg = newpaper.darkpurple },
+            htmlHead            = { fg = newpaper.darkpurple },
             -- htmlTitle                   Title
             -- htmlBoldItalicUnderline     htmlBoldUnderlineItalic
             -- htmlUnderlineBold           htmlBoldUnderline
@@ -44,7 +41,7 @@ function M.setup(configColors, configStyle)
             -- htmlItalicBold              htmlBoldItalic
             -- htmlItalicBoldUnderline     htmlBoldUnderlineItalic
             -- htmlItalicUnderlineBold     htmlBoldUnderlineItalic
-            htmlLink                    = { fg = newpaper.links, style = style.underline },
+            htmlLink            = { fg = newpaper.links, style = style.underline },
             -- htmlLeadingSpace            None
 
             -- html_my_rendering
@@ -57,22 +54,22 @@ function M.setup(configColors, configStyle)
             -- htmlItalic                  term=italic cterm=italic gui=italic
             -- htmlStrike                  term=strikethrough cterm=strikethrough gui=strikethrough
 
-            htmlPreStmt                 = { fg = newpaper.darkpurple },
+            htmlPreStmt         = { fg = newpaper.darkpurple },
             -- htmlPreError                Error
-            htmlPreProc                 = { fg = newpaper.darkpurple },
-            htmlPreAttr                 = { fg = newpaper.regexp_blue },
-            htmlPreProcAttrName         = { fg = newpaper.darkpurple },
+            htmlPreProc         = { fg = newpaper.darkpurple },
+            htmlPreAttr         = { fg = newpaper.regexp_blue },
+            htmlPreProcAttrName = { fg = newpaper.darkpurple },
             -- htmlPreProcAttrError        Error
             -- htmlString                  String
-            htmlStatement               = { fg = newpaper.tag_navy, style = style.tags_style },
+            htmlStatement       = { fg = newpaper.tag_navy, style = style.tags_style },
             -- htmlComment                 Comment
             -- htmlCommentNested           htmlError
             -- htmlCommentError            htmlError
             -- htmlTagError                htmlError
-            htmlEvent                  = { fg = newpaper.tex_verb, style = style.s_style },
+            htmlEvent           = { fg = newpaper.tex_verb, style = style.s_style },
             -- htmlError                  Error
 
-            javaScript                 = { fg = newpaper.tex_verb },
+            javaScript          = { fg = newpaper.tex_verb },
             -- javaScriptExpression       javaScript
             -- htmlCssStyleComment        Comment
             -- htmlCssDefinition          Special
@@ -81,15 +78,12 @@ function M.setup(configColors, configStyle)
     end
 
     htmlSyn.loadTreeSitter = function()
-
         local treesitter = {
-            ["@constant.html"] = { fg = newpaper.comments,  style = style.c_style },
+            ["@constant.html"] = { fg = newpaper.comments, style = style.c_style },
             ["@none.html"]     = { fg = newpaper.texts },
         }
         return treesitter
     end
-
-    -- stylua: ignore end
 
     return htmlSyn
 end

@@ -1,21 +1,17 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-
-    -- stylua: ignore start
-
-    local luauSyn   = {}
-    luauSyn.colors  = configColors
-    luauSyn.style   = configStyle
-    local newpaper  = luauSyn.colors
-    local style     = luauSyn.style
+    local luauSyn          = {}
+    luauSyn.colors         = configColors
+    luauSyn.style          = configStyle
+    local newpaper         = luauSyn.colors
+    local style            = luauSyn.style
 
     luauSyn.loadTreeSitter = function()
-
         local treesitter = {
-            ["@constructor.luau"]         = { fg = newpaper.lua_blue, style = style.br_style },
-            ["@punctuation.bracket.luau"] = { fg = newpaper.lua_navy, style = style.br_style },
-            ["@variable.luau"]            = { fg = newpaper.darkengreen, style = style.v_style },
+            ["@constructor.luau"]                         = { fg = newpaper.lua_blue, style = style.br_style },
+            ["@punctuation.bracket.luau"]                 = { fg = newpaper.lua_navy, style = style.br_style },
+            ["@variable.luau"]                            = { fg = newpaper.darkengreen, style = style.v_style },
 
             -- LSP semantic tokens
             ["@lsp.type.variable.luau"]                   = { link = "@variable.luau" },
@@ -27,8 +23,6 @@ function M.setup(configColors, configStyle)
 
         return treesitter
     end
-
-    -- stylua: ignore end
 
     return luauSyn
 end

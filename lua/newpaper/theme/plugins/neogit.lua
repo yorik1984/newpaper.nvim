@@ -1,19 +1,17 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local neogitSyn  = {}
-    neogitSyn.colors = configColors
-    neogitSyn.style  = configStyle
-    local newpaper   = neogitSyn.colors
-    local style      = neogitSyn.style
+    local neogitSyn       = {}
+    neogitSyn.colors      = configColors
+    neogitSyn.style       = configStyle
+    local newpaper        = neogitSyn.colors
+    local style           = neogitSyn.style
 
     neogitSyn.loadPlugins = function()
         local plugins = {
             -- STATUS BUFFER
             NeogitBranch               = { fg = newpaper.orange, style = style.b_bold },
-            NeogitRemote               = { fg = newpaper.green,  style = style.b_bold },
+            NeogitRemote               = { fg = newpaper.green, style = style.b_bold },
             NeogitObjectId             = { fg = newpaper.orange },
             -- NeogitStash                = { link = "Comment" },
             NeogitFold                 = { fg = newpaper.none, bg = newpaper.none },
@@ -38,14 +36,14 @@ function M.setup(configColors, configStyle)
             -- NeogitPicking
 
             -- STATUS BUFFER FILE
-            NeogitChangeModified       = { fg = newpaper.tag_navy,  style = style.b_bold_i },
+            NeogitChangeModified       = { fg = newpaper.tag_navy, style = style.b_bold_i },
             NeogitChangeAdded          = { fg = newpaper.git_added, style = style.b_bold_i },
-            NeogitChangeDeleted        = { fg = newpaper.maroon,    style = style.b_bold_i },
+            NeogitChangeDeleted        = { fg = newpaper.maroon, style = style.b_bold_i },
             NeogitChangeRenamed        = { fg = newpaper.tex_redorange, style = style.b_bold_i },
             NeogitChangeUpdated        = { fg = newpaper.darkorange, style = style.b_bold_i },
-            NeogitChangeCopied         = { fg = newpaper.teal,       style = style.b_bold_i },
+            NeogitChangeCopied         = { fg = newpaper.teal, style = style.b_bold_i },
             NeogitChangeBothModified   = { fg = newpaper.darkyellow, style = style.b_bold_i },
-            NeogitChangeNewFile        = { fg = newpaper.darkgreen,  style = style.b_bold_i },
+            NeogitChangeNewFile        = { fg = newpaper.darkgreen, style = style.b_bold_i },
 
             -- SIGNS FOR LINE HIGHLIGHTING
             NeogitHunkHeader           = { fg = newpaper.git_fg, bg = newpaper.silver, style = style.b_bold },
@@ -121,8 +119,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return neogitSyn
 end

@@ -1,16 +1,13 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
+    local vimdocSyn          = {}
+    vimdocSyn.colors         = configColors
+    vimdocSyn.style          = configStyle
+    local newpaper           = vimdocSyn.colors
+    local style              = vimdocSyn.style
 
-    -- stylua: ignore start
-
-    local vimdocSyn  = {}
-    vimdocSyn.colors = configColors
-    vimdocSyn.style  = configStyle
-    local newpaper   = vimdocSyn.colors
-    local style      = vimdocSyn.style
-
-    vimdocSyn.loadSyntax = function()
+    vimdocSyn.loadSyntax     = function()
         local syntax = {
             helpBacktick       = { fg = newpaper.magenta },
             helpSpecial        = { fg = newpaper.magenta },
@@ -20,22 +17,17 @@ function M.setup(configColors, configStyle)
             helpHyperTextJump  = { fg = newpaper.links, style = style.s_underline },
             helpURL            = { fg = newpaper.strings, style = style.links },
         }
-
         return syntax
     end
 
     vimdocSyn.loadTreeSitter = function()
-
         local treesitter = {
             ["@label.vimdoc"]          = { fg = newpaper.tex_magenta },
             ["@markup.link.vimdoc"]    = { fg = newpaper.links, style = style.underline },
             ["@string.special.vimdoc"] = { fg = newpaper.keywords, nocombine = true },
         }
-
         return treesitter
     end
-
-    -- stylua: ignore end
 
     return vimdocSyn
 end

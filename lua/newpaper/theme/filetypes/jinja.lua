@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local jinjaSyn  = {}
-    jinjaSyn.colors = configColors
-    jinjaSyn.style  = configStyle
-    local newpaper  = jinjaSyn.colors
-    local style     = jinjaSyn.style
+    local jinjaSyn          = {}
+    jinjaSyn.colors         = configColors
+    jinjaSyn.style          = configStyle
+    local newpaper          = jinjaSyn.colors
+    local style             = jinjaSyn.style
 
     jinjaSyn.loadPlugins    = function()
         local plugins = {
@@ -44,8 +42,6 @@ function M.setup(configColors, configStyle)
 
         return treesitter
     end
-
-    -- stylua: ignore end
 
     return jinjaSyn
 end

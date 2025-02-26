@@ -1,13 +1,12 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
+    local fugitiveSyn       = {}
+    fugitiveSyn.colors      = configColors
+    fugitiveSyn.style       = configStyle
+    local newpaper          = fugitiveSyn.colors
+    local style             = fugitiveSyn.style
 
-    local fugitiveSyn  = {}
-    fugitiveSyn.colors = configColors
-    fugitiveSyn.style  = configStyle
-    local newpaper     = fugitiveSyn.colors
-    local style        = fugitiveSyn.style
     fugitiveSyn.loadPlugins = function()
         local plugins = {
             fugitiveHelpHeader        = { fg = newpaper.ruby_magenta, style = style.b_bold },
@@ -29,8 +28,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return fugitiveSyn
 end

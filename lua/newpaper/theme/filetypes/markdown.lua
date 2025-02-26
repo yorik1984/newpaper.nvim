@@ -1,16 +1,13 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
+    local markdownSyn          = {}
+    markdownSyn.colors         = configColors
+    markdownSyn.style          = configStyle
+    local newpaper             = markdownSyn.colors
+    local style                = markdownSyn.style
 
-    -- stylua: ignore start
-
-    local markdownSyn  = {}
-    markdownSyn.colors = configColors
-    markdownSyn.style  = configStyle
-    local newpaper     = markdownSyn.colors
-    local style        = markdownSyn.style
-
-    markdownSyn.loadSyntax = function()
+    markdownSyn.loadSyntax     = function()
         local syntax = {
             markdownH1Delimiter         = { fg = newpaper.tex_part_title },
             markdownH2Delimiter         = { fg = newpaper.teal },
@@ -20,10 +17,10 @@ function M.setup(configColors, configStyle)
             markdownH6Delimiter         = { fg = newpaper.tex_darkorange },
 
             markdownH1                  = { fg = newpaper.tex_part_title, style = style.k_style },
-            markdownH2                  = { fg = newpaper.teal,           style = style.k_style },
-            markdownH3                  = { fg = newpaper.blue,           style = style.k_style },
-            markdownH4                  = { fg = newpaper.tex_math,       style = style.k_style },
-            markdownH5                  = { fg = newpaper.tex_lightpurple,style = style.k_style },
+            markdownH2                  = { fg = newpaper.teal, style = style.k_style },
+            markdownH3                  = { fg = newpaper.blue, style = style.k_style },
+            markdownH4                  = { fg = newpaper.tex_math, style = style.k_style },
+            markdownH5                  = { fg = newpaper.tex_lightpurple, style = style.k_style },
             markdownH6                  = { fg = newpaper.tex_darkorange, style = style.k_style },
             markdownHeadingRule         = { fg = newpaper.tex_part_title },
             markdownHeadingDelimiter    = { fg = newpaper.tex_darkorange },
@@ -69,57 +66,55 @@ function M.setup(configColors, configStyle)
     end
 
     markdownSyn.loadTreeSitter = function()
-
         local treesitter = {
             ["@keyword.directive.markdown"]   = { fg = newpaper.orange },
             ["@label.markdown"]               = { fg = newpaper.tex_magenta },
             ["@none.markdown"]                = { fg = newpaper.fg },
-            ["@punctuation.special.markdown"] = { fg = newpaper.tex_orange, style = style.d_style},
+            ["@punctuation.special.markdown"] = { fg = newpaper.tex_orange, style = style.d_style },
             ["@lsp.type.class.markdown"]      = { default = true },
         }
-
         return treesitter
     end
 
-    markdownSyn.loadPlugins = function()
+    markdownSyn.loadPlugins    = function()
         local plugins = {
             -- [n]vim-markdown
             -- mkdString        String
-            mkdCode          = { fg = newpaper.strings },
-            mkdCodeDelimiter = { fg = newpaper.regexp_blue },
-            mkdCodeStart     = { fg = newpaper.regexp_blue },
-            mkdCodeEnd       = { fg = newpaper.regexp_blue },
-            mkdFootnote      = { fg = newpaper.grey },
-            mkdBlockquote    = { fg = newpaper.tex_quotes, style = style.s_style },
-            mkdListItem      = { fg = newpaper.keywords },
-            mkdRule          = { fg = newpaper.darkpurple },
-            mkdLineBreak     = { bg = newpaper.aqua },
-            mkdFootnotes     = { fg = newpaper.links, style = style.k_style },
-            mkdURL           = { fg = newpaper.tex_string, style = style.links },
-            mkdLink          = { fg = newpaper.links, style = style.underline },
-            mkdInlineURL     = { fg = newpaper.links, style = style.underline },
-            mkdID            = { fg = newpaper.maroon},
-            mkdLinkDef       = { fg = newpaper.tex_maroon, style = style.k_style },
-            mkdLinkDefTarget = { fg = newpaper.links, style = style.links },
-            mkdLinkTitle     = { fg = newpaper.regexp_blue },
-            mkdDelimiter     = { fg = newpaper.persimona, style = style.d_style },
+            mkdCode                              = { fg = newpaper.strings },
+            mkdCodeDelimiter                     = { fg = newpaper.regexp_blue },
+            mkdCodeStart                         = { fg = newpaper.regexp_blue },
+            mkdCodeEnd                           = { fg = newpaper.regexp_blue },
+            mkdFootnote                          = { fg = newpaper.grey },
+            mkdBlockquote                        = { fg = newpaper.tex_quotes, style = style.s_style },
+            mkdListItem                          = { fg = newpaper.keywords },
+            mkdRule                              = { fg = newpaper.darkpurple },
+            mkdLineBreak                         = { bg = newpaper.aqua },
+            mkdFootnotes                         = { fg = newpaper.links, style = style.k_style },
+            mkdURL                               = { fg = newpaper.tex_string, style = style.links },
+            mkdLink                              = { fg = newpaper.links, style = style.underline },
+            mkdInlineURL                         = { fg = newpaper.links, style = style.underline },
+            mkdID                                = { fg = newpaper.maroon },
+            mkdLinkDef                           = { fg = newpaper.tex_maroon, style = style.k_style },
+            mkdLinkDefTarget                     = { fg = newpaper.links, style = style.links },
+            mkdLinkTitle                         = { fg = newpaper.regexp_blue },
+            mkdDelimiter                         = { fg = newpaper.persimona, style = style.d_style },
 
             -- vim-pandoc -----------------------------------------------------
             pandocOperator                       = { fg = newpaper.tex_redorange },
-            pandocTitleBlock                     = { fg = newpaper.comments,  style = style.c_style },
-            pandocTitleBlockTitle                = { fg = newpaper.comments,  style = style.c_title },
-            pandocAtxHeader                      = { fg = newpaper.keywords,  style = style.o_style },
-            pandocAtxStart                       = { fg = newpaper.keywords,  style = style.k_style },
-            pandocSetexHeader                    = { fg = newpaper.keywords,  style = style.o_style },
-            pandocHeaderAttr                     = { fg = newpaper.comments,  style = style.c_title },
+            pandocTitleBlock                     = { fg = newpaper.comments, style = style.c_style },
+            pandocTitleBlockTitle                = { fg = newpaper.comments, style = style.c_title },
+            pandocAtxHeader                      = { fg = newpaper.keywords, style = style.o_style },
+            pandocAtxStart                       = { fg = newpaper.keywords, style = style.k_style },
+            pandocSetexHeader                    = { fg = newpaper.keywords, style = style.o_style },
+            pandocHeaderAttr                     = { fg = newpaper.comments, style = style.c_title },
             pandocHeaderID                       = { fg = newpaper.tex_aqua, style = style.c_style },
 
             pandocLaTexSectionCmd                = { fg = newpaper.keywords, style = style.tex_k_style },
             -- pandocLaTeXDelimiter                 texDelimiter
 
             -- pandocHTMLComment                    Comment
-            pandocHTMLCommentStart               = { fg = newpaper.comments,    style = style.c_title },
-            pandocHTMLCommentEnd                 = { fg = newpaper.comments,    style = style.c_title },
+            pandocHTMLCommentStart               = { fg = newpaper.comments, style = style.c_title },
+            pandocHTMLCommentEnd                 = { fg = newpaper.comments, style = style.c_title },
             pandocBlockQuote                     = { fg = newpaper.tex_quotes, style = style.s_style },
             pandocBlockQuoteMark                 = { fg = newpaper.tag_navy },
             pandocAmpersandEscape                = { fg = newpaper.tex_magenta },
@@ -131,8 +126,8 @@ function M.setup(configColors, configStyle)
             pandocDelimitedCodeBlockStart        = { fg = newpaper.regexp_blue, style = style.s_style },
             pandocDelimitedCodeBlockEnd          = { fg = newpaper.regexp_blue, style = style.s_style },
             pandocDelimitedCodeBlockLanguage     = { fg = newpaper.regexp_blue, style = style.k_style },
-            pandocBlockQuoteinDelimitedCodeBlock = { fg = newpaper.tex_quotes,  style = style.s_style },
-            pandocCodePre                        = { fg = newpaper.strings,     style = style.s_style },
+            pandocBlockQuoteinDelimitedCodeBlock = { fg = newpaper.tex_quotes, style = style.s_style },
+            pandocCodePre                        = { fg = newpaper.strings, style = style.s_style },
 
             -- pandocLineBlockDelimiter             Delimiter
 
@@ -140,7 +135,7 @@ function M.setup(configColors, configStyle)
             pandocUListItemBullet                = { fg = newpaper.keywords },
             pandocListItemBulletId               = { fg = newpaper.red },
 
-            pandocReferenceLabel                 = { fg = newpaper.tex_maroon},
+            pandocReferenceLabel                 = { fg = newpaper.tex_maroon },
             pandocReferenceURL                   = { fg = newpaper.tex_string, style = style.links },
             pandocLinkTip                        = { fg = newpaper.regexp_blue },
             pandocImageIcon                      = { fg = newpaper.tag_navy },
@@ -214,8 +209,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return markdownSyn
 end

@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local lazySyn  = {}
-    lazySyn.colors = configColors
-    lazySyn.style  = configStyle
-    local newpaper = lazySyn.colors
-    local style    = lazySyn.style
+    local lazySyn       = {}
+    lazySyn.colors      = configColors
+    lazySyn.style       = configStyle
+    local newpaper      = lazySyn.colors
+    local style         = lazySyn.style
 
     lazySyn.loadPlugins = function()
         local plugins = {
@@ -37,8 +35,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return lazySyn
 end

@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local symbolsOutlineSyn  = {}
-    symbolsOutlineSyn.colors = configColors
-    symbolsOutlineSyn.style  = configStyle
-    local newpaper           = symbolsOutlineSyn.colors
-    local style              = symbolsOutlineSyn.style
+    local symbolsOutlineSyn       = {}
+    symbolsOutlineSyn.colors      = configColors
+    symbolsOutlineSyn.style       = configStyle
+    local newpaper                = symbolsOutlineSyn.colors
+    local style                   = symbolsOutlineSyn.style
 
     symbolsOutlineSyn.loadPlugins = function()
         local plugins = {
@@ -16,8 +14,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return symbolsOutlineSyn
 end

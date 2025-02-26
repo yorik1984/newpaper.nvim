@@ -1,41 +1,39 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local noiceSyn  = {}
-    noiceSyn.colors = configColors
-    noiceSyn.style  = configStyle
-    local newpaper  = noiceSyn.colors
-    local style     = noiceSyn.style
+    local noiceSyn       = {}
+    noiceSyn.colors      = configColors
+    noiceSyn.style       = configStyle
+    local newpaper       = noiceSyn.colors
+    local style          = noiceSyn.style
 
     noiceSyn.loadPlugins = function()
         local plugins = {
-            -- NoiceCmdline                       = { link = "MsgArea" },                            -- Normal for the classic cmdline area at the bottom"
-            NoiceCmdlineIcon                   = { fg = newpaper.teal },                             -- Cmdline icon
-            NoiceCmdlineIconSearch             = { fg = newpaper.orange },                           -- Cmdline search icon (`/` and `?`)
-            NoiceCmdlinePrompt                 = { link = "Normal" },                                -- prompt for input()
-            NoiceCmdlinePopup                  = { link = "Normal" },                                -- Normal for the cmdline popup
-            NoiceCmdlinePopupBorder            = { fg = newpaper.teal },                             -- Cmdline popup border
-            NoiceCmdlinePopupTitle             = { fg = newpaper.teal, style = style.b_bold },       -- Cmdline popup Title
-            NoiceCmdlinePopupBorderSearch      = { fg = newpaper.orange },                           -- Cmdline popup border for search
-            NoiceConfirm                       = { link = "NormalFloat" },                           -- Normal for the confirm view
-            NoiceConfirmBorder                 = { fg = newpaper.info_fg, bg = newpaper.float_bg, style = style.b_bold }, -- Border for the confirm view
-            -- NoiceCursor                        = { link = "Cursor" },                             -- Fake Cursor
-            -- NoiceMini                          = { link = "MsgArea" },                            -- Normal for mini view
-            -- NoicePopup                         = { link = "NormalFloat" },                        -- Normal for popup views
-            NoicePopupBorder                   = { fg = newpaper.teal, bg = newpaper.float_bg },     -- Border for popup views
-            -- NoicePopupmenu                     = { link = "Pmenu" },                              -- Normal for the popupmenu
-            NoicePopupmenuBorder               = { link = "PmenuBorder" },                           -- Popupmenu border
-            NoicePopupmenuMatch                = { link = "CmpItemAbbrMatch" },                      -- Part of the item that matches the input
-            -- NoicePopupmenuSelected             = { link = "PmenuSel" },                           -- Selected item in the popupmenu
-            -- NoiceScrollbar                     = { link = "PmenuSbar" },                          -- Normal for scrollbar
-            -- NoiceScrollbarThumb                = { link = "PmenuThumb" },                         -- Scrollbar thumb
-            NoiceSplit                         = { link = "Normal" },                                -- Normal for split views
-            NoiceSplitBorder                   = { link = "NoicePopupBorder" },                      -- Border for split views
-            -- NoiceVirtualText                   = { link = "DiagnosticVirtualTextInfo" },          -- Default hl group for virtualtext views
-            -- NoiceFormatProgressDone            = { link = "Search" },                             -- Progress bar done
-            -- NoiceFormatProgressTodo            = { link = "CursorLine" },                         -- progress bar todo
+            -- NoiceCmdline                       = { link = "MsgArea" },
+            NoiceCmdlineIcon                   = { fg = newpaper.teal },
+            NoiceCmdlineIconSearch             = { fg = newpaper.orange },
+            NoiceCmdlinePrompt                 = { link = "Normal" },
+            NoiceCmdlinePopup                  = { link = "Normal" },
+            NoiceCmdlinePopupBorder            = { fg = newpaper.teal },
+            NoiceCmdlinePopupTitle             = { fg = newpaper.teal, style = style.b_bold },
+            NoiceCmdlinePopupBorderSearch      = { fg = newpaper.orange },
+            NoiceConfirm                       = { link = "NormalFloat" },
+            NoiceConfirmBorder                 = { fg = newpaper.info_fg, bg = newpaper.float_bg, style = style.b_bold },
+            -- NoiceCursor                        = { link = "Cursor" },
+            -- NoiceMini                          = { link = "MsgArea" },
+            -- NoicePopup                         = { link = "NormalFloat" },
+            NoicePopupBorder                   = { fg = newpaper.teal, bg = newpaper.float_bg },
+            -- NoicePopupmenu                     = { link = "Pmenu" },
+            NoicePopupmenuBorder               = { link = "PmenuBorder" },
+            NoicePopupmenuMatch                = { link = "CmpItemAbbrMatch" },
+            -- NoicePopupmenuSelected             = { link = "PmenuSel" },
+            -- NoiceScrollbar                     = { link = "PmenuSbar" },
+            -- NoiceScrollbarThumb                = { link = "PmenuThumb" },
+            NoiceSplit                         = { link = "Normal" },
+            NoiceSplitBorder                   = { link = "NoicePopupBorder" },
+            -- NoiceVirtualText                   = { link = "DiagnosticVirtualTextInfo" },
+            -- NoiceFormatProgressDone            = { link = "Search" },
+            -- NoiceFormatProgressTodo            = { link = "CursorLine" },
             -- NoiceFormatEvent                   = { link = "NonText" },
             -- NoiceFormatKind                    = { link = "NonText" },
             -- NoiceFormatDate                    = { link = "Special" },
@@ -48,11 +46,11 @@ function M.setup(configColors, configStyle)
             -- NoiceFormatLevelInfo               = { link = "DiagnosticVirtualTextInfo" },
             -- NoiceFormatLevelWarn               = { link = "DiagnosticVirtualTextWarn" },
             -- NoiceFormatLevelError              = { link = "DiagnosticVirtualTextError" },
-            -- NoiceLspProgressSpinner            = { link = "Constant" },                  -- Lsp progress spinner
-            -- NoiceLspProgressTitle              = { link = "NonText" },                   -- Lsp progress title
-            -- NoiceLspProgressClient             = { link = "Title" },                     -- Lsp progress client name
-            -- NoiceCompletionItemMenu            = { link = "none" },                      -- Normal for the popupmenu
-            -- NoiceCompletionItemWord            = { link = "none" },                      -- Normal for the popupmenu
+            -- NoiceLspProgressSpinner            = { link = "Constant" },
+            -- NoiceLspProgressTitle              = { link = "NonText" },
+            -- NoiceLspProgressClient             = { link = "Title" },
+            -- NoiceCompletionItemMenu            = { link = "none" },
+            -- NoiceCompletionItemWord            = { link = "none" },
             NoiceCompletionItemKindDefault     = { link = "CmpItemKindDefault" },
             NoiceCompletionItemKindColor       = { link = "CmpItemKindColor" },
             NoiceCompletionItemKindFunction    = { link = "CmpItemKindFunction" },
@@ -78,8 +76,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return noiceSyn
 end

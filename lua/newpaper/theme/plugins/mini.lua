@@ -1,14 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-
-    -- stylua: ignore start
-
-    local miniSyn  = {}
-    miniSyn.colors = configColors
-    miniSyn.style  = configStyle
-    local newpaper = miniSyn.colors
-    local style    = miniSyn.style
+    local miniSyn       = {}
+    miniSyn.colors      = configColors
+    miniSyn.style       = configStyle
+    local newpaper      = miniSyn.colors
+    local style         = miniSyn.style
 
     miniSyn.loadPlugins = function()
         local plugins = {
@@ -50,9 +47,9 @@ function M.setup(configColors, configStyle)
             MiniFilesTitle                = { link = "FloatTitle" },
             MiniFilesTitleFocused         = { fg = newpaper.titles, style = style.b_bold },
             MiniHipatternsFixme           = { fg = newpaper.bg, bg = newpaper.todo_error, style = style.b_bold },
-            MiniHipatternsHack            = { fg = newpaper.bg, bg = newpaper.todo_warn,  style = style.b_bold },
-            MiniHipatternsNote            = { fg = newpaper.bg, bg = newpaper.todo_hint,  style = style.b_bold },
-            MiniHipatternsTodo            = { fg = newpaper.bg, bg = newpaper.todo_info,  style = style.b_bold },
+            MiniHipatternsHack            = { fg = newpaper.bg, bg = newpaper.todo_warn, style = style.b_bold },
+            MiniHipatternsNote            = { fg = newpaper.bg, bg = newpaper.todo_hint, style = style.b_bold },
+            MiniHipatternsTodo            = { fg = newpaper.bg, bg = newpaper.todo_info, style = style.b_bold },
             MiniIconsAzure                = { fg = newpaper.lightblue },
             MiniIconsBlue                 = { fg = newpaper.blue },
             MiniIconsCyan                 = { fg = newpaper.lightmagenta },
@@ -66,9 +63,9 @@ function M.setup(configColors, configStyle)
             MiniIndentscopePrefix         = { nocombine = true },
             MiniJump                      = { fg = newpaper.bg, bg = newpaper.accent },
             MiniJump2dDim                 = { link = "Comment" },
-            MiniJump2dSpot                = { fg = newpaper.accent,    style = style.b_bold, nocombine = true },
-            MiniJump2dSpotAhead           = { fg = newpaper.lightblue, bg = newpaper.bg,     nocombine = true },
-            MiniJump2dSpotUnique          = { fg = newpaper.purple,    style = style.b_bold, nocombine = true },
+            MiniJump2dSpot                = { fg = newpaper.accent, style = style.b_bold, nocombine = true },
+            MiniJump2dSpotAhead           = { fg = newpaper.lightblue, bg = newpaper.bg, nocombine = true },
+            MiniJump2dSpotUnique          = { fg = newpaper.purple, style = style.b_bold, nocombine = true },
             MiniMapNormal                 = { link = "NormalFloat" },
             MiniMapSymbolCount            = { fg = newpaper.purple },
             MiniMapSymbolLine             = { fg = newpaper.lightmagenta },
@@ -103,30 +100,28 @@ function M.setup(configColors, configStyle)
             MiniStatuslineFileinfo        = { link = "MiniStatuslineDevinfo" },
             MiniStatuslineFilename        = { fg = newpaper.teal, bg = newpaper.silver },
             MiniStatuslineInactive        = { fg = newpaper.lightgrey, bg = newpaper.silver },
-            MiniStatuslineModeCommand     = { fg = newpaper.bg, bg = newpaper.darkorange,   style = style.b_bold },
-            MiniStatuslineModeInsert      = { fg = newpaper.bg, bg = newpaper.darkgreen,    style = style.b_bold },
-            MiniStatuslineModeNormal      = { fg = newpaper.bg, bg = newpaper.teal,       style = style.b_bold },
+            MiniStatuslineModeCommand     = { fg = newpaper.bg, bg = newpaper.darkorange, style = style.b_bold },
+            MiniStatuslineModeInsert      = { fg = newpaper.bg, bg = newpaper.darkgreen, style = style.b_bold },
+            MiniStatuslineModeNormal      = { fg = newpaper.bg, bg = newpaper.teal, style = style.b_bold },
             MiniStatuslineModeOther       = { fg = newpaper.bg, bg = newpaper.lightmagenta, style = style.b_bold },
-            MiniStatuslineModeReplace     = { fg = newpaper.bg, bg = newpaper.magenta,      style = style.b_bold },
-            MiniStatuslineModeVisual      = { fg = newpaper.bg, bg = newpaper.purple,       style = style.b_bold },
+            MiniStatuslineModeReplace     = { fg = newpaper.bg, bg = newpaper.magenta, style = style.b_bold },
+            MiniStatuslineModeVisual      = { fg = newpaper.bg, bg = newpaper.purple, style = style.b_bold },
             MiniSurround                  = { link = "IncSearch" },
             MiniTablineCurrent            = { fg = newpaper.bg, bg = newpaper.accent, style = style.b_bold },
             MiniTablineFill               = { link = "TabLineFill" },
-            MiniTablineHidden             = { fg = newpaper.fg,     bg = newpaper.bg },
+            MiniTablineHidden             = { fg = newpaper.fg, bg = newpaper.bg },
             MiniTablineModifiedCurrent    = { fg = newpaper.accent, bg = newpaper.bg, style = style.b_bold },
-            MiniTablineModifiedHidden     = { fg = newpaper.bg,     bg = newpaper.fg },
+            MiniTablineModifiedHidden     = { fg = newpaper.bg, bg = newpaper.fg },
             MiniTablineModifiedVisible    = { fg = newpaper.accent, bg = newpaper.bg },
-            MiniTablineTabpagesection     = { fg = newpaper.titles,  bg = newpaper.selection, style = style.b_bold },
-            MiniTablineVisible            = { fg = newpaper.bg,     bg = newpaper.accent },
+            MiniTablineTabpagesection     = { fg = newpaper.titles, bg = newpaper.selection, style = style.b_bold },
+            MiniTablineVisible            = { fg = newpaper.bg, bg = newpaper.accent },
             MiniTestEmphasis              = { style = style.b_bold },
-            MiniTestFail                  = { fg = newpaper.red,    style = style.b_bold },
+            MiniTestFail                  = { fg = newpaper.red, style = style.b_bold },
             MiniTestPass                  = { fg = newpaper.darkgreen, style = style.b_bold },
             MiniTrailspace                = { fg = newpaper.disabled, bg = newpaper.pink },
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return miniSyn
 end

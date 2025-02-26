@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- styquery: ignore start
-
-    local querySyn  = {}
-    querySyn.colors = configColors
-    querySyn.style  = configStyle
-    local newpaper  = querySyn.colors
-    local style     = querySyn.style
+    local querySyn          = {}
+    querySyn.colors         = configColors
+    querySyn.style          = configStyle
+    local newpaper          = querySyn.colors
+    local style             = querySyn.style
 
     querySyn.loadTreeSitter = function()
         local treesitter = {
@@ -18,11 +16,8 @@ function M.setup(configColors, configStyle)
             ["@type.query"]              = { fg = newpaper.tex_teal },
             ["@variable.query"]          = { fg = newpaper.darkengreen, style = style.v_style },
         }
-
         return treesitter
     end
-
-    -- styquery: ignore end
 
     return querySyn
 end

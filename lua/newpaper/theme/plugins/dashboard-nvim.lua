@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local dashboardSyn  = {}
-    dashboardSyn.colors = configColors
-    dashboardSyn.style  = configStyle
-    local newpaper      = dashboardSyn.colors
-    local style         = dashboardSyn.style
+    local dashboardSyn       = {}
+    dashboardSyn.colors      = configColors
+    dashboardSyn.style       = configStyle
+    local newpaper           = dashboardSyn.colors
+    local style              = dashboardSyn.style
 
     dashboardSyn.loadPlugins = function()
         local plugins = {
@@ -27,8 +25,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return dashboardSyn
 end

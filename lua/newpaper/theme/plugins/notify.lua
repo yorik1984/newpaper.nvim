@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local notifySyn  = {}
-    notifySyn.colors = configColors
-    notifySyn.style  = configStyle
-    local newpaper   = notifySyn.colors
-    local style      = notifySyn.style
+    local notifySyn       = {}
+    notifySyn.colors      = configColors
+    notifySyn.style       = configStyle
+    local newpaper        = notifySyn.colors
+    local style           = notifySyn.style
 
     notifySyn.loadPlugins = function()
         local plugins = {
@@ -22,10 +20,10 @@ function M.setup(configColors, configStyle)
             NotifyDEBUGIcon   = { fg = newpaper.texts },
             NotifyTRACEIcon   = { fg = newpaper.purple },
             NotifyERRORTitle  = { fg = newpaper.error_fg, style = style.b_bold },
-            NotifyWARNTitle   = { fg = newpaper.warn_fg,  style = style.b_bold },
-            NotifyINFOTitle   = { fg = newpaper.info_fg,  style = style.b_bold },
-            NotifyDEBUGTitle  = { fg = newpaper.texts,    style = style.b_bold },
-            NotifyTRACETitle  = { fg = newpaper.purple,   style = style.b_bold },
+            NotifyWARNTitle   = { fg = newpaper.warn_fg, style = style.b_bold },
+            NotifyINFOTitle   = { fg = newpaper.info_fg, style = style.b_bold },
+            NotifyDEBUGTitle  = { fg = newpaper.texts, style = style.b_bold },
+            NotifyTRACETitle  = { fg = newpaper.purple, style = style.b_bold },
             NotifyERRORBody   = { fg = newpaper.float_fg },
             NotifyWARNBody    = { fg = newpaper.float_fg },
             NotifyINFOBody    = { fg = newpaper.float_fg },
@@ -34,8 +32,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return notifySyn
 end

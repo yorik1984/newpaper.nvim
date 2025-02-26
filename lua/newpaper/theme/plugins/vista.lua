@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local vistaSyn  = {}
-    vistaSyn.colors = configColors
-    vistaSyn.style  = configStyle
-    local newpaper  = vistaSyn.colors
-    local style     = vistaSyn.style
+    local vistaSyn       = {}
+    vistaSyn.colors      = configColors
+    vistaSyn.style       = configStyle
+    local newpaper       = vistaSyn.colors
+    local style          = vistaSyn.style
 
     vistaSyn.loadPlugins = function()
         local plugins = {
@@ -30,8 +28,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return vistaSyn
 end

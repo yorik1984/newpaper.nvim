@@ -1,13 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    -- stylua: ignore start
-
-    local bufferlineSyn  = {}
-    bufferlineSyn.colors = configColors
-    bufferlineSyn.style  = configStyle
-    local newpaper       = bufferlineSyn.colors
-    local style          = bufferlineSyn.style
+    local bufferlineSyn       = {}
+    bufferlineSyn.colors      = configColors
+    bufferlineSyn.style       = configStyle
+    local newpaper            = bufferlineSyn.colors
+    local style               = bufferlineSyn.style
 
     bufferlineSyn.loadPlugins = function()
         local plugins = {
@@ -23,8 +21,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return bufferlineSyn
 end

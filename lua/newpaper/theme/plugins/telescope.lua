@@ -1,14 +1,11 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-
-    -- stylua: ignore start
-
-    local telescopeSyn  = {}
-    telescopeSyn.colors = configColors
-    telescopeSyn.style  = configStyle
-    local newpaper      = telescopeSyn.colors
-    local style         = telescopeSyn.style
+    local telescopeSyn       = {}
+    telescopeSyn.colors      = configColors
+    telescopeSyn.style       = configStyle
+    local newpaper           = telescopeSyn.colors
+    local style              = telescopeSyn.style
 
     telescopeSyn.loadPlugins = function()
         local plugins = {
@@ -26,14 +23,14 @@ function M.setup(configColors, configStyle)
 
             -- Border highlight groups. Use TelescopeBorder to override the default. Otherwise set them specifically
             -- TelescopeBorder               TelescopeNormal
-            TelescopePromptBorder           = { fg = newpaper.blue,       bg = newpaper.telescope_bg },
+            TelescopePromptBorder           = { fg = newpaper.blue, bg = newpaper.telescope_bg },
             TelescopeResultsBorder          = { fg = newpaper.purple, bg = newpaper.telescope_bg },
-            TelescopePreviewBorder          = { fg = newpaper.green,      bg = newpaper.telescope_bg },
+            TelescopePreviewBorder          = { fg = newpaper.green, bg = newpaper.telescope_bg },
 
             -- Title highlight groups. Use TelescopeTitle to override the default. Otherwise set them specifically
-            TelescopeTitle                  = { fg = newpaper.fg,        bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopePromptTitle            = { fg = newpaper.teal,      bg = newpaper.telescope_bg, style = style.b_bold },
-            TelescopeResultsTitle           = { fg = newpaper.purple,    bg = newpaper.telescope_bg, style = style.b_bold },
+            TelescopeTitle                  = { fg = newpaper.fg, bg = newpaper.telescope_bg, style = style.b_bold },
+            TelescopePromptTitle            = { fg = newpaper.teal, bg = newpaper.telescope_bg, style = style.b_bold },
+            TelescopeResultsTitle           = { fg = newpaper.purple, bg = newpaper.telescope_bg, style = style.b_bold },
             TelescopePreviewTitle           = { fg = newpaper.darkgreen, bg = newpaper.telescope_bg, style = style.b_bold },
             TelescopePromptCounter          = { fg = newpaper.teal },
 
@@ -89,8 +86,6 @@ function M.setup(configColors, configStyle)
         }
         return plugins
     end
-
-    -- stylua: ignore end
 
     return telescopeSyn
 end
