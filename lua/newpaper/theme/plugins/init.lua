@@ -7,6 +7,7 @@ local files = {
     "cheatsheet",
     "cmp",
     "dashboard-nvim",
+    "devicons",
     "fugitive",
     "gitsigns",
     "lazy",

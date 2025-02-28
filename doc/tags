@@ -11,7 +11,6 @@ newpaper.config.contrast_telescope	newpaper.nvim.txt	/*newpaper.config.contrast_
 newpaper.config.custom_highlights	newpaper.nvim.txt	/*newpaper.config.custom_highlights*
 newpaper.config.delim_rainbow_bold	newpaper.nvim.txt	/*newpaper.config.delim_rainbow_bold*
 newpaper.config.delimiters_bold	newpaper.nvim.txt	/*newpaper.config.delimiters_bold*
-newpaper.config.devicons_custom	newpaper.nvim.txt	/*newpaper.config.devicons_custom*
 newpaper.config.disable_background	newpaper.nvim.txt	/*newpaper.config.disable_background*
 newpaper.config.doc_keywords	newpaper.nvim.txt	/*newpaper.config.doc_keywords*
 newpaper.config.editor_better_view	newpaper.nvim.txt	/*newpaper.config.editor_better_view*

@@ -79,7 +79,6 @@ local config = {
     custom_highlights   = opt("custom_highlights", {}),
     lualine_bold        = opt("lualine_bold", true),
     lualine_style       = opt("lualine_style", "light"),
-    devicons_custom     = opt("devicons_custom", {}),
 }
 
 local applyConfiguration = function(userConfig)
@@ -88,7 +87,6 @@ local applyConfiguration = function(userConfig)
         colors            = "Use: colors = { name = color }",
         colors_advanced   = "Use: colors_advanced = { name = color }",
         custom_highlights = "Use: custom_highlights = { hlGroup = { arg = color } }",
-        devicons_custom   = "Use: devicons_custom = { gui = '#XXXXXX', cterm = number(0-15) }. See :help cterm-colors",
     }
 
     -- stylua: ignore end

@@ -5,7 +5,6 @@ local core          = require("newpaper.theme.core")
 local filetypes     = require("newpaper.theme.filetypes")
 local ftplugins     = require("newpaper.theme.ftplugins")
 local plugins       = require("newpaper.theme.plugins")
-local devIcons      = require("newpaper.theme.plugins.devicons")
 local treesitter    = require("newpaper.theme.treesitter")
 local M             = {}
 
@@ -153,18 +152,9 @@ function M.load(configApply)
         end
     end
 
-    if configApply.devicons_custom.cterm and not configApply.devicons_custom.gui then
-        M.deviconsOverrides(configApply)
-        M.loadHlGroups(devIcons.setup(configColors))
-    elseif configApply.devicons_custom.gui then
-        M.deviconsOverrides(configApply)
-    else
-        M.loadHlGroups(devIcons.setup(configColors))
-    end
-
     M.terminal(configColors)
-    M.autocmds(configApply, configColors)
     M.loadCustomSyntax(configApply)
+    M.autocmds(configApply, configColors)
 end
 
 function M.loadHlGroups(synTheme)
@@ -172,17 +162,7 @@ function M.loadHlGroups(synTheme)
 end
 
 function M.loadCustomSyntax(config)
-    local async
-    async = vim.uv.new_async(function()
-        M.syntax(config.custom_highlights)
-        if async then
-            async:close()
-        end
-    end)
-
-    if async then
-        async:send()
-    end
+    M.syntax(config.custom_highlights)
 end
 
 function M.colorOverrides(colors, configColors)
@@ -206,41 +186,6 @@ function M.colorOverrides(colors, configColors)
             end
         end
     end
-end
-
-function M.deviconsOverrides(config)
-    local help = "Add nvim-web-devicons to runtime path or do not use in setup() option «devicons_custom»"
-    local plugin = "nvim-web-devicons"
-    check.requiresPluginError(plugin, help)
-
-    -- https://github.com/nvim-tree/nvim-web-devicons/blob/master/lua/nvim-web-devicons.lua
-    local group = vim.api.nvim_create_augroup("newpaper", {})
-    vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
-        group = group,
-        pattern = { "*" },
-        callback = function()
-            local devIconCustom = config.devicons_custom.gui
-            local devIconCustomCterm = config.devicons_custom.cterm
-            local function get_highlight_name(data)
-                return data.name and "DevIcon" .. data.name
-            end
-
-            local function set_up_highlight(icon_data)
-                local hl_group = get_highlight_name(icon_data)
-                if hl_group and (icon_data.color or icon_data.cterm_color) then
-                    vim.api.nvim_set_hl(0, hl_group, {
-                        fg = devIconCustom,
-                        ctermfg = devIconCustomCterm,
-                    })
-                end
-            end
-
-            local icons = require(plugin).get_icons()
-            for _, icon_data in pairs(icons) do
-                set_up_highlight(icon_data)
-            end
-        end,
-    })
 end
 
 ---Convert "#XXXXXX" color to greyscale with different methods

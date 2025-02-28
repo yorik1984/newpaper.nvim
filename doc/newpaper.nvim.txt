@@ -476,17 +476,6 @@ Fields: ~
                     Set different style from main theme: `"dark"`, `"light"`.
 
                     Default: `light` ~
-
-                                               *newpaper.config.devicons_custom*
-    • {devicons_custom} (table)
-                    Set devicons custom color(override all icons by one color).
-                    Use `gui`, `cterm` or both options.
-
-                    Default: `{}` ~
-
-                    Example: ~
->lua
-                    vim.g.devicons_custom = { gui = "#FFFF00", cterm = 3 }
 <
 --------------------------------------------------------------------------------
 4.1. DEFAULT CONFIGURATION                                    *newpaper.default*
@@ -536,7 +525,6 @@ Default settings: ~
         custom_highlights   = {},
         lualine_bold        = true,
         lualine_style       = "light",
-        devicons_custom     = {},
     })
 <
 
@@ -575,7 +563,6 @@ Lua with setup({}): ~
         colors_advanced     = colors_advanced,
         custom_highlights   = custom_highlights,
         -- ...
-        devicons_custom     = { gui = "#FFFF00", cterm = 3},
     })
 <
 ================================================================================

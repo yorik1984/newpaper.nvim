@@ -52,7 +52,6 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
   + Dark
 + Lualine theme
 + Ability to change background on sidebar windows like NvimTree, terminal etc.
-+ Asynchronous highlight loading which makes the theme extremely fast
 + Added functions for live theme switching without the need to restart Neovim
 + Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
 + [Extras](#extras) colors configs for terminal-based and GUI application.
@@ -243,7 +242,6 @@ require("newpaper").setup({
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       | `"light"`     | Set different style from main theme:`"dark"`, `"light"`|
-| devicons_custom     | `{}`          | Set devicons custom color(override all icons by one color). Use `gui`, `cterm` or both options: `gui = "#HEX_COLOR"`, `cterm = NUMBER` |
 
 ### Colorscheme default settings
 
@@ -291,7 +289,6 @@ require("newpaper").setup({
     custom_highlights   = {},
     lualine_bold        = true,
     lualine_style       = "light",
-    devicons_custom     = {},
 })
 ```
 
@@ -329,7 +326,6 @@ require("newpaper").setup({
     colors_advanced     = colors_advanced,
     custom_highlights   = custom_highlights,
     -- ...
-    devicons_custom     = { gui = "#FFFF00", cterm = 3},
 })
 ```
 
