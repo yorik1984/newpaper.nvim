@@ -77,7 +77,6 @@ A wide array of supprted plugins like:
     • virt-column.nvim
     • vista.vim
     • WhichKey.nvim
-    • zotcite
 
 Ability to have a different background on sidebar windows like Nvim-Tree,
 Terminal, Whichkey, QuickFix etc.

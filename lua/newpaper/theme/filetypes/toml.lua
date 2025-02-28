@@ -1,44 +1,27 @@
 local M = {}
 
 function M.setup(configColors, configStyle)
-    local tomlSyn          = {}
-    tomlSyn.colors         = configColors
-    tomlSyn.style          = configStyle
-    local newpaper         = tomlSyn.colors
-    local style            = tomlSyn.style
+    local newpaper = configColors
+    local style    = configStyle
 
-    tomlSyn.loadSyntax     = function()
-        local syntax = {
-            tomlEscape        = { fg = newpaper.magenta },
-            tomlLineEscape    = { fg = newpaper.maroon, style = style.o_style },
-            -- tomlString     String
-            -- tomlInteger    Number
-            -- tomlFloat      Float
-            -- tomlBoolean    Boolean
-            tomlDate          = { fg = newpaper.maroon },
-            tomlKey           = { fg = newpaper.darkengreen, style = style.f_style },
-            tomlKeyDq         = { fg = newpaper.tag_navy },
-            tomlKeySq         = { fg = newpaper.navy },
-            tomlKeyValueArray = { fg = newpaper.operator },
-            tomlTable         = { fg = newpaper.keywords, style = style.k_style },
-            tomlTableArray    = { fg = newpaper.darkpurple, style = style.k_style },
-            tomlDotInKey      = { fg = newpaper.persimona },
-            -- tomlTodo       Todo
-            -- tomlComment    Comment
-        }
-        return syntax
-    end
-
-    tomlSyn.loadTreeSitter = function()
-        local treesitter = {
-            ["@property.toml"]       = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
-            ["@string.special.toml"] = { fg = newpaper.maroon },
-            ["@type.toml"]           = { fg = newpaper.keywords, style = style.k_style },
-        }
-        return treesitter
-    end
-
-    return tomlSyn
+    return {
+        tomlEscape        = { fg = newpaper.magenta },
+        tomlLineEscape    = { fg = newpaper.maroon, style = style.o_style },
+        -- tomlString     String
+        -- tomlInteger    Number
+        -- tomlFloat      Float
+        -- tomlBoolean    Boolean
+        tomlDate          = { fg = newpaper.maroon },
+        tomlKey           = { fg = newpaper.darkengreen, style = style.f_style },
+        tomlKeyDq         = { fg = newpaper.tag_navy },
+        tomlKeySq         = { fg = newpaper.navy },
+        tomlKeyValueArray = { fg = newpaper.operator },
+        tomlTable         = { fg = newpaper.keywords, style = style.k_style },
+        tomlTableArray    = { fg = newpaper.darkpurple, style = style.k_style },
+        tomlDotInKey      = { fg = newpaper.persimona },
+        -- tomlTodo       Todo
+        -- tomlComment    Comment
+    }
 end
 
 return M

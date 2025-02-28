@@ -1,8 +1,8 @@
 local M = {}
 
-local plugsFolder = "newpaper.theme.plugins."
+local folder = "newpaper.theme.plugins."
 
-local plugins = {
+local files = {
     "bufferline",
     "cheatsheet",
     "cmp",
@@ -11,7 +11,6 @@ local plugins = {
     "gitsigns",
     "lazy",
     "litee",
-    "lsp",
     "lspsaga",
     "mason",
     "mini",
@@ -26,10 +25,11 @@ local plugins = {
     "todo-comments",
     "trouble",
     "vista",
+    "plugins",
 }
 
-for _, value in ipairs(plugins) do
-    local fileSyn = plugsFolder .. value
+for _, value in ipairs(files) do
+    local fileSyn = folder .. value
     table.insert(M, fileSyn)
 end
 

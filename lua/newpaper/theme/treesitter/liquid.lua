@@ -5,7 +5,7 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        vimCommentTitle = { fg = newpaper.comments, style = style.c_title }
+        ["@tag.delimiter.liquid"] = { fg = newpaper.jinja_red, nocombine = true },
     }
 end
 

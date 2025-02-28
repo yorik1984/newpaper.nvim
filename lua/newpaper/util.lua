@@ -1,6 +1,12 @@
 local check         = require("newpaper.check")
 local hsluv         = require("newpaper.hsluv")
 local configDefault = require("newpaper.config")
+local core          = require("newpaper.theme.core")
+local filetypes     = require("newpaper.theme.filetypes")
+local ftplugins     = require("newpaper.theme.ftplugins")
+local plugins       = require("newpaper.theme.plugins")
+local devIcons      = require("newpaper.theme.plugins.devicons")
+local treesitter    = require("newpaper.theme.treesitter")
 local M             = {}
 
 function M.contains(tbl, string)
@@ -116,44 +122,64 @@ function M.terminal(colors)
     vim.g.terminal_color_15 = colors.fg
 end
 
-function M.load(config, theme)
+function M.load(configApply)
     -- Patch https://github.com/folke/tokyonight.nvim/commit/0ead86afe390603f9bd688103d7a5fc6724a828e
     -- only needed to clear when not the default colorscheme
     if vim.g.colors_name then
-        vim.cmd("hi clear")
+        vim.cmd([[hi clear]])
     end
+
     vim.o.termguicolors = true
     vim.g.colors_name = "newpaper"
-    M.syntax(theme.loadEditor())
-    M.terminal(theme.colors)
-    M.loadSyntax(theme)
-    M.autocmds(config, theme.colors)
+
+    if vim.fn.exists "syntax_on" then
+        vim.cmd "syntax reset"
+    end
+
+    local configColors = require("newpaper.colors").setup(configApply)
+    local configStyle  = require("newpaper.style").setupStyle(configApply)
+
+    local groups       = {
+        core,
+        filetypes,
+        ftplugins,
+        plugins,
+        treesitter,
+    }
+
+    for _, group in ipairs(groups) do
+        for _, syn in ipairs(group) do
+            M.loadHlGroups(require(syn).setup(configColors, configStyle))
+        end
+    end
+
+    if configApply.devicons_custom.cterm and not configApply.devicons_custom.gui then
+        M.deviconsOverrides(configApply)
+        M.loadHlGroups(devIcons.setup(configColors))
+    elseif configApply.devicons_custom.gui then
+        M.deviconsOverrides(configApply)
+    else
+        M.loadHlGroups(devIcons.setup(configColors))
+    end
+
+    M.terminal(configColors)
+    M.autocmds(configApply, configColors)
+    M.loadCustomSyntax(configApply)
 end
 
 function M.loadHlGroups(synTheme)
     M.syntax(synTheme)
 end
 
-function M.loadSyntax(synTheme)
-    if synTheme.loadPlugins then
-        M.syntax(synTheme.loadPlugins())
-    end
-    if synTheme.loadSyntax then
-        M.syntax(synTheme.loadSyntax())
-    end
-    if synTheme.loadTreeSitter then
-        M.syntax(synTheme.loadTreeSitter())
-    end
-end
-
 function M.loadCustomSyntax(config)
     local async
-    async = vim.loop.new_async(vim.schedule_wrap(function()
+    async = vim.uv.new_async(function()
         M.syntax(config.custom_highlights)
         if async then
             async:close()
         end
-    end))
+    end)
+
     if async then
         async:send()
     end

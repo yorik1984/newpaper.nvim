@@ -5,7 +5,7 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        vimCommentTitle = { fg = newpaper.comments, style = style.c_title }
+        ["@punctuation.bracket.lifetime"] = { fg = newpaper.tag_navy, style = style.k_style },
     }
 end
 

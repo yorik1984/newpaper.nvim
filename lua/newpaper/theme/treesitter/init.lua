@@ -1,15 +1,26 @@
 local M = {}
 
-local folder = "newpaper.theme.filetypes."
+local folder = "newpaper.theme.treesitter."
 
 local files = {
+    "comment",
     "html",
+    "jinja",
     "json",
+    "latex",
     "liquid",
+    "lua",
+    "luadoc",
+    "luap",
+    "luau",
     "markdown",
-    "rmd",
+    "query",
+    "rbs",
+    "regexp",
+    "ruby",
+    "rust",
     "toml",
-    "vim",
+    "typescript",
     "vimdoc",
     "yaml",
 }

@@ -5,7 +5,8 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        vimCommentTitle = { fg = newpaper.comments, style = style.c_title }
+        ["@constant.html"] = { fg = newpaper.comments, style = style.c_style },
+        ["@none.html"]     = { fg = newpaper.texts },
     }
 end
 
