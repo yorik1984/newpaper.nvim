@@ -5,33 +5,21 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        -- Nvim-lsp-installer ----------------------------------------------
-        LspInstallerServerExpanded       = { fg = newpaper.fg, style = style.b_italic },
-        LspInstallerHighlighted          = { fg = newpaper.blue },
-        LspInstallerVaderSaber           = { fg = newpaper.redorange, style = style.b_bold },
-        LspInstallerHeading              = { fg = newpaper.keywords, style = style.b_bold },
-        LspInstallerOrange               = { fg = newpaper.orange },
-        LspInstallerHeader               = { fg = newpaper.orange, style = style.b_bold },
-        LspInstallerMuted                = { fg = newpaper.comments },
-        LspInstallerLabel                = { fg = newpaper.fg, style = style.b_bold },
-        LspInstallerGreen                = { fg = newpaper.darkgreen },
-        LspInstallerError                = { fg = newpaper.errormsg_fg },
-        LspInstallerLink                 = { fg = newpaper.links, style = style.links },
-
-        MasonHeader                      = { link = "LspInstallerHeader" },
+        MasonBackdrop                    = { bg = newpaper.bg },
+        MasonHeader                      = { fg = newpaper.orange, style = style.b_bold },
         MasonHeaderSecondary             = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
-        MasonHighlight                   = { link = "LspInstallerGreen" },
+        MasonHighlight                   = { fg = newpaper.darkgreen },
         MasonHighlightBlock              = { fg = newpaper.fg, bg = newpaper.aqua, },
         MasonHighlightBlockBold          = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
-        MasonHighlightSecondary          = { link = "LspInstallerOrange" },
+        MasonHighlightSecondary          = { fg = newpaper.orange },
         MasonHighlightBlockSecondary     = { fg = newpaper.fg, bg = newpaper.lightorange },
         MasonHighlightBlockBoldSecondary = { fg = newpaper.fg, bg = newpaper.lightorange, style = style.b_bold },
-        MasonLink                        = { link = "LspInstallerLink" },
-        MasonMuted                       = { link = "LspInstallerMuted" },
+        MasonLink                        = { fg = newpaper.links, style = style.links },
+        MasonMuted                       = { fg = newpaper.comments },
         MasonMutedBlock                  = { fg = newpaper.grey, bg = newpaper.bg },
         MasonMutedBlockBold              = { fg = newpaper.comments, style = style.b_bold },
-        MasonError                       = { link = "LspInstallerError" },
-        MasonHeading                     = { link = "LspInstallerHeading" },
+        MasonError                       = { fg = newpaper.errormsg_fg },
+        MasonHeading                     = { fg = newpaper.keywords, style = style.b_bold },
     }
 end
 
