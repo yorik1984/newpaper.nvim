@@ -199,7 +199,7 @@ require("newpaper").setup({
 
 | Option              | Default       | Description |
 | ------------------- | ------------- | ------------|
-| style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` |
+| style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` and `"auto"` mode. option `"auto"` set style depending from `vim.o.background` |
 | lightness           | `0`           | Make all supported highlight groups lighter or darker. Useful with `saturation` to make more beauty and eye-friendly view. Value: from `-1`(all colors `"#000000"`) to `1`(all colors `"#FFFFFF"`). Recommended value: `-0.2` - `0.2` |
 | saturation          | `0`           | Change color saturation of all supported highlight groups. Useful with `lightness` to make more beauty and eye-friendly view. Value: from `-1` to `1`. Recommended value: `-0.2` - `0.2` |
 | greyscale           | `false`       | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|

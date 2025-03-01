@@ -5,33 +5,22 @@ local config       = configModule.config
 local function setup(userConfig)
     if userConfig then
         configModule.applyConfiguration(userConfig)
-        if config.style == "light" then
-            vim.o.background = "light"
-        elseif config.style == "dark" then
-            vim.o.background = "dark"
-        end
-        vim.g.newpaper_colors = config.colors
-        vim.g.newpaper_lualine_bold = config.lualine_bold
-        if userConfig.lualine_style then
-            vim.g.newpaper_lualine_style = config.lualine_style
+        if config.style == "auto" then
+            config.style = vim.o.background
         else
-            vim.g.newpaper_lualine_style = config.style
+            vim.o.background = config.style
         end
+
+        vim.g.newpaper_colors        = config.colors
+        vim.g.newpaper_lualine_bold  = config.lualine_bold
+        vim.g.newpaper_lualine_style = userConfig.lualine_style or config.style
     else
-        if vim.g.newpaper_colors == nil then
-            vim.g.newpaper_colors = config.colors
-        end
-        if vim.g.newpaper_lualine_bold == nil then
-            vim.g.newpaper_lualine_bold = config.lualine_bold
-        end
-        if vim.g.newpaper_lualine_style == nil then
-            vim.g.newpaper_lualine_style = config.lualine_style
-        end
+        vim.g.newpaper_colors        = vim.g.newpaper_colors or config.colors
+        vim.g.newpaper_lualine_bold  = vim.g.newpaper_lualine_bold or config.lualine_bold
+        vim.g.newpaper_lualine_style = vim.g.newpaper_lualine_style or config.lualine_style
     end
 
     util.load(configModule.config)
-
-    end
+end
 
 return { setup = setup }
-

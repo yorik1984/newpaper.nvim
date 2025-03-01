@@ -15,8 +15,6 @@ local opt = function(key, default)
     end
 end
 
--- stylua: ignore start
-
 local term_opt = {
     bg                  = "bg",
     contrast            = "contrast",
@@ -88,8 +86,6 @@ local applyConfiguration = function(userConfig)
         colors_advanced   = "Use: colors_advanced = { name = color }",
         custom_highlights = "Use: custom_highlights = { hlGroup = { arg = color } }",
     }
-
-    -- stylua: ignore end
 
     for key, help in pairs(error_help) do
         check.notTableError(key, userConfig[key], help)

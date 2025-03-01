@@ -142,8 +142,9 @@ In order for these settings to take effect, they should be placed in your
 Fields: ~
 
                                                          *newpaper.config.style*
-    • {style}       (`"dark"`| `"light"`)
-                    The theme comes in two styles.
+    • {style}       (`"dark"`| `"light"`| `auto`)
+                    The theme comes in two styles and `"auto"` mode.
+                    Option `"auto"` set style depending from `vim.o.background`
 
                     Default: `"light"` ~
 
