@@ -17,31 +17,37 @@ CONTENTS                                                     *newpaper.contents*
 ================================================================================
 1. FEATURES                                                  *newpaper.features*
 
-*newpaper.nvim* is a 'colorscheme' written in |lua| with built in support for
-|LSP|, |treesitter| and many more plugins.
+*newpaper.nvim* is a 'colorscheme' written in |lua| with built in support |LSP|,
+|treesitter|, extends |treesitter-query| for some grammars and more plugins.
 
 There are 2 |newpaper.styles| to choose from:
     • light
     • dark
 
-A wide array of supprted plugins like:
+Extra supported: ~
+
+filetypes plugins: ~
+    • Vim-Jinja2-Syntax
+    • [n]vim-markdown
+    • vim-lua
+    • vim-pandoc-syntax
+    • vim-rbs
+    • vim-ruby
+    • vimtex
+
+plugins: ~
     • bufferline.nvim
     • cheatsheet.nvim
     • colorful-menu.nvim
     • Dashboard
     • flash.nvim
-    • fugitive
-    • Git Gutter
     • Git Signs
-    • git-messenger
-    • glyph-palette.vim
     • headlines.nvim
     • highlight-undo.nvim
     • Indent-Blankline.nvim
     • lazy.nvim
     • lazygit.nvim
     • litee.nvim
-    • LSP Diagnostics
     • lspsaga
     • Lualine
     • mason.nvim
@@ -54,28 +60,18 @@ A wide array of supprted plugins like:
     • nvim-dap-virtual-text
     • nvim-lsp-installer
     • nvim-notify
-    • nvim-treesitter-context
     • Nvim-Tree.lua
+    • nvim-treesitter-context
     • nvim-web-devicons
     • rainbow-delimiters.nvim
     • snacks.nvim
-    • symbols-outline.nvim
     • Telescope.nvim
     • todo-comments.nvim
-    • TreeSitter
     • trim.nvim
     • Trouble
-    • vim-illuminate
-    • Vim-Jinja2-Syntax
-    • vim-LanguageTool
-    • vim-lua
-    • vim-rbs
-    • vim-ruby
-    • vim-sneak
-    • vim-toml
-    • vimtex
+    • vim-fugitive
+    • vim-matchup
     • virt-column.nvim
-    • vista.vim
     • WhichKey.nvim
 
 Ability to have a different background on sidebar windows like Nvim-Tree,

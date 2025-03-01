@@ -47,16 +47,18 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 ## 🌟 Features
 
++ [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) support.
++ Support regex highlight with treesitter. Colors pick from [regexr.com](https://regexr.com).
++ Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
++ [lsp-semantic-highlight](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight).
++ [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim).
 + Two styles to choose from:
   + Light
   + Dark
-+ Lualine theme
++ Lualine theme.
 + Ability to change background on sidebar windows like NvimTree, terminal etc.
-+ Added functions for live theme switching without the need to restart Neovim
-+ Extra syntax highlight and extends [treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) for some grammars.
++ Added functions for live theme switching without the need to restart Neovim.
 + [Extras](#extras) colors configs for terminal-based and GUI application.
-+ [lsp-semantic-highlight](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight)
-+ Support regex highlight with treesitter. Colors pick from [regexr.com](https://regexr.com).
 
 ### Extra syntax highlights
 
@@ -86,27 +88,34 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 | **Vimdoc**              | :heavy_check_mark: | :white_check_mark: | :x: | | |
 | **YAML**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/yaml/code.yaml) |
 
-:thumbsup: - detailed, :white_check_mark: - support and recomended  as default, :heavy_check_mark: - support, :x: - not support
+:thumbsup: - detailed, :white_check_mark: - support and recommended  as default, :heavy_check_mark: - support, :x: - not support
 
-### 🔌 Supported plugins
+### 🔌 Extra supported
+
+#### filetypes plugins
+
++ [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
++ [vim-lua](https://github.com/tbastos/vim-lua)
++ [vim-markdown](https://github.com/preservim/vim-markdown) or [nvim-markdown](https://github.com/ixru/nvim-markdown)
++ [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax)
++ [vim-rbs](https://github.com/jlcrochet/vim-rbs)
++ [vim-ruby](https://github.com/vim-ruby/vim-ruby)
++ [vimtex](https://github.com/lervag/vimtex)
+
+#### plugins
 
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) for [⚙️nvim-cmp](#nvim-cmp-settings)
 + [Dashboard](https://github.com/nvimdev/dashboard-nvim)
 + [flash.nvim](https://github.com/folke/flash.nvim)
-+ [fugitive](https://github.com/tpope/vim-fugitive)
-+ [Git Gutter](https://github.com/airblade/vim-gitgutter)
 + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
-+ [git-messenger](https://github.com/rhysd/git-messenger.vim)
-+ [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 + [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim)
++ [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 + [lazy.nvim](https://github.com/folke/lazy.nvim)
 + [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) with extras for [light](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_light.yml)[🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_light.png) or [dark](https://raw.githubusercontent.com/new-paper/lazygit/main/themes/newpaper_dark.yml)[🖼️](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/plugins/lazygit/lazygit_neovim_dark.png) background.
-+ [Indent-Blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 + [litee.nvim](https://github.com/ldelossa/litee.nvim)
-+ [LSP Diagnostics](https://neovim.io/doc/user/lsp.html) with colors from [lsp-colors](https://github.com/folke/lsp-colors.nvim)
 + [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim)
 + [Lualine](https://github.com/nvim-lualine/lualine.nvim)[🖼️](#-screenshots-lualine)
 + [mason.nvim](https://github.com/williamboman/mason.nvim)
@@ -119,28 +128,18 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 + [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 + [nvim-notify](https://github.com/rcarriga/nvim-notify)
-+ [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 + [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
++ [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 + [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
 + [snacks.nvim](https://github.com/folke/snacks.nvim)
-+ [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)[🖼️](#todo-commentsnvim)
-+ [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 + [trim.nvim](https://github.com/cappyzawa/trim.nvim)
 + [Trouble](https://github.com/folke/trouble.nvim)
-+ [vim-illuminate](https://github.com/RRethy/vim-illuminate)
-+ [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
-+ [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool)
-+ [vim-lua](https://github.com/tbastos/vim-lua)
-+ [vim-rbs](https://github.com/jlcrochet/vim-rbs)
-+ [vim-ruby](https://github.com/vim-ruby/vim-ruby)
-+ [vim-sneak](https://github.com/justinmk/vim-sneak)
-+ [vim-toml](https://github.com/cespare/vim-toml)
-+ [vimtex](https://github.com/lervag/vimtex)
++ [vim-fugitive](https://github.com/tpope/vim-fugitive)
++ [vim-matchup](https://github.com/andymass/vim-matchup)
 + [virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim)
-+ [vista.vim](https://github.com/liuchengxu/vista.vim)
 + [WhichKey.nvim](https://github.com/folke/which-key.nvim)
 
 ## ⚡️ Requirements

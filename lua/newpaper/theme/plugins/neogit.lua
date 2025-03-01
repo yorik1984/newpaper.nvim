@@ -32,14 +32,14 @@ function M.setup(configColors, configStyle)
         -- NeogitPicking
 
         -- STATUS BUFFER FILE
-        NeogitChangeModified       = { fg = newpaper.tag_navy, style = style.b_bold_i },
-        NeogitChangeAdded          = { fg = newpaper.git_added, style = style.b_bold_i },
-        NeogitChangeDeleted        = { fg = newpaper.maroon, style = style.b_bold_i },
-        NeogitChangeRenamed        = { fg = newpaper.tex_redorange, style = style.b_bold_i },
-        NeogitChangeUpdated        = { fg = newpaper.darkorange, style = style.b_bold_i },
-        NeogitChangeCopied         = { fg = newpaper.teal, style = style.b_bold_i },
-        NeogitChangeBothModified   = { fg = newpaper.darkyellow, style = style.b_bold_i },
-        NeogitChangeNewFile        = { fg = newpaper.darkgreen, style = style.b_bold_i },
+        NeogitChangeModified       = { fg = newpaper.tag_navy, style = style.b_bold },
+        NeogitChangeAdded          = { fg = newpaper.git_added, style = style.b_bold },
+        NeogitChangeDeleted        = { fg = newpaper.maroon, style = style.b_bold },
+        NeogitChangeRenamed        = { fg = newpaper.tex_redorange, style = style.b_bold },
+        NeogitChangeUpdated        = { fg = newpaper.darkorange, style = style.b_bold },
+        NeogitChangeCopied         = { fg = newpaper.teal, style = style.b_bold },
+        NeogitChangeBothModified   = { fg = newpaper.darkyellow, style = style.b_bold },
+        NeogitChangeNewFile        = { fg = newpaper.darkgreen, style = style.b_bold },
 
         -- SIGNS FOR LINE HIGHLIGHTING
         NeogitHunkHeader           = { fg = newpaper.git_fg, bg = newpaper.silver, style = style.b_bold },
