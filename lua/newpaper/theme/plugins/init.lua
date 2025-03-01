@@ -34,6 +34,7 @@ local files = {
     "todo-comments",
     "trim",
     "trouble",
+    "undo-glow",
     "vim-fugitive",
     "vim-matchup",
     "virt-column",

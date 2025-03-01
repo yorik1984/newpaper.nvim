@@ -69,6 +69,7 @@ plugins: ~
     • todo-comments.nvim
     • trim.nvim
     • Trouble
+    • undo-glow.nvim
     • vim-fugitive
     • vim-matchup
     • virt-column.nvim

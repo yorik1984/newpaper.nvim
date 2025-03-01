@@ -137,6 +137,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)[🖼️](#todo-commentsnvim)
 + [trim.nvim](https://github.com/cappyzawa/trim.nvim)
 + [Trouble](https://github.com/folke/trouble.nvim)
++ [undo-glow.nvim](https://github.com/y3owk1n/undo-glow.nvim)
 + [vim-fugitive](https://github.com/tpope/vim-fugitive)
 + [vim-matchup](https://github.com/andymass/vim-matchup)
 + [virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim)
