@@ -5,7 +5,7 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        MasonBackdrop                    = { bg = newpaper.bg },
+        MasonBackdrop                    = { bg = newpaper.fg },
         MasonHeader                      = { fg = newpaper.orange, style = style.b_bold },
         MasonHeaderSecondary             = { fg = newpaper.fg, bg = newpaper.aqua, style = style.b_bold },
         MasonHighlight                   = { fg = newpaper.darkgreen },
