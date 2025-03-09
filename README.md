@@ -126,7 +126,6 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 + [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
-+ [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 + [nvim-notify](https://github.com/rcarriga/nvim-notify)
 + [Nvim-Tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 + [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)

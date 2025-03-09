@@ -5,7 +5,7 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        ["@property.toml"]       = { fg = newpaper.darkengreen, style = style.f_style, nocombine = true },
+        ["@property.toml"]       = { fg = newpaper.darkengreen, style = style.f_style },
         ["@string.special.toml"] = { fg = newpaper.maroon },
         ["@type.toml"]           = { fg = newpaper.keywords, style = style.k_style },
     }

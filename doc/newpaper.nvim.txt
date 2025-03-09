@@ -58,7 +58,6 @@ plugins: ~
     • nvim-dap
     • nvim-dap-ui
     • nvim-dap-virtual-text
-    • nvim-lsp-installer
     • nvim-notify
     • Nvim-Tree.lua
     • nvim-treesitter-context
