@@ -94,6 +94,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 #### filetypes plugins
 
++ [log-highlight.nvim](https://github.com/fei6409/log-highlight.nvim)
 + [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
 + [vim-lua](https://github.com/tbastos/vim-lua)
 + [vim-markdown](https://github.com/preservim/vim-markdown) or [nvim-markdown](https://github.com/ixru/nvim-markdown)

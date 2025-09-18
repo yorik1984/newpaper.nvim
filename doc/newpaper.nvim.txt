@@ -27,6 +27,7 @@ There are 2 |newpaper.styles| to choose from:
 Extra supported: ~
 
 filetypes plugins: ~
+    • log-highlight.nvim
     • Vim-Jinja2-Syntax
     • [n]vim-markdown
     • vim-lua

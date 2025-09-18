@@ -6,6 +6,7 @@ local files = {
     "html",
     "json",
     "liquid",
+    "log",
     "markdown",
     "rmd",
     "toml",
