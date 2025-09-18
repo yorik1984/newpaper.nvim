@@ -71,6 +71,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 | **Jinja**               | :heavy_check_mark: | :x:                | :white_check_mark: [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax) | | |
 | **Json**                | :heavy_check_mark: | :white_check_mark: | :x: | | |
 | **Liquid**              | :heavy_check_mark: | :white_check_mark: | :x: | | |
+| **Log**                 | :x               : | :x:                | :white_check_mark: [log-highlight.nvim](https://github.com/fei6409/log-highlight.nvim) | | |
 | **Lua** :thumbsup:      | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-lua](https://github.com/tbastos/vim-lua) | [🖼️](#lua) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/code.lua)|
 | **Luadoc** :thumbsup:   | :x:                | :white_check_mark: | :x: | | |
 | **Luap** :thumbsup:     | :x:                | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/luap/luap.lua) |
