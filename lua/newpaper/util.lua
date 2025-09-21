@@ -6,6 +6,7 @@ local filetypes     = require("newpaper.theme.filetypes")
 local ftplugins     = require("newpaper.theme.ftplugins")
 local plugins       = require("newpaper.theme.plugins")
 local treesitter    = require("newpaper.theme.treesitter")
+local terminal      = require("newpaper.theme.terminal")
 local M             = {}
 
 function M.contains(tbl, string)
@@ -102,34 +103,13 @@ function M.autocmds(config, colors)
     end
 end
 
-function M.terminal(colors)
-    vim.g.terminal_color_0  = colors.black
-    vim.g.terminal_color_1  = colors.maroon
-    vim.g.terminal_color_2  = colors.darkgreen
-    vim.g.terminal_color_3  = colors.darkorange
-    vim.g.terminal_color_4  = colors.navy
-    vim.g.terminal_color_5  = colors.purple
-    vim.g.terminal_color_6  = colors.teal
-    vim.g.terminal_color_7  = colors.bg
-    vim.g.terminal_color_8  = colors.darkgrey
-    vim.g.terminal_color_9  = colors.red
-    vim.g.terminal_color_10 = colors.green
-    vim.g.terminal_color_11 = colors.orange
-    vim.g.terminal_color_12 = colors.lightblue
-    vim.g.terminal_color_13 = colors.lightmagenta
-    vim.g.terminal_color_14 = colors.blue
-    vim.g.terminal_color_15 = colors.fg
-end
-
 function M.load(configApply)
-    -- Patch https://github.com/folke/tokyonight.nvim/commit/0ead86afe390603f9bd688103d7a5fc6724a828e
-    -- only needed to clear when not the default colorscheme
     if vim.g.colors_name then
         vim.cmd([[hi clear]])
     end
 
     vim.o.termguicolors = true
-    vim.g.colors_name = "newpaper"
+    vim.g.colors_name   = "newpaper"
 
     if vim.fn.exists "syntax_on" then
         vim.cmd "syntax reset"
@@ -152,7 +132,7 @@ function M.load(configApply)
         end
     end
 
-    M.terminal(configColors)
+    terminal.setup(configColors)
     M.loadCustomSyntax(configApply)
     M.autocmds(configApply, configColors)
 end
