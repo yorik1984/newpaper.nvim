@@ -1,4 +1,5 @@
 local util         = require("newpaper.colors.util")
+local check        = require("newpaper.check")
 local configModule = require("newpaper.config")
 local M            = {}
 
@@ -386,7 +387,7 @@ function M.setup(config)
         util.hsluvEdit(newpaper, configModule.hsluv_opt.saturation, config.saturation)
     end
 
-    if util.contains(configModule.greyscale_opt, config.greyscale) then
+    if check.contains(configModule.greyscale_opt, config.greyscale) then
         util.colorGreyscale(newpaper, config.greyscale)
     end
 
@@ -495,13 +496,13 @@ function M.setup(config)
     newpaper.trouble_bg  = newpaper.sb_bg
 
     -- NvimTree
-    if util.contains(config.sidebars_contrast, "NvimTree") then
+    if check.contains(config.sidebars_contrast, "NvimTree") then
         newpaper.nvimtree_fg = newpaper.sb_contrast_fg
         newpaper.nvimtree_bg = newpaper.aqualight
     end
 
     -- Troule
-    if util.contains(config.sidebars_contrast, "Trouble") then
+    if check.contains(config.sidebars_contrast, "Trouble") then
         newpaper.trouble_fg = newpaper.sb_contrast_fg
         newpaper.trouble_bg = newpaper.sb_contrast_bg
     end

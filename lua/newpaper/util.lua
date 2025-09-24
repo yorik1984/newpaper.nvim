@@ -1,37 +1,34 @@
-local terminal      = require("newpaper.theme.terminal")
-local configModule  = require("newpaper.config")
-local style         = require("newpaper.style")
-local M             = {}
+local core         = require("newpaper.theme.core")
+local filetypes    = require("newpaper.theme.filetypes")
+local ftplugins    = require("newpaper.theme.ftplugins")
+local plugins      = require("newpaper.theme.plugins")
+local treesitter   = require("newpaper.theme.treesitter")
+local configModule = require("newpaper.config")
+local style        = require("newpaper.style")
+local autocmds     = require("newpaper.autocmds")
+local M            = {}
 
 local function safeRequire(module)
     local ok, val = pcall(require, module)
     if ok then return val end
 end
 
-function M.contains(tbl, value)
-    for k, v in pairs(tbl) do
-        if type(v) == "table" then
-            if M.contains(v, value) then
-                return true
-            end
-        elseif v == value then
-            return true
-        end
-    end
-    return false
-end
+local terminal = safeRequire("newpaper.theme.terminal")
 
 function M.syntax(syntax)
+    if not syntax then return end
     for group, color in pairs(syntax) do
         M.highlight(group, color)
     end
 end
 
 function M.highlight(group, color)
+    if not color then return end
+
     if color.style then
         if type(color.style) == "table" then
             color = vim.tbl_extend("force", color, color.style)
-        elseif color.style:lower() ~= "none" then
+        elseif type(color.style) == "string" and color.style:lower() ~= "none" then
             for s in string.gmatch(color.style, "([^,]+)") do
                 color[s] = true
             end
@@ -42,75 +39,15 @@ function M.highlight(group, color)
     vim.api.nvim_set_hl(0, group, color)
 end
 
-function M.onColorScheme()
-    vim.api.nvim_clear_autocmds({ group = "newpaper" })
-end
-
-function M.autocmds(config, color)
-    local group = vim.api.nvim_create_augroup("newpaper", {})
-    local util  = M
-
-    vim.api.nvim_create_autocmd({ "ColorSchemePre" }, {
-        group = group,
-        pattern = { "*" },
-        callback = function()
-            util.onColorScheme()
-        end,
-    })
-    vim.api.nvim_create_autocmd({ "TermOpen" }, {
-        group = group,
-        pattern = { "*\\(lazygit\\)\\@<!" },
-        command = "setlocal winhighlight=Normal:NormalTerm,"
-            .. "NormalFloat:NormalTermFloat,"
-            .. "FloatBorder:FloatBorderTerm,"
-            .. "SignColumn:SignColumnTerm,"
-            .. "LineNr:LineNrTerm,"
-            .. "FoldColumn:FoldColumnTerm,"
-            .. "TermCursor:TermCursorTerm,"
-            .. "TermCursorNC:TermCursorNCTerm,"
-            .. "CursorLine:CursorLineTerm "
-            .. "signcolumn=no nocursorline nonumber",
-    })
-
-    vim.api.nvim_create_autocmd({ "TermOpen" }, {
-        group = group,
-        pattern = { "*\\(lazygit\\)" },
-        callback = function()
-            vim.b.terminal_color_1  = color.git_removed
-            vim.b.terminal_color_2  = color.git_added
-            vim.b.terminal_color_15 = color.git_fg
-        end,
-    })
-
-    for _, sidebar in ipairs(config.sidebars_contrast) do
-        if sidebar ~= "NvimTree" then
-            vim.api.nvim_create_autocmd({ "FileType" }, {
-                group = group,
-                pattern = { sidebar },
-                command = "setlocal winhighlight=Normal:NormalContrastSB,"
-                    .. "SignColumn:SignColumnSB,"
-                    .. "LineNr:LineNrSB,"
-                    .. "FoldColumn:FoldColumnSB,"
-                    .. "CursorLineNr:CursorLineSignSB,"
-                    .. "CursorLine:CursorLineSB,"
-                    .. "CursorLineSign:CursorLineSignSB "
-                    .. "signcolumn=yes:1 nonumber",
-            })
-        end
-    end
-end
-
 function M.setup(userConfig)
     configModule.setup(userConfig)
 end
 
 function M.load(configApply)
-    local config = configModule.config
-
     if configApply then
         configModule.setup(configApply)
-        config = configModule.config
     end
+    local config = configModule.config
 
     if config.style == "auto" then
         config.style = vim.o.background
@@ -120,7 +57,7 @@ function M.load(configApply)
 
     vim.g.newpaper_colors        = config.colors
     vim.g.newpaper_lualine_bold  = config.lualine_bold
-    vim.g.newpaper_lualine_style = configApply and (configApply.lualine_style or config.style) or config.style
+    vim.g.newpaper_lualine_style = config.style
 
     if vim.g.colors_name then
         vim.cmd([[hi clear]])
@@ -132,34 +69,39 @@ function M.load(configApply)
         vim.cmd("syntax reset")
     end
 
-    local colors = safeRequire("newpaper.colors")
-    local configColors = colors and colors.setup(config) or {}
+    local colors       = safeRequire("newpaper.colors")
+    local configColors = colors and colors.setup(config)
     local configStyle  = style.setupStyle(config)
 
-    local groups = { "core", "filetypes", "ftplugins", "plugins", "treesitter" }
+    local groups       = {
+        core,
+        filetypes,
+        ftplugins,
+        plugins,
+        treesitter,
+    }
 
-    for _, groupName in ipairs(groups) do
-        local group = safeRequire("newpaper.theme" .. groupName)
-        if group then
-            for _, syn in ipairs(group) do
-                local module = safeRequire(syn)
-                if module then
-                    M.loadHlGroups(module.setup(configColors, configStyle))
-                end
-            end
+    for _, group in ipairs(groups) do
+        for _, syn in ipairs(group) do
+            M.loadHlGroups(require(syn).setup(configColors, configStyle))
         end
     end
 
-    terminal.setup(configColors)
-    M.loadCustomSyntax(config)
-    M.autocmds(config, configColors)
+    -- if terminal and terminal.setup then
+    --     terminal.setup(configColors)
+    -- end
+    --
+    -- M.loadCustomSyntax(config)
+    -- autocmds.setup(config, configColors)
 end
 
 function M.loadHlGroups(synTheme)
+    if not synTheme then return end
     M.syntax(synTheme)
 end
 
 function M.loadCustomSyntax(config)
+    if not config then return end
     M.syntax(config.custom_highlights)
 end
 

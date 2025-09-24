@@ -19,6 +19,20 @@ M.validators = {
     editor_better_view = "boolean",
 }
 
+function M.contains(tbl, value)
+    if type(tbl) ~= "table" then
+        return false
+    end
+
+    for _, v in pairs(tbl) do
+        if v == value then
+            return true
+        end
+    end
+
+    return false
+end
+
 ---@param value string
 ---@return boolean
 function M.isHex(value)

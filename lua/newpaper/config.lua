@@ -27,7 +27,6 @@ M.hsluv_opt = {
     saturation = "saturation",
 }
 
--- Настройки градаций сого
 M.greyscale_opt = {
     lightness  = "lightness",
     average    = "average",
