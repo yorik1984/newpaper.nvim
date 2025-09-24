@@ -1,3 +1,4 @@
+---@class newpaper.check
 local M = {}
 
 M.error_help = {

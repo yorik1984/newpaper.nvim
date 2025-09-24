@@ -4,7 +4,32 @@ local function onColorScheme()
     pcall(vim.api.nvim_clear_autocmds, { group = "newpaper" })
 end
 
-function M.setup(config, color)
+local function updateLualineStyle()
+    vim.g.newpaper_lualine_style = vim.o.background
+
+    pcall(function()
+        local ok_lualine, lualine = pcall(require, "lualine")
+        if ok_lualine and type(lualine.refresh) == "function" then
+            lualine.refresh()
+        end
+    end)
+end
+
+function M.autocmds(config, color)
+    local augroup = vim.api.nvim_create_augroup("NewpaperLualineStyle", { clear = true })
+
+    vim.api.nvim_create_autocmd("OptionSet", {
+        group = augroup,
+        pattern = "background",
+        callback = updateLualineStyle,
+    })
+
+    vim.api.nvim_create_autocmd("ColorScheme", {
+        group = augroup,
+        pattern = "*",
+        callback = updateLualineStyle,
+    })
+
     local group = vim.api.nvim_create_augroup("newpaper", {})
 
     vim.api.nvim_create_autocmd({ "ColorSchemePre" }, {

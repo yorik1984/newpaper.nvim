@@ -1,9 +1,13 @@
 vim.api.nvim_create_user_command("NewpaperLight", function()
-    require("newpaper").setup({ style = "light" })
     vim.o.background = "light"
+    vim.cmd.colorscheme("newpaper")
 end, {})
 
 vim.api.nvim_create_user_command("NewpaperDark", function()
-    require("newpaper").setup({ style = "dark" })
     vim.o.background = "dark"
+    vim.cmd.colorscheme("newpaper")
+end, {})
+
+vim.api.nvim_create_user_command("Newpaper", function()
+    vim.cmd.colorscheme("newpaper")
 end, {})

@@ -1,1 +1,1 @@
-require("newpaper.util").load()
+require("newpaper").load()
