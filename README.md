@@ -160,6 +160,8 @@ require("lazy").setup({
     priority = 1000,
     config = true,
 })
+
+vim.cmd.colorscheme("newpaper")
 ```
 
 ## ⚙️ Configuration
@@ -170,32 +172,22 @@ require("lazy").setup({
 
 Set the desired style using:
 
-```vim
-" init.vim
-lua << EOF
-    require("newpaper").setup({
-        style = "dark"
-    })
-EOF
-```
 
 ```lua
--- Lua:
-vim.g.newpaper_style = "dark"
-require("newpaper").setup()
-
--- OR better
 require("newpaper").setup({
     style = "dark"
 })
+
+vim.cmd.colorscheme("newpaper")
 ```
 
 ### 💻 Commands
 
-| Command          | Description                            |
-| ---------------- | -------------------------------------- |
-| `:NewpaperLight` | Change style to light mode(by default) |
-| `:NewpaperDark`  | Change style to dark mode              |
+| Command          | Description                                    |
+| ---------------- | ---------------------------------------------- |
+| `:NewpaperLight` | Use colorscheme and change style to light mode |
+| `:NewpaperDark`  | Use colorscheme and change style to dark mode  |
+| `:Newpaper`      | Use colorscheme without changing style         |
 
 ### Available options
 
@@ -242,7 +234,7 @@ require("newpaper").setup({
 | colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors.lua[392:556]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L392-L556) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
-| lualine_style       | `"light"`     | Set different style from main theme:`"dark"`, `"light"`|
+| lualine_style       |               | use always `vim.o.background` option|
 
 ### Colorscheme default settings
 
@@ -289,25 +281,18 @@ require("newpaper").setup({
     colors_advanced     = {},
     custom_highlights   = {},
     lualine_bold        = true,
-    lualine_style       = "light",
 })
 ```
 
 ### Colorscheme customizing
 
 ```lua
+--WARN: Only this `vim.g` variables are using in config to link for lualine 
+
 -- Example config in lua with global variables
-vim.g.newpaper_style             = "dark"
-vim.g.newpaper_keywords          = "italic"
-vim.g.newpaper_borders           = false
 vim.g.newpaper_colors            = { teal = "#0000FF" }
-vim.g.newpaper_colors_advanced   = { keyword = "#AA00AA", string = "#008800" }
-vim.g.newpaper_custom_highlights = {
-    Float     = { fg = vim.g.newpaper_colors.teal },
-    Number    = { fg = "#00FF00" },
-    rubyClass = { fg = "#00FFF0" },
-    Comment   = { fg = "#FF0000", style = "italic,underline" }
-}
+vim.g.newpaper_lualine_bold = true
+
 require("newpaper").setup()
 
 -- OR better with user configuration
@@ -328,18 +313,6 @@ require("newpaper").setup({
     custom_highlights   = custom_highlights,
     -- ...
 })
-```
-
-```vim
-" init.vim
-lua << EOF
-    require("newpaper").setup({
-        style    = "dark",
-        keywords = "italic",
-        borders  = false,
-        colors   = { black = "#000000", bg = "#0F111A" }
-    })
-EOF
 ```
 
 ### ⚠️`guicursor` customizing
@@ -440,14 +413,20 @@ You can temporally use just only lualine theme with any others colorschemes. It 
 ```lua
 -- Set bold style
 vim.g.newpaper_lualine_bold = true
--- If you want to enable style like in main colorscheme no need to set style of lualine
-vim.g.newpaper_lualine_style = "light"
+-- Style like in main colorscheme. Respect background option
+vim.g.newpaper_lualine_style = vim.o.background -- always
 -- Also you can predefine colors
-vim.g.newpaper_colors        = { teal = "#008080" }
+vim.g.newpaper_colors = { teal = "#008080" }
 
--- disable main theme
+-- disable `newpaper` theme
 -- require("newpaper").setup()
 
+require("lualine").setup {
+    options = {
+        theme = "newpaper",
+        -- ... lualine config
+    }
+}
 -- enable other colorscheme
 -- ...
 ```
