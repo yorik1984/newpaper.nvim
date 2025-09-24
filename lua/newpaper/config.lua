@@ -1,46 +1,46 @@
 local check = require("newpaper.check")
 
+local M = {}
 vim = vim or { g = {}, o = {} }
 
-local opt = function(key, default)
-    key = "newpaper_" .. key
-    if vim.g[key] == nil then
+local function opt(key, default)
+    local v = vim.g["newpaper_" .. key]
+    if v == nil then
         return default
+    elseif v == 0 then
+        return false
     else
-        if vim.g[key] == 0 then
-            return false
-        else
-            return vim.g[key]
-        end
+        return v
     end
 end
 
-local term_opt = {
+M.term_opt = {
     bg                  = "bg",
     contrast            = "contrast",
     inverse             = "inverse",
     inverse_transparent = "inverse_transparent",
 }
 
-local hsluv_opt = {
+M.hsluv_opt = {
     hue        = "hue",
     lightness  = "lightness",
     saturation = "saturation",
 }
 
-local greyscale_opt = {
+-- Настройки градаций сого
+M.greyscale_opt = {
     lightness  = "lightness",
     average    = "average",
     luminosity = "luminosity",
 }
 
-local config = {
+M.defaults = {
     style               = opt("style", "light"),
-    lightness           = opt(hsluv_opt.lightness, false),
-    saturation          = opt(hsluv_opt.saturation, false),
+    lightness           = opt(M.hsluv_opt.lightness, false),
+    saturation          = opt(M.hsluv_opt.saturation, false),
     greyscale           = opt("greyscale", false),
     editor_better_view  = opt("editor_better_view", true),
-    terminal            = opt("terminal", term_opt.contrast),
+    terminal            = opt("terminal", M.term_opt.contrast),
     sidebars_contrast   = opt("sidebars_contrast", {}),
     contrast_float      = opt("contrast_float", true),
     contrast_telescope  = opt("contrast_telescope", true),
@@ -79,29 +79,21 @@ local config = {
     lualine_style       = opt("lualine_style", "light"),
 }
 
-local applyConfiguration = function(userConfig)
-    local error_help = {
-        sidebars_contrast = "Use: sidebars_contrast = { 'name' }",
-        colors            = "Use: colors = { name = color }",
-        colors_advanced   = "Use: colors_advanced = { name = color }",
-        custom_highlights = "Use: custom_highlights = { hlGroup = { arg = color } }",
-    }
+M.config = vim.deepcopy(M.defaults)
 
-    for key, help in pairs(error_help) do
-        check.notTableError(key, userConfig[key], help)
+---@param user_settings table?
+function M.setup(user_settings)
+    user_settings = user_settings or {}
+
+    for _, key in ipairs({ "sidebars_contrast", "colors", "colors_advanced", "custom_highlights" }) do
+        check.notTableError(key, user_settings[key])
     end
-    for key, value in pairs(userConfig) do
-        if value ~= nil then
-            check.keyExistsError(userConfig, config, "Option", "See :help newpaper.nvim-configuration")
-            config[key] = value
-        end
-    end
+
+    check.keyExistsError(user_settings, M.defaults, "Option")
+
+    check.typeError(user_settings)
+
+    M.config = vim.tbl_deep_extend("force", {}, M.defaults, user_settings)
 end
 
-return {
-    config = config,
-    applyConfiguration = applyConfiguration,
-    term_opt = term_opt,
-    hsluv_opt = hsluv_opt,
-    greyscale_opt = greyscale_opt,
-}
+return M

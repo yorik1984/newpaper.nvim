@@ -1,6 +1,6 @@
-local util          = require("newpaper.util")
-local configDefault = require("newpaper.config")
-local M             = {}
+local util         = require("newpaper.colors.util")
+local configModule = require("newpaper.config")
+local M            = {}
 
 function M.setup(config)
     local newpaper = {}
@@ -379,14 +379,14 @@ function M.setup(config)
 
     -- apply HSLuv setting for basic colors
     if config.lightness then
-        util.hsluvEdit(newpaper, configDefault.hsluv_opt.lightness, config.lightness)
+        util.hsluvEdit(newpaper, configModule.hsluv_opt.lightness, config.lightness)
     end
 
     if config.saturation then
-        util.hsluvEdit(newpaper, configDefault.hsluv_opt.saturation, config.saturation)
+        util.hsluvEdit(newpaper, configModule.hsluv_opt.saturation, config.saturation)
     end
 
-    if util.contains(configDefault.greyscale_opt, config.greyscale) then
+    if util.contains(configModule.greyscale_opt, config.greyscale) then
         util.colorGreyscale(newpaper, config.greyscale)
     end
 
