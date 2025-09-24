@@ -84,6 +84,8 @@ M.config = vim.deepcopy(M.defaults)
 function M.setup(user_settings)
     user_settings = user_settings or {}
 
+    check.validateUserSettings(user_settings)
+
     for _, key in ipairs({ "sidebars_contrast", "colors", "colors_advanced", "custom_highlights" }) do
         check.notTableError(key, user_settings[key])
     end
@@ -94,5 +96,4 @@ function M.setup(user_settings)
 
     M.config = vim.tbl_deep_extend("force", {}, M.defaults, user_settings)
 end
-
 return M

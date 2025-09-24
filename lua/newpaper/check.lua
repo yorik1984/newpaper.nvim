@@ -7,8 +7,8 @@ M.error_help = {
     custom_highlights  = "Use: custom_highlights = { hlGroup = { arg = color } }",
 }
 
----@alias ConfigType "string"|"boolean"|"table"
----@type table<string, ConfigType>
+---@alias ValidatorType "string" | "boolean" | "table"
+---@type table<string, ValidatorType>
 M.validators = {
     sidebars_contrast  = "table",
     colors             = "table",
@@ -53,29 +53,35 @@ end
 ---@param value any
 function M.notTableError(key, value)
     if value ~= nil and type(value) ~= "table" then
-        local help = M.error_help[key] or ""
+        local help = M.error_help and M.error_help[key] or ""
         error(string.format(
             "newpaper.nvim: user config.%s = %s is not a table. %s",
             key, tostring(value), help
-        ))
+        ), 2)
     end
 end
 
 ---@param userConfig table
 ---@param config table
 ---@param key_type string
+---@param help string?
 function M.keyExistsError(userConfig, config, key_type, help)
     for key, _ in pairs(userConfig or {}) do
         if config[key] == nil then
-        help = help or ""
+            local hint = ""
+            if help and help ~= "" then
+                hint = " " .. tostring(help)
+            elseif M.error_help and M.error_help[key] then
+                hint = " " .. tostring(M.error_help[key])
+            end
+
             error(string.format(
-                "newpaper.nvim: %s `%s` does not exist.",
-                key_type or "Option", key, help
-            ))
+                "newpaper.nvim: %s `%s` does not exist.%s",
+                key_type or "Option", key, hint
+            ), 2)
         end
     end
 end
-
 ---@param plugin string
 ---@param help string?
 function M.requiresPluginError(plugin, help)
@@ -98,6 +104,14 @@ function M.typeError(userConfig)
                 key, expected, type(value)
             ))
         end
+    end
+end
+
+--- Validate user_settings argument for setup
+---@param user_settings any
+function M.validateUserSettings(user_settings)
+    if user_settings ~= nil and type(user_settings) ~= "table" then
+        error("newpaper.nvim: setup: user_settings must be a table or nil", 2)
     end
 end
 

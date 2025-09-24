@@ -3,8 +3,10 @@ local filetypes    = require("newpaper.theme.filetypes")
 local ftplugins    = require("newpaper.theme.ftplugins")
 local plugins      = require("newpaper.theme.plugins")
 local treesitter   = require("newpaper.theme.treesitter")
+local terminal     = require("newpaper.theme.terminal")
 local configModule = require("newpaper.config")
 local style        = require("newpaper.style")
+local colors       = require("newpaper.colors")
 local autocmds     = require("newpaper.autocmds")
 local M            = {}
 
@@ -12,8 +14,6 @@ local function safeRequire(module)
     local ok, val = pcall(require, module)
     if ok then return val end
 end
-
-local terminal = safeRequire("newpaper.theme.terminal")
 
 function M.syntax(syntax)
     if not syntax then return end
@@ -69,7 +69,6 @@ function M.load(configApply)
         vim.cmd("syntax reset")
     end
 
-    local colors       = safeRequire("newpaper.colors")
     local configColors = colors and colors.setup(config)
     local configStyle  = style.setupStyle(config)
 
