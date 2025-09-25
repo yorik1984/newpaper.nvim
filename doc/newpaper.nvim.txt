@@ -558,6 +558,9 @@ Lua with setup({}): ~
 <
 ================================================================================
 5. COMMANDS                                                  *newpaper.commands*
+NOTE: ~
+All commands are aliases for `vim.cmd.colorscheme("newpaper")`with the optional
+`vim.o.background` setting
 
 `:NewpaperLight`    Use colorscheme and change style to light mode
 `:NewpaperDark`     Use colorscheme and change style to dark mode

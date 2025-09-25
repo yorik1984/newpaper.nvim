@@ -183,6 +183,8 @@ vim.cmd.colorscheme("newpaper")
 
 ### 💻 Commands
 
+All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional `vim.o.background` setting
+
 | Command          | Description                                    |
 | ---------------- | ---------------------------------------------- |
 | `:NewpaperLight` | Use colorscheme and change style to light mode |
