@@ -1,3 +1,7 @@
+---@module newpaper.colors.util
+--- Utility helpers for color manipulation (HSLuv and greyscale operations).
+--- External deps (hsluv, check, configModule) are optional and checked at runtime.
+
 local hsluv        = require("newpaper.colors.hsluv")
 local check        = require("newpaper.check")
 local configModule = require("newpaper.config")
@@ -33,7 +37,8 @@ function M.colorOverrides(color, configColors)
                 color[key] = value
             elseif not color[value] then
                 error(
-                "newpaper.nvim: color '" .. value .. "' has wrong format. Use: '#XXXXXX' or existing color group name", 2)
+                    "newpaper.nvim: color '" ..
+                    value .. "' has wrong format. Use: '#XXXXXX' or existing color group name", 2)
             else
                 color[key] = color[value]
             end
@@ -81,44 +86,110 @@ function M.hexGreyscale(hex, method)
     return hsluv.rgb_to_hex({ GREY, GREY, GREY })
 end
 
+--- Change saturation of an HSLuv color and return resulting hex string.
+--- If saturation is 0 (grey) the saturation is not modified.
+--- @param hsluvColor table<number> Array-like HSLuv color {H,S,L}
+--- @param value number Fractional change. Positive moves toward 100, negative toward 0.
+--- @return string|nil hex Resulting hex string like "#RRGGBB", or nil on error.
 function M.hsluvChangeSaturation(hsluvColor, value)
-    -- when saturation <=1(for grey colors)  will change lightness
-    if math.floor(hsluvColor[2]) > 0 then
-        local hsluvValue = (value < 0) and hsluvColor[2] or (100 - hsluvColor[2])
-        hsluvColor[2] = hsluvColor[2] + hsluvValue * value
+    if type(hsluvColor) ~= "table" or type(value) ~= "number" then
+        return nil
     end
-    return hsluv.hsluv_to_hex(hsluvColor)
+
+    local s = tonumber(hsluvColor[2]) or 0
+    -- when saturation <= 0 (grey colors) do not change saturation
+    if math.floor(s) > 0 then
+        local delta_base = (value < 0) and s or (100 - s)
+        hsluvColor[2] = s + delta_base * value
+        -- clamp to [0,100]
+        if hsluvColor[2] < 0 then hsluvColor[2] = 0 end
+        if hsluvColor[2] > 100 then hsluvColor[2] = 100 end
+    end
+
+    if type(hsluv) == "table" and type(hsluv.hsluv_to_hex) == "function" then
+        local ok, hex = pcall(hsluv.hsluv_to_hex, hsluvColor)
+        if ok and type(hex) == "string" then return hex end
+    end
+    return nil
 end
 
+--- Change lightness of an HSLuv color and return resulting hex string.
+--- @param hsluvColor table<number> Array-like HSLuv color {H,S,L}
+--- @param value number Fractional change. Positive moves toward 100, negative toward 0.
+--- @return string|nil hex Resulting hex string like "#RRGGBB", or nil on error.
 function M.hsluvChangeLightness(hsluvColor, value)
-    local hsluvValue = (value < 0) and hsluvColor[3] or (100 - hsluvColor[3])
-    hsluvColor[3] = hsluvColor[3] + hsluvValue * value
-    return hsluv.hsluv_to_hex(hsluvColor)
+    if type(hsluvColor) ~= "table" or type(value) ~= "number" then
+        return nil
+    end
+
+    local l = tonumber(hsluvColor[3]) or 0
+    local delta_base = (value < 0) and l or (100 - l)
+    hsluvColor[3] = l + delta_base * value
+    -- clamp to [0,100]
+    if hsluvColor[3] < 0 then hsluvColor[3] = 0 end
+    if hsluvColor[3] > 100 then hsluvColor[3] = 100 end
+
+    if type(hsluv) == "table" and type(hsluv.hsluv_to_hex) == "function" then
+        local ok, hex = pcall(hsluv.hsluv_to_hex, hsluvColor)
+        if ok and type(hex) == "string" then return hex end
+    end
+    return nil
 end
 
+--- Edit a table of colors (hex strings) by applying an HSLuv operation.
+--- Only entries passing check.isHex are processed. The table is modified in-place.
+--- @param colors table<string, string> Table mapping keys -> hex color strings
+--- @param hsluvType any Either configModule.hsluv_opt.saturation or configModule.hsluv_opt.lightness
+--- @param hsluvValue number Fractional change applied to saturation or lightness
+--- @return table colors The same table (modified in-place)
 function M.hsluvEdit(colors, hsluvType, hsluvValue)
-    for key, value in pairs(colors) do
-        if check.isHex(value) then
-            -- only for light background using light but not grey color
-            if value == "#F1F3F2" then
-                value = "#F2F2F2"
+    if type(colors) ~= "table" then return colors end
+
+    local can_check = (type(check) == "table" and type(check.isHex) == "function")
+    local can_hsluv = (type(hsluv) == "table" and type(hsluv.hex_to_hsluv) == "function")
+    local sat_key = configModule and configModule.hsluv_opt and configModule.hsluv_opt.saturation
+    local light_key = configModule and configModule.hsluv_opt and configModule.hsluv_opt.lightness
+
+    for key, val in pairs(colors) do
+        -- simple validation
+        if type(val) == "string" and can_check and check.isHex(val) then
+            -- special-case a specific color
+            if val == "#F1F3F2" then
+                val = "#F2F2F2"
             end
-            local hsluvColor = hsluv.hex_to_hsluv(value)
-            if hsluvType == configModule.hsluv_opt.saturation then
-                colors[key] = M.hsluvChangeSaturation(hsluvColor, hsluvValue)
-            end
-            if hsluvType == configModule.hsluv_opt.lightness then
-                colors[key] = M.hsluvChangeLightness(hsluvColor, hsluvValue)
+
+            if can_hsluv then
+                local ok, hsluvColor = pcall(hsluv.hex_to_hsluv, val)
+                if ok and type(hsluvColor) == "table" then
+                    if hsluvType == sat_key then
+                        local hex = M.hsluvChangeSaturation(hsluvColor, hsluvValue)
+                        if type(hex) == "string" then colors[key] = hex end
+                    elseif hsluvType == light_key then
+                        local hex = M.hsluvChangeLightness(hsluvColor, hsluvValue)
+                        if type(hex) == "string" then colors[key] = hex end
+                    end
+                end
             end
         end
     end
+
     return colors
 end
 
+--- Convert all hex colors in a table to greyscale using M.hexGreyscale.
+--- Requires M.hexGreyscale to be defined elsewhere in this module.
+--- @param colors table<string, string> Table mapping keys -> hex color strings
+--- @param method any Optional method passed to M.hexGreyscale
+--- @return table colors The same table (modified in-place)
 function M.colorGreyscale(colors, method)
-    for key, value in pairs(colors) do
-        if check.isHex(value) then
-            colors[key] = M.hexGreyscale(value, method)
+    for key, val in pairs(colors) do
+        if type(val) == "string" and type(check) == "table" and type(check.isHex) == "function" and check.isHex(val) then
+            if type(M.hexGreyscale) == "function" then
+                local ok, g = pcall(M.hexGreyscale, val, method)
+                if ok and type(g) == "string" then
+                    colors[key] = g
+                end
+            end
         end
     end
     return colors
