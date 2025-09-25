@@ -580,7 +580,7 @@ To enable the newpaper theme for |lualine|, specify it in your lualine settings:
 Lualine theme name and style automatically using from main theme.
 
 NOTE: ~
-You can temporally use just only lualine theme with any colorscheme with *newpaper*
+You can temporally use only lualine theme with any colorscheme with |newpaper|
 It also depend from `vim.o.background`.
 
 init.lua: ~
