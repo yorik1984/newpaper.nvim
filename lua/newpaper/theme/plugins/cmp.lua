@@ -40,6 +40,9 @@ function M.setup(configColors, configStyle)
 
         -- https://github.com/xzbdmw/colorful-menu.nvim
         CmpItemAbbrMatchCM       = { style = style.b_bold },
+        -- Optional
+        CmpItemKindCopilot       = { fg =newpaper.green },
+
     }
 end
 
