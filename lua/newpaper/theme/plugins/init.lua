@@ -27,7 +27,6 @@ local files = {
     "nvim-notify",
     "nvim-tree",
     "nvim-treesitter-context",
-    "nvim-web-devicons",
     "rainbow-delimiters",
     "snacks",
     "telescope",
