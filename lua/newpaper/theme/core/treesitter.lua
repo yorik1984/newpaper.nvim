@@ -151,9 +151,10 @@ function M.setup(configColors, configStyle)
         -- INFO: https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight
 
         -- LSP semantic tokens
+
         ["@lsp.type.boolean"]                       = { link = "@boolean" },
         ["@lsp.type.builtinType"]                   = { link = "@type.builtin" },
-        ["@lsp.type.class"]                         = { link = "@storageclass" },
+        ["@lsp.type.class"]                         = { link = "@keyword.directive" },
         ["@lsp.type.comment"]                       = { default = true },
         ["@lsp.type.decorator"]                     = { link = "@function.builtin" },
         ["@lsp.type.enum"]                          = { link = "@label" },
@@ -184,7 +185,7 @@ function M.setup(configColors, configStyle)
 
         ["@lsp.mod.defaultLibrary"]                 = { link = "@variable.builtin" },
 
-        ["@lsp.typemod.class.declaration"]          = { link = "@storageclass" },
+        ["@lsp.typemod.class.declaration"]          = { link = "@keyword.directive" },
         ["@lsp.typemod.class.defaultLibrary"]       = { link = "@type.builtin" },
         ["@lsp.typemod.class.default_library"]      = { link = "@type.builtin" },
         ["@lsp.typemod.enum.defaultLibrary"]        = { link = "@type.builtin" },
