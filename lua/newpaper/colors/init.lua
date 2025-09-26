@@ -8,7 +8,7 @@ function M.setup(config)
 
     if config.style == "light" then
         newpaper = {
-            black                = "#2B2B2B", -- color00
+            black                = "#2F2A3D", -- color00
             maroon               = "#AF0000", -- color01
             darkgreen            = "#008700", -- color02
             darkorange           = "#AF5F00", -- color03
@@ -25,7 +25,7 @@ function M.setup(config)
             white                = "#F1F3F2",
 
             -- Default fg and bg
-            fg                   = "#2B2B2B", -- color15
+            fg                   = "#2F2A3D", -- color15
             bg                   = "#F1F3F2", -- color07
 
             -- Other colors
@@ -192,7 +192,7 @@ function M.setup(config)
         }
     elseif config.style == "dark" then
         newpaper = {
-            black                = "#2B2B2B", -- color00
+            black                = "#2F2A3D", -- color00
             maroon               = "#CC5555", -- color01
             darkgreen            = "#75B680", -- color02
             darkorange           = "#C57A30", -- color03
