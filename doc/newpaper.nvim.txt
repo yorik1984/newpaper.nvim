@@ -26,7 +26,7 @@ There are 2 |newpaper.styles| to choose from:
 
 Extra supported: ~
 
-filetypes plugins: ~
+    filetypes plugins: ~
     • log-highlight.nvim
     • Vim-Jinja2-Syntax
     • [n]vim-markdown
@@ -36,7 +36,7 @@ filetypes plugins: ~
     • vim-ruby
     • vimtex
 
-plugins: ~
+    plugins: ~
     • bufferline.nvim
     • cheatsheet.nvim
     • colorful-menu.nvim
@@ -121,15 +121,16 @@ Parameters: ~
 
 Example: ~
 
-Lua: ~
 >lua
+    -- lua   
     require("newpaper").setup()
     -- ...
     vim.cmd.colorscheme("newpaper")
 
 <
-Vim-Script: ~
+
 >vim
+    "vim
     colorscheme newpaper
 <
 ==============================================================================
@@ -142,8 +143,6 @@ All options are set using global variables.
 
 In order for these settings to take effect, they should be placed in your
 `init.lua` before applying the colorscheme.
-
-Fields: ~
 
                                                        *newpaper.config.style*
     • {style}       (`"dark"`| `"light"`| `auto`)
@@ -472,7 +471,7 @@ Fields: ~
 
                     Default: `true` ~
 
-NOTE: ~
+NOTE:
     • {lualine_style} use always `vim.o.background` option
 <
 ------------------------------------------------------------------------------
@@ -528,16 +527,14 @@ Default settings: ~
 ------------------------------------------------------------------------------
 4.2. EXAMPLE CONFIG                                         *newpaper.example*
 
-Lua with global variables: ~
 >lua
-    --WARN: Only this `vim.g` vars are using in config to link for lualine
-
     -- Example config in lua with global variables
+    -- WARN: Only this `vim.g` vars are using in config to link for lualine
     vim.g.newpaper_colors            = { teal = "#0000FF" }
     vim.g.newpaper_lualine_bold = true
 <
-Lua with setup({}): ~
 >lua
+    -- with setup() function
     local colors       = { teal = "#0000FF" } -- use one color for many groups
     local colors_advanced   = { keywords = "#AA00AA", strings = "#008800" }
     local custom_highlights = {
@@ -558,13 +555,16 @@ Lua with setup({}): ~
 <
 ==============================================================================
 5. COMMANDS                                                *newpaper.commands*
-NOTE: ~
+NOTE:
 All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the
 optional `vim.o.background` setting.
 
-`:NewpaperLight`    Use colorscheme and change style to light mode
-`:NewpaperDark`     Use colorscheme and change style to dark mode
-`:Newpaper`         Use colorscheme without changing style
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Command        ┃ Description                                   ┃
+┗━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+`NewpaperLight`    Use colorscheme and change style to light mode
+`NewpaperDark`     Use colorscheme and change style to dark mode
+`Newpaper`         Use colorscheme without changing style
 
 ==============================================================================
 6. LUALINE SETTINGS                                         *newpaper.lualine*
@@ -579,12 +579,13 @@ To enable |newpaper| theme for |lualine|, specify it in your lualine settings:
 <
 Lualine theme name and style automatically using from main theme.
 
-NOTE: ~
+NOTE:
 You can temporally use only lualine theme with any colorscheme with |newpaper|
 It also depend from `vim.o.background`.
 
-init.lua: ~
 >lua
+    -- init.lua
+
     -- Set bold style
     vim.g.newpaper_lualine_bold = true
     -- Style like in main colorscheme. Respect background option
