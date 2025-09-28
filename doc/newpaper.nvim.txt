@@ -2,22 +2,22 @@
 
 Author: Yurii Kulchevich <yorik1984@gmail.com>
 
-================================================================================
-CONTENTS                                                     *newpaper.contents*
+==============================================================================
+CONTENTS                                                   *newpaper.contents*
 
-1. Features ...............................................: |newpaper.features|
-2. Styles .................................................: |newpaper.styles|
-3. Setup ..................................................: |newpaper.setup()|
-4. Config .................................................: |newpaper.config|
-    4.1 Default config ....................................: |newpaper.default|
-    4.2 Example config ....................................: |newpaper.example|
-5. Commands ...............................................: |newpaper.commands|
-6. Lualine setings ........................................: |newpaper.lualine|
+1. Features .............................................: |newpaper.features|
+2. Styles ...............................................: |newpaper.styles|
+3. Setup ................................................: |newpaper.setup()|
+4. Config ...............................................: |newpaper.config|
+    4.1 Default config ..................................: |newpaper.default|
+    4.2 Example config ..................................: |newpaper.example|
+5. Commands .............................................: |newpaper.commands|
+6. Lualine setings ......................................: |newpaper.lualine|
 
-================================================================================
-1. FEATURES                                                  *newpaper.features*
+==============================================================================
+1. FEATURES                                                *newpaper.features*
 
-*newpaper.nvim* is a 'colorscheme' written in |lua| with built in support |LSP|,
+*newpaper.nvim* is a 'colorscheme' written in |lua| with support |LSP|,
 |treesitter|, extends |treesitter-query| for some grammars and more plugins.
 
 There are 2 |newpaper.styles| to choose from:
@@ -86,8 +86,8 @@ Support |lsp-semantic-highlight|.
 
 Support |regexp| highlight with treesitter.
 
-================================================================================
-2. STYLES                                                      *newpaper.styles*
+==============================================================================
+2. STYLES                                                    *newpaper.styles*
 
 The theme comes in 2 styles to choose from.
 
@@ -101,12 +101,12 @@ Dark: ~
 Styles can be applying by setup |newpaper.config|
 See in |newpaper.example|
 
-================================================================================
-3. FUNCTIONS                                                *newpaper.functions*
+==============================================================================
+3. FUNCTIONS                                              *newpaper.functions*
 
 To use the |newpaper.default| settings, just apply the theme.
 
-                                                              *newpaper.setup()*
+                                                            *newpaper.setup()*
 setup({config})
 
 Optionally, the first parameter can be a configuration table.
@@ -132,8 +132,8 @@ Vim-Script: ~
 >vim
     colorscheme newpaper
 <
-================================================================================
-4. CONFIG                                                      *newpaper.config*
+==============================================================================
+4. CONFIG                                                    *newpaper.config*
 
 What sets newpaper.nvim appart from most Vim/NeoVim themes is the wide array
 of options for customising the theme.
@@ -145,14 +145,14 @@ In order for these settings to take effect, they should be placed in your
 
 Fields: ~
 
-                                                         *newpaper.config.style*
+                                                       *newpaper.config.style*
     • {style}       (`"dark"`| `"light"`| `auto`)
                     The theme comes in two styles and `"auto"` mode.
-                    Option `"auto"` set style depending from `vim.o.background`
+                    `"auto"` set style depending from `vim.o.background`.
 
                     Default: `"light"` ~
 
-                                                     *newpaper.config.lightness*
+                                                   *newpaper.config.lightness*
     • {lightness}   (number: `-1 ... 1`): from `"#000000"` to `"#FFFFFF"`
                     Make all supported highlight groups lighter or darker.
                     Useful with `config.saturation` to make more beauty and
@@ -162,7 +162,7 @@ Fields: ~
 
                     Recommended: `-0.2` ... `0.2` ~
 
-                                                    *newpaper.config.saturation*
+                                                  *newpaper.config.saturation*
     • {saturation}  (number: `-1 ... 1`)
                     Change color saturation of all supported highlight groups.
                     Useful with `config.lightness` to make more beauty and
@@ -172,7 +172,7 @@ Fields: ~
 
                     Recommended: `-0.2` ... `0.2` ~
 
-                                                     *newpaper.config.greyscale*
+                                                   *newpaper.config.greyscale*
     • {greyscale}   (`"lightness"`| `"average"`| `"luminosity"`| `false`)
                     Make all supported highlight groups in greyscale palette.
                     Useful with `config.lightness` and `config.saturation`
@@ -182,20 +182,20 @@ Fields: ~
 
                     Recommended: `"luminosity"`~
 
-                                            *newpaper.config.editor_better_view*
+                                          *newpaper.config.editor_better_view*
     • {editor_better_view} (bool)
                     Make some interface like menu, title of editor and plugins
                     menu bold and italic.
 
                     Default: `true` ~
 
-                                                      *newpaper.config.terminal*
-    • {terminal}    (`"bg"`| `"contrast"`| `"inverse"`| `"inverse_transparent"`)
+                                                    *newpaper.config.terminal*
+    • {terminal}  (`"bg"`| `"contrast"`| `"inverse"`| `"inverse_transparent"`)
                     Make 'terminal' window in different styles.
 
                     Default: `"contrast"` ~
 
-                                             *newpaper.config.sidebars_contrast*
+                                           *newpaper.config.sidebars_contrast*
     • {sidebars_contrast} (table)
                     Set a contrast background on sidebar-like windows.
                     `"NvimTree"` and `"Trouble"` has own highlight colors.
@@ -211,46 +211,46 @@ Fields: ~
                         "Trouble",
                     },
 <
-                                                *newpaper.config.contrast_float*
+                                              *newpaper.config.contrast_float*
     • {contrast_float} (bool)
                     Make popup menus like nvim-cmp, lspsaga have a different
                     foreground and background.
 
                     Default: `true` ~
 
-                                            *newpaper.config.contrast_telescope*
+                                          *newpaper.config.contrast_telescope*
     • {contrast_telescope} (bool)
                     Make Telescope have a different foreground and background.
 
                     Default: `true` ~
 
-                                                *newpaper.config.operators_bold*
+                                              *newpaper.config.operators_bold*
     • {operators_bold} (bool)
                     Make booleans, escape characters, operators like
                     `=`, `/`, `*`, `+`, `-`, `%`, `<`, `>`, `|` etc bold.
 
                     Default: `true` ~
 
-                                            *newpaper.config.delimiters_bold*
+                                             *newpaper.config.delimiters_bold*
     • {delimiters_bold} (bool)
                     Make delimiter `,`,`;`,`:`,`.` bold
 
                     Default: `false` ~
 
-                                                 *newpaper.config.brackets_bold*
+                                               *newpaper.config.brackets_bold*
     • {brackets_bold} (bool)
                     Make brackets like brackets`, `[]` bold.
 
                     Default: `false` ~
 
-                                            *newpaper.config.delim_rainbow_bold*
+                                          *newpaper.config.delim_rainbow_bold*
     • {delim_rainbow_bold} (bool) 
                     Make rainbow delimiters `{}`, `()`, `[]` or others bold.
                     Use plugin to highlight like |rainbow-delimiters|.
 
                     Default: `false` ~
 
-                                                      *newpaper.config.booleans*
+                                                    *newpaper.config.booleans*
     • {booleans}    (string)
                     Make boleans like `true`, `false` bold, italic, NONE.
 
@@ -258,7 +258,7 @@ Fields: ~
 
                     Default: `"bold"` ~
 
-                                                      *newpaper.config.keywords*
+                                                    *newpaper.config.keywords*
     • {keywords}    (string)
                     Make keywords like `if`, `for`, `def` bold, italic, NONE.
 
@@ -266,16 +266,16 @@ Fields: ~
 
                     Default: `"bold"` ~
 
-                                                  *newpaper.config.doc_keywords*
+                                                *newpaper.config.doc_keywords*
     • {doc_keywords} (string)
-                    Make documenting keywords like `@param` bold, italic, NONE.
+                    Make doc keywords like `@param` bold, italic, NONE.
                     Only support for: `treesitter-luadoc`.
 
                     Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` ~
 
                     Default: `"bold,italic"` ~
 
-                                                         *newpaper.config.regex*
+                                                       *newpaper.config.regex*
     • {regex}       (string)
                     Make regex  bold, italic or NONE.
 
@@ -283,13 +283,13 @@ Fields: ~
 
                     Default: `"bold"` ~
 
-                                                      *newpaper.config.regex_bg*
+                                                    *newpaper.config.regex_bg*
     • {regex_bg}    (bool)
                     Enable background color for regex capturing groups.
 
                     Default: `true` ~
 
-                                                          *newpaper.config.tags*
+                                                        *newpaper.config.tags*
     • {tags}        (string)
                     Make HTML tags bold, italic or NONE.
 
@@ -297,13 +297,13 @@ Fields: ~
 
                     Default: `"bold"` ~
 
-                                            *newpaper.config.tags_brackets_bold*
+                                          *newpaper.config.tags_brackets_bold*
     • {tags_brackets_bold} (bool)
                     Make tags delimiters like `<` or `/>` bold.
 
                     Default: `true` ~
 
-                                                     *newpaper.config.tex_major*
+                                                   *newpaper.config.tex_major*
     • {tex_major}   (string)
                     Make only major tex word like `\documentclass`, `\section`
                     bold, italic or NONE.
@@ -313,26 +313,26 @@ Fields: ~
 
                     Default: `"bold"` ~
 
-                                            *newpaper.config.tex_operators_bold*
+                                          *newpaper.config.tex_operators_bold*
     • {tex_operators_bold} (bool)
                     Make tex operators bold.
 
                     Default: `true` ~
 
-                                             *newpaper.config.tex_brackets_bold*
+                                           *newpaper.config.tex_brackets_bold*
     • {tex_brackets_bold} (bool)
                     Make tex brackets like `{}`, `[]` bold.
 
                     Default: `false` ~
 
-                                           *newpaper.config.tex_math_delim_bold*
+                                         *newpaper.config.tex_math_delim_bold*
     • {tex_math_delim_bold} (bool)
                     Make tex math zone delimeters like
                     `\(\)`, `\[\]`, `$ $`, `$$ $$` bold.
 
                     Default: `false` ~
 
-                                                  *newpaper.config.tex_keywords*
+                                                *newpaper.config.tex_keywords*
     • {tex_keywords} (string)
                     Make  other tex keywords bold, italic or NONE.
 
@@ -340,7 +340,7 @@ Fields: ~
 
                     Default: `NONE` ~
 
-                                                      *newpaper.config.tex_zone*
+                                                    *newpaper.config.tex_zone*
     • {tex_zone}    (string)
                     Make some tex ...Zone...  bold, italic or NONE.
 
@@ -348,7 +348,7 @@ Fields: ~
 
                     Default: `italic` ~
 
-                                                       *newpaper.config.tex_arg*
+                                                     *newpaper.config.tex_arg*
     • {tex_arg}     (string) 
                     Make some tex  ...Arg... bold, italic or NONE.
 
@@ -356,7 +356,7 @@ Fields: ~
 
                     Default: `italic` ~
 
-                                               *newpaper.config.error_highlight*
+                                             *newpaper.config.error_highlight*
     • {error_highlight} (string)
                     Make spell or `tex`-files errors hightlighting with
                     background, undercurl, both or NONE.
@@ -365,62 +365,62 @@ Fields: ~
 
                     Default: `undercurl` ~
 
-                                                *newpaper.config.italic_strings*
+                                              *newpaper.config.italic_strings*
     • {italic_strings} (bool)
                     Make strings italic.
 
                     Default: `true` ~
 
-                                               *newpaper.config.italic_comments*
+                                             *newpaper.config.italic_comments*
     • {italic_comments} (bool)
                     Make comments italic
 
                     Default: `true` ~
 
-                                           *newpaper.config.italic_doc_comments*
+                                         *newpaper.config.italic_doc_comments*
     • {italic_doc_comments} (bool)
                     Make comments documenting code italic.
 
                     Default: `true` ~
 
-                                              *newpaper.config.italic_functions*
+                                            *newpaper.config.italic_functions*
     • {italic_functions} (bool)
                     Make function calls and names italic.
 
                     Default: `false` ~
 
-                                              *newpaper.config.italic_variables*
+                                            *newpaper.config.italic_variables*
     • {italic_variables} (bool)
                     Make variable names and identifiers italic.
 
                     Default: `false` ~
 
-                                                       *newpaper.config.borders*
+                                                     *newpaper.config.borders*
     • {borders}     (bool)
-                    Enable the border between vertically split windows visible.
+                    Enable border between vertically split windows visible.
 
                     Default: `true` ~
 
-                                            *newpaper.config.disable_background*
+                                          *newpaper.config.disable_background*
     • {disable_background} (bool)
                     Disable the setting of background color so that NeoVim
                     can use yours terminal background.
 
                     Default: `false` ~
 
-                                           *newpaper.config.lsp_virtual_text_bg*
+                                         *newpaper.config.lsp_virtual_text_bg*
     • {lsp_virtual_text_bg} (bool)
                     Enable background color for LSP virtual text.
 
                     Default: `true` ~
 
-                                                      *newpaper.config.hide_eob*
+                                                    *newpaper.config.hide_eob*
     • {hide_eob}    (bool)
                     Hide the end of buffer lines (`~`).
 
                     Default: `false` ~
 
-                                                        *newpaper.config.colors*
+                                                      *newpaper.config.colors*
     • {colors}      (table)
                     Override the default colors and use your own.
                     Also owerride lualine colors if have same name.
@@ -435,7 +435,7 @@ Fields: ~
                         bg = "#0F111A",
                     }
 <
-                                               *newpaper.config.colors_advanced*
+                                             *newpaper.config.colors_advanced*
     • {colors_advanced} (table)
                     Override the advanced default colors and use your own.
                     See value in `lua/newpaper/colors.lua[392:556]`.
@@ -449,7 +449,7 @@ Fields: ~
                         strings = "#008800",
                     }
 <
-                                             *newpaper.config.custom_highlights*
+                                           *newpaper.config.custom_highlights*
     • {custom_highlights} (table)
                     Override the default and plugins highlights groups.
                     Table  predefine any syntax colors.
@@ -466,7 +466,7 @@ Fields: ~
                         Comment   = { fg = "#FF0000", style = "italic" }
                     }
 <
-                                                  *newpaper.config.lualine_bold*
+                                                *newpaper.config.lualine_bold*
     • {lualine_bold} (bool)
                     When true, section headers in the lualine will be bold.
 
@@ -475,8 +475,8 @@ Fields: ~
 NOTE: ~
     • {lualine_style} use always `vim.o.background` option
 <
---------------------------------------------------------------------------------
-4.1. DEFAULT CONFIGURATION                                    *newpaper.default*
+------------------------------------------------------------------------------
+4.1. DEFAULT CONFIGURATION                                  *newpaper.default*
 
 Default settings: ~
 >lua
@@ -525,12 +525,12 @@ Default settings: ~
     })
 <
 
---------------------------------------------------------------------------------
-4.2. EXAMPLE CONFIG                                           *newpaper.example*
+------------------------------------------------------------------------------
+4.2. EXAMPLE CONFIG                                         *newpaper.example*
 
 Lua with global variables: ~
 >lua
-    --WARN: Only this `vim.g` variables are using in config to link for lualine 
+    --WARN: Only this `vim.g` vars are using in config to link for lualine
 
     -- Example config in lua with global variables
     vim.g.newpaper_colors            = { teal = "#0000FF" }
@@ -538,7 +538,7 @@ Lua with global variables: ~
 <
 Lua with setup({}): ~
 >lua
-    local colors            = { teal = "#0000FF" } -- use one color for many groups
+    local colors       = { teal = "#0000FF" } -- use one color for many groups
     local colors_advanced   = { keywords = "#AA00AA", strings = "#008800" }
     local custom_highlights = {
               Float     = { fg = colors.teal }, -- prefer override by name
@@ -556,20 +556,20 @@ Lua with setup({}): ~
         -- ...
     })
 <
-================================================================================
-5. COMMANDS                                                  *newpaper.commands*
+==============================================================================
+5. COMMANDS                                                *newpaper.commands*
 NOTE: ~
-All commands are aliases for `vim.cmd.colorscheme("newpaper")`with the optional
-`vim.o.background` setting
+All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the
+optional `vim.o.background` setting.
 
 `:NewpaperLight`    Use colorscheme and change style to light mode
 `:NewpaperDark`     Use colorscheme and change style to dark mode
 `:Newpaper`         Use colorscheme without changing style
 
-================================================================================
-6. LUALINE SETTINGS                                           *newpaper.lualine*
+==============================================================================
+6. LUALINE SETTINGS                                         *newpaper.lualine*
 
-To enable the newpaper theme for |lualine|, specify it in your lualine settings:
+To enable |newpaper| theme for |lualine|, specify it in your lualine settings:
 >lua
     require("lualine").setup {
         options = {
@@ -604,5 +604,5 @@ init.lua: ~
     -- enable other colorscheme
     -- ...
 <
-================================================================================
+==============================================================================
 vim:tw=78:ts=4:ft=help:norl:
