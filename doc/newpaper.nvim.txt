@@ -64,6 +64,7 @@ Extra supported: ~
     • nvim-treesitter-context
     • nvim-web-devicons
     • rainbow-delimiters.nvim
+    • sidekick.nvim
     • snacks.nvim
     • Telescope.nvim
     • todo-comments.nvim

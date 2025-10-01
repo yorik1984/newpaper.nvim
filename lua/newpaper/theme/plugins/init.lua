@@ -29,6 +29,7 @@ local files = {
     "nvim-treesitter-context",
     "rainbow-delimiters",
     "snacks",
+    "sidekick",
     "telescope",
     "todo-comments",
     "trim",

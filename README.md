@@ -133,6 +133,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 + [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 + [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
++ [sidekick.nvim](https://github.com/folke/sidekick.nvim)
 + [snacks.nvim](https://github.com/folke/snacks.nvim)
 + [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 + [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)[🖼️](#todo-commentsnvim)
