@@ -16,18 +16,20 @@ local function updateLualineStyle()
 end
 
 function M.autocmds(config, color)
-    local augroup = vim.api.nvim_create_augroup("NewpaperLualineStyle", { clear = true })
-
-    vim.api.nvim_create_autocmd("OptionSet", {
-        group = augroup,
-        pattern = "background",
-        callback = updateLualineStyle,
-    })
-
-    vim.api.nvim_create_autocmd("ColorScheme", {
-        group = augroup,
-        pattern = "*",
-        callback = updateLualineStyle,
+    vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+            local augroup = vim.api.nvim_create_augroup("NewpaperLualineStyle", { clear = true })
+            vim.api.nvim_create_autocmd("ColorScheme", {
+                group = augroup,
+                pattern = "*",
+                callback = updateLualineStyle,
+            })
+            vim.api.nvim_create_autocmd("OptionSet", {
+                group = augroup,
+                pattern = "background",
+                callback = updateLualineStyle,
+            })
+        end,
     })
 
     local group = vim.api.nvim_create_augroup("newpaper", {})
