@@ -253,7 +253,13 @@ In order for these settings to take effect, they should be placed in your
                                                     *newpaper.config.booleans*
     • {booleans}    (string)
                     Make boleans like `true`, `false` bold, italic, NONE.
+                    Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` ~
 
+                    Default: `"bold"` ~
+                                          *newpaper.config.booleans_operators*
+    • {booleans_operators} (string)
+                    Make boleans like `||`, `&` bold, italic, NONE.
+                    Support only for extends |treesitter-query|.
                     Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` ~
 
                     Default: `"bold"` ~
@@ -495,6 +501,7 @@ Default settings: ~
         brackets_bold       = false,
         delim_rainbow_bold  = false,
         booleans            = "bold",
+        booleans_operators  = "bold",
         keywords            = "bold",
         doc_keywords        = "bold,italic",
         regex               = "bold",

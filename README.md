@@ -11,6 +11,45 @@
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 </div>
 
+- [🎨 newpaper.nvim](#newpaper-nvim)
+    - [ℹ️ Info](#info)
+        - [Light](#light)
+        - [Dark](#dark)
+    - [More screenshots 🖼️](#more-screenshots)
+    - [🌟 Features](#features)
+        - [Extra syntax highlights](#extra-syntax-highlights)
+        - [🔌 Extra supported](#extra-supported)
+            - [filetypes plugins](#filetypes-plugins)
+            - [plugins](#plugins)
+    - [⚡️ Requirements](#requirements)
+    - [📦 Installation](#installation)
+    - [⚙️ Configuration](#configuration)
+        - [💻 Commands](#commands)
+        - [Available options](#available-options)
+        - [Colorscheme default settings](#colorscheme-default-settings)
+        - [Colorscheme customizing](#colorscheme-customizing)
+        - [⚠️ `guicursor` customizing](#guicursor-customizing)
+        - [colorful-menu.nvim](#colorful-menu-nvim)
+            - [nvim-cmp-settings](#nvim-cmp-settings)
+    - [🎨 Lualine theme](#lualine-theme)
+        - [⚙️ Hint](#hint)
+        - [📺 Screenshots lualine](#screenshots-lualine)
+            - [light](#light)
+            - [dark](#dark)
+    - [📺 Screenshots](#screenshots)
+        - [🎼 Languages](#languages)
+            - [RUBY](#ruby)
+            - [LUA](#lua)
+            - [MARKDOWN](#markdown)
+            - [COMMENT-TODO](#comment-todo)
+        - [🎛️ Plugins](#plugins)
+            - [todo-comments.nvim](#todo-comments-nvim)
+                - [Example config:](#example-config)
+    - [❔ FAQ](#faq)
+    - [Extras](#extras)
+    - [©️ Credits](#credits)
+    - [🛠️ TODO](#todo)
+
 ## ℹ️ Info
 
 A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colorscheme for Neovim using [Papercolor](https://github.com/NLKNguyen/papercolor-theme) color palette with small changes written in Lua. $\LaTeX$ syntax highlight get from [sublime-writing-color-scheme](https://github.com/kmisiunas/sublime-writing-color-scheme).
@@ -210,6 +249,7 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | brackets_bold       | `false`       | Make brackets like `{}`, `()`, `[]` bold |
 | delim_rainbow_bold  | `false`       | Make rainbow delimiters like `{}`, `()`, `[]` or others bold. Use specific plugin to highlight like [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) |
 | booleans            | `"bold"`      | Make booleans like `true`, `false` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| booleans_operators  | `"bold"`      | Make booleans operators like `\|\|`, `&` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. Support only for [Extended treesitter queries](#extra-syntax-highlights) |
 | keywords            | `"bold"`      | Make keywords like `if`, `for`, `while` etc. bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | doc_keywords        | `"bold,italic"` |  Make documenting keywords like `@param`, `@return` etc. bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. Only support for: [treesitter-luadoc](https://github.com/amaanq/tree-sitter-luadoc) |
 | regex               | `"bold"`      | Make regex  bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
@@ -258,6 +298,7 @@ require("newpaper").setup({
     brackets_bold       = false,
     delim_rainbow_bold  = false,
     booleans            = "bold",
+    booleans_operators  = "bold",
     keywords            = "bold",
     regex               = "bold",
     regex_bg            = true,

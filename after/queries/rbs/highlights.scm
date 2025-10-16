@@ -34,7 +34,7 @@
 [
   "&"
   "|"
-] @boolean
+] @operator.boolean
 
 ; Punctuation
 (record_type

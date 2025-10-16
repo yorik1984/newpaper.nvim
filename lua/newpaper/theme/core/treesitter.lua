@@ -54,6 +54,7 @@ function M.setup(configColors, configStyle)
         ["@constructor"]                            = { fg = newpaper.tex_lightpurple },
         ["@operator"]                               = { fg = newpaper.navy, style = style.o_style },
         ["@operator.math"]                          = { fg = newpaper.tex_olive, style = style.o_style, nocombine = true },
+        ["@operator.boolean"]                       = { fg = newpaper.booleans, style = style.bool_o_style, nocombine = true },
 
         ["@keyword"]                                = { fg = newpaper.keywords, style = style.k_style },
         ["@keyword.coroutine"]                      = { fg = newpaper.tex_keyword, style = style.k_style },

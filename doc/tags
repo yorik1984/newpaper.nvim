@@ -2,6 +2,7 @@ newpaper	newpaper.nvim.txt	/*newpaper*
 newpaper.commands	newpaper.nvim.txt	/*newpaper.commands*
 newpaper.config	newpaper.nvim.txt	/*newpaper.config*
 newpaper.config.booleans	newpaper.nvim.txt	/*newpaper.config.booleans*
+newpaper.config.booleans_operators	newpaper.nvim.txt	/*newpaper.config.booleans_operators*
 newpaper.config.borders	newpaper.nvim.txt	/*newpaper.config.borders*
 newpaper.config.brackets_bold	newpaper.nvim.txt	/*newpaper.config.brackets_bold*
 newpaper.config.colors	newpaper.nvim.txt	/*newpaper.config.colors*

@@ -27,7 +27,7 @@
 [
   "&&"
   "||"
-] @boolean
+] @operator.boolean
 
 ; Comparison
 [

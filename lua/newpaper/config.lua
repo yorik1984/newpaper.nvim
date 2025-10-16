@@ -36,6 +36,7 @@ M.defaults = {
     brackets_bold       = false,
     delim_rainbow_bold  = false,
     booleans            = "bold",
+    booleans_operators  = "bold",
     keywords            = "bold",
     doc_keywords        = "bold,italic",
     regex               = "bold",

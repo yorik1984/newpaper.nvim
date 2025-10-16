@@ -82,14 +82,17 @@
 
 ; rubyBooleanOperator
 [
-  "!"
-  "&&"
-  "||"
   "and"
   "or"
   "not"
-  "&."
 ] @boolean
+
+[
+  "!"
+  "&&"
+  "||"
+  "&."
+] @operator.boolean
 
 ; rubyTernaryOperator
 (conditional

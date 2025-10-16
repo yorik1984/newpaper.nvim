@@ -28,7 +28,7 @@
 [
   "&&"
   "||"
-] @boolean
+] @operator.boolean
 
 (hl_attribute
   key: _ @property

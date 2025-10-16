@@ -13,7 +13,7 @@
 [
   "&"
   "|"
-] @boolean
+] @operator.boolean
 
 [
   "+"

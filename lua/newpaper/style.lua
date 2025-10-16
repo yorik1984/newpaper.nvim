@@ -33,6 +33,9 @@ function M.setupStyle(config)
         -- Make booleans bold, italic or NONE
         bool_style   = config.booleans,
 
+        -- Make booleans oprators bold, italic or NONE
+        bool_o_style = config.booleans_operators,
+
         -- Make keywords bold, italic or NONE
         k_style      = config.keywords,
 
