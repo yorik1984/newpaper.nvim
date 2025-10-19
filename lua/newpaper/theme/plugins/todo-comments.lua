@@ -5,13 +5,13 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        TodoSignWARN = { fg = newpaper.todo_warn, bg = newpaper.linenumber_bg },
-        TodoSignTODO = { fg = newpaper.todo_info, bg = newpaper.linenumber_bg },
-        TodoSignPERF = { fg = newpaper.todo_default, bg = newpaper.linenumber_bg },
-        TodoSignNOTE = { fg = newpaper.todo_hint, bg = newpaper.linenumber_bg },
-        TodoSignHACK = { fg = newpaper.todo_warn, bg = newpaper.linenumber_bg },
-        TodoSignFIX  = { fg = newpaper.todo_error, bg = newpaper.linenumber_bg },
-        TodoSignTEST = { fg = newpaper.todo_test, bg = newpaper.linenumber_bg },
+        TodoSignWARN = { fg = newpaper.todo_warn },
+        TodoSignTODO = { fg = newpaper.todo_info },
+        TodoSignPERF = { fg = newpaper.todo_default },
+        TodoSignNOTE = { fg = newpaper.todo_hint },
+        TodoSignHACK = { fg = newpaper.todo_warn },
+        TodoSignFIX  = { fg = newpaper.todo_error },
+        TodoSignTEST = { fg = newpaper.todo_test },
         TodoFgWARN   = { fg = newpaper.todo_warn },
         TodoFgTODO   = { fg = newpaper.todo_info },
         TodoFgPERF   = { fg = newpaper.todo_default },

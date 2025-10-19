@@ -5,15 +5,15 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        GitSignsAdd              = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-        GitSignsAddNr            = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-        GitSignsAddLn            = { fg = newpaper.git_added, bg = newpaper.git_sign_bg },
-        GitSignsChange           = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-        GitSignsChangeNr         = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-        GitSignsChangeLn         = { fg = newpaper.git_modified, bg = newpaper.git_sign_bg },
-        GitSignsDelete           = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
-        GitSignsDeleteNr         = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
-        GitSignsDeleteLn         = { fg = newpaper.git_removed, bg = newpaper.git_sign_bg },
+        GitSignsAdd              = { fg = newpaper.git_added },
+        GitSignsAddNr            = { fg = newpaper.git_added },
+        GitSignsAddLn            = { fg = newpaper.git_added },
+        GitSignsChange           = { fg = newpaper.git_modified },
+        GitSignsChangeNr         = { fg = newpaper.git_modified },
+        GitSignsChangeLn         = { fg = newpaper.git_modified },
+        GitSignsDelete           = { fg = newpaper.git_removed },
+        GitSignsDeleteNr         = { fg = newpaper.git_removed },
+        GitSignsDeleteLn         = { fg = newpaper.git_removed },
         GitSignsCurrentLineBlame = { fg = newpaper.grey, style = style.c_style },
     }
 end

@@ -57,10 +57,10 @@ function M.setup(configColors, configStyle)
         -- Implement
         SagaImpIcon            = { fg = newpaper.red },
         -- Winbar
-        SagaWinbarSep          = { fg = newpaper.red, bg = newpaper.winbar_bg },
-        SagaWinbarFileName     = { fg = newpaper.teal, bg = newpaper.winbar_bg },
-        SagaWinbarFolderName   = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
-        SagaWinbarFolder       = { fg = newpaper.teal, bg = newpaper.winbar_bg, style = style.b_bold },
+        SagaWinbarSep          = { fg = newpaper.red },
+        SagaWinbarFileName     = { fg = newpaper.teal },
+        SagaWinbarFolderName   = { fg = newpaper.teal, style = style.b_bold },
+        SagaWinbarFolder       = { fg = newpaper.teal, style = style.b_bold },
 
         SagaFolderName         = { link = "SagaWinbarFolderName" },
         SagaFolder             = { link = "SagaWinbarFolder" },
