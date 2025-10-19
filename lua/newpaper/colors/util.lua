@@ -20,7 +20,7 @@ function M.colorOverrides(color, configColors)
         error("newpaper.nvim: colorOverrides: configColors must be a table or nil", 2)
     end
 
-    check.keyExistsError(configColors, color, "color", "Use: from newpaper/colors.lua")
+    check.keyExistsError(configColors, color, "color", "Use: from newpaper/colors/init.lua")
 
     for key, value in pairs(configColors) do
         if type(color[key]) == "table" then

@@ -4,7 +4,9 @@ local folder = "newpaper.theme.core."
 
 local files = {
   "editor",
+  "custom",
   "lsp",
+  "presets",
   "syntax",
   "treesitter",
 }

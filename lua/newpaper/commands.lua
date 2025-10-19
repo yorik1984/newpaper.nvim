@@ -1,3 +1,5 @@
+local winhighlight = require("newpaper.winhighlight")
+local presets = require("newpaper.presets")
 local M = {}
 
 local function onColorScheme()
@@ -45,16 +47,10 @@ function M.autocmds(config, color)
     vim.api.nvim_create_autocmd({ "TermOpen" }, {
         group = group,
         pattern = { "*\\(lazygit\\)\\@<!" },
-        command = "setlocal winhighlight=Normal:NormalTerm,"
-            .. "NormalFloat:NormalTermFloat,"
-            .. "FloatBorder:FloatBorderTerm,"
-            .. "SignColumn:SignColumnTerm,"
-            .. "LineNr:LineNrTerm,"
-            .. "FoldColumn:FoldColumnTerm,"
-            .. "TermCursor:TermCursorTerm,"
-            .. "TermCursorNC:TermCursorNCTerm,"
-            .. "CursorLine:CursorLineTerm "
-            .. "signcolumn=no nocursorline nonumber",
+        callback = function()
+            local win = vim.api.nvim_get_current_win()
+            winhighlight.applyWinHl(presets.lazygitWinHl(), "local", win)
+        end,
     })
 
     vim.api.nvim_create_autocmd({ "TermOpen" }, {
@@ -75,15 +71,56 @@ function M.autocmds(config, color)
                 vim.api.nvim_create_autocmd({ "FileType" }, {
                     group = group,
                     pattern = { sidebar },
-                    command = "setlocal winhighlight=Normal:NormalContrastSB,"
-                        .. "SignColumn:SignColumnSB,"
-                        .. "LineNr:LineNrSB,"
-                        .. "FoldColumn:FoldColumnSB,"
-                        .. "CursorLineNr:CursorLineSignSB,"
-                        .. "CursorLine:CursorLineSB,"
-                        .. "CursorLineSign:CursorLineSignSB "
-                        .. "signcolumn=yes:1 nonumber",
+                    callback = function()
+                        local win = vim.api.nvim_get_current_win()
+                        winhighlight.applyWinHl(presets.sidebar(), "local", win)
+                    end,
                 })
+            end
+        end
+    end
+
+    if config and config.preset then
+        local function applyPreset(patterns, event, preset, preset_name)
+            if type(patterns) ~= "table" or next(patterns) == nil then
+                return
+            end
+            if type(preset) ~= "function" then
+                return
+            end
+
+            vim.api.nvim_create_autocmd(event, {
+                group = group,
+                pattern = patterns,
+                callback = function()
+                    if event == "FileType" then
+                        if vim.b.__preset_by_filename_applied then
+                            return
+                        end
+                    elseif event == "BufEnter" then
+                        vim.b.__preset_by_filename_applied = preset_name
+                    end
+
+                    local win = vim.api.nvim_get_current_win()
+                    winhighlight.applyWinHl(preset(), "local", win)
+                end,
+            })
+        end
+
+        local event_for = {
+            by_filetype = "FileType",
+            by_filename = "BufEnter",
+        }
+
+        for key, event in pairs(event_for) do
+            if type(config.preset[key]) == "table" then
+                for preset_name, patterns in pairs(config.preset[key]) do
+                    if type(patterns) == "table" and next(patterns) ~= nil then
+                        if type(presets[preset_name]) == "function" then
+                            applyPreset(patterns, event, presets[preset_name], preset_name)
+                        end
+                    end
+                end
             end
         end
     end

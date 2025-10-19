@@ -189,6 +189,16 @@ function M.setup(config)
 
             -- Neovim
             neovim_green         = "#54A23D",
+
+            -- Presets
+            text_fg              = "#404040",
+            text_bg              = "#F4F4F2",
+            text_cursor          = "#E4E4E4",
+            text_visual          = "#C2E8FF",
+            task_fg              = "#2F2A3D",
+            task_bg              = "#F3EEC3",
+            task_cursor          = "#F2E3A2",
+            task_visual          = "#D9CC91",
         }
     elseif config.style == "dark" then
         newpaper = {
@@ -373,6 +383,16 @@ function M.setup(config)
 
             -- Neovim
             neovim_green         = "#87BD77",
+
+            -- Presets
+            text_fg              = "#D2CDC7",
+            text_bg              = "#232325",
+            text_cursor          = "#323234",
+            text_visual          = "#4B4B4D",
+            task_fg              = "#F3EEC3",
+            task_bg              = "#1d2021",
+            task_cursor          = "#36362E",
+            task_visual          = "#505048",
         }
     end
 
@@ -560,6 +580,19 @@ function M.setup(config)
         newpaper.tex_parbox_opt_error = newpaper.none
         newpaper.tex_only_math_error  = newpaper.none
     end
+
+    -- Presets colors
+    newpaper.text_linenumber_fg  = newpaper.disabled
+    newpaper.text_cursor_nr_fg   = newpaper.linenumber_fg
+    newpaper.text_cursor_nr_bg   = newpaper.none
+    newpaper.text_cursor_fold_bg = newpaper.none
+    newpaper.text_cursor_sign_bg = newpaper.none
+
+    newpaper.task_linenumber_fg  = newpaper.disabled
+    newpaper.task_cursor_nr_fg   = newpaper.linenumber_fg
+    newpaper.task_cursor_nr_bg   = newpaper.none
+    newpaper.task_cursor_fold_bg = newpaper.none
+    newpaper.task_cursor_sign_bg = newpaper.none
 
     if config.colors_advanced then
         util.colorOverrides(newpaper, config.colors_advanced)
