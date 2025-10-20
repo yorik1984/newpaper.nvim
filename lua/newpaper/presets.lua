@@ -17,7 +17,7 @@ function M.lazygitWinHl()
     local opts = {
         winhighlight = table.concat(winhl_entries, ","),
         signcolumn   = "no",
-        foldcolumn   = 0,
+        foldcolumn   = "0",
         cursorline   = false,
         number       = false,
     }
@@ -41,7 +41,7 @@ function M.sidebar()
         winhighlight = table.concat(winhl_entries, ","),
         signcolumn   = "yes:1",
         number       = false,
-        foldcolumn   = 0,
+        foldcolumn   = "0",
     }
 
     return opts

@@ -1,14 +1,7 @@
 --- Flexible helper to apply window-local visual options.
---- Delegates all validation and error message formatting to apply_winhl_errors module.
----
 --- Usage:
 ---   apply.applyWinHl({ number = false, winhighlight = "Normal:MyNormal" })
 ---   apply.applyWinHl({ number = true }, "local", 3)
----   -- with custom error messages:
----   local my_errs = require("apply_winhl_errors").default_errs()
----   my_errs.expect_boolean = "MyMod: '%s' must be boolean, got %s"
----   apply.applyWinHl({ number = "no" }, "local", 3, my_errs)
----
 
 local check = require("newpaper.check")
 
@@ -28,25 +21,17 @@ M.applyWinHl = function(opts, scope, win)
         relativenumber = "boolean",
         cursorline     = "boolean",
         cursorcolumn   = "boolean",
-        foldcolumn     = "number_or_string",
+        foldcolumn     = "string",
         colorcolumn    = "string",
         wrap           = "boolean",
         linebreak      = "boolean",
         winblend       = "number",
     }
-    local ok, errmsg = check.validateApplyWinHl(opts, scope, win, ALLOWED_SPEC)
-    if not ok then
-        if errmsg then
-            error(errmsg)
-        end
+    if opts == nil then
         return false
     end
 
-    -- At this point validation passed (or opts was nil and validate returned false,nil)
-    -- If opts was nil, validator would have returned false,nil; handle that:
-    if not opts or type(opts) ~= "table" then
-        return false
-    end
+    check.validateApplyWinHl(opts, scope, win, ALLOWED_SPEC)
 
     scope = scope or "local"
     if scope == "local" then
@@ -54,21 +39,21 @@ M.applyWinHl = function(opts, scope, win)
     end
 
     local all_ok = true
-    for key, spec in pairs(ALLOWED_SPEC) do
+    for key in pairs(ALLOWED_SPEC) do
         local val = opts[key]
         if val ~= nil then
             local set_opts = { scope = scope }
             if scope == "local" then set_opts.win = win end
-            -- Safe call to nvim_set_option_value to avoid hard crash on unsupported options
+
             local ok_set, err = pcall(vim.api.nvim_set_option_value, key, val, set_opts)
             if not ok_set then
                 all_ok = false
-                vim.notify(("newpaper.nvim-applyWinHl: failed to set %s = %s (%s)"):format(key, vim.inspect(val), tostring(err)),
-                    vim.log.levels.WARN)
+                vim.notify(("newpaper.nvim-applyWinHl: failed to set %s = %s (%s)"):format(
+                    key, vim.inspect(val), tostring(err)
+                ), vim.log.levels.WARN)
             end
         end
     end
-
     return all_ok
 end
 

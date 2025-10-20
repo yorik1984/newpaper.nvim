@@ -215,7 +215,7 @@ function M.typeError(userConfig)
 end
 
 --- Usage:
----   local ok, errmsg = errs_mod.validate(opts, scope, win, custom_errs, allowed_spec)
+---   local ok, errmsg = errs_mod.validate(opts, scope, win, allowed_spec)
 ---   if not ok then
 ---     if errmsg then error(errmsg) end
 ---     return false
@@ -224,7 +224,7 @@ end
 --- @param scope string|nil       "local" or "global"
 --- @param win number|nil         window id (required when scope == "local")
 --- @param allowed_spec table     mapping option_key -> spec string
----                               allowed spec values: "boolean", "number", "string", "number_or_string"
+---                               allowed spec values: "boolean", "number", "string"
 --- @return boolean ok            true if validation passed
 --- @return string|nil errmsg     formatted error message if validation failed and should error;
 ---                               nil means "nothing to do" (opts missing) or validation failed but not error (use caller behavior)
@@ -235,11 +235,9 @@ M.validateApplyWinHl = function(opts, scope, win, allowed_spec)
         invalid_win             = "newpaper.nvim-applyWinHl: win must be a window id (number) when scope is 'local'",
         expect_boolean          = "newpaper.nvim-applyWinHl: option '%s' expects boolean, got %s",
         expect_number           = "newpaper.nvim-applyWinHl: option '%s' expects number (0..100), got %s",
-        expect_number_or_string = "newpaper.nvim-applyWinHl: option '%s' expects number or string, got %s",
         expect_string           = "newpaper.nvim-applyWinHl: option '%s' expects string, got %s",
     }
 
-    -- opts must be a table
     if not opts or type(opts) ~= "table" then
         error(DEFAULT_ERRS.invalid_opts)
     end
@@ -274,10 +272,6 @@ M.validateApplyWinHl = function(opts, scope, win, allowed_spec)
             elseif spec == "string" then
                 if type(val) ~= "string" then
                     error(string.format(DEFAULT_ERRS.expect_string, key, type(val)))
-                end
-            elseif spec == "number_or_string" then
-                if not (type(val) == "number" or type(val) == "string") then
-                    error(string.format(DEFAULT_ERRS.expect_number_or_string, key, type(val)))
                 end
             else
                 -- unknown spec: skip validation for this key
@@ -318,7 +312,8 @@ preset = {
         PRESET_SECTION_NOT_TABLE     = "newpaper.nvim: preset.%s must be a table.",
         INVALID_PRESET_NAME          = "newpaper.nvim: invalid preset name '%s' in preset.%s. " ..
             "Allowed names: text, task, view. " .. error_help.preset,
-        PRESET_VALUE_NOT_TABLE       = "newpaper.nvim: preset.%s.%s must be a table (array of strings). " .. error_help.preset,
+        PRESET_VALUE_NOT_TABLE       = "newpaper.nvim: preset.%s.%s must be a table (array of strings). " ..
+        error_help.preset,
         PRESET_VALUE_ITEM_NOT_STRING = "newpaper.nvim: preset.%s.%s[%d] must be a string. " .. error_help.preset,
     }
 
