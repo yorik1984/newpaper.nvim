@@ -63,7 +63,7 @@ M.applyWinHl = function(opts, scope, win)
             local ok_set, err = pcall(vim.api.nvim_set_option_value, key, val, set_opts)
             if not ok_set then
                 all_ok = false
-                vim.notify(("newpaper-applyWinHl: failed to set %s = %s (%s)"):format(key, vim.inspect(val), tostring(err)),
+                vim.notify(("newpaper.nvim-applyWinHl: failed to set %s = %s (%s)"):format(key, vim.inspect(val), tostring(err)),
                     vim.log.levels.WARN)
             end
         end
