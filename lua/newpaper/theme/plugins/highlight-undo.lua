@@ -5,8 +5,8 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        HighlightUndo = { bg = newpaper.diffchange_bg },
-        HighlightRedo = { bg = newpaper.diffadd_bg },
+        HighlightUndo = { bg = newpaper.diffchange },
+        HighlightRedo = { bg = newpaper.diffadd },
     }
 end
 

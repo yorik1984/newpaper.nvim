@@ -18,15 +18,15 @@ function M.setup(configColors, configStyle)
         -- STATUS BUFFER SECTION HEADERS
         NeogitSectionHeader        = { fg = newpaper.dark_maroon, style = style.b_bold },
         -- NeogitUnpushedTo           = { link = "NeogitSectionHeader" },
-        NeogitUnmergedInto         = { fg = newpaper.tex_math, style = style.b_bold },
+        NeogitUnmergedInto         = { fg = newpaper.git_merged, style = style.b_bold },
         NeogitUnpulledFrom         = { fg = newpaper.darkpurple, style = style.b_bold },
-        NeogitUntrackedfiles       = { fg = newpaper.tex_red, style = style.b_bold },
+        NeogitUntrackedfiles       = { fg = newpaper.git_untracked, style = style.b_bold },
         NeogitUnstagedchanges      = { fg = newpaper.ruby_purple, style = style.b_bold },
         NeogitUnmergedchanges      = { fg = newpaper.tex_part_title, style = style.b_bold },
         NeogitUnpulledchanges      = { fg = newpaper.tex_olive, style = style.b_bold },
         NeogitRecentcommits        = { fg = newpaper.ruby_magenta, style = style.b_bold },
         NeogitStagedchanges        = { fg = newpaper.tex_lightpurple, style = style.b_bold },
-        NeogitStashes              = { fg = newpaper.tex_blue, style = style.b_bold },
+        NeogitStashes              = { fg = newpaper.tex_math, style = style.b_bold },
         NeogitRebasing             = { fg = newpaper.navy, style = style.b_bold },
         -- NeogitReverting
         -- NeogitPicking
@@ -34,7 +34,7 @@ function M.setup(configColors, configStyle)
         -- STATUS BUFFER FILE
         NeogitChangeModified       = { fg = newpaper.tag_navy, style = style.b_bold },
         NeogitChangeAdded          = { fg = newpaper.git_added, style = style.b_bold },
-        NeogitChangeDeleted        = { fg = newpaper.maroon, style = style.b_bold },
+        NeogitChangeDeleted        = { fg = newpaper.git_removed, style = style.b_bold },
         NeogitChangeRenamed        = { fg = newpaper.tex_redorange, style = style.b_bold },
         NeogitChangeUpdated        = { fg = newpaper.darkorange, style = style.b_bold },
         NeogitChangeCopied         = { fg = newpaper.teal, style = style.b_bold },
@@ -44,8 +44,10 @@ function M.setup(configColors, configStyle)
         -- SIGNS FOR LINE HIGHLIGHTING
         NeogitHunkHeader           = { fg = newpaper.git_fg, bg = newpaper.silver, style = style.b_bold },
         NeogitDiffContext          = { fg = newpaper.git_fg, bg = newpaper.lightsilver },
-        NeogitDiffAdd              = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
-        NeogitDiffDelete           = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
+        NeogitDiffDeletions        = { fg = newpaper.git_removed },
+        NeogitDiffAdditions        = { fg = newpaper.git_added },
+        NeogitDiffAdd              = { fg = newpaper.git_added },
+        NeogitDiffDelete           = { fg = newpaper.git_removed },
         NeogitDiffHeader           = { fg = newpaper.lightblue, bg = newpaper.silver, style = style.b_bold },
 
         -- SIGNS FOR LINE HIGHLIGHTING CURRENT CONTEXT

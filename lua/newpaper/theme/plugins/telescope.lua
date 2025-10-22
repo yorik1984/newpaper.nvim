@@ -78,7 +78,7 @@ function M.setup(configColors, configStyle)
         TelescopeResultsDiffChange      = { fg = newpaper.git_modified },
         TelescopeResultsDiffAdd         = { fg = newpaper.git_added },
         TelescopeResultsDiffDelete      = { fg = newpaper.git_removed },
-        TelescopeResultsDiffUntracked   = { fg = newpaper.git_added },
+        TelescopeResultsDiffUntracked   = { fg = newpaper.git_untracked },
     }
 end
 

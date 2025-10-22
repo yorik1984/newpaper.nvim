@@ -121,9 +121,9 @@ function M.setup(configColors, configStyle)
         ["@markup.list.checked"]                    = { fg = newpaper.todo_hint, style = style.b_bold },
         ["@markup.list.unchecked"]                  = { fg = newpaper.comments },
 
-        ["@diff.plus"]                              = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
-        ["@diff.minus"]                             = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
-        ["@diff.delta"]                             = { fg = newpaper.texts, bg = newpaper.diffchange_bg },
+        ["@diff.plus"]                              = { fg = newpaper.git_added },
+        ["@diff.minus"]                             = { fg = newpaper.git_removed },
+        ["@diff.delta"]                             = { fg = newpaper.git_modified },
 
         ["@tag"]                                    = { fg = newpaper.keywords, style = style.tags_style },
         ["@tag.builtin"]                            = { fg = newpaper.ruby_maroon },

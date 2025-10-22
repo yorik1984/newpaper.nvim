@@ -145,7 +145,8 @@ function M.typeError(userConfig)
         tex_zone            = "string",
         tex_arg             = "string",
 
-        error_highlight     = "string",
+        error_highlight     = { "bg", "undercurl", "both", "NONE" },
+        diff_highlight      = { "fg", "bg", "both" },
         italic_strings      = "boolean",
         italic_comments     = "boolean",
         italic_doc_comments = "boolean",
@@ -230,12 +231,12 @@ end
 ---                               nil means "nothing to do" (opts missing) or validation failed but not error (use caller behavior)
 M.validateApplyWinHl = function(opts, scope, win, allowed_spec)
     local DEFAULT_ERRS = {
-        invalid_opts            = "newpaper.nvim-applyWinHl: opts must be a table",
-        invalid_scope           = "newpaper.nvim-applyWinHl: scope must be 'local' or 'global'",
-        invalid_win             = "newpaper.nvim-applyWinHl: win must be a window id (number) when scope is 'local'",
-        expect_boolean          = "newpaper.nvim-applyWinHl: option '%s' expects boolean, got %s",
-        expect_number           = "newpaper.nvim-applyWinHl: option '%s' expects number (0..100), got %s",
-        expect_string           = "newpaper.nvim-applyWinHl: option '%s' expects string, got %s",
+        invalid_opts   = "newpaper.nvim-applyWinHl: opts must be a table",
+        invalid_scope  = "newpaper.nvim-applyWinHl: scope must be 'local' or 'global'",
+        invalid_win    = "newpaper.nvim-applyWinHl: win must be a window id (number) when scope is 'local'",
+        expect_boolean = "newpaper.nvim-applyWinHl: option '%s' expects boolean, got %s",
+        expect_number  = "newpaper.nvim-applyWinHl: option '%s' expects number (0..100), got %s",
+        expect_string  = "newpaper.nvim-applyWinHl: option '%s' expects string, got %s",
     }
 
     if not opts or type(opts) ~= "table" then
@@ -313,7 +314,7 @@ preset = {
         INVALID_PRESET_NAME          = "newpaper.nvim: invalid preset name '%s' in preset.%s. " ..
             "Allowed names: text, task, view. " .. error_help.preset,
         PRESET_VALUE_NOT_TABLE       = "newpaper.nvim: preset.%s.%s must be a table (array of strings). " ..
-        error_help.preset,
+            error_help.preset,
         PRESET_VALUE_ITEM_NOT_STRING = "newpaper.nvim: preset.%s.%s[%d] must be a string. " .. error_help.preset,
     }
 

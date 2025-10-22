@@ -101,7 +101,8 @@ M.preset_opt    = {
 --- @field tex_keywords string
 --- @field tex_zone string
 --- @field tex_arg string
---- @field error_highlight string
+--- @field error_highlight "bg"|"undercurl"|"both"|"NONE"
+--- @field diff_highlight "fg"|"bg"|"both"
 --- @field italic_strings boolean
 --- @field italic_comments boolean
 --- @field italic_doc_comments boolean
@@ -154,6 +155,7 @@ M.defaults      = {
 
     -- Miscellaneous
     error_highlight     = "undercurl",
+    diff_highlight      = "bg",
     italic_strings      = true,
     italic_comments     = true,
     italic_doc_comments = true,

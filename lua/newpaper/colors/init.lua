@@ -34,7 +34,7 @@ function M.setup(config)
             pink                 = "#FFEEFF",
             lightorange          = "#E4C07A",
             persimona            = "#EF7932",
-            yellow               = "#FFFF00",
+            yellow               = "#FFFF66",
             darkyellow           = "#C18301",
             olive                = "#5F8700",
             darkengreen          = "#007200",
@@ -74,10 +74,12 @@ function M.setup(config)
             git_added            = "#28A745",
             git_modified         = "#DBAB09",
             git_removed          = "#D73A49",
-            diffadd_bg           = "#AFFFAF",
-            diffdelete_bg        = "#FFD7FF",
-            difftext_bg          = "#FFFFD7",
-            diffchange_bg        = "#FFD787",
+            git_merged           = "#00909A",
+            git_untracked        = "#8F8F8B",
+            diffadd              = "#CFFFCF",
+            diffchange           = "#FFE7B7",
+            diffdelete           = "#FFE7FF",
+            difftext             = "#FFFFD7",
 
             -- Spell
             spellbad             = "#FFF4FF",
@@ -228,7 +230,7 @@ function M.setup(config)
             pink                 = "#411616",
             lightorange          = "#443924",
             persimona            = "#E59400",
-            yellow               = "#D8E24F",
+            yellow               = "#E5E500",
             darkyellow           = "#C6A863",
             olive                = "#8B9240",
             darkengreen          = "#589A58",
@@ -268,10 +270,12 @@ function M.setup(config)
             git_added            = "#28A745",
             git_modified         = "#DBAB09",
             git_removed          = "#D73A49",
-            diffadd_bg           = "#005F00",
-            diffdelete_bg        = "#5F0000",
-            difftext_bg          = "#008787",
-            diffchange_bg        = "#005F5F",
+            git_merged           = "#00909A",
+            git_untracked        = "#8F8F8B",
+            diffadd              = "#194E19",
+            diffchange           = "#194C4C",
+            diffdelete           = "#4E1919",
+            difftext             = "#2F7171",
 
             -- Spell
             spellbad             = "#330000",
@@ -478,13 +482,10 @@ function M.setup(config)
     newpaper.sb_contrast_bg      = newpaper.silver
     newpaper.float_fg            = newpaper.fg
     newpaper.float_bg            = newpaper.bg
-    newpaper.git_sign_bg         = newpaper.lightsilver
-    newpaper.telescope_fg        = newpaper.fg
-    newpaper.telescope_bg        = newpaper.bg
     newpaper.float_contrast      = newpaper.silver
-    newpaper.telescope_contrast  = newpaper.silver
+    ----------------------------------------------------------------------------
 
-    -- Ternminal
+    -- Terminal
     newpaper.term_fg             = newpaper.fg
     newpaper.term_bg             = newpaper.bg
     newpaper.term_fl_fg          = newpaper.fg
@@ -505,37 +506,43 @@ function M.setup(config)
         newpaper.term_fl_fg = term_color[config.terminal].fg
         newpaper.term_fl_bg = term_color[config.terminal].bg
     end
+    ----------------------------------------------------------------------------
+
+    -- PLugins -----------------------------------------------------------------
+    -- Git Signs
+    newpaper.git_sign_bg = newpaper.linenumber_bg
 
     -- IndentBlankline
     newpaper.contextchar = newpaper.violet
 
-    -- Sidebars ----------------------------------------------------------------
+    -- NvimTree
     newpaper.nvimtree_fg = newpaper.sb_fg
     newpaper.nvimtree_bg = newpaper.sb_bg
-    newpaper.trouble_fg  = newpaper.sb_fg
-    newpaper.trouble_bg  = newpaper.sb_bg
-
-    -- NvimTree
     if check.contains(config.sidebars_contrast, "NvimTree") then
         newpaper.nvimtree_fg = newpaper.sb_contrast_fg
         newpaper.nvimtree_bg = newpaper.aqualight
     end
 
-    -- Troule
+    -- Trouble
+    newpaper.trouble_fg = newpaper.sb_fg
+    newpaper.trouble_bg = newpaper.sb_bg
     if check.contains(config.sidebars_contrast, "Trouble") then
         newpaper.trouble_fg = newpaper.sb_contrast_fg
         newpaper.trouble_bg = newpaper.sb_contrast_bg
+    end
+
+    -- Telescope
+    newpaper.telescope_fg       = newpaper.fg
+    newpaper.telescope_bg       = newpaper.bg
+    newpaper.telescope_contrast = newpaper.silver
+    if config.contrast_telescope then
+        newpaper.telescope_bg = newpaper.telescope_contrast
     end
     ----------------------------------------------------------------------------
 
     -- Float
     if config.contrast_float then
         newpaper.float_bg = newpaper.float_contrast
-    end
-
-    -- Telescope
-    if config.contrast_telescope then
-        newpaper.telescope_bg = newpaper.telescope_contrast
     end
 
     -- Set transparent background
@@ -580,6 +587,34 @@ function M.setup(config)
         newpaper.tex_parbox_opt_error = newpaper.none
         newpaper.tex_only_math_error  = newpaper.none
     end
+    ----------------------------------------------------------------------------
+
+    -- Diff highlight
+    newpaper.diffadd_fg    = newpaper.git_added
+    newpaper.diffchange_fg = newpaper.git_fg
+    newpaper.diffdelete_fg = newpaper.git_removed
+    newpaper.difftext_fg   = newpaper.git_fg
+    newpaper.diffadd_bg    = newpaper.diffadd
+    newpaper.diffchange_bg = newpaper.diffchange
+    newpaper.diffdelete_bg = newpaper.diffdelete
+    newpaper.difftext_bg   = newpaper.difftext
+
+    if config.diff_highlight == "bg" then
+        newpaper.diffadd_fg    = newpaper.none
+        newpaper.diffchange_fg = newpaper.none
+        newpaper.diffdelete_fg = newpaper.none
+        newpaper.difftext_fg   = newpaper.none
+    end
+
+    if config.diff_highlight == "fg" then
+        newpaper.difftext_fg   = newpaper.tex_olive
+        newpaper.diffchange_fg = newpaper.git_modified
+        newpaper.diffadd_bg    = newpaper.none
+        newpaper.diffchange_bg = newpaper.none
+        newpaper.diffdelete_bg = newpaper.none
+        newpaper.difftext_bg   = newpaper.none
+    end
+    ----------------------------------------------------------------------------
 
     -- Presets colors
     newpaper.text_linenumber_fg  = newpaper.disabled
@@ -593,6 +628,7 @@ function M.setup(config)
     newpaper.task_cursor_nr_bg   = newpaper.none
     newpaper.task_cursor_fold_bg = newpaper.none
     newpaper.task_cursor_sign_bg = newpaper.none
+    ----------------------------------------------------------------------------
 
     if config.colors_advanced then
         util.colorOverrides(newpaper, config.colors_advanced)

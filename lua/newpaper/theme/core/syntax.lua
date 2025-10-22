@@ -43,9 +43,9 @@ function M.setup(configColors, configStyle)
         Typedef        = { fg = newpaper.maroon },
         Underlined     = { fg = newpaper.links, style = style.underline },
 
-        Added          = { fg = newpaper.git_added, bg = newpaper.diffadd_bg },
-        Changed        = { fg = newpaper.texts, bg = newpaper.diffchange_bg },
-        Removed        = { fg = newpaper.git_removed, bg = newpaper.diffdelete_bg },
+        Added          = { fg = newpaper.diffadd_fg,    bg = newpaper.diffadd_bg },
+        Changed        = { fg = newpaper.diffchange_fg, bg = newpaper.diffchange_bg },
+        Removed        = { fg = newpaper.diffdelete_fg, bg = newpaper.diffdelete_bg },
     }
 end
 

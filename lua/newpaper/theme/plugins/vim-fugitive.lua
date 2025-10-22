@@ -9,8 +9,8 @@ function M.setup(configColors, configStyle)
         fugitiveHeader            = { fg = newpaper.tex_blue, style = style.b_bold },
         fugitiveHelpTag           = { fg = newpaper.purple },
         fugitiveHeading           = { fg = newpaper.tex_math, style = style.b_bold },
-        fugitiveUntrackedHeading  = { fg = newpaper.tex_red, style = style.b_bold },
-        fugitiveUnstagedHeading   = { fg = newpaper.ruby_purple, style = style.b_bold },
+        fugitiveUntrackedHeading  = { fg = newpaper.git_added, style = style.b_bold },
+        fugitiveUnstagedHeading   = { fg = newpaper.git_modified, style = style.b_bold },
         fugitiveStagedHeading     = { fg = newpaper.dark_maroon, style = style.b_bold },
         -- fugitiveModifier          Type
         fugitiveUntrackedModifier = { fg = newpaper.git_added },

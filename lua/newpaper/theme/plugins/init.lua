@@ -7,6 +7,7 @@ local files = {
     "cheatsheet",
     "cmp",
     "dashboard",
+    "diffview",
     "flash",
     "gitsigns",
     "headlines",
