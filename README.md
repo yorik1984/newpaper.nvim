@@ -59,6 +59,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + Ability to change background on sidebar windows like NvimTree, terminal etc.
 + Added functions for live theme switching without the need to restart Neovim.
 + [Extras](#extras) colors configs for terminal-based and GUI application.
++ Predefined [presets](#presets) for different filetypes.
 
 ### Extra syntax highlights
 
@@ -110,6 +111,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) for [⚙️nvim-cmp](#nvim-cmp-settings)
 + [Dashboard](https://github.com/nvimdev/dashboard-nvim)
++ [diffview.nvim](https://github.com/sindrets/diffview.nvim)
 + [flash.nvim](https://github.com/folke/flash.nvim)
 + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 + [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
@@ -197,6 +199,7 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | Option              | Default       | Description |
 | ------------------- | ------------- | ------------|
 | style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` and `"auto"` mode. Option `"auto"` set style depending from `vim.o.background` |
+| preset              | `"{}"`        | Add built-in presets per filetype or filename. Presets are predefined windows setting apply after events. `by_filetype` apply by `FileType` pattern. `by_filename` apply by `BufEnter` pattern. Separate highlight groups are used to configure the style: `text` settings for text filetypes. Includes a slightly altered background and a more compact appearance. See: [presets](yorik1984/newpaper.nvim/files/main/lua/newpaper/presets.lua#L51). `task` the same as `text` but with a classic yellow background color like in TODO documents. See: [presets](yorik1984/newpaper.nvim/files/main/lua/newpaper/presets.lua#L80). `view` the same as `text` but without line numbers. See: [presets](yorik1984/newpaper.nvim/files/main/lua/newpaper/presets.lua#L109). NOTE: Pattern `by_filename` has a higher priority.|
 | lightness           | `0`           | Make all supported highlight groups lighter or darker. Useful with `saturation` to make more beauty and eye-friendly view. Value: from `-1`(all colors `"#000000"`) to `1`(all colors `"#FFFFFF"`). Recommended value: `-0.2` - `0.2` |
 | saturation          | `0`           | Change color saturation of all supported highlight groups. Useful with `lightness` to make more beauty and eye-friendly view. Value: from `-1` to `1`. Recommended value: `-0.2` - `0.2` |
 | greyscale           | `false`       | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|
@@ -225,6 +228,7 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | tex_zone            | `"italic"`    | Make some tex `...Zone...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | tex_arg             | `"italic"`    | Make some tex `...Arg...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | error_highlight     | `"undercurl"` | Make spell or `tex`-files errors highlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"` |
+| diff_highlight      | `"bg"`        | Style for  `DiffAdd`, `DiffChange`, `DiffDelete`, `DiffText`. Value: `"fg"`, `"bg"`, `"both"`.
 | italic_strings      | `true`        | Make strings italic |
 | italic_comments     | `true`        | Make comments italic |
 | italic_doc_comments | `true`        | Make comments documenting code italic |
@@ -234,37 +238,113 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
 | hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors.lua[12:189]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L12-L189) and [`colors.lua[193:370]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L193-L370) |
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors.lua[392:556]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors.lua#L392-L556) |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors[11:203]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L11-L207) and [`colors[207:399]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L207-L399) |
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors[421:630]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#421-L630) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       |               | use always `vim.o.background` option|
 
 ### Colorscheme default settings
 
+<details><summary>Default Options</summary>
+
+<!-- config:start -->
+
 ```lua
--- Default settings
+--- This annotation enforces that only the listed keys are present:
+---   - Top-level: "preset" (Config)
+---   - PresetSpec: "by_filetype" and "by_filename"
+---   - PresetByKind: allowed preset names "text", "task", "view"
+---
+--- Use these annotations with the Lua language server / EmmyLua for stronger
+--- static hints and to make intent explicit: any other keys are considered invalid.
+---
+--- @class PresetByKind
+--- @field text string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+--- @field task string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+--- @field view string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+--- @class PresetSpec
+--- @field by_filetype PresetByKind  @only these fields ("text","task","view") are allowed in this section
+--- @field by_filename PresetByKind  @only these fields ("text","task","view") are allowed in this section
+--- Notes:
+--- - Elements of by_filetype[...] are strings representing filetypes (e.g. "markdown", "lua").
+--- - Elements of by_filename[...] are strings representing filename glob patterns (e.g. "*.TODO", "README.md").
+--- - The implementation may perform runtime validation and report an error if any unexpected keys appear.
+---
+--- @class Defaults
+--- @field style "light"|"dark"|"auto"
+--- @field preset PresetSpec  @main preset configuration table (only the keys declared above are allowed)
+--- @field lightness boolean|number
+--- @field saturation boolean|number
+--- @field greyscale "lightness"|"average"|"luminosity"|false
+--- @field editor_better_view boolean
+--- @field terminal string
+--- @field sidebars_contrast table
+--- @field contrast_float boolean
+--- @field contrast_telescope boolean
+--- @field operators_bold boolean
+--- @field delimiters_bold boolean
+--- @field brackets_bold boolean
+--- @field delim_rainbow_bold boolean
+--- @field booleans string
+--- @field booleans_operators string
+--- @field keywords string
+--- @field doc_keywords string
+--- @field regex string
+--- @field regex_bg boolean
+--- @field tags string
+--- @field tags_brackets_bold boolean
+--- @field tex_major string
+--- @field tex_operators_bold boolean
+--- @field tex_brackets_bold boolean
+--- @field tex_math_delim_bold boolean
+--- @field tex_keywords string
+--- @field tex_zone string
+--- @field tex_arg string
+--- @field error_highlight "bg"|"undercurl"|"both"|"NONE"
+--- @field diff_highlight "fg"|"bg"|"both"
+--- @field italic_strings boolean
+--- @field italic_comments boolean
+--- @field italic_doc_comments boolean
+--- @field italic_functions boolean
+--- @field italic_variables boolean
+--- @field borders boolean
+--- @field disable_background boolean
+--- @field lsp_virtual_text_bg boolean
+--- @field hide_eob boolean
+--- @field colors table
+--- @field colors_advanced table
+--- @field custom_highlights table
+--- @field lualine_bold boolean
 require("newpaper").setup({
+    -- Visual / behavioral defaults
     style               = "light",
-    lightness           = 0,
-    saturation          = 0,
+    preset              = {},
+    lightness           = false,
+    saturation          = false,
     greyscale           = false,
     editor_better_view  = true,
     terminal            = "contrast",
     sidebars_contrast   = {},
     contrast_float      = true,
     contrast_telescope  = true,
+
+    -- Syntax element styling
     operators_bold      = true,
     delimiters_bold     = false,
     brackets_bold       = false,
     delim_rainbow_bold  = false,
+
     booleans            = "bold",
     booleans_operators  = "bold",
     keywords            = "bold",
+    doc_keywords        = "bold,italic",
     regex               = "bold",
     regex_bg            = true,
     tags                = "bold",
     tags_brackets_bold  = true,
+
+    -- TeX / LaTeX specific options
     tex_major           = "bold",
     tex_operators_bold  = true,
     tex_brackets_bold   = false,
@@ -272,7 +352,10 @@ require("newpaper").setup({
     tex_keywords        = "NONE",
     tex_zone            = "italic",
     tex_arg             = "italic",
+
+    -- Miscellaneous
     error_highlight     = "undercurl",
+    diff_highlight      = "bg",
     italic_strings      = true,
     italic_comments     = true,
     italic_doc_comments = true,
@@ -282,12 +365,143 @@ require("newpaper").setup({
     disable_background  = false,
     lsp_virtual_text_bg = true,
     hide_eob            = false,
-    colors              = {},
-    colors_advanced     = {},
-    custom_highlights   = {},
+
+    -- Color tables and advanced settings
+    colors              = {}, -- expected map<string, hex>, e.g. { bg = "#1f1f1f", fg = "#f5f5f5" }
+    colors_advanced     = {}, -- like colors specific color variants / options
+    custom_highlights   = {}, -- example: { MyGroup = { fg = "#000000", bg = "#FFFFFF", bold = true } }
+
+    -- Integrations
     lualine_bold        = true,
 })
 ```
+
+<!-- config:end -->
+
+</details>
+
+#### Presets default
+
+> [!tip]
+> You can create custom autocommands based on this built-in settings
+
+<details><summary>text</summary>
+
+<!-- text:start -->
+
+```lua
+    --- @return table<string, any>
+    function M.task()
+        local winhl_entries = {
+            "Normal:NormalTask",
+            "SignColumn:SignColumnTask",
+            "LineNr:LineNrTask",
+            "FoldColumn:FoldColumnTask",
+            "CursorLine:CursorLineTask",
+            "CursorLineNr:CursorLineNrTask",
+            "CursorLineSign:CursorLineSignTask",
+            "CursorLineFold:CursorLineFoldTask",
+            "WinBar:WinBarTask",
+            "WinBarNC:WinBarNCTask",
+            "Visual:VisualTask",
+            "VisualNOS:VisualNOSTask",
+            "NonTextVisual:NonTextVisualTask",
+        }
+
+        local opts = {
+            winhighlight = table.concat(winhl_entries, ","),
+            signcolumn   = "yes:1",
+            foldcolumn   = "auto:1",
+            wrap         = true,
+            linebreak    = true,
+        }
+
+        return opts
+    end
+```
+
+<!-- text:end -->
+
+</details>
+
+<details><summary>task</summary>
+
+<!-- task:start -->
+
+```lua
+    --- @return table<string, any>
+    function M.text()
+        local winhl_entries = {
+            "Normal:NormalText",
+            "SignColumn:SignColumnText",
+            "LineNr:LineNrText",
+            "FoldColumn:FoldColumnText",
+            "CursorLine:CursorLineText",
+            "CursorLineNr:CursorLineNrText",
+            "CursorLineSign:CursorLineSignText",
+            "CursorLineFold:CursorLineFoldText",
+            "WinBar:WinBarText",
+            "WinBarNC:WinBarNCText",
+            "Visual:VisualText",
+            "VisualNOS:VisualNOSText",
+            "NonTextVisual:NonTextVisualText",
+        }
+
+        local opts = {
+            winhighlight = table.concat(winhl_entries, ","),
+            signcolumn   = "yes:1",
+            foldcolumn   = "auto:1",
+            wrap         = true,
+            linebreak    = true,
+        }
+
+        return opts
+    end
+```
+
+<!-- task:end -->
+
+</details>
+
+<details><summary>view</summary>
+
+<!-- view:start -->
+
+```lua
+    --- @return table<string, any>
+    function M.view()
+        local winhl_entries = {
+            "Normal:NormalText",
+            "SignColumn:SignColumnText",
+            "LineNr:LineNrText",
+            "FoldColumn:FoldColumnText",
+            "CursorLine:CursorLineText",
+            "CursorLineNr:CursorLineNrText",
+            "CursorLineSign:CursorLineSignText",
+            "CursorLineFold:CursorLineFoldText",
+            "WinBar:WinBarText",
+            "WinBarNC:WinBarNCText",
+            "Visual:VisualText",
+            "VisualNOS:VisualNOSText",
+            "NonTextVisual:NonTextVisualText",
+        }
+
+        local opts = {
+            winhighlight = table.concat(winhl_entries, ","),
+            signcolumn   = "yes:1",
+            foldcolumn   = "auto:1",
+            number       = false,
+            wrap         = true,
+            linebreak    = true,
+        }
+
+        return opts
+    end
+```
+
+<!-- view:end -->
+
+</details>
 
 ### Colorscheme customizing
 
@@ -305,7 +519,7 @@ local colors            = { teal = "#0000FF" } -- use one color for many groups
 local colors_advanced   = { keyword = "#AA00AA", string = "#008800" }
 local custom_highlights = {
     Float     = { fg = colors.teal }, -- prefer override by name
-    Number    = { fg = "#00FF00" },   -- but hex colos also good
+    Number    = { fg = "#00FF00" },   -- but hex colors also good
     rubyClass = { fg = "#00FFF0" },
     Comment   = { fg = "#FF0000", style = "italic,underline" },
 }
@@ -462,6 +676,10 @@ require("lualine").setup {
 
 ## 📺 Screenshots
 
+### Presets
+
+![all](https://raw.githubusercontent.com/new-paper/newpaper/main/assets/previews/nvim/presets/all.png)
+
 ### 🎼 Languages
 
 #### RUBY
@@ -593,6 +811,5 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
   * [x] Python
   * [x] Rust
 * [ ] Add plugins support:
-  * [ ] [plaintasks.vim](https://github.com/elentok/plaintasks.vim)
   * [ ] [Nvim-R](https://github.com/jalvesaq/Nvim-R)
   * [ ] [i3config.vim](https://github.com/mboughaba/i3config.vim)

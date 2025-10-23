@@ -23,7 +23,7 @@ function M.setup(configColors, configStyle)
         SagaFinderFname        = { fg = newpaper.teal, bg = newpaper.float_bg },
         SagaDetail             = { link = "Comment" },
         SagaInCurrent          = { link = "KeyWord" },
-        SagaSep                = { fg = newpaper.red, bg = newpaper.winbar_bg },
+        SagaSep                = { fg = newpaper.red },
 
         -- code action
         ActionPreviewNormal    = { link = "SagaNormal" },

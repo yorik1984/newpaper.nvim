@@ -12,6 +12,7 @@ newpaper.config.contrast_telescope	newpaper.nvim.txt	/*newpaper.config.contrast_
 newpaper.config.custom_highlights	newpaper.nvim.txt	/*newpaper.config.custom_highlights*
 newpaper.config.delim_rainbow_bold	newpaper.nvim.txt	/*newpaper.config.delim_rainbow_bold*
 newpaper.config.delimiters_bold	newpaper.nvim.txt	/*newpaper.config.delimiters_bold*
+newpaper.config.diff_highlight	newpaper.nvim.txt	/*newpaper.config.diff_highlight*
 newpaper.config.disable_background	newpaper.nvim.txt	/*newpaper.config.disable_background*
 newpaper.config.doc_keywords	newpaper.nvim.txt	/*newpaper.config.doc_keywords*
 newpaper.config.editor_better_view	newpaper.nvim.txt	/*newpaper.config.editor_better_view*
@@ -28,6 +29,10 @@ newpaper.config.lightness	newpaper.nvim.txt	/*newpaper.config.lightness*
 newpaper.config.lsp_virtual_text_bg	newpaper.nvim.txt	/*newpaper.config.lsp_virtual_text_bg*
 newpaper.config.lualine_bold	newpaper.nvim.txt	/*newpaper.config.lualine_bold*
 newpaper.config.operators_bold	newpaper.nvim.txt	/*newpaper.config.operators_bold*
+newpaper.config.preset	newpaper.nvim.txt	/*newpaper.config.preset*
+newpaper.config.preset-task	newpaper.nvim.txt	/*newpaper.config.preset-task*
+newpaper.config.preset-text	newpaper.nvim.txt	/*newpaper.config.preset-text*
+newpaper.config.preset-view	newpaper.nvim.txt	/*newpaper.config.preset-view*
 newpaper.config.regex	newpaper.nvim.txt	/*newpaper.config.regex*
 newpaper.config.regex_bg	newpaper.nvim.txt	/*newpaper.config.regex_bg*
 newpaper.config.saturation	newpaper.nvim.txt	/*newpaper.config.saturation*

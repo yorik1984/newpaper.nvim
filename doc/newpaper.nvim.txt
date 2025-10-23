@@ -41,6 +41,7 @@ Extra supported: ~
     • cheatsheet.nvim
     • colorful-menu.nvim
     • Dashboard
+    • diffview.nvim
     • flash.nvim
     • Git Signs
     • headlines.nvim
@@ -86,6 +87,8 @@ Added functions for live style switching, without the need to reload NeoVim.
 Support |lsp-semantic-highlight|.
 
 Support |regexp| highlight with treesitter.
+
+Predefined styles for different filetypes. See: |newpaper.config.preset|
 
 ==============================================================================
 2. STYLES                                                    *newpaper.styles*
@@ -151,6 +154,144 @@ In order for these settings to take effect, they should be placed in your
                     `"auto"` set style depending from `vim.o.background`.
 
                     Default: `"light"` ~
+
+                                                      *newpaper.config.preset*
+    • {preset}      (table)
+                    Built-in presets per filetype or filename.
+                    Presets are predefined windows setting apply after events.
+                    `by_filetype` apply by |FileType| pattern.
+                    `by_filename` apply by |BufEnter| pattern.
+
+                    NOTE: Pattern `by_filename` has a higher priority.
+
+                    Separate highlight groups are used to configure the style:
+
+                    • `text` settings for text filetypes. Includes a slightly
+                    altered background and a more compact appearance.
+                    See: |newpaper.config.preset-text|
+
+                    • `task` the same as `text` but with a classic yellow
+                    background color like in TODO documents.
+                    See: |newpaper.config.preset-task|
+
+                    • `view` the same as `text` but without line numbers.
+                    See: |newpaper.config.preset-view|
+
+                    Default: `{}` ~
+
+                    Example: ~
+>lua
+    preset = {
+        by_filetype = {
+            text = { "markdown" },
+            task = { "todo" },
+            view = { "log" },
+        },
+
+        by_filename = {
+            text = { "*.txt" },
+            task = { "*.TODO", "*.todo" },
+            view = { "LICENSE" },
+        },
+    },
+<
+
+                                                 *newpaper.config.preset-task*
+>lua
+    --- @return table<string, any>
+    function M.task()
+        local winhl_entries = {
+            "Normal:NormalTask",
+            "SignColumn:SignColumnTask",
+            "LineNr:LineNrTask",
+            "FoldColumn:FoldColumnTask",
+            "CursorLine:CursorLineTask",
+            "CursorLineNr:CursorLineNrTask",
+            "CursorLineSign:CursorLineSignTask",
+            "CursorLineFold:CursorLineFoldTask",
+            "WinBar:WinBarTask",
+            "WinBarNC:WinBarNCTask",
+            "Visual:VisualTask",
+            "VisualNOS:VisualNOSTask",
+            "NonTextVisual:NonTextVisualTask",
+        }
+
+        local opts = {
+            winhighlight = table.concat(winhl_entries, ","),
+            signcolumn   = "yes:1",
+            foldcolumn   = "auto:1",
+            wrap         = true,
+            linebreak    = true,
+        }
+
+        return opts
+    end
+<
+
+                                                 *newpaper.config.preset-text*
+>lua
+    --- @return table<string, any>
+    function M.text()
+        local winhl_entries = {
+            "Normal:NormalText",
+            "SignColumn:SignColumnText",
+            "LineNr:LineNrText",
+            "FoldColumn:FoldColumnText",
+            "CursorLine:CursorLineText",
+            "CursorLineNr:CursorLineNrText",
+            "CursorLineSign:CursorLineSignText",
+            "CursorLineFold:CursorLineFoldText",
+            "WinBar:WinBarText",
+            "WinBarNC:WinBarNCText",
+            "Visual:VisualText",
+            "VisualNOS:VisualNOSText",
+            "NonTextVisual:NonTextVisualText",
+        }
+
+        local opts = {
+            winhighlight = table.concat(winhl_entries, ","),
+            signcolumn   = "yes:1",
+            foldcolumn   = "auto:1",
+            wrap         = true,
+            linebreak    = true,
+        }
+
+        return opts
+    end
+<
+
+                                                 *newpaper.config.preset-view*
+>lua
+    --- @return table<string, any>
+    function M.view()
+        local winhl_entries = {
+            "Normal:NormalText",
+            "SignColumn:SignColumnText",
+            "LineNr:LineNrText",
+            "FoldColumn:FoldColumnText",
+            "CursorLine:CursorLineText",
+            "CursorLineNr:CursorLineNrText",
+            "CursorLineSign:CursorLineSignText",
+            "CursorLineFold:CursorLineFoldText",
+            "WinBar:WinBarText",
+            "WinBarNC:WinBarNCText",
+            "Visual:VisualText",
+            "VisualNOS:VisualNOSText",
+            "NonTextVisual:NonTextVisualText",
+        }
+
+        local opts = {
+            winhighlight = table.concat(winhl_entries, ","),
+            signcolumn   = "yes:1",
+            foldcolumn   = "auto:1",
+            number       = false,
+            wrap         = true,
+            linebreak    = true,
+        }
+
+        return opts
+    end
+<
 
                                                    *newpaper.config.lightness*
     • {lightness}   (number: `-1 ... 1`): from `"#000000"` to `"#FFFFFF"`
@@ -260,6 +401,7 @@ In order for these settings to take effect, they should be placed in your
     • {booleans_operators} (string)
                     Make boleans like `||`, `&` bold, italic, NONE.
                     Support only for extends |treesitter-query|.
+
                     Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` ~
 
                     Default: `"bold"` ~
@@ -363,11 +505,16 @@ In order for these settings to take effect, they should be placed in your
                     Default: `italic` ~
 
                                              *newpaper.config.error_highlight*
-    • {error_highlight} (string)
+    • {error_highlight} (`"bg"` | `"undercurl"` | `"both"` | `"NONE"`)
                     Make spell or `tex`-files errors hightlighting with
                     background, undercurl, both or NONE.
 
-                    Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"` ~
+                    Default: `undercurl` ~
+
+                                             *newpaper.config.diff_highlight*
+    • {diff_highlight} (`"fg"` | `"bg"` | `"both"`)
+                    Style for  `DiffAdd`, `DiffChange`, `DiffDelete`, `DiffText`.
+                    See more in |diff.txt|.
 
                     Default: `undercurl` ~
 
@@ -486,20 +633,90 @@ NOTE:
 
 Default settings: ~
 >lua
+    --- This annotation enforces that only the listed keys are present:
+    ---   - Top-level: "preset" (Config)
+    ---   - PresetSpec: "by_filetype" and "by_filename"
+    ---   - PresetByKind: allowed preset names "text", "task", "view"
+    ---
+    --- Use these annotations with the Lua language server / EmmyLua for stronger
+    --- static hints and to make intent explicit: any other keys are considered invalid.
+    ---
+    --- @class PresetByKind
+    --- @field text string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+    --- @field task string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+    --- @field view string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+    --- @class PresetSpec
+    --- @field by_filetype PresetByKind  @only these fields ("text","task","view") are allowed in this section
+    --- @field by_filename PresetByKind  @only these fields ("text","task","view") are allowed in this section
+    --- Notes:
+    --- - Elements of by_filetype[...] are strings representing filetypes (e.g. "markdown", "lua").
+    --- - Elements of by_filename[...] are strings representing filename glob patterns (e.g. "*.TODO", "README.md").
+    --- - The implementation may perform runtime validation and report an error if any unexpected keys appear.
+    ---
+    --- @class Defaults
+    --- @field style "light"|"dark"|"auto"
+    --- @field preset PresetSpec  @main preset configuration table (only the keys declared above are allowed)
+    --- @field lightness boolean|number
+    --- @field saturation boolean|number
+    --- @field greyscale "lightness"|"average"|"luminosity"|false
+    --- @field editor_better_view boolean
+    --- @field terminal string
+    --- @field sidebars_contrast table
+    --- @field contrast_float boolean
+    --- @field contrast_telescope boolean
+    --- @field operators_bold boolean
+    --- @field delimiters_bold boolean
+    --- @field brackets_bold boolean
+    --- @field delim_rainbow_bold boolean
+    --- @field booleans string
+    --- @field booleans_operators string
+    --- @field keywords string
+    --- @field doc_keywords string
+    --- @field regex string
+    --- @field regex_bg boolean
+    --- @field tags string
+    --- @field tags_brackets_bold boolean
+    --- @field tex_major string
+    --- @field tex_operators_bold boolean
+    --- @field tex_brackets_bold boolean
+    --- @field tex_math_delim_bold boolean
+    --- @field tex_keywords string
+    --- @field tex_zone string
+    --- @field tex_arg string
+    --- @field error_highlight "bg"|"undercurl"|"both"|"NONE"
+    --- @field diff_highlight "fg"|"bg"|"both"
+    --- @field italic_strings boolean
+    --- @field italic_comments boolean
+    --- @field italic_doc_comments boolean
+    --- @field italic_functions boolean
+    --- @field italic_variables boolean
+    --- @field borders boolean
+    --- @field disable_background boolean
+    --- @field lsp_virtual_text_bg boolean
+    --- @field hide_eob boolean
+    --- @field colors table
+    --- @field colors_advanced table
+    --- @field custom_highlights table
+    --- @field lualine_bold boolean
     require("newpaper").setup({
+        -- Visual / behavioral defaults
         style               = "light",
-        lightness           = 0,
-        saturation          = 0,
+        preset              = {},
+        lightness           = false,
+        saturation          = false,
         greyscale           = false,
         editor_better_view  = true,
         terminal            = "contrast",
         sidebars_contrast   = {},
         contrast_float      = true,
         contrast_telescope  = true,
+
+        -- Syntax element styling
         operators_bold      = true,
         delimiters_bold     = false,
         brackets_bold       = false,
         delim_rainbow_bold  = false,
+
         booleans            = "bold",
         booleans_operators  = "bold",
         keywords            = "bold",
@@ -508,6 +725,8 @@ Default settings: ~
         regex_bg            = true,
         tags                = "bold",
         tags_brackets_bold  = true,
+
+        -- TeX / LaTeX specific options
         tex_major           = "bold",
         tex_operators_bold  = true,
         tex_brackets_bold   = false,
@@ -515,7 +734,10 @@ Default settings: ~
         tex_keywords        = "NONE",
         tex_zone            = "italic",
         tex_arg             = "italic",
+
+        -- Miscellaneous
         error_highlight     = "undercurl",
+        diff_highlight      = "bg",
         italic_strings      = true,
         italic_comments     = true,
         italic_doc_comments = true,
@@ -525,9 +747,13 @@ Default settings: ~
         disable_background  = false,
         lsp_virtual_text_bg = true,
         hide_eob            = false,
-        colors              = {},
-        colors_advanced     = {},
-        custom_highlights   = {},
+
+        -- Color tables and advanced settings
+        colors              = {}, -- expected map<string, hex>, e.g. { bg = "#1f1f1f", fg = "#f5f5f5" }
+        colors_advanced     = {}, -- like colors specific color variants / options
+        custom_highlights   = {}, -- example: { MyGroup = { fg = "#000000", bg = "#FFFFFF", bold = true } }
+
+        -- Integrations
         lualine_bold        = true,
     })
 <
@@ -547,7 +773,7 @@ Default settings: ~
     local colors_advanced   = { keywords = "#AA00AA", strings = "#008800" }
     local custom_highlights = {
               Float     = { fg = colors.teal }, -- prefer override by name
-              Number    = { fg = "#00FF00" },   -- but hex colos also good
+              Number    = { fg = "#00FF00" },   -- but hex colors also good
               rubyClass = { fg = "#00FFF0" },
               Comment   = { fg = "#FF0000", style = "italic,underline" },
           }
