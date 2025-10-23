@@ -199,7 +199,7 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | Option              | Default       | Description |
 | ------------------- | ------------- | ------------|
 | style               | `"light"`     | The theme comes in two styles:`"dark"`, `"light"` and `"auto"` mode. Option `"auto"` set style depending from `vim.o.background` |
-| preset              | `"{}"`        | Add built-in presets per filetype or filename. Presets are predefined windows setting apply after events. `by_filetype` apply by `FileType` pattern. `by_filename` apply by `BufEnter` pattern. Separate highlight groups are used to configure the style: `text` settings for text filetypes. Includes a slightly altered background and a more compact appearance. See: [presets](yorik1984/newpaper.nvim/files/main/lua/newpaper/presets.lua#L51). `task` the same as `text` but with a classic yellow background color like in TODO documents. See: [presets](yorik1984/newpaper.nvim/files/main/lua/newpaper/presets.lua#L80). `view` the same as `text` but without line numbers. See: [presets](yorik1984/newpaper.nvim/files/main/lua/newpaper/presets.lua#L109). NOTE: Pattern `by_filename` has a higher priority.|
+| preset              | `"{}"`        | Add built-in presets per filetype or filename. Presets are predefined windows setting apply after events. `by_filetype` apply by `FileType` pattern. `by_filename` apply by `BufEnter` pattern. Separate highlight groups are used to configure the style: `text` settings for text filetypes. Includes a slightly altered background and a more compact appearance. `task` the same as `text` but with a classic yellow background color like in TODO documents. `view` the same as `text` but without line numbers. See: [Presets default](#presets-default). NOTE: Pattern `by_filename` has a higher priority.|
 | lightness           | `0`           | Make all supported highlight groups lighter or darker. Useful with `saturation` to make more beauty and eye-friendly view. Value: from `-1`(all colors `"#000000"`) to `1`(all colors `"#FFFFFF"`). Recommended value: `-0.2` - `0.2` |
 | saturation          | `0`           | Change color saturation of all supported highlight groups. Useful with `lightness` to make more beauty and eye-friendly view. Value: from `-1` to `1`. Recommended value: `-0.2` - `0.2` |
 | greyscale           | `false`       | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|
@@ -238,8 +238,8 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
 | hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors[11:203]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L11-L207) and [`colors[207:399]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L207-L399) |
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors[421:630]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#421-L630) |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors[11:203]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L11-L203) and [`colors[207:399]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L207-L399) |
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors[421:630]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L421-L630) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       |               | use always `vim.o.background` option|
@@ -381,6 +381,8 @@ require("newpaper").setup({
 </details>
 
 #### Presets default
+
+Full presets config stored in [presets.lua](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/presets.lua)
 
 > [!tip]
 > You can create custom autocommands based on this built-in settings
