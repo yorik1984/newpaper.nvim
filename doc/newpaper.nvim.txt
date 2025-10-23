@@ -196,38 +196,6 @@ In order for these settings to take effect, they should be placed in your
     },
 <
 
-                                                 *newpaper.config.preset-task*
->lua
-    --- @return table<string, any>
-    function M.task()
-        local winhl_entries = {
-            "Normal:NormalTask",
-            "SignColumn:SignColumnTask",
-            "LineNr:LineNrTask",
-            "FoldColumn:FoldColumnTask",
-            "CursorLine:CursorLineTask",
-            "CursorLineNr:CursorLineNrTask",
-            "CursorLineSign:CursorLineSignTask",
-            "CursorLineFold:CursorLineFoldTask",
-            "WinBar:WinBarTask",
-            "WinBarNC:WinBarNCTask",
-            "Visual:VisualTask",
-            "VisualNOS:VisualNOSTask",
-            "NonTextVisual:NonTextVisualTask",
-        }
-
-        local opts = {
-            winhighlight = table.concat(winhl_entries, ","),
-            signcolumn   = "yes:1",
-            foldcolumn   = "auto:1",
-            wrap         = true,
-            linebreak    = true,
-        }
-
-        return opts
-    end
-<
-
                                                  *newpaper.config.preset-text*
 >lua
     --- @return table<string, any>
@@ -246,6 +214,38 @@ In order for these settings to take effect, they should be placed in your
             "Visual:VisualText",
             "VisualNOS:VisualNOSText",
             "NonTextVisual:NonTextVisualText",
+        }
+
+        local opts = {
+            winhighlight = table.concat(winhl_entries, ","),
+            signcolumn   = "yes:1",
+            foldcolumn   = "auto:1",
+            wrap         = true,
+            linebreak    = true,
+        }
+
+        return opts
+    end
+<
+
+                                                 *newpaper.config.preset-task*
+>lua
+    --- @return table<string, any>
+    function M.task()
+        local winhl_entries = {
+            "Normal:NormalTask",
+            "SignColumn:SignColumnTask",
+            "LineNr:LineNrTask",
+            "FoldColumn:FoldColumnTask",
+            "CursorLine:CursorLineTask",
+            "CursorLineNr:CursorLineNrTask",
+            "CursorLineSign:CursorLineSignTask",
+            "CursorLineFold:CursorLineFoldTask",
+            "WinBar:WinBarTask",
+            "WinBarNC:WinBarNCTask",
+            "Visual:VisualTask",
+            "VisualNOS:VisualNOSTask",
+            "NonTextVisual:NonTextVisualTask",
         }
 
         local opts = {
