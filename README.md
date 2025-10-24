@@ -111,6 +111,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) for [⚙️nvim-cmp](#nvim-cmp-settings)
 + [Dashboard](https://github.com/nvimdev/dashboard-nvim)
++ [difft.nvim](https://github.com/ahkohd/difft.nvim)
 + [diffview.nvim](https://github.com/sindrets/diffview.nvim)
 + [flash.nvim](https://github.com/folke/flash.nvim)
 + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
@@ -205,7 +206,7 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | greyscale           | `false`       | Make all supported highlight groups in greyscale palette. Useful with `lightness` and `saturation` to make more beauty and eye-friendly view. Value: `"lightness"`, `"average"`, `"luminosity"`, `false`. Recommended greyscale value: `"luminosity"`|
 | editor_better_view  | `true`        | Make some interface like menu, title of editor and plugins menu bold and italic |
 | terminal            | `"contrast"`  | Make `:terminal`buffers and windows  in different styles. Value:`"bg"`, `"contrast"`, `"inverse"`, `"inverse_transparent"` |
-| sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "Trouble" }`. `"NvimTree"` and `"Trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
+| sidebars_contrast   | `{}`          | Set a contrast background on sidebar-like windows. Example: `{ "NvimTree", "vista_kind", "trouble" }`. `"NvimTree"` and `"trouble"` groups has own highlight colors. Can be overridden separate from others sidebars |
 | contrast_float      | `true`        | Make popup menus like nvim-cmp, lsp-saga have a different foreground and background |
 | contrast_telescope  | `true`        | Make Telescope have a different foreground and background |
 | operators_bold      | `true`        | Make booleans, escape characters, operators like `=`, `/`, `*`, `+`, `-`, `&`, `%`, `#`, `~`, `<`, `>`, `|` etc bold |
@@ -238,8 +239,8 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
 | hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors[11:203]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L11-L203) and [`colors[207:399]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L207-L399) |
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors[421:630]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L421-L630) |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors[11:207]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L11-L207) and [`colors[211:407]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L211-L407) |
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors[429:644]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L429-L644) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       |               | use always `vim.o.background` option|

@@ -5,7 +5,7 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        CursorLineSB     = { fg = newpaper.cursor_nr_fg, bg = newpaper.aqua },
+        CursorLineSB     = { bg = newpaper.aqua },
         CursorLineSignSB = { bg = newpaper.sb_contrast_bg },
         CursorLineTerm   = { bg = newpaper.none, ctermbg = newpaper.none },
         FloatBorderNorm  = { fg = newpaper.borders, bg = newpaper.bg },

@@ -41,6 +41,7 @@ Extra supported: ~
     • cheatsheet.nvim
     • colorful-menu.nvim
     • Dashboard
+    • difft.nvim
     • diffview.nvim
     • flash.nvim
     • Git Signs
@@ -339,7 +340,7 @@ In order for these settings to take effect, they should be placed in your
                                            *newpaper.config.sidebars_contrast*
     • {sidebars_contrast} (table)
                     Set a contrast background on sidebar-like windows.
-                    `"NvimTree"` and `"Trouble"` has own highlight colors.
+                    `"NvimTree"` and `"trouble"` has own highlight colors.
                     Can be overridden separately from others sidebars.
 
                     Default: `{}` ~
@@ -349,7 +350,7 @@ In order for these settings to take effect, they should be placed in your
                     sidebars_contrast = {
                         "NvimTree",
                         "vista_kind",
-                        "Trouble",
+                        "trouble",
                     },
 <
                                               *newpaper.config.contrast_float*

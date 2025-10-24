@@ -76,9 +76,13 @@ function M.setup(config)
             git_removed          = "#D73A49",
             git_merged           = "#00909A",
             git_untracked        = "#8F8F8B",
-            diffadd              = "#CFFFCF",
+            github_added         = "#1A4D1A",
+            github_removed       = "#6B1F1F",
+            diffadd              = "#DAFBE1",
+            diffadd_accent       = "#ACEEBB",
+            diffdelete           = "#FFEBE9",
+            diffdelete_accent    = "#FFCECB",
             diffchange           = "#FFE7B7",
-            diffdelete           = "#FFE7FF",
             difftext             = "#FFFFD7",
 
             -- Spell
@@ -267,15 +271,19 @@ function M.setup(config)
             -- Git and diff
             git_fg               = "#EBEAE2",
             git_bg               = "#303030",
-            git_added            = "#28A745",
+            git_added            = "#68C17C",
             git_modified         = "#DBAB09",
-            git_removed          = "#D73A49",
-            git_merged           = "#00909A",
+            git_removed          = "#DF616D",
+            git_merged           = "#32A6AE",
             git_untracked        = "#8F8F8B",
-            diffadd              = "#194E19",
-            diffchange           = "#194C4C",
-            diffdelete           = "#4E1919",
-            difftext             = "#2F7171",
+            github_added         = "#6ECE6E",
+            github_removed       = "#E06C75",
+            diffadd              = "#263834",
+            diffadd_accent       = "#335D3D",
+            diffdelete           = "#352C33",
+            diffdelete_accent    = "#7C3B3D",
+            diffchange           = "#36362E",
+            difftext             = "#505048",
 
             -- Spell
             spellbad             = "#330000",
@@ -394,7 +402,7 @@ function M.setup(config)
             text_cursor          = "#323234",
             text_visual          = "#4B4B4D",
             task_fg              = "#F3EEC3",
-            task_bg              = "#1d2021",
+            task_bg              = "#212830",
             task_cursor          = "#36362E",
             task_visual          = "#505048",
         }
@@ -526,7 +534,7 @@ function M.setup(config)
     -- Trouble
     newpaper.trouble_fg = newpaper.sb_fg
     newpaper.trouble_bg = newpaper.sb_bg
-    if check.contains(config.sidebars_contrast, "Trouble") then
+    if check.contains(config.sidebars_contrast, "trouble") then
         newpaper.trouble_fg = newpaper.sb_contrast_fg
         newpaper.trouble_bg = newpaper.sb_contrast_bg
     end
@@ -590,29 +598,35 @@ function M.setup(config)
     ----------------------------------------------------------------------------
 
     -- Diff highlight
-    newpaper.diffadd_fg    = newpaper.git_added
-    newpaper.diffchange_fg = newpaper.git_fg
-    newpaper.diffdelete_fg = newpaper.git_removed
-    newpaper.difftext_fg   = newpaper.git_fg
-    newpaper.diffadd_bg    = newpaper.diffadd
-    newpaper.diffchange_bg = newpaper.diffchange
-    newpaper.diffdelete_bg = newpaper.diffdelete
-    newpaper.difftext_bg   = newpaper.difftext
+    newpaper.diffadd_fg           = newpaper.github_added
+    newpaper.diffdelete_fg        = newpaper.github_removed
+    newpaper.diffchange_fg        = newpaper.git_fg
+    newpaper.difftext_fg          = newpaper.git_fg
+    newpaper.diffadd_bg           = newpaper.diffadd
+    newpaper.diffadd_accent_bg    = newpaper.diffadd_accent
+    newpaper.diffdelete_bg        = newpaper.diffdelete
+    newpaper.diffdelete_accent_bg = newpaper.diffdelete_accent
+    newpaper.diffchange_bg        = newpaper.diffchange
+    newpaper.difftext_bg          = newpaper.difftext
 
     if config.diff_highlight == "bg" then
         newpaper.diffadd_fg    = newpaper.none
-        newpaper.diffchange_fg = newpaper.none
         newpaper.diffdelete_fg = newpaper.none
+        newpaper.diffchange_fg = newpaper.none
         newpaper.difftext_fg   = newpaper.none
     end
 
     if config.diff_highlight == "fg" then
-        newpaper.difftext_fg   = newpaper.tex_olive
-        newpaper.diffchange_fg = newpaper.git_modified
-        newpaper.diffadd_bg    = newpaper.none
-        newpaper.diffchange_bg = newpaper.none
-        newpaper.diffdelete_bg = newpaper.none
-        newpaper.difftext_bg   = newpaper.none
+        newpaper.diffadd_fg           = newpaper.git_added
+        newpaper.diffdelete_fg        = newpaper.git_removed
+        newpaper.diffchange_fg        = newpaper.git_modified
+        newpaper.difftext_fg          = newpaper.tex_olive
+        newpaper.diffadd_bg           = newpaper.none
+        newpaper.diffadd_accent_bg    = newpaper.none
+        newpaper.diffdelete_bg        = newpaper.none
+        newpaper.diffdelete_accent_bg = newpaper.none
+        newpaper.diffchange_bg        = newpaper.none
+        newpaper.difftext_bg          = newpaper.none
     end
     ----------------------------------------------------------------------------
 

@@ -32,8 +32,8 @@ function M.sidebar()
         "SignColumn:SignColumnSB",
         "LineNr:LineNrSB",
         "FoldColumn:FoldColumnSB",
-        "CursorLineNr:CursorLineSignSB",
         "CursorLine:CursorLineSB",
+        "CursorLineNr:CursorLineSignSB",
         "CursorLineSign:CursorLineSignSB",
     }
 
@@ -41,7 +41,7 @@ function M.sidebar()
         winhighlight = table.concat(winhl_entries, ","),
         signcolumn   = "yes:1",
         number       = false,
-        foldcolumn   = "0",
+        foldcolumn   = "auto:1",
     }
 
     return opts

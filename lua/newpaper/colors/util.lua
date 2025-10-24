@@ -1,4 +1,3 @@
----@module newpaper.colors.util
 --- Utility helpers for color manipulation (HSLuv and greyscale operations).
 --- External deps (hsluv, check, configModule) are optional and checked at runtime.
 

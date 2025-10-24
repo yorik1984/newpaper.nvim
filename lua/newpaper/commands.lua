@@ -66,17 +66,27 @@ function M.autocmds(config, color)
     })
 
     if config and config.sidebars_contrast then
+        local sidebars = {}
         for _, sidebar in ipairs(config.sidebars_contrast) do
             if sidebar ~= "NvimTree" then
-                vim.api.nvim_create_autocmd({ "FileType" }, {
-                    group = group,
-                    pattern = { sidebar },
-                    callback = function()
-                        local win = vim.api.nvim_get_current_win()
-                        winhighlight.applyWinHl(presets.sidebar(), "local", win)
-                    end,
-                })
+                sidebars[sidebar] = true
             end
+        end
+
+        if next(sidebars) then
+            vim.api.nvim_create_autocmd("BufEnter", {
+                group = group,
+                callback = function(args)
+                    local bufnr = args.buf
+                    local ft = vim.bo[bufnr].filetype
+
+                    if sidebars[ft] then
+                        for _, win in ipairs(vim.fn.win_findbuf(bufnr)) do
+                            winhighlight.applyWinHl(presets.sidebar(), "local", win)
+                        end
+                    end
+                end,
+            })
         end
     end
 
