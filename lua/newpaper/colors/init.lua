@@ -647,8 +647,12 @@ function M.setup(config)
     if config.colors_advanced then
         util.colorOverrides(newpaper, config.colors_advanced)
     end
-
+    M.colors = newpaper
     return newpaper
+end
+
+function M.get_colors()
+    return M.colors
 end
 
 return M

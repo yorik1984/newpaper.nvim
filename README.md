@@ -751,11 +751,56 @@ Source code [HERE](https://raw.githubusercontent.com/new-paper/newpaper/main/cod
 }
 ```
 
+## 📘 API Reference
+
+| Function       | Description |
+| ---------------| ----------- |
+| `get_colors()` | Get fullspec of theme colors after apply config. Reload after `ColorSheme` event. |
+
+```lua
+local newpaper = require("newpaper.colors").get_colors() --=>
+-- table with all colors using in theme
+{
+    accent = "#0087AF",
+    active = "#E4E4E4",
+    aqua = "#BFD5EC",
+    ...
+}
+```
+
+Useful for plugins that depend on every theme color being available
+Example:
+
+```lua
+
+{
+    "yorik1984/newpaper.nvim",
+    priority = 1000,
+    config = true,
+    dependencies = {
+        {
+            "rachartier/tiny-devicons-auto-colors.nvim",
+            dependencies = {
+                "nvim-tree/nvim-web-devicons"
+            },
+            event = "VeryLazy",
+            config = function()
+                local colors = require("newpaper.colors").get_colors()
+                require("tiny-devicons-auto-colors").setup({
+                    colors = colors,
+                    autoreload = true,
+                })
+            end
+        },
+    },
+},
+```
+
 ## ❔ FAQ
 
 For a complete guide on usage and Configuration of the theme, see `:help newpaper.nvim`.
 
-## Extras
+## ✨ Extras
 
 [Extra](https://github.com/new-paper/newpaper#-ports) config with newpaper-based color palette for some terminal and GUI application.
 + [lazygit](https://github.com/new-paper/lazygit#-features)
