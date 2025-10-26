@@ -37,6 +37,7 @@ Extra supported: ~
     • vimtex
 
     plugins: ~
+    • action-hints.nvim
     • bufferline.nvim
     • cheatsheet.nvim
     • colorful-menu.nvim

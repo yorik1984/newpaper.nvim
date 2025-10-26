@@ -3,6 +3,7 @@ local M = {}
 local folder = "newpaper.theme.plugins."
 
 local files = {
+    "action-hints",
     "bufferline",
     "cheatsheet",
     "cmp",

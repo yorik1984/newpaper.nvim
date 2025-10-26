@@ -8,8 +8,9 @@ function M.setup(configColors, configStyle)
         LspCodeLens                 = { fg = newpaper.comments, bg = newpaper.lightsilver },
         LspCodeLensSeparator        = { fg = newpaper.comments, bg = newpaper.lightsilver, style = style.b_bold },
         LspReferenceText            = { fg = newpaper.todo_default, bg = newpaper.silver },
-        LspReferenceRead            = { fg = newpaper.todo_info, bg = newpaper.silver },
-        LspReferenceWrite           = { fg = newpaper.todo_hint, bg = newpaper.silver },
+        LspReferenceTarget          = { fg = newpaper.tex_lightviolet, bg = newpaper.silver },
+        LspReferenceRead            = { fg = newpaper.tex_aqua, bg = newpaper.silver },
+        LspReferenceWrite           = { fg = newpaper.tex_lightgreen, bg = newpaper.silver },
         LspSignatureActiveParameter = { bg = newpaper.search_bg },
 
         DiagnosticError             = { fg = newpaper.error_fg },

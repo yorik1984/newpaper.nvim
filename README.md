@@ -107,6 +107,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 #### plugins
 
++ [action-hints.nvim](https://github.com/yorik1984/action-hints.nvim)
 + [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 + [cheatsheet.nvim](https://github.com/sudormrfbin/cheatsheet.nvim)
 + [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) for [⚙️nvim-cmp](#nvim-cmp-settings)
