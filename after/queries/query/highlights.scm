@@ -1,3 +1,3 @@
 ; extends
 
-"." @operator.dot
+"." @punctuation.dot

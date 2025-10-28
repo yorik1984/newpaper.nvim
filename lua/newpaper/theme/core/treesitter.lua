@@ -55,6 +55,7 @@ function M.setup(configColors, configStyle)
         ["@operator"]                               = { fg = newpaper.navy, style = style.o_style },
         ["@operator.math"]                          = { fg = newpaper.tex_olive, style = style.o_style, nocombine = true },
         ["@operator.boolean"]                       = { fg = newpaper.booleans, style = style.bool_o_style, nocombine = true },
+        ["@operator.special"]                       = { fg = newpaper.lightmagenta, style = style.o_style },
 
         ["@keyword"]                                = { fg = newpaper.keywords, style = style.k_style },
         ["@keyword.coroutine"]                      = { fg = newpaper.tex_keyword, style = style.k_style },
@@ -77,6 +78,7 @@ function M.setup(configColors, configStyle)
         ["@punctuation.delimiter"]                  = { fg = newpaper.persimona, style = style.d_style },
         ["@punctuation.bracket"]                    = { fg = newpaper.ruby_navy, style = style.br_style },
         ["@punctuation.special"]                    = { fg = newpaper.lightmagenta },
+        ["@punctuation.dot"]                        = { fg = newpaper.redorange, style = style.d_style },
 
         ["@comment"]                                = { fg = newpaper.comments, style = style.c_style },
         ["@comment.documentation"]                  = { fg = newpaper.doc_comments, style = style.doc_style, nocombine = true },

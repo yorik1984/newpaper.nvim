@@ -12,6 +12,24 @@
 
 ; Operators
 [
+  "+"
+  "-"
+  "*"
+  "/"
+  "%"
+] @operator.math
+
+[
+  ".."
+  "..="
+] @character.special
+
+[
+  "=<<"
+  "->"
+] @punctuation.delimiter
+
+[
   "=="
   "!="
   "!~"
@@ -29,6 +47,21 @@
   "&&"
   "||"
 ] @operator.boolean
+
+(inv_option
+  "!" @operator.special)
+
+(match_case) @operator.special
+
+(unary_operation
+  "!" @operator.boolean)
+
+[
+  "<<"
+] @keyword.exception
+
+(binary_operation
+  "." @punctuation.dot)
 
 (hl_attribute
   key: _ @property
