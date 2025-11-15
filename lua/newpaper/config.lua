@@ -209,7 +209,9 @@ function M.setup(user_settings)
 
     check.typeError(user_settings)
 
-    check.validatePreset(user_settings.preset)
+    if user_settings.preset ~= nil then
+        check.validatePreset(user_settings.preset)
+    end
 
     check.keyExistsError(user_settings, M.defaults, "Option")
 
