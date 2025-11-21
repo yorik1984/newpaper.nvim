@@ -22,6 +22,7 @@ local files = {
     "toml",
     "typescript",
     "vimdoc",
+    "vue",
     "yaml",
 }
 
