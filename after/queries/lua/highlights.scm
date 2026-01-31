@@ -2,36 +2,40 @@
 
 ; Operators
 ; Relational Operators
-[
-  "=="
-  "~="
-  ">"
-  "<"
-  ">="
-  "<="
-] @punctuation.special
+(binary_expression
+  [
+    "=="
+    "~="
+    ">"
+    "<"
+    ">="
+    "<="
+  ] @punctuation.special)
 
 ; Bitwise Operators
-[
-  "&"
-  "|"
-  "~"
-  "<<"
-  ">>"
-] @keyword.exception
+(binary_expression
+  [
+    "&"
+    "|"
+    "~"
+    "<<"
+    ">>"
+  ] @keyword.exception)
 
 ; Arithmetic
-[
-  "+"
-  "-"
-  "*"
-  "^"
-  "%"
-  "/"
-  "//"
-] @operator.math
+(binary_expression
+  [
+    "+"
+    "-"
+    "*"
+    "^"
+    "%"
+    "/"
+    "//"
+  ] @operator.math)
 
-".." @character.special
+(binary_expression
+  ".." @character.special)
 
 (unary_expression
   "#" @constructor)
