@@ -75,6 +75,7 @@ function M.setup(configColors, configStyle)
         -- Vimtex groups
         -- NOTE:Some groups from tex basic syntax include this
 
+        texDtxMacrocode           = { fg = newpaper.tex_maroon },
         texCmdType                = { fg = newpaper.tex_keyword, style = style.tex_k_style },
         texParm                   = { fg = newpaper.tex_maroon },
         texZone                   = { fg = newpaper.fg },
