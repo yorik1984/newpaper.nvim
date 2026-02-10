@@ -28,6 +28,7 @@ Extra supported: ~
 
     filetypes plugins: ~
     • log-highlight.nvim
+    • markdown-plus.nvim
     • Vim-Jinja2-Syntax
     • [n]vim-markdown
     • vim-lua
