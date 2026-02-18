@@ -198,6 +198,7 @@ function M.setup(configColors, configStyle)
         ["@lsp.typemod.function.defaultLibrary"]    = { link = "@function.builtin" },
         ["@lsp.typemod.function.default_library"]   = { link = "@function.builtin" },
         ["@lsp.typemod.keyword.async"]              = { link = "@keyword.coroutine" },
+        ["@lsp.typemod.keyword.documentation"]      = { link = "@keyword.luadoc" },
         ["@lsp.typemod.macro.defaultLibrary"]       = { link = "@function.builtin" },
         ["@lsp.typemod.macro.default_library"]      = { link = "@function.builtin" },
         ["@lsp.typemod.method.defaultLibrary"]      = { link = "@function.builtin" },
@@ -211,8 +212,10 @@ function M.setup(configColors, configStyle)
         ["@lsp.typemod.variable.defaultLibrary"]    = { link = "@constant.builtin" },
         ["@lsp.typemod.variable.default_library"]   = { link = "@constant.builtin" },
         ["@lsp.typemod.variable.definition"]        = { link = "@variable.builtin" },
-        ["@lsp.typemod.variable.global"]            = { link = "@module.builtin" },
+        ["@lsp.typemod.variable.documentation"]     = { link = "@type.builtin.luadoc" },
+        ["@lsp.typemod.variable.global"]            = { fg = newpaper.tex_magenta, style = style.v_style },
         ["@lsp.typemod.variable.injected"]          = { link = "@variable" },
+        ["@lsp.typemod.variable.readonly"]          = { fg = newpaper.redorange, style = style.k_style },
     }
 end
 
