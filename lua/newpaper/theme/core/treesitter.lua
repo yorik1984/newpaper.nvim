@@ -213,9 +213,9 @@ function M.setup(configColors, configStyle)
         ["@lsp.typemod.variable.default_library"]   = { link = "@constant.builtin" },
         ["@lsp.typemod.variable.definition"]        = { link = "@variable.builtin" },
         ["@lsp.typemod.variable.documentation"]     = { link = "@type.builtin.luadoc" },
-        ["@lsp.typemod.variable.global"]            = { fg = newpaper.tex_magenta, style = style.v_style },
+        ["@lsp.typemod.variable.global"]            = { fg = newpaper.tex_magenta, style = style.k_style },
         ["@lsp.typemod.variable.injected"]          = { link = "@variable" },
-        ["@lsp.typemod.variable.readonly"]          = { fg = newpaper.redorange, style = style.k_style },
+        ["@lsp.typemod.variable.readonly"]          = { fg = newpaper.redorange, style = style.v_style },
     }
 end
 
