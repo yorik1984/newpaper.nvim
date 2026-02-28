@@ -58,7 +58,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 + Lualine theme.
 + Ability to change background on sidebar windows like NvimTree, terminal etc.
 + Added functions for live theme switching without the need to restart Neovim.
-+ [Extras](#extras) colors configs for terminal-based and GUI application.
++ [Extras](#-extras) colors configs for terminal-based and GUI application.
 + Predefined [presets](#presets) for different filetypes.
 
 ### Extra syntax highlights
