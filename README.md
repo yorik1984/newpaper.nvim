@@ -4,6 +4,12 @@
 </h3>
 
 <div align="center">
+<a href="https://dotfyle.com/plugins/yorik1984/newpaper.nvim">
+	<img src="https://dotfyle.com/plugins/yorik1984/newpaper.nvim/shield?style=for-the-badge" />
+</a>
+</div>
+
+<div align="center">
 
 # 🎨 newpaper.nvim
 
