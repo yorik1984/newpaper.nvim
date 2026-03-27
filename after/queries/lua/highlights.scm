@@ -43,6 +43,10 @@
 ; Constants
 (vararg_expression) @label
 
+((identifier) @constant
+  (#match? @constant "^[A-Z_]+$")
+  (#set! priority 110))
+
 ; Variables
 ((identifier) @constant.builtin
   (#eq? @constant.builtin "_ENV"))
