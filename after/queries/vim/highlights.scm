@@ -61,9 +61,7 @@
 (unary_operation
   "!" @operator.boolean)
 
-[
-  "<<"
-] @keyword.exception
+"<<" @keyword.exception
 
 (binary_operation
   "." @punctuation.dot)
@@ -71,3 +69,6 @@
 (hl_attribute
   key: _ @property
   val: _ @number.float)
+
+(highlight_statement
+  to: (hl_group) @type.builtin)
