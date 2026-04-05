@@ -173,6 +173,7 @@ function M.setup(config)
             -- Lua
             lua_navy             = "#030380",
             lua_blue             = "#128897",
+            love_teal            = "#1B4D68",
 
             -- Jinja
             jinja_red            = "#B80000",
@@ -201,7 +202,7 @@ function M.setup(config)
             text_fg              = "#404040",
             text_bg              = "#F4F4F2",
             text_cursor          = "#E4E4E4",
-            text_visual          = "#C2E8FF",
+            text_visual          = "#B1E3FA",
             task_fg              = "#2F2A3D",
             task_bg              = "#F3EEC3",
             task_cursor          = "#F2E3A2",
@@ -374,6 +375,7 @@ function M.setup(config)
             -- Lua
             lua_navy             = "#8080BE",
             lua_blue             = "#5DA6D2",
+            love_teal            = "#66A7AC",
 
             -- Jinja
             jinja_red            = "#D05858",

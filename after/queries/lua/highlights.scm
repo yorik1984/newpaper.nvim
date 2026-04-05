@@ -51,10 +51,6 @@
 ((identifier) @constant.builtin
   (#eq? @constant.builtin "_ENV"))
 
-; Tables
-(field
-  name: (identifier) @local.definition.field)
-
 ; From locals.scm
 (assignment_statement
   (variable_list

@@ -144,7 +144,7 @@ function M.setup(configColors, configStyle)
         ["@local.definition.parameter"]             = { fg = newpaper.darkorange, style = style.v_style },
         ["@local.definition.macro"]                 = { fg = newpaper.lightmagenta },
         ["@local.definition.type"]                  = { fg = newpaper.ruby_navy, style = style.k_style },
-        ["@local.definition.field"]                 = { fg = newpaper.tex_teal },
+        ["@local.definition.field"]                 = { fg = newpaper.love_teal },
         ["@local.definition.enum"]                  = { fg = newpaper.blue },
         ["@local.definition.namespace"]             = { fg = newpaper.blue, style = style.k_style },
         ["@local.definition.import"]                = { fg = newpaper.olive },
