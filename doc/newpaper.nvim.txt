@@ -1,4 +1,4 @@
-*newpaper*
+*newpaper* *newpaper.nvim* *newpaper-colorscheme*
 
 Author: Yurii Kulchevich <yorik1984@gmail.com>
 
@@ -17,7 +17,7 @@ CONTENTS                                                   *newpaper.contents*
 ==============================================================================
 1. FEATURES                                                *newpaper.features*
 
-*newpaper.nvim* is a 'colorscheme' written in |lua| with support |LSP|,
+`newpaper.nvim` is a 'colorscheme' written in |lua| with support |LSP|,
 |treesitter|, extends |treesitter-query| for some grammars and more plugins.
 
 There are 2 |newpaper.styles| to choose from:
@@ -129,11 +129,9 @@ Parameters: ~
 Example: ~
 
 >lua
-    -- lua   
-    require("newpaper").setup()
-    -- ...
+    -- lua
+    require("newpaper").setup({})
     vim.cmd.colorscheme("newpaper")
-
 <
 
 >vim
@@ -580,7 +578,7 @@ In order for these settings to take effect, they should be placed in your
     • {colors}      (table)
                     Override the default colors and use your own.
                     Also owerride lualine colors if have same name.
-                    See value in `lua/newpaper/colors.lua[12:189, 193:370]`,
+                    See value in `lua/newpaper/colors/init.lua[11:209, 213:411]`,
 
                     Default: `{}` ~
 
@@ -594,7 +592,7 @@ In order for these settings to take effect, they should be placed in your
                                              *newpaper.config.colors_advanced*
     • {colors_advanced} (table)
                     Override the advanced default colors and use your own.
-                    See value in `lua/newpaper/colors.lua[392:556]`.
+                    See value in `lua/newpaper/colors/init.lua[433:648]`.
 
                     Default: `{}` ~
 
@@ -783,11 +781,11 @@ Default settings: ~
     require("newpaper").setup({
         style    = "dark",
         keywords = "italic",
-        -- ...
+        ...
         colors              = colors,
         colors_advanced     = colors_advanced,
         custom_highlights   = custom_highlights,
-        -- ...
+        ...
     })
 <
 ==============================================================================
@@ -808,18 +806,21 @@ optional `vim.o.background` setting.
 
 To enable |newpaper| theme for |lualine|, specify it in your lualine settings:
 >lua
-    require("lualine").setup {
+    require("newpaper").setup({
+        -- newpaper config
+    })
+
+    require("lualine").setup({
         options = {
-            -- ... lualine config
+            theme = "newpaper",
+            -- other lualine config
         }
-    }
+    })
 <
-Lualine theme name and style automatically using from main theme.
 
 NOTE:
 You can temporally use only lualine theme with any colorscheme with |newpaper|
 It also depend from `vim.o.background`.
-
 >lua
     -- init.lua
 
@@ -830,17 +831,14 @@ It also depend from `vim.o.background`.
     -- Also you can predefine colors
     vim.g.newpaper_colors = { teal = "#008080" }
 
-    -- disable `newpaper` theme
-    -- require("newpaper").setup()
+    -- enable other colorscheme
 
     require("lualine").setup {
         options = {
             theme = "newpaper",
-            -- ... lualine config
+            -- other lualine config
         }
     }
-    -- enable other colorscheme
-    -- ...
 <
 ==============================================================================
 vim:tw=78:ts=4:ft=help:norl:

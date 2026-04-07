@@ -247,8 +247,8 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | disable_background  | `false`       | Disable the setting of background color so that Neovim can use your terminal background |
 | lsp_virtual_text_bg | `true`        | Enable background color for LSP virtual text |
 | hide_eob            | `false`       | Hide the end of buffer lines (`~`) |
-| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors[11:207]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L11-L207) and [`colors[211:407]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L211-L407) |
-| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors[429:644]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L429-L644) |
+| colors              | `{}`          | Override the default colors and use your own. Also, override lualine colors if you have same name for more good view. See possible value in sorce code [`colors[11:209]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L11-L209) and [`colors[213:411]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L213-L411) |
+| colors_advanced     | `{}`          | Override the advanced default colors and use your own. See possible value in source code [`colors[433:648]`](https://github.com/yorik1984/newpaper.nvim/blob/main/lua/newpaper/colors/init.lua#L433-L648) |
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       |               | use always `vim.o.background` option|
@@ -523,7 +523,7 @@ end
 vim.g.newpaper_colors            = { teal = "#0000FF" }
 vim.g.newpaper_lualine_bold = true
 
-require("newpaper").setup()
+require("newpaper").setup({})
 
 -- OR better with user configuration
 local colors            = { teal = "#0000FF" } -- use one color for many groups
@@ -588,9 +588,14 @@ vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { link = "CmpItemAbbrMatchCM" })
 Enable the `newpaper` theme for `Lualine`:
 
 ```lua
+require("newpaper").setup({
+    -- newpaper config
+})
+
 require("lualine").setup({
     options = {
-        -- ... your lualine config
+        theme = "newpaper",
+        -- other lualine config
     },
     -- example config of sections
     sections = {
@@ -634,8 +639,6 @@ require("lualine").setup({
 })
 ```
 
-Lualine theme name and style automatically using from main theme
-
 ### ⚙️ Hint
 
 You can temporally use just only lualine theme with any others colorschemes. It also depends on `vim.o.background`.
@@ -648,17 +651,14 @@ vim.g.newpaper_lualine_style = vim.o.background -- always
 -- Also you can predefine colors
 vim.g.newpaper_colors = { teal = "#008080" }
 
--- disable `newpaper` theme
--- require("newpaper").setup()
+-- enable other colorscheme
 
-require("lualine").setup {
+require("lualine").setup({
     options = {
         theme = "newpaper",
-        -- ... lualine config
+            -- other lualine config
     }
-}
--- enable other colorscheme
--- ...
+})
 ```
 
 ⚠️ More recommended configuration here:
