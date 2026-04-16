@@ -136,19 +136,19 @@ function M.setup(configColors, configStyle)
         ["@conceal"]                                = { fg = newpaper.tex_math },
 
         -- Locals
-        ["@local.definition"]                       = { fg = newpaper.fg, style = style.v_style },
+        ["@local.definition"]                       = { fg = newpaper.fg, style = style.v_style, nocombine = true },
         ["@local.definition.constant"]              = { fg = newpaper.darkgreen, nocombine = true },
-        ["@local.definition.function"]              = { fg = newpaper.lua_navy, style = style.f_style },
-        ["@local.definition.method"]                = { fg = newpaper.ruby_navy, style = style.f_style },
-        ["@local.definition.var"]                   = { fg = newpaper.neovim_green, style = style.v_style },
-        ["@local.definition.parameter"]             = { fg = newpaper.darkorange, style = style.v_style },
-        ["@local.definition.macro"]                 = { fg = newpaper.lightmagenta },
-        ["@local.definition.type"]                  = { fg = newpaper.ruby_navy, style = style.k_style },
-        ["@local.definition.field"]                 = { fg = newpaper.love_teal },
-        ["@local.definition.enum"]                  = { fg = newpaper.blue },
-        ["@local.definition.namespace"]             = { fg = newpaper.blue, style = style.k_style },
-        ["@local.definition.import"]                = { fg = newpaper.olive },
-        ["@local.definition.associated"]            = { fg = newpaper.bluegreen },
+        ["@local.definition.function"]              = { fg = newpaper.lua_navy, style = style.f_style, nocombine = true },
+        ["@local.definition.method"]                = { fg = newpaper.ruby_navy, style = style.f_style, nocombine = true },
+        ["@local.definition.var"]                   = { fg = newpaper.neovim_green, style = style.v_style, nocombine = true },
+        ["@local.definition.parameter"]             = { fg = newpaper.darkorange, style = style.v_style, nocombine = true },
+        ["@local.definition.macro"]                 = { fg = newpaper.lightmagenta, nocombine = true },
+        ["@local.definition.type"]                  = { fg = newpaper.ruby_navy, style = style.k_style, nocombine = true },
+        ["@local.definition.field"]                 = { fg = newpaper.love_teal, nocombine = true },
+        ["@local.definition.enum"]                  = { fg = newpaper.blue, nocombine = true },
+        ["@local.definition.namespace"]             = { fg = newpaper.blue, style = style.k_style, nocombine = true },
+        ["@local.definition.import"]                = { fg = newpaper.olive, nocombine = true },
+        ["@local.definition.associated"]            = { fg = newpaper.bluegreen, nocombine = true },
 
         -- TODO: Add more groups
         -- INFO: https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight
@@ -213,9 +213,9 @@ function M.setup(configColors, configStyle)
         ["@lsp.typemod.variable.default_library"]   = { link = "@constant.builtin" },
         ["@lsp.typemod.variable.definition"]        = { link = "@variable.builtin" },
         ["@lsp.typemod.variable.documentation"]     = { link = "@type.builtin.luadoc" },
-        ["@lsp.typemod.variable.global"]            = { fg = newpaper.tex_magenta, style = style.k_style },
+        ["@lsp.typemod.variable.global"]            = { link = "@variable.global" },
         ["@lsp.typemod.variable.injected"]          = { link = "@variable" },
-        ["@lsp.typemod.variable.readonly"]          = { fg = newpaper.redorange, style = style.v_style },
+        ["@lsp.typemod.variable.readonly"]          = { fg = newpaper.redorange, style = style.v_style, nocombine = true },
     }
 end
 
