@@ -21,7 +21,7 @@
 [
   "=="
   "!="
-] @punctuation.special
+] @operator.special
 
 [
   "&"

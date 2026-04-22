@@ -39,7 +39,7 @@
   "!="
   "!~"
   "=~"
-] @punctuation.special
+] @operator.special
 
 [
   ">"

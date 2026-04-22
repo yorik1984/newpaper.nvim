@@ -10,7 +10,7 @@
     "<"
     ">="
     "<="
-  ] @punctuation.special)
+  ] @operator.special)
 
 ; Bitwise Operators
 (binary_expression
@@ -50,6 +50,12 @@
 ; Variables
 ((identifier) @constant.builtin
   (#eq? @constant.builtin "_ENV"))
+
+(table_constructor
+  [
+    "{"
+    "}"
+  ] @constructor.bracket)
 
 ; From locals.scm
 (assignment_statement

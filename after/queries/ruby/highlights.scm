@@ -108,7 +108,7 @@
   "!="
   "!~"
   "=~"
-] @punctuation.special
+] @operator.special
 
 ; rubyRangeOperator
 [

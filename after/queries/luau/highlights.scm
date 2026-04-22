@@ -8,7 +8,7 @@
   "<"
   ">="
   "<="
-] @punctuation.special
+] @operator.special
 
 [
   "&"
@@ -33,3 +33,9 @@
 ; Tables
 (field
   name: (identifier) @local.definition.field)
+
+(table_constructor
+  [
+    "{"
+    "}"
+  ] @constructor.bracket)

@@ -34,7 +34,7 @@
   "!="
   "=="
   "@"
-] @punctuation.special
+] @operator.special
 
 [
   "<"

@@ -17,7 +17,7 @@
   "number") @type.builtin.number
 
 (builtin_type
-  "table") @constructor
+  "table") @constructor.bracket
 
 (builtin_type
   "function") @keyword.function

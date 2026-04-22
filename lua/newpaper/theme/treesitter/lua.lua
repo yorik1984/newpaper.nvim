@@ -5,7 +5,7 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        ["@constructor.lua"]                         = { fg = newpaper.lua_blue, style = style.br_style },
+        ["@constructor.bracket.lua"]                 = { fg = newpaper.lua_blue, style = style.br_style },
         ["@function.call.lua"]                       = { fg = newpaper.lua_navy, style = style.f_style },
         ["@variable.lua"]                            = { fg = newpaper.darkengreen, style = style.v_style },
         ["@property.lua"]                            = { fg = newpaper.love_teal },

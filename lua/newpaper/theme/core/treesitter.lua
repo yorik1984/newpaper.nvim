@@ -20,8 +20,8 @@ function M.setup(configColors, configStyle)
         ["@label"]                                  = { fg = newpaper.redorange },
 
         ["@string"]                                 = { fg = newpaper.strings, style = style.s_style },
-        ["@string.documentation"]                   = { fg = newpaper.regexp_blue, style = style.s_style },
-        ["@string.regexp"]                          = { fg = newpaper.regexp_blue },
+        ["@string.documentation"]                   = { fg = newpaper.regexp_blue, style = style.s_style, nocombine = true  },
+        ["@string.regexp"]                          = { fg = newpaper.regexp_blue, nocombine = true  },
         ["@string.escape"]                          = { fg = newpaper.tex_magenta, nocombine = true },
         ["@string.special"]                         = { fg = newpaper.dark_maroon, style = style.s_style },
         ["@string.special.symbol"]                  = { fg = newpaper.darkyellow },
@@ -30,6 +30,7 @@ function M.setup(configColors, configStyle)
 
         ["@character"]                              = { fg = newpaper.orange, nocombine = true },
         ["@character.special"]                      = { fg = newpaper.maroon, nocombine = true },
+        ["@character.special.regexp"]               = { fg = newpaper.regexp_magenta, nocombine = true },
 
         ["@boolean"]                                = { fg = newpaper.booleans, style = style.bool_style },
         ["@number"]                                 = { fg = newpaper.numbers },
@@ -40,6 +41,7 @@ function M.setup(configColors, configStyle)
         ["@type.definition"]                        = { fg = newpaper.maroon },
 
         ["@attribute"]                              = { fg = newpaper.blue },
+        ["@attribute.operator"]                     = { fg = newpaper.blue, style = style.o_style },
         ["@attribute.builtin"]                      = { fg = newpaper.python_blue },
         ["@property"]                               = { fg = newpaper.darkgreen },
 
@@ -52,6 +54,7 @@ function M.setup(configColors, configStyle)
         ["@function.method.call"]                   = { fg = newpaper.navy, style = style.f_style },
 
         ["@constructor"]                            = { fg = newpaper.tex_lightpurple },
+        ["@constructor.bracket"]                    = { fg = newpaper.tex_lightpurple, style = style.br_style },
         ["@operator"]                               = { fg = newpaper.navy, style = style.o_style },
         ["@operator.math"]                          = { fg = newpaper.tex_olive, style = style.o_style, nocombine = true },
         ["@operator.boolean"]                       = { fg = newpaper.booleans, style = style.bool_o_style, nocombine = true },
@@ -214,6 +217,7 @@ function M.setup(configColors, configStyle)
         ["@lsp.typemod.variable.definition"]        = { link = "@variable.builtin" },
         ["@lsp.typemod.variable.documentation"]     = { link = "@type.builtin.luadoc" },
         ["@lsp.typemod.variable.global"]            = { link = "@variable.global" },
+        ["@lsp.typemod.variable.local"]             = { link = "@local.definition.var" },
         ["@lsp.typemod.variable.injected"]          = { link = "@variable" },
         ["@lsp.typemod.variable.readonly"]          = { fg = newpaper.redorange, style = style.v_style, nocombine = true },
     }
