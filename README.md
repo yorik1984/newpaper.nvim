@@ -261,71 +261,72 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 <!-- config:start -->
 
 ```lua
---- This annotation enforces that only the listed keys are present:
----   - Top-level: "preset" (Config)
----   - PresetSpec: "by_filetype" and "by_filename"
----   - PresetByKind: allowed preset names "text", "task", "view"
+
+---This annotation enforces that only the listed keys are present:
+---Top-level: "preset" (Config)
+---PresetSpec: "by_filetype" and "by_filename"
+---PresetByKind: allowed preset names "text", "task", "view"
 ---
---- Use these annotations with the Lua language server / EmmyLua for stronger
---- static hints and to make intent explicit: any other keys are considered invalid.
+---Use these annotations with the Lua language server / EmmyLua for stronger
+---static hints and to make intent explicit: any other keys are considered invalid.
 ---
---- @class PresetByKind
---- @field text string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
---- @field task string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
---- @field view string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
---- @class PresetSpec
---- @field by_filetype PresetByKind  @only these fields ("text","task","view") are allowed in this section
---- @field by_filename PresetByKind  @only these fields ("text","task","view") are allowed in this section
---- Notes:
---- - Elements of by_filetype[...] are strings representing filetypes (e.g. "markdown", "lua").
---- - Elements of by_filename[...] are strings representing filename glob patterns (e.g. "*.TODO", "README.md").
---- - The implementation may perform runtime validation and report an error if any unexpected keys appear.
+---@class PresetByKind
+---@field text string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+---@field task string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+---@field view string[]  @list of strings: for by_filetype => filetype names; for by_filename => glob patterns
+---@class PresetSpec
+---@field by_filetype PresetByKind  @only these fields ("text","task","view") are allowed in this section
+---@field by_filename PresetByKind  @only these fields ("text","task","view") are allowed in this section
+---Notes:
+---Elements of by_filetype[...] are strings representing filetypes (e.g. `"markdown"`, `"lua"`).
+---Elements of by_filename[...] are strings representing filename glob patterns (e.g. `"*.TODO"`, `"README.md"`).
+---The implementation may perform runtime validation and report an error if any unexpected keys appear.
 ---
---- @class Defaults
---- @field style "light"|"dark"|"auto"
---- @field preset PresetSpec  @main preset configuration table (only the keys declared above are allowed)
---- @field lightness boolean|number
---- @field saturation boolean|number
---- @field greyscale "lightness"|"average"|"luminosity"|false
---- @field editor_better_view boolean
---- @field terminal string
---- @field sidebars_contrast table
---- @field contrast_float boolean
---- @field contrast_telescope boolean
---- @field operators_bold boolean
---- @field delimiters_bold boolean
---- @field brackets_bold boolean
---- @field delim_rainbow_bold boolean
---- @field booleans string
---- @field booleans_operators string
---- @field keywords string
---- @field doc_keywords string
---- @field regex string
---- @field regex_bg boolean
---- @field tags string
---- @field tags_brackets_bold boolean
---- @field tex_major string
---- @field tex_operators_bold boolean
---- @field tex_brackets_bold boolean
---- @field tex_math_delim_bold boolean
---- @field tex_keywords string
---- @field tex_zone string
---- @field tex_arg string
---- @field error_highlight "bg"|"undercurl"|"both"|"NONE"
---- @field diff_highlight "fg"|"bg"|"both"
---- @field italic_strings boolean
---- @field italic_comments boolean
---- @field italic_doc_comments boolean
---- @field italic_functions boolean
---- @field italic_variables boolean
---- @field borders boolean
---- @field disable_background boolean
---- @field lsp_virtual_text_bg boolean
---- @field hide_eob boolean
---- @field colors table
---- @field colors_advanced table
---- @field custom_highlights table
---- @field lualine_bold boolean
+---@class Defaults
+---@field style "light"|"dark"|"auto"
+---@field preset PresetSpec  @main preset configuration table (only the keys declared above are allowed)
+---@field lightness boolean|number
+---@field saturation boolean|number
+---@field greyscale "lightness"|"average"|"luminosity"|false
+---@field editor_better_view boolean
+---@field terminal string
+---@field sidebars_contrast table
+---@field contrast_float boolean
+---@field contrast_telescope boolean
+---@field operators_bold boolean
+---@field delimiters_bold boolean
+---@field brackets_bold boolean
+---@field delim_rainbow_bold boolean
+---@field booleans string
+---@field booleans_operators string
+---@field keywords string
+---@field doc_keywords string
+---@field regex string
+---@field regex_bg boolean
+---@field tags string
+---@field tags_brackets_bold boolean
+---@field tex_major string
+---@field tex_operators_bold boolean
+---@field tex_brackets_bold boolean
+---@field tex_math_delim_bold boolean
+---@field tex_keywords string
+---@field tex_zone string
+---@field tex_arg string
+---@field error_highlight "bg"|"undercurl"|"both"|"NONE"
+---@field diff_highlight "fg"|"bg"|"both"
+---@field italic_strings boolean
+---@field italic_comments boolean
+---@field italic_doc_comments boolean
+---@field italic_functions boolean
+---@field italic_variables boolean
+---@field borders boolean
+---@field disable_background boolean
+---@field lsp_virtual_text_bg boolean
+---@field hide_eob boolean
+---@field colors table
+---@field colors_advanced table
+---@field custom_highlights table
+---@field lualine_bold boolean
 require("newpaper").setup({
     -- Visual / behavioral defaults
     style               = "light",
@@ -402,7 +403,7 @@ Full presets config stored in [presets.lua](https://github.com/yorik1984/newpape
 <!-- text:start -->
 
 ```lua
---- @return table<string, any>
+---@return table<string, any>
 function M.text()
     local winhl_entries = {
         "Normal:NormalText",
@@ -441,7 +442,7 @@ end
 <!-- task:start -->
 
 ```lua
---- @return table<string, any>
+---@return table<string, any>
 function M.task()
     local winhl_entries = {
         "Normal:NormalTask",
@@ -480,7 +481,7 @@ end
 <!-- view:start -->
 
 ```lua
---- @return table<string, any>
+---@return table<string, any>
 function M.view()
     local winhl_entries = {
         "Normal:NormalText",

@@ -1,18 +1,18 @@
---- Flexible helper to apply window-local visual options.
---- Usage:
----   apply.applyWinHl({ number = false, winhighlight = "Normal:MyNormal" })
----   apply.applyWinHl({ number = true }, "local", 3)
+---Flexible helper to apply window-local visual options.
+---Usage:
+---apply.applyWinHl({ number = false, winhighlight = "Normal:MyNormal" })
+---apply.applyWinHl({ number = true }, "local", 3)
 
 local check = require("newpaper.check")
 
 local M = {}
 
---- Apply window-local (or global) appearance options.
---- Only the keys present in opts are applied. Unknown keys are ignored.
---- @param opts? table  Table with any of the supported option keys (see ALLOWED_SPEC).
---- @param scope? '"local"'|'"global"'  Optional. "local" (default) to set window-local options, "global" to set global options.
---- @param win? number  Window id when scope == "local". Defaults to current window.
---- @return boolean ok  true if all requested option sets succeeded; false if opts invalid or at least one set failed.
+---Apply window-local (or global) appearance options.
+---Only the keys present in opts are applied. Unknown keys are ignored.
+---@param opts? table  Table with any of the supported option keys (see ALLOWED_SPEC).
+---@param scope? "local"|"global"  Optional. `"local"` (default) to set window-local options, `"global"` to set global options.
+---@param win? number  Window id when `scope == "local"`. Defaults to current window.
+---@return boolean ok  true if all requested option sets succeeded; false if opts invalid or at least one set failed.
 M.applyWinHl = function(opts, scope, win)
     local ALLOWED_SPEC = {
         winhighlight   = "string",
