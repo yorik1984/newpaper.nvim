@@ -46,20 +46,36 @@
 
 ; Yardoc keyword in comment
 ("text" @keyword @nospell
-  (#vim-match? @keyword
-    "^[@](abstract|api|deprecated|example|note|option|overload|param|raise|see|since|todo|version|yield|yieldparam|yieldreturn)$"))
-
-("text" @keyword.return @nospell
-  (#eq? @keyword.return "@return"))
-
-("text" @keyword.modifier @nospell
-  (#vim-match? @keyword.modifier "^([@]private|private)$"))
+  (#any-of? @keyword
+    "@abstract" "@api" "@deprecated" "@example" "@note" "@option" "@overload" "@param" "@see"
+    "@since" "@todo" "@version" "@yield" "@yieldparam" "@yieldreturn"))
 
 ("text" @keyword.function @nospell
   (#eq? @keyword.function "@author"))
 
-;FIXIT: literal `@!` don't highlight together with atrribute name
-("text" @keyword @nospell
-  (#vim-match? @keyword "^(attribute|endgroup|group|macro|method|parse|scope|visibility)$"))
+("text" @keyword.modifier @nospell
+  (#eq? @keyword.modifier "@private"))
 
-;  (#vim-match? @keyword "^[@][!](attribute|endgroup|group|macro|method|parse|scope|visibility)$"))
+("text" @keyword.exception @nospell
+  (#eq? @keyword.exception "@raise"))
+
+("text" @keyword.return @nospell
+  (#eq? @keyword.return "@return"))
+
+(("text" @keyword.symbol_at @nospell
+  .
+  "text" @keyword.symbol_ex @nospell
+  .
+  "text" @keyword @nospell)
+  (#match? @keyword.symbol_at "^\\@$")
+  (#match? @keyword.symbol_ex "^!$")
+  (#match? @keyword "^(attribute|endgroup|group|method|parse|scope|visibility)$"))
+
+(("text" @keyword.macro.symbol_at @nospell
+  .
+  "text" @keyword.macro.symbol_ex @nospell
+  .
+  "text" @keyword.macro @nospell)
+  (#match? @keyword.macro.symbol_at "^\\@$")
+  (#match? @keyword.macro.symbol_ex "^!$")
+  (#match? @keyword.macro "^macro$"))

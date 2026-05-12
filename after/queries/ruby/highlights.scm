@@ -1,4 +1,4 @@
-; extends
+;; extends
 
 (global_variable) @variable.global
 
@@ -10,19 +10,13 @@
 ((call
   !receiver
   method: (identifier) @keyword.function)
-  (#any-of? @keyword.function "include" "extend" "prepend" "refine" "using"))
-
-((identifier) @keyword.function
-  (#any-of? @keyword.function "alias"))
+  (#any-of? @keyword.function "alias" "include" "extend" "prepend" "refine" "using"))
 
 ((identifier) @keyword.function
   (#match? @keyword.function "^(alias|define|define_singleton|remove|undef)_method$"))
 
 ((identifier) @keyword.modifier
-  (#match? @keyword.modifier "^(public|private)_class_method$"))
-
-((identifier) @keyword.modifier
-  (#match? @keyword.modifier "^(public|private)_constant$"))
+  (#match? @keyword.modifier "^(public|private)_(constant|class_method)$"))
 
 ((identifier) @keyword.exception
   (#any-of? @keyword.exception "abort" "at_exit" "exit" "fork" "loop" "trap"))
@@ -61,20 +55,20 @@
 
 ; rubyPredefinedVariable
 ((global_variable) @variable.global.predef
-  (#vim-match? @variable.global.predef "^\\\$[!\$&\\\"\'*+,.0:;<>?@`~_]$"))
+  (#vim-match? @variable.global.predef "^\\$[!$&\"'*+,.0:;<>?@`~_]$"))
 
 ((global_variable) @variable.global.predef
-  (#vim-match? @variable.global.predef "^\\\$\\d+$"))
+  (#vim-match? @variable.global.predef "^\\$\\d+$"))
 
 ((global_variable) @variable.global.predef
-  (#vim-match? @variable.global.predef "^\\\$-[0FIWadilpvw]$"))
+  (#vim-match? @variable.global.predef "^\\$-[0FIWadilpvw]$"))
 
 ((global_variable) @variable.global.predef
-  (#vim-match? @variable.global.predef "^\\\$(stderr|stdin|stdout)$"))
+  (#vim-match? @variable.global.predef "^\\$(stderr|stdin|stdout)$"))
 
 ((global_variable) @variable.global.predef
   (#vim-match? @variable.global.predef
-    "^\\\$(DEBUG|FILENAME|LOADED_FEATURES|LOAD_PATH|PROGRAM_NAME|SAFE|VERBOSE)$"))
+    "^\\$(DEBUG|FILENAME|LOADED_FEATURES|LOAD_PATH|PROGRAM_NAME|SAFE|VERBOSE)$"))
 
 ; Operators
 ; rubyLambdaOperator
@@ -114,7 +108,7 @@
 [
   ".."
   "..."
-] @markup.math
+] @punctuation.delimiter
 
 ; rubyBitwiseOperator
 [
@@ -164,11 +158,10 @@
   "^="
 ] @operator
 
-; rubyDotOperator
-"." @keyword.import
-
-; rubyScopeOperator
-"::" @keyword.import
+[
+  "."
+  "::"
+] @punctuation.dot
 
 (block_parameters
   "|" @constant.builtin)
@@ -196,17 +189,14 @@
     (constant) @local.definition.type
   ])
 
-((scope_resolution
-  scope: (constant) @local.definition.type)
+(scope_resolution
+  [
+    scope: (constant) @local.definition.type
+    name: (constant) @local.definition.type
+    name: (constant) @constant
+  ]
+  (#lua-match? @constant "^[%u][%u%d_]+$")
   (#lua-match? @local.definition.type "^[%u][%u%l%d]+$"))
-
-((scope_resolution
-  name: (constant) @local.definition.type)
-  (#lua-match? @local.definition.type "^[%u][%u%l%d]+$"))
-
-((scope_resolution
-  name: (constant) @constant)
-  (#lua-match? @constant "^[%u][%u%d_]+$"))
 
 (splat_parameter
   "*" @number.float)
@@ -240,38 +230,11 @@
     name: (identifier) @string.special.symbol
     ":" @string.special.symbol))
 
-(method_parameters
-  (identifier) @local.definition.var)
-
-(lambda_parameters
-  (identifier) @local.definition.var)
-
-(block_parameters
-  (identifier) @local.definition.var)
-
-(splat_parameter
-  (identifier) @local.definition.var)
-
-(hash_splat_parameter
-  (identifier) @local.definition.var)
-
-(optional_parameter
-  name: (identifier) @local.definition.var)
-
-(destructured_parameter
-  (identifier) @local.definition.var)
-
-(block_parameter
-  name: (identifier) @local.definition.var)
-
-(keyword_parameter
-  name: (identifier) @local.definition.var)
-
-(parenthesized_statements
-  (identifier) @local.definition.var)
-
-(argument_list
-  (identifier) @local.definition.parameter)
+((identifier) @local.definition.var
+  (#has-parent? @local.definition.var
+    method_parameters lambda_parameters block_parameters splat_parameter hash_splat_parameter
+    optional_parameter destructured_parameter block_parameter keyword_parameter
+    parenthesized_statements))
 
 ; rubySuperClassOperator
 (superclass
@@ -302,8 +265,8 @@
 
 ; debugger command strings
 (call
-  receiver: (identifier) @_receiver
-  method: (identifier) @_method
+  receiver: (identifier)
+  method: (identifier)
   arguments: (argument_list
     (pair
       key: (hash_key_symbol)
