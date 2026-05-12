@@ -61,10 +61,10 @@ function M.setup(config)
             codeblock            = "#DEDEDE",
             disabled             = "#C3C3C3",
 
-            regexp_blue          = "#5588FF",
+            regexp_blue          = "#5555FF",
             regexp_brown         = "#884400",
             regexp_green         = "#00AA00",
-            regexp_magenta       = "#CC00CC",
+            regexp_magenta       = "#D6008E",
             regexp_orange        = "#DD7700",
             regexp_green_bg      = "#E1F0E1",
             regexp_orange_bg     = "#F0F0C8",
@@ -120,7 +120,8 @@ function M.setup(config)
             tex_blue             = "#0089B3",
             tex_teal             = "#005579",
             tex_magenta          = "#E00050",
-            tex_aqua             = "#14B9C4",
+            tex_magenta_soft     = "#E3427A",
+            tex_aqua             = "#12A6B0",
             tex_orange           = "#D37300",
             tex_redorange        = "#F3752D",
             tex_darkorange       = "#BA6400",
@@ -132,7 +133,7 @@ function M.setup(config)
 
             tex_math             = "#008000",
             tex_math_cmd         = "#636D1D",
-            tex_math_delim       = "#349279",
+            tex_symbol           = "#349279",
             tex_operator         = "#09529B",
             tex_part_title       = "#5F8A00",
             tex_ch_brown         = "#8C1919",
@@ -157,6 +158,7 @@ function M.setup(config)
             tex_SI_magenta       = "#BC5AA2",
             tex_SI_yellow        = "#C88900",
 
+            tex_error            = "#FDF0F0",
             tex_group_error      = "#EBF2FF",
             tex_math_error       = "#CCE5CC",
             tex_math_delim_error = "#FBE5CC",
@@ -263,7 +265,7 @@ function M.setup(config)
             codeblock            = "#343434",
             disabled             = "#585858",
 
-            regexp_blue          = "#618EF0",
+            regexp_blue          = "#6B6BF0",
             regexp_brown         = "#A5767D",
             regexp_green         = "#46C146",
             regexp_magenta       = "#FA50E4",
@@ -322,6 +324,7 @@ function M.setup(config)
             tex_blue             = "#6DA6CF",
             tex_teal             = "#709CAD",
             tex_magenta          = "#E5559D",
+            tex_magenta_soft     = "#E3427A",
             tex_aqua             = "#14BCCF",
             tex_orange           = "#DA854A",
             tex_redorange        = "#F09479",
@@ -334,7 +337,7 @@ function M.setup(config)
 
             tex_math             = "#5FAF5F",
             tex_math_cmd         = "#989769",
-            tex_math_delim       = "#BBE67E",
+            tex_symbol           = "#BBE67E",
             tex_part_title       = "#9FB866",
             tex_operator         = "#6A82D9",
             tex_ch_brown         = "#AA7477",
@@ -359,6 +362,7 @@ function M.setup(config)
             tex_SI_magenta       = "#D69CC7",
             tex_SI_yellow        = "#E3C78A",
 
+            tex_error            = "#362C3D",
             tex_group_error      = "#39404C",
             tex_math_error       = "#003300",
             tex_math_delim_error = "#341C00",
@@ -593,6 +597,7 @@ function M.setup(config)
         newpaper.spellcap             = newpaper.none
         newpaper.spelllocal           = newpaper.none
         newpaper.spellrare            = newpaper.none
+        newpaper.tex_error            = newpaper.none
         newpaper.tex_group_error      = newpaper.none
         newpaper.tex_math_error       = newpaper.none
         newpaper.tex_math_delim_error = newpaper.none

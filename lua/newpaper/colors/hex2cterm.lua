@@ -1,27 +1,14 @@
----@module newpaper.colors.hex2cterm
---- Convert hex colors to nearest xterm-256 color index.
---- Builds a correct PALETTE table (array of {r,g,b} entries) and iterates
---- it with ipairs to avoid table.unpack(nil) errors.
+---@class newpaper.colors.hex2cterm
+---Convert hex colors to nearest xterm-256 color index.
+---Builds a correct PALETTE table (array of {r,g,b} entries) and iterates
+---it with ipairs to avoid table.unpack(nil) errors.
 ---
---- Exported:
----   hex_to_cterm(hex) -> index (0..255) or nil on invalid input
----   PALETTE (array of {r,g,b})
+---Exported:
+---hex_to_cterm(hex) -> index (0..255) or nil on invalid input
+---PALETTE (array of {r,g,b})
 local M = {}
 
-local function clamp(n, lo, hi)
-    if n < lo then
-        return lo
-    end
-    if n > hi then
-        return hi
-    end
-    return n
-end
-local function round(n)
-    return math.floor(n + 0.5)
-end
-
--- Parse hex string "#RRGGBB" or "RRGGBB" -> r,g,b (0..255) or nil
+---Parse hex string "#RRGGBB" or "RRGGBB" -> r,g,b (0..255) or nil
 local function hex_to_rgb(hex)
     if type(hex) ~= "string" then
         return nil
@@ -45,8 +32,8 @@ local function hex_to_rgb(hex)
     return r, g, b
 end
 
--- Build standard xterm-256 PALETTE as array of {r,g,b} (0..255)
--- Indices correspond to xterm palette: 0..255
+---Build standard xterm-256 PALETTE as array of {r,g,b} (0..255)
+---Indices correspond to xterm palette: 0..255
 local function build_palette()
     local palette = {}
 
@@ -91,7 +78,7 @@ local function build_palette()
 
     -- Sanity: ensure length is 256
     -- If anything went wrong, pad with black entries
-    for i = #palette + 1, 256 do
+    for _ = #palette + 1, 256 do
         table.insert(palette, { 0, 0, 0 })
     end
 
@@ -107,8 +94,8 @@ local function dist2(r1, g1, b1, r2, g2, b2)
     return dr * dr + dg * dg + db * db
 end
 
--- Find nearest palette index for given r,g,b (0..255)
--- Returns index (0..255) matching xterm index semantics (0-based).
+---Find nearest palette index for given r,g,b (0..255)
+---Returns index (0..255) matching xterm index semantics (0-based).
 local function nearest_index(r, g, b)
     local best_i = 0
     local best_d = nil
@@ -130,7 +117,7 @@ local function nearest_index(r, g, b)
     return best_i
 end
 
--- Public: convert hex string -> nearest xterm-256 index (0..255)
+---Public: convert hex string -> nearest xterm-256 index (0..255)
 function M.hex_to_cterm(hex)
     local r, g, b = hex_to_rgb(hex)
     if not r then

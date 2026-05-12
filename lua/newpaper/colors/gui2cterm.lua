@@ -1,5 +1,5 @@
----@module newpaper.colors.gui2cterm
---- Prepare a highlight table for nvim_set_hl by adding/merging cterm equivalents.
+---@class newpaper.colors.gui2cterm
+---Prepare a highlight table for nvim_set_hl by adding/merging cterm equivalents.
 local M = {}
 
 local hex2ct = require("newpaper.colors.hex2cterm")
@@ -41,12 +41,12 @@ local function cterm_string_to_table(cterm_value)
     end
 end
 
---- Prepare / merge cterm info into color table.
---- does NOT overwrite existing ctermfg/ctermbg if present
---- merges GUI attrs into existing color.cterm (table or CSV string)
---- if color.cterm absent, creates table with found attrs
---- @param color table Highlight table (mutated in-place)
---- @return table color
+---Prepare / merge cterm info into color table.
+---does NOT overwrite existing ctermfg/ctermbg if present
+---merges GUI attrs into existing color.cterm (table or CSV string)
+---if color.cterm absent, creates table with found attrs
+---@param color table Highlight table (mutated in-place)
+---@return table color
 function M.expandCterm(color)
     if type(color) ~= "table" then return color end
 

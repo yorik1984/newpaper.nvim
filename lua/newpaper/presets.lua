@@ -1,6 +1,6 @@
 local M = {}
 
---- @return table<string, any>
+---@return table<string, any>
 function M.lazygitWinHl()
     local winhl_entries = {
         "Normal:NormalTerm",
@@ -25,7 +25,7 @@ function M.lazygitWinHl()
     return opts
 end
 
---- @return table<string, any>
+---@return table<string, any>
 function M.sidebar()
     local winhl_entries = {
         "Normal:NormalContrastSB",
@@ -47,7 +47,7 @@ function M.sidebar()
     return opts
 end
 
---- @return table<string, any>
+---@return table<string, any>
 function M.text()
     local winhl_entries = {
         "Normal:NormalText",
@@ -76,7 +76,7 @@ function M.text()
     return opts
 end
 
---- @return table<string, any>
+---@return table<string, any>
 function M.task()
     local winhl_entries = {
         "Normal:NormalTask",
@@ -105,7 +105,7 @@ function M.task()
     return opts
 end
 
---- @return table<string, any>
+---@return table<string, any>
 function M.view()
     local winhl_entries = {
         "Normal:NormalText",

@@ -1,5 +1,5 @@
---- Utility helpers for color manipulation (HSLuv and greyscale operations).
---- External deps (hsluv, check, configModule) are optional and checked at runtime.
+---Utility helpers for color manipulation (HSLuv and greyscale operations).
+---External deps (hsluv, check, configModule) are optional and checked at runtime.
 
 local hsluv        = require("newpaper.colors.hsluv")
 local check        = require("newpaper.check")
@@ -7,9 +7,9 @@ local configModule = require("newpaper.config")
 
 local M            = {}
 
---- Apply overrides from configColors into color table
---- @param color table
---- @param configColors table?
+---Apply overrides from configColors into color table
+---@param color table
+---@param configColors table?
 function M.colorOverrides(color, configColors)
     if configColors == nil then
         return
@@ -85,11 +85,11 @@ function M.hexGreyscale(hex, method)
     return hsluv.rgb_to_hex({ GREY, GREY, GREY })
 end
 
---- Change saturation of an HSLuv color and return resulting hex string.
---- If saturation is 0 (grey) the saturation is not modified.
---- @param hsluvColor table<number> Array-like HSLuv color {H,S,L}
---- @param value number Fractional change. Positive moves toward 100, negative toward 0.
---- @return string|nil hex Resulting hex string like "#RRGGBB", or nil on error.
+---Change saturation of an HSLuv color and return resulting hex string.
+---If saturation is 0 (grey) the saturation is not modified.
+---@param hsluvColor table<number> Array-like HSLuv color {H,S,L}
+---@param value number Fractional change. Positive moves toward 100, negative toward 0.
+---@return string|nil hex Resulting hex string like "#RRGGBB", or nil on error.
 function M.hsluvChangeSaturation(hsluvColor, value)
     if type(hsluvColor) ~= "table" or type(value) ~= "number" then
         return nil
@@ -112,10 +112,10 @@ function M.hsluvChangeSaturation(hsluvColor, value)
     return nil
 end
 
---- Change lightness of an HSLuv color and return resulting hex string.
---- @param hsluvColor table<number> Array-like HSLuv color {H,S,L}
---- @param value number Fractional change. Positive moves toward 100, negative toward 0.
---- @return string|nil hex Resulting hex string like "#RRGGBB", or nil on error.
+---Change lightness of an HSLuv color and return resulting hex string.
+---@param hsluvColor table<number> Array-like HSLuv color {H,S,L}
+---@param value number Fractional change. Positive moves toward 100, negative toward 0.
+---@return string|nil hex Resulting hex string like "#RRGGBB", or nil on error.
 function M.hsluvChangeLightness(hsluvColor, value)
     if type(hsluvColor) ~= "table" or type(value) ~= "number" then
         return nil
@@ -135,12 +135,12 @@ function M.hsluvChangeLightness(hsluvColor, value)
     return nil
 end
 
---- Edit a table of colors (hex strings) by applying an HSLuv operation.
---- Only entries passing check.isHex are processed. The table is modified in-place.
---- @param colors table<string, string> Table mapping keys -> hex color strings
---- @param hsluvType any Either configModule.hsluv_opt.saturation or configModule.hsluv_opt.lightness
---- @param hsluvValue number Fractional change applied to saturation or lightness
---- @return table colors The same table (modified in-place)
+---Edit a table of colors (hex strings) by applying an HSLuv operation.
+---Only entries passing check.isHex are processed. The table is modified in-place.
+---@param colors table<string, string> Table mapping keys -> hex color strings
+---@param hsluvType any Either configModule.hsluv_opt.saturation or configModule.hsluv_opt.lightness
+---@param hsluvValue number Fractional change applied to saturation or lightness
+---@return table colors The same table (modified in-place)
 function M.hsluvEdit(colors, hsluvType, hsluvValue)
     if type(colors) ~= "table" then return colors end
 
@@ -175,11 +175,11 @@ function M.hsluvEdit(colors, hsluvType, hsluvValue)
     return colors
 end
 
---- Convert all hex colors in a table to greyscale using M.hexGreyscale.
---- Requires M.hexGreyscale to be defined elsewhere in this module.
---- @param colors table<string, string> Table mapping keys -> hex color strings
---- @param method any Optional method passed to M.hexGreyscale
---- @return table colors The same table (modified in-place)
+---Convert all hex colors in a table to greyscale using M.hexGreyscale.
+---Requires M.hexGreyscale to be defined elsewhere in this module.
+---@param colors table<string, string> Table mapping keys -> hex color strings
+---@param method any Optional method passed to M.hexGreyscale
+---@return table colors The same table (modified in-place)
 function M.colorGreyscale(colors, method)
     for key, val in pairs(colors) do
         if type(val) == "string" and type(check) == "table" and type(check.isHex) == "function" and check.isHex(val) then

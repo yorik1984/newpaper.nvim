@@ -78,14 +78,14 @@ function M.validateUserSettings(user_settings)
     end
 end
 
+---Rules:
+---`validators[key] = "string"` -> compare `type(value) == "string"`
+---`validators[key] = { ... }`  -> if all elements are primitive type names (`"string"`,`"number"`,`"boolean"`,`"table"`)
+---Then treat as allowed types list.
+---Otherwise treat as enumeration of allowed literal values (string/number/boolean).
+---Only top-level fields of userConfig are checked. No deep inspection of tables.
 ---@param userConfig table
 function M.typeError(userConfig)
-    -- Rules:
-    --   - validators[key] = "string"  -> compare type(value) == "string"
-    --   - validators[key] = { ... }   -> if all elements are primitive type names ("string","number","boolean","table")
-    --                                  then treat as allowed types list;
-    --                                otherwise treat as enumeration of allowed literal values (string/number/boolean)
-    -- Only top-level fields of userConfig are checked. No deep inspection of tables.
     local function is_primitive_type_name(s)
         return s == "string" or s == "number" or s == "boolean" or s == "table"
     end
@@ -215,20 +215,22 @@ function M.typeError(userConfig)
     end
 end
 
---- Usage:
----   local ok, errmsg = errs_mod.validate(opts, scope, win, allowed_spec)
----   if not ok then
----     if errmsg then error(errmsg) end
----     return false
----   end
---- @param opts table|nil         Options table to validate
---- @param scope string|nil       "local" or "global"
---- @param win number|nil         window id (required when scope == "local")
---- @param allowed_spec table     mapping option_key -> spec string
----                               allowed spec values: "boolean", "number", "string"
---- @return boolean ok            true if validation passed
---- @return string|nil errmsg     formatted error message if validation failed and should error;
----                               nil means "nothing to do" (opts missing) or validation failed but not error (use caller behavior)
+---Usage:
+---```lua
+---local ok, errmsg = errs_mod.validate(opts, scope, win, allowed_spec)
+---if not ok then
+---    if errmsg then error(errmsg) end
+---    return false
+---end
+---```
+---@param opts table|nil Options table to validate
+---@param scope string|nil `"local"` or `"global"`
+---@param win number|nil window id (required when `scope == "local"`)
+---@param allowed_spec table mapping option_key -> spec string
+---allowed spec values: `"boolean"`, `"number"`, `"string"`
+---@return boolean ok true if validation passed
+---@return string|nil errmsg formatted error message if validation failed and should error;
+---`nil` means "nothing to do" (opts missing) or validation failed but not error (use caller behavior)
 M.validateApplyWinHl = function(opts, scope, win, allowed_spec)
     local DEFAULT_ERRS = {
         invalid_opts   = "newpaper.nvim-applyWinHl: opts must be a table",
@@ -284,8 +286,8 @@ M.validateApplyWinHl = function(opts, scope, win, allowed_spec)
 end
 
 --- Validate a `preset` table.
---- @param preset table
---- @return boolean, nil
+---@param preset table
+---@return boolean, nil
 function M.validatePreset(preset)
     local error_help = {
         preset =
