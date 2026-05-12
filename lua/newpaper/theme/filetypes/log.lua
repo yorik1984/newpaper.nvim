@@ -30,7 +30,7 @@ function M.setup(configColors, configStyle)
 
         -- LogUrl              Underlined
         LogMacAddr     = { fg = newpaper.tex_SI_yellow, style = style.underline },
-        LogIPv4        = { fg = newpaper.tex_math_delim, style = style.underline },
+        LogIPv4        = { fg = newpaper.tex_symbol, style = style.underline },
         LogIPv6        = { fg = newpaper.tex_aqua, style = style.underline },
         LogUUID        = { fg = newpaper.rainbowcyan },
         LogMD5         = { fg = newpaper.regexp_magenta },
