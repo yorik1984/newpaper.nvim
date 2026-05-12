@@ -151,7 +151,7 @@ M.defaults      = {
     tex_math_delim_bold = false,
     tex_keywords        = "NONE",
     tex_zone            = "italic",
-    tex_arg             = "italic",
+    tex_arg             = "NONE",
 
     -- Miscellaneous
     error_highlight     = "undercurl",

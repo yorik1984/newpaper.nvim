@@ -113,18 +113,21 @@ function M.setup(configColors, configStyle)
         ["@markup.quote"]                           = { fg = newpaper.tex_navy, style = style.italic },
         ["@markup.quote.marker"]                    = { fg = newpaper.tex_navy, style = style.o_style },
         ["@markup.math"]                            = { fg = newpaper.tex_math, nocombine = true },
+        ["@markup.math.inline"]                     = { fg = newpaper.tex_math, nocombine = true },
+        ["@markup.math.delim"]                      = { fg = newpaper.tex_olive, style = style.tex_md_style, nocombine = true },
 
         ["@markup.link"]                            = { fg = newpaper.tex_lightviolet },
         ["@markup.link.url"]                        = { fg = newpaper.links, style = style.links },
         ["@markup.link.label"]                      = { fg = newpaper.tex_maroon },
+        ["@markup.link.ref"]                        = { fg = newpaper.tex_lightgreen, nocombine = true },
 
         ["@markup.raw"]                             = { fg = newpaper.regexp_blue, nocombine = true },
         ["@markup.raw.block"]                       = { fg = newpaper.regexp_blue, nocombine = true },
         ["@markup.raw.delimiter"]                   = { fg = newpaper.magenta, style = style.o_style },
 
         ["@markup.list"]                            = { fg = newpaper.keywords, style = style.o_bold },
-        ["@markup.list.checked"]                    = { fg = newpaper.todo_hint, style = style.b_bold },
-        ["@markup.list.unchecked"]                  = { fg = newpaper.comments },
+        ["@markup.list.checked"]                    = { fg = newpaper.ok_fg, nocombine = true },
+        ["@markup.list.unchecked"]                  = { fg = newpaper.comments, nocombine = true },
 
         ["@diff.plus"]                              = { fg = newpaper.git_added },
         ["@diff.minus"]                             = { fg = newpaper.git_removed },

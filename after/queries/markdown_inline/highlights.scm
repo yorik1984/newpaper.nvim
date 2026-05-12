@@ -37,3 +37,26 @@
     "["
     "]"
   ] @punctuation.delimiter)
+
+; CONCEAL
+; from https://github.com/delphinus/md-render.nvim
+((shortcut_link
+  (link_text) @markup.list.progress)
+  (#eq? @markup.list.progress "-")
+  (#set! conceal "󰡖"))
+
+; from https://github.com/bngarren/checkmate.nvim
+((shortcut_link
+  (link_text) @markup.list.inprogress)
+  (#eq? @markup.list.inprogress ".")
+  (#set! conceal "◐"))
+
+((shortcut_link
+  (link_text) @markup.list.cancelled)
+  (#eq? @markup.list.cancelled "c")
+  (#set! conceal "✘"))
+
+((shortcut_link
+  (link_text) @markup.list.onhold)
+  (#eq? @markup.list.onhold "/")
+  (#set! conceal "⏸"))

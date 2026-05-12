@@ -1,4 +1,4 @@
-;; extends
+; extends
 
 (global_variable) @variable.global
 
