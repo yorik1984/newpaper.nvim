@@ -33,7 +33,7 @@ function M.setup(configColors, configStyle)
         texMathDelimKey           = { fg = newpaper.tex_pink },
         texMathDelimSet1          = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
         texMathDelimSet2          = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
-        texMathZoneV              = { fg = newpaper.tex_math, style = style.italic },
+        texMathZoneV              = { fg = newpaper.tex_math, style = style.tex_z_style },
         texMathZoneW              = { fg = newpaper.tex_math },
         texMathZoneY              = { fg = newpaper.tex_math },
         texMathZoneZ              = { fg = newpaper.tex_math },
@@ -67,7 +67,7 @@ function M.setup(configColors, configStyle)
         bibKey                    = { fg = newpaper.tex_darkorange },
         bibMath                   = { fg = newpaper.tex_math },
         bibNSEntryKw              = { fg = newpaper.tex_keyword },
-        bibParen                  = { fg = newpaper.tex_math_delim },
+        bibParen                  = { fg = newpaper.tex_symbol },
         bibQuote                  = { fg = newpaper.tex_string },
         bibType                   = { fg = newpaper.tex_keyword, style = style.tex_m_style },
         bibVariable               = { fg = newpaper.tex_orange, style = style.v_style },
@@ -80,6 +80,7 @@ function M.setup(configColors, configStyle)
         texParm                   = { fg = newpaper.tex_maroon },
         texZone                   = { fg = newpaper.fg },
         texSymbol                 = { fg = newpaper.tex_maroon },
+        texSymbolUnicode          = { fg = newpaper.regexp_blue },
         -- texError             VimtexError
 
         -- texStyleBold          gui=bold                  cterm=bold
@@ -101,7 +102,7 @@ function M.setup(configColors, configStyle)
         texOptSep                 = { fg = newpaper.tex_orange },                                      -- [a, b] (commas)
         texOptEqual               = { fg = newpaper.tex_navy, style = style.tex_o_style },             -- [a=b]
         texArg                    = { fg = newpaper.tex_navy },                                        -- \cmd[...]{ARG}
-        texSpecialChar            = { fg = newpaper.tex_maroon, style = style.tex_o_style },           -- \S, \P, \$, \;, ...
+        texSpecialChar            = { fg = newpaper.regexp_magenta },                                  -- \S, \P, \$, \;, ...
         texCmdInput               = { fg = newpaper.tex_blue, style = style.tex_k_style },             -- \INPUT \INCLUDE \INCLUDEONLY \INCLUDEGRAPHICS
         texCmdBib                 = { fg = newpaper.tex_blue, style = style.tex_k_style },             -- \BIBLIOGRAPHY \BIBLIOGRAPHYSTYLE
         texCmdClass               = { fg = newpaper.tex_keyword, style = style.tex_m_style },          -- \DOCUMENTCLASS
@@ -121,9 +122,9 @@ function M.setup(configColors, configStyle)
         texCmdPart                = { fg = newpaper.tex_blue, style = style.tex_m_style },           -- \(SUB*)SECTION
         texPartArgTitle           = { fg = newpaper.tex_part_title, style = style.tex_m_style },     -- \(sub*)section{TITLE}
         texCmdEnv                 = { fg = newpaper.tex_keyword, style = style.tex_k_style },        -- \BEGIN; \END
-        texEnvArgName             = { fg = newpaper.tex_darkorange, style = style.italic },          -- \begin{ENVNAME}
+        texEnvArgName             = { fg = newpaper.tex_darkorange, style = style.b_italic },          -- \begin{ENVNAME}
         texCmdRef                 = { fg = newpaper.tex_lightgreen },                                -- \CITE; \LABEL
-        texRefArg                 = { fg = newpaper.tex_aqua },                                      -- \cite{REFERENCE}; \label{REF}
+        texRefArg                 = { fg = newpaper.tex_lightviolet },                                      -- \cite{REFERENCE}; \label{REF}
         -- texE3Variable        texCmd          \G_MYFILE_NAME_STR
         -- texE3Constant        texE3Variable   \C_MYFILE_NAME_STR
         -- texE3Function        texCmdType      \STR_NEW:n
@@ -135,11 +136,11 @@ function M.setup(configColors, configStyle)
         texMathZone               = { fg = newpaper.tex_math },
         -- texMathZoneLI            texMathZone       \( HERE \)
         -- texMathZoneLD            texMathZone       \[ HERE \]
-        texMathZoneTI             = { fg = newpaper.tex_math, style = style.italic },     -- $ HERE $
+        texMathZoneTI             = { fg = newpaper.tex_math, style = style.tex_z_style },     -- $ HERE $
         texMathZoneTD             = { fg = newpaper.tex_math },                           -- $$ HERE $$
         texMathZoneEnv            = { fg = newpaper.tex_math },                           -- \begin{menv}  HERE \end{menv}
         texMathZoneEnvStarred     = { fg = newpaper.tex_math },                           -- \begin{menv*} HERE \end{menv*}
-        texMathZoneEnsured        = { fg = newpaper.tex_math, style = style.italic },     -- \ensuremath{HERE}
+        texMathZoneEnsured        = { fg = newpaper.tex_math, style = style.tex_z_style },     -- \ensuremath{HERE}
         texMathDelimZone          = { fg = newpaper.tex_olive, style = style.tex_md_style },
         -- texMathDelimZoneLI       texMathDelimZone  \(; \)
         -- texMathDelimZoneLD       texMathDelimZone  \[; \]
@@ -147,10 +148,10 @@ function M.setup(configColors, configStyle)
         -- texMathDelimZoneTD       texMathDelimZone  $$
         texCmdMathEnv             = { fg = newpaper.tex_keyword, style = style.tex_k_style },        -- \BEGIN; \END
         -- (Only for math environments)
-        texMathEnvArgName         = { fg = newpaper.tex_olive, style = style.italic },               -- \begin{EQUATION}
+        texMathEnvArgName         = { fg = newpaper.tex_olive, style = style.b_italic },             -- \begin{EQUATION}
         texCmdMath                = { fg = newpaper.tex_math_cmd, style = style.tex_m_style },       -- \ENSUREMATH
-        texMathDelim              = { fg = newpaper.tex_math_delim },                                -- \LVERT
-        texMathDelimMod           = { fg = newpaper.tex_math_delim, style = style.tex_k_style },     -- \LEFT\lvert \RIGHT\rvert
+        texMathDelim              = { fg = newpaper.tex_lightpurple },                               -- \LVERT
+        texMathDelimMod           = { fg = newpaper.tex_lightpurple, style = style.tex_k_style },    -- \LEFT\lvert \RIGHT\rvert
         texMathOper               = { fg = newpaper.tex_operator, style = style.tex_o_style },       -- Basic operators: +-=/
         texMathSuperSub           = { fg = newpaper.tex_pink },                                      -- Sub and super operators (^, _)
         -------------------------------------------------------------------
@@ -179,7 +180,7 @@ function M.setup(configColors, configStyle)
         texMinipageOptIPos        = { fg = newpaper.tex_redorange },
         texMinipageOptPos         = { fg = newpaper.tex_redorange },
         texMathError              = { bg = newpaper.tex_math_error, sp = newpaper.tex_part_title, style = style.error },
-        texMathErrorDelim         = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_math_delim, style = style.error },
+        texMathErrorDelim         = { bg = newpaper.tex_math_delim_error, sp = newpaper.tex_lightviolet, style = style.error },
         texParboxOptHeight        = { fg = newpaper.tex_red },
         texParboxOptIPos          = { fg = newpaper.tex_orange },
         texParboxOptPos           = { fg = newpaper.tex_orange },
@@ -194,7 +195,7 @@ function M.setup(configColors, configStyle)
         -- texCmdEnvM            texCmdEnv
         -- texCmdE3              texCmd
         -- texCmdFootnote        texCmd
-        texCmdGreek               = { fg = newpaper.tex_math, style = style.italic },
+        texCmdGreek               = { fg = newpaper.tex_math, style = style.b_italic },
         -- texCmdLet             texCmdNew
         texCmdNew                 = { fg = newpaper.tex_magenta, style = style.tex_k_style },
         -- texCmdNewcmd          texCmdNew
@@ -207,7 +208,7 @@ function M.setup(configColors, configStyle)
         texCmdStyle               = { fg = newpaper.tex_navy },
         texCmdStyleBold           = { fg = newpaper.tex_navy, style = style.bold },
         texCmdStyleBoldItal       = { fg = newpaper.tex_navy, style = style.bold_i },
-        texCmdStyleItal           = { fg = newpaper.tex_navy, style = style.italic },
+        texCmdStyleItal           = { fg = newpaper.tex_navy, style = style.b_italic },
         texCmdStyleItalBold       = { fg = newpaper.tex_navy, style = style.bold_i },
         texCommentAcronym         = { fg = newpaper.comments, style = style.c_title },
         -- texCommentFalse       texComment
@@ -221,7 +222,7 @@ function M.setup(configColors, configStyle)
         -- texE3Opt              texOpt
         -- texE3Parm             texParm
         texEnvOpt                 = { fg = newpaper.tex_redorange },
-        texEnvMArgName            = { fg = newpaper.tex_math, style = style.italic },
+        texEnvMArgName            = { fg = newpaper.tex_math, style = style.b_italic },
         -- texLetArgEqual        texSymbol
         -- texLetArgName         texArgNew
         -- texMathArg            texMathZone
@@ -229,14 +230,14 @@ function M.setup(configColors, configStyle)
         texMathCmd                = { fg = newpaper.tex_math_cmd },
         -- texMathCmdStyle       texMathCmd
         texMathCmdStyleBold       = { fg = newpaper.tex_math_cmd, style = style.bold },
-        texMathCmdStyleItal       = { fg = newpaper.tex_math_cmd, style = style.italic },
+        texMathCmdStyleItal       = { fg = newpaper.tex_math_cmd, style = style.b_italic },
         texMathCmdText            = { fg = newpaper.tex_navy },
         texMathTextConcArg        = { fg = newpaper.tex_string },
         -- texMathGroup          texMathZone
         -- texMathStyleConcArg   texMathZone
         -- texMathSub            texMathZone
         -- texMathSuper          texMathZone
-        texMathSymbol             = { fg = newpaper.tex_math_delim },
+        texMathSymbol             = { fg = newpaper.tex_symbol },
         -- texNewcmdArgName      texArgNew
         -- texNewcmdOpt          texOpt
         -- texNewcmdParm         texParm
@@ -323,7 +324,7 @@ function M.setup(configColors, configStyle)
         -- texRefOpts texRefOpt
 
         -- booktabs.vim ---------------------------------------------------
-        texCmdBooktabs            = { fg = newpaper.tex_math_delim, style = style.tex_k_style },
+        texCmdBooktabs            = { fg = newpaper.tex_symbol, style = style.tex_k_style },
 
         -- chemformula.vim ------------------------------------------------
         texCmdCH                  = { fg = newpaper.tex_ch_brown, style = style.tex_k_style },
@@ -527,7 +528,7 @@ function M.setup(configColors, configStyle)
         VimtexTocSec4             = { fg = newpaper.tex_verb },
         -- VimtexTocHotkey        Comment,
         VimtexTocLabelsSecs       = { fg = newpaper.tex_aqua, style = style.tex_m_style },
-        VimtexTocLabelsEq         = { fg = newpaper.tex_math_delim },
+        VimtexTocLabelsEq         = { fg = newpaper.tex_symbol },
         VimtexTocLabelsFig        = { fg = newpaper.tex_aqua },
         VimtexTocLabelsTab        = { fg = newpaper.tex_darkorange },
         VimtexTocIncl             = { fg = newpaper.tex_maroon },
