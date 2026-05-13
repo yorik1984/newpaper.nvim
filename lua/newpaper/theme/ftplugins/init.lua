@@ -4,6 +4,7 @@ local folder = "newpaper.theme.ftplugins."
 
 local files = {
     "markdown-plus",
+    "math-conceal",
     "vim-jinja2-syntax",
     "vim-lua",
     "vim-markdown",
