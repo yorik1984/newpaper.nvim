@@ -139,7 +139,7 @@ function M.setup(configColors, configStyle)
         ["@tag.delimiter"]                          = { fg = newpaper.tags, style = style.tb_style },
 
         ["@none"]                                   = { fg = newpaper.disabled },
-        ["@conceal"]                                = { fg = newpaper.tex_math },
+        ["@conceal"]                                = { fg = newpaper.tex_olive, nocombine = true },
 
         -- Locals
         ["@local.definition"]                       = { fg = newpaper.fg, style = style.v_style, nocombine = true },
