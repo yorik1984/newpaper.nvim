@@ -28,7 +28,7 @@ function M.setup(configColors, configStyle)
         ColorColumn          = { fg = newpaper.none, bg = newpaper.colorcol },
         CommandMode          = { fg = newpaper.orange, style = style.reverse },
         Comment              = { fg = newpaper.comments, style = style.c_style },
-        Conceal              = { fg = newpaper.tex_math },
+        Conceal              = { fg = newpaper.tex_olive, nocombine = true },
         DiffAdd              = { fg = newpaper.diffadd_fg,    bg = newpaper.diffadd_bg },
         DiffChange           = { fg = newpaper.diffchange_fg, bg = newpaper.diffchange_bg },
         DiffDelete           = { fg = newpaper.diffdelete_fg, bg = newpaper.diffdelete_bg },

@@ -36,6 +36,14 @@
 ((atx_h6_marker) @markup.heading.6
   (#set! conceal "󰚟"))
 
+(setext_heading
+  (setext_h1_underline) @markup.heading.1
+  (#set! @markup.heading.1 conceal ""))
+
+(setext_heading
+  (setext_h2_underline) @markup.heading.2
+  (#set! @markup.heading.2 conceal ""))
+
 ((list_marker_star) @markup.list
   (#offset! @markup.list 0 0 0 -1)
   (#set! conceal "◦"))
