@@ -5,11 +5,11 @@ function M.setup(configColors, configStyle)
     local style    = configStyle
 
     return {
-        ["@variable"]                               = { fg = newpaper.variables, style = style.v_style },
+        ["@variable"]                               = { fg = newpaper.variables, style = style.v_style, nocombine = true  },
         ["@variable.builtin"]                       = { fg = newpaper.ruby_maroon, style = style.v_style, nocombine = true },
-        ["@variable.parameter"]                     = { fg = newpaper.orange },
-        ["@variable.member"]                        = { fg = newpaper.bluegreen },
-        ["@variable.global"]                        = { fg = newpaper.neovim_green, style = style.k_style },
+        ["@variable.parameter"]                     = { fg = newpaper.orange, nocombine = true  },
+        ["@variable.member"]                        = { fg = newpaper.bluegreen, nocombine = true  },
+        ["@variable.global"]                        = { fg = newpaper.neovim_green, style = style.k_style, nocombine = true  },
 
         ["@constant"]                               = { fg = newpaper.darkgreen, nocombine = true },
         ["@constant.builtin"]                       = { fg = newpaper.maroon },
@@ -19,7 +19,7 @@ function M.setup(configColors, configStyle)
         ["@module.builtin"]                         = { fg = newpaper.tex_magenta },
         ["@label"]                                  = { fg = newpaper.redorange },
 
-        ["@string"]                                 = { fg = newpaper.strings, style = style.s_style },
+        ["@string"]                                 = { fg = newpaper.strings, style = style.s_style, nocombine = true  },
         ["@string.documentation"]                   = { fg = newpaper.regexp_blue, style = style.s_style, nocombine = true  },
         ["@string.regexp"]                          = { fg = newpaper.regexp_blue, nocombine = true  },
         ["@string.escape"]                          = { fg = newpaper.tex_magenta, nocombine = true },
@@ -80,8 +80,10 @@ function M.setup(configColors, configStyle)
 
         ["@punctuation.delimiter"]                  = { fg = newpaper.persimona, style = style.d_style },
         ["@punctuation.bracket"]                    = { fg = newpaper.ruby_navy, style = style.br_style },
+        ["@punctuation.bracket.markup"]             = { fg = newpaper.persimona, nocombine = true  } ,
+        ["@punctuation.bracket.markup.square"]      = { fg = newpaper.persimona, nocombine = true  } ,
         ["@punctuation.special"]                    = { fg = newpaper.lightmagenta },
-        ["@punctuation.dot"]                        = { fg = newpaper.redorange, style = style.d_style },
+        ["@punctuation.dot"]                        = { fg = newpaper.redorange, style = style.d_style, nocombine = true  },
 
         ["@comment"]                                = { fg = newpaper.comments, style = style.c_style },
         ["@comment.documentation"]                  = { fg = newpaper.doc_comments, style = style.doc_style, nocombine = true },
@@ -93,6 +95,7 @@ function M.setup(configColors, configStyle)
 
         ["@markup.strong"]                          = { style = style.bold },
         ["@markup.italic"]                          = { style = style.italic },
+        ["@markup.bolditalic"]                      = { style = style.bold_i },
         ["@markup.strikethrough"]                   = { style = style.strike },
         ["@markup.underline"]                       = { style = style.underline },
 
@@ -116,16 +119,16 @@ function M.setup(configColors, configStyle)
         ["@markup.math.inline"]                     = { fg = newpaper.tex_math, nocombine = true },
         ["@markup.math.delim"]                      = { fg = newpaper.tex_olive, style = style.tex_md_style, nocombine = true },
 
-        ["@markup.link"]                            = { fg = newpaper.tex_lightviolet },
-        ["@markup.link.url"]                        = { fg = newpaper.links, style = style.links },
-        ["@markup.link.label"]                      = { fg = newpaper.tex_maroon },
+        ["@markup.link"]                            = { fg = newpaper.tex_lightviolet, nocombine = true  },
+        ["@markup.link.url"]                        = { fg = newpaper.links, style = style.links, nocombine = true  },
+        ["@markup.link.label"]                      = { fg = newpaper.tex_maroon_soft, nocombine = true  },
         ["@markup.link.ref"]                        = { fg = newpaper.tex_lightgreen, nocombine = true },
 
         ["@markup.raw"]                             = { fg = newpaper.regexp_blue, nocombine = true },
         ["@markup.raw.block"]                       = { fg = newpaper.regexp_blue, nocombine = true },
         ["@markup.raw.delimiter"]                   = { fg = newpaper.magenta, style = style.o_style },
 
-        ["@markup.list"]                            = { fg = newpaper.keywords, style = style.o_bold },
+        ["@markup.list"]                            = { fg = newpaper.keywords, style = style.o_style },
         ["@markup.list.checked"]                    = { fg = newpaper.ok_fg, nocombine = true },
         ["@markup.list.unchecked"]                  = { fg = newpaper.comments, nocombine = true },
 
@@ -139,7 +142,7 @@ function M.setup(configColors, configStyle)
         ["@tag.delimiter"]                          = { fg = newpaper.tags, style = style.tb_style },
 
         ["@none"]                                   = { fg = newpaper.disabled },
-        ["@conceal"]                                = { fg = newpaper.tex_olive, nocombine = true },
+        ["@conceal"]                                = { fg = newpaper.tex_olive },
 
         -- Locals
         ["@local.definition"]                       = { fg = newpaper.fg, style = style.v_style, nocombine = true },
