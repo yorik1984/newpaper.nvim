@@ -75,9 +75,14 @@
 (verbatim_environment
   verbatim: (comment) @comment.verb)
 
-; MATH
+; ================================ TEXT MODE ===================================
 (generic_command
-  (command_name) @markup.math.delim
+  command: (command_name) @function
+  (#has-ancestor? @function text_mode))
+
+; =================================== MATH =====================================
+(generic_command
+  command: (command_name) @markup.math.delim
   arg: (curly_group
     [
       "{"
@@ -87,20 +92,50 @@
   (#eq? @markup.math.delim "\\ensuremath"))
 
 (generic_command
-  (command_name) @function.math
+  command: (command_name) @function.math
   (#has-ancestor? @function.math displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @function.math text_mode))
+  (#not-has-ancestor? @function.math text_mode)
+  (#not-any-of? @function.math
+    "\\frac" "\\dfrac" "\\tfrac" "\\cfrac" "\\sqrt" "\\mathnormal" "\\mathrm" "\\mathit" "\\mathbf"
+    "\\mathsf" "\\mathtt" "\\mathbfup" "\\mathbfit" "\\mathsfup" "\\mathsfit" "\\mathbfsf"
+    "\\mathbfsfup" "\\mathbfsfit" "\\mathcal" "\\mathbfcal" "\\mathscr" "\\mathbfscr" "\\mathbb"
+    "\\mathbbit" "\\mathfrak" "\\mathbffrak" "\\bm" "\\symup" "\\symit" "\\symbf" "\\symsf"
+    "\\symtt" "\\symbfup" "\\symbfit" "\\symsfup" "\\symsfit" "\\symbfsf" "\\symbfsfup"
+    "\\symbfsfit" "\\symcal" "\\symbfcal" "\\symscr" "\\symbfscr" "\\symbb" "\\symbbit" "\\symfrak"
+    "\\symbffrak" "\\tiny" "\\scriptsize" "\\footnotesize" "\\normalsize" "\\small" "\\large"
+    "\\Large" "\\LARGE" "\\huge" "\\Huge" "\\normalfont" "\\centering" "\\raggedleft"
+    "\\raggedright" "\\clearpage" "\\newpage" "\\linebreak" "\\pagebreak" "\\nolinebreak"
+    "\\nopagebreak" "\\indent" "\\noindent" "\\enlargethispage" "\\quad" "\\qquad" "\\thinspace"
+    "\\medspace" "\\thickspace" "\\smallskip" "\\medskip" "\\bigskip" "\\hfill" "\\vfill" "\\fill"
+    "\\phantom" "\\hphantom" "\\vphantom" "\\fbox" "\\mbox" "\\hspace" "\\vspace" "\\sin" "\\cos"
+    "\\tan" "\\cot" "\\sec" "\\csc" "\\sinh" "\\cosh" "\\tanh" "\\coth" "\\arcsin" "\\arccos"
+    "\\arctan" "\\exp" "\\ker" "\\deg" "\\gcd" "\\lg" "\\ln" "\\max" "\\min" "\\Pr" "\\sup" "\\arg"
+    "\\det" "\\dim" "\\hom" "\\log" "\\lim" "\\liminf" "\\limsup"))
 
 (generic_command
-  (command_name) @character.special
-  (#lua-match? @character.special "^\\[%$&%%#{}%/_,;:!>%@|\\]$"))
+  command: (command_name) @function.math.operator
+  (curly_group
+    [
+      "{"
+      "}"
+    ] @punctuation.bracket.math)
+  (#has-ancestor? @function.math.operator displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @function.math.operator text_mode)
+  (#any-of? @function.math.operator "\\frac" "\\dfrac" "\\tfrac" "\\cfrac"))
+
+(generic_command
+  command: (command_name) @function.math.operator
+  (#has-ancestor? @function.math.operator displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @function.math.operator text_mode)
+  (#any-of? @function.math.operator "\\sqrt"))
+
+(generic_command
+  command: (command_name) @character.special
+  (#lua-match? @character.special "^\\[ %$&%%#{}%/_,;:!>%@|\\]$"))
 
 (theorem_definition
   title: (curly_group
     (_) @label.math @nospell))
-
-((letter) @number
-  (#lua-match? @number "^%d+$"))
 
 (text
   word: (word) @number
@@ -125,22 +160,22 @@
 ; not an error in text, just visual accent
 (text
   word: (word) @string.special.cyrtext @spell
-  (#match? @string.special.cyrtext "[\\u0400-\\u052F]")
-  (#has-ancestor? @string.special.cyrtext text_mode))
+  (#has-ancestor? @string.special.cyrtext text_mode)
+  (#match? @string.special.cyrtext "[\\u0400-\\u052F]"))
 
 ; UNICODE
 ; highlight all unicode except cyrillic when mixed with latin
 ; not an error, just visual accent
 (text
   word: (word) @string.special.unicodemath
-  (#match? @string.special.unicodemath "[^\\x00-\\x7F\\x09\\x0D\\x0A\\u0400-\\u052F]+")
   (#has-ancestor? @string.special.unicodemath displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @string.special.unicodemath text_mode))
+  (#not-has-ancestor? @string.special.unicodemath text_mode)
+  (#match? @string.special.unicodemath "[^\\x00-\\x7F\\x09\\x0D\\x0A\\u0400-\\u052F]+"))
 
 (text
   word: (word) @string.special.unicodetext @spell
-  (#match? @string.special.unicodetext "[^\\x00-\\x7F\\x09\\x0D\\x0A\\u0400-\\u052F]+")
-  (#has-ancestor? @string.special.unicodetext text_mode))
+  (#has-ancestor? @string.special.unicodetext text_mode)
+  (#match? @string.special.unicodetext "[^\\x00-\\x7F\\x09\\x0D\\x0A\\u0400-\\u052F]+"))
 
 (math_environment
   (begin
@@ -150,79 +185,175 @@
     name: (curly_group_text
       (text) @label.math @nospell)))
 
+; SUPER AND SUBSCRIPT
+(superscript
+  "^" @operator.math.sub
+  (#has-ancestor? @operator.math.sub displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @operator.math.sub text_mode))
+
+(superscript
+  (letter) @conceal
+  (#has-ancestor? @conceal displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @conceal text_mode))
+
+(superscript
+  (letter) @number
+  (#has-ancestor? @number displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @number text_mode)
+  (#lua-match? @number "^%d+$"))
+
+(superscript
+  superscript: (curly_group
+    [
+      "{"
+      "}"
+    ]) @punctuation.bracket.math.sub
+  (#has-ancestor? @punctuation.bracket.math.sub displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @punctuation.bracket.math.sub text_mode))
+
+(subscript
+  "_" @operator.math.sub
+  (#has-ancestor? @operator.math.sub displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @operator.math.sub text_mode))
+
+(subscript
+  (letter) @conceal
+  (#has-ancestor? @conceal displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @conceal text_mode))
+
+(subscript
+  (letter) @number
+  (#has-ancestor? @number displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @number text_mode)
+  (#lua-match? @number "^%d+$"))
+
+(subscript
+  subscript: (curly_group
+    [
+      "{"
+      "}"
+    ]) @punctuation.bracket.math.sub
+  (#has-ancestor? @punctuation.bracket.math.sub displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @punctuation.bracket.math.sub text_mode))
+
+; TRIGONOMETRIC
+(generic_command
+  command: (command_name) @function.math.trig
+  (#has-ancestor? @function.math.trig displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @function.math.trig text_mode)
+  (#any-of? @function.math.trig
+    "\\sin" "\\cos" "\\tan" "\\cot" "\\sec" "\\csc" "\\sinh" "\\cosh" "\\tanh" "\\coth" "\\arcsin"
+    "\\arccos" "\\arctan" "\\exp" "\\ker" "\\deg" "\\gcd" "\\lg" "\\ln" "\\max" "\\min" "\\Pr"
+    "\\sup" "\\arg" "\\det" "\\dim" "\\hom" "\\log" "\\lim" "\\liminf" "\\limsup"))
+
+(displayed_equation
+  [
+    "$$"
+    "\\["
+    "\\]"
+  ] @markup.math.delim)
+
+(inline_formula
+  [
+    "$"
+    "\\("
+    "\\)"
+  ] @markup.math.delim)
+
 ; ============================ CONCEAL IN COMMANDS =============================
 ([
   (part
     [
       command: _ @keyword.type
       command: _ @keyword.type.section
+      (brack_group) @_bark_group
+      (curly_group
+        [
+          "{"
+          "}"
+        ] @punctuation.bracket)
     ])
   (chapter
     [
       command: _ @keyword.type
       command: _ @keyword.type.section
+      (brack_group) @_bark_group
+      (curly_group
+        [
+          "{"
+          "}"
+        ] @punctuation.bracket)
     ])
   (section
     [
       command: _ @keyword.type
       command: _ @keyword.type.section
+      (brack_group) @_bark_group
+      (curly_group
+        [
+          "{"
+          "}"
+        ] @punctuation.bracket)
     ])
   (subsection
     [
       command: _ @keyword.type
       command: _ @keyword.type.section
+      (brack_group) @_bark_group
+      (curly_group
+        [
+          "{"
+          "}"
+        ] @punctuation.bracket)
     ])
   (subsubsection
     [
       command: _ @keyword.type
       command: _ @keyword.type.section
+      (brack_group) @_bark_group
+      (curly_group
+        [
+          "{"
+          "}"
+        ] @punctuation.bracket)
     ])
   (paragraph
     [
       command: _ @keyword.type
       command: _ @keyword.type.section
+      (brack_group) @_bark_group
+      (curly_group
+        [
+          "{"
+          "}"
+        ] @punctuation.bracket)
     ])
   (subparagraph
     [
       command: _ @keyword.type
       command: _ @keyword.type.section
+      (brack_group) @_bark_group
+      (curly_group
+        [
+          "{"
+          "}"
+        ] @punctuation.bracket)
     ])
 ]
   (#match? @keyword.type "[^*]$")
   (#match? @keyword.type.section "[*]$")
+  (#set! @_bark_group conceal "")
+  (#set! @punctuation.bracket conceal " ")
   (#set! @keyword.type conceal "󰚟")
   (#set! @keyword.type.section conceal "§"))
-
-((brack_group) @_bark_group
-  (#has-parent? @_bark_group part chapter section subsection subsubsection paragraph subparagraph)
-  (#set! conceal ""))
-
-((curly_group
-  [
-    "{"
-    "}"
-  ] @punctuation.bracket) @_curly_group
-  (#has-parent? @_curly_group part chapter section subsection subsubsection paragraph subparagraph)
-  (#set! @punctuation.bracket conceal " "))
-
-(enum_item
-  [
-    command: "\\item" @punctuation.special
-    command: "\\item*" @punctuation.special.others
-  ]
-  (#eq? @punctuation.special "\\item")
-  (#eq? @punctuation.special.others "\\item*")
-  (#set! @punctuation.special conceal "○")
-  (#set! @punctuation.special.others conceal "●"))
 
 ; Citation and others reference
 (label_definition
   command: _ @markup.link.ref
   name: (curly_group_label
-    [
-      "{"
-      "}"
-    ] @punctuation.bracket.ref)
+    "{" @punctuation.bracket.ref
+    (_) @markup.link.label
+    "}" @punctuation.bracket.ref)
   (#set! @markup.link.ref conceal "󰓼")
   (#set! @punctuation.bracket.ref conceal " "))
 
@@ -241,11 +372,15 @@
 (label_reference_range
   command: _ @markup.link.ref
   from: (curly_group_label
-    "{" @_space_conceal
-    "}" @_dash_conceal)
+    [
+      "{" @_space_conceal
+      "}" @_dash_conceal
+    ])
   to: (curly_group_label
-    "{" @_empty_conceal
-    "}" @_space_conceal)
+    [
+      "{" @_empty_conceal
+      "}" @_space_conceal
+    ])
   (#set! @markup.link.ref conceal "󱋷")
   (#set! @_dash_conceal conceal "–")
   (#set! @_space_conceal conceal " ")
@@ -268,10 +403,9 @@
 (label_number
   command: _ @markup.link.ref
   name: (curly_group_label
-    [
-      "{"
-      "}"
-    ] @punctuation.bracket.ref)
+    "{" @punctuation.bracket.ref
+    (_) @markup.link.label
+    "}" @punctuation.bracket.ref)
   [
     number: (curly_group
       [
@@ -302,11 +436,15 @@
   command: _ @_com_conceal
   [
     (brack_group
-      "[" @_left_conceal
-      "]" @_right_conceal)
+      [
+        "[" @_left_conceal
+        "]" @_right_conceal
+      ])
     keys: (curly_group_text_list
-      "{" @_empty_conceal
-      "}" @_conceal)
+      [
+        "{" @_empty_conceal
+        "}" @_conceal
+      ])
   ]
   (#set! @_com_conceal conceal "«")
   (#set! @_left_conceal conceal "[")
@@ -329,24 +467,6 @@
   (#set! @_space_conceal conceal " ")
   (#set! @_com_conceal conceal ""))
 
-; MATH
-(displayed_equation
-  [
-    "$$" @_empty_conceal
-    "\\[" @_conceal
-    "\\]" @_empty_conceal
-  ] @markup.math.delim
-  (#set! @_empty_conceal conceal "")
-  (#set! @_conceal conceal "󱖦"))
-
-(inline_formula
-  [
-    "$"
-    "\\("
-    "\\)"
-  ] @markup.math.delim
-  (#set! conceal ""))
-
 ; ============================== CONCEAL COMMENTS ==============================
 ([
   (line_comment)
@@ -356,55 +476,116 @@
   (#set! conceal "⋯"))
 
 ; ------------------------------------------------------------------------------
-;                         CONCEAL IN TEXT AND MATH MODE
+;                                   SPACE
 ; ------------------------------------------------------------------------------
-; COMMANDS
+; fill and space
 (generic_command
-  (command_name) @function
-  (#any-of? @function "\\smallskip" "\\medskip" "\\bigskip" "\\hfill" "\\vfill" "\\fill")
+  command: (command_name) @cmd
+  (#any-of? @cmd "\\hfill")
   (#set! conceal ""))
 
 (generic_command
-  (command_name) @function
-  (#any-of? @function "\\hspace" "\\vspace")
-  (curly_group) @function
+  command: (command_name) @_cmd
+  (#any-of? @_cmd
+    "\\centering" "\\raggedleft" "\\raggedright" "\\clearpage" "\\newpage" "\\linebreak"
+    "\\pagebreak" "\\nolinebreak" "\\nopagebreak" "\\indent" "\\noindent" "\\enlargethispage"
+    "\\smallskip" "\\medskip" "\\bigskip" "\\vfill" "\\fill")
+  (#not-has-ancestor? @_cmd displayed_equation inline_formula math_environment)
   (#set! conceal ""))
 
 (generic_command
-  (command_name) @function
-  (curly_group
-    (text) @none.comment)
-  (#any-of? @function "\\phantom" "\\hphantom" "\\vphantom"))
+  command: (command_name) @_cmd
+  (#any-of? @_cmd
+    "\\centering" "\\raggedleft" "\\raggedright" "\\clearpage" "\\newpage" "\\linebreak"
+    "\\pagebreak" "\\nolinebreak" "\\nopagebreak" "\\indent" "\\noindent" "\\enlargethispage"
+    "\\smallskip" "\\medskip" "\\bigskip" "\\vfill" "\\fill")
+  (#has-ancestor? @_cmd text_mode)
+  (#set! conceal ""))
 
 (generic_command
-  (command_name) @function
-  (curly_group
-    (text) @none.accent)
-  (#eq? @function "\\fbox"))
+  command: (command_name) @_cmd
+  (#any-of? @_cmd "\\quad" "\\qquad" "\\thinspace" "\\medspace" "\\thickspace")
+  (#has-ancestor? @_cmd displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @_cmd text_mode)
+  (#set! conceal ""))
 
 (generic_command
-  (command_name) @function
-  (curly_group
-    (text) @none.fill)
-  (#eq? @function "\\mbox"))
-
-(generic_command
-  (command_name) @function
+  command: (command_name) @_func
+  (#any-of? @_func "\\hspace" "\\vspace")
   (curly_group
     [
       "{"
       "}"
-    ] @function)
-  (#any-of? @function "\\phantom" "\\hphantom" "\\vphantom" "\\fbox" "\\mbox")
+    ] @function.bracket)
   (#set! conceal ""))
 
+(generic_command
+  command: (command_name) @_func
+  (curly_group
+    [
+      "{"
+      "}"
+    ] @function.bracket)
+  (#any-of? @_func "\\phantom" "\\hphantom" "\\vphantom" "\\fbox" "\\mbox")
+  (#set! @function.bracket conceal "")
+  (#set! @_func conceal ""))
+
+(generic_command
+  command: (command_name) @_func
+  (curly_group
+    (text) @none.comment)
+  (#any-of? @_func "\\phantom" "\\hphantom" "\\vphantom"))
+
+(generic_command
+  command: (command_name) @_func
+  (curly_group
+    (text) @none.accent)
+  (#eq? @_func "\\fbox"))
+
+(generic_command
+  command: (command_name) @_func
+  (curly_group
+    (text) @none.fill)
+  (#eq? @_func "\\mbox"))
+
 ; ------------------------------------------------------------------------------
-;                             CONCEAL IN TEXT MODE
+;                                    FONT
 ; ------------------------------------------------------------------------------
-; WARN: conceal in math mode too. Treesitter not a linter!
+(generic_command
+  command: (command_name) @_name
+  arg: (curly_group
+    (_) @markup.italic)
+  (#any-of? @_name
+    "\\itshape" "\\mathit" "\\mathsfit" "\\mathcal" "\\mathscr" "\\symit" "\\symsfit" "\\symcal"
+    "\\symscr"))
+
+(generic_command
+  command: (command_name) @_name
+  arg: (curly_group
+    (_) @markup.strong)
+  (#any-of? @_name
+    "\\bfseries" "\\bm" "\\mathbf" "\\mathbfup" "\\mathbfsf" "\\mathbfsfup" "\\mathbb"
+    "\\mathbffrak" "\\symbf" "\\symbfup" "\\symbfsf" "\\symbfsfup" "\\symbb" "\\symbffrak"))
+
+(generic_command
+  command: (command_name) @_name
+  arg: (curly_group
+    (_) @markup.strong @markup.italic)
+  (#any-of? @_name
+    "\\mathbfit" "\\mathbfsfit" "\\mathbfcal" "\\mathbfscr" "\\mathbbit" "\\symbfit" "\\symbfsfit"
+    "\\symbfcal" "\\symbfscr" "\\symbbit"))
+
+(text_mode
+  command: "\\text" @function.math.markup
+  content: (curly_group
+    [
+      "{"
+      "}"
+    ] @function.math.bracket)
+  (#has-ancestor? @function.math.markup displayed_equation inline_formula math_environment))
+
 (text_mode
   command: [
-    "\\text"
     "\\intertext"
     "\\shortintertext"
   ] @function.math.markup
@@ -413,311 +594,111 @@
       "{"
       "}"
     ] @function.math.bracket)
+  (#has-ancestor? @function.math.markup math_environment))
+
+(generic_command
+  command: (command_name) @function.math.markup
+  (curly_group
+    "{" @function.math.bracket
+    [
+      (text
+        word: (word) @conceal)
+      (_)
+    ]
+    "}" @function.math.bracket)
   (#has-ancestor? @function.math.markup displayed_equation inline_formula math_environment)
-  (#set! conceal ""))
+  (#not-has-ancestor? @function.math.markup text_mode)
+  (#any-of? @function.math.markup
+    "\\mathnormal" "\\mathrm" "\\mathit" "\\mathbf" "\\mathsf" "\\mathtt" "\\mathbfup" "\\mathbfit"
+    "\\mathsfup" "\\mathsfit" "\\mathbfsf" "\\mathbfsfup" "\\mathbfsfit" "\\mathcal" "\\mathbfcal"
+    "\\mathscr" "\\mathbfscr" "\\mathbb" "\\mathbbit" "\\mathfrak" "\\mathbffrak" "\\bm" "\\symup"
+    "\\symit" "\\symbf" "\\symsf" "\\symtt" "\\symbfup" "\\symbfit" "\\symsfup" "\\symsfit"
+    "\\symbfsf" "\\symbfsfup" "\\symbfsfit" "\\symcal" "\\symbfcal" "\\symscr" "\\symbfscr"
+    "\\symbb" "\\symbbit" "\\symfrak" "\\symbffrak")
+  (#set! priority 101))
 
-; COMMANDS
 (generic_command
-  (command_name) @function
-  (#any-of? @function
-    "\\centering" "\\raggedleft" "\\raggedright" "\\clearpage" "\\newpage" "\\linebreak"
-    "\\pagebreak" "\\nolinebreak" "\\nopagebreak" "\\indent" "\\noindent" "\\enlargethispage")
-  (#set! conceal ""))
-
-(generic_command
-  (command_name) @function
+  command: (command_name) @_func
   (curly_group
     [
       "{"
       "}"
     ] @function.bracket)
-  (#any-of? @function
-    "\\textbf" "\\textit" "\\textlf" "\\textmd" "\\textrm" "\\textsc" "\\textsl" "\\textsf"
-    "\\texttc" "\\texttt" "\\textulc" "\\textup" "\\textnormal" "\\emph" "\\rmfamily" "\\sffamily"
-    "\\ttfamily" "\\itshape" "\\scshape" "\\slshape" "\\upshape" "\\bfseries" "\\mdseries")
-  (#set! conceal ""))
-
-(generic_command
-  (command_name) @function
-  (#any-of? @function
-    "\\tiny" "\\scriptsize" "\\footnotesize" "\\normalsize" "\\small" "\\large" "\\Large" "\\LARGE"
-    "\\huge" "\\Huge" "\\normalfont")
-  (#set! conceal ""))
+  (#any-of? @_func
+    "\\bfseries" "\\emph" "\\itshape" "\\mdseries" "\\rmfamily" "\\scshape" "\\sffamily" "\\slshape"
+    "\\textbf" "\\textit" "\\textlf" "\\textmd" "\\textnormal" "\\textrm" "\\textsc" "\\textsf"
+    "\\textsl" "\\texttc" "\\texttt" "\\textulc" "\\textup" "\\ttfamily" "\\upshape")
+  (#set! priority 101))
 
 ; ------------------------------------------------------------------------------
-;                              CONCEAL IN MATH MODE
+;                          OPERATORS IN MATH MODE
 ; ------------------------------------------------------------------------------
-(generic_command
-  command: (command_name) @function.math.markup
-  (curly_group
-    [
-      "{"
-      "}"
-    ] @function.math.bracket)
-  (#any-of? @function.math.markup
-    "\\mathrm" "\\mathtt" "\\mathsf" "\\mathnormal" "\\mathbf" "\\mathit" "\\mathcal" "\\mathbfit"
-    "\\mathbb" "\\mathfrak" "\\mathscr" "\\mathds" "\\mathbbm" "\\mathbbb")
-  (#has-ancestor? @function.math.markup displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @function.math.markup text_mode)
-  (#set! conceal ""))
+((operator) @operator.math
+  (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @operator.math text_mode))
 
-(generic_command
-  command: (command_name) @punctuation.delimiter
-  (#match? @punctuation.delimiter "^\\\\[bB]igg?m?$")
-  (#has-ancestor? @punctuation.delimiter displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @punctuation.delimiter text_mode)
-  (#set! conceal ""))
-
-(generic_command
-  command: (command_name) @function.math.markup
-  (#any-of? @function.math.markup "\\quad" "\\qquad" "\\thinspace" "\\medspace" "\\thickspace")
-  (#has-ancestor? @function.math.markup displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @function.math.markup text_mode)
-  (#set! conceal ""))
-
-; SUPER AND SUBSCRIPT
-(superscript
-  (command_name) @function.math)
-
-(superscript
-  "^" @operator.math.sub)
-
-(superscript
-  (curly_group
-    "{" @punctuation.bracket.math.sub)
-  (#set! conceal "("))
-
-(superscript
-  (curly_group
-    "}" @punctuation.bracket.math.sub)
-  (#set! conceal ")"))
-
-(superscript
-  (curly_group
-    "{" @_conceal
-    .
-    [
-      (text_mode)
-      (generic_command
-        (command_name) .)
-      (text
-        .
-        word: (word) .)
-    ]
-    .
-    "}" @_conceal)
-  (#set! @_conceal conceal ""))
-
-(subscript
-  (command_name) @function.math)
-
-(subscript
-  "_" @operator.math.sub
-  (#has-ancestor? @operator.math.sub displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @operator.math.sub text_mode))
-
-(subscript
-  (curly_group
-    "{" @punctuation.bracket.math.sub)
-  (#set! conceal "("))
-
-(subscript
-  (curly_group
-    "}" @punctuation.bracket.math.sub)
-  (#set! conceal ")"))
-
-(subscript
-  (curly_group
-    "{" @_conceal
-    .
-    [
-      (text_mode)
-      (generic_command
-        (command_name) .)
-      (text
-        .
-        word: (word) .)
-    ]
-    .
-    "}" @_conceal)
-  (#set! @_conceal conceal ""))
-
-; FRAC FUNCTIONS
-; convert from
-; \frac{expression_1}{expression_2}
-; to
-; expression_1expression_2
-; hide \frac when with ``, `(` and `)`
-((generic_command
-  (command_name) @function.math.operator
-  (curly_group
-    "{" @punctuation.bracket.math
-    .
-    [
-      ((generic_command
-        (command_name) .)
-        .
-        (text
-          word: (subscript))?
-        .
-        (text
-          word: (superscript))? .)
-      (text
-        .
-        word: (word) .)
-      (text
-        .
-        word: (word)
-        .
-        [
-          word: (subscript)
-          word: (superscript)
-        ] .)
-      (curly_group)
-    ]
-    .
-    "}" @punctuation.bracket.math)
-  .
-  (curly_group
-    "{" @operator.math.slash
-    .
-    [
-      ((generic_command
-        (command_name) .)
-        .
-        (text
-          word: (subscript))?
-        .
-        (text
-          word: (superscript))? .)
-      (text
-        .
-        word: (word) .)
-      (text
-        .
-        word: (word)
-        .
-        [
-          word: (subscript)
-          word: (superscript)
-        ] .)
-      (curly_group)
-    ]
-    .
-    "}" @punctuation.bracket.math) .)
-  (#any-of? @function.math.operator "\\frac" "\\dfrac" "\\tfrac" "\\cfrac")
-  (#has-ancestor? @function.math.operator displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @function.math.operator text_mode)
-  (#set! @punctuation.bracket.math conceal "")
-  (#set! @operator.math.slash conceal "")
-  (#set! @function.math.operator conceal ""))
-
-; \command{{long_expression}}
-;          ^               ^
-; conceal inner to
-; {(long_expression)}
-(generic_command
-  (command_name) @_com
-  (curly_group
-    .
-    (curly_group
-      "{" @punctuation.bracket.math.left
-      "}" @punctuation.bracket.math.right) .)
-  (#has-ancestor? @_com displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @_com text_mode)
-  (#set! @punctuation.bracket.math.left conceal "(")
-  (#set! @punctuation.bracket.math.right conceal ")"))
-
-; TRIGONOMETRIC
-(generic_command
-  command: (command_name) @function.math.trig
-  (#any-of? @function.math.trig
-    "\\sin" "\\cos" "\\tan" "\\cot" "\\sec" "\\csc" "\\sinh" "\\cosh" "\\tanh" "\\coth" "\\arcsin"
-    "\\arccos" "\\arctan" "\\exp" "\\ker" "\\deg" "\\gcd" "\\lg" "\\ln" "\\max" "\\min" "\\Pr"
-    "\\sup" "\\arg" "\\det" "\\dim" "\\hom" "\\log" "\\lim" "\\liminf" "\\limsup")
-  (#has-ancestor? @function.math.trig displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @function.math.trig text_mode))
-
-; Halfwidth and Fullwidth Forms
-; ＝＋－＊／ ＜ ＞！：￨
-; ？；，．･＂ ＃ ＄ ％ ＆（ ） ０１２３４５６７８９＠［］＼＾＿｛｝～｟｠￢￣￤
-; ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ
-; ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ
-; ￠￡￥￦
-;
-; OPERATORS
+; ------------------------------------------------------------------------------
+;                               CONCEAL OPERATORS
+; ------------------------------------------------------------------------------
 ((operator
   "*" @punctuation.dot)
   (#set! @punctuation.dot conceal "＊"))
 
-([
-  (operator)
-  "="
-] @operator.math
-  (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @operator.math text_mode))
+(operator
+  "/" @operator.math.slash
+  (#has-ancestor? @operator.math.slash displayed_equation inline_formula math_environment)
+  (#not-has-ancestor? @operator.math.slash text_mode)
+  (#set! @operator.math.slash conceal "∕"))
 
 ("=" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
   (#set! @operator.math conceal "＝"))
 
-((operator
-  "+" @operator.math)
+(operator
+  "+" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
   (#set! @operator.math conceal "＋"))
 
-((operator
-  "-" @operator.math)
+(operator
+  "-" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
   (#set! @operator.math conceal "－"))
 
-((operator
-  "*" @operator.math)
-  (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @operator.math text_mode)
-  (#set! @operator.math conceal "✕"))
-
-((operator
-  "/" @operator.math)
-  (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
-  (#not-has-ancestor? @operator.math text_mode)
-  (#set! @operator.math conceal ""))
-
-((operator
-  "<" @operator.math)
+(operator
+  "<" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
   (#set! @operator.math conceal "ᐸ"))
 
-((operator
-  ">" @operator.math)
+(operator
+  ">" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
   (#set! @operator.math conceal "ᐳ"))
 
-((operator
-  "!" @operator.math)
+(operator
+  "!" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
-  (#set! @operator.math conceal "！"))
+  (#set! @operator.math conceal "󰈅"))
 
-((operator
-  "|" @operator.math)
+(operator
+  "|" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
   (#set! @operator.math conceal "│"))
 
-((operator
-  ":" @operator.math)
+(operator
+  ":" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
-  (#set! @operator.math conceal "："))
+  (#set! @operator.math conceal "∶"))
 
-((operator
-  "'" @operator.math)
+(operator
+  "'" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
   (#set! @operator.math conceal "ˈ"))
@@ -727,161 +708,34 @@
 ; ------------------------------------------------------------------------------
 ; Special keys
 (generic_command
-  (command_name) @function.math.operator
-  (#eq? @function.math.operator "\\cdot")
+  command: (command_name) @function.math.operator
   (#has-ancestor? @function.math.operator displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @function.math.operator text_mode)
-  (#set! @function.math.operator conceal "⋅"))
+  (#eq? @function.math.operator "\\cdot")
+  (#set! @function.math.operator conceal "·"))
 
 (generic_command
-  (command_name) @function.math.operator
-  (#eq? @function.math.operator "\\cdots")
+  command: (command_name) @function.math.operator
   (#has-ancestor? @function.math.operator displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @function.math.operator text_mode)
+  (#eq? @function.math.operator "\\cdots")
   (#set! @function.math.operator conceal "⋯"))
 
 (generic_command
-  (command_name) @function.math.operator
-  (#any-of? @function.math.operator "\\ldots" "\\dots")
+  command: (command_name) @function.math.operator
   (#has-ancestor? @function.math.operator displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @function.math.operator text_mode)
+  (#any-of? @function.math.operator "\\ldots" "\\dots")
   (#set! @function.math.operator conceal "…"))
 
 (generic_command
-  (command_name) @function.math.operator
-  (#eq? @function.math.operator "\\colon")
+  command: (command_name) @function.math.operator
   (#has-ancestor? @function.math.operator displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @function.math.operator text_mode)
-  (#set! @function.math.operator conceal "："))
-
-; All modes
-(generic_command
-  command: (command_name) @_conceal
-  (#lua-match? @_conceal "^\\\\$")
-  (#set! conceal "⏎"))
-
-(generic_command
-  (command_name) @_conceal
-  (#lua-match? @_conceal "^\\[>@ ]$")
-  (#set! conceal " "))
-
-(generic_command
-  (command_name) @_conceal
-  (#eq? @_conceal "\\$")
-  (#set! conceal "＄"))
-
-(generic_command
-  (command_name) @_conceal
-  (#eq? @_conceal "\\&")
-  (#set! conceal "＆"))
-
-(generic_command
-  (command_name) @_conceal
-  (#eq? @_conceal "\\%")
-  (#set! conceal "％"))
-
-(generic_command
-  (command_name) @_conceal
-  (#eq? @_conceal "\\#")
-  (#set! conceal "＃"))
-
-(generic_command
-  (command_name) @_conceal
-  (#eq? @_conceal "\\_")
-  (#set! conceal "_"))
+  (#eq? @function.math.operator "\\colon")
+  (#set! @function.math.operator conceal "∶"))
 
 (generic_command
   command: (command_name) @_conceal
-  (#eq? @_conceal "\\slash")
-  (#set! conceal ""))
-
-; --------------------------------- TEXT MODE ----------------------------------
-; WARN: conceal works in both modes, but the commands work only in text mode
-; Math and technical symbols
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textdegree")
-  (#set! conceal "°"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textcelsius")
-  (#set! conceal "℃"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textdiv")
-  (#set! conceal "÷"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\texttimes")
-  (#set! conceal "✕"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textminus")
-  (#set! conceal "－"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textpm")
-  (#set! conceal "󰦒"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textsurd")
-  (#set! conceal "√"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textperthousand")
-  (#set! conceal "‰"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textpertenthousand")
-  (#set! conceal "‱"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textasciitilde")
-  (#set! conceal "～"))
-
-; Punctuation and special characters
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textemdash")
-  (#set! conceal "–"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textendash")
-  (#set! conceal "–"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textquestiondown")
-  (#set! conceal "¿"))
-
-(generic_command
-  (command_name) @function
-  (#eq? @function "\\textexclamdown")
-  (#set! conceal "¡"))
-
-; --------------------------------- MATH MODE ----------------------------------
-; WARN: conceal works in both modes, but the commands work only in math mode
-;
-; ============================ CONCEAL MATH SYMBOLS ============================
-(generic_command
-  command: (command_name) @_conceal
-  (#eq? @_conceal "\\tilde")
-  (#set! conceal "～"))
-
-((command_name) @punctuation.delimiter
-  (#any-of? @punctuation.delimiter "\\lvert" "\\rvert")
-  (#set! conceal "│"))
-
-((command_name) @punctuation.delimiter
-  (#any-of? @punctuation.delimiter "\\lVert" "\\rVert")
-  (#set! conceal "‖"))
+  (#eq? @_conceal "\\\\")
+  (#set! conceal "↲"))
