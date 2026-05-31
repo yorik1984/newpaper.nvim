@@ -42,7 +42,7 @@ function M.setup(config)
             nephritis            = "#00AB66",
             bluegreen            = "#1B7F82",
             darkcyan             = "#008B8B",
-            aqua                 = "#BFD5EC",
+            aqua                 = "#C5D9ED",
             aquadark             = "#AFD7FF",
             aqualight            = "#DFE4EB",
             lightviolet          = "#E5D9F2",
@@ -114,6 +114,7 @@ function M.setup(config)
 
             -- TeX
             tex_maroon           = "#A2251A",
+            tex_maroon_soft      = "#A8452F",
             tex_olive            = "#89802B",
             tex_navy             = "#1E40C2",
             tex_red              = "#D84342",
@@ -318,6 +319,7 @@ function M.setup(config)
 
             -- TeX
             tex_maroon           = "#D17475",
+            tex_maroon_soft      = "#B85A5E",
             tex_olive            = "#A9A875",
             tex_navy             = "#738AE5",
             tex_red              = "#EF5D5B",
@@ -457,7 +459,7 @@ function M.setup(config)
     newpaper.cursor_nr_fg        = newpaper.darkorange
     newpaper.eob                 = newpaper.disabled
     newpaper.folded_bg           = newpaper.aqua
-    newpaper.folded_fg           = newpaper.blue
+    newpaper.folded_fg           = newpaper.comments
     newpaper.linenumber_bg       = newpaper.lightsilver
     newpaper.linenumber_fg       = newpaper.comments
     newpaper.msgarea_bg          = newpaper.bg

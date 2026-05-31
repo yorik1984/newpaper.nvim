@@ -21,6 +21,7 @@ local files = {
     "rust",
     "toml",
     "typescript",
+    "typst",
     "vim",
     "vimdoc",
     "vue",

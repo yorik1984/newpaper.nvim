@@ -10,7 +10,7 @@
     "]"
     "("
     ")"
-  ] @punctuation.delimiter)
+  ] @punctuation.bracket.markup)
 
 (inline_link
   [
@@ -18,25 +18,25 @@
     "]"
     "("
     ")"
-  ] @punctuation.delimiter)
+  ] @punctuation.bracket.markup)
 
 (shortcut_link
   [
     "["
     "]"
-  ] @punctuation.delimiter)
+  ] @punctuation.bracket.markup.square)
 
 (full_reference_link
   [
     "["
     "]"
-  ] @punctuation.delimiter)
+  ] @punctuation.bracket.markup.square)
 
 (collapsed_reference_link
   [
     "["
     "]"
-  ] @punctuation.delimiter)
+  ] @punctuation.bracket.markup.square)
 
 ; CONCEAL
 ; from https://github.com/delphinus/md-render.nvim

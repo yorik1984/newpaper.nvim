@@ -71,7 +71,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 | Language                | Core syntax        | [Treesitter queries](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights) | Extra plugins | Preview  | Code example |
 | :-----------------------| :----------------: | :----------------: | :- | :-: | :- |
-| **$\LaTeX$** :thumbsup: | :heavy_check_mark: | :heavy_check_mark: | :white_check_mark: [vimtex](https://github.com/lervag/vimtex) | | |
+| **$\LaTeX$** :thumbsup: | :heavy_check_mark: | :white_check_mark: [^1] | :white_check_mark: [vimtex](https://github.com/lervag/vimtex) :white_check_mark: [math-conceal.nvim](https://github.com/pxwg/math-conceal.nvim)[^2] | | |
 | **Comment** :thumbsup:  | :x:                | :white_check_mark: | :x: | [🖼️](#comment-todo) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/lua/todo-comments.lua) |
 | **Ecma(Javascript)** :thumbsup: | :x:        | :white_check_mark: | :x: | | |
 | **Gitignore**           | :x:                | :white_check_mark: | :x: | | |
@@ -93,11 +93,15 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 | **Ruby** :thumbsup:     | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark: [vim-ruby](https://github.com/vim-ruby/vim-ruby) | [🖼️](#ruby) | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/ruby/code.rb) |
 | **Rust**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/rust/code.rs) |
 | **TOML**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/toml/code.toml) |
+| **Typst** :thumbsup:    | :x:                | :white_check_mark: | :x: | | |
 | **Vim**                 | :heavy_check_mark: | :white_check_mark: | :x: | | |
 | **Vimdoc**              | :heavy_check_mark: | :white_check_mark: | :x: | | |
 | **YAML**                | :heavy_check_mark: | :white_check_mark: | :x: | | [raw code](https://raw.githubusercontent.com/new-paper/newpaper/main/code-samples/yaml/code.yaml) |
 
 :thumbsup: - detailed, :white_check_mark: - support and recommended  as default, :heavy_check_mark: - support, :x: - not support
+
+[^1]: Special thanks to [VimTeX](https://github.com/lervag/vimtex) for the regular expressions used for syntax highlighting
+[^2]: Strongly recommended for advanced conceal for treesitter users
 
 ### 🔌 Extra supported
 
@@ -105,6 +109,7 @@ A fork of [material.nvim](https://github.com/marko-cerovac/material.nvim) colors
 
 + [log-highlight.nvim](https://github.com/fei6409/log-highlight.nvim)
 + [markdown-plus.nvim](https://github.com/YousefHadder/markdown-plus.nvim)
++ [math-conceal.nvim](https://github.com/pxwg/math-conceal.nvim)
 + [Vim-Jinja2-Syntax](https://github.com/Glench/Vim-Jinja2-Syntax)
 + [vim-lua](https://github.com/tbastos/vim-lua)
 + [vim-markdown](https://github.com/preservim/vim-markdown) or [nvim-markdown](https://github.com/ixru/nvim-markdown)
@@ -230,13 +235,13 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | regex_bg            | `true`        | Enable background color for regex capturing groups |
 | tags                | `"bold"`      | Make HTML tag bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | tags_brackets_bold  | `true`        | Make tags delimiters like `<` or `/>` bold |
-| tex_major           | `"bold"`      | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"`. Work only with [vimtex](https://github.com/lervag/vimtex) |
-| tex_operators_bold  | `"true"`      | Make tex operators bold |
-| tex_brackets_bold   | `"false"`     | Make tex brackets like `{}`, `[]` bold |
-| tex_math_delim_bold | `"false"`     | Make tex math delimiters like `\[\]`, `\(\)`, `$ $`, `$$ $$` bold |
-| tex_keywords        | `"NONE"`      | Make other tex keywords bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
-| tex_zone            | `"italic"`    | Make some tex `...Zone...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
-| tex_arg             | `"italic"`    | Make some tex `...Arg...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_major[^3]           | `"bold"`      | Make only major tex word like`\documentclass`, `\section`, … bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_operators_bold[^3]  | `"true"`      | Make tex operators bold |
+| tex_brackets_bold[^3]   | `"false"`     | Make tex brackets like `{}`, `[]` bold |
+| tex_math_delim_bold[^3] | `"false"`     | Make tex math delimiters like `\[\]`, `\(\)`, `$ $`, `$$ $$` bold |
+| tex_keywords[^3]        | `"NONE"`      | Make other tex keywords bold, italic or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_zone[^3]            | `"italic"`    | Make some tex `...Zone...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
+| tex_arg[^3]             | `"NONE"`      | Make some tex `...Arg...` bold, italic, or NONE. Value: `"bold"`, `"italic"`, `"bold,italic"`, `"NONE"` |
 | error_highlight     | `"undercurl"` | Make spell or `tex`-files errors highlighting with background, undercurl, both or NONE. Value: `"bg"`, `"undercurl"`, `"both"`, `"NONE"` |
 | diff_highlight      | `"bg"`        | Style for  `DiffAdd`, `DiffChange`, `DiffDelete`, `DiffText`. Value: `"fg"`, `"bg"`, `"both"`.
 | italic_strings      | `true`        | Make strings italic |
@@ -253,6 +258,8 @@ All commands are aliases for `vim.cmd.colorscheme("newpaper")` with the optional
 | custom_highlights   | `{}`          | Override the default and plugins highlights groups. Table  predefine any syntax colors. Use `fg`,`bg`, `sp`, `style` style options. `fg => guifg`, `bg => guibg`, `sp => guisp`, `style => gui`.  See above |
 | lualine_bold        | `true`        | When true, section headers in the lualine theme will be bold |
 | lualine_style       |               | use always `vim.o.background` option|
+
+[^3]: For [typst](https://typst.app) files, these settings apply analogously as well.
 
 ### Colorscheme default settings
 
@@ -846,7 +853,6 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
 * [ ] Add plugins screenshots:
   * [x] todo-comments.nvim
   * [ ] LSP Diagnostics
-  * [ ] Lsp Saga
   * [ ] nvim-cmp
   * [ ] Trouble
   * [ ] Telescope.nvim
@@ -855,6 +861,7 @@ For a complete guide on usage and Configuration of the theme, see `:help newpape
   * [ ] lazy.nvim
 * [-] Add extra syntax highlights:
   * [x] $\LaTeX$ 
+  * [x] $\LaTeX$ with treesitter 
   * [x] Ruby
   * [x] Lua
   * [x] TOML
