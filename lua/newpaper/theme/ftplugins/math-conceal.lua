@@ -17,6 +17,7 @@ function M.setup(configColors, configStyle)
         -- ["@content"]              = { link = "@conceal" },
         -- ["@first_letter"]         = { link = "@conceal" },
         -- ["@font_letter"]          = { link = "@conceal" },
+        ["@font_digit"]           = { link = "@number.latex" },
         ["@frac"]                 = { link = "@function.math.operator.latex" },
         ["@func"]                 = { link = "@function.latex" },
         ["@func_name"]            = { link = "@function.math.operator.latex" },
