@@ -132,6 +132,7 @@ function M.setup(config)
             tex_pink             = "#D75F66",
             tex_lightgreen       = "#20A93E",
 
+            tex_greek            = "#008072",
             tex_math             = "#008000",
             tex_math_cmd         = "#636D1D",
             tex_symbol           = "#349279",
@@ -337,6 +338,7 @@ function M.setup(config)
             tex_pink             = "#EF6A72",
             tex_lightgreen       = "#00CA93",
 
+            tex_greek            = "#5FBCB0",
             tex_math             = "#5FAF5F",
             tex_math_cmd         = "#989769",
             tex_symbol           = "#BBE67E",
