@@ -24,7 +24,7 @@ function M.setup(configColors, configStyle)
         texDelimiter              = { fg = newpaper.tex_lightpurple, style = style.tex_br_style },
         texDocType                = { fg = newpaper.tex_keyword, style = style.tex_m_style },
         texDocTypeArgs            = { fg = newpaper.tex_navy },
-        texGreek                  = { fg = newpaper.tex_math },
+        texGreek                  = { fg = newpaper.tex_greek },
         texInput                  = { fg = newpaper.tex_blue },
         texInputFile              = { fg = newpaper.tex_navy },
         texInputFileOpt           = { fg = newpaper.tex_orange },
@@ -195,7 +195,7 @@ function M.setup(configColors, configStyle)
         -- texCmdEnvM            texCmdEnv
         -- texCmdE3              texCmd
         -- texCmdFootnote        texCmd
-        texCmdGreek               = { fg = newpaper.tex_math, style = style.b_italic },
+        texCmdGreek               = { fg = newpaper.tex_greek },
         -- texCmdLet             texCmdNew
         texCmdNew                 = { fg = newpaper.tex_magenta, style = style.tex_k_style },
         -- texCmdNewcmd          texCmdNew

@@ -80,6 +80,27 @@
   command: (command_name) @function
   (#has-ancestor? @function text_mode))
 
+(generic_command
+  command: (command_name) @function.text
+  (#not-has-ancestor? @function.text math_environment inline_formula displayed_equation)
+  (#lua-match? @function.text "^\\text"))
+
+(generic_command
+  command: (command_name) @function.text
+  (#has-ancestor? @function.text text_mode)
+  (#lua-match? @function.text "^\\text"))
+
+(generic_command
+  command: (command_name) @function.math.greek
+  (#any-of? @function.math.greek
+    "\\alpha" "\\Alpha" "\\beta" "\\Beta" "\\gamma" "\\Gamma" "\\delta" "\\Delta" "\\epsilon"
+    "\\Epsilon" "\\zeta" "\\Zeta" "\\eta" "\\Eta" "\\theta" "\\Theta" "\\iota" "\\Iota" "\\kappa"
+    "\\Kappa" "\\lambda" "\\Lambda" "\\mu" "\\Mu" "\\nu" "\\Nu" "\\xi" "\\Xi" "\\omicron"
+    "\\Omicron" "\\pi" "\\Pi" "\\rho" "\\Rho" "\\sigma" "\\Sigma" "\\tau" "\\Tau" "\\upsilon"
+    "\\Upsilon" "\\phi" "\\Phi" "\\chi" "\\Chi" "\\psi" "\\Psi" "\\omega" "\\Omega" "\\digamma"
+    "\\Digamma" "\\varepsilon" "\\varkappa" "\\varphi" "\\varpi" "\\varrho" "\\varsigma"
+    "\\vartheta"))
+
 ; =================================== MATH =====================================
 (generic_command
   command: (command_name) @markup.math.delim
@@ -110,7 +131,13 @@
     "\\phantom" "\\hphantom" "\\vphantom" "\\fbox" "\\mbox" "\\hspace" "\\vspace" "\\sin" "\\cos"
     "\\tan" "\\cot" "\\sec" "\\csc" "\\sinh" "\\cosh" "\\tanh" "\\coth" "\\arcsin" "\\arccos"
     "\\arctan" "\\exp" "\\ker" "\\deg" "\\gcd" "\\lg" "\\ln" "\\max" "\\min" "\\Pr" "\\sup" "\\arg"
-    "\\det" "\\dim" "\\hom" "\\log" "\\lim" "\\liminf" "\\limsup"))
+    "\\det" "\\dim" "\\hom" "\\log" "\\lim" "\\liminf" "\\limsup" "\\alpha" "\\Alpha" "\\beta"
+    "\\Beta" "\\gamma" "\\Gamma" "\\delta" "\\Delta" "\\epsilon" "\\Epsilon" "\\zeta" "\\Zeta"
+    "\\eta" "\\Eta" "\\theta" "\\Theta" "\\iota" "\\Iota" "\\kappa" "\\Kappa" "\\lambda" "\\Lambda"
+    "\\mu" "\\Mu" "\\nu" "\\Nu" "\\xi" "\\Xi" "\\omicron" "\\Omicron" "\\pi" "\\Pi" "\\rho" "\\Rho"
+    "\\sigma" "\\Sigma" "\\tau" "\\Tau" "\\upsilon" "\\Upsilon" "\\phi" "\\Phi" "\\chi" "\\Chi"
+    "\\psi" "\\Psi" "\\omega" "\\Omega" "\\digamma" "\\Digamma" "\\varepsilon" "\\varkappa"
+    "\\varphi" "\\varpi" "\\varrho" "\\varsigma" "\\vartheta"))
 
 (generic_command
   command: (command_name) @function.math.operator
@@ -166,12 +193,28 @@
   (#match? @string.special.unicodetext "[^\\x00-\\x7F\\x09\\x0D\\x0A\\u0400-\\u052F]+"))
 
 (math_environment
-  (begin
-    name: (curly_group_text
-      (text) @label.math @nospell))
-  (end
-    name: (curly_group_text
-      (text) @label.math @nospell)))
+  [
+    (begin
+      name: (curly_group_text
+        (text) @label.math @nospell))
+    (end
+      name: (curly_group_text
+        (text) @label.math @nospell))
+  ])
+
+; non standart math_environment
+(generic_environment
+  [
+    (begin
+      name: (curly_group_text
+        (text) @label.math @nospell))
+    (end
+      name: (curly_group_text
+        (text) @label.math @nospell))
+  ]
+  (#any-of? @label.math
+    "dgroup" "dgroup*" "dmath" "dmath*" "dseries" "dseries*" "empheq" "multsubequations"
+    "subequations" "termlist" "termlist*"))
 
 ; SUPER AND SUBSCRIPT
 (superscript
@@ -752,7 +795,7 @@
   "'" @operator.math
   (#has-ancestor? @operator.math displayed_equation inline_formula math_environment)
   (#not-has-ancestor? @operator.math text_mode)
-  (#set! @operator.math conceal "ˈ"))
+  (#set! @operator.math conceal "′"))
 
 ; ------------------------------------------------------------------------------
 ;                                CONCEAL SYMBOLS
